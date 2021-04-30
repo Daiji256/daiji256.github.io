@@ -2,8 +2,9 @@ baseURL = "http://butty256.github.io/"
 title = "Butty Blog"
 theme = "hugo-coder"
 languageCode = "ja"
+defaultContentLanguage = "ja"
 paginate = 20
-pygmentsStyle = "bw"
+pygmentsStyle = "native"
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 enableEmoji = true
@@ -14,7 +15,7 @@ enableEmoji = true
 author = "Butty256"
 description = "John Doe's personal website"
 keywords = "blog,developer,personal"
-info = "がんばってブログを作ってみたい"
+info = "日本語 English"
 avatarURL = "images/icon.png"
 footerContent = "いっぱい💩出た"
 dateFormat = "January 2, 2006"
@@ -39,7 +40,12 @@ maxSeeAlsoItems = 5
 # Enable Twemoji
 enableTwemoji = false
 # Custom CSS
-customCSS = []
+customCSS = [
+	"https://fonts.googleapis.com/css?family=Roboto",
+	"http://fonts.googleapis.com/earlyaccess/notosansjp.css",
+	"https://fonts.googleapis.com/css?family=Roboto+Mono",
+	"https://fonts.googleapis.com/css2?family=M+PLUS+1p"
+]
 # Custom SCSS
 customSCSS = []
 # Custom JS
@@ -109,56 +115,25 @@ icon = "fa fa-twitter"
 weight = 2
 url = "https://twitter.com/butty256/"
 
-[languages.en]
-languageName = ":uk:"
+[languages.ja]
+languageName = ":japan:"
 
-[[languages.en.menu.main]]
+[[languages.ja.menu.main]]
 name = "About"
 weight = 1
 url = "about/"
 
-[[languages.en.menu.main]]
+[[languages.ja.menu.main]]
 name = "Blog"
 weight = 2
 url = "posts/"
 
-[[languages.en.menu.main]]
+[[languages.ja.menu.main]]
 name = "Projects"
 weight = 3
 url = "projects/"
 
-[[languages.en.menu.main]]
+[[languages.ja.menu.main]]
 name = "Contact me"
-weight = 5
-url = "contact/"
-
-[languages.pt-br]
-languageName = ":brazil:"
-title = "João Ninguém"
-
-[languages.pt-br.params]
-author = "João Ninguém"
-info = "Full Stack DevOps e Mágico"
-description = "Sítio pessoal de João Ninguém"
-keywords = "blog,desenvolvedor,pessoal"
-footerContent = "Coloque algum texto aqui."
-
-[[languages.pt-br.menu.main]]
-name = "Sobre"
-weight = 1
-url = "about/"
-
-[[languages.pt-br.menu.main]]
-name = "Blog"
-weight = 2
-url = "posts/"
-
-[[languages.pt-br.menu.main]]
-name = "Projetos"
-weight = 3
-url = "projects/"
-
-[[languages.pt-br.menu.main]]
-name = "Contato"
 weight = 5
 url = "contact/"

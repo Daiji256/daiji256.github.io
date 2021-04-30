@@ -1,42 +1,40 @@
 // Fonts
-$font-family: -apple-system,
-sans-serif;
-$code-font-family: SFMono-Regular,
-monospace;
+$font-family: Roboto, 'Noto Sans JP', sans-serif;
+$code-font-family: 'Roboto Mono', 'M PLUS 1p', monospace;
 
 // Colors
-$bg-color: #fafafa !default;
-$fg-color: #212121 !default;
-$alt-bg-color: #e0e0e0 !default;
-$alt-fg-color: #000 !default;
-$link-color: #1565c0 !default;
+$bg-color: #ffffff !default;
+$fg-color: #333333 !default;
+$alt-bg-color: #cccccc !default;
+$alt-fg-color: #333333 !default;
+$link-color: #3465a4 !default;
 
 // Dark colors
-$bg-color-dark: #212121 !default;
-$fg-color-dark: #dadada !default;
-$alt-bg-color-dark: #424242 !default;
-$alt-fg-color-dark: #dadada !default;
-$link-color-dark: #42a5f5 !default;
+$bg-color-dark: #333333 !default;
+$fg-color-dark: #eeeeee !default;
+$alt-bg-color-dark: #666666 !default;
+$alt-fg-color-dark: #eeeeee !default;
+$link-color-dark: #729fcf !default;
 
 // Notice colors
-$fg-color-notice-note-icon: #5e35b1 !default;
-$bg-color-notice-note-title: #673ab71a !default;
-$bg-color-notice-note-content: #7e57c21a !default;
-$fg-color-notice-tip-icon: #00897b !default;
-$bg-color-notice-tip-title: #0096881a !default;
-$bg-color-notice-tip-content: #26a69a1a !default;
-$fg-color-notice-example-icon: #6d4c41 !default;
-$bg-color-notice-example-title: #7955481a !default;
-$bg-color-notice-example-content: #8d6e631a !default;
-$fg-color-notice-question-icon: #7cb342 !default;
-$bg-color-notice-question-title: #8bc34a1a !default;
-$bg-color-notice-question-content: #9ccc651a !default;
-$fg-color-notice-info-icon: #1e88e5 !default;
-$bg-color-notice-info-title: #2196f31a !default;
-$bg-color-notice-info-content: #42a5f51a !default;
-$fg-color-notice-warning-icon: #ffb300 !default;
-$bg-color-notice-warning-title: #ffc1071a !default;
-$bg-color-notice-warning-content: #ffca281a !default;
-$fg-color-notice-error-icon: #e53935 !default;
-$bg-color-notice-error-title: #f443361a !default;
-$bg-color-notice-error-content: #ef53501a !default;
+$fg-color-notice-note-icon: #780373 !default;
+$bg-color-notice-note-title: #a1467e30 !default;
+$bg-color-notice-note-content: #bf819e30 !default;
+$fg-color-notice-tip-icon: #81d41a !default;
+$bg-color-notice-tip-title: #d4ea6b30 !default;
+$bg-color-notice-tip-content: #e8f2a130 !default;
+$fg-color-notice-example-icon: #ea7500 !default;
+$bg-color-notice-example-title: #ff972f30 !default;
+$bg-color-notice-example-content: #ffb66c30 !default;
+$fg-color-notice-question-icon: #168253 !default;
+$bg-color-notice-question-title: #81aca630 !default;
+$bg-color-notice-question-content: #b3cac730 !default;
+$fg-color-notice-info-icon: #3465a4 !default;
+$bg-color-notice-info-title: #729fcf30 !default;
+$bg-color-notice-info-content: #b4c7dc30 !default;
+$fg-color-notice-warning-icon: #e6e905 !default;
+$bg-color-notice-warning-title: #ffff6d30 !default;
+$bg-color-notice-warning-content: #ffffa630 !default;
+$fg-color-notice-error-icon: #f10d0c !default;
+$bg-color-notice-error-title: #ff6d6d30 !default;
+$bg-color-notice-error-content: #ffa6a630 !default;
