@@ -12,7 +12,9 @@ author = "Hugo Authors"
 
 ### ちいさい
 
-Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA. Japanese English AAA.
+日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！
+
+うおおおおすごい！
 
 ```C
 #include <stdio.h>
