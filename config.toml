@@ -1,6 +1,6 @@
 baseURL = "http://butty256.github.io/"
 title = "Butty Blog"
-theme = "hugo-coder"
+theme = "hugo-mycoder"
 languageCode = "ja"
 defaultContentLanguage = "ja"
 paginate = 4
