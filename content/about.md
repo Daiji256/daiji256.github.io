@@ -15,9 +15,9 @@ author = "Hugo Authors"
 
 ### ちいさい
 
-日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！日本語Englishすごい！
+色々書く
 
-うおおおおすごい！
+うおおおおすごい！ `sugoi` すごい！
 
 ```C
 #include <stdio.h>
