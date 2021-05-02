@@ -3147,9 +3147,12 @@ img.emoji {
     margin: 0; }
 
 .avatar img {
-  width: 20rem;
-  height: auto; }
-
+  width: 18rem;
+  height: auto;
+  border-radius: 50%; }
+  @media only screen and (max-width: 768px) {
+    .avatar img {
+      width: 12rem; } }
 .list ul {
   margin: 3.2rem 0 3.2rem 0;
   list-style: none;
@@ -3182,110 +3185,100 @@ img.emoji {
   .list ul:not(.pagination) li {
     display: flex; } }
 
-.centered {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .centered .about {
-    text-align: center; }
-    .centered .about h1 {
-      margin-top: 2rem;
-      margin-bottom: 0.5rem; }
-    .centered .about h2 {
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-      font-size: 2.4rem; }
-      @media only screen and (max-width: 768px) {
-        .centered .about h2 {
-          font-size: 2rem; } }
-    .centered .about ul {
-      list-style: none;
-      margin: 3rem 0 1rem 0;
-      padding: 0; }
-      .centered .about ul li {
-        display: inline-block;
-        position: relative; }
-        .centered .about ul li a {
-          color: #333333;
-          text-transform: uppercase;
-          margin-left: 1rem;
-          margin-right: 1rem;
-          font-size: 1.6rem; }
-          .centered .about ul li a:hover, .centered .about ul li a:focus {
-            color: #3465a4; }
+.centered .about {
+  display: flex; }
+  .centered .about h1 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 5rem; }
+    @media only screen and (max-width: 768px) {
+      .centered .about h1 {
+        margin-top: 1rem;
+        margin-bottom: 0;
+        font-size: 3rem; } }
+  .centered .about h2 {
+    margin-top: 1.5rem;
+    margin-bottom: -1rem;
+    font-size: 2.6rem; }
+    @media only screen and (max-width: 768px) {
+      .centered .about h2 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-size: 2rem; } }
+  .centered .about ul {
+    list-style: none;
+    margin: 3rem 0 1rem 0;
+    padding: 0; }
+    @media only screen and (max-width: 768px) {
+      .centered .about ul {
+        margin-top: 1rem; } }
+    .centered .about ul li {
+      display: inline-block;
+      position: relative; }
+      .centered .about ul li a {
+        color: #333333;
+        text-transform: uppercase;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 1.6rem; }
+        .centered .about ul li a:hover, .centered .about ul li a:focus {
+          color: #3465a4; }
+        @media only screen and (max-width: 768px) {
+          .centered .about ul li a {
+            font-size: 1.4rem; } }
+        .centered .about ul li a i {
+          font-size: 3.8rem; }
           @media only screen and (max-width: 768px) {
-            .centered .about ul li a {
-              font-size: 1.4rem; } }
-          .centered .about ul li a i {
-            font-size: 3.2rem; }
-  .centered .error {
-    text-align: center; }
-    .centered .error h1 {
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-      font-size: 4.6rem; }
+            .centered .about ul li a i {
+              font-size: 3.2rem; } }
+.centered .error {
+  text-align: center; }
+  .centered .error h1 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 4.6rem; }
+    @media only screen and (max-width: 768px) {
+      .centered .error h1 {
+        font-size: 3.2rem; } }
+  .centered .error h2 {
+    margin-top: 2rem;
+    margin-bottom: 3.2rem;
+    font-size: 3.2rem; }
+    @media only screen and (max-width: 768px) {
+      .centered .error h2 {
+        font-size: 2.8rem; } }
+.centered .list ul {
+  margin: 3.2rem 0 3.2rem 0;
+  list-style: none;
+  padding: 0; }
+  .centered .list ul li {
+    font-size: 1.8rem; }
+    @media only screen and (max-width: 768px) {
+      .centered .list ul li {
+        margin: 1.6rem 0 1.6rem 0; } }
+    .centered .list ul li .date {
+      display: inline-block;
+      flex: 1;
+      width: 20rem;
+      text-align: right;
+      margin-right: 3rem; }
       @media only screen and (max-width: 768px) {
-        .centered .error h1 {
-          font-size: 3.2rem; } }
-    .centered .error h2 {
-      margin-top: 2rem;
-      margin-bottom: 3.2rem;
-      font-size: 3.2rem; }
-      @media only screen and (max-width: 768px) {
-        .centered .error h2 {
-          font-size: 2.8rem; } }
-.left {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .left .about {
-    text-align: center; }
-    .left .about h1 {
-      margin-top: 2rem;
-      margin-bottom: 0.5rem; }
-    .left .about h2 {
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-      font-size: 2.4rem; }
-      @media only screen and (max-width: 768px) {
-        .left .about h2 {
-          font-size: 2rem; } }
-    .left .about ul {
-      list-style: none;
-      margin: 3rem 0 1rem 0;
-      padding: 0; }
-      .left .about ul li {
-        display: inline-block;
-        position: relative; }
-        .left .about ul li a {
-          color: #333333;
-          text-transform: uppercase;
-          margin-left: 1rem;
-          margin-right: 1rem;
-          font-size: 1.6rem; }
-          .left .about ul li a:hover, .left .about ul li a:focus {
-            color: #3465a4; }
-          @media only screen and (max-width: 768px) {
-            .left .about ul li a {
-              font-size: 1.4rem; } }
-          .left .about ul li a i {
-            font-size: 3.2rem; }
-  .left .error {
-    text-align: center; }
-    .left .error h1 {
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-      font-size: 4.6rem; }
-      @media only screen and (max-width: 768px) {
-        .left .error h1 {
-          font-size: 3.2rem; } }
-    .left .error h2 {
-      margin-top: 2rem;
-      margin-bottom: 3.2rem;
-      font-size: 3.2rem; }
-      @media only screen and (max-width: 768px) {
-        .left .error h2 {
-          font-size: 2.8rem; } }
+        .centered .list ul li .date {
+          display: block;
+          text-align: left; } }
+    .centered .list ul li .title {
+      font-size: 1.8rem;
+      flex: 2;
+      color: #333333;
+      font-family: "Roboto", "Noto Sans JP", sans-serif;
+      font-weight: 700; }
+      .centered .list ul li .title:hover, .centered .list ul li .title:focus {
+        color: #3465a4; }
+
+@media only screen and (min-width: 768.1px) {
+  .centered .list ul:not(.pagination) li {
+    display: flex; } }
+
 .notice {
   border-radius: 0.2rem;
   position: relative;

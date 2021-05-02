@@ -3,7 +3,7 @@ title = "Butty Blog"
 theme = "hugo-mycoder"
 languageCode = "ja"
 defaultContentLanguage = "ja"
-paginate = 4
+paginate = 8
 pygmentsStyle = "native"
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
@@ -13,8 +13,8 @@ enableEmoji = true
 
 [params]
 author = "Butty256"
-description = "John Doe's personal website"
-keywords = "blog,developer,personal"
+description = "Butty Blog"
+keywords = "blog, developer, personal"
 info = "Daiji Suzuki"
 avatarURL = "images/icon.png"
 footerContent = ""
