@@ -8,8 +8,7 @@ author = "Hugo Authors"
 
 # あんた誰？
 
-{{< TeX >}}
-{{< LaTeX >}}
+{{< TeX >}}{{< LaTeX >}}
 
 ## まあまあ
 
