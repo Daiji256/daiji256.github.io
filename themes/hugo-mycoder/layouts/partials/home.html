@@ -34,11 +34,13 @@
     <h2>Posts</h2>
     {{ .Content }}
     <ul>
-      {{ range .Paginator.Pages }}
-      <li>
-        <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-        <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
-      </li>
+      {{ range .Site.RegularPages }}
+        {{ if eq .Type "posts"}}
+          <li>
+            <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</span>
+            <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
       {{ end }}
     </ul>
     {{ partial "pagination.html" . }}
