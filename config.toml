@@ -105,7 +105,7 @@ author = "authors"
 
 [[params.social]]
 name = "GitHub"
-icon = "fa fa-github"
+icon = "fa fa-github-alt"
 weight = 1
 url = "https://github.com/Butty256/"
 
@@ -114,6 +114,12 @@ name = "Twitter"
 icon = "fa fa-twitter"
 weight = 2
 url = "https://twitter.com/butty256/"
+
+[[params.social]]
+name = "Qiita"
+icon = "icon-qiita1"
+weight = 3
+url = "https://qiita.com/Butty256/"
 
 [languages.ja]
 languageName = ":japan:"
@@ -124,14 +130,14 @@ weight = 1
 url = "about/"
 
 [[languages.ja.menu.main]]
-name = "All Posts"
+name = "Tags"
 weight = 2
-url = "posts/"
+url = "tags/"
 
 [[languages.ja.menu.main]]
-name = "Projects"
+name = "Categories"
 weight = 3
-url = "projects/"
+url = "categories/"
 
 [[languages.ja.menu.main]]
 name = "Contact me"
