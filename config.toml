@@ -14,7 +14,7 @@ enableEmoji = true
 [params]
 author = "Butty256"
 description = "Butty Blog"
-keywords = "blog, developer, personal"
+keywords = "blog, note"
 info = "Daiji Suzuki"
 avatarURL = "images/icon.png"
 footerContent = ""
@@ -138,8 +138,3 @@ url = "tags/"
 name = "Categories"
 weight = 3
 url = "categories/"
-
-[[languages.ja.menu.main]]
-name = "Contact me"
-weight = 4
-url = "contact/"

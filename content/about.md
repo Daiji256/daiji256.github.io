@@ -25,6 +25,7 @@ int main(void)
 {
   printf("Hello, World!\n");
   printf("はろー，わーるど！\n");
+
   return 0;
 }
 ```
