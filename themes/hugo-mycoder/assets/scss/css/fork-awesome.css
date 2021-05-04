@@ -25,12 +25,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 .icon-qiita1:before {
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 0.85em;
   text-rendering: auto;
   content: "\e901";
 }
 .icon-qiita2:before {
-  font-size: 0.9em;
+  font-size: 0.85em;
   content: "\e902";
 }
 

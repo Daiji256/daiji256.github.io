@@ -327,12 +327,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .icon-qiita1:before {
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 0.85em;
   text-rendering: auto;
   content: "\e901"; }
 
 .icon-qiita2:before {
-  font-size: 0.9em;
+  font-size: 0.85em;
   content: "\e902"; }
 
 @font-face {
@@ -2903,7 +2903,7 @@ html {
 body {
   color: #333333;
   background-color: #ffffff;
-  font-family: "Roboto", "Noto Sans JP", "Qiita", sans-serif;
+  font-family: "Roboto", "Noto Sans JP", sans-serif, "Qiita";
   font-size: 1.8em;
   font-weight: 400;
   line-height: 1.8em; }
@@ -2928,7 +2928,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", "Noto Sans JP", "Qiita", sans-serif;
+  font-family: "Roboto", "Noto Sans JP", sans-serif, "Qiita";
   font-weight: 600;
   color: #333333;
   margin: 4rem 0 2.5rem 0; }
@@ -3194,7 +3194,7 @@ img.emoji {
       font-size: 1.8rem;
       flex: 2;
       color: #333333;
-      font-family: "Roboto", "Noto Sans JP", "Qiita", sans-serif;
+      font-family: "Roboto", "Noto Sans JP", sans-serif, "Qiita";
       font-weight: 700; }
       .list ul li .title:hover, .list ul li .title:focus {
         color: #3465a4; }
@@ -3288,7 +3288,7 @@ img.emoji {
       font-size: 1.8rem;
       flex: 2;
       color: #333333;
-      font-family: "Roboto", "Noto Sans JP", "Qiita", sans-serif;
+      font-family: "Roboto", "Noto Sans JP", sans-serif, "Qiita";
       font-weight: 700; }
       .centered .list ul li .title:hover, .centered .list ul li .title:focus {
         color: #3465a4; }
@@ -3374,7 +3374,7 @@ img.emoji {
   .navigation span {
     display: inline;
     font-size: 1.7rem;
-    font-family: "Roboto", "Noto Sans JP", "Qiita", sans-serif;
+    font-family: "Roboto", "Noto Sans JP", sans-serif, "Qiita";
     font-weight: 600;
     line-height: 6rem;
     color: #333333; }
@@ -3463,7 +3463,7 @@ img.emoji {
 .pagination {
   margin-top: 6rem;
   text-align: center;
-  font-family: "Roboto", "Noto Sans JP", "Qiita", sans-serif; }
+  font-family: "Roboto", "Noto Sans JP", sans-serif, "Qiita"; }
   .pagination li {
     display: inline;
     text-align: center;
