@@ -6,7 +6,12 @@ date = "2020-05-04"
 # Skills
 
 - Languages:  
-C, C++, Java, Kotlin, Python, TeX/LaTeX
+{{< icon/C >}}          C,
+{{< icon/C-plusplus >}} C++,
+{{< icon/Java >}}       Java,
+{{< icon/Kotlin >}}     Kotlin,
+{{< icon/Python >}}     Python,
+Java, Kotlin, Python, TeX/LaTeX
 - Languages:  
 C, C++, TeX/LaTeX
 - Languages:  
