@@ -31,11 +31,11 @@
     </div>
   </div>
   <dev class="list">
-    <h2>Posts</h2>
+    <h1>{{ i18n "new_posts" . | default "new posts" }}</h1>
     {{ .Content }}
     <ul>
-      {{ range .Paginator.Pages }}
-        {{ if eq .Type "posts"}}
+      {{ range (.Paginator 8).Pages }}
+        {{ if eq .Type "posts" }}
           <li>
             <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</span>
             <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
@@ -43,6 +43,5 @@
         {{ end }}
       {{ end }}
     </ul>
-    {{ partial "pagination.html" . }}
   </dev>
 </section>

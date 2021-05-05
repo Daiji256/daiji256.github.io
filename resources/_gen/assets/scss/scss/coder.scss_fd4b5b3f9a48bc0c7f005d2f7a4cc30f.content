@@ -303,20 +303,6 @@ template {
 [hidden] {
   display: none; }
 
-/*!
-Fork Awesome 1.1.7
-License - https://forkaweso.me/Fork-Awesome/license
-
-Copyright 2018 Dave Gandy & Fork Awesome
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-/* FONT PATH
- * -------------------------- */
 @font-face {
   font-family: 'Icon';
   src: url("../fonts/icon.eot");
@@ -325,95 +311,79 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   font-style: italic;
   font-display: block; }
 
-.icon-android:before {
+.icon {
   display: inline-block;
+  font: normal normal normal 14px/1 Icon;
+  font-size: inherit;
   text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-android:before {
   content: "\e900"; }
 
 .icon-android-studio:before {
-  display: inline-block;
-  text-rendering: auto;
   content: "\e901"; }
 
 .icon-apple:before {
-  display: inline-block;
-  text-rendering: auto;
   content: "\e902"; }
 
 .icon-bash:before {
-  display: inline-block;
-  text-rendering: auto;
   content: "\e903"; }
 
 .icon-c:before {
-  display: inline-block;
-  text-rendering: auto;
   content: "\e904"; }
 
 .icon-c-plusplus:before {
-  display: inline-block;
-  text-rendering: auto;
   content: "\e905"; }
 
 .icon-git:before {
-  display: inline-block;
-  text-rendering: auto;
   content: "\e906"; }
 
 .icon-github:before {
-  display: inline-block;
-  text-rendering: auto;
   content: "\e907"; }
 
 .icon-java:before {
-  display: inline-block;
-  text-rendering: auto;
   content: "\e908"; }
 
 .icon-kotlin:before {
-  display: inline-block;
-  text-rendering: auto;
   content: "\e909"; }
 
 .icon-latex:before {
-  display: inline-block;
-  text-rendering: auto;
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.22em;
   content: "\e90a"; }
 
 .icon-linux:before {
-  display: inline-block;
-  text-rendering: auto;
   content: "\e90b"; }
 
 .icon-macos:before {
-  display: inline-block;
-  text-rendering: auto;
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.22em;
   content: "\e90c"; }
 
-.icon-qiita:before {
-  display: inline-block;
-  text-rendering: auto;
+.icon-python:before {
   content: "\e90d"; }
 
-.icon-tex:before {
-  display: inline-block;
-  text-rendering: auto;
+.icon-qiita:before {
   content: "\e90e"; }
 
-.icon-twitter:before {
-  display: inline-block;
-  text-rendering: auto;
+.icon-tex:before {
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.22em;
   content: "\e90f"; }
 
-.icon-visual-studio-code:before {
-  display: inline-block;
-  text-rendering: auto;
+.icon-twitter:before {
   content: "\e910"; }
 
-.icon-windows:before {
-  display: inline-block;
-  text-rendering: auto;
+.icon-visual-studio-code:before {
   content: "\e911"; }
+
+.icon-windows:before {
+  content: "\e912"; }
 
 *,
 *:after,
@@ -427,7 +397,7 @@ html {
 body {
   color: #333333;
   background-color: #ffffff;
-  font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon";
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
   font-size: 1.8em;
   font-weight: 400;
   line-height: 1.8em; }
@@ -452,7 +422,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon";
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
   font-weight: 600;
   color: #333333;
   margin: 4rem 0 2.5rem 0; }
@@ -695,6 +665,13 @@ img.emoji {
   @media only screen and (max-width: 768px) {
     .avatar img {
       width: 12rem; } }
+.list h1 {
+  text-transform: capitalize;
+  font-size: 3rem;
+  margin-bottom: -1rem; }
+  @media only screen and (max-width: 768px) {
+    .list h1 {
+      font-size: 2.5rem; } }
 .list ul {
   margin: 3.2rem 0 3.2rem 0;
   list-style: none;
@@ -718,7 +695,7 @@ img.emoji {
       font-size: 1.8rem;
       flex: 2;
       color: #333333;
-      font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon";
+      font-family: "Roboto", "Noto Sans JP", sans-serif;
       font-weight: 700; }
       .list ul li .title:hover, .list ul li .title:focus {
         color: #3465a4; }
@@ -812,7 +789,7 @@ img.emoji {
       font-size: 1.8rem;
       flex: 2;
       color: #333333;
-      font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon";
+      font-family: "Roboto", "Noto Sans JP", sans-serif;
       font-weight: 700; }
       .centered .list ul li .title:hover, .centered .list ul li .title:focus {
         color: #3465a4; }
@@ -898,7 +875,7 @@ img.emoji {
   .navigation span {
     display: inline;
     font-size: 1.7rem;
-    font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon";
+    font-family: "Roboto", "Noto Sans JP", sans-serif;
     font-weight: 600;
     line-height: 6rem;
     color: #333333; }
@@ -987,7 +964,7 @@ img.emoji {
 .pagination {
   margin-top: 6rem;
   text-align: center;
-  font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon"; }
+  font-family: "Roboto", "Noto Sans JP", sans-serif; }
   .pagination li {
     display: inline;
     text-align: center;

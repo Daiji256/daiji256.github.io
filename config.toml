@@ -1,4 +1,4 @@
-baseURL = "http://butty256.github.io/"
+baseURL = "https://butty256.github.io/"
 title = "Butty Blog"
 theme = "hugo-mycoder"
 publishDir = "docs"
@@ -29,14 +29,6 @@ colorScheme = "auto"
 hideColorSchemeToggle = false
 maxSeeAlsoItems = 5
 enableTwemoji = false
-customCSS = [
-	"https://fonts.googleapis.com/css?family=Roboto",
-	"http://fonts.googleapis.com/earlyaccess/notosansjp.css",
-	"https://fonts.googleapis.com/css?family=Roboto+Mono",
-	"https://fonts.googleapis.com/css2?family=M+PLUS+1p"
-]
-customSCSS = []
-customJS = []
 
 [params.csp]
 childsrc = ["'self'"]
@@ -63,40 +55,34 @@ author = "authors"
 
 [[params.social]]
 name = "GitHub"
-icon = "icon-github"
+icon = "icon icon-github"
 weight = 1
 url = "https://github.com/Butty256/"
-
 [[params.social]]
 name = "Twitter"
-icon = "icon-twitter"
+icon = "icon icon-twitter"
 weight = 2
 url = "https://twitter.com/butty256/"
-
 [[params.social]]
 name = "Qiita"
-icon = "icon-qiita"
+icon = "icon icon-qiita"
 weight = 3
 url = "https://qiita.com/Butty256/"
 
 [languages.ja]
 languageName = ":japan:"
-
 [[languages.ja.menu.main]]
-name = "Home"
+name = "All Posts"
 weight = 1
-url = ""
-
+url = "posts/"
 [[languages.ja.menu.main]]
 name = "Tags"
 weight = 2
 url = "tags/"
-
 [[languages.ja.menu.main]]
 name = "Categories"
 weight = 3
 url = "categories/"
-
 [[languages.ja.menu.main]]
 name = "About me"
 weight = 4
