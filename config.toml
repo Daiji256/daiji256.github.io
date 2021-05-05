@@ -1,6 +1,8 @@
 baseURL = "http://butty256.github.io/"
 title = "Butty Blog"
 theme = "hugo-mycoder"
+publishDir = "docs"
+canonifyurls = true
 languageCode = "ja"
 defaultContentLanguage = "ja"
 paginate = 10
@@ -8,8 +10,6 @@ pygmentsStyle = "native"
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 enableEmoji = true
-# Enable Disqus comments
-# disqusShortname = "yourdiscussshortname"
 
 [params]
 author = "Butty256"
@@ -63,19 +63,19 @@ author = "authors"
 
 [[params.social]]
 name = "GitHub"
-icon = "fa fa-github-alt"
+icon = "icon-github"
 weight = 1
 url = "https://github.com/Butty256/"
 
 [[params.social]]
 name = "Twitter"
-icon = "fa fa-twitter"
+icon = "icon-twitter"
 weight = 2
 url = "https://twitter.com/butty256/"
 
 [[params.social]]
 name = "Qiita"
-icon = "icon-qiita1"
+icon = "icon-qiita"
 weight = 3
 url = "https://qiita.com/Butty256/"
 

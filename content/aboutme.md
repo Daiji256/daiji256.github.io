@@ -1,15 +1,18 @@
 +++
 title = "About me"
-description = "Hugo, the world's fastest framework for building websites"
-date = "2019-02-28"
-author = "Hugo Authors"
+date = "2020-05-04"
 +++
 
-# About me
+# Skills
 
-{{< TeX >}}{{< LaTeX >}}
-
-## 
+- Languages:  
+C, C++, Java, Kotlin, Python, TeX/LaTeX
+- Languages:  
+C, C++, TeX/LaTeX
+- Languages:  
+C, C++, TeX/LaTeX
+- Languages:  
+C, C++, TeX/LaTeX
 
 ### ちいさい
 
