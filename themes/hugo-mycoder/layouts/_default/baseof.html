@@ -24,8 +24,6 @@
       <link rel="canonical" href="{{ .Permalink }}">
     {{ end }}
 
-    <link rel="preload" href="/fonts/icon.woff" as="font" type="font/woff" crossorigin>
-
     {{ if .Site.IsServer }}
       {{ $cssOpts := (dict "targetPath" "css/coder.css" "enableSourceMap" true ) }}
       {{ $styles := resources.Get "scss/coder.scss" | resources.ExecuteAsTemplate "style.coder.css" . | toCSS $cssOpts }}
