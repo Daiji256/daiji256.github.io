@@ -29,14 +29,6 @@ colorScheme = "auto"
 hideColorSchemeToggle = false
 maxSeeAlsoItems = 5
 enableTwemoji = false
-customCSS = [
-	"https://fonts.googleapis.com/css?family=Roboto",
-	"http://fonts.googleapis.com/earlyaccess/notosansjp.css",
-	"https://fonts.googleapis.com/css?family=Roboto+Mono",
-	"https://fonts.googleapis.com/css2?family=M+PLUS+1p"
-]
-customSCSS = []
-customJS = []
 
 [params.csp]
 childsrc = ["'self'"]

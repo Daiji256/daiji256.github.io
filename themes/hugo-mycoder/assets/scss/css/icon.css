@@ -48,29 +48,38 @@
   content: "\e909";
 }
 .icon-latex:before {
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.22em;
   content: "\e90a";
 }
 .icon-linux:before {
   content: "\e90b";
 }
 .icon-macos:before {
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.22em;
   content: "\e90c";
 }
-.icon-qiita:before {
+.icon-python:before {
   content: "\e90d";
 }
-.icon-tex:before {
+.icon-qiita:before {
   content: "\e90e";
 }
-.icon-twitter:before {
+.icon-tex:before {
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.22em;
   content: "\e90f";
 }
-.icon-visual-studio-code:before {
+.icon-twitter:before {
   content: "\e910";
 }
-.icon-windows:before {
+.icon-visual-studio-code:before {
   content: "\e911";
 }
-.icon-python:before {
+.icon-windows:before {
   content: "\e912";
 }

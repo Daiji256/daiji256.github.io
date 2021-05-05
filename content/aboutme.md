@@ -6,18 +6,23 @@ date = "2020-05-04"
 # Skills
 
 - Languages:  
-{{< icon/C >}}          C,
-{{< icon/C-plusplus >}} C++,
-{{< icon/Java >}}       Java,
-{{< icon/Kotlin >}}     Kotlin,
-{{< icon/Python >}}     Python,
-Java, Kotlin, Python, TeX/LaTeX
-- Languages:  
-C, C++, TeX/LaTeX
-- Languages:  
-C, C++, TeX/LaTeX
-- Languages:  
-C, C++, TeX/LaTeX
+{{< icon/C >}}                  C,
+{{< icon/C-plusplus >}}         C++,
+{{< icon/Java >}}               Java,
+{{< icon/Kotlin >}}             Kotlin,
+{{< icon/Python >}}             Python,
+{{< icon/TeX >}}                TeX/LaTeX
+- Tools  
+{{< icon/Bash >}}               Bash,
+{{< icon/Git >}}                Git,
+{{< icon/GitHub >}}             GitHub,
+{{< icon/Android-Studio >}}     Android Studio,
+{{< icon/Visual-Studio-Code >}} Visual Studio Code
+- Operating System:  
+{{< icon/Windows >}}            Windows,
+{{< icon/Apple >}}              mscOS,
+{{< icon/Linux >}}              Linux,
+{{< icon/Android >}}            Android
 
 ### ちいさい
 

@@ -350,30 +350,39 @@ template {
   content: "\e909"; }
 
 .icon-latex:before {
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.22em;
   content: "\e90a"; }
 
 .icon-linux:before {
   content: "\e90b"; }
 
 .icon-macos:before {
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.22em;
   content: "\e90c"; }
 
-.icon-qiita:before {
+.icon-python:before {
   content: "\e90d"; }
 
-.icon-tex:before {
+.icon-qiita:before {
   content: "\e90e"; }
 
-.icon-twitter:before {
+.icon-tex:before {
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.22em;
   content: "\e90f"; }
 
-.icon-visual-studio-code:before {
+.icon-twitter:before {
   content: "\e910"; }
 
-.icon-windows:before {
+.icon-visual-studio-code:before {
   content: "\e911"; }
 
-.icon-python:before {
+.icon-windows:before {
   content: "\e912"; }
 
 *,
@@ -388,7 +397,7 @@ html {
 body {
   color: #333333;
   background-color: #ffffff;
-  font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon";
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
   font-size: 1.8em;
   font-weight: 400;
   line-height: 1.8em; }
@@ -413,7 +422,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon";
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
   font-weight: 600;
   color: #333333;
   margin: 4rem 0 2.5rem 0; }
@@ -679,7 +688,7 @@ img.emoji {
       font-size: 1.8rem;
       flex: 2;
       color: #333333;
-      font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon";
+      font-family: "Roboto", "Noto Sans JP", sans-serif;
       font-weight: 700; }
       .list ul li .title:hover, .list ul li .title:focus {
         color: #3465a4; }
@@ -773,7 +782,7 @@ img.emoji {
       font-size: 1.8rem;
       flex: 2;
       color: #333333;
-      font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon";
+      font-family: "Roboto", "Noto Sans JP", sans-serif;
       font-weight: 700; }
       .centered .list ul li .title:hover, .centered .list ul li .title:focus {
         color: #3465a4; }
@@ -859,7 +868,7 @@ img.emoji {
   .navigation span {
     display: inline;
     font-size: 1.7rem;
-    font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon";
+    font-family: "Roboto", "Noto Sans JP", sans-serif;
     font-weight: 600;
     line-height: 6rem;
     color: #333333; }
@@ -948,7 +957,7 @@ img.emoji {
 .pagination {
   margin-top: 6rem;
   text-align: center;
-  font-family: "Roboto", "Noto Sans JP", sans-serif, "Icon"; }
+  font-family: "Roboto", "Noto Sans JP", sans-serif; }
   .pagination li {
     display: inline;
     text-align: center;
