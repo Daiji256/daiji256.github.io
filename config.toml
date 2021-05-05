@@ -1,4 +1,4 @@
-baseURL = "http://butty256.github.io/"
+baseURL = "https://butty256.github.io/"
 title = "Butty Blog"
 theme = "hugo-mycoder"
 publishDir = "docs"
