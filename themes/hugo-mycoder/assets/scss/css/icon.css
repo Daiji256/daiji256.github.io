@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'Icon';
+  src: url('../fonts/icon.eot');
+  src: url('../fonts/icon.eot') format('embedded-opentype'),
+    url('../fonts/icon.woff') format('woff'),
+    url('../fonts/icon.ttf') format('truetype'),
+    url('../fonts/icon.svg') format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-display: block;
+}
+.icon {
+  display: inline-block;
+  font: normal normal normal 14px/1 Icon;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.android:before {
+  content: "\e900";
+}
+.android-studio:before {
+  content: "\e901";
+}
+.apple:before {
+  content: "\e902";
+}
+.bash:before {
+  content: "\e903";
+}
+.c:before {
+  content: "\e904";
+}
+.c-plusplus:before {
+  content: "\e905";
+}
+.git:before {
+  content: "\e906";
+}
+.github:before {
+  content: "\e907";
+}
+.java:before {
+  content: "\e908";
+}
+.kotlin:before {
+  content: "\e909";
+}
+.latex:before {
+  content: "\e90a";
+}
+.linux:before {
+  content: "\e90b";
+}
+.macos:before {
+  content: "\e90c";
+}
+.qiita:before {
+  content: "\e90d";
+}
+.tex:before {
+  content: "\e90e";
+}
+.twitter:before {
+  content: "\e90f";
+}
+.visual-studio-code:before {
+  content: "\e910";
+}
+.windows:before {
+  content: "\e911";
+}
