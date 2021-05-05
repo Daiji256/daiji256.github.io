@@ -66,13 +66,11 @@ name = "GitHub"
 icon = "icon github"
 weight = 1
 url = "https://github.com/Butty256/"
-
 [[params.social]]
 name = "Twitter"
 icon = "icon twitter"
 weight = 2
 url = "https://twitter.com/butty256/"
-
 [[params.social]]
 name = "Qiita"
 icon = "icon qiita"
@@ -81,22 +79,18 @@ url = "https://qiita.com/Butty256/"
 
 [languages.ja]
 languageName = ":japan:"
-
 [[languages.ja.menu.main]]
-name = "Home"
+name = "All Posts"
 weight = 1
-url = ""
-
+url = "posts/"
 [[languages.ja.menu.main]]
 name = "Tags"
 weight = 2
 url = "tags/"
-
 [[languages.ja.menu.main]]
 name = "Categories"
 weight = 3
 url = "categories/"
-
 [[languages.ja.menu.main]]
 name = "About me"
 weight = 4
