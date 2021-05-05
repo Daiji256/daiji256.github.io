@@ -665,6 +665,13 @@ img.emoji {
   @media only screen and (max-width: 768px) {
     .avatar img {
       width: 12rem; } }
+.list h1 {
+  text-transform: capitalize;
+  font-size: 3rem;
+  margin-bottom: -1rem; }
+  @media only screen and (max-width: 768px) {
+    .list h1 {
+      font-size: 2.5rem; } }
 .list ul {
   margin: 3.2rem 0 3.2rem 0;
   list-style: none;
