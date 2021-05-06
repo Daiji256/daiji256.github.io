@@ -55,17 +55,17 @@ author = "authors"
 
 [[params.social]]
 name = "GitHub"
-icon = "icon icon-github"
+icon = "bi bi-github"
 weight = 1
 url = "https://github.com/Butty256/"
 [[params.social]]
 name = "Twitter"
-icon = "icon icon-twitter"
+icon = "bi bi-twitter"
 weight = 2
 url = "https://twitter.com/butty256/"
 [[params.social]]
 name = "Qiita"
-icon = "icon icon-qiita"
+icon = "bi bi-qiita"
 weight = 3
 url = "https://qiita.com/Butty256/"
 

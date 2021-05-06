@@ -1,85 +1,85 @@
 @font-face {
-  font-family: 'Icon';
-  src: url('../fonts/icon.eot');
-  src: url('../fonts/icon.eot') format('embedded-opentype'),
-    url('../fonts/icon.woff') format('woff'),
-    url('../fonts/icon.ttf') format('truetype'),
-    url('../fonts/icon.svg') format('svg');
+  font-family: 'B icons';
+  src: url('../fonts/b-icons.eot');
+  src: url('../fonts/b-icons.eot') format('embedded-opentype'),
+    url('../fonts/b-icons.woff') format('woff'),
+    url('../fonts/b-icons.ttf') format('truetype'),
+    url('../fonts/b-icons.svg') format('svg');
   font-weight: normal;
   font-style: italic;
   font-display: block;
 }
-.icon {
+.bi {
   display: inline-block;
-  font: normal normal normal 14px/1 Icon;
+  font: normal normal normal 14px/1 'B icons';
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-android:before {
+.bi-android:before {
   content: "\e900";
 }
-.icon-android-studio:before {
+.bi-android-studio:before {
   content: "\e901";
 }
-.icon-apple:before {
+.bi-apple:before {
   content: "\e902";
 }
-.icon-bash:before {
+.bi-bash:before {
   content: "\e903";
 }
-.icon-c:before {
+.bi-c:before {
   content: "\e904";
 }
-.icon-c-plusplus:before {
+.bi-c-plusplus:before {
   content: "\e905";
 }
-.icon-git:before {
+.bi-git:before {
   content: "\e906";
 }
-.icon-github:before {
+.bi-github:before {
   content: "\e907";
 }
-.icon-java:before {
+.bi-java:before {
   content: "\e908";
 }
-.icon-kotlin:before {
+.bi-kotlin:before {
   content: "\e909";
 }
-.icon-latex:before {
+.bi-latex:before {
   font-size: 1.5em;
   line-height: 0;
   vertical-align: -0.22em;
   content: "\e90a";
 }
-.icon-linux:before {
+.bi-linux:before {
   content: "\e90b";
 }
-.icon-macos:before {
+.bi-macos:before {
   font-size: 1.5em;
   line-height: 0;
   vertical-align: -0.22em;
   content: "\e90c";
 }
-.icon-python:before {
+.bi-python:before {
   content: "\e90d";
 }
-.icon-qiita:before {
+.bi-qiita:before {
   content: "\e90e";
 }
-.icon-tex:before {
+.bi-tex:before {
   font-size: 1.5em;
   line-height: 0;
   vertical-align: -0.22em;
   content: "\e90f";
 }
-.icon-twitter:before {
+.bi-twitter:before {
   content: "\e910";
 }
-.icon-visual-studio-code:before {
+.bi-visual-studio-code:before {
   content: "\e911";
 }
-.icon-windows:before {
+.bi-windows:before {
   content: "\e912";
 }
