@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Butty Blog</title>
+    <link>https://butty256.github.io/</link>
+    <description>Recent content on Butty Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://butty256.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>自己紹介 / About me</title>
+      <link>https://butty256.github.io/aboutme/</link>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://butty256.github.io/aboutme/</guid>
+      <description>普段は何か記事を書いたら Qiita に投稿します。しかし，備忘録や日記は Qiita にあげるのが不適切です。そこで誰も見ないくだらないものを GitHub Pages を利用して投稿することにしました。Markdown で気軽に書くために Hugo を利用ています。
+いっぱい書くぞ～！
+あんた誰？  電気+機械+制御を学ぶ高専生（専攻科） 研究分野は画像処理系 アルバイトで Android アプリの開発 憧れの人 野原しんのすけ（適当）  興味 / スキル 僕は↓のことに興味があります。なので基本これらについての内容の記事が投稿されるでしょう。
+ プログラミング言語:
+ C,  C++,  Kotlin,  Python,  TeX/LaTeX ツール類:
+ Bash,  Git,  GitHub,  Android Studio,  Visual Studio Code OS:
+ Windows,  mscOS,  Linux,  Android  リンク: GitHub, Twitter, Qiita </description>
+    </item>
+    
+    <item>
+      <title>Test post</title>
+      <link>https://butty256.github.io/posts/test-post/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://butty256.github.io/posts/test-post/</guid>
+      <description>テスト</description>
+    </item>
+    
+  </channel>
+</rss>
