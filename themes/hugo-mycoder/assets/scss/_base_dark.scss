@@ -51,7 +51,7 @@
 
   table td,
   table th {
-    border: 0px solid $alt-fg-color-dark;
+    border: 0;
   }
 
   table tr:first-child th {
@@ -61,16 +61,6 @@
 
   table tr:last-child td {
     border-bottom: 2px solid $alt-fg-color-dark;
-  }
-
-  table tr td:first-child,
-  table tr th:first-child {
-    border-left: 0;
-  }
-
-  table tr td:last-child,
-  table tr th:last-child {
-    border-right: 0;
   }
 }
 
