@@ -38,31 +38,34 @@
     <meta name="author" content="Butty256">
     <meta name="description" content="この記事は Qiita に投稿した内容です。
 はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。
-TeX / LaTeX とは TeX（テック/テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
+TeX/LaTeX とは TeX（テック/テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
 LaTeX（ラテック/ラテフ）2はコンピューター科学者の Leslie Lamport によって開発された，TeX に機能を追加し手軽に組版が行えるようになったシステムです。現在では LaTeX を使うことが一般的なので，「TeX」で LaTeX を指すことが多いです。
 TeX，LaTeX の特徴は次のようなことがあげられます。
  Windows，macOS，Linux などの多くのプラットフォームで動作する。 テキストファイルで文書を管理できる。 綺麗な数式を簡単に書ける3。 図や表を挿入した文書を作成できる。 章・節，式，図表の番号，頁番号管理などを自動的に行い，参照できる。  日本語 TeX について 現在，日本語対応している主な TeX エンジンは 3 つあります。
- pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。">
+ pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。
+upLaTeX について 田中 琢爾さんが内部コードを Unicode 化した pLaTeX の拡張版です。これにより次のような pLaTeX の問題が解決されました。">
     <meta name="keywords" content="blog, note">
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LaTeX のすゝめ"/>
 <meta name="twitter:description" content="この記事は Qiita に投稿した内容です。
 はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。
-TeX / LaTeX とは TeX（テック/テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
+TeX/LaTeX とは TeX（テック/テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
 LaTeX（ラテック/ラテフ）2はコンピューター科学者の Leslie Lamport によって開発された，TeX に機能を追加し手軽に組版が行えるようになったシステムです。現在では LaTeX を使うことが一般的なので，「TeX」で LaTeX を指すことが多いです。
 TeX，LaTeX の特徴は次のようなことがあげられます。
  Windows，macOS，Linux などの多くのプラットフォームで動作する。 テキストファイルで文書を管理できる。 綺麗な数式を簡単に書ける3。 図や表を挿入した文書を作成できる。 章・節，式，図表の番号，頁番号管理などを自動的に行い，参照できる。  日本語 TeX について 現在，日本語対応している主な TeX エンジンは 3 つあります。
- pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。"/>
+ pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。
+upLaTeX について 田中 琢爾さんが内部コードを Unicode 化した pLaTeX の拡張版です。これにより次のような pLaTeX の問題が解決されました。"/>
 
     <meta property="og:title" content="LaTeX のすゝめ" />
 <meta property="og:description" content="この記事は Qiita に投稿した内容です。
 はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。
-TeX / LaTeX とは TeX（テック/テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
+TeX/LaTeX とは TeX（テック/テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
 LaTeX（ラテック/ラテフ）2はコンピューター科学者の Leslie Lamport によって開発された，TeX に機能を追加し手軽に組版が行えるようになったシステムです。現在では LaTeX を使うことが一般的なので，「TeX」で LaTeX を指すことが多いです。
 TeX，LaTeX の特徴は次のようなことがあげられます。
  Windows，macOS，Linux などの多くのプラットフォームで動作する。 テキストファイルで文書を管理できる。 綺麗な数式を簡単に書ける3。 図や表を挿入した文書を作成できる。 章・節，式，図表の番号，頁番号管理などを自動的に行い，参照できる。  日本語 TeX について 現在，日本語対応している主な TeX エンジンは 3 つあります。
- pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。" />
+ pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。
+upLaTeX について 田中 琢爾さんが内部コードを Unicode 化した pLaTeX の拡張版です。これにより次のような pLaTeX の問題が解決されました。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://butty256.github.io/posts/latex-susume/" />
 <meta property="article:published_time" content="2021-05-07T00:00:00+00:00" />
@@ -83,7 +86,7 @@ TeX，LaTeX の特徴は次のようなことがあげられます。
     
       
       
-      <link rel="stylesheet" href="https://butty256.github.io/css/coder.min.99fc3b9a46f9dc9d1fe8cb245950ec7e8af6051a17ccc5f0dbc594f1ea26c379.css" integrity="sha256-mfw7mkb53J0f6MskWVDsfor2BRoXzMXw28WU8eomw3k=" crossorigin="anonymous" media="screen" />
+      <link rel="stylesheet" href="https://butty256.github.io/css/coder.min.880487f00285d6da8d3dc21f07746e3706a1f6649b345b035342a248ac4be7e7.css" integrity="sha256-iASH8AKF1tqNPcIfB3RuNwah9mSbNFsDU0KiSKxL5&#43;c=" crossorigin="anonymous" media="screen" />
     
 
     
@@ -92,7 +95,7 @@ TeX，LaTeX の特徴は次のようなことがあげられます。
       
         
         
-        <link rel="stylesheet" href="https://butty256.github.io/css/coder-dark.min.ee7ae12f203a2e5dab43ac55c6e923b2f169f8efcae2e23e043cbcf7d678b25a.css" integrity="sha256-7nrhLyA6Ll2rQ6xVxukjsvFp&#43;O/K4uI&#43;BDy899Z4slo=" crossorigin="anonymous" media="screen" />
+        <link rel="stylesheet" href="https://butty256.github.io/css/coder-dark.min.ba024e0fdda56ecbbafac72ace3ae9f598670f7869452a83ea127503f818966c.css" integrity="sha256-ugJOD92lbsu6&#43;scqzjrp9ZhnD3hpRSqD6hJ1A/gYlmw=" crossorigin="anonymous" media="screen" />
       
     
 
@@ -202,7 +205,7 @@ TeX，LaTeX の特徴は次のようなことがあげられます。
         <p>この記事は <a href="https://qiita.com/Butty256/items/9774df0899728feb3ab0">Qiita</a> に投稿した内容です。</p>
 <h1 id="はじめに">はじめに</h1>
 <p>本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや<strong>初心者を対象</strong>としています。中級者や上級者には物足りないと思います。</p>
-<h1 id="tex--latex-とは">TeX / LaTeX とは</h1>
+<h1 id="texlatex-とは">TeX/LaTeX とは</h1>
 <p>TeX（テック/テフ）<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発した<strong>フリーの組版システム</strong>です。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。<strong>執筆に集中でき</strong>，様々なプラットフォーム上で<strong>高品質なの文書を出力する</strong>ことができます。</p>
 <p>LaTeX（ラテック/ラテフ）<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>はコンピューター科学者の Leslie Lamport によって開発された，TeX に機能を追加し手軽に組版が行えるようになったシステムです。現在では LaTeX を使うことが一般的なので，「TeX」で LaTeX を指すことが多いです。</p>
 <p>TeX，LaTeX の特徴は次のようなことがあげられます。</p>
