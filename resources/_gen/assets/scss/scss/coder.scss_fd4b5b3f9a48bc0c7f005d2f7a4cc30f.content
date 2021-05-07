@@ -2878,7 +2878,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   src: url("../fonts/b-icons.eot?4df94s");
   src: url("../fonts/b-icons.eot?4df94s#iefix") format("embedded-opentype"), url("../fonts/b-icons.ttf?4df94s") format("truetype"), url("../fonts/b-icons.woff?4df94s") format("woff"), url("../fonts/b-icons.svg?4df94s#b-icons") format("svg");
   font-weight: normal;
-  font-style: nomal;
+  font-style: normal;
   font-display: block; }
 
 .bi {
