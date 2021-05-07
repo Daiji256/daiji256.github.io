@@ -1,8 +1,12 @@
 @font-face {
   font-family: 'b-icons';
-  src: url('../fonts/b-icons.woff');
+  src:  url('../fonts/b-icons.eot?4df94s');
+  src:  url('../fonts/b-icons.eot?4df94s#iefix') format('embedded-opentype'),
+    url('../fonts/b-icons.ttf?4df94s') format('truetype'),
+    url('../fonts/b-icons.woff?4df94s') format('woff'),
+    url('../fonts/b-icons.svg?4df94s#b-icons') format('svg');
   font-weight: normal;
-  font-style: italic;
+  font-style: nomal;
   font-display: block;
 }
 .bi {
@@ -44,18 +48,16 @@
   content: "\e909";
 }
 .bi-latex:before {
-  font-size: 1.5em;
   line-height: 0;
-  vertical-align: -0.22em;
+  vertical-align: -0.15em;
   content: "\e90a";
 }
 .bi-linux:before {
   content: "\e90b";
 }
 .bi-macos:before {
-  font-size: 1.5em;
   line-height: 0;
-  vertical-align: -0.22em;
+  vertical-align: -0.15em;
   content: "\e90c";
 }
 .bi-python:before {
@@ -65,9 +67,8 @@
   content: "\e90e";
 }
 .bi-tex:before {
-  font-size: 1.5em;
   line-height: 0;
-  vertical-align: -0.22em;
+  vertical-align: -0.15em;
   content: "\e90f";
 }
 .bi-twitter:before {

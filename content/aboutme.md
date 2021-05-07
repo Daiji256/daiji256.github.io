@@ -32,7 +32,7 @@ date: 2020-05-05
 {{< icon/Visual-Studio-Code >}} Visual Studio Code
 - OS:  
 {{< icon/Windows >}}            Windows,
-{{< icon/Apple >}}              mscOS,
+{{< icon/macOS >}}              mscOS,
 {{< icon/Linux >}}              Linux,
 {{< icon/Android >}}            Android
 
