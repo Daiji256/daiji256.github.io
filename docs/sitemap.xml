@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://butty256.github.io/posts/latex-susume/</loc>
+    <lastmod>2021-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butty256.github.io/posts/</loc>
+    <lastmod>2021-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butty256.github.io/tags/qiita/</loc>
+    <lastmod>2021-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butty256.github.io/tags/</loc>
+    <lastmod>2021-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butty256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/</loc>
+    <lastmod>2021-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://butty256.github.io/</loc>
     <lastmod>2020-05-05T00:00:00+00:00</lastmod>
   </url>
@@ -10,16 +35,6 @@
   <url>
     <loc>https://butty256.github.io/aboutme/</loc>
     <lastmod>2020-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://butty256.github.io/posts/</loc>
-    <lastmod>2020-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://butty256.github.io/posts/test-post/</loc>
-    <lastmod>2020-05-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -35,7 +50,7 @@
   </url>
   
   <url>
-    <loc>https://butty256.github.io/tags/</loc>
+    <loc>https://butty256.github.io/categories/tex/latex/</loc>
   </url>
   
 </urlset>
