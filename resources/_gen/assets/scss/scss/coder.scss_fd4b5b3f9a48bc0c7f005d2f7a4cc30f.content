@@ -2875,8 +2875,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 @font-face {
   font-family: 'b-icons';
-  src: url("../fonts/b-icons.eot");
-  src: url("../fonts/b-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/b-icons.woff") format("woff"), url("../fonts/b-icons.ttf") format("truetype"), url("../fonts/b-icons.svg#b-icons") format("svg");
+  src: url("../fonts/b-icons.woff");
   font-weight: normal;
   font-style: italic;
   font-display: block; }
