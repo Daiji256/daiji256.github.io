@@ -187,25 +187,16 @@ table {
 
 table td,
 table th {
-  border: 2px solid $alt-fg-color;
+  border: 0;
 }
 
 table tr:first-child th {
-  border-top: 0;
+  border-top: 3px solid $alt-fg-color;
+  border-bottom: 2px solid $alt-fg-color;
 }
 
 table tr:last-child td {
-  border-bottom: 0;
-}
-
-table tr td:first-child,
-table tr th:first-child {
-  border-left: 0;
-}
-
-table tr td:last-child,
-table tr th:last-child {
-  border-right: 0;
+  border-bottom: 3px solid $alt-fg-color;
 }
 
 img {
