@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'B icons';
+  font-family: 'b-icons';
   src: url('../fonts/b-icons.eot');
   src: url('../fonts/b-icons.eot') format('embedded-opentype'),
     url('../fonts/b-icons.woff') format('woff'),
@@ -11,7 +11,7 @@
 }
 .bi {
   display: inline-block;
-  font: normal normal normal 14px/1 'B icons';
+  font: normal normal normal 14px/1 b-icons;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
