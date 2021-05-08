@@ -129,7 +129,7 @@
 
       .title {
         font-size: 1.8rem;
-        flex: 5;
+        flex: 4;
         color: $fg-color;
         font-family: $font-family;
         font-weight: 700;
@@ -152,13 +152,9 @@
 }
 
 .centered {
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
 
   .about {
     display: flex;
-    //text-align: center;
 
     h1 {
       margin-top: 2.5rem;
@@ -276,7 +272,7 @@
 
         .title {
           font-size: 1.8rem;
-          flex: 5;
+          flex: 4;
           color: $fg-color;
           font-family: $font-family;
           font-weight: 700;
