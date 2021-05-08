@@ -3256,7 +3256,7 @@ img.emoji {
           text-align: left; } }
     .list ul li .title {
       font-size: 1.8rem;
-      flex: 2;
+      flex: 5;
       color: #333333;
       font-family: "Roboto", "Noto Sans JP", sans-serif;
       font-weight: 700; }
@@ -3350,7 +3350,7 @@ img.emoji {
           text-align: left; } }
     .centered .list ul li .title {
       font-size: 1.8rem;
-      flex: 2;
+      flex: 5;
       color: #333333;
       font-family: "Roboto", "Noto Sans JP", sans-serif;
       font-weight: 700; }
