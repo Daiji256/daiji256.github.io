@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TeX-LaTeX on Butty Blog</title>
+    <link>https://butty256.github.io/categories/tex-latex/</link>
+    <description>Recent content in TeX-LaTeX on Butty Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://butty256.github.io/categories/tex-latex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。</title>
+      <link>https://butty256.github.io/posts/tex-latex/tex-tikx-heatran/</link>
+      <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://butty256.github.io/posts/tex-latex/tex-tikx-heatran/</guid>
+      <description>※この記事は Qiita に投稿していた内容です。
+はじめに 先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15 年間もヒードランは壁や天井を這い回っていました。たまには他の場所も這い回りたいことでしょう。ここではヒードランに TeX と TikZ1 を這い回ってもらいます。
+基礎知識 前提となる基礎知識は以下のリンクを参考にしてください。
+ TeX (TeX Wiki) TikZ/PGF (TeX Wiki) ヒードラン (ピクシブ)  TeX を這い回る まずは TeX を這い回ってもらいます。ただヒードランの画像を \includegraphics によって貼り付けるだけです。
+\includegraphics[scale=4]{Heatran.png}   TikZ を這い回る TeX を這い回るだけでは面白くありません。なので TikZ でドット絵を描いて這い回ってもらいます。ドット絵は大量の四角で描きます。枠無しで色を塗ると環境によっては隙間が見えてしまいます。なので，太さ thin の枠を設定しています。$Y$ 軸は下が正になっているので，マイナスにしています。
+\begin{tikzpicture} \draw [thin,fill,color={rgb,255:red,R;green,G;blue,B}] (X,-Y) rectangle (X+1,-Y-1); \end{tikzpicture} 手作業で全ドットを描いたら大変なので，Python+OpenCV にやってもらいましょう。背景のドットは無視します。後は全画素に応じてカラーコードの設定と座標の設定をしています。当たり前ですけど，見た目は変わりません。
+img = cv2.imread(sys.argv[1], cv2.IMREAD_UNCHANGED) print(&amp;#34;\\begin{tikzpicture}&amp;#34;) for i in range(img.shape[1]): for j in range(img.shape[0]): if img[i,j,3] == 0: continue # end print( &amp;#39;\t\\draw [thin,fill,color={{rgb,255:red,{};green,{};blue,{}}}] ({},{}) rectangle ({},{});&amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>LaTeX のすゝめ</title>
+      <link>https://butty256.github.io/posts/tex-latex/latex-susume/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://butty256.github.io/posts/tex-latex/latex-susume/</guid>
+      <description>この記事は Qiita に投稿した内容です。
+はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。
+TeX / LaTeX とは TeX（テック / テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
+LaTeX（ラテック / ラテフ）2はコンピューター科学者の Leslie Lamport によって開発された，TeX に機能を追加し手軽に組版が行えるようになったシステムです。現在では LaTeX を使うことが一般的なので，「TeX」で LaTeX を指すことが多いです。
+TeX，LaTeX の特徴は次のようなことがあげられます。
+ Windows，macOS，Linux などの多くのプラットフォームで動作する。 テキストファイルで文書を管理できる。 綺麗な数式を簡単に書ける3。 図や表を挿入した文書を作成できる。 章・節，式，図表の番号，頁番号管理などを自動的に行い，参照できる。  日本語 TeX について 現在，日本語対応している主な TeX エンジンは 3 つあります。
+ pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。</description>
+    </item>
+    
+  </channel>
+</rss>
