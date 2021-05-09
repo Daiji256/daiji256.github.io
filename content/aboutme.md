@@ -19,21 +19,10 @@ date: 2020-05-05
 僕は↓のことに興味があります。なので基本これらについての内容の記事が投稿されるでしょう。
 
 - プログラミング言語:  
-{{< icon/C >}}                  C,
-{{< icon/C-plusplus >}}         C++,
-{{< icon/Kotlin >}}             Kotlin,
-{{< icon/Python >}}             Python,
-{{< icon/TeX >}}                TeX/LaTeX
+{{< icon/C >}} C，{{< icon/C-plusplus >}} C++，{{< icon/Kotlin >}} Kotlin，{{< icon/Python >}} Python，{{< icon/TeX >}} TeX/LaTeX
 - ツール類:  
-{{< icon/Bash >}}               Bash,
-{{< icon/Git >}}                Git,
-{{< icon/GitHub >}}             GitHub,
-{{< icon/Android-Studio >}}     Android Studio,
-{{< icon/Visual-Studio-Code >}} Visual Studio Code
+{{< icon/Bash >}} Bash，{{< icon/Git >}} Git，{{< icon/GitHub >}} GitHub，{{< icon/Android-Studio >}} Android Studio，{{< icon/Visual-Studio-Code >}} Visual Studio Code
 - OS:  
-{{< icon/Windows >}}            Windows,
-{{< icon/macOS >}}              mscOS,
-{{< icon/Linux >}}              Linux,
-{{< icon/Android >}}            Android
+{{< icon/Windows >}} Windows，{{< icon/macOS >}} mscOS，{{< icon/Linux >}} Linux，{{< icon/Android >}} Android
 
 ### リンク: [GitHub](https://github.com/Butty256/), [Twitter](https://twitter.com/butty256/), [Qiita](https://qiita.com/Butty256/)
