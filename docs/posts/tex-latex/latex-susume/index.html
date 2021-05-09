@@ -240,7 +240,7 @@ TeX，LaTeX の特徴は次のようなことがあげられます。
 </ol>
 <p>この手順により執筆した TeX ソースファイルから PDF の文書ファイルを出力することができます。次に作成手順について例を用いて紹介します。</p>
 <h2 id="原稿ファイルの執筆tex-ファイルの作成">原稿ファイルの執筆（TeX ファイルの作成）</h2>
-<p>テキストエディタを用いて下に示すソースファイル（<code>sample.tex</code>）を作成します。ソースコードの具体的な説明は <a href="#TeX%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%8C%E3%81%84%E3%82%8B%E3%81%AE%E5%9F%BA%E6%9C%AC%E6%A7%8B%E6%88%90">TeX ソースがいるの基本構成</a>を参照してください。</p>
+<p>テキストエディタを用いて下に示すソースファイル（<code>sample.tex</code>）を作成します。ソースコードの具体的な説明は <a href="#tex-%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC%E6%A7%8B%E6%88%90">TeX ソースの基本構成</a>を参照してください。</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX:sample.tex" data-lang="TeX:sample.tex"><span style="color:#6ab825;font-weight:bold">\RequirePackage</span><span style="color:#24909d">{</span>plautopatch<span style="color:#24909d">}</span>
 <span style="color:#6ab825;font-weight:bold">\documentclass</span><span style="color:#bbb">[uplatex,dvipdfmx]</span><span style="color:#24909d">{</span>jsarticle<span style="color:#24909d">}</span>
 
@@ -269,7 +269,7 @@ Transcript written on sample.log.
 </code></pre></div><h2 id="pdf-に変換">PDF に変換</h2>
 <p>DVI ファイルを PDF の文書ファイルに変換するには次のコマンドで行えます<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>。<code>sample.pdf</code> が生成されると思います。</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">dvipdfmx sample
-</code></pre></div><h1 id="tex-ソースがいるの基本構成">TeX ソースがいるの基本構成</h1>
+</code></pre></div><h1 id="tex-ソースの基本構成">TeX ソースの基本構成</h1>
 <p>upLaTeX のソースファイルは次の基本構成となります。</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX"><span style="color:#6ab825;font-weight:bold">\RequirePackage</span><span style="color:#24909d">{</span>plautopatch<span style="color:#24909d">}</span>
 <span style="color:#6ab825;font-weight:bold">\documentclass</span><span style="color:#bbb">[uplatex,dvipdfmx]</span><span style="color:#24909d">{</span>jsarticle<span style="color:#24909d">}</span>
