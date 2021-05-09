@@ -161,16 +161,16 @@
       font-size: $HUGE;
 
       @media only screen and (max-width: 768px) {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         margin-bottom: 0;
         font-size: $huge;
       }
     }
 
     h2 {
-      margin-top: 1.5rem;
+      margin-top: 1.0rem;
       margin-bottom: -1rem;
-      font-size: $LARGE;
+      font-size: $huge;
 
       @media only screen and (max-width: 768px) {
         margin-top: 0;
@@ -195,8 +195,7 @@
         a {
           color: $fg-color;
           text-transform: uppercase;
-          margin-left: 1rem;
-          margin-right: 1rem;
+          margin-right: 1.5rem;
           font-size: $small;
 
           &:hover,
