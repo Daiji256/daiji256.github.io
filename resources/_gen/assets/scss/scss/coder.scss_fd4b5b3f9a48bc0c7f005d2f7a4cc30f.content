@@ -2965,12 +2965,12 @@ body {
   color: #333333;
   background-color: #ffffff;
   font-family: "Roboto", "Noto Sans JP", sans-serif;
-  font-size: 1.8em;
-  font-weight: 400;
-  line-height: 1.8em; }
+  font-size: 1.6em;
+  line-height: 1.6em;
+  font-weight: 400; }
   @media only screen and (max-width: 768px) {
     body {
-      font-size: 1.6em;
+      font-size: 1.5em;
       line-height: 1.6em; } }
 a {
   font-weight: 500;
@@ -3023,43 +3023,33 @@ h6 {
 
 h1 {
   font-size: 3.2rem;
-  line-height: 3.6rem; }
+  line-height: 4rem; }
   @media only screen and (max-width: 768px) {
     h1 {
-      font-size: 3rem;
-      line-height: 3.4rem; } }
+      font-size: 2.6rem;
+      line-height: 3.2rem; } }
 h2 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   line-height: 3.2rem; }
   @media only screen and (max-width: 768px) {
     h2 {
-      font-size: 2.6rem;
-      line-height: 3rem; } }
+      font-size: 2.4rem;
+      line-height: 2.6rem; } }
 h3 {
   font-size: 2.4rem;
-  line-height: 2.8rem; }
-  @media only screen and (max-width: 768px) {
-    h3 {
-      font-size: 2.2rem;
-      line-height: 2.6rem; } }
-h4 {
-  font-size: 2.2rem;
   line-height: 2.6rem; }
   @media only screen and (max-width: 768px) {
-    h4 {
+    h3 {
       font-size: 2rem;
       line-height: 2.4rem; } }
-h5 {
-  font-size: 2rem;
-  line-height: 2.4rem; }
-  @media only screen and (max-width: 768px) {
-    h5 {
-      font-size: 1.8rem;
-      line-height: 2.2rem; } }
+h4,
+h5,
 h6 {
-  font-size: 1.8rem;
-  line-height: 2.2rem; }
+  font-size: 1.6rem;
+  line-height: 2rem; }
   @media only screen and (max-width: 768px) {
+    h4,
+    h5,
     h6 {
       font-size: 1.6rem;
       line-height: 2rem; } }
@@ -3076,11 +3066,15 @@ strong {
 pre {
   display: block;
   font-family: "Roboto Mono", "M PLUS 1p", monospace;
-  font-size: 1.6rem;
-  font-weight: 400;
+  font-size: 1.5rem;
   line-height: 2.6rem;
+  font-weight: 400;
   overflow-x: auto;
   margin: 0; }
+  @media only screen and (max-width: 768px) {
+    pre {
+      font-size: 1.4rem;
+      line-height: 2rem; } }
   pre code {
     display: inline-block;
     background-color: inherit;
@@ -3088,14 +3082,17 @@ pre {
 
 code {
   font-family: "Roboto Mono", "M PLUS 1p", monospace;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  line-height: 2.6rem;
   font-weight: 400;
-  line-height: 2.0rem;
   background-color: #cccccc;
   color: #333333;
   border-radius: 0.6rem;
   padding: 0.3rem 0.6rem; }
-
+  @media only screen and (max-width: 768px) {
+    code {
+      font-size: 1.4rem;
+      line-height: 2rem; } }
 blockquote {
   border-left: 2px solid #cccccc;
   padding-left: 2rem;
@@ -3185,13 +3182,13 @@ img.emoji {
     margin-top: 6.4rem;
     margin-bottom: 3.2rem; }
     .content article header h1 {
-      font-size: 4.2rem;
-      line-height: 4.6rem;
+      font-size: 4rem;
+      line-height: 4.8rem;
       margin: 0; }
       @media only screen and (max-width: 768px) {
         .content article header h1 {
-          font-size: 4rem;
-          line-height: 4.4rem; } }
+          font-size: 3.2rem;
+          line-height: 4rem; } }
   .content article footer {
     margin-top: 4rem; }
     .content article footer .see-also {
@@ -3218,7 +3215,7 @@ img.emoji {
   .content figcaption p {
     text-align: center;
     font-style: italic;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin: 0; }
 
 .avatar img {
@@ -3230,17 +3227,17 @@ img.emoji {
       width: 12rem; } }
 .list h1 {
   text-transform: capitalize;
-  font-size: 3rem;
+  font-size: 3.2rem;
   margin-bottom: -1rem; }
   @media only screen and (max-width: 768px) {
     .list h1 {
-      font-size: 2.5rem; } }
+      font-size: 2.6rem; } }
 .list ul {
   margin: 3.2rem 0 3.2rem 0;
   list-style: none;
   padding: 0; }
   .list ul li {
-    font-size: 1.8rem; }
+    font-size: 1.6rem; }
     @media only screen and (max-width: 768px) {
       .list ul li {
         margin: 1.6rem 0 1.6rem 0; } }
@@ -3255,11 +3252,10 @@ img.emoji {
           display: block;
           text-align: left; } }
     .list ul li .title {
-      font-size: 1.8rem;
       flex: 4;
       color: #333333;
       font-family: "Roboto", "Noto Sans JP", sans-serif;
-      font-weight: 700; }
+      font-weight: 600; }
       .list ul li .title:hover, .list ul li .title:focus {
         color: #3465a4; }
 
@@ -3272,12 +3268,12 @@ img.emoji {
   .centered .about h1 {
     margin-top: 2.5rem;
     margin-bottom: 0.5rem;
-    font-size: 5rem; }
+    font-size: 4.8rem; }
     @media only screen and (max-width: 768px) {
       .centered .about h1 {
         margin-top: 1rem;
         margin-bottom: 0;
-        font-size: 3rem; } }
+        font-size: 3.2rem; } }
   .centered .about h2 {
     margin-top: 1.5rem;
     margin-bottom: -1rem;
@@ -3302,14 +3298,14 @@ img.emoji {
         text-transform: uppercase;
         margin-left: 1rem;
         margin-right: 1rem;
-        font-size: 1.6rem; }
+        font-size: 1.5rem; }
         .centered .about ul li a:hover, .centered .about ul li a:focus {
           color: #3465a4; }
         @media only screen and (max-width: 768px) {
           .centered .about ul li a {
             font-size: 1.4rem; } }
         .centered .about ul li a i {
-          font-size: 3.8rem; }
+          font-size: 4rem; }
           @media only screen and (max-width: 768px) {
             .centered .about ul li a i {
               font-size: 3.2rem; } }
@@ -3318,7 +3314,7 @@ img.emoji {
   .centered .error h1 {
     margin-top: 2rem;
     margin-bottom: 0.5rem;
-    font-size: 4.6rem; }
+    font-size: 4rem; }
     @media only screen and (max-width: 768px) {
       .centered .error h1 {
         font-size: 3.2rem; } }
@@ -3328,13 +3324,20 @@ img.emoji {
     font-size: 3.2rem; }
     @media only screen and (max-width: 768px) {
       .centered .error h2 {
-        font-size: 2.8rem; } }
+        font-size: 2.6rem; } }
+.centered h1 {
+  text-transform: capitalize;
+  font-size: 3.2rem;
+  margin-bottom: -1rem; }
+  @media only screen and (max-width: 768px) {
+    .centered h1 {
+      font-size: 2.6rem; } }
 .centered .list ul {
   margin: 3.2rem 0 3.2rem 0;
   list-style: none;
   padding: 0; }
   .centered .list ul li {
-    font-size: 1.8rem; }
+    font-size: 1.6rem; }
     @media only screen and (max-width: 768px) {
       .centered .list ul li {
         margin: 1.6rem 0 1.6rem 0; } }
@@ -3349,11 +3352,10 @@ img.emoji {
           display: block;
           text-align: left; } }
     .centered .list ul li .title {
-      font-size: 1.8rem;
       flex: 4;
       color: #333333;
       font-family: "Roboto", "Noto Sans JP", sans-serif;
-      font-weight: 700; }
+      font-weight: 600; }
       .centered .list ul li .title:hover, .centered .list ul li .title:focus {
         color: #3465a4; }
 
@@ -3437,7 +3439,7 @@ img.emoji {
   .navigation a,
   .navigation span {
     display: inline;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-family: "Roboto", "Noto Sans JP", sans-serif;
     font-weight: 600;
     line-height: 6rem;

@@ -13,12 +13,12 @@ body {
   color: $fg-color;
   background-color: $bg-color;
   font-family: $font-family;
-  font-size: 1.8em;
+  font-size: 1.6em;
+  line-height: 1.6em;
   font-weight: 400;
-  line-height: 1.8em;
 
   @media only screen and (max-width: 768px) {
-    font-size: 1.6em;
+    font-size: 1.5em;
     line-height: 1.6em;
   }
 }
@@ -70,62 +70,44 @@ h6 {
 }
 
 h1 {
-  font-size: 3.2rem;
-  line-height: 3.6rem;
+  font-size: $huge;
+  line-height: $Huge;
 
   @media only screen and (max-width: 768px) {
-    font-size: 3rem;
-    line-height: 3.4rem;
+    font-size: $LARGE;
+    line-height: $huge;
   }
 }
 
 h2 {
-  font-size: 2.8rem;
-  line-height: 3.2rem;
+  font-size: $LARGE;
+  line-height: $huge;
 
   @media only screen and (max-width: 768px) {
-    font-size: 2.6rem;
-    line-height: 3rem;
+    font-size: $Large;
+    line-height: $LARGE;
   }
 }
 
 h3 {
-  font-size: 2.4rem;
-  line-height: 2.8rem;
+  font-size: $Large;
+  line-height: $LARGE;
 
   @media only screen and (max-width: 768px) {
-    font-size: 2.2rem;
-    line-height: 2.6rem;
+    font-size: $large;
+    line-height: $Large;
   }
 }
 
-h4 {
-  font-size: 2.2rem;
-  line-height: 2.6rem;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 2rem;
-    line-height: 2.4rem;
-  }
-}
-
-h5 {
-  font-size: 2rem;
-  line-height: 2.4rem;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 1.8rem;
-    line-height: 2.2rem;
-  }
-}
-
+h4,
+h5,
 h6 {
-  font-size: 1.8rem;
-  line-height: 2.2rem;
+  font-size: $normalsize;
+  line-height: $large;
 
   @media only screen and (max-width: 768px) {
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: $normalsize;
+    line-height: $large;
   }
 }
 
@@ -144,11 +126,16 @@ strong {
 pre {
   display: block;
   font-family: $code-font-family;
-  font-size: 1.6rem;
+  font-size: $small;
+  line-height: $LARGE;
   font-weight: 400;
-  line-height: 2.6rem;
   overflow-x: auto;
   margin: 0;
+
+  @media only screen and (max-width: 768px) {
+    font-size: $footnotesize;
+    line-height: $large;
+  }
 
   code {
     display: inline-block;
@@ -159,13 +146,18 @@ pre {
 
 code {
   font-family: $code-font-family;
-  font-size: 1.4rem;
+  font-size: $small;
+  line-height: $LARGE;
   font-weight: 400;
-  line-height: 2.0rem;
   background-color: $alt-bg-color;
   color: $fg-color;
   border-radius: 0.6rem;
   padding: 0.3rem 0.6rem;
+
+  @media only screen and (max-width: 768px) {
+    font-size: $footnotesize;
+    line-height: $large;
+  }
 }
 
 blockquote {
