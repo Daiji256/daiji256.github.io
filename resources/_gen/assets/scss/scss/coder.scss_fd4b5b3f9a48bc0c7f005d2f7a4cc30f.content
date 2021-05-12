@@ -3112,6 +3112,7 @@ table {
 
 table td,
 table th {
+  font-weight: 400;
   border: 0; }
 
 table tr:first-child th {
@@ -3255,7 +3256,7 @@ img.emoji {
       flex: 4;
       color: #333333;
       font-family: "Roboto", "Noto Sans JP", sans-serif;
-      font-weight: 700; }
+      font-weight: 400; }
       .list ul li .title:hover, .list ul li .title:focus {
         color: #3465a4; }
 
@@ -3354,7 +3355,7 @@ img.emoji {
       flex: 4;
       color: #333333;
       font-family: "Roboto", "Noto Sans JP", sans-serif;
-      font-weight: 700; }
+      font-weight: 400; }
       .centered .list ul li .title:hover, .centered .list ul li .title:focus {
         color: #3465a4; }
 
