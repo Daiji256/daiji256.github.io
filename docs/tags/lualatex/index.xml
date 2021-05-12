@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LuaLaTeX on Butty Blog</title>
+    <link>https://butty256.github.io/tags/lualatex/</link>
+    <description>Recent content in LuaLaTeX on Butty Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://butty256.github.io/tags/lualatex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）</title>
+      <link>https://butty256.github.io/posts/tex-latex/tex-word/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://butty256.github.io/posts/tex-latex/tex-word/</guid>
+      <description>この記事は Qiita に投稿した内容です。
+はじめに 課題や予稿，論文等ではフォント等のフォーマット指定がよくあります。MS Word のテンプレートしか無かったり，MS Mincho などの古いフォントを指定されるとイライラします。そこで LaTeX で書きたいと思います。ここではエンジンに LuaLaTeX を使用します。LuaLaTeX は PDF を直接出力することからフォントの埋め込みが容易で新しいイケイケな LaTeX だからです。
+ドキュメントクラス ドキュメントクラスには jlreq を利用します。jlreq は日本語組版処理の要件に準拠した新しいドキュメントクラスで，日本に浸透しつつあります。オプションの fontsize=10.5bp はデフォルトのフォントサイズを $\mathrm{10.5\,bp}$ とすることを示しています。jlreq では英・和のフォント比がデフォルトで $1$ なので，両方のフォントサイズが $\mathrm{10.5\,bp}$ になります。MS Word では $1\,\mathrm{pt}=1/72\,\mathrm{inch}$ ですが，TeX では $1\,\mathrm{pt}=1/72.27\,\mathrm{inch}$ と定義されています。TeX には $1\,\mathrm{bp}=1/72\,\mathrm{inch}$ となる単位が存在します。このことから $\mathrm{pt}$ の代わりに $\mathrm{bp}$ を使用しています。
+\documentclass[fontsize=10.5bp]{jlreq} フォントの変更 Times New Roman や MS Mincho などを指定されたことを想定して説明します。luatexja-fontspec を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。FakeBold=2，FakeSlant=0.33に設定したとき MS Word と同様の結果になりました。</description>
+    </item>
+    
+  </channel>
+</rss>
