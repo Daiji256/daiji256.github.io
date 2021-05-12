@@ -2,7 +2,7 @@
 title: "LaTeX のすゝめ"
 date: 2021-05-07
 categories: [TeX-LaTeX]
-tags: [Qiita,まとめ]
+tags: [Qiita,まとめ,upLaTeX]
 katex: true
 ---
 
