@@ -30,7 +30,7 @@ katex: true
 \includegraphics[scale=4]{Heatran.png}
 ```
 
-{{< figure src="../images/heatran-1.png" width="320" >}}
+{{< figure src="../../images/tex-tikz-heatran/heatran-1.png" width="320" >}}
 
 # TikZ を這い回る
 
@@ -63,7 +63,7 @@ for i in range(img.shape[1]):
 print("\\end{tikzpicture}")
 ```
 
-{{< figure src="../images/heatran-2.png" width="320" >}}
+{{< figure src="../../images/tex-tikz-heatran/heatran-2.png" width="320" >}}
 
 # まとめ
 
