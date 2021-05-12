@@ -2990,7 +2990,7 @@ h4,
 h5,
 h6 {
   font-family: "Roboto", "Noto Sans JP", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   color: #333333;
   margin: 4rem 0 2.5rem 0; }
   h1:hover .heading-link,
@@ -3255,7 +3255,7 @@ img.emoji {
       flex: 4;
       color: #333333;
       font-family: "Roboto", "Noto Sans JP", sans-serif;
-      font-weight: 500; }
+      font-weight: 700; }
       .list ul li .title:hover, .list ul li .title:focus {
         color: #3465a4; }
 
@@ -3354,7 +3354,7 @@ img.emoji {
       flex: 4;
       color: #333333;
       font-family: "Roboto", "Noto Sans JP", sans-serif;
-      font-weight: 500; }
+      font-weight: 700; }
       .centered .list ul li .title:hover, .centered .list ul li .title:focus {
         color: #3465a4; }
 
@@ -3440,7 +3440,7 @@ img.emoji {
     display: inline;
     font-size: 1.6rem;
     font-family: "Roboto", "Noto Sans JP", sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 6rem;
     color: #333333; }
   .navigation a:hover, .navigation a:focus {
