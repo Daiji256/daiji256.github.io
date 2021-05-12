@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="ja">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p">
+
+    
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+    
+
+    <meta name="author" content="Butty256">
+    <meta name="description" content="この記事は Qiita に投稿した内容です。
+はじめに 本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います。アルゴリズムの詳しい内容は下の参考文献に飛んでください。
+アルゴリズム Hamming weight で紹介されている 5 つの手法の演算回数について簡単にまとめます。A は有名なアルゴリズムをそのまま実装した状態です。Bと C は A の高速化である派生です。D は bit が立っている（1 になっている）数に比例して演算量が増えます。E は力技で，16bit すべての数に対して立ってる bit の数をメモしておき，64bit を 4 分割してその合計として求めています。メモリを多く使用し，64bit のように bit 数が多い場合はあまり高速ではありません。
+   手法 算術 乗算 比較 / 分岐 メモリ読み込み 特徴     A 24 0 0 0 単純な実装   B 17 0 0 0 乗算が遅い環境で優秀   C 12 1 0 0 乗算が速い環境で優秀   D 3n 0 1n 0 n は 1 になっている数，n が小さいと高速   E 9 0 0 4 16bit ごとに分けてメモリから読み取る    実験 実験環境・ソースコード 実験で使用したソースコードは GitHub にあげておきます。実験環境は下のとおりです。最適化については GitHub にあげている Makefile を見てください。">
+    <meta name="keywords" content="blog, note">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="bit を高速に数える 手法の比較"/>
+<meta name="twitter:description" content="この記事は Qiita に投稿した内容です。
+はじめに 本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います。アルゴリズムの詳しい内容は下の参考文献に飛んでください。
+アルゴリズム Hamming weight で紹介されている 5 つの手法の演算回数について簡単にまとめます。A は有名なアルゴリズムをそのまま実装した状態です。Bと C は A の高速化である派生です。D は bit が立っている（1 になっている）数に比例して演算量が増えます。E は力技で，16bit すべての数に対して立ってる bit の数をメモしておき，64bit を 4 分割してその合計として求めています。メモリを多く使用し，64bit のように bit 数が多い場合はあまり高速ではありません。
+   手法 算術 乗算 比較 / 分岐 メモリ読み込み 特徴     A 24 0 0 0 単純な実装   B 17 0 0 0 乗算が遅い環境で優秀   C 12 1 0 0 乗算が速い環境で優秀   D 3n 0 1n 0 n は 1 になっている数，n が小さいと高速   E 9 0 0 4 16bit ごとに分けてメモリから読み取る    実験 実験環境・ソースコード 実験で使用したソースコードは GitHub にあげておきます。実験環境は下のとおりです。最適化については GitHub にあげている Makefile を見てください。"/>
+
+    <meta property="og:title" content="bit を高速に数える 手法の比較" />
+<meta property="og:description" content="この記事は Qiita に投稿した内容です。
+はじめに 本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います。アルゴリズムの詳しい内容は下の参考文献に飛んでください。
+アルゴリズム Hamming weight で紹介されている 5 つの手法の演算回数について簡単にまとめます。A は有名なアルゴリズムをそのまま実装した状態です。Bと C は A の高速化である派生です。D は bit が立っている（1 になっている）数に比例して演算量が増えます。E は力技で，16bit すべての数に対して立ってる bit の数をメモしておき，64bit を 4 分割してその合計として求めています。メモリを多く使用し，64bit のように bit 数が多い場合はあまり高速ではありません。
+   手法 算術 乗算 比較 / 分岐 メモリ読み込み 特徴     A 24 0 0 0 単純な実装   B 17 0 0 0 乗算が遅い環境で優秀   C 12 1 0 0 乗算が速い環境で優秀   D 3n 0 1n 0 n は 1 になっている数，n が小さいと高速   E 9 0 0 4 16bit ごとに分けてメモリから読み取る    実験 実験環境・ソースコード 実験で使用したソースコードは GitHub にあげておきます。実験環境は下のとおりです。最適化については GitHub にあげている Makefile を見てください。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://butty256.github.io/posts/c/popcnt/" />
+<meta property="article:published_time" content="2021-05-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-12T00:00:00+00:00" />
+
+
+    <title>
+  bit を高速に数える 手法の比較 · Butty Blog
+</title>
+
+    
+      <link rel="canonical" href="https://butty256.github.io/posts/c/popcnt/">
+    
+
+    <link rel="preload" href="https://butty256.github.io/fonts/forkawesome-webfont.woff2?v=1.1.7" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://butty256.github.io/css/coder.min.fe1a5a8859d7ad055c5f3c1fbab9946ba238003c78160fd8e77ac6c203d236b1.css" integrity="sha256-/hpaiFnXrQVcXzwfurmUa6I4ADx4Fg/Y53rGwgPSNrE=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://butty256.github.io/css/coder-dark.min.d239c8f7530092ae18e52a2fda2aa3b4a619672b40d4f3fefbc482571571d3fa.css" integrity="sha256-0jnI91MAkq4Y5Sov2iqjtKYZZytA1PP&#43;&#43;8SCVxVx0/o=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/x-icon" href="https://butty256.github.io/images/favicon.ico">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://butty256.github.io/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.68.3" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-auto"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://butty256.github.io/">
+      Butty Blog
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://butty256.github.io/posts/">All Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://butty256.github.io/tags/">Tags</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://butty256.github.io/categories/">Categories</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://butty256.github.io/aboutme/">About me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://butty256.github.io/posts/c/popcnt/">
+              bit を高速に数える 手法の比較
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2021-05-12T00:00:00Z'>
+                May 12, 2021
+              </time>
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="https://butty256.github.io/categories/c/">C</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <a href="https://butty256.github.io/tags/qiita/">Qiita</a>
+      <span class="separator">•</span>
+    <a href="https://butty256.github.io/tags/bit/">bit</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>この記事は <a href="https://qiita.com/Butty256/items/c4f83c4f3a73a3fb7e0c">Qiita</a> に投稿した内容です。</p>
+<h1 id="はじめに">はじめに</h1>
+<p>本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います。アルゴリズムの詳しい内容は下の参考文献に飛んでください。</p>
+<h1 id="アルゴリズム">アルゴリズム</h1>
+<p><a href="https://en.wikipedia.org/wiki/Hamming_weight">Hamming weight</a> で紹介されている 5 つの手法の演算回数について簡単にまとめます。A は有名なアルゴリズムをそのまま実装した状態です。Bと C は A の高速化である派生です。D は bit が立っている（1 になっている）数に比例して演算量が増えます。E は力技で，16bit すべての数に対して立ってる bit の数をメモしておき，64bit を 4 分割してその合計として求めています。メモリを多く使用し，64bit のように bit 数が多い場合はあまり高速ではありません。</p>
+<table>
+<thead>
+<tr>
+<th align="center">手法</th>
+<th align="right">算術</th>
+<th align="right">乗算</th>
+<th align="right">比較 / 分岐</th>
+<th align="right">メモリ読み込み</th>
+<th align="left">特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">A</td>
+<td align="right">24</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">単純な実装</td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td align="right">17</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">乗算が遅い環境で優秀</td>
+</tr>
+<tr>
+<td align="center">C</td>
+<td align="right">12</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">乗算が速い環境で優秀</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="right">3n</td>
+<td align="right">0</td>
+<td align="right">1n</td>
+<td align="right">0</td>
+<td align="left">n は 1 になっている数，n が小さいと高速</td>
+</tr>
+<tr>
+<td align="center">E</td>
+<td align="right">9</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="left">16bit ごとに分けてメモリから読み取る</td>
+</tr>
+</tbody>
+</table>
+<h1 id="実験">実験</h1>
+<h2 id="実験環境ソースコード">実験環境・ソースコード</h2>
+<p>実験で使用したソースコードは <a href="https://github.com/Butty256/Hamming-weight">GitHub</a> にあげておきます。実験環境は下のとおりです。最適化については GitHub にあげている Makefile を見てください。</p>
+<ul>
+<li>OS: Ubuntu 20.04.1</li>
+<li>Kernel: 5.4.0-58-generic</li>
+<li>CPU: Intel i5-3360M (4) @ 3.5 GHz</li>
+<li>gcc: version 9.3.0 (C11)</li>
+</ul>
+<h2 id="実験-1-単純な比較">実験 1 単純な比較</h2>
+<p>まずは全 bit に対して処理を行う安直な手法 N と 5 つの手法 A–E を C 言語に実装してタイムを計測します。1 億個の乱数に対してビットカウントを行いその処理時間を計測します。計測結果を表にまとめます。このときの立っている bit の平均は 32 です。（64bit の乱数でやりました。）この環境では C が B よりも高速でした。D はこの中では最も遅いですがそれでも N に比べて十分高速です。E も C と同等の速度ですが，メモリのことを踏まえると微妙に感じます。</p>
+<table>
+<thead>
+<tr>
+<th align="center">手法</th>
+<th align="center">時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">N</td>
+<td align="center">4.447 s</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">0.541 s</td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td align="center">0.467 s</td>
+</tr>
+<tr>
+<td align="center">C</td>
+<td align="center">0.386 s</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="center">3.025 s</td>
+</tr>
+<tr>
+<td align="center">E</td>
+<td align="center">0.393 s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="実験-2-特殊環境下での比較">実験 2 特殊環境下での比較</h2>
+<p>次に立っている bit の数が平均 0.5 の場合で測定します。D は 4 倍程度高速になったがもっと高速化されてもいいのかなと思いました。しかし，C などと比較しまだ遅いことからこの環境下では使用する必要性はないと思います。また，N は下位 bit から参照し 0 になったとき終了するようにしているため，高速化されたがそもそも N は使わない。</p>
+<table>
+<thead>
+<tr>
+<th align="center">手法</th>
+<th align="center">時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">N</td>
+<td align="center">1.966 s</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">0.534 s</td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td align="center">0.458 s</td>
+</tr>
+<tr>
+<td align="center">C</td>
+<td align="center">0.381 s</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="center">0.735 s</td>
+</tr>
+<tr>
+<td align="center">E</td>
+<td align="center">0.364 s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="実験-3--marchnative-による最適化">実験 3 <code>-march=native</code> による最適化</h2>
+<p><code>-march=native</code> は特定の CPU を指定して高速化を行います。コンパイル後のバイナリデータを他の人と共有する場合は不適切ですが，自分の環境だけでの使用の場合はおすすめします。実験結果を示します。D 以外は少し高速化されました。注目できるのは D で，30 倍程度高速化されこの中で最速となっています。</p>
+<table>
+<thead>
+<tr>
+<th align="center">手法</th>
+<th align="center">時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">N</td>
+<td align="center">4.257 s</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">0.380 s</td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td align="center">0.235 s</td>
+</tr>
+<tr>
+<td align="center">C</td>
+<td align="center">0.181 s</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="center">0.091 s</td>
+</tr>
+<tr>
+<td align="center">E</td>
+<td align="center">0.212 s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="実験-4-_popcnt64と__asm__">実験 4 <code>_popcnt64</code>と<code>__asm__</code></h2>
+<p>最後に <code>_popcnt64</code> と <code>__asm__</code> を利用して計測する。<code>-march=native</code> 無しの結果を N，有りの結果を Y に示しています。結果はどの自作関数より高速になりました。これらが使える環境では使用したほうが良いと思います。</p>
+<table>
+<thead>
+<tr>
+<th align="center">手法</th>
+<th align="center">時間 (N)</th>
+<th align="center">時間 (Y)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>_popcnt64</code></td>
+<td align="center">0.234 s</td>
+<td align="center">0.071 s</td>
+</tr>
+<tr>
+<td align="center"><code>__asm__ </code></td>
+<td align="center">0.234 s</td>
+<td align="center">0.071 s</td>
+</tr>
+</tbody>
+</table>
+<h1 id="まとめ">まとめ</h1>
+<p>bit を高速に数える手法の比較を行いました。安直に数える場合に比べて 10 倍程度高速に数えるアルゴリズムであると確認できました。<code>_popcnt64</code> と <code>__asm__</code> はこれらに比べてより高速であることも確認できました。</p>
+<h1 id="文献">文献</h1>
+<ol>
+<li><a href="https://github.com/Butty256/Hamming-weight">ソースコード (GitHub)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hamming_weight">Hamming weight (Wiki)</a></li>
+<li><a href="https://qiita.com/ocxtal/items/01c46b15cb1f2e656887">x86_64 で popcnt / tzcnt / lzcntする【ビット演算テクニック Advent Calendar 2016 5日目】 (Qiita)</a></li>
+<li><a href="https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html">GCC (GNU)</a></li>
+</ol>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2021
+         Butty256 
+      
+      
+         · 
+        Powered by <a href="https://pages.github.com/">GitHub Pages</a> & <a href="https://gohugo.io/">Hugo</a>
+      
+      
+        
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://butty256.github.io/js/coder.min.f92783b4545b68f3523e5d6ad91d93f76818f9d0db2ffa13bda31b6119cde62b.js" integrity="sha256-&#43;SeDtFRbaPNSPl1q2R2T92gY&#43;dDbL/oTvaMbYRnN5is="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
