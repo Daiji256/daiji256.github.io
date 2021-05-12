@@ -6,7 +6,9 @@ tags: [Qiita,まとめ,LuaLaTeX]
 katex: true
 ---
 
-## はじめに
+この記事は [Qiita](https://qiita.com/Butty256/items/9afbfa9f822629d3b995) に投稿した内容です。
+
+# はじめに
 
 この記事では**高機能でイケイケ**な LuaLaTeX を紹介します。
 
@@ -14,9 +16,9 @@ katex: true
 
 LaTeX は下の図の様に TeX ファイルの執筆から PDF の出力まで行います。レガシー LaTeX（(u)pLaTeX など）は DVI ファイルを経由して PDF 作成します。それに対しモダン LaTeX（LuaLaTeX など）は**直接PDFを作成**します。LuaLaTeX は海外でメジャーである pdfLaTeX に軽量スクリプト言語である Lua を組み込んだものです。pdfLaTeX の後継として期待されていて，LuaTeX-ja プロジェクトにより (u)pLaTeX 以上の自由度で和文組版が可能となっています。LuaLaTeX は Unicode に対応しています。さらに**フォントの設定が簡単**で，**OpenType や TrueType フォントを直接扱う**ことができます。
 
-<img src="data/fig1.png" width="480">
+{{< figure src="../../images/lualatex-susume/fig1.png" width="480" >}}
 
-## フォント
+# フォント
 
 LuaLaTeX の最大の強みと言えるのがフォントについてです。昔ながらの LaTeX ではフォントの設定が非常に難しいのに対して，LuaLaTeX では**ソースファイル内で簡単に設定することができます**。`fontspec` を和文フォントに対応するように拡張した `luatexja-fontspec` を用いてフォントの設定を行います。細かな設定方法については，[LuaLaTeX でフォント細かく変更する方法](https://qiita.com/Butty256/items/29adc574b15345d8afa2)を参照してください。
 
@@ -34,9 +36,9 @@ LuaLaTeX の最大の強みと言えるのがフォントについてです。�
 \usepackage[ipa]{luatexja-preset}
 ```
 
-## Lua を書く
+# Lua を書く
 
-[はじめに](##はじめに)でも書きましたが LuaTeX から Lua を利用できます。LuaLaTeX のソース中で Lua を書く場合には `\directlua` を使用します。Lua から TeX に出力するには `tex.print` を使用します。実際に Lua を利用して $\sqrt{2}$ を表示してみます。以下に示すコードにより $\sqrt{2}$ が計算（？）できています。もっと詳しいことは[徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)でわかりやすく説明されています。
+[はじめに](#はじめに)でも書きましたが LuaTeX から Lua を利用できます。LuaLaTeX のソース中で Lua を書く場合には `\directlua` を使用します。Lua から TeX に出力するには `tex.print` を使用します。実際に Lua を利用して $\sqrt{2}$ を表示してみます。以下に示すコードにより $\sqrt{2}$ が計算（？）できています。もっと詳しいことは[徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)でわかりやすく説明されています。
 
 ```TeX
 \directlua{tex.print(math.sqrt(2))}
@@ -45,7 +47,7 @@ LuaLaTeX の最大の強みと言えるのがフォントについてです。�
 1.4142135623731
 ```
 
-## ドキュメントクラス
+# ドキュメントクラス
 
 LuaLaTeX の `jsclasses` 互換クラス次の通りです。現在は (u)pLaTeX と LuaLaTeX の両方で使える，日本語組版処理の要件に準拠した `jlreq` が人気です。詳しくは今度，別の記事で解説したいと思っています。
 
@@ -57,17 +59,17 @@ LuaLaTeX の `jsclasses` 互換クラス次の通りです。現在は (u)pLaTeX
 |jspf   |`ltjspf`          |某学会誌用      |
 |kiyou  |`ltjskiyou`       |某紀要用        |
 
-## おまけ
+# おまけ
 
 (u)pLaTeX では全角文字の幅と高さを `zw` と `zh` という単位で表していたが，LuaLaTeX では `\zw` と `\zh` となりました。
 
 実際に確かめたわけでは無いが，Windows 用の LuaLaTeX ではファイル名を日本語にしてもいいらしいです。~~どうせ日本語のファイル名にしないけどな～~~
 
-## おわりに
+# おわりに
 
 「はじめに」が大きくて頭でっかちな記事になってしまいました。まだ説明できていない内容があります。今後暇を見付けて記事のアップデートしていきたいと思います。楽しい LuaLaTeX ライフを願っています。
 
-## 文献
+# 文献
 
 1. [改定第8版 LaTeX2e 美文書作成入門](https://www.amazon.co.jp/dp/B08MZ98Z1Q/)
 1. [LaTeX 入門/発展変 (TeX Wiki)](https://texwiki.texjp.org/LaTeX%E5%85%A5%E9%96%80%2F%E7%99%BA%E5%B1%95%E7%B7%A8)
