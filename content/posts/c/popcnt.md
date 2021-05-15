@@ -1,6 +1,6 @@
 ---
 title: "bit を高速に数える 手法の比較"
-date: 2021-05-12
+date: 2020-12-31
 categories: [C]
 tags: [Qiita,bit]
 ---

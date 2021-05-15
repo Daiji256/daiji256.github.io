@@ -1,6 +1,6 @@
 ---
 title: "C 言語で eval 風関数"
-date: 2021-05-12
+date: 2021-02-03
 categories: [C]
 tags: [Qiita,eval,自作関数]
 ---
