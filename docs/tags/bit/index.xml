@@ -6,7 +6,7 @@
     <description>Recent content in bit on Butty Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://butty256.github.io/tags/bit/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>bit を高速に数える 手法の比較</title>
       <link>https://butty256.github.io/posts/c/popcnt/</link>
-      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://butty256.github.io/posts/c/popcnt/</guid>
       <description>この記事は Qiita に投稿した内容です。

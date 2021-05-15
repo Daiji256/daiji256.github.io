@@ -6,7 +6,7 @@
     <description>Recent content in eval on Butty Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://butty256.github.io/tags/eval/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>C 言語で eval 風関数</title>
       <link>https://butty256.github.io/posts/c/eval-c/</link>
-      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://butty256.github.io/posts/c/eval-c/</guid>
       <description>この記事は Qiita に投稿した内容です。
