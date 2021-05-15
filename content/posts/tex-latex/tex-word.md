@@ -1,6 +1,6 @@
 ---
 title: "LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）"
-date: 2021-05-12
+date: 2021-02-02
 categories: [TeX-LaTeX]
 tags: [Qiita,Font,LuaLaTeX]
 katex: true

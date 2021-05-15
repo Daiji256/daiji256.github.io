@@ -1,6 +1,6 @@
 ---
 title: "LaTeX のすゝめ"
-date: 2021-05-07
+date: 2021-02-14
 categories: [TeX-LaTeX]
 tags: [Qiita,まとめ,upLaTeX]
 katex: true

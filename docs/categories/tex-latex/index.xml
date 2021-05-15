@@ -6,41 +6,15 @@
     <description>Recent content in TeX-LaTeX on Butty Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://butty256.github.io/categories/tex-latex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）</title>
-      <link>https://butty256.github.io/posts/tex-latex/tex-word/</link>
-      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://butty256.github.io/posts/tex-latex/tex-word/</guid>
-      <description>この記事は Qiita に投稿した内容です。
-はじめに 課題や予稿，論文等ではフォント等のフォーマット指定がよくあります。MS Word のテンプレートしか無かったり，MS Mincho などの古いフォントを指定されるとイライラします。そこで LaTeX で書きたいと思います。ここではエンジンに LuaLaTeX を使用します。LuaLaTeX は PDF を直接出力することからフォントの埋め込みが容易で新しいイケイケな LaTeX だからです。
-ドキュメントクラス ドキュメントクラスには jlreq を利用します。jlreq は日本語組版処理の要件に準拠した新しいドキュメントクラスで，日本に浸透しつつあります。オプションの fontsize=10.5bp はデフォルトのフォントサイズを $\mathrm{10.5\,bp}$ とすることを示しています。jlreq では英・和のフォント比がデフォルトで $1$ なので，両方のフォントサイズが $\mathrm{10.5\,bp}$ になります。MS Word では $1\,\mathrm{pt}=1/72\,\mathrm{inch}$ ですが，TeX では $1\,\mathrm{pt}=1/72.27\,\mathrm{inch}$ と定義されています。TeX には $1\,\mathrm{bp}=1/72\,\mathrm{inch}$ となる単位が存在します。このことから $\mathrm{pt}$ の代わりに $\mathrm{bp}$ を使用しています。
-\documentclass[fontsize=10.5bp]{jlreq} フォントの変更 Times New Roman や MS Mincho などを指定されたことを想定して説明します。luatexja-fontspec を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。FakeBold=2，FakeSlant=0.33に設定したとき MS Word と同様の結果になりました。</description>
-    </item>
-    
-    <item>
-      <title>LuaLaTeX のすゝめ</title>
-      <link>https://butty256.github.io/posts/tex-latex/lualatex-susume/</link>
-      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://butty256.github.io/posts/tex-latex/lualatex-susume/</guid>
-      <description>この記事は Qiita に投稿した内容です。
-はじめに この記事では高機能でイケイケな LuaLaTeX を紹介します。
-現在日本で一般的に使用されている LaTeX は upLaTeX だと思います。upLaTeX は Unicode 対応の日本語 LaTeX エンジンが収録されている，pLaTeX の進化系みたいなものです。upLaTeX は pLaTeX からの移行が容易で，環境依存文字や JIS 第 1・第 2 水準の漢字を意識せずに使用できる点が初心者に好まれている理由の 1 つだと思います。
-LaTeX は下の図の様に TeX ファイルの執筆から PDF の出力まで行います。レガシー LaTeX（(u)pLaTeX など）は DVI ファイルを経由して PDF 作成します。それに対しモダン LaTeX（LuaLaTeX など）は直接PDFを作成します。LuaLaTeX は海外でメジャーである pdfLaTeX に軽量スクリプト言語である Lua を組み込んだものです。pdfLaTeX の後継として期待されていて，LuaTeX-ja プロジェクトにより (u)pLaTeX 以上の自由度で和文組版が可能となっています。LuaLaTeX は Unicode に対応しています。さらにフォントの設定が簡単で，OpenType や TrueType フォントを直接扱うことができます。
-  フォント LuaLaTeX の最大の強みと言えるのがフォントについてです。昔ながらの LaTeX ではフォントの設定が非常に難しいのに対して，LuaLaTeX ではソースファイル内で簡単に設定することができます。fontspec を和文フォントに対応するように拡張した luatexja-fontspec を用いてフォントの設定を行います。細かな設定方法については，LuaLaTeX でフォント細かく変更する方法を参照してください。
-luatexja-fontspec を使用することで下に示すコードにより，OS にインストールされているフォントを PDF に埋め込むことができます。また，ttf ファイルなどを直接参照することもできます。</description>
-    </item>
-    
-    <item>
       <title>ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。</title>
       <link>https://butty256.github.io/posts/tex-latex/tex-tikx-heatran/</link>
-      <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://butty256.github.io/posts/tex-latex/tex-tikx-heatran/</guid>
       <description>※この記事は Qiita に投稿していた内容です。
@@ -55,7 +29,7 @@ img = cv2.imread(sys.argv[1], cv2.IMREAD_UNCHANGED) print(&amp;#34;\\begin{tikzp
     <item>
       <title>LaTeX のすゝめ</title>
       <link>https://butty256.github.io/posts/tex-latex/latex-susume/</link>
-      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://butty256.github.io/posts/tex-latex/latex-susume/</guid>
       <description>この記事は Qiita に投稿した内容です。
@@ -65,6 +39,32 @@ LaTeX（ラテック / ラテフ）2はコンピューター科学者の Leslie 
 TeX，LaTeX の特徴は次のようなことがあげられます。
  Windows，macOS，Linux などの多くのプラットフォームで動作する。 テキストファイルで文書を管理できる。 綺麗な数式を簡単に書ける3。 図や表を挿入した文書を作成できる。 章・節，式，図表の番号，頁番号管理などを自動的に行い，参照できる。  日本語 TeX について 現在，日本語対応している主な TeX エンジンは 3 つあります。
  pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。</description>
+    </item>
+    
+    <item>
+      <title>LuaLaTeX のすゝめ</title>
+      <link>https://butty256.github.io/posts/tex-latex/lualatex-susume/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://butty256.github.io/posts/tex-latex/lualatex-susume/</guid>
+      <description>この記事は Qiita に投稿した内容です。
+はじめに この記事では高機能でイケイケな LuaLaTeX を紹介します。
+現在日本で一般的に使用されている LaTeX は upLaTeX だと思います。upLaTeX は Unicode 対応の日本語 LaTeX エンジンが収録されている，pLaTeX の進化系みたいなものです。upLaTeX は pLaTeX からの移行が容易で，環境依存文字や JIS 第 1・第 2 水準の漢字を意識せずに使用できる点が初心者に好まれている理由の 1 つだと思います。
+LaTeX は下の図の様に TeX ファイルの執筆から PDF の出力まで行います。レガシー LaTeX（(u)pLaTeX など）は DVI ファイルを経由して PDF 作成します。それに対しモダン LaTeX（LuaLaTeX など）は直接PDFを作成します。LuaLaTeX は海外でメジャーである pdfLaTeX に軽量スクリプト言語である Lua を組み込んだものです。pdfLaTeX の後継として期待されていて，LuaTeX-ja プロジェクトにより (u)pLaTeX 以上の自由度で和文組版が可能となっています。LuaLaTeX は Unicode に対応しています。さらにフォントの設定が簡単で，OpenType や TrueType フォントを直接扱うことができます。
+  フォント LuaLaTeX の最大の強みと言えるのがフォントについてです。昔ながらの LaTeX ではフォントの設定が非常に難しいのに対して，LuaLaTeX ではソースファイル内で簡単に設定することができます。fontspec を和文フォントに対応するように拡張した luatexja-fontspec を用いてフォントの設定を行います。細かな設定方法については，LuaLaTeX でフォント細かく変更する方法を参照してください。
+luatexja-fontspec を使用することで下に示すコードにより，OS にインストールされているフォントを PDF に埋め込むことができます。また，ttf ファイルなどを直接参照することもできます。</description>
+    </item>
+    
+    <item>
+      <title>LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）</title>
+      <link>https://butty256.github.io/posts/tex-latex/tex-word/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://butty256.github.io/posts/tex-latex/tex-word/</guid>
+      <description>この記事は Qiita に投稿した内容です。
+はじめに 課題や予稿，論文等ではフォント等のフォーマット指定がよくあります。MS Word のテンプレートしか無かったり，MS Mincho などの古いフォントを指定されるとイライラします。そこで LaTeX で書きたいと思います。ここではエンジンに LuaLaTeX を使用します。LuaLaTeX は PDF を直接出力することからフォントの埋め込みが容易で新しいイケイケな LaTeX だからです。
+ドキュメントクラス ドキュメントクラスには jlreq を利用します。jlreq は日本語組版処理の要件に準拠した新しいドキュメントクラスで，日本に浸透しつつあります。オプションの fontsize=10.5bp はデフォルトのフォントサイズを $\mathrm{10.5\,bp}$ とすることを示しています。jlreq では英・和のフォント比がデフォルトで $1$ なので，両方のフォントサイズが $\mathrm{10.5\,bp}$ になります。MS Word では $1\,\mathrm{pt}=1/72\,\mathrm{inch}$ ですが，TeX では $1\,\mathrm{pt}=1/72.27\,\mathrm{inch}$ と定義されています。TeX には $1\,\mathrm{bp}=1/72\,\mathrm{inch}$ となる単位が存在します。このことから $\mathrm{pt}$ の代わりに $\mathrm{bp}$ を使用しています。
+\documentclass[fontsize=10.5bp]{jlreq} フォントの変更 Times New Roman や MS Mincho などを指定されたことを想定して説明します。luatexja-fontspec を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。FakeBold=2，FakeSlant=0.33に設定したとき MS Word と同様の結果になりました。</description>
     </item>
     
   </channel>
