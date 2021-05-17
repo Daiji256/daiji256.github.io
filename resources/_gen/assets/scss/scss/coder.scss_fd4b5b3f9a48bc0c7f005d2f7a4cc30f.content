@@ -3100,6 +3100,9 @@ blockquote {
   font-weight: 400;
   font-style: italic; }
 
+table {
+  font-size: 0.9em; }
+
 th,
 td {
   padding-top: 0.1rem;
@@ -3112,13 +3115,8 @@ table {
 
 table td,
 table th {
-  font-size: 1.5rem;
-  font-weight: 400;
   border: 0; }
-  @media only screen and (max-width: 768px) {
-    table td,
-    table th {
-      font-size: 1.4rem; } }
+
 table tr:first-child th {
   border-top: 3px solid #333333;
   border-bottom: 2px solid #333333; }

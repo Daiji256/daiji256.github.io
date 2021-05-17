@@ -47,13 +47,8 @@ body.colorscheme-dark {
     border-left: 2px solid #666666; }
   body.colorscheme-dark table td,
   body.colorscheme-dark table th {
-    font-size: 1.5rem;
     font-weight: 400;
     border: 0; }
-    @media only screen and (max-width: 768px) {
-      body.colorscheme-dark table td,
-      body.colorscheme-dark table th {
-        font-size: 1.4rem; } }
   body.colorscheme-dark table tr:first-child th {
     border-top: 3px solid #eeeeee;
     border-bottom: 2px solid #eeeeee; }
@@ -110,14 +105,8 @@ body.colorscheme-dark {
       border-left: 2px solid #666666; }
     body.colorscheme-auto table td,
     body.colorscheme-auto table th {
-      font-size: 1.5rem;
       font-weight: 400;
-      border: 0; } }
-    @media only screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-      body.colorscheme-auto table td,
-      body.colorscheme-auto table th {
-        font-size: 1.4rem; } }
-@media (prefers-color-scheme: dark) {
+      border: 0; }
     body.colorscheme-auto table tr:first-child th {
       border-top: 3px solid #eeeeee;
       border-bottom: 2px solid #eeeeee; }
