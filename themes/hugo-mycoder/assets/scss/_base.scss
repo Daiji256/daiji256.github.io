@@ -170,10 +170,15 @@ blockquote {
 
 th,
 td {
+  font-size: $small;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+
+  @media only screen and (max-width: 768px) {
+    font-size: $footnotesize;
+  }
 }
 
 table {
