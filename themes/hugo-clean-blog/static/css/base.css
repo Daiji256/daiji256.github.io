@@ -107,6 +107,22 @@ table tr:last-child td {
   border-bottom: 2px solid #333;
 }
 
+.e {
+  text-transform: uppercase;
+  line-height: 0;
+  margin-left: -0.14em;
+  margin-right: -0.1em;
+  vertical-align: -0.2em;
+}
+.a {
+  text-transform: uppercase;
+  line-height: 0;
+  font-size: 0.8em;
+  margin-left: -0.27em;
+  margin-right: -0.15em;
+  vertical-align: 0.25em;
+}
+
 .all-wrapper {
   min-height: 100vh;
   background-color: #f7f7f7;
