@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>C 言語で eval 風関数 - Daiji Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Daiji256" />
+    <meta name="twitter:title" content="C 言語で eval 風関数" />
+    <meta name="twitter:description" content="この記事は Qiita に投稿した内容です。 はじめに eval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般" />
+    <meta name="twitter:image" content="/images/apple-touch-icon.png" />
+    <meta property="og:url" content="https://daiji256.github.io/posts/c/eval-c/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="C 言語で eval 風関数" />
+    <meta property="og:description" content="この記事は Qiita に投稿した内容です。 はじめに eval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般" />
+    <meta property="og:site_name" content="Daiji Blog" />
+    <meta property="og:image" content="/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://daiji256.github.io/images/favicon.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="https://daiji256.github.io/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/code-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/regular-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/brands-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/one-dark.css" />
+    
+  </head>
+  <body>
+    <div class="all-wrapper">
+      
+<div class="header">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <img src="https://daiji256.github.io/images/icon.svg" title='ホーム' class="user-icon" />
+          <div class="text">Daiji Blog</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <div class="logo" title='ホーム'>
+            <span class="ri ri-pencil"></span>
+          </div>
+          <div class="text">ホーム</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/categories/" class="item">
+          <div class="logo" title='カテゴリ'>
+            <span class="ri ri-folder"></span>
+          </div>
+          <div class="text">カテゴリ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/tags/" class="item">
+          <div class="logo">
+            <span class="ri ri-tags" title='タグ'></span>
+          </div>
+          <div class="text">タグ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/about/" class="item">
+          <div class="logo">
+            <span class="ri ri-user" title='プロフィール'></span>
+          </div>
+          <div class="text">プロフィール</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div class="main-line">
+    <div class="post">
+      <div class="info">
+        <div class="title">C 言語で eval 風関数</div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-calendar logo"></span>
+          <div class="text">2021 年 2 月 3 日</div>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-folder logo"></span>
+          <a href="https://daiji256.github.io/categories/c/" class="text">C</a>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-tags logo"></span>
+          <a href="https://daiji256.github.io/tags/qiita/" class="text">Qiita</a><a href="https://daiji256.github.io/tags/eval/" class="text">eval</a><a href="https://daiji256.github.io/tags/%E8%87%AA%E4%BD%9C%E9%96%A2%E6%95%B0/" class="text">自作関数</a>
+        </div>
+      </div>
+      <section class="sec-content">
+        <div class="content">
+          <p>この記事は <a href="https://qiita.com/Daiji256/items/09fa042e94907a232c57">Qiita</a> に投稿した内容です。</p>
+<h1 id="はじめに">はじめに</h1>
+<p><code>eval</code> 関数とは文字列を式として評価する関数です。<code>eval</code> は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般的です。ここでは C 言語のための文字列を数式として処理する <code>eval</code> 風関数を作成します。ソースコードは <a href="https://github.com/Daiji256/eval">GitHub</a> にあげてあります。</p>
+<h1 id="主な仕様">主な仕様</h1>
+<p><code>eval</code> は引数の数式を計算し，その結果を戻り値とする関数にします。<code>eval</code> では <code>sin</code>，<code>exp</code>，<code>sqrt</code> などの <code>math.h</code> にある関数が使えるようにします。関数を含めた数式の計算順は次のようになります。計算過程は全て文字列として処理を行います。</p>
+<ol>
+<li>関数：<code>sin</code>，<code>exp</code>，<code>sqrt</code> など</li>
+<li>括弧：<code>(</code>，<code>)</code></li>
+<li>乗法，除法：<code>*</code>，<code>\</code></li>
+<li>加法，減法：<code>+</code>，<code>-</code></li>
+</ol>
+<p>関数の計算を行う <code>calcfunc</code> ，四則演算を行う <code>calc</code> を作成します。括弧の処理には <code>eval</code> を使用します。プログラムの疑似コード（？）と共に説明します。実際のソースコードは長いので <a href="https://github.com/Daiji256/eval">GitHub</a> を参照してください。実装は基本的に単純で，上記の箇条書きの順番通りに計算するだけです。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">double</span> <span class="nf">eval</span><span class="o">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">for</span> <span class="o">(</span> <span class="n">文字列先頭からループ</span> <span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span> <span class="n">関数があった時</span> <span class="o">)</span> <span class="o">{</span>
+			<span class="n">str2</span> <span class="o">=</span> <span class="n">関数とその引数</span><span class="o">;</span>
+			<span class="n">str3</span> <span class="o">=</span> <span class="n">num2str</span><span class="o">(</span><span class="n">calcfunc</span><span class="o">(</span><span class="n">str2</span><span class="o">));</span>
+			<span class="n">str</span> <span class="o">=</span> <span class="n">str2</span> <span class="n">を</span> <span class="n">str3</span> <span class="n">に置換</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	<span class="k">for</span> <span class="o">(</span> <span class="n">文字列先頭からループ</span> <span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span> <span class="n">括弧があった時</span> <span class="o">)</span> <span class="o">{</span>
+			<span class="n">str2</span> <span class="o">=</span> <span class="n">括弧内の文字列</span><span class="o">;</span>
+			<span class="n">str3</span> <span class="o">=</span> <span class="n">num2str</span><span class="o">(</span><span class="n">eval</span><span class="o">(</span><span class="n">str2</span><span class="o">));</span>
+			<span class="n">str</span> <span class="o">=</span> <span class="o">(</span><span class="n">str2</span><span class="o">)</span> <span class="n">を</span> <span class="n">str3</span> <span class="n">に置換</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	<span class="k">for</span> <span class="o">(</span> <span class="n">文字列先頭からループ</span> <span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span> <span class="o">*,</span> <span class="o">/</span> <span class="n">があった時</span> <span class="o">)</span> <span class="o">{</span>
+			<span class="n">str2</span> <span class="o">=</span> <span class="n">計算範囲</span><span class="o">;</span>
+			<span class="n">str3</span> <span class="o">=</span> <span class="n">num2str</span><span class="o">(</span><span class="n">calc</span><span class="o">(</span><span class="n">str2</span><span class="o">));</span>
+			<span class="n">str</span> <span class="o">=</span> <span class="n">str2</span> <span class="n">を</span> <span class="n">str3</span> <span class="n">に置換</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	<span class="k">for</span> <span class="o">(</span> <span class="n">文字列先頭からループ</span> <span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span> <span class="o">+,</span> <span class="o">-</span> <span class="n">があった時</span> <span class="o">)</span> <span class="o">{</span>
+			<span class="n">str2</span> <span class="o">=</span> <span class="n">計算範囲</span><span class="o">;</span>
+			<span class="n">str3</span> <span class="o">=</span> <span class="n">num2str</span><span class="o">(</span><span class="n">calc</span><span class="o">(</span><span class="n">str2</span><span class="o">));</span>
+			<span class="n">str</span> <span class="o">=</span> <span class="n">str2</span> <span class="n">を</span> <span class="n">str3</span> <span class="n">に置換</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="n">atof</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><h1 id="処理の流れの例">処理の流れの例</h1>
+<p>引数に <code>3*sqrt(4)+(5-2)</code> とした時を例にして説明します。まず都合が良くするために全体に <code>(</code>，<code>)</code> を付けます。</p>
+<figure>
+    <img src="../../images/eval-c/fig1.png" width="320"/> 
+</figure>
+
+<p>次に計算の順番通りに関数を呼び出し計算します。</p>
+<figure>
+    <img src="../../images/eval-c/fig2.png" width="320"/> 
+</figure>
+
+<p>次に <code>*</code>，<code>\</code> による計算を <code>calc</code> を用いて行います。最後に <code>+</code>，<code>-</code> による計算を行います。最終的に残った値を実数値として <code>return</code> します。</p>
+<h1 id="まとめ今後">まとめ・今後</h1>
+<p>C 言語用の <code>eval</code> 風関数を作成しました。<code>calc</code> 等の関数について触れませんでしたが，説明を付け加えるかもしれません。ぜひ構文解析等の勉強に役立てばと思います。今後の課題としてメモリを多用する，処理速度が遅いなどが挙げられるので改善したいです。また，バグがあるかもしません。</p>
+<h1 id="文献">文献</h1>
+<ol>
+<li><a href="https://github.com/Daiji256/eval">ソースコード (GitHub)</a></li>
+</ol>
+
+        </div>
+      </section>
+    </div>
+    <div class="post">
+      <div class="author">
+        <a href="https://daiji256.github.io/about/">
+          <img src="https://daiji256.github.io/images/icon.svg" class="author-icon" />
+        </a>
+        <div class="author-info">
+          <div>
+            <a href="https://daiji256.github.io/about/" class="name">
+              Daiji
+            </a>
+          </div>
+          <div>
+            ずっとパソコンの前でだらだらしている高専生です。いっぱい記事を書いていきたいと思ってます。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "daiji256-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+  <div class="toc">
+    <aside>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#主な仕様">主な仕様</a></li>
+    <li><a href="#処理の流れの例">処理の流れの例</a></li>
+    <li><a href="#まとめ今後">まとめ・今後</a></li>
+    <li><a href="#文献">文献</a></li>
+  </ul>
+</nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  © 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.
+</footer>
+
+    </div>
+  </body>
+</html>
