@@ -16,7 +16,7 @@ katex: true
 
 LaTeX は下の図の様に TeX ファイルの執筆から PDF の出力まで行います。レガシー LaTeX（(u)pLaTeX など）は DVI ファイルを経由して PDF 作成します。それに対しモダン LaTeX（LuaLaTeX など）は**直接PDFを作成**します。LuaLaTeX は海外でメジャーである pdfLaTeX に軽量スクリプト言語である Lua を組み込んだものです。pdfLaTeX の後継として期待されていて，LuaTeX-ja プロジェクトにより (u)pLaTeX 以上の自由度で和文組版が可能となっています。LuaLaTeX は Unicode に対応しています。さらに**フォントの設定が簡単**で，**OpenType や TrueType フォントを直接扱う**ことができます。
 
-{{< figure src="../../images/lualatex-susume/fig1.png" width="480" >}}
+{{< figure src="../../images/lualatex-susume/fig1.jpg" width="480" >}}
 
 # フォント
 
