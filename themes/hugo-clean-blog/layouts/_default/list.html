@@ -1,0 +1,92 @@
+{{ define "content" -}}
+{{- if or (eq .Title "Tags") (eq .Title "Categories") }}
+<div class="full-block">
+  <div class="post">
+    <div class="info">
+      <div class="title">
+        {{ if eq .Title "Categories" -}}
+        カテゴリ
+        {{- else -}}
+        タグ
+        {{- end }}
+      </div>
+    </div>
+    <section class="taxonomies-list">
+      <div class="content">
+        {{ if eq .Title "Categories" -}}
+        {{ range .Site.Taxonomies.categories.ByCount -}}
+        <span class="no-wrap">
+          <a href="{{ $.Site.BaseURL | relURL }}categories/{{ .Name | urlize }}" class="taxonomies-item">
+            {{ .Page.Title }} | {{ .Count }}
+          </a>
+        </span>
+        {{ end -}}
+        {{- else -}}
+        {{ range .Site.Taxonomies.tags.ByCount -}}
+        <span class="no-wrap">
+          <a href="{{ $.Site.BaseURL | relURL }}tags/{{ .Name | urlize }}" class="taxonomies-item">
+            {{ .Page.Title }} | {{ .Count }}
+          </a>
+        </span>
+        {{ end -}}
+        {{- end -}}
+      </div>
+    </section>
+  </div>
+</div>
+{{- else -}}
+<div class="main-wrapper">
+  <div class="cards-line">
+    <div class="card">
+      <div class="main">
+        {{ if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.svg" (lower .Title) )) (fileExists (printf "/static/images/taxonomies/%s.svg" (lower .Title) )) -}}
+        <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ lower .Title }}.svg" class="icon" />
+        {{- else -}}
+        <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/none.svg" class="icon" />
+        {{- end }}
+        <div class="name">
+          {{ if eq .Title "Posts" -}}
+          すべての投稿
+          {{- else -}}
+          {{ .Title }}
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="posts-line">
+    {{- $pages := .Pages }}
+    {{- if .IsHome }}
+    {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{- end }}
+    {{ range (.Paginate $pages).Pages -}}
+    <div class="post-card">
+      <div class="title">
+        <a href="{{ .RelPermalink }}" class="link">{{ .Title }}</a>
+      </div>
+      <div class="summary">
+        {{ .Summary }}...
+      </div>
+      <div class="post-info">
+        <span aria-hidden="true" class="ri ri-calendar logo"></span>
+        <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
+      </div>
+      <div class="post-info">
+        <span aria-hidden="true" class="ri ri-folder logo"></span>
+        {{ range .Params.categories -}}
+        <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}" class="text">{{ . }}</a>
+        {{- end }}
+      </div>
+      <div class="post-info">
+        <span aria-hidden="true" class="ri ri-tags logo"></span>
+        {{ range .Params.tags -}}
+        <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}" class="text">{{ . }}</a>
+        {{- end }}
+      </div>
+    </div>
+    {{ end -}}
+    {{- partial "pagination.html" . }}
+  </div>
+</div>
+{{- end -}}
+{{ end }}

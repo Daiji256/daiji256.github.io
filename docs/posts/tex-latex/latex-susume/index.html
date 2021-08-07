@@ -1,206 +1,120 @@
 <!DOCTYPE html>
-<html lang="ja">
-
+<html lang="ja" prefix="og: http://ogp.me/ns#">
   <head>
-    <meta charset="utf-8">
+    <title>LaTeX のすゝめ - Daiji Blog</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="ja">
-    <meta name="color-scheme" content="light dark">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css"
-    integrity="sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js"
-    integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"
-    onload="renderMathInElement(document.body,
-      {
-        delimiters: [
-          {left: '$$', right: '$$', display:true},
-          {left: '$', right: '$', display:false},
-          {left: '\\(', right: '\\)', display: false},
-          {left: '\\[', right: '\\]', display: true}
-        ]
-      }
-    );"></script>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p">
-
-    
-      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
-
-    
-
-    <meta name="author" content="Butty256">
-    <meta name="description" content="この記事は Qiita に投稿した内容です。
-はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。
-TeX / LaTeX とは TeX（テック / テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
-LaTeX（ラテック / ラテフ）2はコンピューター科学者の Leslie Lamport によって開発された，TeX に機能を追加し手軽に組版が行えるようになったシステムです。現在では LaTeX を使うことが一般的なので，「TeX」で LaTeX を指すことが多いです。
-TeX，LaTeX の特徴は次のようなことがあげられます。
- Windows，macOS，Linux などの多くのプラットフォームで動作する。 テキストファイルで文書を管理できる。 綺麗な数式を簡単に書ける3。 図や表を挿入した文書を作成できる。 章・節，式，図表の番号，頁番号管理などを自動的に行い，参照できる。  日本語 TeX について 現在，日本語対応している主な TeX エンジンは 3 つあります。
- pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。">
-    <meta name="keywords" content="blog, note">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="LaTeX のすゝめ"/>
-<meta name="twitter:description" content="この記事は Qiita に投稿した内容です。
-はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。
-TeX / LaTeX とは TeX（テック / テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
-LaTeX（ラテック / ラテフ）2はコンピューター科学者の Leslie Lamport によって開発された，TeX に機能を追加し手軽に組版が行えるようになったシステムです。現在では LaTeX を使うことが一般的なので，「TeX」で LaTeX を指すことが多いです。
-TeX，LaTeX の特徴は次のようなことがあげられます。
- Windows，macOS，Linux などの多くのプラットフォームで動作する。 テキストファイルで文書を管理できる。 綺麗な数式を簡単に書ける3。 図や表を挿入した文書を作成できる。 章・節，式，図表の番号，頁番号管理などを自動的に行い，参照できる。  日本語 TeX について 現在，日本語対応している主な TeX エンジンは 3 つあります。
- pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。"/>
-
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Daiji256" />
+    <meta name="twitter:title" content="LaTeX のすゝめ" />
+    <meta name="twitter:description" content="この記事は Qiita に投稿した内容です。 はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。 TeX / LaTeX とは T" />
+    <meta name="twitter:image" content="/images/apple-touch-icon.png" />
+    <meta property="og:url" content="https://daiji256.github.io/posts/tex-latex/latex-susume/" />
+    <meta property="og:type" content="article" />
     <meta property="og:title" content="LaTeX のすゝめ" />
-<meta property="og:description" content="この記事は Qiita に投稿した内容です。
-はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。
-TeX / LaTeX とは TeX（テック / テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
-LaTeX（ラテック / ラテフ）2はコンピューター科学者の Leslie Lamport によって開発された，TeX に機能を追加し手軽に組版が行えるようになったシステムです。現在では LaTeX を使うことが一般的なので，「TeX」で LaTeX を指すことが多いです。
-TeX，LaTeX の特徴は次のようなことがあげられます。
- Windows，macOS，Linux などの多くのプラットフォームで動作する。 テキストファイルで文書を管理できる。 綺麗な数式を簡単に書ける3。 図や表を挿入した文書を作成できる。 章・節，式，図表の番号，頁番号管理などを自動的に行い，参照できる。  日本語 TeX について 現在，日本語対応している主な TeX エンジンは 3 つあります。
- pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://butty256.github.io/posts/tex-latex/latex-susume/" />
-<meta property="article:published_time" content="2021-02-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-02-14T00:00:00+00:00" />
-
-
-    <title>
-  LaTeX のすゝめ · Butty Blog
-</title>
-
+    <meta property="og:description" content="この記事は Qiita に投稿した内容です。 はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。 TeX / LaTeX とは T" />
+    <meta property="og:site_name" content="Daiji Blog" />
+    <meta property="og:image" content="/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://daiji256.github.io/images/favicon.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="https://daiji256.github.io/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/code-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/regular-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/brands-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/one-dark.css" />
     
-      <link rel="canonical" href="https://butty256.github.io/posts/tex-latex/latex-susume/">
-    
-
-    <link rel="preload" href="https://butty256.github.io/fonts/forkawesome-webfont.woff2?v=1.1.7" as="font" type="font/woff2" crossorigin>
-
-    
-      
-      
-      <link rel="stylesheet" href="https://butty256.github.io/css/coder.min.fe1a5a8859d7ad055c5f3c1fbab9946ba238003c78160fd8e77ac6c203d236b1.css" integrity="sha256-/hpaiFnXrQVcXzwfurmUa6I4ADx4Fg/Y53rGwgPSNrE=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-      
-        
-        
-        <link rel="stylesheet" href="https://butty256.github.io/css/coder-dark.min.d239c8f7530092ae18e52a2fda2aa3b4a619672b40d4f3fefbc482571571d3fa.css" integrity="sha256-0jnI91MAkq4Y5Sov2iqjtKYZZytA1PP&#43;&#43;8SCVxVx0/o=" crossorigin="anonymous" media="screen" />
-      
-    
-
-    
-
-    
-
-    <link rel="icon" type="image/x-icon" href="https://butty256.github.io/images/favicon.ico">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="https://butty256.github.io/images/apple-touch-icon.png">
-
-    
-
-    <meta name="generator" content="Hugo 0.68.3" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"
+  integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"
+  crossorigin="anonymous">
+<script
+  defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"
+  integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"
+  crossorigin="anonymous"></script>
+<script
+  defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"
+  integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+  crossorigin="anonymous"
+  onload="renderMathInElement(
+    document.body,
+    {
+      delimiters: [
+        {left: '$$', right: '$$', display:true},
+        {left: '$', right: '$', display:false}
+      ]
+    }
+  );"></script>
   </head>
-
-  
-  
-    
-  
-  <body class="preload-transitions colorscheme-auto"
-        onload=""
-  >
-    
-<div class="float-container">
-    <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-    </a>
-</div>
-
-
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://butty256.github.io/">
-      Butty Blog
-    </a>
-    
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://butty256.github.io/posts/">All Posts</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://butty256.github.io/tags/">Tags</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://butty256.github.io/categories/">Categories</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://butty256.github.io/aboutme/">About me</a>
-            </li>
-          
-        
-        
-      </ul>
-    
-  </section>
-</nav>
-
-
-      <div class="content">
-        
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">
-            <a class="title-link" href="https://butty256.github.io/posts/tex-latex/latex-susume/">
-              LaTeX のすゝめ
-            </a>
-          </h1>
-        </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime='2021-02-14T00:00:00Z'>
-                February 14, 2021
-              </time>
-            </span>
+  <body>
+    <div class="all-wrapper">
+      
+<div class="header">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <img src="https://daiji256.github.io/images/icon.svg" title='ホーム' class="user-icon" />
+          <div class="text">Daiji Blog</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <div class="logo" title='ホーム'>
+            <span class="ri ri-pencil"></span>
           </div>
-          
-          <div class="categories">
-  <i class="fa fa-folder" aria-hidden="true"></i>
-    <a href="https://butty256.github.io/categories/tex-latex/">TeX-LaTeX</a></div>
-
-          <div class="tags">
-  <i class="fa fa-tag" aria-hidden="true"></i>
-    <a href="https://butty256.github.io/tags/qiita/">Qiita</a>
-      <span class="separator">•</span>
-    <a href="https://butty256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/">まとめ</a>
-      <span class="separator">•</span>
-    <a href="https://butty256.github.io/tags/uplatex/">upLaTeX</a></div>
-
+          <div class="text">ホーム</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/categories/" class="item">
+          <div class="logo" title='カテゴリ'>
+            <span class="ri ri-folder"></span>
+          </div>
+          <div class="text">カテゴリ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/tags/" class="item">
+          <div class="logo">
+            <span class="ri ri-tags" title='タグ'></span>
+          </div>
+          <div class="text">タグ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/about/" class="item">
+          <div class="logo">
+            <span class="ri ri-user" title='プロフィール'></span>
+          </div>
+          <div class="text">プロフィール</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div class="main-line">
+    <div class="post">
+      <div class="info">
+        <div class="title">LaTeX のすゝめ</div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-calendar logo"></span>
+          <div class="text">2021 年 2 月 14 日</div>
         </div>
-      </header>
-
-      <div>
-        
-        <p>この記事は <a href="https://qiita.com/Butty256/items/9774df0899728feb3ab0">Qiita</a> に投稿した内容です。</p>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-folder logo"></span>
+          <a href="https://daiji256.github.io/categories/tex-latex/" class="text">TeX-LaTeX</a>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-tags logo"></span>
+          <a href="https://daiji256.github.io/tags/qiita/" class="text">Qiita</a><a href="https://daiji256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/" class="text">まとめ</a><a href="https://daiji256.github.io/tags/uplatex/" class="text">upLaTeX</a>
+        </div>
+      </div>
+      <section class="sec-content">
+        <div class="content">
+          <p>この記事は <a href="https://qiita.com/Daiji256/items/9774df0899728feb3ab0">Qiita</a> に投稿した内容です。</p>
 <h1 id="はじめに">はじめに</h1>
 <p>本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや<strong>初心者を対象</strong>としています。中級者や上級者には物足りないと思います。</p>
 <h1 id="tex--latex-とは">TeX / LaTeX とは</h1>
@@ -221,7 +135,7 @@ TeX，LaTeX の特徴は次のようなことがあげられます。
 <li>upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。</li>
 <li>LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。</li>
 </ul>
-<p>昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，<a href="https://qiita.com/Butty256/items/9afbfa9f822629d3b995">LuaLaTeX のすゝめ</a>で解説しています。</p>
+<p>昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，<a href="https://qiita.com/Daiji256/items/9afbfa9f822629d3b995">LuaLaTeX のすゝめ</a>で解説しています。</p>
 <h2 id="uplatex-について">upLaTeX について</h2>
 <p>田中 琢爾さんが内部コードを Unicode 化した pLaTeX の拡張版です。これにより次のような pLaTeX の問題が解決されました。</p>
 <ul>
@@ -243,42 +157,42 @@ TeX，LaTeX の特徴は次のようなことがあげられます。
 <p>この手順により執筆した TeX ソースファイルから PDF の文書ファイルを出力することができます。次に作成手順について例を用いて紹介します。</p>
 <h2 id="原稿ファイルの執筆tex-ファイルの作成">原稿ファイルの執筆（TeX ファイルの作成）</h2>
 <p>テキストエディタを用いて下に示すソースファイル（<code>sample.tex</code>）を作成します。ソースコードの具体的な説明は <a href="#tex-%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC%E6%A7%8B%E6%88%90">TeX ソースの基本構成</a>を参照してください。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX:sample.tex" data-lang="TeX:sample.tex"><span style="color:#6ab825;font-weight:bold">\RequirePackage</span><span style="color:#24909d">{</span>plautopatch<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\documentclass</span><span style="color:#bbb">[uplatex,dvipdfmx]</span><span style="color:#24909d">{</span>jsarticle<span style="color:#24909d">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX:sample.tex" data-lang="TeX:sample.tex"><span class="k">\RequirePackage</span><span class="nb">{</span>plautopatch<span class="nb">}</span>
+<span class="k">\documentclass</span><span class="na">[uplatex,dvipdfmx]</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
 
-<span style="color:#6ab825;font-weight:bold">\title</span><span style="color:#24909d">{{</span><span style="color:#6ab825;font-weight:bold">\LaTeX</span><span style="color:#24909d">}</span>のすゝめ<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\author</span><span style="color:#24909d">{</span>Butty<span style="color:#24909d">}</span>
+<span class="k">\title</span><span class="nb">{{</span><span class="k">\LaTeX</span><span class="nb">}</span>のすゝめ<span class="nb">}</span>
+<span class="k">\author</span><span class="nb">{</span>Daiji<span class="nb">}</span>
 
-<span style="color:#6ab825;font-weight:bold">\begin</span><span style="color:#24909d">{</span>document<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\maketitle</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\maketitle</span>
 
-<span style="color:#6ab825;font-weight:bold">\section</span><span style="color:#24909d">{</span>はじめに<span style="color:#24909d">}</span>
+<span class="k">\section</span><span class="nb">{</span>はじめに<span class="nb">}</span>
 
-<span style="color:#24909d">{</span><span style="color:#6ab825;font-weight:bold">\TeX</span><span style="color:#24909d">}</span>は組版システムです。
-<span style="color:#24909d">{</span><span style="color:#6ab825;font-weight:bold">\TeX</span><span style="color:#24909d">}</span>を使いやすくするために，<span style="color:#24909d">{</span><span style="color:#6ab825;font-weight:bold">\LaTeX</span><span style="color:#24909d">}</span>が開発されました。
+<span class="nb">{</span><span class="k">\TeX</span><span class="nb">}</span>は組版システムです。
+<span class="nb">{</span><span class="k">\TeX</span><span class="nb">}</span>を使いやすくするために，<span class="nb">{</span><span class="k">\LaTeX</span><span class="nb">}</span>が開発されました。
 
-p<span style="color:#24909d">{</span><span style="color:#6ab825;font-weight:bold">\TeX</span><span style="color:#24909d">}</span>は日本語対応の<span style="color:#24909d">{</span><span style="color:#6ab825;font-weight:bold">\TeX</span><span style="color:#24909d">}</span>です。
-up<span style="color:#24909d">{</span><span style="color:#6ab825;font-weight:bold">\TeX</span><span style="color:#24909d">}</span>はUnicode対応のp<span style="color:#24909d">{</span><span style="color:#6ab825;font-weight:bold">\TeX</span><span style="color:#24909d">}</span>です。
+p<span class="nb">{</span><span class="k">\TeX</span><span class="nb">}</span>は日本語対応の<span class="nb">{</span><span class="k">\TeX</span><span class="nb">}</span>です。
+up<span class="nb">{</span><span class="k">\TeX</span><span class="nb">}</span>はUnicode対応のp<span class="nb">{</span><span class="k">\TeX</span><span class="nb">}</span>です。
 
-<span style="color:#6ab825;font-weight:bold">\end</span><span style="color:#24909d">{</span>document<span style="color:#24909d">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </code></pre></div><h2 id="組版コンパイル">組版（コンパイル）</h2>
 <p>upLaTeX を呼び出し，DVI（device independent file format）ファイル<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>を生成します。<code>sample.tex</code> をコンパイルする場合は，次のコマンドになります。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">uplatex sample
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">uplatex sample
 </code></pre></div><p>次のようなメッセージが表示されたなら，コンパイルは成功し，<code>sample.aux</code>，<code>sample.log</code>，<code>sample.dvi</code> が生成されているはずです。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">...
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">...
 Output written on sample.dvi (1 page, 1076 bytes).
 Transcript written on sample.log.
 </code></pre></div><h2 id="pdf-に変換">PDF に変換</h2>
 <p>DVI ファイルを PDF の文書ファイルに変換するには次のコマンドで行えます<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>。<code>sample.pdf</code> が生成されると思います。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">dvipdfmx sample
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">dvipdfmx sample
 </code></pre></div><h1 id="tex-ソースの基本構成">TeX ソースの基本構成</h1>
 <p>upLaTeX のソースファイルは次の基本構成となります。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX"><span style="color:#6ab825;font-weight:bold">\RequirePackage</span><span style="color:#24909d">{</span>plautopatch<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\documentclass</span><span style="color:#bbb">[uplatex,dvipdfmx]</span><span style="color:#24909d">{</span>jsarticle<span style="color:#24909d">}</span>
-<span style="color:#999;font-style:italic">% プリアンブル
-</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">\begin</span><span style="color:#24909d">{</span>document<span style="color:#24909d">}</span>
-<span style="color:#999;font-style:italic">% 本文
-</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">\end</span><span style="color:#24909d">{</span>document<span style="color:#24909d">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\RequirePackage</span><span class="nb">{</span>plautopatch<span class="nb">}</span>
+<span class="k">\documentclass</span><span class="na">[uplatex,dvipdfmx]</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+<span class="c">% プリアンブル
+</span><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="c">% 本文
+</span><span class="c"></span><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </code></pre></div><p>1 行目は (u)pLaTeX と LaTeX の非互換を<strong>いい感じにしてくれるヤツ</strong>です。(u)pLaTeX を使用する場合は何も考えずに書いてください。2 行目は文書の種類（document class）を指定する部分です（<a href="#%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%82%AF%E3%83%A9%E3%82%B9">参照</a>）<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>。プリアンブルでは文書の体裁に関する宣言やコマンド等の定義を行います。本文が実際に出力される文書となります。なお，記号 <code>%</code> はコメントの開始を意味します（<a href="#%E6%9C%AC%E6%96%87%E3%81%AE%E5%9F%B7%E7%AD%86%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%83%AB%E3%83%BC%E3%83%AB">参照</a>）。</p>
 <h1 id="本文の執筆の基本ルール">本文の執筆の基本ルール</h1>
 <ul>
@@ -296,18 +210,18 @@ Transcript written on sample.log.
 <p>ここでは主要な一部のコマンド等の紹介を行います。</p>
 <h2 id="タイトル">タイトル</h2>
 <p>文章のタイトルは次のように指定します。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX"><span style="color:#6ab825;font-weight:bold">\title</span><span style="color:#24909d">{</span>表題<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\author</span><span style="color:#24909d">{</span>著者<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\date</span><span style="color:#24909d">{</span>日付<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\maketitle</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\title</span><span class="nb">{</span>表題<span class="nb">}</span>
+<span class="k">\author</span><span class="nb">{</span>著者<span class="nb">}</span>
+<span class="k">\date</span><span class="nb">{</span>日付<span class="nb">}</span>
+<span class="k">\maketitle</span>
 </code></pre></div><h2 id="見出し">見出し</h2>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX"><span style="color:#6ab825;font-weight:bold">\part</span><span style="color:#24909d">{</span>部<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\chapter</span><span style="color:#24909d">{</span>章<span style="color:#24909d">}</span> <span style="color:#999;font-style:italic">% jsarticle クラスには用意されていない
-</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">\section</span><span style="color:#24909d">{</span>節<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\subsection</span><span style="color:#24909d">{</span>項<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\subsubsection</span><span style="color:#24909d">{</span>目<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\paragraph</span><span style="color:#24909d">{</span>段落<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\subparagraph</span><span style="color:#24909d">{</span>小段落<span style="color:#24909d">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\part</span><span class="nb">{</span>部<span class="nb">}</span>
+<span class="k">\chapter</span><span class="nb">{</span>章<span class="nb">}</span> <span class="c">% jsarticle クラスには用意されていない
+</span><span class="c"></span><span class="k">\section</span><span class="nb">{</span>節<span class="nb">}</span>
+<span class="k">\subsection</span><span class="nb">{</span>項<span class="nb">}</span>
+<span class="k">\subsubsection</span><span class="nb">{</span>目<span class="nb">}</span>
+<span class="k">\paragraph</span><span class="nb">{</span>段落<span class="nb">}</span>
+<span class="k">\subparagraph</span><span class="nb">{</span>小段落<span class="nb">}</span>
 </code></pre></div><p><code>\section*{節}</code> のように，<code>*</code> をつけることで，番号をつけないようにできます。</p>
 <h2 id="文字サイズ変更">文字サイズ変更</h2>
 <p>文字サイズを変更するには次のコマンドが利用できます。サイズはデフォルトの値になっています。コマンド以降のフォントが全て変更されます。<code>{\Large 文章}</code> のようにすることで一部が変更できます。</p>
@@ -362,7 +276,7 @@ Transcript written on sample.log.
 </tbody>
 </table>
 <p>これら以外の文字サイズに変更したい場合には <code>\fontsize</code> コマンドを使用します。文字サイズと行送りを指定して使用します。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX"><span style="color:#6ab825;font-weight:bold">\fontsize</span><span style="color:#24909d">{</span>10.5pt<span style="color:#24909d">}{</span>15pt<span style="color:#24909d">}</span><span style="color:#6ab825;font-weight:bold">\selectfont</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\fontsize</span><span class="nb">{</span>10.5pt<span class="nb">}{</span>15pt<span class="nb">}</span><span class="k">\selectfont</span>
 </code></pre></div><h2 id="フォントスタイル変更">フォントスタイル変更</h2>
 <p>フォントスタイルを変更するには次のコマンドが利用できます<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>。日本語用の明朝体やゴシック体にするコマンド <code>\textmc</code>，<code>\textgt</code> も存在します。（KaTeX では <code>sl</code>，<code>sc</code> が使えないため，<code>it</code>，<code>rm</code> で代用しています。）</p>
 <table>
@@ -485,19 +399,19 @@ Transcript written on sample.log.
 <p>ここでは主要な一部の環境の紹介を行います。</p>
 <h2 id="箇条書き">箇条書き</h2>
 <p>箇条書きのための環境として，番号なし箇条書き（<code>itemize</code>），番号付き箇条書き（<code>enumerate</code>），見出し付き箇条書き（<code>description</code>）が用意されています。次のように使用してください。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX"><span style="color:#6ab825;font-weight:bold">\begin</span><span style="color:#24909d">{</span>itemize<span style="color:#24909d">}</span>
-	<span style="color:#6ab825;font-weight:bold">\item</span> 項目1
-	<span style="color:#6ab825;font-weight:bold">\item</span> 項目2
-<span style="color:#6ab825;font-weight:bold">\end</span><span style="color:#24909d">{</span>itemize<span style="color:#24909d">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+	<span class="k">\item</span> 項目1
+	<span class="k">\item</span> 項目2
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
 </code></pre></div><h2 id="揃え">揃え</h2>
 <p>文字揃えは左揃え（<code>flushleft</code>），中央揃え（<code>center</code>），右揃え（<code>flushright</code>）が指定できます。次のように使用してください。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX"><span style="color:#6ab825;font-weight:bold">\begin</span><span style="color:#24909d">{</span>flushleft<span style="color:#24909d">}</span>
-	文字列1<span style="color:#6ab825;font-weight:bold">\\</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\begin</span><span class="nb">{</span>flushleft<span class="nb">}</span>
+	文字列1<span class="k">\\</span>
 	文字列2
-<span style="color:#6ab825;font-weight:bold">\end</span><span style="color:#24909d">{</span>flushleft<span style="color:#24909d">}</span>
+<span class="k">\end</span><span class="nb">{</span>flushleft<span class="nb">}</span>
 </code></pre></div><h1 id="ドキュメントクラス">ドキュメントクラス</h1>
 <p>1 行目のドキュメントクラス指定は次のように記述します。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX"><span style="color:#6ab825;font-weight:bold">\documentclass</span><span style="color:#bbb">[オプション]</span><span style="color:#24909d">{</span>ドキュメントクラス<span style="color:#24909d">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\documentclass</span><span class="na">[オプション]</span><span class="nb">{</span>ドキュメントクラス<span class="nb">}</span>
 </code></pre></div><p><code>jsclasses</code> 互換クラス次の通りです。<code>jarticle</code> 等は JIS 組版規則に合わないのでお勧めできません。現在は日本語組版処理の要件に準拠した <code>jlreq</code> が注目を浴びています。詳しくは <a href="https://github.com/abenori/jlreq/blob/master/README-ja.md">jlreq (GitHub)</a> で説明されています。</p>
 <table>
 <thead>
@@ -570,20 +484,20 @@ Transcript written on sample.log.
 <p>目次を出力するには，挿入したい場所に <code>\tableofcontents</code> と書き，TeX ファイルを 3 回コンパイルしてください。同様に図や表の目次を出力したい場所には <code>\listoffigures</code>，<code>\listoftables</code> と書いてください。</p>
 <h2 id="相互参照">相互参照</h2>
 <p>節や図表の表題，式の後に <code>\label{ラベル}</code> を書くことで，その番号を参照したいところで <code>\ref{ラベル}</code> とすれば，対応する番号を参照できます。また，<code>\pageref{ラベル}</code> とすればページ番号が参照できます。相互参照を使う場合には，TeX ファイルを 2 回コンパイルする必要があります。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX">本研究で用いた試験材料の外観を図<span style="color:#6ab825;font-weight:bold">\ref</span><span style="color:#24909d">{</span>fig:test<span style="color:#24909d">}</span>に示す。
-<span style="color:#6ab825;font-weight:bold">\begin</span><span style="color:#24909d">{</span>figure<span style="color:#24909d">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX">本研究で用いた試験材料の外観を図<span class="k">\ref</span><span class="nb">{</span>fig:test<span class="nb">}</span>に示す。
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
 	....
-	<span style="color:#6ab825;font-weight:bold">\caption</span><span style="color:#24909d">{</span>実験装置の外観<span style="color:#24909d">}</span>
-	<span style="color:#6ab825;font-weight:bold">\label</span><span style="color:#24909d">{</span>fig:test<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\end</span><span style="color:#24909d">{</span>figure<span style="color:#24909d">}</span>
-</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX">温度特性は，式(<span style="color:#6ab825;font-weight:bold">\ref</span><span style="color:#24909d">{</span>eq:test<span style="color:#24909d">}</span>)で近似できる。
-<span style="color:#6ab825;font-weight:bold">\begin</span><span style="color:#24909d">{</span>align<span style="color:#24909d">}</span>
-	y = <span style="color:#6ab825;font-weight:bold">\exp</span>(x) + c. <span style="color:#6ab825;font-weight:bold">\label</span><span style="color:#24909d">{</span>eq:test<span style="color:#24909d">}</span>
-<span style="color:#6ab825;font-weight:bold">\end</span><span style="color:#24909d">{</span>align<span style="color:#24909d">}</span>
+	<span class="k">\caption</span><span class="nb">{</span>実験装置の外観<span class="nb">}</span>
+	<span class="k">\label</span><span class="nb">{</span>fig:test<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX">温度特性は，式(<span class="k">\ref</span><span class="nb">{</span>eq:test<span class="nb">}</span>)で近似できる。
+<span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+	y = <span class="k">\exp</span>(x) + c. <span class="k">\label</span><span class="nb">{</span>eq:test<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
 </code></pre></div><h1 id="数式">数式</h1>
 <h2 id="本文中の数式">本文中の数式</h2>
 <p>本文中に $f(x) = ax + b$ のように数式を書くには次のように <code>$</code> で挟むことでできます。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX">本文中に<span style="color:#ed9d13">$</span><span style="color:#24909d">f</span>(<span style="color:#24909d">x</span>)<span style="color:#24909d"> </span>=<span style="color:#24909d"> ax </span>+<span style="color:#24909d"> b</span><span style="color:#ed9d13">$</span>のように数式を書くには次のように<span style="color:#6ab825;font-weight:bold">\texttt</span><span style="color:#24909d">{</span><span style="color:#6ab825;font-weight:bold">\$</span><span style="color:#24909d">}</span>で挟むことでできます。
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX">本文中に<span class="s">$</span><span class="nb">f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> ax </span><span class="o">+</span><span class="nb"> b</span><span class="s">$</span>のように数式を書くには次のように<span class="k">\texttt</span><span class="nb">{</span><span class="k">\$</span><span class="nb">}</span>で挟むことでできます。
 </code></pre></div><h2 id="別行立て数式">別行立て数式</h2>
 <p>別行立て数式は，</p>
 <p>\[
@@ -593,11 +507,11 @@ g(x) &amp;= cx^{2} + dx + e
 \end{aligned}
 \]</p>
 <p>のように環境 <code>align</code> により書くことができます<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>。他の数式環境の <code>eqnarray</code> も有名だが <code>amsmath.sty</code> ではサポートしていないので推奨できません。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX">別行立て数式は，
-<span style="color:#6ab825;font-weight:bold">\begin</span><span style="color:#24909d">{</span>align<span style="color:#24909d">}</span>
-	f(x) <span style="color:#24909d">&amp;</span>= ax + b<span style="color:#6ab825;font-weight:bold">\\</span>
-	g(x) <span style="color:#24909d">&amp;</span>= cx<span style="color:#24909d">^{</span>2<span style="color:#24909d">}</span> + dx + e
-<span style="color:#6ab825;font-weight:bold">\end</span><span style="color:#24909d">{</span>align<span style="color:#24909d">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX">別行立て数式は，
+<span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+	f(x) <span class="nb">&amp;</span>= ax + b<span class="k">\\</span>
+	g(x) <span class="nb">&amp;</span>= cx<span class="nb">^{</span>2<span class="nb">}</span> + dx + e
+<span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
 のように環境により書くことができます。
 </code></pre></div><h1 id="おわりに">おわりに</h1>
 <p>今回は，(u)pLaTeX を中心に LaTeX の<strong>ごく一部</strong>を紹介をしました。本記事では以下に示すような紹介できてないです。</p>
@@ -613,7 +527,7 @@ g(x) &amp;= cx^{2} + dx + e
 <li><a href="https://texwiki.texjp.org/">TeX Wiki</a></li>
 <li><a href="https://ja.overleaf.com/">Overleaf</a></li>
 <li><a href="https://cloudlatex.io/ja">Cloud LaTeX</a></li>
-<li><a href="https://qiita.com/Butty256/items/9afbfa9f822629d3b995">LuaLaTeX のすゝめ (Qiita)</a></li>
+<li><a href="https://qiita.com/Daiji256/items/9afbfa9f822629d3b995">LuaLaTeX のすゝめ (Qiita)</a></li>
 <li><a href="https://github.com/abenori/jlreq/blob/master/README-ja.md">jlreq (GitHub)</a></li>
 </ol>
 <section class="footnotes" role="doc-endnotes">
@@ -632,7 +546,7 @@ g(x) &amp;= cx^{2} + dx + e
 <p>(u)pLaTeX のようなレガシー LaTeX は DVI を経由して PDF を作成します。pdfLaTeX，LuaLaTeX などのモダン LaTeX は直接 PDF を出力するので 2 つのステップ（執筆と出力）になります。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>他のソフト（コマンド）により PDF ファイル以外の PS ファイルを出力場合などもあります。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>他のソフト（コマンド）により PDF ファイル以外の PS ファイルを出力する場合などもあります。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
 <p>レイアウト情報を埋め込んだファイルのことです。 <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
@@ -655,85 +569,109 @@ g(x) &amp;= cx^{2} + dx + e
 </ol>
 </section>
 
+        </div>
+      </section>
+    </div>
+    <div class="post">
+      <div class="author">
+        <a href="https://daiji256.github.io/about/">
+          <img src="https://daiji256.github.io/images/icon.svg" class="author-icon" />
+        </a>
+        <div class="author-info">
+          <div>
+            <a href="https://daiji256.github.io/about/" class="name">
+              Daiji
+            </a>
+          </div>
+          <div>
+            ずっとパソコンの前でだらだらしている高専生です。いっぱい記事を書いていきたいと思ってます。
+          </div>
+        </div>
       </div>
-
-
-      <footer>
-        
-
-
-        
-        
-        
-      </footer>
-    </article>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css"
-    integrity="sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js"
-    integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"
-    onload="renderMathInElement(document.body,
-      {
-        delimiters: [
-          {left: '$$', right: '$$', display:true},
-          {left: '$', right: '$', display:false},
-          {left: '\\(', right: '\\)', display: false},
-          {left: '\\[', right: '\\]', display: true}
-        ]
-      }
-    );"></script>
-  </section>
-
-      </div>
-
-      
-  <footer class="footer">
-    <section class="container">
-      
-      
-        ©
-        
-          2020 -
-        
-        2021
-         Butty256 
-      
-      
-         · 
-        Powered by <a href="https://pages.github.com/">GitHub Pages</a> & <a href="https://gohugo.io/">Hugo</a>
-      
-      
-        
-      
-    </section>
-  </footer>
-
-
-    </main>
-
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
     
-      
-      <script src="https://butty256.github.io/js/coder.min.f92783b4545b68f3523e5d6ad91d93f76818f9d0db2ffa13bda31b6119cde62b.js" integrity="sha256-&#43;SeDtFRbaPNSPl1q2R2T92gY&#43;dDbL/oTvaMbYRnN5is="></script>
     
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "daiji256-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+  <div class="toc">
+    <aside>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#tex--latex-とは">TeX / LaTeX とは</a></li>
+    <li><a href="#日本語-tex-について">日本語 TeX について</a>
+      <ul>
+        <li><a href="#uplatex-について">upLaTeX について</a></li>
+      </ul>
+    </li>
+    <li><a href="#latex-開発環境">LaTeX 開発環境</a></li>
+    <li><a href="#文書作成の基本手順">文書作成の基本手順</a>
+      <ul>
+        <li><a href="#原稿ファイルの執筆tex-ファイルの作成">原稿ファイルの執筆（TeX ファイルの作成）</a></li>
+        <li><a href="#組版コンパイル">組版（コンパイル）</a></li>
+        <li><a href="#pdf-に変換">PDF に変換</a></li>
+      </ul>
+    </li>
+    <li><a href="#tex-ソースの基本構成">TeX ソースの基本構成</a></li>
+    <li><a href="#本文の執筆の基本ルール">本文の執筆の基本ルール</a></li>
+    <li><a href="#コマンド">コマンド</a>
+      <ul>
+        <li><a href="#タイトル">タイトル</a></li>
+        <li><a href="#見出し">見出し</a></li>
+        <li><a href="#文字サイズ変更">文字サイズ変更</a></li>
+        <li><a href="#フォントスタイル変更">フォントスタイル変更</a></li>
+        <li><a href="#記号">記号</a></li>
+        <li><a href="#改ページ">改ページ</a></li>
+      </ul>
+    </li>
+    <li><a href="#環境">環境</a>
+      <ul>
+        <li><a href="#箇条書き">箇条書き</a></li>
+        <li><a href="#揃え">揃え</a></li>
+      </ul>
+    </li>
+    <li><a href="#ドキュメントクラス">ドキュメントクラス</a></li>
+    <li><a href="#目次--相互参照">目次 / 相互参照</a>
+      <ul>
+        <li><a href="#目次">目次</a></li>
+        <li><a href="#相互参照">相互参照</a></li>
+      </ul>
+    </li>
+    <li><a href="#数式">数式</a>
+      <ul>
+        <li><a href="#本文中の数式">本文中の数式</a></li>
+        <li><a href="#別行立て数式">別行立て数式</a></li>
+      </ul>
+    </li>
+    <li><a href="#おわりに">おわりに</a></li>
+    <li><a href="#文献">文献</a></li>
+  </ul>
+</nav>
+    </aside>
+  </div>
+</div>
 
-    
+<footer class="footer">
+  © 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.
+</footer>
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
+    </div>
   </body>
-
 </html>

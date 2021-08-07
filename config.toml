@@ -1,89 +1,31 @@
-baseURL = "https://butty256.github.io/"
-title = "Butty Blog"
-theme = "hugo-mycoder"
+baseURL = "https://daiji256.github.io/"
+title = "Daiji Blog"
+author = "Daiji"
+theme = "hugo-clean-blog"
 publishDir = "docs"
 canonifyurls = true
+copyright = "© 2020–2021 Daiji - Powered by GitHub Pages & Hugo."
+paginate = 8
 languageCode = "ja"
-defaultContentLanguage = "ja"
-paginate = 10
-pygmentsStyle = "native"
+DefaultContentLanguage = "ja"
+disqusShortname = "daiji256-github-io"
+enableInlineShortcodes = true
+hasCJKLanguage = true
+summaryLength = 96
+pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
-enableEmoji = true
 
 [params]
-author = "Butty256"
-description = "Butty Blog"
-keywords = "blog, note"
-info = "Daiji Suzuki"
-avatarURL = "images/icon.png"
-footerContent = ""
-dateFormat = "January 2, 2006"
-hideFooter = false
-hideCredits = false
-hideCopyright = false
-since = 2020
-commit = "https://github.com/luizdepra/hugo-coder/tree/"
-rtl = false
-colorScheme = "auto"
-hideColorSchemeToggle = false
-maxSeeAlsoItems = 5
-enableTwemoji = false
-
-[params.csp]
-childsrc = ["'self'"]
-fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
-formaction = ["'self'"]
-framesrc = ["'self'"]
-imgsrc = ["'self'"]
-objectsrc = ["'none'"]
-stylesrc = [
-  "'self'",
-  "'unsafe-inline'",
-  "https://fonts.googleapis.com/",
-  "https://cdn.jsdelivr.net/"
-]
-scriptsrc = ["'self'", "'unsafe-inline'", "https://www.google-analytics.com"]
-prefetchsrc = ["'self'"]
-connectsrc = ["'self'", "https://www.google-analytics.com"]
+author = "Daiji"
+authorInfo = "ずっとパソコンの前でだらだらしている高専生です。いっぱい記事を書いていきたいと思ってます。"
 
 [taxonomies]
 category = "categories"
-series = "series"
 tag = "tags"
-author = "authors"
 
-[[params.social]]
-name = "GitHub"
-icon = "bi bi-github"
-weight = 1
-url = "https://github.com/Butty256/"
-[[params.social]]
-name = "Twitter"
-icon = "bi bi-twitter"
-weight = 2
-url = "https://twitter.com/butty256/"
-[[params.social]]
-name = "Qiita"
-icon = "bi bi-qiita"
-weight = 3
-url = "https://qiita.com/Butty256/"
-
-[languages.ja]
-languageName = ":japan:"
-[[languages.ja.menu.main]]
-name = "All Posts"
-weight = 1
-url = "posts/"
-[[languages.ja.menu.main]]
-name = "Tags"
-weight = 2
-url = "tags/"
-[[languages.ja.menu.main]]
-name = "Categories"
-weight = 3
-url = "categories/"
-[[languages.ja.menu.main]]
-name = "About me"
-weight = 4
-url = "aboutme/"
+[markup]
+[markup.tableOfContents]
+startLevel = 1
+endLevel = 5
+ordered = false

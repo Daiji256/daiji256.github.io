@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>eval on Butty Blog</title>
-    <link>https://butty256.github.io/tags/eval/</link>
-    <description>Recent content in eval on Butty Blog</description>
+    <title>eval on Daiji Blog</title>
+    <link>https://daiji256.github.io/tags/eval/</link>
+    <description>Recent content in eval on Daiji Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
+    <copyright>© 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.</copyright>
     <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://butty256.github.io/tags/eval/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://daiji256.github.io/tags/eval/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>C 言語で eval 風関数</title>
-      <link>https://butty256.github.io/posts/c/eval-c/</link>
+      <link>https://daiji256.github.io/posts/c/eval-c/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://butty256.github.io/posts/c/eval-c/</guid>
-      <description>この記事は Qiita に投稿した内容です。
-はじめに eval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般的です。ここでは C 言語のための文字列を数式として処理する eval 風関数を作成します。ソースコードは GitHub にあげてあります。
-主な仕様 eval は引数の数式を計算し，その結果を戻り値とする関数にします。eval では sin，exp，sqrt などの math.h にある関数が使えるようにします。関数を含めた数式の計算順は次のようになります。計算過程は全て文字列として処理を行います。
- 関数：sin，exp，sqrt など 括弧：(，) 乗法，除法：*，\ 加法，減法：+，-  関数の計算を行う calcfunc ，四則演算を行う calc を作成します。括弧の処理には eval を使用します。プログラムの疑似コード（？）と共に説明します。実際のソースコードは長いので GitHub を参照してください。実装は基本的に単純で，上記の箇条書きの順番通りに計算するだけです。
-double eval(char *str) { for ( 文字列先頭からループ ) { if ( 関数があった時 ) { str2 = 関数とその引数; str3 = num2str(calcfunc(str2)); str = str2 を str3 に置換; } } for ( 文字列先頭からループ ) { if ( 括弧があった時 ) { str2 = 括弧内の文字列; str3 = num2str(eval(str2)); str = (str2) を str3 に置換; } } for ( 文字列先頭からループ ) { if ( *, / があった時 ) { str2 = 計算範囲; str3 = num2str(calc(str2)); str = str2 を str3 に置換; } } for ( 文字列先頭からループ ) { if ( +, - があった時 ) { str2 = 計算範囲; str3 = num2str(calc(str2)); str = str2 を str3 に置換; } } return atof(str); } 処理の流れの例 引数に 3*sqrt(4)+(5-2) とした時を例にして説明します。まず都合が良くするために全体に (，) を付けます。</description>
+      <guid>https://daiji256.github.io/posts/c/eval-c/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに eval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般</description>
     </item>
     
   </channel>

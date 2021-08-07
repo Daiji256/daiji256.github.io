@@ -1,31 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Butty Blog</title>
-    <link>https://butty256.github.io/categories/</link>
-    <description>Recent content in Categories on Butty Blog</description>
+    <title>Categories on Daiji Blog</title>
+    <link>https://daiji256.github.io/categories/</link>
+    <description>Recent content in Categories on Daiji Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <copyright>© 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.</copyright>
+    <lastBuildDate>Sat, 15 May 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://butty256.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://daiji256.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>日記-備忘録</title>
+      <link>https://daiji256.github.io/categories/%E6%97%A5%E8%A8%98-%E5%82%99%E5%BF%98%E9%8C%B2/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/categories/%E6%97%A5%E8%A8%98-%E5%82%99%E5%BF%98%E9%8C%B2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>TeX-LaTeX</title>
-      <link>https://butty256.github.io/categories/tex-latex/</link>
+      <link>https://daiji256.github.io/categories/tex-latex/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://butty256.github.io/categories/tex-latex/</guid>
+      <guid>https://daiji256.github.io/categories/tex-latex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C</title>
-      <link>https://butty256.github.io/categories/c/</link>
+      <link>https://daiji256.github.io/categories/c/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://butty256.github.io/categories/c/</guid>
+      <guid>https://daiji256.github.io/categories/c/</guid>
       <description></description>
     </item>
     

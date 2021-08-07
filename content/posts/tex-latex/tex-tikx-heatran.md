@@ -52,14 +52,11 @@ for i in range(img.shape[1]):
     for j in range(img.shape[0]):
         if img[i,j,3] == 0:
             continue
-        # end
         print(
             '\t\\draw [thin,fill,color={{rgb,255:red,{};green,{};blue,{}}}] ({},{}) rectangle ({},{});'.format(
                 img[i,j,2], img[i,j,1], img[i,j,0], j, -i, j+1, -i-1
             )
         )
-    # end
-# end
 print("\\end{tikzpicture}")
 ```
 
@@ -71,7 +68,7 @@ print("\\end{tikzpicture}")
 
 # 文献
 
-1. [ソースコード (GitHub)](https://github.com/Butty256/TeX-TikZ-Heatran)
+1. [ソースコード (GitHub)](https://github.com/Daiji256/TeX-TikZ-Heatran)
 1. [TeX (TeX Wiki)](https://texwiki.texjp.org/TeX)
 1. [TikZ/PGF (TeX Wiki)](https://texwiki.texjp.org/TikZ)
 1. [ヒードラン (ピクシブ)](https://dic.pixiv.net/a/%E3%83%92%E3%83%BC%E3%83%89%E3%83%A9%E3%83%B3)

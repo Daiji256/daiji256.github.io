@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>{{ .Site.Title }}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Daiji256" />
+    <meta name="twitter:title" content="{{ .Site.Title }}" />
+    <meta name="twitter:image" content="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
+    <meta property="og:url" content="{{ $.Site.BaseURL | relURL }}" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:image" content="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.css" />
+    <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base-fonts.css" />
+    <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/regular-icons.css" />
+    <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/brands-icons.css" />
+  </head>
+  <body>
+    <div class="all-wrapper">
+      {{ partial "header.html" . }}
+      <div class="main-wrapper">
+        <div class="cards-line">
+          <div class="card">
+            <div class="main">
+              <img src="{{ $.Site.BaseURL | relURL }}images/icon.svg" class="icon" />
+              <div class="name">{{ .Site.Params.author }}</div>
+              <div class="brands">
+                <a href="https://github.com/Daiji256/" title='GitHub' target="_blank" rel="noopener" class="link">
+                  <span class="bi bi-github github-color"></span>
+                </a>
+                <a href="https://twitter.com/Daiji256/" title='Twitter' target="_blank" rel="noopener" class="link">
+                  <span class="bi bi-twitter twitter-color"></span>
+                </a>
+                <a href="https://qiita.com/Daiji256/" title='Qiita' target="_blank" rel="noopener" class="link">
+                  <span class="bi bi-qiita qiita-color"></span>
+                </a>
+                <a href="https://atcoder.jp/users/Daiji256/" title='AtCoder' target="_blank" rel="noopener" class="link">
+                  <span class="bi bi-atcoder atcoder-color"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="taxonomies">
+              <div class="name">
+                <span class="ri ri-folder logo"></span>
+                <a href="{{ $.Site.BaseURL | relURL }}categories/" class="text">カテゴリ</a>
+              </div>
+              {{ range .Site.Taxonomies.categories.ByCount -}}
+              <span class="no-wrap">
+                <a href="{{ $.Site.BaseURL | relURL }}categories/{{ .Name | urlize }}" class="taxonomies-item">
+                  {{ .Page.Title }}
+                </a>
+              </span>
+              {{ end -}}
+            </div>
+          </div>
+          <div class="card">
+            <div class="taxonomies">
+              <div class="name">
+                <span class="ri ri-tags logo"></span>
+                <a href="{{ $.Site.BaseURL | relURL }}tags/" class="text">タグ</a>
+              </div>
+              {{ range .Site.Taxonomies.tags.ByCount -}}
+              <span class="no-wrap">
+                <a href="{{ $.Site.BaseURL | relURL }}tags/{{ .Name | urlize }}" class="taxonomies-item">
+                  {{ .Page.Title }}
+                </a>
+              </span>
+              {{ end -}}
+            </div>
+          </div>
+        </div>
+        <div class="posts-line">
+          {{- $pages := .Pages -}}
+          {{ if .IsHome -}}
+          {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections -}}
+          {{- end }}
+          {{ range (.Paginate $pages).Pages -}}
+          <div class="post-card">
+            <div class="title">
+              <a href="{{ .RelPermalink }}" class="link">{{ .Title }}</a>
+            </div>
+            <div class="summary">
+              {{ .Summary }}...
+            </div>
+            <div class="post-info">
+              <span aria-hidden="true" class="ri ri-calendar logo"></span>
+              <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
+            </div>
+            {{ with .Params.categories -}}
+            {{ if . -}}
+            <div class="post-info">
+              <span aria-hidden="true" class="ri ri-folder logo"></span>
+              {{ range . -}}
+              <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">{{ . }}</a>
+              {{- end }}
+            </div>
+            {{- end }}
+            {{- end }}
+            {{ with .Params.tags -}}
+            {{ if . -}}
+            <div class="post-info">
+              <span aria-hidden="true" class="ri ri-tags logo"></span>
+              {{ range . -}}
+              <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">{{ . }}</a>
+              {{- end }}
+            </div>
+            {{- end }}
+            {{- end }}
+          </div>
+          {{ end -}}
+          {{- partial "pagination.html" . }}
+        </div>
+      </div>
+      {{ partial "footer.html" . }}
+    </div>
+  </body>
+</html>

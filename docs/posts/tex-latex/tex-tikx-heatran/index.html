@@ -1,204 +1,120 @@
 <!DOCTYPE html>
-<html lang="ja">
-
+<html lang="ja" prefix="og: http://ogp.me/ns#">
   <head>
-    <meta charset="utf-8">
+    <title>ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。 - Daiji Blog</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="ja">
-    <meta name="color-scheme" content="light dark">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css"
-    integrity="sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js"
-    integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"
-    onload="renderMathInElement(document.body,
-      {
-        delimiters: [
-          {left: '$$', right: '$$', display:true},
-          {left: '$', right: '$', display:false},
-          {left: '\\(', right: '\\)', display: false},
-          {left: '\\[', right: '\\]', display: true}
-        ]
-      }
-    );"></script>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p">
-
-    
-      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
-
-    
-
-    <meta name="author" content="Butty256">
-    <meta name="description" content="※この記事は Qiita に投稿していた内容です。
-はじめに 先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15 年間もヒードランは壁や天井を這い回っていました。たまには他の場所も這い回りたいことでしょう。ここではヒードランに TeX と TikZ1 を這い回ってもらいます。
-基礎知識 前提となる基礎知識は以下のリンクを参考にしてください。
- TeX (TeX Wiki) TikZ/PGF (TeX Wiki) ヒードラン (ピクシブ)  TeX を這い回る まずは TeX を這い回ってもらいます。ただヒードランの画像を \includegraphics によって貼り付けるだけです。
-\includegraphics[scale=4]{Heatran.png}   TikZ を這い回る TeX を這い回るだけでは面白くありません。なので TikZ でドット絵を描いて這い回ってもらいます。ドット絵は大量の四角で描きます。枠無しで色を塗ると環境によっては隙間が見えてしまいます。なので，太さ thin の枠を設定しています。$Y$ 軸は下が正になっているので，マイナスにしています。
-\begin{tikzpicture} \draw [thin,fill,color={rgb,255:red,R;green,G;blue,B}] (X,-Y) rectangle (X&#43;1,-Y-1); \end{tikzpicture} 手作業で全ドットを描いたら大変なので，Python&#43;OpenCV にやってもらいましょう。背景のドットは無視します。後は全画素に応じてカラーコードの設定と座標の設定をしています。当たり前ですけど，見た目は変わりません。
-img = cv2.imread(sys.argv[1], cv2.IMREAD_UNCHANGED) print(&#34;\\begin{tikzpicture}&#34;) for i in range(img.shape[1]): for j in range(img.shape[0]): if img[i,j,3] == 0: continue # end print( &#39;\t\\draw [thin,fill,color={{rgb,255:red,{};green,{};blue,{}}}] ({},{}) rectangle ({},{});&#39;.">
-    <meta name="keywords" content="blog, note">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。"/>
-<meta name="twitter:description" content="※この記事は Qiita に投稿していた内容です。
-はじめに 先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15 年間もヒードランは壁や天井を這い回っていました。たまには他の場所も這い回りたいことでしょう。ここではヒードランに TeX と TikZ1 を這い回ってもらいます。
-基礎知識 前提となる基礎知識は以下のリンクを参考にしてください。
- TeX (TeX Wiki) TikZ/PGF (TeX Wiki) ヒードラン (ピクシブ)  TeX を這い回る まずは TeX を這い回ってもらいます。ただヒードランの画像を \includegraphics によって貼り付けるだけです。
-\includegraphics[scale=4]{Heatran.png}   TikZ を這い回る TeX を這い回るだけでは面白くありません。なので TikZ でドット絵を描いて這い回ってもらいます。ドット絵は大量の四角で描きます。枠無しで色を塗ると環境によっては隙間が見えてしまいます。なので，太さ thin の枠を設定しています。$Y$ 軸は下が正になっているので，マイナスにしています。
-\begin{tikzpicture} \draw [thin,fill,color={rgb,255:red,R;green,G;blue,B}] (X,-Y) rectangle (X&#43;1,-Y-1); \end{tikzpicture} 手作業で全ドットを描いたら大変なので，Python&#43;OpenCV にやってもらいましょう。背景のドットは無視します。後は全画素に応じてカラーコードの設定と座標の設定をしています。当たり前ですけど，見た目は変わりません。
-img = cv2.imread(sys.argv[1], cv2.IMREAD_UNCHANGED) print(&#34;\\begin{tikzpicture}&#34;) for i in range(img.shape[1]): for j in range(img.shape[0]): if img[i,j,3] == 0: continue # end print( &#39;\t\\draw [thin,fill,color={{rgb,255:red,{};green,{};blue,{}}}] ({},{}) rectangle ({},{});&#39;."/>
-
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Daiji256" />
+    <meta name="twitter:title" content="ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。" />
+    <meta name="twitter:description" content="※この記事は Qiita に投稿していた内容です。 はじめに 先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15" />
+    <meta name="twitter:image" content="/images/apple-touch-icon.png" />
+    <meta property="og:url" content="https://daiji256.github.io/posts/tex-latex/tex-tikx-heatran/" />
+    <meta property="og:type" content="article" />
     <meta property="og:title" content="ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。" />
-<meta property="og:description" content="※この記事は Qiita に投稿していた内容です。
-はじめに 先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15 年間もヒードランは壁や天井を這い回っていました。たまには他の場所も這い回りたいことでしょう。ここではヒードランに TeX と TikZ1 を這い回ってもらいます。
-基礎知識 前提となる基礎知識は以下のリンクを参考にしてください。
- TeX (TeX Wiki) TikZ/PGF (TeX Wiki) ヒードラン (ピクシブ)  TeX を這い回る まずは TeX を這い回ってもらいます。ただヒードランの画像を \includegraphics によって貼り付けるだけです。
-\includegraphics[scale=4]{Heatran.png}   TikZ を這い回る TeX を這い回るだけでは面白くありません。なので TikZ でドット絵を描いて這い回ってもらいます。ドット絵は大量の四角で描きます。枠無しで色を塗ると環境によっては隙間が見えてしまいます。なので，太さ thin の枠を設定しています。$Y$ 軸は下が正になっているので，マイナスにしています。
-\begin{tikzpicture} \draw [thin,fill,color={rgb,255:red,R;green,G;blue,B}] (X,-Y) rectangle (X&#43;1,-Y-1); \end{tikzpicture} 手作業で全ドットを描いたら大変なので，Python&#43;OpenCV にやってもらいましょう。背景のドットは無視します。後は全画素に応じてカラーコードの設定と座標の設定をしています。当たり前ですけど，見た目は変わりません。
-img = cv2.imread(sys.argv[1], cv2.IMREAD_UNCHANGED) print(&#34;\\begin{tikzpicture}&#34;) for i in range(img.shape[1]): for j in range(img.shape[0]): if img[i,j,3] == 0: continue # end print( &#39;\t\\draw [thin,fill,color={{rgb,255:red,{};green,{};blue,{}}}] ({},{}) rectangle ({},{});&#39;." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://butty256.github.io/posts/tex-latex/tex-tikx-heatran/" />
-<meta property="article:published_time" content="2021-02-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-02-28T00:00:00+00:00" />
-
-
-    <title>
-  ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。 · Butty Blog
-</title>
-
+    <meta property="og:description" content="※この記事は Qiita に投稿していた内容です。 はじめに 先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15" />
+    <meta property="og:site_name" content="Daiji Blog" />
+    <meta property="og:image" content="/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://daiji256.github.io/images/favicon.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="https://daiji256.github.io/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/code-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/regular-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/brands-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/one-dark.css" />
     
-      <link rel="canonical" href="https://butty256.github.io/posts/tex-latex/tex-tikx-heatran/">
-    
-
-    <link rel="preload" href="https://butty256.github.io/fonts/forkawesome-webfont.woff2?v=1.1.7" as="font" type="font/woff2" crossorigin>
-
-    
-      
-      
-      <link rel="stylesheet" href="https://butty256.github.io/css/coder.min.fe1a5a8859d7ad055c5f3c1fbab9946ba238003c78160fd8e77ac6c203d236b1.css" integrity="sha256-/hpaiFnXrQVcXzwfurmUa6I4ADx4Fg/Y53rGwgPSNrE=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-      
-        
-        
-        <link rel="stylesheet" href="https://butty256.github.io/css/coder-dark.min.d239c8f7530092ae18e52a2fda2aa3b4a619672b40d4f3fefbc482571571d3fa.css" integrity="sha256-0jnI91MAkq4Y5Sov2iqjtKYZZytA1PP&#43;&#43;8SCVxVx0/o=" crossorigin="anonymous" media="screen" />
-      
-    
-
-    
-
-    
-
-    <link rel="icon" type="image/x-icon" href="https://butty256.github.io/images/favicon.ico">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="https://butty256.github.io/images/apple-touch-icon.png">
-
-    
-
-    <meta name="generator" content="Hugo 0.68.3" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"
+  integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"
+  crossorigin="anonymous">
+<script
+  defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"
+  integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"
+  crossorigin="anonymous"></script>
+<script
+  defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"
+  integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+  crossorigin="anonymous"
+  onload="renderMathInElement(
+    document.body,
+    {
+      delimiters: [
+        {left: '$$', right: '$$', display:true},
+        {left: '$', right: '$', display:false}
+      ]
+    }
+  );"></script>
   </head>
-
-  
-  
-    
-  
-  <body class="preload-transitions colorscheme-auto"
-        onload=""
-  >
-    
-<div class="float-container">
-    <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-    </a>
-</div>
-
-
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://butty256.github.io/">
-      Butty Blog
-    </a>
-    
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://butty256.github.io/posts/">All Posts</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://butty256.github.io/tags/">Tags</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://butty256.github.io/categories/">Categories</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://butty256.github.io/aboutme/">About me</a>
-            </li>
-          
-        
-        
-      </ul>
-    
-  </section>
-</nav>
-
-
-      <div class="content">
-        
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">
-            <a class="title-link" href="https://butty256.github.io/posts/tex-latex/tex-tikx-heatran/">
-              ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。
-            </a>
-          </h1>
-        </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime='2021-02-28T00:00:00Z'>
-                February 28, 2021
-              </time>
-            </span>
+  <body>
+    <div class="all-wrapper">
+      
+<div class="header">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <img src="https://daiji256.github.io/images/icon.svg" title='ホーム' class="user-icon" />
+          <div class="text">Daiji Blog</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <div class="logo" title='ホーム'>
+            <span class="ri ri-pencil"></span>
           </div>
-          
-          <div class="categories">
-  <i class="fa fa-folder" aria-hidden="true"></i>
-    <a href="https://butty256.github.io/categories/tex-latex/">TeX-LaTeX</a></div>
-
-          <div class="tags">
-  <i class="fa fa-tag" aria-hidden="true"></i>
-    <a href="https://butty256.github.io/tags/%E3%83%8D%E3%82%BF/">ネタ</a>
-      <span class="separator">•</span>
-    <a href="https://butty256.github.io/tags/tikz/">TikZ</a></div>
-
+          <div class="text">ホーム</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/categories/" class="item">
+          <div class="logo" title='カテゴリ'>
+            <span class="ri ri-folder"></span>
+          </div>
+          <div class="text">カテゴリ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/tags/" class="item">
+          <div class="logo">
+            <span class="ri ri-tags" title='タグ'></span>
+          </div>
+          <div class="text">タグ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/about/" class="item">
+          <div class="logo">
+            <span class="ri ri-user" title='プロフィール'></span>
+          </div>
+          <div class="text">プロフィール</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div class="main-line">
+    <div class="post">
+      <div class="info">
+        <div class="title">ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。</div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-calendar logo"></span>
+          <div class="text">2021 年 2 月 28 日</div>
         </div>
-      </header>
-
-      <div>
-        
-        <p>※この記事は Qiita に投稿<strong>していた</strong>内容です。</p>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-folder logo"></span>
+          <a href="https://daiji256.github.io/categories/tex-latex/" class="text">TeX-LaTeX</a>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-tags logo"></span>
+          <a href="https://daiji256.github.io/tags/%E3%83%8D%E3%82%BF/" class="text">ネタ</a><a href="https://daiji256.github.io/tags/tikz/" class="text">TikZ</a>
+        </div>
+      </div>
+      <section class="sec-content">
+        <div class="content">
+          <p>※この記事は Qiita に投稿<strong>していた</strong>内容です。</p>
 <h1 id="はじめに">はじめに</h1>
 <p>先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15 年間もヒードランは壁や天井を這い回っていました。たまには他の場所も這い回りたいことでしょう。ここではヒードランに TeX と TikZ<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> を這い回ってもらいます。</p>
 <h1 id="基礎知識">基礎知識</h1>
@@ -210,33 +126,30 @@ img = cv2.imread(sys.argv[1], cv2.IMREAD_UNCHANGED) print(&#34;\\begin{tikzpictu
 </ul>
 <h1 id="tex-を這い回る">TeX を這い回る</h1>
 <p>まずは TeX を這い回ってもらいます。ただヒードランの画像を <code>\includegraphics</code> によって貼り付けるだけです。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX"><span style="color:#6ab825;font-weight:bold">\includegraphics</span><span style="color:#bbb">[scale=4]</span><span style="color:#24909d">{</span>Heatran.png<span style="color:#24909d">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\includegraphics</span><span class="na">[scale=4]</span><span class="nb">{</span>Heatran.png<span class="nb">}</span>
 </code></pre></div><figure>
     <img src="../../images/tex-tikz-heatran/heatran-1.png" width="320"/> 
 </figure>
 
 <h1 id="tikz-を這い回る">TikZ を這い回る</h1>
 <p>TeX を這い回るだけでは面白くありません。なので TikZ でドット絵を描いて這い回ってもらいます。ドット絵は大量の四角で描きます。枠無しで色を塗ると環境によっては隙間が見えてしまいます。なので，太さ <code>thin</code> の枠を設定しています。$Y$ 軸は下が正になっているので，マイナスにしています。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TeX" data-lang="TeX"><span style="color:#6ab825;font-weight:bold">\begin</span><span style="color:#24909d">{</span>tikzpicture<span style="color:#24909d">}</span>
-	<span style="color:#6ab825;font-weight:bold">\draw</span> [thin,fill,color=<span style="color:#24909d">{</span>rgb,255:red,R;green,G;blue,B<span style="color:#24909d">}</span>] (X,-Y) rectangle (X+1,-Y-1);
-<span style="color:#6ab825;font-weight:bold">\end</span><span style="color:#24909d">{</span>tikzpicture<span style="color:#24909d">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+	<span class="k">\draw</span> [thin,fill,color=<span class="nb">{</span>rgb,255:red,R;green,G;blue,B<span class="nb">}</span>] (X,-Y) rectangle (X+1,-Y-1);
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
 </code></pre></div><p>手作業で全ドットを描いたら大変なので，Python+OpenCV にやってもらいましょう。背景のドットは無視します。後は全画素に応じてカラーコードの設定と座標の設定をしています。当たり前ですけど，見た目は変わりません。</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">img = cv2.imread(sys.argv[<span style="color:#3677a9">1</span>], cv2.IMREAD_UNCHANGED)
+<div class="highlight"><pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
 
-<span style="color:#6ab825;font-weight:bold">print</span>(<span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\\</span><span style="color:#ed9d13">begin{tikzpicture}&#34;</span>)
-<span style="color:#6ab825;font-weight:bold">for</span> i <span style="color:#6ab825;font-weight:bold">in</span> <span style="color:#24909d">range</span>(img.shape[<span style="color:#3677a9">1</span>]):
-    <span style="color:#6ab825;font-weight:bold">for</span> j <span style="color:#6ab825;font-weight:bold">in</span> <span style="color:#24909d">range</span>(img.shape[<span style="color:#3677a9">0</span>]):
-        <span style="color:#6ab825;font-weight:bold">if</span> img[i,j,<span style="color:#3677a9">3</span>] == <span style="color:#3677a9">0</span>:
-            <span style="color:#6ab825;font-weight:bold">continue</span>
-        <span style="color:#999;font-style:italic"># end</span>
-        <span style="color:#6ab825;font-weight:bold">print</span>(
-            <span style="color:#ed9d13">&#39;</span><span style="color:#ed9d13">\t\\</span><span style="color:#ed9d13">draw [thin,fill,color={{rgb,255:red,{};green,{};blue,{}}}] ({},{}) rectangle ({},{});&#39;</span>.format(
-                img[i,j,<span style="color:#3677a9">2</span>], img[i,j,<span style="color:#3677a9">1</span>], img[i,j,<span style="color:#3677a9">0</span>], j, -i, j+<span style="color:#3677a9">1</span>, -i-<span style="color:#3677a9">1</span>
-            )
-        )
-    <span style="color:#999;font-style:italic"># end</span>
-<span style="color:#999;font-style:italic"># end</span>
-<span style="color:#6ab825;font-weight:bold">print</span>(<span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\\</span><span style="color:#ed9d13">end{tikzpicture}&#34;</span>)
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\\</span><span class="s2">begin{tikzpicture}&#34;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">print</span><span class="p">(</span>
+            <span class="s1">&#39;</span><span class="se">\t\\</span><span class="s1">draw [thin,fill,color={{rgb,255:red,{};green,{};blue,{}}}] ({},{}) rectangle ({},{});&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\\</span><span class="s2">end{tikzpicture}&#34;</span><span class="p">)</span>
 </code></pre></div><figure>
     <img src="../../images/tex-tikz-heatran/heatran-2.png" width="320"/> 
 </figure>
@@ -245,7 +158,7 @@ img = cv2.imread(sys.argv[1], cv2.IMREAD_UNCHANGED) print(&#34;\\begin{tikzpictu
 <p>ヒードランが壁と天井以外を這い回りました。リメイク作品でもゴキゴキしてるか楽しみです。</p>
 <h1 id="文献">文献</h1>
 <ol>
-<li><a href="https://github.com/Butty256/TeX-TikZ-Heatran">ソースコード (GitHub)</a></li>
+<li><a href="https://github.com/Daiji256/TeX-TikZ-Heatran">ソースコード (GitHub)</a></li>
 <li><a href="https://texwiki.texjp.org/TeX">TeX (TeX Wiki)</a></li>
 <li><a href="https://texwiki.texjp.org/TikZ">TikZ/PGF (TeX Wiki)</a></li>
 <li><a href="https://dic.pixiv.net/a/%E3%83%92%E3%83%BC%E3%83%89%E3%83%A9%E3%83%B3">ヒードラン (ピクシブ)</a></li>
@@ -259,85 +172,67 @@ img = cv2.imread(sys.argv[1], cv2.IMREAD_UNCHANGED) print(&#34;\\begin{tikzpictu
 </ol>
 </section>
 
+        </div>
+      </section>
+    </div>
+    <div class="post">
+      <div class="author">
+        <a href="https://daiji256.github.io/about/">
+          <img src="https://daiji256.github.io/images/icon.svg" class="author-icon" />
+        </a>
+        <div class="author-info">
+          <div>
+            <a href="https://daiji256.github.io/about/" class="name">
+              Daiji
+            </a>
+          </div>
+          <div>
+            ずっとパソコンの前でだらだらしている高専生です。いっぱい記事を書いていきたいと思ってます。
+          </div>
+        </div>
       </div>
-
-
-      <footer>
-        
-
-
-        
-        
-        
-      </footer>
-    </article>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css"
-    integrity="sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js"
-    integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"
-    onload="renderMathInElement(document.body,
-      {
-        delimiters: [
-          {left: '$$', right: '$$', display:true},
-          {left: '$', right: '$', display:false},
-          {left: '\\(', right: '\\)', display: false},
-          {left: '\\[', right: '\\]', display: true}
-        ]
-      }
-    );"></script>
-  </section>
-
-      </div>
-
-      
-  <footer class="footer">
-    <section class="container">
-      
-      
-        ©
-        
-          2020 -
-        
-        2021
-         Butty256 
-      
-      
-         · 
-        Powered by <a href="https://pages.github.com/">GitHub Pages</a> & <a href="https://gohugo.io/">Hugo</a>
-      
-      
-        
-      
-    </section>
-  </footer>
-
-
-    </main>
-
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
     
-      
-      <script src="https://butty256.github.io/js/coder.min.f92783b4545b68f3523e5d6ad91d93f76818f9d0db2ffa13bda31b6119cde62b.js" integrity="sha256-&#43;SeDtFRbaPNSPl1q2R2T92gY&#43;dDbL/oTvaMbYRnN5is="></script>
     
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "daiji256-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+  <div class="toc">
+    <aside>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#基礎知識">基礎知識</a></li>
+    <li><a href="#tex-を這い回る">TeX を這い回る</a></li>
+    <li><a href="#tikz-を這い回る">TikZ を這い回る</a></li>
+    <li><a href="#まとめ">まとめ</a></li>
+    <li><a href="#文献">文献</a></li>
+  </ul>
+</nav>
+    </aside>
+  </div>
+</div>
 
-    
+<footer class="footer">
+  © 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.
+</footer>
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
+    </div>
   </body>
-
 </html>

@@ -5,7 +5,7 @@ categories: [C]
 tags: [Qiita,bit]
 ---
 
-この記事は [Qiita](https://qiita.com/Butty256/items/c4f83c4f3a73a3fb7e0c) に投稿した内容です。
+この記事は [Qiita](https://qiita.com/Daiji256/items/c4f83c4f3a73a3fb7e0c) に投稿した内容です。
 
 # はじめに
 
@@ -15,19 +15,19 @@ tags: [Qiita,bit]
 
 [Hamming weight](https://en.wikipedia.org/wiki/Hamming_weight) で紹介されている 5 つの手法の演算回数について簡単にまとめます。A は有名なアルゴリズムをそのまま実装した状態です。Bと C は A の高速化である派生です。D は bit が立っている（1 になっている）数に比例して演算量が増えます。E は力技で，16bit すべての数に対して立ってる bit の数をメモしておき，64bit を 4 分割してその合計として求めています。メモリを多く使用し，64bit のように bit 数が多い場合はあまり高速ではありません。
 
-|手法|算術|乗算|比較 / 分岐|メモリ読み込み|特徴                                   |
-|:--:|---:|---:|----------:|-------------:|:--------------------------------------|
-|A   |  24|   0|          0|             0|単純な実装                             |
-|B   |  17|   0|          0|             0|乗算が遅い環境で優秀                   |
-|C   |  12|   1|          0|             0|乗算が速い環境で優秀                   |
-|D   |  3n|   0|         1n|             0|n は 1 になっている数，n が小さいと高速|
-|E   |   9|   0|          0|             4|16bit ごとに分けてメモリから読み取る   |
+|手法|算術|乗算|比較 / 分岐|メモリ読み込み|特徴                          |
+|:--:|---:|---:|----------:|-------------:|:-----------------------------|
+|A   |  24|   0|          0|             0|単純な実装                    |
+|B   |  17|   0|          0|             0|乗算が遅い環境で優秀          |
+|C   |  12|   1|          0|             0|乗算が速い環境で優秀          |
+|D   |  3n|   0|         1n|             0|n は 1 になっている数         |
+|E   |   9|   0|          0|             4|16bit ごとにメモリから読み取る|
 
 # 実験
 
 ## 実験環境・ソースコード
 
-実験で使用したソースコードは [GitHub](https://github.com/Butty256/Hamming-weight) にあげておきます。実験環境は下のとおりです。最適化については GitHub にあげている Makefile を見てください。
+実験で使用したソースコードは [GitHub](https://github.com/Daiji256/Hamming-weight) にあげておきます。実験環境は下のとおりです。最適化については GitHub にあげている Makefile を見てください。
 
 - OS: Ubuntu 20.04.1
 - Kernel: 5.4.0-58-generic
@@ -88,7 +88,7 @@ bit を高速に数える手法の比較を行いました。安直に数える�
 
 # 文献
 
-1. [ソースコード (GitHub)](https://github.com/Butty256/Hamming-weight)
+1. [ソースコード (GitHub)](https://github.com/Daiji256/Hamming-weight)
 1. [Hamming weight (Wiki)](https://en.wikipedia.org/wiki/Hamming_weight)
 1. [x86_64 で popcnt / tzcnt / lzcntする【ビット演算テクニック Advent Calendar 2016 5日目】 (Qiita)](https://qiita.com/ocxtal/items/01c46b15cb1f2e656887)
 1. [GCC (GNU)](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html)

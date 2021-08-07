@@ -1,110 +1,87 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Butty Blog</title>
-    <link>https://butty256.github.io/</link>
-    <description>Recent content on Butty Blog</description>
+    <title>Daiji Blog</title>
+    <link>https://daiji256.github.io/</link>
+    <description>Recent content on Daiji Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
+    <copyright>© 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.</copyright>
     <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://butty256.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://daiji256.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>就職活動体験記</title>
+      <link>https://daiji256.github.io/posts/diary/job-hunting/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/posts/diary/job-hunting/</guid>
+      <description>はじめに 僕は 22 年卒の高専の専攻科生（大学相当）です。IT ベンチャー企業を中心に就職活動をしました。それについてまとめます。 利用 / 登録した就活サイト 僕は以下の 4 つの就活サイトに登録しました。それ</description>
+    </item>
+    
+    <item>
       <title>ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。</title>
-      <link>https://butty256.github.io/posts/tex-latex/tex-tikx-heatran/</link>
+      <link>https://daiji256.github.io/posts/tex-latex/tex-tikx-heatran/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://butty256.github.io/posts/tex-latex/tex-tikx-heatran/</guid>
-      <description>※この記事は Qiita に投稿していた内容です。
-はじめに 先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15 年間もヒードランは壁や天井を這い回っていました。たまには他の場所も這い回りたいことでしょう。ここではヒードランに TeX と TikZ1 を這い回ってもらいます。
-基礎知識 前提となる基礎知識は以下のリンクを参考にしてください。
- TeX (TeX Wiki) TikZ/PGF (TeX Wiki) ヒードラン (ピクシブ)  TeX を這い回る まずは TeX を這い回ってもらいます。ただヒードランの画像を \includegraphics によって貼り付けるだけです。
-\includegraphics[scale=4]{Heatran.png}   TikZ を這い回る TeX を這い回るだけでは面白くありません。なので TikZ でドット絵を描いて這い回ってもらいます。ドット絵は大量の四角で描きます。枠無しで色を塗ると環境によっては隙間が見えてしまいます。なので，太さ thin の枠を設定しています。$Y$ 軸は下が正になっているので，マイナスにしています。
-\begin{tikzpicture} \draw [thin,fill,color={rgb,255:red,R;green,G;blue,B}] (X,-Y) rectangle (X+1,-Y-1); \end{tikzpicture} 手作業で全ドットを描いたら大変なので，Python+OpenCV にやってもらいましょう。背景のドットは無視します。後は全画素に応じてカラーコードの設定と座標の設定をしています。当たり前ですけど，見た目は変わりません。
-img = cv2.imread(sys.argv[1], cv2.IMREAD_UNCHANGED) print(&amp;#34;\\begin{tikzpicture}&amp;#34;) for i in range(img.shape[1]): for j in range(img.shape[0]): if img[i,j,3] == 0: continue # end print( &amp;#39;\t\\draw [thin,fill,color={{rgb,255:red,{};green,{};blue,{}}}] ({},{}) rectangle ({},{});&amp;#39;.</description>
+      <guid>https://daiji256.github.io/posts/tex-latex/tex-tikx-heatran/</guid>
+      <description>※この記事は Qiita に投稿していた内容です。 はじめに 先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15</description>
     </item>
     
     <item>
       <title>LaTeX のすゝめ</title>
-      <link>https://butty256.github.io/posts/tex-latex/latex-susume/</link>
+      <link>https://daiji256.github.io/posts/tex-latex/latex-susume/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://butty256.github.io/posts/tex-latex/latex-susume/</guid>
-      <description>この記事は Qiita に投稿した内容です。
-はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。
-TeX / LaTeX とは TeX（テック / テフ）1は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発したフリーの組版システムです。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。執筆に集中でき，様々なプラットフォーム上で高品質なの文書を出力することができます。
-LaTeX（ラテック / ラテフ）2はコンピューター科学者の Leslie Lamport によって開発された，TeX に機能を追加し手軽に組版が行えるようになったシステムです。現在では LaTeX を使うことが一般的なので，「TeX」で LaTeX を指すことが多いです。
-TeX，LaTeX の特徴は次のようなことがあげられます。
- Windows，macOS，Linux などの多くのプラットフォームで動作する。 テキストファイルで文書を管理できる。 綺麗な数式を簡単に書ける3。 図や表を挿入した文書を作成できる。 章・節，式，図表の番号，頁番号管理などを自動的に行い，参照できる。  日本語 TeX について 現在，日本語対応している主な TeX エンジンは 3 つあります。
- pTeX：昔々にアスキーが開発した日本語対応のエンジンです。 upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。 LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。  昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，LuaLaTeX のすゝめで解説しています。</description>
+      <guid>https://daiji256.github.io/posts/tex-latex/latex-susume/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。 TeX / LaTeX とは T</description>
     </item>
     
     <item>
       <title>LuaLaTeX のすゝめ</title>
-      <link>https://butty256.github.io/posts/tex-latex/lualatex-susume/</link>
+      <link>https://daiji256.github.io/posts/tex-latex/lualatex-susume/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://butty256.github.io/posts/tex-latex/lualatex-susume/</guid>
-      <description>この記事は Qiita に投稿した内容です。
-はじめに この記事では高機能でイケイケな LuaLaTeX を紹介します。
-現在日本で一般的に使用されている LaTeX は upLaTeX だと思います。upLaTeX は Unicode 対応の日本語 LaTeX エンジンが収録されている，pLaTeX の進化系みたいなものです。upLaTeX は pLaTeX からの移行が容易で，環境依存文字や JIS 第 1・第 2 水準の漢字を意識せずに使用できる点が初心者に好まれている理由の 1 つだと思います。
-LaTeX は下の図の様に TeX ファイルの執筆から PDF の出力まで行います。レガシー LaTeX（(u)pLaTeX など）は DVI ファイルを経由して PDF 作成します。それに対しモダン LaTeX（LuaLaTeX など）は直接PDFを作成します。LuaLaTeX は海外でメジャーである pdfLaTeX に軽量スクリプト言語である Lua を組み込んだものです。pdfLaTeX の後継として期待されていて，LuaTeX-ja プロジェクトにより (u)pLaTeX 以上の自由度で和文組版が可能となっています。LuaLaTeX は Unicode に対応しています。さらにフォントの設定が簡単で，OpenType や TrueType フォントを直接扱うことができます。
-  フォント LuaLaTeX の最大の強みと言えるのがフォントについてです。昔ながらの LaTeX ではフォントの設定が非常に難しいのに対して，LuaLaTeX ではソースファイル内で簡単に設定することができます。fontspec を和文フォントに対応するように拡張した luatexja-fontspec を用いてフォントの設定を行います。細かな設定方法については，LuaLaTeX でフォント細かく変更する方法を参照してください。
-luatexja-fontspec を使用することで下に示すコードにより，OS にインストールされているフォントを PDF に埋め込むことができます。また，ttf ファイルなどを直接参照することもできます。</description>
+      <guid>https://daiji256.github.io/posts/tex-latex/lualatex-susume/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに この記事では高機能でイケイケな LuaLaTeX を紹介します。 現在日本で一般的に使用されている LaTeX は upLaTeX だと思います。upLaTeX は Unicode 対応の日本語 LaTeX エンジンが収録されてい</description>
     </item>
     
     <item>
       <title>C 言語で eval 風関数</title>
-      <link>https://butty256.github.io/posts/c/eval-c/</link>
+      <link>https://daiji256.github.io/posts/c/eval-c/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://butty256.github.io/posts/c/eval-c/</guid>
-      <description>この記事は Qiita に投稿した内容です。
-はじめに eval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般的です。ここでは C 言語のための文字列を数式として処理する eval 風関数を作成します。ソースコードは GitHub にあげてあります。
-主な仕様 eval は引数の数式を計算し，その結果を戻り値とする関数にします。eval では sin，exp，sqrt などの math.h にある関数が使えるようにします。関数を含めた数式の計算順は次のようになります。計算過程は全て文字列として処理を行います。
- 関数：sin，exp，sqrt など 括弧：(，) 乗法，除法：*，\ 加法，減法：+，-  関数の計算を行う calcfunc ，四則演算を行う calc を作成します。括弧の処理には eval を使用します。プログラムの疑似コード（？）と共に説明します。実際のソースコードは長いので GitHub を参照してください。実装は基本的に単純で，上記の箇条書きの順番通りに計算するだけです。
-double eval(char *str) { for ( 文字列先頭からループ ) { if ( 関数があった時 ) { str2 = 関数とその引数; str3 = num2str(calcfunc(str2)); str = str2 を str3 に置換; } } for ( 文字列先頭からループ ) { if ( 括弧があった時 ) { str2 = 括弧内の文字列; str3 = num2str(eval(str2)); str = (str2) を str3 に置換; } } for ( 文字列先頭からループ ) { if ( *, / があった時 ) { str2 = 計算範囲; str3 = num2str(calc(str2)); str = str2 を str3 に置換; } } for ( 文字列先頭からループ ) { if ( +, - があった時 ) { str2 = 計算範囲; str3 = num2str(calc(str2)); str = str2 を str3 に置換; } } return atof(str); } 処理の流れの例 引数に 3*sqrt(4)+(5-2) とした時を例にして説明します。まず都合が良くするために全体に (，) を付けます。</description>
+      <guid>https://daiji256.github.io/posts/c/eval-c/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに eval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般</description>
     </item>
     
     <item>
       <title>LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）</title>
-      <link>https://butty256.github.io/posts/tex-latex/tex-word/</link>
+      <link>https://daiji256.github.io/posts/tex-latex/tex-word/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://butty256.github.io/posts/tex-latex/tex-word/</guid>
-      <description>この記事は Qiita に投稿した内容です。
-はじめに 課題や予稿，論文等ではフォント等のフォーマット指定がよくあります。MS Word のテンプレートしか無かったり，MS Mincho などの古いフォントを指定されるとイライラします。そこで LaTeX で書きたいと思います。ここではエンジンに LuaLaTeX を使用します。LuaLaTeX は PDF を直接出力することからフォントの埋め込みが容易で新しいイケイケな LaTeX だからです。
-ドキュメントクラス ドキュメントクラスには jlreq を利用します。jlreq は日本語組版処理の要件に準拠した新しいドキュメントクラスで，日本に浸透しつつあります。オプションの fontsize=10.5bp はデフォルトのフォントサイズを $\mathrm{10.5\,bp}$ とすることを示しています。jlreq では英・和のフォント比がデフォルトで $1$ なので，両方のフォントサイズが $\mathrm{10.5\,bp}$ になります。MS Word では $1\,\mathrm{pt}=1/72\,\mathrm{inch}$ ですが，TeX では $1\,\mathrm{pt}=1/72.27\,\mathrm{inch}$ と定義されています。TeX には $1\,\mathrm{bp}=1/72\,\mathrm{inch}$ となる単位が存在します。このことから $\mathrm{pt}$ の代わりに $\mathrm{bp}$ を使用しています。
-\documentclass[fontsize=10.5bp]{jlreq} フォントの変更 Times New Roman や MS Mincho などを指定されたことを想定して説明します。luatexja-fontspec を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。FakeBold=2，FakeSlant=0.33に設定したとき MS Word と同様の結果になりました。</description>
+      <guid>https://daiji256.github.io/posts/tex-latex/tex-word/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに 課題や予稿，論文等ではフォント等のフォーマット指定がよくあります。MS Word のテンプレートしか無かったり，MS Mincho などの古いフォントを指定されるとイライラしま</description>
     </item>
     
     <item>
       <title>bit を高速に数える 手法の比較</title>
-      <link>https://butty256.github.io/posts/c/popcnt/</link>
+      <link>https://daiji256.github.io/posts/c/popcnt/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://butty256.github.io/posts/c/popcnt/</guid>
-      <description>この記事は Qiita に投稿した内容です。
-はじめに 本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います。アルゴリズムの詳しい内容は下の参考文献に飛んでください。
-アルゴリズム Hamming weight で紹介されている 5 つの手法の演算回数について簡単にまとめます。A は有名なアルゴリズムをそのまま実装した状態です。Bと C は A の高速化である派生です。D は bit が立っている（1 になっている）数に比例して演算量が増えます。E は力技で，16bit すべての数に対して立ってる bit の数をメモしておき，64bit を 4 分割してその合計として求めています。メモリを多く使用し，64bit のように bit 数が多い場合はあまり高速ではありません。
-   手法 算術 乗算 比較 / 分岐 メモリ読み込み 特徴     A 24 0 0 0 単純な実装   B 17 0 0 0 乗算が遅い環境で優秀   C 12 1 0 0 乗算が速い環境で優秀   D 3n 0 1n 0 n は 1 になっている数，n が小さいと高速   E 9 0 0 4 16bit ごとに分けてメモリから読み取る    実験 実験環境・ソースコード 実験で使用したソースコードは GitHub にあげておきます。実験環境は下のとおりです。最適化については GitHub にあげている Makefile を見てください。</description>
+      <guid>https://daiji256.github.io/posts/c/popcnt/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに 本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います。アルゴリズムの</description>
     </item>
     
     <item>
       <title>自己紹介 / About me</title>
-      <link>https://butty256.github.io/aboutme/</link>
+      <link>https://daiji256.github.io/about/</link>
       <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://butty256.github.io/aboutme/</guid>
-      <description>普段は何か記事を書いたら Qiita に投稿します。しかし，備忘録や日記は Qiita にあげるのが不適切です。そこで誰も見ないくだらないものを GitHub Pages を利用して投稿することにしました。Markdown で気軽に書くために Hugo を利用ています。
-いっぱい書くぞ～！
-あんた誰？  電気+機械+制御を学ぶ高専生（専攻科） 研究分野は画像処理系 アルバイトで Android アプリの開発 憧れの人 野原しんのすけ（適当）  興味 / スキル 僕は↓のことに興味があります。なので基本これらについての内容の記事が投稿されるでしょう。
- プログラミング言語:
- C， C++， Kotlin， Python， TeX/LaTeX ツール類:
- Bash， Git， GitHub， Android Studio， Visual Studio Code OS:
- Windows， mscOS， Linux， Android  リンク: GitHub, Twitter, Qiita </description>
+      <guid>https://daiji256.github.io/about/</guid>
+      <description>普段は何か記事を書いたら Qiita に投稿します。しかし，備忘録や日記は Qiita にあげるのが不適切です。そこで誰も見ないくだらないものを GitHub Pages を利用して投稿することにしました。Markdown で気軽に書くために</description>
     </item>
     
   </channel>
