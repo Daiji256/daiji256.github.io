@@ -22,7 +22,7 @@ katex: true
 
 # フォントの変更
 
-Times New Roman や MS Mincho などを指定されたことを想定して説明します。`luatexja-fontspec` を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。`FakeBold=2`，`FakeSlant=0.33`に設定したとき MS Word と同様の結果になりました。
+Times New Roman や MS Mincho などを指定されたことを想定して説明します。`luatexja-fontspec` を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。`FakeBold=2`，`FakeSlant=0.33` に設定したとき MS Word と同様の結果になりました。
 
 {{< figure src="../../images/tex-word/fig1.png" width="320" >}}
 

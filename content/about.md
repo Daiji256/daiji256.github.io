@@ -25,4 +25,8 @@ date: 2020-05-05
 - OS:  
 {{< icon/Windows >}} Windows，{{< icon/macOS >}} mscOS，{{< icon/Linux >}} Linux，{{< icon/Android >}} Android
 
-### リンク: [GitHub](https://github.com/Daiji256/), [Twitter](https://twitter.com/Daiji256/), [Qiita](https://qiita.com/Daiji256/)
+# リンク
+
+- [GitHub](https://github.com/Daiji256/)
+- [Twitter](https://twitter.com/Daiji256/)
+- [Qiita](https://qiita.com/Daiji256/)

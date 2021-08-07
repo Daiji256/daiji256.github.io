@@ -43,9 +43,9 @@ LuaLaTeX の最大の強みと言えるのがフォントについてです。�
 ```TeX
 \directlua{tex.print(math.sqrt(2))}
 ```
-```math
+$$
 1.4142135623731
-```
+$$
 
 # ドキュメントクラス
 
