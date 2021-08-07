@@ -4,6 +4,7 @@
     url("../fonts/HackGen35-Subset-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,4 +13,5 @@
     url("../fonts/HackGen35-Subset-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
