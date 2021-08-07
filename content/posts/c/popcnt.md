@@ -5,7 +5,7 @@ categories: [C]
 tags: [Qiita,bit]
 ---
 
-この記事は [Qiita](https://qiita.com/Butty256/items/c4f83c4f3a73a3fb7e0c) に投稿した内容です。
+この記事は [Qiita](https://qiita.com/Daiji256/items/c4f83c4f3a73a3fb7e0c) に投稿した内容です。
 
 # はじめに
 
@@ -27,7 +27,7 @@ tags: [Qiita,bit]
 
 ## 実験環境・ソースコード
 
-実験で使用したソースコードは [GitHub](https://github.com/Butty256/Hamming-weight) にあげておきます。実験環境は下のとおりです。最適化については GitHub にあげている Makefile を見てください。
+実験で使用したソースコードは [GitHub](https://github.com/Daiji256/Hamming-weight) にあげておきます。実験環境は下のとおりです。最適化については GitHub にあげている Makefile を見てください。
 
 - OS: Ubuntu 20.04.1
 - Kernel: 5.4.0-58-generic
@@ -88,7 +88,7 @@ bit を高速に数える手法の比較を行いました。安直に数える�
 
 # 文献
 
-1. [ソースコード (GitHub)](https://github.com/Butty256/Hamming-weight)
+1. [ソースコード (GitHub)](https://github.com/Daiji256/Hamming-weight)
 1. [Hamming weight (Wiki)](https://en.wikipedia.org/wiki/Hamming_weight)
 1. [x86_64 で popcnt / tzcnt / lzcntする【ビット演算テクニック Advent Calendar 2016 5日目】 (Qiita)](https://qiita.com/ocxtal/items/01c46b15cb1f2e656887)
 1. [GCC (GNU)](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html)

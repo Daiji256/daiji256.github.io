@@ -6,7 +6,7 @@ tags: [Qiita,Font,LuaLaTeX]
 katex: true
 ---
 
-この記事は [Qiita](https://qiita.com/Butty256/items/29adc574b15345d8afa2) に投稿した内容です。
+この記事は [Qiita](https://qiita.com/Daiji256/items/29adc574b15345d8afa2) に投稿した内容です。
 
 # はじめに
 
@@ -84,7 +84,7 @@ Times New Roman や MS Mincho などを指定されたことを想定して説�
 
 # 文献
 
-1. [ソースコード (GitHub)](https://github.com/Butty256/TeX-TikZ-Heatran/)
+1. [ソースコード (GitHub)](https://github.com/Daiji256/TeX-TikZ-Heatran/)
 1. [LuaTeX-ja パッケージ (CTAN)](http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
 1. [unicode-math (CTAN)](https://ctan.org/pkg/unicode-math)
 1. [Point typography (Wiki)](https://en.wikipedia.org/wiki/Point_(typography))

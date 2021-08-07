@@ -71,7 +71,7 @@ print("\\end{tikzpicture}")
 
 # 文献
 
-1. [ソースコード (GitHub)](https://github.com/Butty256/TeX-TikZ-Heatran)
+1. [ソースコード (GitHub)](https://github.com/Daiji256/TeX-TikZ-Heatran)
 1. [TeX (TeX Wiki)](https://texwiki.texjp.org/TeX)
 1. [TikZ/PGF (TeX Wiki)](https://texwiki.texjp.org/TikZ)
 1. [ヒードラン (ピクシブ)](https://dic.pixiv.net/a/%E3%83%92%E3%83%BC%E3%83%89%E3%83%A9%E3%83%B3)

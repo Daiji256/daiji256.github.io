@@ -5,11 +5,11 @@ categories: [C]
 tags: [Qiita,eval,自作関数]
 ---
 
-この記事は [Qiita](https://qiita.com/Butty256/items/09fa042e94907a232c57) に投稿した内容です。
+この記事は [Qiita](https://qiita.com/Daiji256/items/09fa042e94907a232c57) に投稿した内容です。
 
 # はじめに
 
-`eval` 関数とは文字列を式として評価する関数です。`eval` は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般的です。ここでは C 言語のための文字列を数式として処理する `eval` 風関数を作成します。ソースコードは [GitHub](https://github.com/Butty256/eval) にあげてあります。
+`eval` 関数とは文字列を式として評価する関数です。`eval` は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般的です。ここでは C 言語のための文字列を数式として処理する `eval` 風関数を作成します。ソースコードは [GitHub](https://github.com/Daiji256/eval) にあげてあります。
 
 # 主な仕様
 
@@ -20,7 +20,7 @@ tags: [Qiita,eval,自作関数]
 1. 乗法，除法：`*`，`\`
 1. 加法，減法：`+`，`-`
 
-関数の計算を行う `calcfunc` ，四則演算を行う `calc` を作成します。括弧の処理には `eval` を使用します。プログラムの疑似コード（？）と共に説明します。実際のソースコードは長いので [GitHub](https://github.com/Butty256/eval) を参照してください。実装は基本的に単純で，上記の箇条書きの順番通りに計算するだけです。
+関数の計算を行う `calcfunc` ，四則演算を行う `calc` を作成します。括弧の処理には `eval` を使用します。プログラムの疑似コード（？）と共に説明します。実際のソースコードは長いので [GitHub](https://github.com/Daiji256/eval) を参照してください。実装は基本的に単純で，上記の箇条書きの順番通りに計算するだけです。
 
 <!-- 本当は c だけど日本語がいい感じに表示されるように java にしている -->
 ```java
@@ -75,5 +75,5 @@ C 言語用の `eval` 風関数を作成しました。`calc` 等の関数につ
 
 # 文献
 
-1. [ソースコード (GitHub)](https://github.com/Butty256/eval)
+1. [ソースコード (GitHub)](https://github.com/Daiji256/eval)
 

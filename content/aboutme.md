@@ -3,7 +3,7 @@ title: "自己紹介 / About me"
 date: 2020-05-05
 ---
 
-普段は何か記事を書いたら [Qiita](https://qiita.com/Butty256/) に投稿します。しかし，備忘録や日記は Qiita にあげるのが不適切です。そこで誰も見ないくだらないものを [GitHub Pages](https://pages.github.com/) を利用して投稿することにしました。Markdown で気軽に書くために [Hugo](https://gohugo.io/) を利用ています。
+普段は何か記事を書いたら [Qiita](https://qiita.com/Daiji256/) に投稿します。しかし，備忘録や日記は Qiita にあげるのが不適切です。そこで誰も見ないくだらないものを [GitHub Pages](https://pages.github.com/) を利用して投稿することにしました。Markdown で気軽に書くために [Hugo](https://gohugo.io/) を利用ています。
 
 いっぱい書くぞ～！
 
@@ -25,4 +25,4 @@ date: 2020-05-05
 - OS:  
 {{< icon/Windows >}} Windows，{{< icon/macOS >}} mscOS，{{< icon/Linux >}} Linux，{{< icon/Android >}} Android
 
-### リンク: [GitHub](https://github.com/Butty256/), [Twitter](https://twitter.com/butty256/), [Qiita](https://qiita.com/Butty256/)
+### リンク: [GitHub](https://github.com/Daiji256/), [Twitter](https://twitter.com/Daiji256/), [Qiita](https://qiita.com/Daiji256/)

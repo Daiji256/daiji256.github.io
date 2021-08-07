@@ -6,7 +6,7 @@ tags: [Qiita,まとめ,LuaLaTeX]
 katex: true
 ---
 
-この記事は [Qiita](https://qiita.com/Butty256/items/9afbfa9f822629d3b995) に投稿した内容です。
+この記事は [Qiita](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995) に投稿した内容です。
 
 # はじめに
 
@@ -20,7 +20,7 @@ LaTeX は下の図の様に TeX ファイルの執筆から PDF の出力まで�
 
 # フォント
 
-LuaLaTeX の最大の強みと言えるのがフォントについてです。昔ながらの LaTeX ではフォントの設定が非常に難しいのに対して，LuaLaTeX では**ソースファイル内で簡単に設定することができます**。`fontspec` を和文フォントに対応するように拡張した `luatexja-fontspec` を用いてフォントの設定を行います。細かな設定方法については，[LuaLaTeX でフォント細かく変更する方法](https://qiita.com/Butty256/items/29adc574b15345d8afa2)を参照してください。
+LuaLaTeX の最大の強みと言えるのがフォントについてです。昔ながらの LaTeX ではフォントの設定が非常に難しいのに対して，LuaLaTeX では**ソースファイル内で簡単に設定することができます**。`fontspec` を和文フォントに対応するように拡張した `luatexja-fontspec` を用いてフォントの設定を行います。細かな設定方法については，[LuaLaTeX でフォント細かく変更する方法](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)を参照してください。
 
 `luatexja-fontspec` を使用することで下に示すコードにより，OS にインストールされているフォントを PDF に埋め込むことができます。また，`ttf` ファイルなどを直接参照することもできます。
 
@@ -77,5 +77,5 @@ LuaLaTeX の `jsclasses` 互換クラス次の通りです。現在は (u)pLaTeX
 1. [LuaTeX-ja パッケージ (CTAN)](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
 1. [LuaLaTeX-ja 用 jsclasses 互換クラス (CTAN)](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/ltjsclasses.pdf)
 1. [LaTeX-ja の使い方 (公式 Wiki)](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)
-1. [LuaLaTeX でフォント細かく変更する方法 (Qiita)](https://qiita.com/Butty256/items/29adc574b15345d8afa2)
+1. [LuaLaTeX でフォント細かく変更する方法 (Qiita)](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)
 1. [徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ (Qiita)](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)

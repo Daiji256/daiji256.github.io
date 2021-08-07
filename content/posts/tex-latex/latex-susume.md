@@ -6,7 +6,7 @@ tags: [Qiita,まとめ,upLaTeX]
 katex: true
 ---
 
-この記事は [Qiita](https://qiita.com/Butty256/items/9774df0899728feb3ab0) に投稿した内容です。
+この記事は [Qiita](https://qiita.com/Daiji256/items/9774df0899728feb3ab0) に投稿した内容です。
 
 # はじめに
 
@@ -40,7 +40,7 @@ TeX，LaTeX の特徴は次のようなことがあげられます。
 - upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。
 - LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。
 
-昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，[LuaLaTeX のすゝめ](https://qiita.com/Butty256/items/9afbfa9f822629d3b995)で解説しています。
+昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，[LuaLaTeX のすゝめ](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995)で解説しています。
 
 ## upLaTeX について
 
@@ -80,7 +80,7 @@ upLaTeX による文書作成は執筆・組版・出力の 3 つのステップ
 \documentclass[uplatex,dvipdfmx]{jsarticle}
 
 \title{{\LaTeX}のすゝめ}
-\author{Butty}
+\author{Daiji}
 
 \begin{document}
 \maketitle
@@ -381,5 +381,5 @@ LaTeX には自動で節やキャプションの参照が行えます。文書�
 1. [TeX Wiki](https://texwiki.texjp.org/)
 1. [Overleaf](https://ja.overleaf.com/)
 1. [Cloud LaTeX](https://cloudlatex.io/ja)
-1. [LuaLaTeX のすゝめ (Qiita)](https://qiita.com/Butty256/items/9afbfa9f822629d3b995)
+1. [LuaLaTeX のすゝめ (Qiita)](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995)
 1. [jlreq (GitHub)](https://github.com/abenori/jlreq/blob/master/README-ja.md)
