@@ -7,12 +7,12 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@Daiji256" />
     <meta name="twitter:title" content="{{ .Site.Title }}" />
-    <meta name="twitter:image" content="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
-    <meta property="og:url" content="{{ $.Site.BaseURL | relURL }}" />
+    <meta name="twitter:image" content="{{ $.Site.BaseURL | absURL }}images/apple-touch-icon.png" />
+    <meta property="og:url" content="{{ $.Site.BaseURL | absURL }}" />
     <meta property="og:type" content="blog" />
     <meta property="og:title" content="{{ .Site.Title }}" />
     <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:image" content="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
+    <meta property="og:image" content="{{ $.Site.BaseURL | absURL }}images/apple-touch-icon.png" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
     <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
     <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.css" />

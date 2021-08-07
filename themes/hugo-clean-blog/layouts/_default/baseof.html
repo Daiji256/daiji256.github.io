@@ -8,13 +8,13 @@
     <meta name="twitter:site" content="@Daiji256" />
     <meta name="twitter:title" content="{{ .Title }}" />
     <meta name="twitter:description" content="{{ .Summary }}" />
-    <meta name="twitter:image" content="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
+    <meta name="twitter:image" content="{{ $.Site.BaseURL | absURL }}images/apple-touch-icon.png" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ .Title }}" />
     <meta property="og:description" content="{{ .Summary }}" />
     <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:image" content="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
+    <meta property="og:image" content="{{ $.Site.BaseURL | absURL }}images/apple-touch-icon.png" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
     <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
     <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.css" />
