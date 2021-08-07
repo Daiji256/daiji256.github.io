@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！） - Daiji Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Daiji256" />
+    <meta name="twitter:title" content="LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）" />
+    <meta name="twitter:description" content="この記事は Qiita に投稿した内容です。 はじめに 課題や予稿，論文等ではフォント等のフォーマット指定がよくあります。MS Word のテンプレートしか無かったり，MS Mincho などの古いフォントを指定されるとイライラしま" />
+    <meta name="twitter:image" content="/images/apple-touch-icon.png" />
+    <meta property="og:url" content="https://daiji256.github.io/posts/tex-latex/tex-word/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）" />
+    <meta property="og:description" content="この記事は Qiita に投稿した内容です。 はじめに 課題や予稿，論文等ではフォント等のフォーマット指定がよくあります。MS Word のテンプレートしか無かったり，MS Mincho などの古いフォントを指定されるとイライラしま" />
+    <meta property="og:site_name" content="Daiji Blog" />
+    <meta property="og:image" content="/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://daiji256.github.io/images/favicon.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="https://daiji256.github.io/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/code-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/regular-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/brands-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/one-dark.css" />
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"
+  integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"
+  crossorigin="anonymous">
+<script
+  defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"
+  integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"
+  crossorigin="anonymous"></script>
+<script
+  defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"
+  integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+  crossorigin="anonymous"
+  onload="renderMathInElement(
+    document.body,
+    {
+      delimiters: [
+        {left: '$$', right: '$$', display:true},
+        {left: '$', right: '$', display:false}
+      ]
+    }
+  );"></script>
+  </head>
+  <body>
+    <div class="all-wrapper">
+      
+<div class="header">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <img src="https://daiji256.github.io/images/icon.svg" title='ホーム' class="user-icon" />
+          <div class="text">Daiji Blog</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <div class="logo" title='ホーム'>
+            <span class="ri ri-pencil"></span>
+          </div>
+          <div class="text">ホーム</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/categories/" class="item">
+          <div class="logo" title='カテゴリ'>
+            <span class="ri ri-folder"></span>
+          </div>
+          <div class="text">カテゴリ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/tags/" class="item">
+          <div class="logo">
+            <span class="ri ri-tags" title='タグ'></span>
+          </div>
+          <div class="text">タグ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/about/" class="item">
+          <div class="logo">
+            <span class="ri ri-user" title='プロフィール'></span>
+          </div>
+          <div class="text">プロフィール</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div class="main-line">
+    <div class="post">
+      <div class="info">
+        <div class="title">LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）</div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-calendar logo"></span>
+          <div class="text">2021 年 2 月 2 日</div>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-folder logo"></span>
+          <a href="https://daiji256.github.io/categories/tex-latex/" class="text">TeX-LaTeX</a>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-tags logo"></span>
+          <a href="https://daiji256.github.io/tags/qiita/" class="text">Qiita</a><a href="https://daiji256.github.io/tags/font/" class="text">Font</a><a href="https://daiji256.github.io/tags/lualatex/" class="text">LuaLaTeX</a>
+        </div>
+      </div>
+      <section class="sec-content">
+        <div class="content">
+          <p>この記事は <a href="https://qiita.com/Daiji256/items/29adc574b15345d8afa2">Qiita</a> に投稿した内容です。</p>
+<h1 id="はじめに">はじめに</h1>
+<p>課題や予稿，論文等ではフォント等のフォーマット指定がよくあります。MS Word のテンプレートしか無かったり，MS Mincho などの古いフォントを指定されるとイライラします。そこで LaTeX で書きたいと思います。ここではエンジンに LuaLaTeX を使用します。LuaLaTeX は PDF を直接出力することからフォントの埋め込みが容易で新しいイケイケな LaTeX だからです。</p>
+<h1 id="ドキュメントクラス">ドキュメントクラス</h1>
+<p>ドキュメントクラスには <code>jlreq</code> を利用します。<code>jlreq</code> は日本語組版処理の要件に準拠した新しいドキュメントクラスで，日本に浸透しつつあります。オプションの <code>fontsize=10.5bp</code> はデフォルトのフォントサイズを $\mathrm{10.5\,bp}$ とすることを示しています。<code>jlreq</code> では英・和のフォント比がデフォルトで $1$ なので，両方のフォントサイズが $\mathrm{10.5\,bp}$ になります。MS Word では $1\,\mathrm{pt}=1/72\,\mathrm{inch}$ ですが，TeX では $1\,\mathrm{pt}=1/72.27\,\mathrm{inch}$ と定義されています。TeX には $1\,\mathrm{bp}=1/72\,\mathrm{inch}$ となる単位が存在します。このことから $\mathrm{pt}$ の代わりに $\mathrm{bp}$ を使用しています。</p>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\documentclass</span><span class="na">[fontsize=10.5bp]</span><span class="nb">{</span>jlreq<span class="nb">}</span>
+</code></pre></div><h1 id="フォントの変更">フォントの変更</h1>
+<p>Times New Roman や MS Mincho などを指定されたことを想定して説明します。<code>luatexja-fontspec</code> を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。<code>FakeBold=2</code>，<code>FakeSlant=0.33</code> に設定したとき MS Word と同様の結果になりました。</p>
+<figure>
+    <img src="../../images/tex-word/fig1.jpg" width="320"/> 
+</figure>
+
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\usepackage</span><span class="nb">{</span>luatexja-fontspec<span class="nb">}</span>
+<span class="k">\setmainfont</span><span class="na">[Ligatures={Rare,TeX}]</span><span class="nb">{</span>Times-New-Roman<span class="nb">}</span>
+<span class="k">\setsansfont</span><span class="nb">{</span>Arial<span class="nb">}</span>
+<span class="k">\setmainjfont</span>[
+	YokoFeatures       = <span class="nb">{</span>JFM=jlreq<span class="nb">}</span>,
+	TateFeatures       = <span class="nb">{</span>JFM=jlreqv<span class="nb">}</span>,
+	BoldFont           = MS-Gothic,
+	BoldFeatures       = <span class="nb">{</span>FakeBold=2<span class="nb">}</span>,
+	ItalicFont         = MS-Mincho,
+	ItalicFeatures     = <span class="nb">{</span>FakeSlant=0.33<span class="nb">}</span>,
+	BoldItalicFont     = MS-Gothic,
+	BoldItalicFeatures = <span class="nb">{</span>FakeBold=2, FakeSlant=0.33<span class="nb">}</span>
+]<span class="nb">{</span>MS-Mincho<span class="nb">}</span>
+<span class="k">\setsansjfont</span>[
+	YokoFeatures       = <span class="nb">{</span>JFM=jlreq<span class="nb">}</span>,
+	TateFeatures       = <span class="nb">{</span>JFM=jlreqv<span class="nb">}</span>,
+	BoldFont           = MS-Gothic,
+	BoldFeatures       = <span class="nb">{</span>FakeBold=2<span class="nb">}</span>,
+	ItalicFont         = MS-Gothic,
+	ItalicFeatures     = <span class="nb">{</span>FakeSlant=0.33<span class="nb">}</span>,
+	BoldItalicFont     = MS-Gothic,
+	BoldItalicFeatures = <span class="nb">{</span>FakeBold=2, FakeSlant=0.33<span class="nb">}</span>
+]<span class="nb">{</span>MS-Gothic<span class="nb">}</span>
+</code></pre></div><p>次に数式フォントについてです。現在 MS Word では数式フォントに Cambria を使用しています。<code>unicode-math</code> を使用すれば簡単に設定できます。</p>
+<figure>
+    <img src="../../images/tex-word/fig2.jpg" width="160"/> 
+</figure>
+
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\usepackage</span><span class="nb">{</span>unicode-math<span class="nb">}</span>
+<span class="k">\setmathfont</span><span class="nb">{</span>Cambria-Math<span class="nb">}</span>
+</code></pre></div><h1 id="フォントサイズの変更">フォントサイズの変更</h1>
+<p><code>\Large</code> 等をあらかじめ設定しておくことで，要求された体裁を容易に守ることができます。変更例はこのようになります。また，<code>vpt</code> や <code>xpt</code> を変更することでデフォルトフォントサイズを変更することもできます。ここでは割愛させてもらいます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\renewcommand\tiny</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\tiny</span><span class="nb">{</span>5bp<span class="nb">}{</span>6bp<span class="nb">}}</span>
+<span class="k">\renewcommand\scriptsize</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\scriptsize</span><span class="nb">{</span>7bp<span class="nb">}{</span>8bp<span class="nb">}}</span>
+<span class="k">\renewcommand\footnotesize</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\footnotesize</span><span class="nb">{</span>8bp<span class="nb">}{</span>10bp<span class="nb">}}</span>
+<span class="k">\renewcommand\small</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\small</span><span class="nb">{</span>9bp<span class="nb">}{</span>12bp<span class="nb">}}</span>
+<span class="k">\renewcommand\normalsize</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\normalsize</span><span class="nb">{</span>10bp<span class="nb">}{</span>15bp<span class="nb">}}</span>
+<span class="k">\renewcommand\large</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\large</span><span class="nb">{</span>12bp<span class="nb">}{</span>15bp<span class="nb">}}</span>
+<span class="k">\renewcommand\Large</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\Large</span><span class="nb">{</span>14.4bp<span class="nb">}{</span>16bp<span class="nb">}}</span>
+<span class="k">\renewcommand\LARGE</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\LARGE</span><span class="nb">{</span>17.28bp<span class="nb">}{</span>18bp<span class="nb">}}</span>
+<span class="k">\renewcommand\huge</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\huge</span><span class="nb">{</span>20.74bp<span class="nb">}{</span>30bp<span class="nb">}}</span>
+<span class="k">\renewcommand\Huge</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\Huge</span><span class="nb">{</span>24.88bp<span class="nb">}{</span>36bp<span class="nb">}}</span>
+</code></pre></div><h1 id="まとめ">まとめ</h1>
+<p><del>アンチMS Wordな人のために</del> LuaLaTeX での細かいフォント設定についてまとめました。曖昧なところや間違ってるところがあると思うのでその時は指摘してください。ソースコードは下の文献から見に行けます。</p>
+<h1 id="文献">文献</h1>
+<ol>
+<li><a href="https://github.com/Daiji256/TeX-TikZ-Heatran/">ソースコード (GitHub)</a></li>
+<li><a href="http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf">LuaTeX-ja パッケージ (CTAN)</a></li>
+<li><a href="https://ctan.org/pkg/unicode-math">unicode-math (CTAN)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Point_(typography)">Point typography (Wiki)</a></li>
+</ol>
+
+        </div>
+      </section>
+    </div>
+    <div class="post">
+      <div class="author">
+        <a href="https://daiji256.github.io/about/">
+          <img src="https://daiji256.github.io/images/icon.svg" class="author-icon" />
+        </a>
+        <div class="author-info">
+          <div>
+            <a href="https://daiji256.github.io/about/" class="name">
+              Daiji
+            </a>
+          </div>
+          <div>
+            ずっとパソコンの前でだらだらしている高専生です。いっぱい記事を書いていきたいと思ってます。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "daiji256-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+  <div class="toc">
+    <aside>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#ドキュメントクラス">ドキュメントクラス</a></li>
+    <li><a href="#フォントの変更">フォントの変更</a></li>
+    <li><a href="#フォントサイズの変更">フォントサイズの変更</a></li>
+    <li><a href="#まとめ">まとめ</a></li>
+    <li><a href="#文献">文献</a></li>
+  </ul>
+</nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  © 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.
+</footer>
+
+    </div>
+  </body>
+</html>

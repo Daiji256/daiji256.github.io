@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Daiji Blog</title>
+    <link>https://daiji256.github.io/posts/</link>
+    <description>Recent content in Posts on Daiji Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>© 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.</copyright>
+    <lastBuildDate>Sat, 15 May 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://daiji256.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>就職活動体験記</title>
+      <link>https://daiji256.github.io/posts/diary/job-hunting/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/posts/diary/job-hunting/</guid>
+      <description>はじめに 僕は 22 年卒の高専の専攻科生（大学相当）です。IT ベンチャー企業を中心に就職活動をしました。それについてまとめます。 利用 / 登録した就活サイト 僕は以下の 4 つの就活サイトに登録しました。それ</description>
+    </item>
+    
+    <item>
+      <title>ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。</title>
+      <link>https://daiji256.github.io/posts/tex-latex/tex-tikx-heatran/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/posts/tex-latex/tex-tikx-heatran/</guid>
+      <description>※この記事は Qiita に投稿していた内容です。 はじめに 先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15</description>
+    </item>
+    
+    <item>
+      <title>LaTeX のすゝめ</title>
+      <link>https://daiji256.github.io/posts/tex-latex/latex-susume/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/posts/tex-latex/latex-susume/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。 TeX / LaTeX とは T</description>
+    </item>
+    
+    <item>
+      <title>LuaLaTeX のすゝめ</title>
+      <link>https://daiji256.github.io/posts/tex-latex/lualatex-susume/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/posts/tex-latex/lualatex-susume/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに この記事では高機能でイケイケな LuaLaTeX を紹介します。 現在日本で一般的に使用されている LaTeX は upLaTeX だと思います。upLaTeX は Unicode 対応の日本語 LaTeX エンジンが収録されてい</description>
+    </item>
+    
+    <item>
+      <title>C 言語で eval 風関数</title>
+      <link>https://daiji256.github.io/posts/c/eval-c/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/posts/c/eval-c/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに eval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般</description>
+    </item>
+    
+    <item>
+      <title>LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）</title>
+      <link>https://daiji256.github.io/posts/tex-latex/tex-word/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/posts/tex-latex/tex-word/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに 課題や予稿，論文等ではフォント等のフォーマット指定がよくあります。MS Word のテンプレートしか無かったり，MS Mincho などの古いフォントを指定されるとイライラしま</description>
+    </item>
+    
+    <item>
+      <title>bit を高速に数える 手法の比較</title>
+      <link>https://daiji256.github.io/posts/c/popcnt/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/posts/c/popcnt/</guid>
+      <description>この記事は Qiita に投稿した内容です。 はじめに 本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います。アルゴリズムの</description>
+    </item>
+    
+  </channel>
+</rss>
