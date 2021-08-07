@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>LuaLaTeX のすゝめ - Daiji Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Daiji256" />
+    <meta name="twitter:title" content="LuaLaTeX のすゝめ" />
+    <meta name="twitter:description" content="この記事は Qiita に投稿した内容です。 はじめに この記事では高機能でイケイケな LuaLaTeX を紹介します。 現在日本で一般的に使用されている LaTeX は upLaTeX だと思います。upLaTeX は Unicode 対応の日本語 LaTeX エンジンが収録されてい" />
+    <meta name="twitter:image" content="/images/apple-touch-icon.png" />
+    <meta property="og:url" content="https://daiji256.github.io/posts/tex-latex/lualatex-susume/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="LuaLaTeX のすゝめ" />
+    <meta property="og:description" content="この記事は Qiita に投稿した内容です。 はじめに この記事では高機能でイケイケな LuaLaTeX を紹介します。 現在日本で一般的に使用されている LaTeX は upLaTeX だと思います。upLaTeX は Unicode 対応の日本語 LaTeX エンジンが収録されてい" />
+    <meta property="og:site_name" content="Daiji Blog" />
+    <meta property="og:image" content="/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://daiji256.github.io/images/favicon.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="https://daiji256.github.io/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/code-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/regular-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/brands-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/one-dark.css" />
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"
+  integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"
+  crossorigin="anonymous">
+<script
+  defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"
+  integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"
+  crossorigin="anonymous"></script>
+<script
+  defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"
+  integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+  crossorigin="anonymous"
+  onload="renderMathInElement(
+    document.body,
+    {
+      delimiters: [
+        {left: '$$', right: '$$', display:true},
+        {left: '$', right: '$', display:false}
+      ]
+    }
+  );"></script>
+  </head>
+  <body>
+    <div class="all-wrapper">
+      
+<div class="header">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <img src="https://daiji256.github.io/images/icon.svg" title='ホーム' class="user-icon" />
+          <div class="text">Daiji Blog</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <div class="logo" title='ホーム'>
+            <span class="ri ri-pencil"></span>
+          </div>
+          <div class="text">ホーム</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/categories/" class="item">
+          <div class="logo" title='カテゴリ'>
+            <span class="ri ri-folder"></span>
+          </div>
+          <div class="text">カテゴリ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/tags/" class="item">
+          <div class="logo">
+            <span class="ri ri-tags" title='タグ'></span>
+          </div>
+          <div class="text">タグ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/about/" class="item">
+          <div class="logo">
+            <span class="ri ri-user" title='プロフィール'></span>
+          </div>
+          <div class="text">プロフィール</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div class="main-line">
+    <div class="post">
+      <div class="info">
+        <div class="title">LuaLaTeX のすゝめ</div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-calendar logo"></span>
+          <div class="text">2021 年 2 月 7 日</div>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-folder logo"></span>
+          <a href="https://daiji256.github.io/categories/tex-latex/" class="text">TeX-LaTeX</a>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-tags logo"></span>
+          <a href="https://daiji256.github.io/tags/qiita/" class="text">Qiita</a><a href="https://daiji256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/" class="text">まとめ</a><a href="https://daiji256.github.io/tags/lualatex/" class="text">LuaLaTeX</a>
+        </div>
+      </div>
+      <section class="sec-content">
+        <div class="content">
+          <p>この記事は <a href="https://qiita.com/Daiji256/items/9afbfa9f822629d3b995">Qiita</a> に投稿した内容です。</p>
+<h1 id="はじめに">はじめに</h1>
+<p>この記事では<strong>高機能でイケイケ</strong>な LuaLaTeX を紹介します。</p>
+<p>現在日本で一般的に使用されている LaTeX は upLaTeX だと思います。upLaTeX は Unicode 対応の日本語 LaTeX エンジンが収録されている，pLaTeX の進化系みたいなものです。upLaTeX は pLaTeX からの移行が容易で，環境依存文字や JIS 第 1・第 2 水準の漢字を意識せずに使用できる点が初心者に好まれている理由の 1 つだと思います。</p>
+<p>LaTeX は下の図の様に TeX ファイルの執筆から PDF の出力まで行います。レガシー LaTeX（(u)pLaTeX など）は DVI ファイルを経由して PDF 作成します。それに対しモダン LaTeX（LuaLaTeX など）は<strong>直接PDFを作成</strong>します。LuaLaTeX は海外でメジャーである pdfLaTeX に軽量スクリプト言語である Lua を組み込んだものです。pdfLaTeX の後継として期待されていて，LuaTeX-ja プロジェクトにより (u)pLaTeX 以上の自由度で和文組版が可能となっています。LuaLaTeX は Unicode に対応しています。さらに<strong>フォントの設定が簡単</strong>で，<strong>OpenType や TrueType フォントを直接扱う</strong>ことができます。</p>
+<figure>
+    <img src="../../images/lualatex-susume/fig1.jpg" width="480"/> 
+</figure>
+
+<h1 id="フォント">フォント</h1>
+<p>LuaLaTeX の最大の強みと言えるのがフォントについてです。昔ながらの LaTeX ではフォントの設定が非常に難しいのに対して，LuaLaTeX では<strong>ソースファイル内で簡単に設定することができます</strong>。<code>fontspec</code> を和文フォントに対応するように拡張した <code>luatexja-fontspec</code> を用いてフォントの設定を行います。細かな設定方法については，<a href="https://qiita.com/Daiji256/items/29adc574b15345d8afa2">LuaLaTeX でフォント細かく変更する方法</a>を参照してください。</p>
+<p><code>luatexja-fontspec</code> を使用することで下に示すコードにより，OS にインストールされているフォントを PDF に埋め込むことができます。また，<code>ttf</code> ファイルなどを直接参照することもできます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\usepackage</span><span class="nb">{</span>luatexja-fontspec<span class="nb">}</span>
+<span class="k">\setmainfont</span><span class="na">[Ligatures=TeX]</span><span class="nb">{</span>Times New Roman<span class="nb">}</span>
+<span class="k">\setmainjfont</span><span class="na">[BoldFont=MS Gothic]</span><span class="nb">{</span>MS Mincho<span class="nb">}</span>
+</code></pre></div><p>あらかじめ用意された和文フォントから選択することができる <code>luatexja-preset</code> というパッケージがあります。例えば IPA 明朝と IPA ゴシックを使う設定する場合次のように書けばよいです。他のフォントについては <a href="https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">LaTeX-ja の使い方</a>を参照してください。</p>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\usepackage</span><span class="na">[ipa]</span><span class="nb">{</span>luatexja-preset<span class="nb">}</span>
+</code></pre></div><h1 id="lua-を書く">Lua を書く</h1>
+<p><a href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">はじめに</a>でも書きましたが LuaTeX から Lua を利用できます。LuaLaTeX のソース中で Lua を書く場合には <code>\directlua</code> を使用します。Lua から TeX に出力するには <code>tex.print</code> を使用します。実際に Lua を利用して $\sqrt{2}$ を表示してみます。以下に示すコードにより $\sqrt{2}$ が計算（？）できています。もっと詳しいことは<a href="https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67">徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ</a>でわかりやすく説明されています。</p>
+<div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\directlua</span><span class="nb">{</span>tex.print(math.sqrt(2))<span class="nb">}</span>
+</code></pre></div><p>$$
+1.4142135623731
+$$</p>
+<h1 id="ドキュメントクラス">ドキュメントクラス</h1>
+<p>LuaLaTeX の <code>jsclasses</code> 互換クラス次の通りです。現在は (u)pLaTeX と LuaLaTeX の両方で使える，日本語組版処理の要件に準拠した <code>jlreq</code> が人気です。詳しくは今度，別の記事で解説したいと思っています。</p>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>ドキュメントクラス</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>article</td>
+<td><code>ltjsarticle</code></td>
+<td>論文・レポート用</td>
+</tr>
+<tr>
+<td>book</td>
+<td><code>ltjsbook</code></td>
+<td>書籍用</td>
+</tr>
+<tr>
+<td>report</td>
+<td><code>ltjsreport</code></td>
+<td>レポート用</td>
+</tr>
+<tr>
+<td>jspf</td>
+<td><code>ltjspf</code></td>
+<td>某学会誌用</td>
+</tr>
+<tr>
+<td>kiyou</td>
+<td><code>ltjskiyou</code></td>
+<td>某紀要用</td>
+</tr>
+</tbody>
+</table>
+<h1 id="おまけ">おまけ</h1>
+<p>(u)pLaTeX では全角文字の幅と高さを <code>zw</code> と <code>zh</code> という単位で表していたが，LuaLaTeX では <code>\zw</code> と <code>\zh</code> となりました。</p>
+<p>実際に確かめたわけでは無いが，Windows 用の LuaLaTeX ではファイル名を日本語にしてもいいらしいです。<del>どうせ日本語のファイル名にしないけどな～</del></p>
+<h1 id="おわりに">おわりに</h1>
+<p>「はじめに」が大きくて頭でっかちな記事になってしまいました。まだ説明できていない内容があります。今後暇を見付けて記事のアップデートしていきたいと思います。楽しい LuaLaTeX ライフを願っています。</p>
+<h1 id="文献">文献</h1>
+<ol>
+<li><a href="https://www.amazon.co.jp/dp/B08MZ98Z1Q/">改定第8版 LaTeX2e 美文書作成入門</a></li>
+<li><a href="https://texwiki.texjp.org/LaTeX%E5%85%A5%E9%96%80%2F%E7%99%BA%E5%B1%95%E7%B7%A8">LaTeX 入門/発展変 (TeX Wiki)</a></li>
+<li><a href="https://texwiki.texjp.org/LuaTeX">LuaTeX (TeX Wiki)</a></li>
+<li><a href="http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf">LuaTeX-ja パッケージ (CTAN)</a></li>
+<li><a href="http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/ltjsclasses.pdf">LuaLaTeX-ja 用 jsclasses 互換クラス (CTAN)</a></li>
+<li><a href="https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">LaTeX-ja の使い方 (公式 Wiki)</a></li>
+<li><a href="https://qiita.com/Daiji256/items/29adc574b15345d8afa2">LuaLaTeX でフォント細かく変更する方法 (Qiita)</a></li>
+<li><a href="https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67">徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ (Qiita)</a></li>
+</ol>
+
+        </div>
+      </section>
+    </div>
+    <div class="post">
+      <div class="author">
+        <a href="https://daiji256.github.io/about/">
+          <img src="https://daiji256.github.io/images/icon.svg" class="author-icon" />
+        </a>
+        <div class="author-info">
+          <div>
+            <a href="https://daiji256.github.io/about/" class="name">
+              Daiji
+            </a>
+          </div>
+          <div>
+            ずっとパソコンの前でだらだらしている高専生です。いっぱい記事を書いていきたいと思ってます。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "daiji256-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+  <div class="toc">
+    <aside>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#フォント">フォント</a></li>
+    <li><a href="#lua-を書く">Lua を書く</a></li>
+    <li><a href="#ドキュメントクラス">ドキュメントクラス</a></li>
+    <li><a href="#おまけ">おまけ</a></li>
+    <li><a href="#おわりに">おわりに</a></li>
+    <li><a href="#文献">文献</a></li>
+  </ul>
+</nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  © 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.
+</footer>
+
+    </div>
+  </body>
+</html>
