@@ -1,0 +1,65 @@
+{{ define "content" -}}
+<div class="post-wrapper">
+  <div class="main-line">
+    <div class="post">
+      <div class="info">
+        <div class="title">{{ .Title }}</div>
+        {{ if not (eq (.Date.Format "2006/01/02") "0001/01/01") -}}
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-calendar logo"></span>
+          <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
+        </div>
+        {{- end }}
+        {{ with .Params.categories -}}
+        {{ if . -}}
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-folder logo"></span>
+          {{ range . -}}
+          <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">{{ . }}</a>
+          {{- end }}
+        </div>
+        {{- end }}
+        {{- end }}
+        {{ with .Params.tags -}}
+        {{ if . -}}
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-tags logo"></span>
+          {{ range . -}}
+          <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">{{ . }}</a>
+          {{- end }}
+        </div>
+        {{- end }}
+        {{- end }}
+      </div>
+      <section class="sec-content">
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </section>
+    </div>
+    <div class="post">
+      <div class="author">
+        <a href="{{ $.Site.BaseURL | relURL }}about/">
+          <img src="{{ $.Site.BaseURL | relURL }}images/icon.svg" class="author-icon" />
+        </a>
+        <div class="author-info">
+          <div>
+            <a href="{{ $.Site.BaseURL | relURL }}about/" class="name">
+              {{ .Site.Params.author }}
+            </a>
+          </div>
+          <div>
+            {{ .Site.Params.authorInfo }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ template "_internal/disqus.html" . }}
+  </div>
+  <div class="toc">
+    <aside>
+      {{ .TableOfContents }}
+    </aside>
+  </div>
+</div>
+{{ end }}

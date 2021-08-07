@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "RNS-JP";
+  src: url("../fonts/RNS-JP-Regular.woff") format("woff"),
+    url("../fonts/RNS-JP-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RNS-JP";
+  src: url("../fonts/RNS-JP-Bold.woff") format("woff"),
+    url("../fonts/RNS-JP-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
