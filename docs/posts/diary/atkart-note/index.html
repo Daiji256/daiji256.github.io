@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>研究室用の LaTeX クラスを作ったときの話 - Daiji Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Daiji256" />
+    <meta name="twitter:title" content="研究室用の LaTeX クラスを作ったときの話" />
+    <meta name="twitter:description" content="具体的なクラスの作り方はいつかまとめて，Qiita にもあげたいなと思いながら，ちょっと愚痴をこぼす。 はじめに 僕は高専の専攻科 2 年生（2021 年 8 月時点）です。本科 5 年生のときから研究室所属し，" />
+    <meta name="twitter:image" content="/images/apple-touch-icon.png" />
+    <meta property="og:url" content="https://daiji256.github.io/posts/diary/atkart-note/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="研究室用の LaTeX クラスを作ったときの話" />
+    <meta property="og:description" content="具体的なクラスの作り方はいつかまとめて，Qiita にもあげたいなと思いながら，ちょっと愚痴をこぼす。 はじめに 僕は高専の専攻科 2 年生（2021 年 8 月時点）です。本科 5 年生のときから研究室所属し，" />
+    <meta property="og:site_name" content="Daiji Blog" />
+    <meta property="og:image" content="/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://daiji256.github.io/images/favicon.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="https://daiji256.github.io/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/code-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/regular-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/brands-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/one-dark.css" />
+    
+  </head>
+  <body>
+    <div class="all-wrapper">
+      
+<div class="header">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <img src="https://daiji256.github.io/images/icon.svg" title='ホーム' class="user-icon" />
+          <div class="text">Daiji Blog</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <div class="logo" title='ホーム'>
+            <span class="ri ri-pencil"></span>
+          </div>
+          <div class="text">ホーム</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/categories/" class="item">
+          <div class="logo" title='カテゴリ'>
+            <span class="ri ri-folder"></span>
+          </div>
+          <div class="text">カテゴリ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/tags/" class="item">
+          <div class="logo">
+            <span class="ri ri-tags" title='タグ'></span>
+          </div>
+          <div class="text">タグ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/about/" class="item">
+          <div class="logo">
+            <span class="ri ri-user" title='プロフィール'></span>
+          </div>
+          <div class="text">プロフィール</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div class="main-line">
+    <div class="post">
+      <div class="info">
+        <div class="title">研究室用の LaTeX クラスを作ったときの話</div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-calendar logo"></span>
+          <div class="text">2021 年 8 月 7 日</div>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-folder logo"></span>
+          <a href="https://daiji256.github.io/categories/%E6%97%A5%E8%A8%98-%E5%82%99%E5%BF%98%E9%8C%B2/" class="text">日記-備忘録</a><a href="https://daiji256.github.io/categories/tex-latex/" class="text">TeX-LaTeX</a>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-tags logo"></span>
+          <a href="https://daiji256.github.io/tags/jlreq/" class="text">jlreq</a><a href="https://daiji256.github.io/tags/expl3/" class="text">expl3</a>
+        </div>
+      </div>
+      <section class="sec-content">
+        <div class="content">
+          <p>具体的なクラスの作り方はいつかまとめて，Qiita にもあげたいなと思いながら，ちょっと愚痴をこぼす。</p>
+<h1 id="はじめに">はじめに</h1>
+<p>僕は高専の専攻科 2 年生（2021 年 8 月時点）です。本科 5 年生のときから研究室所属し，気付いたら 3 年目で，今年で卒業です。</p>
+<p>そんな研究室には 10 年以上前から卒論・修論用の LaTeX スタイルファイルが用意されていました。そのファイルは古く，LuaLaTeX 等では動かせないなどの問題がありました。</p>
+<p>そうだ，新しいテンプレートを作ろう！</p>
+<h1 id="テンプレートの作り方">テンプレートの作り方</h1>
+<p>テンプレートを作るには，大きく 2 つの方法があります。</p>
+<ol>
+<li>既存のクラス（<code>jsarticle</code>，<code>jlreq</code> など）と自作スタイルファイルで作成</li>
+<li>既存のクラスをベースに新しいクラスファイルの作成</li>
+</ol>
+<p>自由度が高く勉強にもなる 2 つ目の方法でテンプレートを作成することにしました。</p>
+<p><code>jlreq</code> をベースにしました。理由は，新しく，クラスで対応している調整が多いからです。また，pLaTeX，upLaTeX，LuaLaTeX に対応しているからです。</p>
+<h2 id="作り方は誰から学ぶ">作り方は誰から学ぶ？</h2>
+<p>クラスファイルの作成方法はそこまで情報が無いので主に英語の内容で調査することが多かったです。まあ情報があるのでそこまで困りません。</p>
+<p>言語処理学会の年次大会予稿集用 LaTeX クラスの <code>NLProceedings</code> が <code>jlreq</code> をベースだったので，凄く参考になりました。7 割はこのソースコードから学びました。</p>
+<h2 id="expl3-について">expl3 について</h2>
+<p>expl3（エクスペル・スリー）とは LaTeX3 チームが開発しているプログラミング言語です。TeX 言語で実装されていて，TeX 上で動作します。TeX のマクロは地獄みたいに辛いですが，<strong>expl3 で</strong>は<strong>快適な TeX 生活</strong>を送れます。詳しくはググれ。</p>
+<p>変数とか関数が定義できるので非常に便利です。卒論クラスの作成に伴い，勉強しました。他のプログラミング言語に比べたらなかなかしんどいですが，TeX より幸せなので我慢できました。</p>
+<h1 id="さて愚痴でもこぼすか">さて，愚痴でもこぼすか</h1>
+<p>今日，<strong>(u)pLaTeX が使えなくなる</strong>だろうと言われている中，あらゆる学会等で (u)pLaTeX のテンプレートを配布しています。upLaTeX ならともかく，pLaTeX だけの学会も少なくありません。今後のことを考えると，日本語 LaTeX をどうするか，全 LaTeX ユーザは考えなければ行けないのでは無いでしょうか？</p>
+<p>今回卒論クラスの作成に当たって，「簡単な体裁の設定をするクラスファイルは作れる。」と感じました。<code>jlreq</code> が使える環境（TeX Live 2017 以降？）では問題なく動作します。学会用クラスは新しく作り直す必要があると感じます。僕が出る学会の予稿もゴミみたいなクラスファイルしか用意されていまでした。皆さんが所属する学会のクラスファイルを作ることが，今後の日本を支えると思っています。</p>
+<p>そういえば，学内の研究発表用のテンプレは MS Word だけです。しかも，拡張子が <code>doc</code> で，<code>x</code> がついてないほど古いです。フォントは MS Mincho を強制したりなど，クソがクソするくらいクソ<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>です。卒業までにどうにかしていきたいなと思ってます。</p>
+<h1 id="今後について">今後について</h1>
+<p>今後は↓のことをやっていきたいです。こんな愚痴をこぼしてないで手を動かさないとですね。</p>
+<ul>
+<li>クラスファイルを作るための方法を具体的にまとめていきたいです。ソースコードを公開できるといいですね。</li>
+<li>実はクラスファイル以外に，論文の書き方についても簡単に執筆しました。それも公開できるといいなと思ってます。</li>
+<li>学内の予稿クラスを作成する。MS Word 用も新しくする。</li>
+<li>僕が出る学会用の予稿クラスも作成できれば，学外での活躍になって嬉しいですね。</li>
+</ul>
+<h1 id="文献">文献</h1>
+<ol>
+<li><a href="https://github.com/abenori/jlreq"><code>jlreq</code> (GitHub)</a></li>
+<li><a href="https://github.com/wtsnjp/nlproceedings"><code>NLProceedings</code> (GitHub)</a></li>
+<li><a href="https://ctan.org/pkg/expl3">expl3 (CTAN)</a></li>
+</ol>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>詳しく話すと長いので，簡略化してます。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+      </section>
+    </div>
+    <div class="post">
+      <div class="author">
+        <a href="https://daiji256.github.io/about/">
+          <img src="https://daiji256.github.io/images/icon.svg" class="author-icon" />
+        </a>
+        <div class="author-info">
+          <div>
+            <a href="https://daiji256.github.io/about/" class="name">
+              Daiji
+            </a>
+          </div>
+          <div>
+            ずっとパソコンの前でだらだらしている高専生です。いっぱい記事を書いていきたいと思ってます。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "daiji256-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+  <div class="toc">
+    <aside>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#テンプレートの作り方">テンプレートの作り方</a>
+      <ul>
+        <li><a href="#作り方は誰から学ぶ">作り方は誰から学ぶ？</a></li>
+        <li><a href="#expl3-について">expl3 について</a></li>
+      </ul>
+    </li>
+    <li><a href="#さて愚痴でもこぼすか">さて，愚痴でもこぼすか</a></li>
+    <li><a href="#今後について">今後について</a></li>
+    <li><a href="#文献">文献</a></li>
+  </ul>
+</nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  © 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.
+</footer>
+
+    </div>
+  </body>
+</html>
