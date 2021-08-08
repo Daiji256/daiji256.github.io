@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>論文の書き方</title>
+      <link>https://daiji256.github.io/posts/diary/write-paper/</link>
+      <pubDate>Sun, 08 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/posts/diary/write-paper/</guid>
+      <description>はじめに これは所属する研究室のために作成した「卒業論文の書き方」の一部を抜粋したものです。体裁を中心にまとめていきます。文章の構成等についてはほとんど触れません。LaTeX による論文執筆1を想</description>
+    </item>
+    
+    <item>
       <title>研究室用の LaTeX クラスを作ったときの話</title>
       <link>https://daiji256.github.io/posts/diary/atkart-note/</link>
       <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
