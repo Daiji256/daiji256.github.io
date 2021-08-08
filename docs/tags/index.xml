@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>© 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.</copyright>
-    <lastBuildDate>Sat, 07 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://daiji256.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>まとめ</title>
+      <link>https://daiji256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/</link>
+      <pubDate>Sun, 08 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>expl3</title>
@@ -72,15 +81,6 @@
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://daiji256.github.io/tags/uplatex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>まとめ</title>
-      <link>https://daiji256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/</link>
-      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://daiji256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/</guid>
       <description></description>
     </item>
     
