@@ -135,7 +135,7 @@ $$f(x)=ax+b,$$
 
 # 文献
 
-- 木下是雄 "理科系の作文技術" 44 版 中央公論新社 2001
-- 文化庁 "公用文に関する諸通知" [リンク](https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/sanko/koyobun/pdf/yoryo_ver02.pdf) （参照 2021-8-08）
-- 科学技術情報流通技術基準 "参照文献の書き方" [リンク](https://jipsti.jst.go.jp/sist/handbook/sist02_2007/main.htm) （参照 2021-8-08）
-- 論文太郎 "科学技術論文の書き方" [リンク](http://www.okada-lab.org/Ronbun/) （参照 2021-8-08）
+1. 木下是雄 "理科系の作文技術" 44 版 中央公論新社 2001
+2. 文化庁 "公用文に関する諸通知" [リンク](https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/sanko/koyobun/pdf/yoryo_ver02.pdf) （参照 2021-8-08）
+3. 科学技術情報流通技術基準 "参照文献の書き方" [リンク](https://jipsti.jst.go.jp/sist/handbook/sist02_2007/main.htm) （参照 2021-8-08）
+4. 論文太郎 "科学技術論文の書き方" [リンク](http://www.okada-lab.org/Ronbun/) （参照 2021-8-08）
