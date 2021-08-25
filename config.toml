@@ -8,7 +8,6 @@ copyright = "© 2020–2021 Daiji - Powered by GitHub Pages & Hugo."
 paginate = 8
 languageCode = "ja"
 DefaultContentLanguage = "ja"
-disqusShortname = "daiji256-github-io"
 enableInlineShortcodes = true
 hasCJKLanguage = true
 summaryLength = 96
