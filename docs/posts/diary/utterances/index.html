@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>ブログのコメント欄を Disqus から Utterances に変更した - Daiji Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="DvAmtcJ-4mAzUR3EOVgXJIuW56ccEiKjtuw3JVBdw84" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Daiji256" />
+    <meta name="twitter:title" content="ブログのコメント欄を Disqus から Utterances に変更した" />
+    <meta name="twitter:description" content="はじめに この記事は日記です。変更方法についてはまとめません。 1 度もこのブログにコメントが付いたことはありません（2021-08-25 時点では）が Disqus を使うにあたって問題点がわかりました。無料のプ" />
+    <meta name="twitter:image" content="https://daiji256.github.io/images/apple-touch-icon.png" />
+    <meta property="og:url" content="https://daiji256.github.io/posts/diary/utterances/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="ブログのコメント欄を Disqus から Utterances に変更した" />
+    <meta property="og:description" content="はじめに この記事は日記です。変更方法についてはまとめません。 1 度もこのブログにコメントが付いたことはありません（2021-08-25 時点では）が Disqus を使うにあたって問題点がわかりました。無料のプ" />
+    <meta property="og:site_name" content="Daiji Blog" />
+    <meta property="og:image" content="https://daiji256.github.io/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://daiji256.github.io/images/favicon.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="https://daiji256.github.io/images/apple-touch-icon.png" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/base-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/code-fonts.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/regular-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/brands-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/one-dark.css" />
+    
+  </head>
+  <body>
+    <div class="all-wrapper">
+      
+<div class="header">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <img src="https://daiji256.github.io/images/icon.svg" title='ホーム' class="user-icon" />
+          <div class="text">Daiji Blog</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/" class="item">
+          <div class="logo" title='ホーム'>
+            <span class="ri ri-pencil"></span>
+          </div>
+          <div class="text">ホーム</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/categories/" class="item">
+          <div class="logo" title='カテゴリ'>
+            <span class="ri ri-folder"></span>
+          </div>
+          <div class="text">カテゴリ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/tags/" class="item">
+          <div class="logo">
+            <span class="ri ri-tags" title='タグ'></span>
+          </div>
+          <div class="text">タグ</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://daiji256.github.io/about/" class="item">
+          <div class="logo">
+            <span class="ri ri-user" title='プロフィール'></span>
+          </div>
+          <div class="text">プロフィール</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="post-wrapper">
+  <div class="main-line">
+    <div class="post">
+      <div class="info">
+        <div class="title">ブログのコメント欄を Disqus から Utterances に変更した</div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-calendar logo"></span>
+          <div class="text">2021 年 8 月 25 日</div>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-folder logo"></span>
+          <a href="https://daiji256.github.io/categories/%E6%97%A5%E8%A8%98-%E5%82%99%E5%BF%98%E9%8C%B2/" class="text">日記-備忘録</a>
+        </div>
+        <div class="post-info">
+          <span aria-hidden="true" class="ri ri-tags logo"></span>
+          <a href="https://daiji256.github.io/tags/%E3%83%96%E3%83%AD%E3%82%B0/" class="text">ブログ</a>
+        </div>
+      </div>
+      <section class="sec-content">
+        <div class="content">
+          <h1 id="はじめに">はじめに</h1>
+<p>この記事は<strong>日記</strong>です。変更方法についてはまとめません。</p>
+<p>1 度もこのブログにコメントが付いたことはありません（2021-08-25 時点では）が Disqus を使うにあたって問題点がわかりました。無料のプランの場合広告を付けてくることです。有料プランにするお金は無いので，他のコメントサービスに変更しようと思いました。</p>
+<h1 id="他のコメントサービス">他のコメントサービス</h1>
+<ul>
+<li>Utterances：<strong>これを選んだ</strong>。GitHub の Issue を使い，無料で広告無しで利用できる。GitHub アカウントが無いとコメント付けれない問題はありますが，このブログにコメント書く人は GitHub アカウントくらいあるので問題ないでしょう。そもそもコメント書く人はいませんが&hellip;</li>
+<li>metype：Disqus と似ている。無料だが 1 つだけ広告が付く。迷ったけどこのブログには Utterances で良いと思ったので見送った。普通のブログならこっちの方がいいと思う。</li>
+<li>Isso：自分でサーバーを用意しなければならない。Disqus の代用として有名らしいけどサーバーの準備が嫌なので諦めた。</li>
+</ul>
+<p>上記の理由から Utterances を選びました。</p>
+<h1 id="文献">文献</h1>
+<ol>
+<li><a href="https://blog.disqus.com/">Disqus</a></li>
+<li><a href="https://utteranc.es/">Utterances</a></li>
+<li><a href="https://www.metype.com/">metype</a></li>
+<li><a href="https://github.com/posativ/isso/">Isso</a></li>
+</ol>
+
+        </div>
+      </section>
+    </div>
+    <div class="post">
+      <div class="author">
+        <a href="https://daiji256.github.io/about/">
+          <img src="https://daiji256.github.io/images/icon.svg" class="author-icon" />
+        </a>
+        <div class="author-info">
+          <div>
+            <a href="https://daiji256.github.io/about/" class="name">
+              Daiji
+            </a>
+          </div>
+          <div>
+            ずっとパソコンの前でだらだらしている高専生です。いっぱい記事を書いていきたいと思ってます。
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://utteranc.es/client.js"
+        repo="Daiji256/daiji256.github.io"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </div>
+  <div class="toc">
+    <aside>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#他のコメントサービス">他のコメントサービス</a></li>
+    <li><a href="#文献">文献</a></li>
+  </ul>
+</nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  © 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.
+</footer>
+
+    </div>
+  </body>
+</html>

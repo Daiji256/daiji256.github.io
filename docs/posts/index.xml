@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>© 2020–2021 Daiji - Powered by GitHub Pages &amp; Hugo.</copyright>
-    <lastBuildDate>Sun, 08 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://daiji256.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ブログのコメント欄を Disqus から Utterances に変更した</title>
+      <link>https://daiji256.github.io/posts/diary/utterances/</link>
+      <pubDate>Wed, 25 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://daiji256.github.io/posts/diary/utterances/</guid>
+      <description>はじめに この記事は日記です。変更方法についてはまとめません。 1 度もこのブログにコメントが付いたことはありません（2021-08-25 時点では）が Disqus を使うにあたって問題点がわかりました。無料のプ</description>
+    </item>
     
     <item>
       <title>論文の書き方</title>
