@@ -85,6 +85,6 @@ Times New Roman や MS Mincho などを指定されたことを想定して説�
 # 文献
 
 1. [ソースコード (GitHub)](https://github.com/Daiji256/TeX-TikZ-Heatran/)
-1. [LuaTeX-ja パッケージ (CTAN)](http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
-1. [unicode-math (CTAN)](https://ctan.org/pkg/unicode-math)
-1. [Point typography (Wiki)](https://en.wikipedia.org/wiki/Point_(typography))
+2. [LuaTeX-ja パッケージ (CTAN)](http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
+3. [unicode-math (CTAN)](https://ctan.org/pkg/unicode-math)
+4. [Point typography (Wiki)](https://en.wikipedia.org/wiki/Point_(typography))

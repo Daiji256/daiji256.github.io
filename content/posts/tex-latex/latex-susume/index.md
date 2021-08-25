@@ -378,8 +378,8 @@ LaTeX には自動で節やキャプションの参照が行えます。文書�
 # 文献
 
 1. [改訂第8版 LaTeX2e 美文書作成入門](https://www.amazon.co.jp/dp/B08MZ98Z1Q/)
-1. [TeX Wiki](https://texwiki.texjp.org/)
-1. [Overleaf](https://ja.overleaf.com/)
-1. [Cloud LaTeX](https://cloudlatex.io/ja)
-1. [LuaLaTeX のすゝめ (Qiita)](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995)
-1. [jlreq (GitHub)](https://github.com/abenori/jlreq/blob/master/README-ja.md)
+2. [TeX Wiki](https://texwiki.texjp.org/)
+3. [Overleaf](https://ja.overleaf.com/)
+4. [Cloud LaTeX](https://cloudlatex.io/ja)
+5. [LuaLaTeX のすゝめ (Qiita)](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995)
+6. [jlreq (GitHub)](https://github.com/abenori/jlreq/blob/master/README-ja.md)
