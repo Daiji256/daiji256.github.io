@@ -124,7 +124,7 @@
 </code></pre></div><h1 id="フォントの変更">フォントの変更</h1>
 <p>Times New Roman や MS Mincho などを指定されたことを想定して説明します。<code>luatexja-fontspec</code> を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。<code>FakeBold=2</code>，<code>FakeSlant=0.33</code> に設定したとき MS Word と同様の結果になりました。</p>
 <figure>
-    <img src="../../images/tex-word/fig1.jpg" width="320"/> 
+    <img src="./images/fig1.jpg" width="320"/> 
 </figure>
 
 <div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\usepackage</span><span class="nb">{</span>luatexja-fontspec<span class="nb">}</span>
@@ -152,7 +152,7 @@
 ]<span class="nb">{</span>MS-Gothic<span class="nb">}</span>
 </code></pre></div><p>次に数式フォントについてです。現在 MS Word では数式フォントに Cambria を使用しています。<code>unicode-math</code> を使用すれば簡単に設定できます。</p>
 <figure>
-    <img src="../../images/tex-word/fig2.jpg" width="160"/> 
+    <img src="./images/fig2.jpg" width="160"/> 
 </figure>
 
 <div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\usepackage</span><span class="nb">{</span>unicode-math<span class="nb">}</span>
@@ -170,7 +170,7 @@
 <span class="k">\renewcommand\huge</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\huge</span><span class="nb">{</span>20.74bp<span class="nb">}{</span>30bp<span class="nb">}}</span>
 <span class="k">\renewcommand\Huge</span><span class="nb">{</span><span class="k">\@</span>setfontsize<span class="k">\Huge</span><span class="nb">{</span>24.88bp<span class="nb">}{</span>36bp<span class="nb">}}</span>
 </code></pre></div><h1 id="まとめ">まとめ</h1>
-<p><del>アンチMS Wordな人のために</del> LuaLaTeX での細かいフォント設定についてまとめました。曖昧なところや間違ってるところがあると思うのでその時は指摘してください。ソースコードは下の文献から見に行けます。</p>
+<p><del>アンチ MS Word な人のために</del> LuaLaTeX での細かいフォント設定についてまとめました。曖昧なところや間違ってるところがあると思うのでその時は指摘してください。ソースコードは下の文献から見に行けます。</p>
 <h1 id="文献">文献</h1>
 <ol>
 <li><a href="https://github.com/Daiji256/TeX-TikZ-Heatran/">ソースコード (GitHub)</a></li>
@@ -199,13 +199,15 @@
         </div>
       </div>
     </div>
-    <script src="https://utteranc.es/client.js"
-        repo="Daiji256/daiji256.github.io"
-        issue-term="url"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
+    <div class="comment-back">
+      <script src="https://utteranc.es/client.js"
+          repo="Daiji256/daiji256.github.io"
+          issue-term="url"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+      </script>
+    </div>
   </div>
   <div class="toc">
     <aside>

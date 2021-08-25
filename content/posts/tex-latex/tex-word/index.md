@@ -24,7 +24,7 @@ katex: true
 
 Times New Roman や MS Mincho などを指定されたことを想定して説明します。`luatexja-fontspec` を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。`FakeBold=2`，`FakeSlant=0.33` に設定したとき MS Word と同様の結果になりました。
 
-{{< figure src="../../images/tex-word/fig1.jpg" width="320" >}}
+{{< figure src="./images/fig1.jpg" width="320" >}}
 
 ```TeX
 \usepackage{luatexja-fontspec}
@@ -54,7 +54,7 @@ Times New Roman や MS Mincho などを指定されたことを想定して説�
 
 次に数式フォントについてです。現在 MS Word では数式フォントに Cambria を使用しています。`unicode-math` を使用すれば簡単に設定できます。
 
-{{< figure src="../../images/tex-word/fig2.jpg" width="160" >}}
+{{< figure src="./images/fig2.jpg" width="160" >}}
 
 ```TeX
 \usepackage{unicode-math}
@@ -80,11 +80,11 @@ Times New Roman や MS Mincho などを指定されたことを想定して説�
 
 # まとめ
 
-~~アンチMS Wordな人のために~~ LuaLaTeX での細かいフォント設定についてまとめました。曖昧なところや間違ってるところがあると思うのでその時は指摘してください。ソースコードは下の文献から見に行けます。
+~~アンチ MS Word な人のために~~ LuaLaTeX での細かいフォント設定についてまとめました。曖昧なところや間違ってるところがあると思うのでその時は指摘してください。ソースコードは下の文献から見に行けます。
 
 # 文献
 
 1. [ソースコード (GitHub)](https://github.com/Daiji256/TeX-TikZ-Heatran/)
-1. [LuaTeX-ja パッケージ (CTAN)](http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
-1. [unicode-math (CTAN)](https://ctan.org/pkg/unicode-math)
-1. [Point typography (Wiki)](https://en.wikipedia.org/wiki/Point_(typography))
+2. [LuaTeX-ja パッケージ (CTAN)](http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
+3. [unicode-math (CTAN)](https://ctan.org/pkg/unicode-math)
+4. [Point typography (Wiki)](https://en.wikipedia.org/wiki/Point_(typography))

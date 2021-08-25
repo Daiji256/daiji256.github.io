@@ -461,6 +461,22 @@ table tr:last-child td {
   margin-bottom: 8px;
 }
 
+.comment-back {
+  background-color: #fff;
+  padding: 8px;
+  margin-bottom: 24px;
+}
+@media only screen and (max-width: 992px) {
+  .comment-back {
+    margin: 0 auto 40px;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .comment-back {
+    margin: 0 0 40px;
+  }
+}
+
 .author {
   display: flex;
   align-items: flex-start;
@@ -533,6 +549,7 @@ p {
 }
 code {
   background-color: #eee;
+  border-radius: 4px;
   color: #333;
   padding: 0.1em 0.4em;
   font-family: "HackGen35-Subset", monospace;
@@ -592,7 +609,6 @@ em {
 }
 @media only screen and (max-width: 770px) {
   .sec-content .highlight {
-    padding: 0;
     padding-top: 8px;
     padding-bottom: 8px;
   }

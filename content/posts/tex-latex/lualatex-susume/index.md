@@ -16,7 +16,7 @@ katex: true
 
 LaTeX は下の図の様に TeX ファイルの執筆から PDF の出力まで行います。レガシー LaTeX（(u)pLaTeX など）は DVI ファイルを経由して PDF 作成します。それに対しモダン LaTeX（LuaLaTeX など）は**直接PDFを作成**します。LuaLaTeX は海外でメジャーである pdfLaTeX に軽量スクリプト言語である Lua を組み込んだものです。pdfLaTeX の後継として期待されていて，LuaTeX-ja プロジェクトにより (u)pLaTeX 以上の自由度で和文組版が可能となっています。LuaLaTeX は Unicode に対応しています。さらに**フォントの設定が簡単**で，**OpenType や TrueType フォントを直接扱う**ことができます。
 
-{{< figure src="../../images/lualatex-susume/fig1.jpg" width="480" >}}
+{{< figure src="./images/fig1.jpg" width="480" >}}
 
 # フォント
 
@@ -72,10 +72,10 @@ LuaLaTeX の `jsclasses` 互換クラス次の通りです。現在は (u)pLaTeX
 # 文献
 
 1. [改定第8版 LaTeX2e 美文書作成入門](https://www.amazon.co.jp/dp/B08MZ98Z1Q/)
-1. [LaTeX 入門/発展変 (TeX Wiki)](https://texwiki.texjp.org/LaTeX%E5%85%A5%E9%96%80%2F%E7%99%BA%E5%B1%95%E7%B7%A8)
-1. [LuaTeX (TeX Wiki)](https://texwiki.texjp.org/LuaTeX)
-1. [LuaTeX-ja パッケージ (CTAN)](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
-1. [LuaLaTeX-ja 用 jsclasses 互換クラス (CTAN)](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/ltjsclasses.pdf)
-1. [LaTeX-ja の使い方 (公式 Wiki)](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)
-1. [LuaLaTeX でフォント細かく変更する方法 (Qiita)](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)
-1. [徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ (Qiita)](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)
+2. [LaTeX 入門/発展変 (TeX Wiki)](https://texwiki.texjp.org/LaTeX%E5%85%A5%E9%96%80%2F%E7%99%BA%E5%B1%95%E7%B7%A8)
+3. [LuaTeX (TeX Wiki)](https://texwiki.texjp.org/LuaTeX)
+4. [LuaTeX-ja パッケージ (CTAN)](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
+5. [LuaLaTeX-ja 用 jsclasses 互換クラス (CTAN)](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/ltjsclasses.pdf)
+6. [LaTeX-ja の使い方 (公式 Wiki)](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)
+7. [LuaLaTeX でフォント細かく変更する方法 (Qiita)](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)
+8. [徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ (Qiita)](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)

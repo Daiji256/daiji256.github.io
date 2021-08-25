@@ -89,6 +89,6 @@ bit を高速に数える手法の比較を行いました。安直に数える�
 # 文献
 
 1. [ソースコード (GitHub)](https://github.com/Daiji256/Hamming-weight)
-1. [Hamming weight (Wiki)](https://en.wikipedia.org/wiki/Hamming_weight)
-1. [x86_64 で popcnt / tzcnt / lzcntする【ビット演算テクニック Advent Calendar 2016 5日目】 (Qiita)](https://qiita.com/ocxtal/items/01c46b15cb1f2e656887)
-1. [GCC (GNU)](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html)
+2. [Hamming weight (Wiki)](https://en.wikipedia.org/wiki/Hamming_weight)
+3. [x86_64 で popcnt / tzcnt / lzcntする【ビット演算テクニック Advent Calendar 2016 5日目】 (Qiita)](https://qiita.com/ocxtal/items/01c46b15cb1f2e656887)
+4. [GCC (GNU)](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html)
