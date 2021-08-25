@@ -4,6 +4,7 @@ date: 2021-08-08
 categories: [論文]
 tags: [Deep learning,struct2depth,翻訳,まとめ]
 katex: true
+draft: true
 ---
 
 "[Depth Prediction Without the Sensors: Leveraging Structure for Unsupervised Learning from Monocular Videos](https://arxiv.org/abs/1811.06152)" の翻訳 / 解説を行います．
