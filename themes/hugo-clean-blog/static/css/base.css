@@ -549,6 +549,7 @@ p {
 }
 code {
   background-color: #eee;
+  border-radius: 4px;
   color: #333;
   padding: 0.1em 0.4em;
   font-family: "HackGen35-Subset", monospace;
