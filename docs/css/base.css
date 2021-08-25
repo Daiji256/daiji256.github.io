@@ -628,3 +628,6 @@ hr {
   height: 2px;
   background-color: #ddd;
 }
+.footnotes li p {
+  margin: 0;
+}
