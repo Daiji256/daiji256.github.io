@@ -461,6 +461,22 @@ table tr:last-child td {
   margin-bottom: 8px;
 }
 
+.comment-back {
+  background-color: #fff;
+  padding: 8px;
+  margin-bottom: 24px;
+}
+@media only screen and (max-width: 992px) {
+  .comment-back {
+    margin: 0 auto 40px;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .comment-back {
+    margin: 0 0 40px;
+  }
+}
+
 .author {
   display: flex;
   align-items: flex-start;
