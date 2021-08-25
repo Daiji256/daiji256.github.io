@@ -6,7 +6,7 @@ tags: [Deep learning,struct2depth,翻訳,まとめ]
 katex: true
 ---
 
-"Depth Prediction Without the Sensors: Leveraging Structure for Unsupervised Learning from Monocular Videos" の翻訳 / 解説を行います．
+"[Depth Prediction Without the Sensors: Leveraging Structure for Unsupervised Learning from Monocular Videos](https://arxiv.org/abs/1811.06152)" の翻訳 / 解説を行います．
 
 # 概要 / はじめに
 
@@ -15,7 +15,7 @@ katex: true
 ## 背景 / 従来手法
 
 - カメラは他のセンサに比べ安価であるため，RGB カメラからの深度とエゴモーション[^egomotion]推定は有益である．
-- 教師あり学習による単一画像からの深度推定は成功している[^supervised]．しかし．教師あり学習は，高価な深度センサーが必要であり，**センサーのノイズが発生する問題がある**．
+- 教師あり学習による単一画像からの深度推定は成功している[^supervised]．しかし，教師あり学習は，高価な深度センサーが必要であり，**センサーのノイズが発生する問題がある**．
 - 多くの教師なしの画像から深度推定する手法が提案されており，教師なしの深度推定モデルはセンサー教師ありのモデルよりも精度が高いことが実証されている．精度が良い要因は，センサーの画素の欠落やノイズが無いことである．
 - ステレオカメラや独立したオプティカルフロー推定により，精度向上が行われた．
 
@@ -26,7 +26,7 @@ katex: true
 
 - **単眼 RGB 動画像から深度とエゴモーション推定を教師なし学習で実現する**．
 - **キャリブレーションしていない単眼動画から学習できる**．
-- Modeling Object Motion：画像中の物体の動きをモデル化し，学習に幾何学的構造を導入する．
+- Modeling Object Motion：画像中の物体の動きをモデル化し，**学習に幾何学的構造を導入する**．
 - Imposing Object Size Constrains：物体サイズによる正則化する．
 - Online-Refinement：推論実行時に，オンラインにパラメータをチューニングし，未知の領域に適応する．
 - 提案する手法は，モーション処理を含め，すべて最先端の手法よりも優れている．
@@ -37,7 +37,7 @@ katex: true
 
 # 主な手法
 
-主な学習方法は，単眼動画からの深度とエゴモーションを教師なしで学習する．ここでは，物体の動きをモデル化することで動的なシーンをモデル化することができ，オンラインでの改良法を用いて学習を適応させることができる新しい手法を提案する．この 2 つのアイデアは関連していて，別々に，または共同で使用できる．本論文では，この 2 つのアイデアを個別に説明し，様々な実験で個別および共同の有効性を示す．
+主な学習方法は，単眼動画からの深度とエゴモーションを教師なしで学習する．ここでは，物体の動きをモデル化することで動的なシーンをモデル化することができ，オンラインでチューニングすることができる新しい手法を提案する．この 2 つのアイデアは関連していて，別々に，または共同で使用できる．本論文では，この 2 つのアイデアを個別に説明し，様々な実験で個別および共同の有効性を示す．
 
 # 問題
 
@@ -45,9 +45,7 @@ katex: true
 
 [^input-data]: 簡単のために，3 枚で説明する．4 枚以上でも可能である．
 
-ある画像をシーケンス内の隣接する画像にワープする操作を用いることで，異なるカメラの視点から見たシーンがどのように見えるかを想像することができます．$\theta(I_i)$ によってシーンの奥行きが得られるので，次のフレームへのエゴモーション $\psi_{E}$ は，シーンを次のフレームに変換し，投影によって次の画像を得ることができる．具体的には，微分可能な画像ワーピング演算子 $\phi(I_i, D_j, E_{i \to j}) \to \hat{I}_{i \to j}$ を使用して，$\hat{I}_{i \to j}$ は再構成された $j$ 番目の画像であり，対応する深さを指定して，任意のソース RGB 画像 $I_i$ を $I_j$ にワープできます．推定 $D_j$ とエゴモーション推定 $E_{i \to j}$．実際には，$\phi$ は変換された画像のピクセル座標から読み取り，$\hat{I}^{xy}_{i \to j} = \hat{I}^{\hat{x}\hat{y}}_{i}$ を設定してワーピングを実行します．ここで，$[x, y, 1]^\top = KE_{i \to j}(D^{xy}_{j} \cdot K^{-1}[x, y, 1]^\top)$ は投影された座標です．次に，監視信号は，次のフレーム $\hat{I}_{i \to j}$ に投影されたシーンを RGB 空間の実際の次のフレーム $I_j$ 画像と比較する測光損失を使用して確立されます．たとえば，再構成損失を使用します．$L_{\text{rec}} = \min(\\|\hat{I}_{1 \to 2} − I_2\\|)$．
-
-Using a warping operation of one image to an adjacent one in the sequence, we are able to imagine how a scene would look like from a different camera viewpoint. Since the depth of the scene is available through θ(I_i), the egomotion to the next frame ψE can translate the scene to the next frame and obtain the next image by projection. More specifically, with a differentiable image warping operator φ(I_i, D_j, E_i→j) → I_i→j, where I_i→j is the reconstructed j-th image, we can warp any source RGB-image I_i into I_j given corresponding depth estimate Dj and an egomotion estimate E_i→j. In practice, φ performs the warping by reading from transformed image pixel coordinates, setting Ixy i→j = I_xy i , where [x, y, 1]T = KE_i→j(Dxy j · K−1[x, y, 1]T ) are the projected coordinates. The supervisory signal is then established using a photometric loss comparing the projected scene onto the next frame I_i→j with the actual next frame Ij image in RGB space, for example using a reconstruction loss: Lrec = min(∥I_1→2 − I2∥).
+ある画像を次のフレームの画像にワープすることで，異なるカメラの視点からどう見えるかを想像することができる．シーンの奥行きが $\theta(I_i)$ によって得られるので，次のフレームへのエゴモーション $\psi_{E}$ は，シーンを次のフレームに変換し，投影によって次の画像を得ることができる．具体的には，微分可能な画像ワーピング演算子 $\phi(I_i, D_j, E_{i \to j}) \to \hat{I}_{i \to j}$ が再構成されれた $j$ 番目の画像である場合，対応する深度推定結果 $D_j$ とエゴモーション推定結果 $E_{i \to j}$ が与えられると，任意のソース RGB 画像 $I_i$ を $I_j$ にワープできる．実際は $\phi$ は変換された画像のピクセル座標から読み取り $\hat{I}^{xy}_{i \to j} = \hat{I}^{\hat{x}\hat{y}}_{i}$ を設定してワーピングを実行する．ここで $[x, y, 1]^\top = KE_{i \to j}(D^{xy}_{j} \cdot K^{-1}[x, y, 1]^\top)$ は投影された座標である．次に監視信号は，次のフレーム $\hat{I}_{i \to j}$ に投影されたシーンを RGB 空間の実際の次のフレーム $I_j$ 画像と比較する測光損失（photometric loss）を使用して確立される．たとえば，再構成損失 $L_{\text{rec}} = \min(\\|\hat{I}_{1 \to 2} − I_2\\|)$ を使用する．
 
 # 文献
 
