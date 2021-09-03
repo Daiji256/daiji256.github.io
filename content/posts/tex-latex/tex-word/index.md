@@ -24,7 +24,7 @@ katex: true
 
 Times New Roman や MS Mincho などを指定されたことを想定して説明します。`luatexja-fontspec` を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。`FakeBold=2`，`FakeSlant=0.33` に設定したとき MS Word と同様の結果になりました。
 
-{{< figure src="./images/fig1.jpg" width="320" >}}
+{{< figure src="./images/fig1.svg" class="center" width="320" height="182" >}}
 
 ```TeX
 \usepackage{luatexja-fontspec}
@@ -54,7 +54,7 @@ Times New Roman や MS Mincho などを指定されたことを想定して説�
 
 次に数式フォントについてです。現在 MS Word では数式フォントに Cambria を使用しています。`unicode-math` を使用すれば簡単に設定できます。
 
-{{< figure src="./images/fig2.jpg" width="160" >}}
+{{< figure src="./images/fig2.svg" class="center" width="142" height="76" >}}
 
 ```TeX
 \usepackage{unicode-math}

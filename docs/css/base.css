@@ -547,6 +547,10 @@ p {
   line-height: 1.9;
   margin-bottom: 24px;
 }
+p + figure {
+  margin-top: -24px;
+  margin-bottom: 0px;
+}
 code {
   background-color: #eee;
   border-radius: 4px;
@@ -646,4 +650,8 @@ hr {
 }
 .footnotes li p {
   margin: 0;
+}
+
+.center {
+  text-align: center;
 }

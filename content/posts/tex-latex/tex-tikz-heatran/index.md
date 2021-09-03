@@ -24,13 +24,15 @@ katex: true
 
 # TeX を這い回る
 
-まずは TeX を這い回ってもらいます。ただヒードランの画像を `\includegraphics` によって貼り付けるだけです。
+まずは TeX を這い回ってもらいます。ただヒードランの画像を `\includegraphics` によって貼り付けるだけです[^svg-err]。
+
+[^svg-err]: SVG の表示がうまくいっていないかもしれません。
 
 ```TeX
 \includegraphics[scale=4]{Heatran.png}
 ```
 
-{{< figure src="./images/heatran-1.jpg" width="320" >}}
+{{< figure src="./images/fig1.svg" class="center" width="320" height="453" >}}
 
 # TikZ を這い回る
 
@@ -60,7 +62,7 @@ for i in range(img.shape[1]):
 print("\\end{tikzpicture}")
 ```
 
-{{< figure src="./images/heatran-2.jpg" width="320" >}}
+{{< figure src="./images/fig2.svg" class="center" width="320" height="453" >}}
 
 # まとめ
 

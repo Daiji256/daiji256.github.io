@@ -40,9 +40,9 @@
     <div class="card">
       <div class="main">
         {{ if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.svg" (lower .Title) )) (fileExists (printf "/static/images/taxonomies/%s.svg" (lower .Title) )) -}}
-        <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ lower .Title }}.svg" class="icon" />
+        <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ lower .Title }}.svg" width="80" height="80" class="icon" />
         {{- else -}}
-        <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/none.svg" class="icon" />
+        <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/none.svg" width="80" height="80" class="icon" />
         {{- end }}
         <div class="name">
           {{ if eq .Title "Posts" -}}
