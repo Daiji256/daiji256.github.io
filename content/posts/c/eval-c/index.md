@@ -61,11 +61,11 @@ double eval(char *str) {
 
 引数に `3*sqrt(4)+(5-2)` とした時を例にして説明します。まず都合が良くするために全体に `(`，`)` を付けます。
 
-{{< figure src="./images/fig1.jpg" width="320" >}}
+{{< figure src="./images/fig1.svg" class="center" width="320" height="114" >}}
 
 次に計算の順番通りに関数を呼び出し計算します。
 
-{{< figure src="./images/fig2.jpg" width="320" >}}
+{{< figure src="./images/fig2.svg" class="center" width="320" height="343" >}}
 
 次に `*`，`\` による計算を `calc` を用いて行います。最後に `+`，`-` による計算を行います。最終的に残った値を実数値として `return` します。
 
