@@ -647,3 +647,7 @@ hr {
 .footnotes li p {
   margin: 0;
 }
+
+.center {
+  text-align: center;
+}
