@@ -182,6 +182,8 @@ table tr:last-child td {
   background-color: #fff;
   border-radius: 50%;
   margin-right: 8px;
+  height: 28px;
+  width: 28px;
 }
 .header .container .item .logo {
   display: none;
@@ -319,6 +321,10 @@ table tr:last-child td {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.card .main .icon {
+  height: 80px;
+  width: 80px;
 }
 .card .main .name {
   font-size: 2rem;
@@ -474,6 +480,10 @@ table tr:last-child td {
 .author {
   display: flex;
   align-items: flex-start;
+}
+.author-icon {
+  height: 36px;
+  width: 36px;
 }
 .author-info {
   font-size: 1.4rem;
