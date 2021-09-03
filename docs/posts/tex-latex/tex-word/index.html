@@ -56,7 +56,7 @@
     <ul>
       <li>
         <a href="https://daiji256.github.io/" class="item">
-          <img src="https://daiji256.github.io/images/icon.svg" title='ホーム' class="user-icon" />
+          <img src="https://daiji256.github.io/images/icon.svg" width="28" height="28" title='ホーム' class="user-icon" />
           <div class="text">Daiji Blog</div>
         </a>
       </li>
@@ -123,8 +123,8 @@
 <div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\documentclass</span><span class="na">[fontsize=10.5bp]</span><span class="nb">{</span>jlreq<span class="nb">}</span>
 </code></pre></div><h1 id="フォントの変更">フォントの変更</h1>
 <p>Times New Roman や MS Mincho などを指定されたことを想定して説明します。<code>luatexja-fontspec</code> を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Roman のようにはじめから太字や斜体が用意されているフォントがほとんどですが，MS Mincho などは用意されていません。MS Word などでは MS Mincho を太字にするとき疑似的に太字にしています。LuaLaTeX でもオプションにより疑似太字，疑似斜体を実現することができます。<code>FakeBold=2</code>，<code>FakeSlant=0.33</code> に設定したとき MS Word と同様の結果になりました。</p>
-<figure>
-    <img src="./images/fig1.jpg" width="320"/> 
+<figure class="center">
+    <img src="./images/fig1.svg" width="320" height="182"/> 
 </figure>
 
 <div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\usepackage</span><span class="nb">{</span>luatexja-fontspec<span class="nb">}</span>
@@ -151,8 +151,8 @@
 	BoldItalicFeatures = <span class="nb">{</span>FakeBold=2, FakeSlant=0.33<span class="nb">}</span>
 ]<span class="nb">{</span>MS-Gothic<span class="nb">}</span>
 </code></pre></div><p>次に数式フォントについてです。現在 MS Word では数式フォントに Cambria を使用しています。<code>unicode-math</code> を使用すれば簡単に設定できます。</p>
-<figure>
-    <img src="./images/fig2.jpg" width="160"/> 
+<figure class="center">
+    <img src="./images/fig2.svg" width="142" height="76"/> 
 </figure>
 
 <div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX"><span class="k">\usepackage</span><span class="nb">{</span>unicode-math<span class="nb">}</span>
@@ -185,7 +185,7 @@
     <div class="post">
       <div class="author">
         <a href="https://daiji256.github.io/about/">
-          <img src="https://daiji256.github.io/images/icon.svg" class="author-icon" />
+          <img src="https://daiji256.github.io/images/icon.svg" width="36" height="36" class="author-icon" />
         </a>
         <div class="author-info">
           <div>
