@@ -106,7 +106,7 @@ $$f(x)=ax+b,$$
 - 図は参照したページの下に置きます。下に置けない場合は，次のページの上に置きます。
 - 写真等はラスタ画像で，グラフ等はベクタ画像で作成したほうが望ましいです。
 
-{{< figure src="./images/fig1.svg" width="320" >}}
+{{< figure src="./images/fig1.svg" class="center" width="320" height="291" >}}
 
 ## 謝辞
 
