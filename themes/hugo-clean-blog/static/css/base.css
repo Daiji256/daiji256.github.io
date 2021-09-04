@@ -164,10 +164,10 @@ table tr:last-child td {
   }
 }
 
-.header {
+header {
   background-color: #81d41a;
 }
-.header .container {
+header > .container {
   display: grid;
   height: 48px;
   max-width: 1100px;
@@ -176,36 +176,36 @@ table tr:last-child td {
   padding-left: 12px;
   padding-right: 12px;
 }
-.header .container .item {
+header > .container .item {
   display: flex;
   align-items: center;
 }
-.header .container .item .user-icon {
+header > .container .item .user-icon {
   background-color: #fff;
   border-radius: 50%;
   margin-right: 8px;
   height: 28px;
   width: 28px;
 }
-.header .container .item .logo {
+header > .container .item .logo {
   display: none;
 }
 @media only screen and (max-width: 770px) {
-  .header .container .item .logo {
+  header > .container .item .logo {
     display: unset;
     font-size: 24px;
     padding-right: 4px;
   }
 }
-.header .container .item .text {
+header > .container .item .text {
   font-size: 16px;
 }
 @media only screen and (max-width: 770px) {
-  .header .container .item .text {
+  header > .container .item .text {
     display: none;
   }
 }
-.header .container ul {
+header > .container ul {
   display: flex;
   align-items: center;
   margin: 0;
@@ -213,18 +213,18 @@ table tr:last-child td {
   list-style: none;
   justify-content: flex-start;
 }
-.header .container li:not(:last-child) {
+header > .container li:not(:last-child) {
   padding-right: 12px;
 }
-.header .container li:nth-of-type(2) {
+header > .container li:nth-of-type(2) {
   margin-left: auto;
 }
-.header .container a {
+header > .container a {
   color: #395511;
   font-weight: bold;
 }
 
-.footer {
+footer {
   background-color: #333333;
   padding: 32px 16px;
   font-size: 12px;
