@@ -90,6 +90,8 @@ table {
   line-height: 1.5;
   margin-top: 16px;
   margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 th,
 td {
@@ -461,6 +463,9 @@ table tr:last-child td {
   margin-bottom: 8px;
 }
 
+.post + .comment-back {
+  margin-top: -16px;
+}
 .comment-back {
   background-color: #fff;
   padding: 8px;
@@ -474,32 +479,6 @@ table tr:last-child td {
 @media only screen and (max-width: 770px) {
   .comment-back {
     margin: 0 0 40px;
-  }
-}
-
-.author {
-  display: flex;
-  align-items: flex-start;
-}
-.author-icon {
-  height: 36px;
-  width: 36px;
-}
-.author-info {
-  font-size: 1.4rem;
-  line-height: 1.9;
-  margin-left: 16px;
-  text-align: justify;
-  flex: 1;
-}
-.author-info .name {
-  font-size: 1.6rem;
-  color: #333;
-  font-weight: bold;
-}
-@media only screen and (max-width: 770px) {
-  .css-9bpbdu {
-    margin-top: 0;
   }
 }
 

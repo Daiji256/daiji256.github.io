@@ -15,10 +15,6 @@ pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 
-[params]
-author = "Daiji"
-authorInfo = "ずっとパソコンの前でだらだらしている高専生です。いっぱい記事を書いていきたいと思ってます。"
-
 [taxonomies]
 category = "categories"
 tag = "tags"

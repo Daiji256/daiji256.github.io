@@ -37,30 +37,14 @@
         </div>
       </section>
     </div>
-    <div class="post">
-      <div class="author">
-        <a href="{{ $.Site.BaseURL | relURL }}about/">
-          <img src="{{ $.Site.BaseURL | relURL }}images/icon.svg" width="36" height="36" class="author-icon" />
-        </a>
-        <div class="author-info">
-          <div>
-            <a href="{{ $.Site.BaseURL | relURL }}about/" class="name">
-              {{ .Site.Params.author }}
-            </a>
-          </div>
-          <div>
-            {{ .Site.Params.authorInfo }}
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="comment-back">
-      <script src="https://utteranc.es/client.js"
-          repo="Daiji256/daiji256.github.io"
-          issue-term="url"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
+      <script
+        src="https://utteranc.es/client.js"
+        repo="Daiji256/daiji256.github.io"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
       </script>
     </div>
   </div>
