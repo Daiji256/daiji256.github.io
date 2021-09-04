@@ -463,6 +463,9 @@ table tr:last-child td {
   margin-bottom: 8px;
 }
 
+.post + .comment-back {
+  margin-top: -16px;
+}
 .comment-back {
   background-color: #fff;
   padding: 8px;
