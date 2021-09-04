@@ -19,10 +19,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://daiji256.github.io/images/favicon.ico" />
     <link rel="apple-touch-icon" type="image/png" href="https://daiji256.github.io/images/apple-touch-icon.png" />
     <link rel="stylesheet" href="https://daiji256.github.io/css/base.css" />
-    <link rel="stylesheet" href="https://daiji256.github.io/css/base-fonts.css" />
-    <link rel="stylesheet" href="https://daiji256.github.io/css/code-fonts.css" />
-    <link rel="stylesheet" href="https://daiji256.github.io/css/regular-icons.css" />
-    <link rel="stylesheet" href="https://daiji256.github.io/css/brands-icons.css" />
+    <link rel="stylesheet" href="https://daiji256.github.io/css/fonts.css" />
     <link rel="stylesheet" href="https://daiji256.github.io/css/one-dark.css" />
     
 <link
@@ -501,12 +498,12 @@ Transcript written on sample.log.
 <div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX">本文中に<span class="s">$</span><span class="nb">f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> ax </span><span class="o">+</span><span class="nb"> b</span><span class="s">$</span>のように数式を書くには次のように<span class="k">\texttt</span><span class="nb">{</span><span class="k">\$</span><span class="nb">}</span>で挟むことでできます。
 </code></pre></div><h2 id="別行立て数式">別行立て数式</h2>
 <p>別行立て数式は，</p>
-<p>\[
+<p>$$
 \begin{aligned}
 f(x) &amp;= ax + b\cr
 g(x) &amp;= cx^{2} + dx + e
 \end{aligned}
-\]</p>
+$$</p>
 <p>のように環境 <code>align</code> により書くことができます<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>。他の数式環境の <code>eqnarray</code> も有名だが <code>amsmath.sty</code> ではサポートしていないので推奨できません。</p>
 <div class="highlight"><pre class="chroma"><code class="language-TeX" data-lang="TeX">別行立て数式は，
 <span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
