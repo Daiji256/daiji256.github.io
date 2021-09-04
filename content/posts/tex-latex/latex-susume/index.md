@@ -345,12 +345,12 @@ LaTeX には自動で節やキャプションの参照が行えます。文書�
 
 別行立て数式は，
 
-\\[
+$$
 \begin{aligned}
 	f(x) &= ax + b\cr
 	g(x) &= cx^{2} + dx + e
 \end{aligned}
-\\]
+$$
 
 のように環境 `align` により書くことができます[^align]。他の数式環境の `eqnarray` も有名だが `amsmath.sty` ではサポートしていないので推奨できません。
 
