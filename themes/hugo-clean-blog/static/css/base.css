@@ -677,7 +677,7 @@ nav.menu {
   left: 0;
   right: 0;
   visibility: hidden;
-  transition-delay: 0.3s;
+  transition-delay: 0.25s;
 }
 nav.menu.js-active {
   visibility: visible;
@@ -689,7 +689,7 @@ nav.menu .menu-ul {
   text-align: center;
   background-color: #fff;
   transform: translateY(-100%);
-  transition: transform 0.3s;
+  transition: transform 0.25s;
 }
 nav.menu.js-active .menu-ul {
   transform: translateY(0%);
@@ -703,7 +703,7 @@ nav.menu .menu-back {
   right: 0;
   background-color: #3338;
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 nav.menu.js-active .menu-back {
   opacity: 1;
