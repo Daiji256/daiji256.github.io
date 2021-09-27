@@ -195,11 +195,11 @@ header > .container .item .user-icon {
   height: 28px;
   width: 28px;
 }
-header > .container .header-btn {
+header > .container .menu-button-bars {
   display: none;
 }
 @media only screen and (max-width: 770px) {
-  header > .container .header-btn {
+  header > .container .menu-button-bars {
     display: unset;
   }
 }
@@ -647,27 +647,25 @@ hr {
   font-size: 1.1em !important;
 }
 
-.header-btn {
+.menu-button {
   cursor: pointer;
 }
-
-.header-btn .bar {
+.menu-button-bars .bar {
   width: 20px;
   height: 2px;
   background-color: #333;
   transition: 0.2s;
 }
-
-.header-btn .bar + .bar {
+.menu-button-bars .bar + .bar {
   margin-top: 6px;
 }
-.header-btn.js-active .bar:nth-of-type(1) {
+.menu-button-bars.js-active .bar:nth-of-type(1) {
   transform: translateY(8px) rotate(-45deg);
 }
-.header-btn.js-active .bar:nth-of-type(2) {
+.menu-button-bars.js-active .bar:nth-of-type(2) {
   opacity: 0;
 }
-.header-btn.js-active .bar:nth-of-type(3) {
+.menu-button-bars.js-active .bar:nth-of-type(3) {
   transform: translateY(-8px) rotate(45deg);
 }
 

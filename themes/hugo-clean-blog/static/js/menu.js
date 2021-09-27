@@ -1,17 +1,17 @@
 window.onload = function () {
-	document.getElementById('header_btn').addEventListener('click', function () {
-		document.getElementById('header_btn').classList.toggle('js-active');
+	document.getElementById('menu_button').addEventListener('click', function () {
+		document.getElementById('menu_button_bars').classList.toggle('js-active');
 		document.getElementById('header_menu').classList.toggle('js-active');
 	});
 	document.addEventListener('touchstart', (e) => {
-		if (!e.target.closest('.header-btn') && !e.target.closest('.header-menu ul')) {
-			document.getElementById('header_btn').classList.remove("js-active");
+		if (!e.target.closest('.menu-button') && !e.target.closest('.header-menu ul')) {
+			document.getElementById('menu_button_bars').classList.remove("js-active");
 			document.getElementById('header_menu').classList.remove("js-active");
 		}
 	});
 	document.addEventListener('mousedown', (e) => {
-		if (!e.target.closest('.header-btn') && !e.target.closest('.header-menu ul')) {
-			document.getElementById('header_btn').classList.remove("js-active");
+		if (!e.target.closest('.menu-button') && !e.target.closest('.header-menu ul')) {
+			document.getElementById('menu_button_bars').classList.remove("js-active");
 			document.getElementById('header_menu').classList.remove("js-active");
 		}
 	});
