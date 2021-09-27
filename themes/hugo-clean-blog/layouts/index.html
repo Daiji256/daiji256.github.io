@@ -31,13 +31,13 @@
               <div class="name">{{ .Site.Params.author }}</div>
               <div class="brands">
                 <a href="https://github.com/Daiji256/" title='GitHub' target="_blank" rel="noopener" class="link">
-                  <span class="bi bi-github github-color"></span>
+                  <span class="icons ic-github"></span>
                 </a>
                 <a href="https://twitter.com/Daiji256/" title='Twitter' target="_blank" rel="noopener" class="link">
-                  <span class="bi bi-twitter twitter-color"></span>
+                  <span class="icons ic-twitter"></span>
                 </a>
                 <a href="https://qiita.com/Daiji256/" title='Qiita' target="_blank" rel="noopener" class="link">
-                  <span class="bi bi-qiita qiita-color"></span>
+                  <span class="icons ic-qiita"></span>
                 </a>
               </div>
             </div>
@@ -45,7 +45,7 @@
           <div class="card">
             <div class="taxonomies">
               <div class="name">
-                <span class="ri ri-folder logo"></span>
+                <span class="icons ic-folder logo"></span>
                 <a href="{{ $.Site.BaseURL | relURL }}categories/" class="text">カテゴリ</a>
               </div>
               {{ range .Site.Taxonomies.categories.ByCount -}}
@@ -60,7 +60,7 @@
           <div class="card">
             <div class="taxonomies">
               <div class="name">
-                <span class="ri ri-tags logo"></span>
+                <span class="icons ic-tag logo"></span>
                 <a href="{{ $.Site.BaseURL | relURL }}tags/" class="text">タグ</a>
               </div>
               {{ range .Site.Taxonomies.tags.ByCount -}}
@@ -87,13 +87,13 @@
               {{ .Summary }}...
             </div>
             <div class="post-info">
-              <span aria-hidden="true" class="ri ri-calendar logo"></span>
+              <span aria-hidden="true" class="icons ic-clock logo"></span>
               <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
             </div>
             {{ with .Params.categories -}}
             {{ if . -}}
             <div class="post-info">
-              <span aria-hidden="true" class="ri ri-folder logo"></span>
+              <span aria-hidden="true" class="icons ic-folder logo"></span>
               {{ range . -}}
               <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">{{ . }}</a>
               {{- end }}
@@ -103,7 +103,7 @@
             {{ with .Params.tags -}}
             {{ if . -}}
             <div class="post-info">
-              <span aria-hidden="true" class="ri ri-tags logo"></span>
+              <span aria-hidden="true" class="icons ic-tag logo"></span>
               {{ range . -}}
               <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">{{ . }}</a>
               {{- end }}

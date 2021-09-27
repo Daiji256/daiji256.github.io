@@ -18,11 +18,11 @@ date: 2020-05-05
 僕は↓のことに興味があります。なので基本これらについての内容の記事が投稿されるでしょう。
 
 - プログラミング言語:  
-{{< icon/C >}} C，{{< icon/C-plusplus >}} C++，{{< icon/Kotlin >}} Kotlin，{{< icon/Python >}} Python，{{< icon/TeX >}} TeX/LaTeX
+C，C++，Rust，Kotlin，Python，TeX/LaTeX
 - ツール類:  
-{{< icon/Bash >}} Bash，{{< icon/Git >}} Git，{{< icon/GitHub >}} GitHub，{{< icon/Android-Studio >}} Android Studio，{{< icon/Visual-Studio-Code >}} Visual Studio Code
+Bash，Git，GitHub，Android Studio，Visual Studio Code
 - OS:  
-{{< icon/Windows >}} Windows，{{< icon/macOS >}} mscOS，{{< icon/Linux >}} Linux，{{< icon/Android >}} Android
+Windows，macOS，Linux，Android
 
 # リンク
 
