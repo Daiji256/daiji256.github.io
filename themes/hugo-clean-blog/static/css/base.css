@@ -127,7 +127,7 @@ table tr:last-child td {
 
 .all-wrapper {
   min-height: 100vh;
-  background-color: #f7f7f7;
+  background-color: #f2f2f2;
   position: relative;
   padding-bottom: 120px;
   box-sizing: border-box;
@@ -172,8 +172,8 @@ header {
   left: 0;
   right: 0;
   padding-top: 2px;
-  background-color: #bde68a;
-  border-bottom: 2px solid #81d41a;
+  background-color: #b3e085;
+  border-bottom: 2px solid #80cc33;
 }
 header > .container {
   display: grid;
@@ -229,12 +229,12 @@ header > .container li:nth-of-type(1) {
   margin-right: auto;
 }
 header > .container a {
-  color: #395511;
+  color: #333;
   font-weight: bold;
 }
 
 footer {
-  background-color: #333333;
+  background-color: #333;
   padding: 32px 16px;
   font-size: 12px;
   color: #fff;
@@ -246,7 +246,7 @@ footer {
 .taxonomies-item {
   margin: 1px;
   padding: 4px 8px;
-  background: #eee;
+  background: #e6e6e6;
   color: inherit;
   line-height: 2.4;
 }
@@ -296,7 +296,7 @@ footer {
   background-color: #ccc;
 }
 .pagination .this {
-  background-color: #81d41a;
+  background-color: #80cc33;
 }
 
 .cards-line {
@@ -366,7 +366,7 @@ footer {
   line-height: 1.5;
 }
 .card .taxonomies .name .logo {
-  color: #81d41a;
+  color: #80cc33;
   margin-right: 8px;
 }
 .card .taxonomies .name .text {
@@ -519,12 +519,12 @@ footer {
   display: block;
   padding-top: 2px;
   padding-left: 8px;
-  color: #666;
+  color: #333;
   text-decoration: none;
   line-height: 1.25;
 }
 .toc a:hover {
-  background-color: #eee;
+  background-color: #e6e6e6;
   color: #333;
 }
 
@@ -540,7 +540,7 @@ p + figure {
   margin-bottom: 0px;
 }
 code {
-  background-color: #eee;
+  background-color: #e6e6e6;
   border-radius: 4px;
   color: #333;
   padding: 0.1em 0.4em;
@@ -559,8 +559,8 @@ em {
   color: #0033cc;
 }
 .sec-content blockquote {
-  border-left: 5px solid #ddd;
-  color: #777;
+  border-left: 5px solid #e6e6e6;
+  color: #666;
   padding: 1em;
   padding-right: 0;
   margin: 1.5em 0;
@@ -634,7 +634,7 @@ hr {
   margin-top: 8px;
   border: 0;
   height: 2px;
-  background-color: #ddd;
+  background-color: #e6e6e6;
 }
 .footnotes li p {
   margin: 0;
