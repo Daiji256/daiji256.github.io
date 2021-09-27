@@ -269,7 +269,10 @@ footer {
   color: inherit;
   line-height: 1.25;
 }
-.post-info .text:not(:last-child)::after {
+.post-info span:not(:first-child)::before {
+  margin-left: 16px;
+}
+.post-info a:not(:last-child)::after {
   content: ",";
 }
 
