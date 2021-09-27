@@ -33,6 +33,49 @@
 }
 
 @font-face {
+  font-family: "icons";
+  src: url("../fonts/icons.woff?pajt1q") format("woff"),
+    url("../fonts/icons.ttf?pajt1q") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.icons {
+  font-family: "icons";
+  font-size: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+}
+.ic-github:before {
+  content: "\e999";
+  color: #333;
+}
+.ic-twitter:before {
+  content: "\e99a";
+  color: #1da1f2;
+}
+.ic-qiita:before {
+  content: "\e900";
+  color: #55c500;
+}
+.ic-folder:before {
+  content: "\e995";
+}
+.ic-tag:before {
+  content: "\e996";
+}
+.ic-clock:before {
+  content: "\e997";
+}
+.ic-update:before {
+  content: "\e998";
+}
+
+@font-face {
   font-family: "regular-icons";
   src: url("../fonts/regular-icons.woff?me3jnj") format("woff"),
     url("../fonts/regular-icons.ttf?me3jnj") format("truetype");
