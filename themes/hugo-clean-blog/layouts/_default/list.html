@@ -68,17 +68,17 @@
         {{ .Summary }}...
       </div>
       <div class="post-info">
-        <span aria-hidden="true" class="ri ri-calendar logo"></span>
+        <span aria-hidden="true" class="icons ic-clock logo"></span>
         <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
       </div>
       <div class="post-info">
-        <span aria-hidden="true" class="ri ri-folder logo"></span>
+        <span aria-hidden="true" class="icons ic-folder logo"></span>
         {{ range .Params.categories -}}
         <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}" class="text">{{ . }}</a>
         {{- end }}
       </div>
       <div class="post-info">
-        <span aria-hidden="true" class="ri ri-tags logo"></span>
+        <span aria-hidden="true" class="icons ic-tag logo"></span>
         {{ range .Params.tags -}}
         <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}" class="text">{{ . }}</a>
         {{- end }}

@@ -6,14 +6,18 @@
         <div class="title">{{ .Title }}</div>
         {{ if not (eq (.Date.Format "2006/01/02") "0001/01/01") -}}
         <div class="post-info">
-          <span aria-hidden="true" class="ri ri-calendar logo"></span>
+          <span aria-hidden="true" class="icons ic-clock logo"></span>
           <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
+          {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
+          <span aria-hidden="true" class="icons ic-update logo"></span>
+          <div class="text">{{ .Lastmod.Format "2006 年 1 月 2 日" }}</div>
+          {{- end }}
         </div>
         {{- end }}
         {{ with .Params.categories -}}
         {{ if . -}}
         <div class="post-info">
-          <span aria-hidden="true" class="ri ri-folder logo"></span>
+          <span aria-hidden="true" class="icons ic-folder logo"></span>
           {{ range . -}}
           <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">{{ . }}</a>
           {{- end }}
@@ -23,7 +27,7 @@
         {{ with .Params.tags -}}
         {{ if . -}}
         <div class="post-info">
-          <span aria-hidden="true" class="ri ri-tags logo"></span>
+          <span aria-hidden="true" class="icons ic-tag logo"></span>
           {{ range . -}}
           <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">{{ . }}</a>
           {{- end }}

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.2" width="80.01mm" height="80.01mm" viewBox="2000 13000 8001 8001" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xml:space="preserve">
+<svg version="1.2" width="100mm" height="100mm" viewBox="0 0 10000 10000" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xml:space="preserve">
+ <defs class="ClipPathGroup">
+  <clipPath id="presentation_clip_path" clipPathUnits="userSpaceOnUse">
+   <rect x="0" y="0" width="10000" height="10000"/>
+  </clipPath>
+  <clipPath id="presentation_clip_path_shrink" clipPathUnits="userSpaceOnUse">
+   <rect x="10" y="10" width="9980" height="9980"/>
+  </clipPath>
+ </defs>
+ <defs class="TextShapeIndex">
+  <g ooo:slide="id1" ooo:id-list="id3"/>
+ </defs>
  <defs class="EmbeddedBulletChars">
   <g id="bullet-char-template-57356" transform="scale(0.00048828125,-0.00048828125)">
    <path d="M 580,1141 L 1163,571 580,0 -4,571 580,1141 Z"/>
@@ -33,11 +44,25 @@
    <path d="M 173,740 C 173,903 231,1043 346,1159 462,1274 601,1332 765,1332 928,1332 1067,1274 1183,1159 1299,1043 1357,903 1357,740 1357,577 1299,437 1183,322 1067,206 928,148 765,148 601,148 462,206 346,322 231,437 173,577 173,740 Z"/>
   </g>
  </defs>
- <g class="Page">
-  <g class="com.sun.star.drawing.ClosedBezierShape">
-   <g id="id3">
-    <rect class="BoundingBox" stroke="none" fill="none" x="2000" y="13000" width="8001" height="8001"/>
-    <path fill="rgb(51,51,51)" stroke="none" d="M 2068,20982 C 2047,20970 2030,20953 2018,20932 2006,20911 2000,20888 2000,20864 L 2000,13136 C 2000,13112 2006,13089 2018,13068 2030,13047 2047,13030 2068,13018 2089,13006 2112,13000 2136,13000 L 9864,13000 C 9888,13000 9911,13006 9932,13018 9953,13030 9970,13047 9982,13068 9994,13089 10000,13112 10000,13136 L 10000,20864 C 10000,20888 9994,20911 9982,20932 9970,20953 9953,20970 9932,20982 9911,20994 9888,21000 9864,21000 L 2136,21000 C 2112,21000 2089,20994 2068,20982 Z M 9535,20728 L 6000,17193 2465,20728 9535,20728 Z M 9728,13465 L 6193,17000 9728,20535 9728,13465 Z M 2465,13272 L 6000,16807 9535,13272 2465,13272 Z M 2272,20535 L 5807,17000 2272,13465 2272,20535 Z"/>
+ <g>
+  <g id="id2" class="Master_Slide">
+   <g id="bg-id2" class="Background"/>
+   <g id="bo-id2" class="BackgroundObjects"/>
+  </g>
+ </g>
+ <g class="SlideGroup">
+  <g>
+   <g id="container-id1">
+    <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
+     <g class="Page">
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id3">
+        <rect class="BoundingBox" stroke="none" fill="none" x="0" y="0" width="10001" height="10001"/>
+        <path fill="rgb(51,51,51)" stroke="none" d="M 9800,338 L 5139,4999 9800,9660 9800,338 Z M 339,9800 L 9657,9800 4998,5141 339,9800 Z M 200,9656 L 4857,5000 200,343 200,9656 Z M 9656,200 L 339,200 4998,4858 9656,200 Z M 0,10000 L 0,0 10000,0 10000,10000 0,10000 Z"/>
+       </g>
+      </g>
+     </g>
+    </g>
    </g>
   </g>
  </g>

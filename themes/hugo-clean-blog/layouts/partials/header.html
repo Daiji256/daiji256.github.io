@@ -1,45 +1,50 @@
 
-<div class="header">
+<header>
   <div class="container">
     <ul>
       <li>
         <a href="/" class="item">
           <img src="{{ $.Site.BaseURL | relURL }}images/icon.svg" width="28" height="28" title='ホーム' class="user-icon" />
-          <div class="text">{{ .Site.Title }}</div>
+          <div class="site-title">{{ .Site.Title }}</div>
         </a>
       </li>
       <li>
         <a href="{{ $.Site.BaseURL | relURL }}" class="item">
-          <div class="logo" title='ホーム'>
-            <span class="ri ri-pencil"></span>
-          </div>
           <div class="text">ホーム</div>
         </a>
       </li>
       <li>
         <a href="{{ $.Site.BaseURL | relURL }}categories/" class="item">
-          <div class="logo" title='カテゴリ'>
-            <span class="ri ri-folder"></span>
-          </div>
           <div class="text">カテゴリ</div>
         </a>
       </li>
       <li>
         <a href="{{ $.Site.BaseURL | relURL }}tags/" class="item">
-          <div class="logo">
-            <span class="ri ri-tags" title='タグ'></span>
-          </div>
           <div class="text">タグ</div>
         </a>
       </li>
       <li>
         <a href="{{ $.Site.BaseURL | relURL }}about/" class="item">
-          <div class="logo">
-            <span class="ri ri-user" title='プロフィール'></span>
-          </div>
           <div class="text">プロフィール</div>
         </a>
       </li>
+      <li class="menu-button" id="menu_button">
+        <div class="menu-button-bars" id="menu_button_bars">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </li>
     </ul>
   </div>
-</div>
+</header>
+
+<nav class="menu" id="header_menu">
+  <ul class="menu-ul">
+    <li><a href="{{ $.Site.BaseURL | relURL }}">ホーム</a></li>
+    <li><a href="{{ $.Site.BaseURL | relURL }}categories/">カテゴリ</a></li>
+    <li><a href="{{ $.Site.BaseURL | relURL }}tags/">タグ</a></li>
+    <li><a href="{{ $.Site.BaseURL | relURL }}about/">プロフィール</a></li>
+  </ul>
+  <div class="menu-back"></div>
+</nav>
