@@ -9,6 +9,7 @@ paginate = 8
 languageCode = "ja"
 DefaultContentLanguage = "ja"
 enableInlineShortcodes = true
+enableGitInfo = true
 hasCJKLanguage = true
 summaryLength = 96
 pygmentsUseClasses = true
