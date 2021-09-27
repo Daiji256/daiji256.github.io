@@ -4,13 +4,13 @@ window.onload = function () {
 		document.getElementById('header_menu').classList.toggle('js-active');
 	});
 	document.addEventListener('touchstart', (e) => {
-		if (!e.target.closest('.menu-button') && !e.target.closest('.header-menu ul')) {
+		if (!e.target.closest('.menu-button') && !e.target.closest('.menu ul')) {
 			document.getElementById('menu_button_bars').classList.remove("js-active");
 			document.getElementById('header_menu').classList.remove("js-active");
 		}
 	});
 	document.addEventListener('mousedown', (e) => {
-		if (!e.target.closest('.menu-button') && !e.target.closest('.header-menu ul')) {
+		if (!e.target.closest('.menu-button') && !e.target.closest('.menu ul')) {
 			document.getElementById('menu_button_bars').classList.remove("js-active");
 			document.getElementById('header_menu').classList.remove("js-active");
 		}

@@ -669,7 +669,7 @@ hr {
   transform: translateY(-8px) rotate(45deg);
 }
 
-nav.header-menu {
+nav.menu {
   z-index: 1;
   position: absolute;
   top: 48px;
@@ -679,21 +679,22 @@ nav.header-menu {
   visibility: hidden;
   transition-delay: 0.3s;
 }
-nav.header-menu.js-active {
+nav.menu.js-active {
   visibility: visible;
   transition-delay: 0s;
 }
-nav.header-menu ul {
+nav.menu .menu-ul {
   font-size: 16px;
   line-height: 2;
+  text-align: center;
   background-color: #fff;
   transform: translateY(-100%);
   transition: transform 0.3s;
 }
-nav.header-menu.js-active ul {
+nav.menu.js-active .menu-ul {
   transform: translateY(0%);
 }
-nav.header-menu .header-menu-back {
+nav.menu .menu-back {
   z-index: -1;
   position: absolute;
   top: 0;
@@ -704,9 +705,9 @@ nav.header-menu .header-menu-back {
   opacity: 0;
   transition: 0.3s;
 }
-nav.header-menu.js-active .header-menu-back {
+nav.menu.js-active .menu-back {
   opacity: 1;
 }
-nav.header-menu a {
+nav.menu a {
   color: #333;
 }
