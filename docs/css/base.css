@@ -127,7 +127,7 @@ table tr:last-child td {
 
 .all-wrapper {
   min-height: 100vh;
-  background-color: #f7f7f7;
+  background-color: #f2f2f2;
   position: relative;
   padding-bottom: 120px;
   box-sizing: border-box;
@@ -137,15 +137,17 @@ table tr:last-child td {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  margin: 16px auto 0;
   max-width: 1100px;
-  padding: 0 16px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 64px 16px;
   width: 100%;
 }
 @media only screen and (max-width: 770px) {
   .main-wrapper {
     flex-wrap: wrap;
     margin: 0;
+    padding-top: 48px;
   }
 }
 
@@ -156,7 +158,7 @@ table tr:last-child td {
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 0;
+  padding-top: 48px;
 }
 @media only screen and (max-width: 1000px) {
   .post-wrapper {
@@ -164,48 +166,55 @@ table tr:last-child td {
   }
 }
 
-.header {
-  background-color: #81d41a;
+header {
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-top: 2px;
+  background-color: #b3e085;
+  border-bottom: 2px solid #80cc33;
 }
-.header .container {
+header > .container {
   display: grid;
-  height: 48px;
+  height: 44px;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 12px;
   padding-right: 12px;
 }
-.header .container .item {
+header > .container .item {
   display: flex;
   align-items: center;
 }
-.header .container .item .user-icon {
+header > .container .item .user-icon {
   background-color: #fff;
   border-radius: 50%;
   margin-right: 8px;
   height: 28px;
   width: 28px;
 }
-.header .container .item .logo {
+header > .container .menu-button-bars {
   display: none;
 }
 @media only screen and (max-width: 770px) {
-  .header .container .item .logo {
+  header > .container .menu-button-bars {
     display: unset;
-    font-size: 24px;
-    padding-right: 4px;
   }
 }
-.header .container .item .text {
+header > .container .item .site-title {
+  font-size: 16px;
+}
+header > .container .item .text {
   font-size: 16px;
 }
 @media only screen and (max-width: 770px) {
-  .header .container .item .text {
+  header > .container .item .text {
     display: none;
   }
 }
-.header .container ul {
+header > .container ul {
   display: flex;
   align-items: center;
   margin: 0;
@@ -213,19 +222,19 @@ table tr:last-child td {
   list-style: none;
   justify-content: flex-start;
 }
-.header .container li:not(:last-child) {
-  padding-right: 12px;
+header > .container li:not(:first-child):not(:last-child) {
+  margin-left: 12px;
 }
-.header .container li:nth-of-type(2) {
-  margin-left: auto;
+header > .container li:nth-of-type(1) {
+  margin-right: auto;
 }
-.header .container a {
-  color: #395511;
+header > .container a {
+  color: #333;
   font-weight: bold;
 }
 
-.footer {
-  background-color: #333333;
+footer {
+  background-color: #333;
   padding: 32px 16px;
   font-size: 12px;
   color: #fff;
@@ -237,7 +246,7 @@ table tr:last-child td {
 .taxonomies-item {
   margin: 1px;
   padding: 4px 8px;
-  background: #eee;
+  background: #e6e6e6;
   color: inherit;
   line-height: 2.4;
 }
@@ -260,7 +269,10 @@ table tr:last-child td {
   color: inherit;
   line-height: 1.25;
 }
-.post-info .text:not(:last-child)::after {
+.post-info span:not(:first-child)::before {
+  margin-left: 16px;
+}
+.post-info a:not(:last-child)::after {
   content: ",";
 }
 
@@ -287,7 +299,7 @@ table tr:last-child td {
   background-color: #ccc;
 }
 .pagination .this {
-  background-color: #81d41a;
+  background-color: #80cc33;
 }
 
 .cards-line {
@@ -357,7 +369,7 @@ table tr:last-child td {
   line-height: 1.5;
 }
 .card .taxonomies .name .logo {
-  color: #81d41a;
+  color: #80cc33;
   margin-right: 8px;
 }
 .card .taxonomies .name .text {
@@ -373,9 +385,6 @@ table tr:last-child td {
 }
 .qiita-color {
   color: #55c500;
-}
-.atcoder-color {
-  color: #231815;
 }
 
 .posts-line {
@@ -418,11 +427,11 @@ table tr:last-child td {
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
-  padding: 16px;
+  padding: 64px 16px;
 }
 @media only screen and (max-width: 770px) {
   .full-block {
-    padding: 0;
+    padding: 48px 0;
   }
 }
 
@@ -510,12 +519,12 @@ table tr:last-child td {
   display: block;
   padding-top: 2px;
   padding-left: 8px;
-  color: #666;
+  color: #333;
   text-decoration: none;
   line-height: 1.25;
 }
 .toc a:hover {
-  background-color: #eee;
+  background-color: #e6e6e6;
   color: #333;
 }
 
@@ -531,7 +540,7 @@ p + figure {
   margin-bottom: 0px;
 }
 code {
-  background-color: #eee;
+  background-color: #e6e6e6;
   border-radius: 4px;
   color: #333;
   padding: 0.1em 0.4em;
@@ -550,8 +559,8 @@ em {
   color: #0033cc;
 }
 .sec-content blockquote {
-  border-left: 5px solid #ddd;
-  color: #777;
+  border-left: 5px solid #e6e6e6;
+  color: #666;
   padding: 1em;
   padding-right: 0;
   margin: 1.5em 0;
@@ -625,7 +634,7 @@ hr {
   margin-top: 8px;
   border: 0;
   height: 2px;
-  background-color: #ddd;
+  background-color: #e6e6e6;
 }
 .footnotes li p {
   margin: 0;
@@ -636,4 +645,69 @@ hr {
 }
 .katex {
   font-size: 1.1em !important;
+}
+
+.menu-button {
+  cursor: pointer;
+}
+.menu-button-bars .bar {
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+  transition: 0.2s;
+}
+.menu-button-bars .bar + .bar {
+  margin-top: 6px;
+}
+.menu-button-bars.js-active .bar:nth-of-type(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+.menu-button-bars.js-active .bar:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-button-bars.js-active .bar:nth-of-type(3) {
+  transform: translateY(-8px) rotate(45deg);
+}
+
+nav.menu {
+  z-index: 1;
+  position: absolute;
+  top: 48px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  transition-delay: 0.25s;
+}
+nav.menu.js-active {
+  visibility: visible;
+  transition-delay: 0s;
+}
+nav.menu .menu-ul {
+  font-size: 16px;
+  line-height: 2;
+  text-align: center;
+  background-color: #fff;
+  transform: translateY(-100%);
+  transition: transform 0.25s;
+}
+nav.menu.js-active .menu-ul {
+  transform: translateY(0%);
+}
+nav.menu .menu-back {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #3338;
+  opacity: 0;
+  transition: 0.25s;
+}
+nav.menu.js-active .menu-back {
+  opacity: 1;
+}
+nav.menu a {
+  color: #333;
 }
