@@ -270,7 +270,7 @@ footer {
   line-height: 1.25;
 }
 .post-info span:not(:first-child)::before {
-  margin-left: 16px;
+  margin-left: 8px;
 }
 .post-info a:not(:last-child)::after {
   content: ",";
