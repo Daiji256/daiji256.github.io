@@ -64,6 +64,7 @@
 }
 .ic-folder:before {
   content: "\e995";
+  vertical-align: 0.1em;
 }
 .ic-tag:before {
   content: "\e996";
@@ -73,4 +74,5 @@
 }
 .ic-update:before {
   content: "\e998";
+  vertical-align: 0.1em;
 }
