@@ -41,6 +41,7 @@
         </div>
       </section>
     </div>
+    {{- if ne .Params.comment false }}
     <div class="comment-back">
       <script
         src="https://utteranc.es/client.js"
@@ -51,6 +52,7 @@
         async>
       </script>
     </div>
+    {{- end }}
   </div>
   <div class="toc">
     <aside>
