@@ -4,7 +4,7 @@ date: 2021-08-08
 categories: [論文]
 tags: [Deep learning,struct2depth,翻訳,まとめ]
 katex: true
-draft: false
+draft: true
 ---
 
 "[Depth Prediction Without the Sensors: Leveraging Structure for Unsupervised Learning from Monocular Videos](https://arxiv.org/abs/1811.06152)" の翻訳 / 解説を行います．
@@ -32,7 +32,7 @@ draft: false
 - 結果は，**ステレオカメラを利用したものと同等の品質であった**．
 - 物体の動きを多く含む（ダイナミックな）動画の深度推定を大幅に改善した．
 - ソースコードは[ここ](https://sites.google.com/view/struct2depth)にある．
-- Geforce 1080ti で バッチサイズが 4 と 1 でそれぞれ 50 FPS と 30 FPS の速度で実行できる．
+- Geforce 1080ti でバッチサイズが 4 と 1 でそれぞれ 50 FPS と 30 FPS の速度で実行できる．
 
 # 手法
 
