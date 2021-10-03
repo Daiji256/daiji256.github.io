@@ -229,18 +229,46 @@ header > .container li:nth-of-type(1) {
   margin-right: auto;
 }
 header > .container a {
-  color: #333;
+  color: inherit;
   font-weight: bold;
 }
 
 footer {
+  position: absolute;
   background-color: #333;
-  padding: 32px 16px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+footer > .container {
+  display: grid;
   font-size: 12px;
   color: #fff;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px 12px;
+}
+footer > .container .item {
+  display: flex;
+  align-items: center;
+}
+footer > .container ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: flex-start;
+}
+footer > .container li:not(:first-child) {
+  margin-left: 16px;
+}
+footer > .container li:nth-of-type(1) {
+  margin-right: auto;
+}
+footer > .container a {
+  color: inherit;
 }
 
 .taxonomies-item {
@@ -612,16 +640,15 @@ em {
 }
 .sec-content pre {
   display: block;
-  padding: 0;
+  padding: 0 8px 0 0;
   margin: 0;
   font-size: inherit;
   font-family: "Inconsolata", "Noto Sans JP", monospace;
-  line-height: inherit;
   color: inherit;
   background-color: transparent;
   border: none;
   border-radius: 0;
-  line-height: 1.9;
+  line-height: 1.5;
 }
 .sec-content pre code {
   display: block;
