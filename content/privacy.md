@@ -2,7 +2,6 @@
 title: "プライバシーポリシー"
 date: 2020-09-28
 comment: false
-draft: false
 ---
 
 <!--
