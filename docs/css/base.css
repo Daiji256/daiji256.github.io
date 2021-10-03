@@ -29,7 +29,7 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: "RNS-JP", sans-serif;
+  font-family: "YakuHanJPs", "Noto Sans JP", sans-serif;
   font-size: 1.6rem;
   color: #333;
   -webkit-text-size-adjust: 100%;
@@ -269,7 +269,7 @@ footer {
   color: inherit;
   line-height: 1.25;
 }
-.post-info span:not(:first-child)::before {
+.post-info span:not(:first-child) {
   margin-left: 8px;
 }
 .post-info a:not(:last-child)::after {
@@ -337,22 +337,36 @@ footer {
   flex-direction: column;
   justify-content: center;
 }
-.card .main .icon {
+.icons {
+  font-family: "Material Icons Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: inherit;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  padding-top: 0.1em;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+.card .main > .icon {
   height: 80px;
   width: 80px;
 }
 .card .main .name {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  line-height: 1.9;
-  margin-top: 12px;
+  margin-top: 4px;
 }
 .card .main .brands {
-  font-size: 2rem;
-  align-items: center;
   display: flex;
   justify-content: center;
   margin-top: 8px;
+}
+.card .main .brands .icon {
+  height: 18px;
+  width: 18px;
 }
 .card .main .brands .link:not(:last-of-type) {
   margin-right: 16px;
@@ -378,16 +392,6 @@ footer {
   font-weight: bold;
 }
 
-.github-color {
-  color: #333;
-}
-.twitter-color {
-  color: #1da1f2;
-}
-.qiita-color {
-  color: #55c500;
-}
-
 .posts-line {
   width: 100%;
   max-width: 758px;
@@ -410,7 +414,7 @@ footer {
   margin-top: 4px;
 }
 .post-card .title .link {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 4px;
   color: inherit;
@@ -545,7 +549,7 @@ code {
   border-radius: 4px;
   color: #333;
   padding: 0.1em 0.4em;
-  font-family: "HackGen35-Subset", monospace;
+  font-family: "Inconsolata", "Noto Sans JP", monospace;
 }
 strong {
   font-weight: bold;
@@ -611,7 +615,7 @@ em {
   padding: 0;
   margin: 0;
   font-size: inherit;
-  font-family: "HackGen35-Subset", monospace;
+  font-family: "Inconsolata", "Noto Sans JP", monospace;
   line-height: inherit;
   color: inherit;
   background-color: transparent;
