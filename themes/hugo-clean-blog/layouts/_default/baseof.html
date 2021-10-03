@@ -18,11 +18,14 @@
     <meta property="og:image" content="{{ $.Site.BaseURL | absURL }}images/apple-touch-icon.png" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
     <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&family=Material+Icons+Outlined&display=fallback">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp_s.min.css">
     <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.css" />
-    <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/fonts.css" />
     <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/one-dark.css" />
-    {{ partial "posts/math.html" . }}
     <script src="{{ $.Site.BaseURL | relURL }}js/menu.js"></script>
+    {{ partial "posts/math.html" . }}
   </head>
   <body>
     <div class="all-wrapper">

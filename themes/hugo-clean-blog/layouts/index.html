@@ -16,8 +16,11 @@
     <meta property="og:image" content="{{ $.Site.BaseURL | absURL }}images/apple-touch-icon.png" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
     <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Material+Icons+Outlined&display=fallback">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp_s.min.css">
     <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.css" />
-    <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/fonts.css" />
     <script src="{{ $.Site.BaseURL | relURL }}js/menu.js"></script>
   </head>
   <body>
@@ -28,16 +31,16 @@
           <div class="card">
             <div class="main">
               <img src="{{ $.Site.BaseURL | relURL }}images/icon.svg" width="80" height="80" class="icon" />
-              <div class="name">{{ .Site.Params.author }}</div>
+              <div class="name">{{ .Site.Title }}</div>
               <div class="brands">
                 <a href="https://github.com/Daiji256/" title='GitHub' target="_blank" rel="noopener" class="link">
-                  <span class="icons ic-github"></span>
+                  <img src="{{ $.Site.BaseURL | relURL }}images/icons/github.svg" width="18" height="18" class="icon" />
                 </a>
                 <a href="https://twitter.com/Daiji256/" title='Twitter' target="_blank" rel="noopener" class="link">
-                  <span class="icons ic-twitter"></span>
+                  <img src="{{ $.Site.BaseURL | relURL }}images/icons/twitter.svg" width="18" height="18" class="icon" />
                 </a>
                 <a href="https://qiita.com/Daiji256/" title='Qiita' target="_blank" rel="noopener" class="link">
-                  <span class="icons ic-qiita"></span>
+                  <img src="{{ $.Site.BaseURL | relURL }}images/icons/qiita.svg" width="18" height="18" class="icon" />
                 </a>
               </div>
             </div>
@@ -45,7 +48,7 @@
           <div class="card">
             <div class="taxonomies">
               <div class="name">
-                <span class="icons ic-folder logo"></span>
+                <span class="icons logo">folder</span>
                 <a href="{{ $.Site.BaseURL | relURL }}categories/" class="text">カテゴリ</a>
               </div>
               {{ range .Site.Taxonomies.categories.ByCount -}}
@@ -60,7 +63,7 @@
           <div class="card">
             <div class="taxonomies">
               <div class="name">
-                <span class="icons ic-tag logo"></span>
+                <span class="icons logo">sell</span>
                 <a href="{{ $.Site.BaseURL | relURL }}tags/" class="text">タグ</a>
               </div>
               {{ range .Site.Taxonomies.tags.ByCount -}}
@@ -87,17 +90,17 @@
               {{ .Summary }}...
             </div>
             <div class="post-info">
-              <span aria-hidden="true" class="icons ic-clock logo"></span>
+              <span aria-hidden="true" class="icons logo">schedule</span>
               <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
               {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
-              <span aria-hidden="true" class="icons ic-update logo"></span>
+              <span aria-hidden="true" class="icons logo">update</span>
               <div class="text">{{ .Lastmod.Format "2006 年 1 月 2 日" }}</div>
               {{- end }}
             </div>
             {{ with .Params.categories -}}
             {{ if . -}}
             <div class="post-info">
-              <span aria-hidden="true" class="icons ic-folder logo"></span>
+              <span aria-hidden="true" class="icons logo">folder</span>
               {{ range . -}}
               <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">{{ . }}</a>
               {{- end }}
@@ -107,7 +110,7 @@
             {{ with .Params.tags -}}
             {{ if . -}}
             <div class="post-info">
-              <span aria-hidden="true" class="icons ic-tag logo"></span>
+              <span aria-hidden="true" class="icons logo">sell</span>
               {{ range . -}}
               <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">{{ . }}</a>
               {{- end }}
