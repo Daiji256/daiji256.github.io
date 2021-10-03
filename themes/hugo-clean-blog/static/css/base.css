@@ -616,12 +616,11 @@ em {
   margin: 0;
   font-size: inherit;
   font-family: "Inconsolata", "Noto Sans JP", monospace;
-  line-height: inherit;
   color: inherit;
   background-color: transparent;
   border: none;
   border-radius: 0;
-  line-height: 1.9;
+  line-height: 1.5;
 }
 .sec-content pre code {
   display: block;
