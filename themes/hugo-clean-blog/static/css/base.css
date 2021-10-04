@@ -598,6 +598,9 @@ em {
   padding-right: 0;
   margin: 1.5em 0;
 }
+.sec-content blockquote > p {
+  margin: 0px;
+}
 .sec-content ul,
 .sec-content ol {
   padding-left: 1.5em;
