@@ -290,7 +290,6 @@ upLaTeX のソースファイルは次の基本構成となります。
 |-------|------------------|----------------|
 |article|`jsarticle`       |論文・レポート用|
 |book   |`jsbook`          |書籍用          |
-|report |`jsreport`        |レポート用      |
 
 一部のオプションは次の通りです。
 
@@ -381,5 +380,5 @@ $$
 2. [TeX Wiki](https://texwiki.texjp.org/)
 3. [Overleaf](https://ja.overleaf.com/)
 4. [Cloud LaTeX](https://cloudlatex.io/ja)
-5. [LuaLaTeX のすゝめ (Qiita)](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995)
+5. [LuaLaTeX のすゝめ](https://daiji256.github.io/posts/tex-latex/lualatex-susume/)
 6. [jlreq (GitHub)](https://github.com/abenori/jlreq/blob/master/README-ja.md)
