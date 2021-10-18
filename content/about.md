@@ -19,7 +19,7 @@ comment: false
 僕は↓のことに興味があります。なので基本これらについての内容の記事が投稿されるでしょう。
 
 - プログラミング言語:  
-C，C++，Rust，Kotlin，Python，TeX/LaTeX
+C，C++，Rust，Kotlin，Python，TeX，expl3
 - ツール類:  
 Bash，Git，GitHub，Android Studio，Visual Studio Code
 - OS:  
