@@ -6,8 +6,6 @@ comment: false
 
 普段は何か記事を書いたら [Qiita](https://qiita.com/Daiji256/) に投稿します。しかし，備忘録や日記は Qiita にあげるのが不適切です。そこで誰も見ないくだらないものを [GitHub Pages](https://pages.github.com/) を利用して投稿することにしました。Markdown で気軽に書くために [Hugo](https://gohugo.io/) を利用ています。
 
-いっぱい書くぞ～！
-
 # あんた誰？
 
 - 電気+機械+**制御**を学ぶ高専生（専攻科）
