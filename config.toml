@@ -2,7 +2,6 @@ baseURL = "https://daiji256.github.io/"
 title = "Daiji Blog"
 author = "Daiji"
 theme = "hugo-clean-blog"
-publishDir = "docs"
 canonifyurls = true
 copyright = "© 2020–2021 Daiji Blog"
 paginate = 8
