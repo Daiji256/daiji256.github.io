@@ -397,7 +397,7 @@ footer > .container a {
   justify-content: center;
   margin-top: 8px;
 }
-.card .main .brands .icon {
+.card .main .brands svg {
   height: 18px;
   width: 18px;
 }

@@ -34,13 +34,19 @@
               <div class="name">{{ .Site.Title }}</div>
               <div class="brands">
                 <a href="https://github.com/Daiji256/" title='GitHub' target="_blank" rel="noopener" class="link">
-                  <img src="{{ $.Site.BaseURL | relURL }}images/icons/github.svg" width="18" height="18" class="icon" onselectstart="return false;" onmousedown="return false;" />
+                  <svg>
+                    <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/github.svg#symbol" />
+                  </svg>
                 </a>
                 <a href="https://twitter.com/Daiji256/" title='Twitter' target="_blank" rel="noopener" class="link">
-                  <img src="{{ $.Site.BaseURL | relURL }}images/icons/twitter.svg" width="18" height="18" class="icon" onselectstart="return false;" onmousedown="return false;" />
+                  <svg>
+                    <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/twitter.svg#symbol" />
+                  </svg>
                 </a>
                 <a href="https://qiita.com/Daiji256/" title='Qiita' target="_blank" rel="noopener" class="link">
-                  <img src="{{ $.Site.BaseURL | relURL }}images/icons/qiita.svg" width="18" height="18" class="icon" onselectstart="return false;" onmousedown="return false;" />
+                  <svg>
+                    <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/qiita.svg#symbol" />
+                  </svg>
                 </a>
               </div>
             </div>
