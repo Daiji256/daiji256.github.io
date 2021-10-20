@@ -18,7 +18,7 @@
     <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Material+Icons+Outlined&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
     <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/yakuhanjp_s.min.css">
     <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.min.css" />
     <script src="{{ $.Site.BaseURL | relURL }}js/menu.min.js"></script>
@@ -48,7 +48,10 @@
           <div class="card">
             <div class="taxonomies">
               <div class="name">
-                <span class="icons logo">folder</span>
+                <svg>
+                  <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/categories.svg#symbol" />
+                </svg>
+                </svg>
                 <a href="{{ $.Site.BaseURL | relURL }}categories/" class="text">カテゴリ</a>
               </div>
               {{ range .Site.Taxonomies.categories.ByCount -}}
@@ -63,7 +66,9 @@
           <div class="card">
             <div class="taxonomies">
               <div class="name">
-                <span class="icons logo">sell</span>
+                <svg>
+                  <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/tags.svg#symbol" />
+                </svg>
                 <a href="{{ $.Site.BaseURL | relURL }}tags/" class="text">タグ</a>
               </div>
               {{ range .Site.Taxonomies.tags.ByCount -}}
@@ -90,17 +95,23 @@
               {{ .Summary }}...
             </div>
             <div class="post-info">
-              <span aria-hidden="true" class="icons logo">schedule</span>
+              <svg>
+                <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/date.svg#symbol" />
+              </svg>
               <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
               {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
-              <span aria-hidden="true" class="icons logo">update</span>
+              <svg>
+                <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/lastmod.svg#symbol" />
+              </svg>
               <div class="text">{{ .Lastmod.Format "2006 年 1 月 2 日" }}</div>
               {{- end }}
             </div>
             {{ with .Params.categories -}}
             {{ if . -}}
             <div class="post-info">
-              <span aria-hidden="true" class="icons logo">folder</span>
+              <svg>
+                <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/categories.svg#symbol" />
+              </svg>
               {{ range . -}}
               <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">{{ . }}</a>
               {{- end }}
@@ -110,7 +121,9 @@
             {{ with .Params.tags -}}
             {{ if . -}}
             <div class="post-info">
-              <span aria-hidden="true" class="icons logo">sell</span>
+              <svg>
+                <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/tags.svg#symbol" />
+              </svg>
               {{ range . -}}
               <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">{{ . }}</a>
               {{- end }}

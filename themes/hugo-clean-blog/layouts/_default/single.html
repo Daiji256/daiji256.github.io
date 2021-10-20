@@ -6,10 +6,14 @@
         <div class="title">{{ .Title }}</div>
         {{ if not (eq (.Date.Format "2006/01/02") "0001/01/01") -}}
         <div class="post-info">
-          <span aria-hidden="true" class="icons logo">schedule</span>
+          <svg>
+            <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/date.svg#symbol" />
+          </svg>
           <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
           {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
-          <span aria-hidden="true" class="icons logo">update</span>
+          <svg>
+            <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/lastmod.svg#symbol" />
+          </svg>
           <div class="text">{{ .Lastmod.Format "2006 年 1 月 2 日" }}</div>
           {{- end }}
         </div>
@@ -17,7 +21,9 @@
         {{ with .Params.categories -}}
         {{ if . -}}
         <div class="post-info">
-          <span aria-hidden="true" class="icons logo">folder</span>
+          <svg>
+            <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/categories.svg#symbol" />
+          </svg>
           {{ range . -}}
           <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">{{ . }}</a>
           {{- end }}
@@ -27,7 +33,9 @@
         {{ with .Params.tags -}}
         {{ if . -}}
         <div class="post-info">
-          <span aria-hidden="true" class="icons logo">sell</span>
+          <svg>
+            <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/tags.svg#symbol" />
+          </svg>
           {{ range . -}}
           <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">{{ . }}</a>
           {{- end }}

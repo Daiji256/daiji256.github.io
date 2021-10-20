@@ -292,13 +292,18 @@ footer > .container a {
 .post-info .logo {
   margin-right: 4px;
 }
+.post-info svg {
+  height: 1.4rem;
+  width: 1.4rem;
+  margin-right: 4px;
+}
 .post-info .text {
   margin-left: 4px;
   color: inherit;
   line-height: 1.25;
 }
-.post-info span:not(:first-child) {
-  margin-left: 8px;
+.post-info svg:not(:first-child) {
+  margin-left: 12px;
 }
 .post-info a:not(:last-child)::after {
   content: ",";
@@ -411,9 +416,11 @@ footer > .container a {
   font-size: 1.6rem;
   line-height: 1.5;
 }
-.card .taxonomies .name .logo {
-  color: #80cc33;
+.card .taxonomies .name svg {
+  height: 1.6rem;
+  width: 1.6rem;
   margin-right: 8px;
+  color: #80cc33;
 }
 .card .taxonomies .name .text {
   color: inherit;
