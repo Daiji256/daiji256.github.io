@@ -292,9 +292,14 @@ footer > .container a {
 .post-info .logo {
   margin-right: 4px;
 }
-.post-info svg {
-  height: 1.4rem;
-  width: 1.4rem;
+.info .post-info svg {
+  height: 1.6rem;
+  width: 1.6rem;
+  margin-right: 4px;
+}
+.post-card .post-info svg {
+  height: 1.6rem;
+  width: 1.6rem;
   margin-right: 4px;
 }
 .post-info .text {
