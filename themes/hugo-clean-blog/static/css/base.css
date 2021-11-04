@@ -695,6 +695,7 @@ hr {
 }
 
 .menu-button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
 .menu-button-bars .bar {
