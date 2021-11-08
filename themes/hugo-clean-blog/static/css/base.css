@@ -578,11 +578,9 @@ footer > .container a {
 }
 p {
   line-height: 1.9;
-  margin-bottom: 24px;
 }
-p + figure {
-  margin-top: -24px;
-  margin-bottom: 0px;
+p + p {
+  margin-top: 24px;
 }
 code {
   background-color: #e6e6e6;
