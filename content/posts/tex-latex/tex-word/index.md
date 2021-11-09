@@ -3,7 +3,6 @@ title: "LuaLaTeX でフォント細かく変更する方法（MS Word は使い�
 date: 2021-02-02
 categories: [TeX-LaTeX]
 tags: [Qiita,Font,LuaLaTeX]
-katex: true
 ---
 
 この記事は [Qiita](https://qiita.com/Daiji256/items/29adc574b15345d8afa2) に投稿した内容です。
@@ -14,7 +13,7 @@ katex: true
 
 # ドキュメントクラス
 
-ドキュメントクラスには `jlreq` を利用します。`jlreq` は日本語組版処理の要件に準拠した新しいドキュメントクラスで，日本に浸透しつつあります。オプションの `fontsize=10.5bp` はデフォルトのフォントサイズを $\mathrm{10.5\\,bp}$ とすることを示しています。`jlreq` では英・和のフォント比がデフォルトで $1$ なので，両方のフォントサイズが $\mathrm{10.5\\,bp}$ になります。MS Word では $1\\,\mathrm{pt}=1/72\\,\mathrm{inch}$ ですが，TeX では $1\\,\mathrm{pt}=1/72.27\\,\mathrm{inch}$ と定義されています。TeX には $1\\,\mathrm{bp}=1/72\\,\mathrm{inch}$ となる単位が存在します。このことから $\mathrm{pt}$ の代わりに $\mathrm{bp}$ を使用しています。
+ドキュメントクラスには `jlreq` を利用します。`jlreq` は日本語組版処理の要件に準拠した新しいドキュメントクラスで，日本に浸透しつつあります。オプションの `fontsize=10.5bp` はデフォルトのフォントサイズを {{<eq>}}\mathrm{10.5\,bp}{{</eq>}} とすることを示しています。`jlreq` では英・和のフォント比がデフォルトで {{<eq>}}1{{</eq>}} なので，両方のフォントサイズが {{<eq>}}\mathrm{10.5\,bp}{{</eq>}} になります。MS Word では {{<eq>}}1\,\mathrm{pt}=1/72\,\mathrm{inch}{{</eq>}} ですが，TeX では {{<eq>}}1\,\mathrm{pt}=1/72.27\,\mathrm{inch}{{</eq>}} と定義されています。TeX には {{<eq>}}1\,\mathrm{bp}=1/72\,\mathrm{inch}{{</eq>}} となる単位が存在します。このことから {{<eq>}}\mathrm{pt}{{</eq>}} の代わりに {{<eq>}}\mathrm{bp}{{</eq>}} を使用しています。
 
 ```TeX
 \documentclass[fontsize=10.5bp]{jlreq}
