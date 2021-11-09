@@ -3,7 +3,6 @@ title: "LuaLaTeX のすゝめ"
 date: 2021-02-07
 categories: [TeX-LaTeX]
 tags: [Qiita,まとめ,LuaLaTeX]
-katex: true
 ---
 
 この記事は [Qiita](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995) に投稿した内容です。
@@ -38,14 +37,14 @@ LuaLaTeX の最大の強みと言えるのがフォントについてです。�
 
 # Lua を書く
 
-[はじめに](#はじめに)でも書きましたが LuaTeX から Lua を利用できます。LuaLaTeX のソース中で Lua を書く場合には `\directlua` を使用します。Lua から TeX に出力するには `tex.print` を使用します。実際に Lua を利用して $\sqrt{2}$ を表示してみます。以下に示すコードにより $\sqrt{2}$ が計算（？）できています。もっと詳しいことは[徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)でわかりやすく説明されています。
+[はじめに](#はじめに)でも書きましたが LuaTeX から Lua を利用できます。LuaLaTeX のソース中で Lua を書く場合には `\directlua` を使用します。Lua から TeX に出力するには `tex.print` を使用します。実際に Lua を利用して {{<eq>}}\sqrt{2}{{</eq>}} を表示してみます。以下に示すコードにより {{<eq>}}\sqrt{2}{{</eq>}} が計算（？）できています。もっと詳しいことは[徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)でわかりやすく説明されています。
 
 ```TeX
 \directlua{tex.print(math.sqrt(2))}
 ```
-$$
+{{<eq d>}}
 1.4142135623731
-$$
+{{</eq>}}
 
 # ドキュメントクラス
 
