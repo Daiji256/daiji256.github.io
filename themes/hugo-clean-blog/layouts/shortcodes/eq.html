@@ -1,4 +1,4 @@
-{{- if eq (.Get 0) "display" -}}
+{{- if or (eq (.Get 0) "display") (eq (.Get 0) "d") -}}
 <div class="displaystyle">
   {{- $json := getJSON "https://tex2svg.herokuapp.com/" "?" (querify "q" .Inner) -}}
   {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"math-text\">%s</text></svg>" $.Inner)) | safeHTML -}}
