@@ -79,22 +79,30 @@
         <div class="text">{{ .Lastmod.Format "2006 年 1 月 2 日" }}</div>
         {{- end }}
       </div>
-      <div class="post-info">
-        <svg>
-          <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/categories.svg#symbol" />
-        </svg>
-        {{ range .Params.categories -}}
-        <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}" class="text">{{ . }}</a>
+      {{ with .Params.categories -}}
+        {{ if . -}}
+          <div class="post-info">
+            <svg>
+              <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/categories.svg#symbol" />
+            </svg>
+            {{ range . -}}
+            <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}" class="text">{{ . }}</a>
+            {{- end }}
+          </div>
         {{- end }}
-      </div>
-      <div class="post-info">
-        <svg>
-          <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/tags.svg#symbol" />
-        </svg>
-        {{ range .Params.tags -}}
-        <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}" class="text">{{ . }}</a>
+      {{- end }}
+      {{ with .Params.tags -}}
+        {{ if . -}}
+          <div class="post-info">
+            <svg>
+              <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/tags.svg#symbol" />
+            </svg>
+            {{ range . -}}
+            <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}" class="text">{{ . }}</a>
+            {{- end }}
+          </div>
         {{- end }}
-      </div>
+      {{- end }}
     </div>
     {{ end -}}
     {{- partial "pagination.html" . }}
