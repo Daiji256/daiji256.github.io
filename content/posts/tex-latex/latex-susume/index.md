@@ -3,7 +3,6 @@ title: "LaTeX のすゝめ"
 date: 2021-02-14
 categories: [TeX-LaTeX]
 tags: [Qiita,まとめ,upLaTeX]
-katex: true
 ---
 
 この記事は [Qiita](https://qiita.com/Daiji256/items/9774df0899728feb3ab0) に投稿した内容です。
@@ -184,20 +183,22 @@ upLaTeX のソースファイルは次の基本構成となります。
 
 ## 文字サイズ変更
 
-文字サイズを変更するには次のコマンドが利用できます。サイズはデフォルトの値になっています。コマンド以降のフォントが全て変更されます。`{\Large 文章}` のようにすることで一部が変更できます。
+文字サイズを変更するには次のコマンドが利用できます。サイズはデフォルトの値になっています。コマンド以降のフォントが全て変更されます。`{\Large 文章}` のようにすることで一部が変更できます[^footnotesize]。
 
-|コマンド       |サイズ                          |
-|---------------|--------------------------------|
-|`\tiny`        |$\tiny         5\mathrm{pt}$    |
-|`\scriptsize`  |$\scriptsize   7\mathrm{pt}$    |
-|`\footnotesize`|$\footnotesize 8\mathrm{pt}$    |
-|`\small`       |$\small        9\mathrm{pt}$    |
-|`\normalsize`  |$\normalsize   10\mathrm{pt}$   |
-|`\large`       |$\large        12\mathrm{pt}$   |
-|`\Large`       |$\Large        14.4\mathrm{pt}$ |
-|`\LARGE`       |$\LARGE        17.28\mathrm{pt}$|
-|`\huge`        |$\huge         20.74\mathrm{pt}$|
-|`\Huge`        |$\Huge         24.88\mathrm{pt}$|
+[^footnotesize]: MathJax では `\footnotesize` が使えないので，HTML の `font-size: 80%` で代用しています。
+
+|コマンド       |サイズ                                           |
+|---------------|-------------------------------------------------|
+|`\tiny`        |{{<eq>}}\tiny         5\,\mathrm{pt}{{</eq>}}    |
+|`\scriptsize`  |{{<eq>}}\scriptsize   7\,\mathrm{pt}{{</eq>}}    |
+|`\footnotesize`|{{<footnotesize>}}{{<eq>}}8\,\mathrm{pt}{{</eq>}}{{</footnotesize>}}|
+|`\small`       |{{<eq>}}\small        9\,\mathrm{pt}{{</eq>}}    |
+|`\normalsize`  |{{<eq>}}\normalsize   10\,\mathrm{pt}{{</eq>}}   |
+|`\large`       |{{<eq>}}\large        12\,\mathrm{pt}{{</eq>}}   |
+|`\Large`       |{{<eq>}}\Large        14.4\,\mathrm{pt}{{</eq>}} |
+|`\LARGE`       |{{<eq>}}\LARGE        17.28\,\mathrm{pt}{{</eq>}}|
+|`\huge`        |{{<eq>}}\huge         20.74\,\mathrm{pt}{{</eq>}}|
+|`\Huge`        |{{<eq>}}\Huge         24.88\,\mathrm{pt}{{</eq>}}|
 
 これら以外の文字サイズに変更したい場合には `\fontsize` コマンドを使用します。文字サイズと行送りを指定して使用します。
 
@@ -207,42 +208,42 @@ upLaTeX のソースファイルは次の基本構成となります。
 
 ## フォントスタイル変更
 
-フォントスタイルを変更するには次のコマンドが利用できます[^bf...]。日本語用の明朝体やゴシック体にするコマンド `\textmc`，`\textgt` も存在します。（KaTeX では `sl`，`sc` が使えないため，`it`，`rm` で代用しています。）
+フォントスタイルを変更するには次のコマンドが利用できます[^bf...] [^sl,sc]。日本語用の明朝体やゴシック体にするコマンド `\textmc`，`\textgt` も存在します。
 
 [^bf...]: `\bf` や `\it` のようなフォントスタイルを変更するコマンドは古く使ってはいけません。現在は `\bfseries` 等の使用が推奨されます。
+[^sl,sc]: MathJax では `sl`，`sc` が使えないため，HTML の `skewX(-10deg)` と `\scriptsize` で代用しています。
 
-|入力                 |出力                                                 |
-|---------------------|-----------------------------------------------------|
-|`\textrm{Roman}`     |$\mathrm{Roman}$                                     |
-|`\textbf{Boldface}`  |$\mathbf{Boldface}$                                  |
-|`\texttt{Typewriter}`|$\mathtt{Typewriter}$                                |
-|`\textit{Italic}`    |$\mathit{Italic}$                                    |
-|`\textsf{SansSerif}` |$\mathsf{SansSerif}$                                 |
-|`\textsl{Slanted}`   |$\mathit{Slanted}$                                   |
-|`\textsc{SmallCaps}` |$\mathrm{S\scriptsize MALL}\mathrm{C\scriptsize APS}$|
+|入力                 |出力                                                                 |
+|---------------------|---------------------------------------------------------------------|
+|`\textrm{Roman}`     |{{<eq>}}\mathrm{Roman}{{</eq>}}                                      |
+|`\textbf{Boldface}`  |{{<eq>}}\mathbf{Boldface}{{</eq>}}                                   |
+|`\texttt{Typewriter}`|{{<eq>}}\mathtt{Typewriter}{{</eq>}}                                 |
+|`\textit{Italic}`    |{{<eq>}}\mathit{Italic}{{</eq>}}                                     |
+|`\textsf{SansSerif}` |{{<eq>}}\mathsf{Sans~Serif}{{</eq>}}                                 |
+|`\textsl{Slanted}`   |{{<sl>}}{{<eq>}}\mathrm{Slanted}{{</eq>}}{{</sl>}}                   |
+|`\textsc{SmallCaps}` |{{<eq>}}\mathrm{S\scriptsize MALL}~\mathrm{C\scriptsize APS}{{</eq>}}|
 
 ## 記号
 
-キーワード扱いの文字や一部の特殊文字を出力するためには次のコマンドなどが利用できます。
+キーワード扱いの文字や一部の特殊文字を出力するためには次のコマンドなどが利用できます[^some-symbol]。
 
-|入力              |出力                                         |
-|------------------|---------------------------------------------|
-|`\#`              |$\\#$                                        |
-|`\$`              |$\\$$                                        |
-|`\%`              |$\\%$                                        |
-|`\&`              |$\\&$                                        |
-|`\_`              |$\\_$                                        |
-|`\{`              |$\\{$                                        |
-|`\}`              |$\\}$                                        |
-|`\textasciitilde` |$\text{\\textasciitilde}$                    |
-|`\textasciicircum`|$\text{\\textasciicircum}$                   |
-|`\textbackslash`  |$\text{\\textbackslash}$                     |
-|`-`               |$\text{-}$（ハイフン）                       |
-|`--`              |$\text{--}$（エヌダッシュ）                  |
-|`---`             |$\text{---}$（エムダッシュ）                 |
-|`$-$`             |$-$（マイナス）                              |
-|``` `` ```        |$\text{\`\`}$（開きダブルクォーテーション）  |
-|`''`              |$\text{''}$（閉じダブルクォーテーション）[^"]|
+[^some-symbol]: MathJax では一部うまく出力できないので，他の方法で妥協してあります。
+
+|入力              |出力                                                       |
+|------------------|-----------------------------------------------------------|
+|`\#`              |{{<eq>}}\#{{</eq>}}                                        |
+|`\$`              |{{<eq>}}\${{</eq>}}                                        |
+|`\%`              |{{<eq>}}\%{{</eq>}}                                        |
+|`\&`              |{{<eq>}}\&{{</eq>}}                                        |
+|`\_`              |{{<eq>}}\_{{</eq>}}                                        |
+|`\{`              |{{<eq>}}\{{{</eq>}}                                        |
+|`\}`              |{{<eq>}}\}{{</eq>}}                                        |
+|`-`               |{{<eq>}}\text{-}{{</eq>}}（ハイフン）                      |
+|`--`              |{{<eq>}}\text{–}{{</eq>}}（エヌダッシュ）                  |
+|`---`             |{{<eq>}}\text{—}{{</eq>}}（エムダッシュ）                  |
+|`$-$`             |{{<eq>}}-{{</eq>}}（マイナス）                             |
+|``` `` ```        |{{<eq>}}\text{“}{{</eq>}}（開きダブルクォーテーション）    |
+|`''`              |{{<eq>}}\text{"}{{</eq>}}（閉じダブルクォーテーション）[^"]|
 
 [^"]: TeX では 1 キーで入力するダブルクォーテーション「"」の使用は推奨されません。
 
@@ -334,7 +335,7 @@ LaTeX には自動で節やキャプションの参照が行えます。文書�
 
 ## 本文中の数式
 
-本文中に $f(x) = ax + b$ のように数式を書くには次のように `$` で挟むことでできます。
+本文中に {{<eq>}}f(x) = ax + b{{</eq>}} のように数式を書くには次のように `$` で挟むことでできます。
 
 ```TeX
 本文中に$f(x) = ax + b$のように数式を書くには次のように\texttt{\$}で挟むことでできます。
@@ -344,12 +345,12 @@ LaTeX には自動で節やキャプションの参照が行えます。文書�
 
 別行立て数式は，
 
-$$
-\begin{aligned}
-	f(x) &= ax + b\cr
+{{<eq d>}}
+\begin{align}
+	f(x) &= ax + b\\
 	g(x) &= cx^{2} + dx + e
-\end{aligned}
-$$
+\end{align}
+{{</eq>}}
 
 のように環境 `align` により書くことができます[^align]。他の数式環境の `eqnarray` も有名だが `amsmath.sty` ではサポートしていないので推奨できません。
 
