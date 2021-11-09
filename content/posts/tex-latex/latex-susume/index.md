@@ -189,16 +189,16 @@ upLaTeX のソースファイルは次の基本構成となります。
 
 |コマンド       |サイズ                                           |
 |---------------|-------------------------------------------------|
-|`\tiny`        |{{<eq>}}\tiny         5\,\mathrm{pt}{{</eq>}}    |
-|`\scriptsize`  |{{<eq>}}\scriptsize   7\,\mathrm{pt}{{</eq>}}    |
-|`\footnotesize`|{{<footnotesize>}}{{<eq>}}8\,\mathrm{pt}{{</eq>}}{{</footnotesize>}}|
-|`\small`       |{{<eq>}}\small        9\,\mathrm{pt}{{</eq>}}    |
-|`\normalsize`  |{{<eq>}}\normalsize   10\,\mathrm{pt}{{</eq>}}   |
-|`\large`       |{{<eq>}}\large        12\,\mathrm{pt}{{</eq>}}   |
-|`\Large`       |{{<eq>}}\Large        14.4\,\mathrm{pt}{{</eq>}} |
-|`\LARGE`       |{{<eq>}}\LARGE        17.28\,\mathrm{pt}{{</eq>}}|
-|`\huge`        |{{<eq>}}\huge         20.74\,\mathrm{pt}{{</eq>}}|
-|`\Huge`        |{{<eq>}}\Huge         24.88\,\mathrm{pt}{{</eq>}}|
+|`\tiny`        |{{<eq lr>}}\tiny         5\,\mathrm{pt}{{</eq>}}    |
+|`\scriptsize`  |{{<eq lr>}}\scriptsize   7\,\mathrm{pt}{{</eq>}}    |
+|`\footnotesize`|{{<footnotesize>}}{{<eq lr>}}8\,\mathrm{pt}{{</eq>}}{{</footnotesize>}}|
+|`\small`       |{{<eq lr>}}\small        9\,\mathrm{pt}{{</eq>}}    |
+|`\normalsize`  |{{<eq lr>}}\normalsize   10\,\mathrm{pt}{{</eq>}}   |
+|`\large`       |{{<eq lr>}}\large        12\,\mathrm{pt}{{</eq>}}   |
+|`\Large`       |{{<eq lr>}}\Large        14.4\,\mathrm{pt}{{</eq>}} |
+|`\LARGE`       |{{<eq lr>}}\LARGE        17.28\,\mathrm{pt}{{</eq>}}|
+|`\huge`        |{{<eq lr>}}\huge         20.74\,\mathrm{pt}{{</eq>}}|
+|`\Huge`        |{{<eq lr>}}\Huge         24.88\,\mathrm{pt}{{</eq>}}|
 
 これら以外の文字サイズに変更したい場合には `\fontsize` コマンドを使用します。文字サイズと行送りを指定して使用します。
 
@@ -215,13 +215,13 @@ upLaTeX のソースファイルは次の基本構成となります。
 
 |入力                 |出力                                                                 |
 |---------------------|---------------------------------------------------------------------|
-|`\textrm{Roman}`     |{{<eq>}}\mathrm{Roman}{{</eq>}}                                      |
-|`\textbf{Boldface}`  |{{<eq>}}\mathbf{Boldface}{{</eq>}}                                   |
-|`\texttt{Typewriter}`|{{<eq>}}\mathtt{Typewriter}{{</eq>}}                                 |
-|`\textit{Italic}`    |{{<eq>}}\mathit{Italic}{{</eq>}}                                     |
-|`\textsf{SansSerif}` |{{<eq>}}\mathsf{Sans~Serif}{{</eq>}}                                 |
-|`\textsl{Slanted}`   |{{<sl>}}{{<eq>}}\mathrm{Slanted}{{</eq>}}{{</sl>}}                   |
-|`\textsc{SmallCaps}` |{{<eq>}}\mathrm{S\scriptsize MALL}~\mathrm{C\scriptsize APS}{{</eq>}}|
+|`\textrm{Roman}`     |{{<eq lr>}}\mathrm{Roman}{{</eq>}}                                      |
+|`\textbf{Boldface}`  |{{<eq lr>}}\mathbf{Boldface}{{</eq>}}                                   |
+|`\texttt{Typewriter}`|{{<eq lr>}}\mathtt{Typewriter}{{</eq>}}                                 |
+|`\textit{Italic}`    |{{<eq lr>}}\mathit{Italic}{{</eq>}}                                     |
+|`\textsf{SansSerif}` |{{<eq lr>}}\mathsf{Sans~Serif}{{</eq>}}                                 |
+|`\textsl{Slanted}`   |{{<sl>}}{{<eq lr>}}\mathrm{Slanted}{{</eq>}}{{</sl>}}                   |
+|`\textsc{SmallCaps}` |{{<eq lr>}}\mathrm{S\scriptsize MALL}~\mathrm{C\scriptsize APS}{{</eq>}}|
 
 ## 記号
 
@@ -231,19 +231,19 @@ upLaTeX のソースファイルは次の基本構成となります。
 
 |入力              |出力                                                       |
 |------------------|-----------------------------------------------------------|
-|`\#`              |{{<eq>}}\#{{</eq>}}                                        |
-|`\$`              |{{<eq>}}\${{</eq>}}                                        |
-|`\%`              |{{<eq>}}\%{{</eq>}}                                        |
-|`\&`              |{{<eq>}}\&{{</eq>}}                                        |
-|`\_`              |{{<eq>}}\_{{</eq>}}                                        |
-|`\{`              |{{<eq>}}\{{{</eq>}}                                        |
-|`\}`              |{{<eq>}}\}{{</eq>}}                                        |
-|`-`               |{{<eq>}}\text{-}{{</eq>}}（ハイフン）                      |
-|`--`              |{{<eq>}}\text{–}{{</eq>}}（エヌダッシュ）                  |
-|`---`             |{{<eq>}}\text{—}{{</eq>}}（エムダッシュ）                  |
-|`$-$`             |{{<eq>}}-{{</eq>}}（マイナス）                             |
-|``` `` ```        |{{<eq>}}\text{“}{{</eq>}}（開きダブルクォーテーション）    |
-|`''`              |{{<eq>}}\text{"}{{</eq>}}（閉じダブルクォーテーション）[^"]|
+|`\#`              |{{<eq lr>}}\#{{</eq>}}                                        |
+|`\$`              |{{<eq lr>}}\${{</eq>}}                                        |
+|`\%`              |{{<eq lr>}}\%{{</eq>}}                                        |
+|`\&`              |{{<eq lr>}}\&{{</eq>}}                                        |
+|`\_`              |{{<eq lr>}}\_{{</eq>}}                                        |
+|`\{`              |{{<eq lr>}}\{{{</eq>}}                                        |
+|`\}`              |{{<eq lr>}}\}{{</eq>}}                                        |
+|`-`               |{{<eq lr>}}\text{-}{{</eq>}}（ハイフン）                      |
+|`--`              |{{<eq lr>}}\text{–}{{</eq>}}（エヌダッシュ）                  |
+|`---`             |{{<eq lr>}}\text{—}{{</eq>}}（エムダッシュ）                  |
+|`$-$`             |{{<eq lr>}}-{{</eq>}}（マイナス）                             |
+|``` `` ```        |{{<eq lr>}}\text{“}{{</eq>}}（開きダブルクォーテーション）    |
+|`''`              |{{<eq lr>}}\text{"}{{</eq>}}（閉じダブルクォーテーション）[^"]|
 
 [^"]: TeX では 1 キーで入力するダブルクォーテーション「"」の使用は推奨されません。
 
