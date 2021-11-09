@@ -691,6 +691,12 @@ hr {
 .inline:after {
   content: " ";
 }
+.inline-r:before {
+  content: " ";
+}
+.inline-l:after {
+  content: " ";
+}
 .displaystyle {
   margin-top: 12px;
   margin-bottom: 12px;
