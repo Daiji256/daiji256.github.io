@@ -711,7 +711,7 @@ hr {
 .i-tex {
   font-size: 0.9em;
 }
-.math-text {
+.eq-text {
   fill: rgba(0, 0, 0, 0);
   font-size: 100ex; /* Font size is large due to SVG. */
 }
