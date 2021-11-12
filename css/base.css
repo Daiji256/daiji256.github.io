@@ -676,7 +676,8 @@ em {
   padding: inherit;
 }
 hr {
-  margin-top: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   border: 0;
   height: 2px;
   background-color: #e6e6e6;
@@ -702,15 +703,15 @@ hr {
   margin-bottom: 12px;
 }
 .tex {
-  display: block;
   font-size: 0.9em;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 .i-tex {
   font-size: 0.9em;
 }
-.math-text {
+.eq-text {
   fill: rgba(0, 0, 0, 0);
   font-size: 100ex; /* Font size is large due to SVG. */
 }
