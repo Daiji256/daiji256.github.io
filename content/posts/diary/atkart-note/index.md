@@ -59,6 +59,6 @@ expl3（エクスペル・スリー）とは LaTeX3 チームが開発してい�
 
 # 文献
 
-1. [`jlreq` (GitHub)](https://github.com/abenori/jlreq)
-2. [`NLProceedings` (GitHub)](https://github.com/wtsnjp/nlproceedings)
+1. [jlreq (GitHub)](https://github.com/abenori/jlreq)
+2. [NLProceedings (GitHub)](https://github.com/wtsnjp/nlproceedings)
 3. [expl3 (CTAN)](https://ctan.org/pkg/expl3)
