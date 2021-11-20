@@ -1,7 +1,7 @@
 ---
 title: "超高速な数式表示（KaTeX より高速！）"
 date: 2021-11-12
-categories: [HUGO]
+categories: [ブログ-HUGO]
 tags: [MathJax,KaTeX,tex2svg]
 ---
 
