@@ -8,7 +8,7 @@ allfonts: true
 
 # 概要
 
-約物専用の Web フォント「約組フォント / Yaku Kumi Fonts」を公開しました。全角の約物（句読点や括弧のこと。）が連続したときのアキを調整する Web フォントです。Android の Noto CJK Fonts をサブセットすることで作成されているので，シェア率が非常に高い [Noto Sans JP](https://fonts.google.com/noto/specimen/Noto+Sans+JP/) との組み合わせが良いです。
+約物専用の Web フォント[「約組フォント / Yaku Kumi Fonts」](https://github.com/Daiji256/Yaku-Kumi-Fonts/)を公開しました。全角の約物（句読点や括弧のこと。）が連続したときのアキを調整する Web フォントです。Android の Noto CJK Fonts をサブセットすることで作成されているので，シェア率が非常に高い [Noto Sans JP](https://fonts.google.com/noto/specimen/Noto+Sans+JP/) との組み合わせが良いです。
 
 CDN で公開しているので[利用方法](#利用方法)を参考にして，自分のブログで使ってみてください。
 
