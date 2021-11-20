@@ -29,7 +29,8 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: "YakuHanJPs", "Noto Sans JP", sans-serif;
+  font-family: "Yaku Kumi Sans", "Noto Sans JP", sans-serif;
+  font-feature-settings: "chws" 1;
   font-size: 1.6rem;
   color: #333;
   -webkit-text-size-adjust: 100%;
