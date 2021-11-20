@@ -202,3 +202,4 @@ MathJax にはパッケージを追加したり，フォントを変更する機
 3. [tex2svg (API)](http://tex2svg.herokuapp.com/)
 4. [tex2svg (GitHub)](https://github.com/atishay/tex2svg/)
 5. [CODECOGS](https://codecogs.com/)
+6. [超高速な数式表示（KaTeX より高速！）(Qiita)](https://qiita.com/Daiji256/items/47808405713dc2b33ab1)
