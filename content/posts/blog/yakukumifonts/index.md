@@ -2,7 +2,7 @@
 title: "約組フォント / Yaku Kumi Fonts - 約物専用 Web フォント"
 date: 2021-11-20
 categories: [ブログ-HUGO]
-tags: [Font,fontTools]
+tags: [Font]
 allfonts: true
 ---
 
@@ -93,4 +93,3 @@ Yaku Kumi Fonts は Noto CJK Fonts を元に作成されているので，ライ
 4. [FONTPLUS](https://fontplus.jp/)
 5. [約物 Web フォント「約味」（YakuAdj）](https://tama-san.com/yakuadj-font/)
 6. [Yaku Han JP](https://yakuhanjp.qranoko.jp/)
-7. [fontTools](https://fonttools.readthedocs.io/)
