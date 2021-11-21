@@ -93,3 +93,4 @@ Yaku Kumi Fonts は Noto CJK Fonts を元に作成されているので，ライ
 4. [FONTPLUS](https://fontplus.jp/)
 5. [約物 Web フォント「約味」（YakuAdj）](https://tama-san.com/yakuadj-font/)
 6. [Yaku Han JP](https://yakuhanjp.qranoko.jp/)
+7. [約組フォント / Yaku Kumi Fonts - 約物専用 Web フォント (Qiita)](https://qiita.com/Daiji256/items/a0a30725355a9f7d6d22/)
