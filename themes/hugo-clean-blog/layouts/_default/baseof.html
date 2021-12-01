@@ -20,15 +20,11 @@
     <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" as="style" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media="print" onload="this.media='all'" />
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi-sans-rb.min.css" as="style" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi-sans-rb.min.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi-sans-rb.min.css" />
     {{- if eq .Params.allfonts true }}
-      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" as="style" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" media="print" onload="this.media='all'" />
-      <link rel="preload" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi.min.css" as="style" />
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi.min.css" media="print" onload="this.media='all'" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi.min.css" />
     {{ end -}}
     <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.min.css" />
     <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/one-dark.min.css" />
