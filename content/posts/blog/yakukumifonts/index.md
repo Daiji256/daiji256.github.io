@@ -35,7 +35,7 @@ Noto CJK Fonts と同じグリフで，約物のアキを詰める [Yaku Han JP]
 
 # 対応文字
 
-Yaku Kumi Fonts は Sans と Serif があります。また，Google Fonts の Noto Sans/Serif Japanese と同じ Weight があります。収録フォントは `、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙` です。下の表で各ファミリ・ウエイトの例を紹介します。
+Yaku Kumi Fonts は Sans と Serif があります。また，Google Fonts の Noto Sans/Serif Japanese と同じ Weight があります。収録フォントは `、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙` です。下の表で各ファミリ・ウェイトの例を紹介します。
 
 |Family|Weight| |
 |------|------|-|
