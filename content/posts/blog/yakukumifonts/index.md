@@ -19,9 +19,9 @@ Web ページを作るとき，下の表みたいに，括弧や句読点など�
 |Family| |
 |------|-|
 |Noto Sans JP                |{{< NoYakuKumi Sans 400>}}約物がすごい（とてもすごい）。{{< /NoYakuKumi >}}|
-|                            |{{< NoYakuKumi Sans 400>}}括（（（（弧）が）連）続）（し（て（る。）））{{< /NoYakuKumi >}}|
+|                            |{{< NoYakuKumi Sans 400>}}約物（が）・「連続している。」（（超）すごい）。{{< /NoYakuKumi >}}|
 |Yaku Kumi Sans, Noto Sans JP|{{< YakuKumi   Sans 400>}}約物がすごい（とてもすごい）。{{< /YakuKumi >}}  |
-|                            |{{< YakuKumi   Sans 400>}}括（（（（弧）が）連）続）（し（て（る。）））{{< /YakuKumi >}}  |
+|                            |{{< YakuKumi   Sans 400>}}約物（が）・「連続している。」（（超）すごい）。{{< /YakuKumi >}}  |
 
 このようなフォントは [FONTPLUS](https://fontplus.jp/) にもありますが，有料なのでブログなどで手軽に使うのは難しいです。[約味フォント](https://tama-san.com/yakuadj-font/)は無料で公開されていますが，オリジナルグリフであるため，Noto Snas JP との相性がいまいちです[^:ore1]。
 
@@ -29,29 +29,29 @@ Web ページを作るとき，下の表みたいに，括弧や句読点など�
 
 Yaku Kumi Fonts はもちろん無料で使えて，見ての通り Noto CJK Fonts と同じグリフになっています。~~全ての Noto Sans JP を利用している人は Yaku Kumi Fonts 使うべきです！~~
 
-Noto CJK Fonts と同じグリフで，約物のアキを詰める [Yaku Han JP](https://yakuhanjp.qranoko.jp/) は全てのアキが無くなるので，組版要件を考えるといまいちです。それに文字をぎちぎちに詰めるのを目的にするなら `font-feature-settings: "palt";` すればいいです。
+Noto CJK Fonts と同じグリフで，約物のアキを詰める [Yaku Han JP](https://yakuhanjp.qranoko.jp/) は全てのアキが無くなるので，組版要件を考えるといまいちです。それに約物を半角にするだけなら `font-feature-settings: "halt" 1;` すればいいです。
 
 ということで，Yaku Kumi Fonts を使いましょう！ ~~ただの布教活動...~~
 
 # 対応文字
 
-Yaku Kumi Fonts は Sans と Serif があります。また，Google Fonts の Noto Sans/Serif Japanese と同じ Weight があります。収録フォントは `、，。。〈〉《》「」『』【】〔〕（）［］｛｝` です。下の表で各ファミリ・ウエイトの例を紹介します。
+Yaku Kumi Fonts は Sans と Serif があります。また，Google Fonts の Noto Sans/Serif Japanese と同じ Weight があります。収録フォントは `、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙` です。下の表で各ファミリ・ウエイトの例を紹介します。
 
 |Family|Weight| |
 |------|------|-|
-|Sans  |100   |{{< YakuKumi Sans  100>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |300   |{{< YakuKumi Sans  300>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |400   |{{< YakuKumi Sans  400>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |500   |{{< YakuKumi Sans  500>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |700   |{{< YakuKumi Sans  700>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |900   |{{< YakuKumi Sans  900>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|Serif |200   |{{< YakuKumi Serif 200>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |300   |{{< YakuKumi Serif 300>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |400   |{{< YakuKumi Serif 400>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |500   |{{< YakuKumi Serif 500>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |600   |{{< YakuKumi Serif 600>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |700   |{{< YakuKumi Serif 700>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
-|      |900   |{{< YakuKumi Serif 900>}}、，。．〈〉《》「」『』【】〔〕（）［］｛｝{{< /YakuKumi >}}|
+|Sans  |100   |{{< YakuKumi Sans  100>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |300   |{{< YakuKumi Sans  300>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |400   |{{< YakuKumi Sans  400>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |500   |{{< YakuKumi Sans  500>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |700   |{{< YakuKumi Sans  700>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |900   |{{< YakuKumi Sans  900>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|Serif |200   |{{< YakuKumi Serif 200>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |300   |{{< YakuKumi Serif 300>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |400   |{{< YakuKumi Serif 400>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |500   |{{< YakuKumi Serif 500>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |600   |{{< YakuKumi Serif 600>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |700   |{{< YakuKumi Serif 700>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
+|      |900   |{{< YakuKumi Serif 900>}}、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙{{< /YakuKumi >}}|
 
 
 # 利用方法
@@ -84,6 +84,12 @@ font-feature-settings: "chws" 1;
 # ライセンス
 
 Yaku Kumi Fonts は Noto CJK Fonts を元に作成されているので，ライセンスは SIL OFL 1.1 です。CSS などは MIT ライセンスです。
+
+# バージョン履歴
+
+- v1.0: 初公開（ウェイトが足りていないため現在非公開）
+- v1.1: ウェイトの修正
+- v1.2: 収録フォントを増やした
 
 # 文献
 
