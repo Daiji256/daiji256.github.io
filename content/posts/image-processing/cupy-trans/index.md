@@ -86,7 +86,7 @@ cv2.imwrite('img2.png', img2)
 
 |魚眼画像|補正後|
 |-|-|
-|[{{< figure src="./images/img1-comp.jpg" class="center" width="256" height="256" >}}](https://github.com/Daiji256/daiji256.github.io/blob/main/content/posts/image-processing/cupy-trans/images/img1.png)|[{{< figure src="./images/img2-comp.jpg" class="center" width="256" height="256" >}}](https://github.com/Daiji256/daiji256.github.io/blob/main/content/posts/image-processing/cupy-trans/images/img2.png)|
+|[{{< figure src="./images/img1-comp.jpg" class="center" width="256" height="256" >}}](https://github.com/Daiji256/geometric-transformation/blob/main/img1.png)|[{{< figure src="./images/img2-comp.jpg" class="center" width="256" height="256" >}}](https://github.com/Daiji256/geometric-transformation/blob/main/img2.png)|
 
 # ひとこと
 
