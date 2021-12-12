@@ -2,10 +2,8 @@
 title: "bit を高速に数える 手法の比較"
 date: 2020-12-31
 categories: [C]
-tags: [Qiita,bit]
+tags: [bit]
 ---
-
-この記事は [Qiita](https://qiita.com/Daiji256/items/c4f83c4f3a73a3fb7e0c) に投稿した内容です。
 
 # はじめに
 
@@ -92,3 +90,4 @@ bit を高速に数える手法の比較を行いました。安直に数える�
 2. [Hamming weight (Wiki)](https://en.wikipedia.org/wiki/Hamming_weight)
 3. [x86_64 で popcnt / tzcnt / lzcntする【ビット演算テクニック Advent Calendar 2016 5日目】 (Qiita)](https://qiita.com/ocxtal/items/01c46b15cb1f2e656887)
 4. [GCC (GNU)](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html)
+5. [bit を高速に数える 手法の比較 (Qiita)](https://qiita.com/Daiji256/items/c4f83c4f3a73a3fb7e0c)

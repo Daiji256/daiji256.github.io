@@ -2,10 +2,8 @@
 title: "C 言語で eval 風関数"
 date: 2021-02-03
 categories: [C]
-tags: [Qiita,eval,自作関数]
+tags: [eval,自作関数]
 ---
-
-この記事は [Qiita](https://qiita.com/Daiji256/items/09fa042e94907a232c57) に投稿した内容です。
 
 # はじめに
 
@@ -76,4 +74,4 @@ C 言語用の `eval` 風関数を作成しました。`calc` 等の関数につ
 # 文献
 
 1. [ソースコード (GitHub)](https://github.com/Daiji256/eval)
-
+2. [C 言語で eval 風関数 (Qiita)](https://qiita.com/Daiji256/items/09fa042e94907a232c57)

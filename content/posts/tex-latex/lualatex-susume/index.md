@@ -2,10 +2,8 @@
 title: "LuaLaTeX のすゝめ"
 date: 2021-02-07
 categories: [TeX-LaTeX]
-tags: [Qiita,まとめ,LuaLaTeX]
+tags: [まとめ,LuaLaTeX]
 ---
-
-この記事は [Qiita](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995) に投稿した内容です。
 
 # はじめに
 
@@ -78,3 +76,4 @@ LuaLaTeX の `jsclasses` 互換クラス次の通りです。現在は (u)pLaTeX
 6. [LaTeX-ja の使い方 (公式 Wiki)](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)
 7. [LuaLaTeX でフォント細かく変更する方法 (Qiita)](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)
 8. [徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ (Qiita)](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)
+9. [LuaLaTeX のすゝめ (Qiita)](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995/)

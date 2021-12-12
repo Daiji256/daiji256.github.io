@@ -2,10 +2,8 @@
 title: "LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）"
 date: 2021-02-02
 categories: [TeX-LaTeX]
-tags: [Qiita,Font,LuaLaTeX]
+tags: [Font,LuaLaTeX]
 ---
-
-この記事は [Qiita](https://qiita.com/Daiji256/items/29adc574b15345d8afa2) に投稿した内容です。
 
 # はじめに
 
@@ -86,4 +84,5 @@ Times New Roman や MS Mincho などを指定されたことを想定して説�
 1. [ソースコード (GitHub)](https://github.com/Daiji256/TeX-TikZ-Heatran/)
 2. [LuaTeX-ja パッケージ (CTAN)](http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
 3. [unicode-math (CTAN)](https://ctan.org/pkg/unicode-math)
-4. [Point typography (Wiki)](https://en.wikipedia.org/wiki/Point_(typography))
+4. [Point typography (Wiki)](https://en.wikipedia.org/wiki/Point_(typography))\
+5. [LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！） (Qiita)](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)

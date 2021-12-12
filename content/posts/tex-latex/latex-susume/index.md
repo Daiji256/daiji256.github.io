@@ -2,10 +2,8 @@
 title: "LaTeX のすゝめ"
 date: 2021-02-14
 categories: [TeX-LaTeX]
-tags: [Qiita,まとめ,upLaTeX]
+tags: [まとめ,upLaTeX]
 ---
-
-この記事は [Qiita](https://qiita.com/Daiji256/items/9774df0899728feb3ab0) に投稿した内容です。
 
 # はじめに
 
@@ -381,3 +379,4 @@ LaTeX には自動で節やキャプションの参照が行えます。文書�
 4. [Cloud LaTeX](https://cloudlatex.io/ja)
 5. [LuaLaTeX のすゝめ](https://daiji256.github.io/posts/tex-latex/lualatex-susume/)
 6. [jlreq (GitHub)](https://github.com/abenori/jlreq/blob/master/README-ja.md)
+7. [LaTeX のすゝめ (Qiita)](https://qiita.com/Daiji256/items/9774df0899728feb3ab0)
