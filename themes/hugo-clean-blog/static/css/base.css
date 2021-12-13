@@ -586,9 +586,10 @@ p + p {
 }
 code {
   background-color: #e6e6e6;
-  border-radius: 4px;
+  border-radius: 1px;
+  font-size: 95%;
   color: #333;
-  padding: 0.1em 0.4em;
+  padding: 2px 4px;
   font-family: "Inconsolata", "Noto Sans JP", "Noto Sans CJK JP",
     "Source Han Sans JP", monospace;
 }
