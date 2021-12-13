@@ -30,7 +30,7 @@ html {
 }
 body {
   font-family: "Yaku Kumi Sans", "Noto Sans JP", "Noto Sans CJK JP",
-    "Source Han Serif JP", sans-serif;
+    "Source Han Sans JP", sans-serif;
   font-feature-settings: "chws" 1;
   font-size: 1.6rem;
   color: #333;
@@ -590,7 +590,7 @@ code {
   color: #333;
   padding: 0.1em 0.4em;
   font-family: "Inconsolata", "Noto Sans JP", "Noto Sans CJK JP",
-    "Source Han Serif JP", monospace;
+    "Source Han Sans JP", monospace;
 }
 strong {
   font-weight: bold;
@@ -660,7 +660,7 @@ em {
   margin: 0;
   font-size: inherit;
   font-family: "Inconsolata", "Noto Sans JP", "Noto Sans CJK JP",
-    "Source Han Serif JP", monospace;
+    "Source Han Sans JP", monospace;
   color: inherit;
   background-color: transparent;
   border: none;
