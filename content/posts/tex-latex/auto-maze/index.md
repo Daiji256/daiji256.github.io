@@ -1,6 +1,6 @@
 ---
 title: "TeX で迷路を自動生成（expl3）"
-date: 2021-12-14
+date: 2021-12-14T00:00:00+09:00
 categories: [TeX-LaTeX]
 tags: [expl3]
 ---
