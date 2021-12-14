@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: http://ogp.me/ns#">
   <head>
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="DvAmtcJ-4mAzUR3EOVgXJIuW56ccEiKjtuw3JVBdw84" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204370875-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-204370875-1');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@Daiji256" />
     <meta name="twitter:title" content="{{ .Title }}" />
