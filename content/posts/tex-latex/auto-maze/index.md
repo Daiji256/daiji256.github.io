@@ -5,7 +5,7 @@ categories: [TeX-LaTeX]
 tags: [expl3]
 ---
 
-この記事は，[TeX & LaTeX Advent Calendar 2021](https://adventar.org/calendars/6724/) の 14 日目の記事です。13 日目は [h-kitagawa さん](https://qiita.com/h-kitagawa/items/de963380bd3e576ab4e3/) でした。15 日目は mod_poppo さん です。
+この記事は，[TeX & LaTeX Advent Calendar 2021](https://adventar.org/calendars/6724/) の 14 日目の記事です。13 日目は [h-kitagawa さん](https://qiita.com/h-kitagawa/items/de963380bd3e576ab4e3/) でした。15 日目は [mod_poppo さん](https://blog.miz-ar.info/2021/12/standard-ml-on-luatex/) です。
 
 # はじめに
 
