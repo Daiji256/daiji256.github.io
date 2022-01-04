@@ -1,7 +1,7 @@
 ---
 title: "超高速な数式表示（KaTeX より高速！）"
 date: 2021-11-12
-categories: [ブログ-HUGO]
+categories: [ブログ-Hugo]
 tags: [MathJax,KaTeX,tex2svg]
 ---
 
@@ -9,7 +9,7 @@ tags: [MathJax,KaTeX,tex2svg]
 
 # はじめに
 
-このブログは静的サイトジェネレータの HUGO で作成しています。ここでは HUGO 用の説明をしますが，他の静的サイトジェネレータ（Hexo，Jekyll など）でも使える内容だと思います。
+このブログは静的サイトジェネレータの Hugo で作成しています。ここでは Hugo 用の説明をしますが，他の静的サイトジェネレータ（Hexo，Jekyll など）でも使える内容だと思います。
 
 静的サイトジェネレータはその名の通り，静的なサイトを生成します。WordPress のようにユーザがサイトにアクセスするたびに，ページを作成する動的なものと比べ，読み込み速度などのパフォーマンスが高いメリットがあります。
 
@@ -17,7 +17,7 @@ tags: [MathJax,KaTeX,tex2svg]
 
 [^katex]: KaTeX は MathJax より早いです。このブログでは KaTeX を利用していました。
 
-当たり前ですが，数式の見た目は何度読み込んでも同じです。せっかく HUGO を使っているのに，これでは何となく嫌な感じです。最初から HUGO で HTML を生成するときに数式を埋め込んでしまえば，ユーザがアクセスするたびに，MathJax や KaTeX の処理をしなくていいです。
+当たり前ですが，数式の見た目は何度読み込んでも同じです。せっかく Hugo を使っているのに，これでは何となく嫌な感じです。最初から Hugo で HTML を生成するときに数式を埋め込んでしまえば，ユーザがアクセスするたびに，MathJax や KaTeX の処理をしなくていいです。
 
 **こんなこといいな できたらいいな...**
 
@@ -40,9 +40,9 @@ tags: [MathJax,KaTeX,tex2svg]
 
 ## LaTeX から SVG に変換
 
-LaTeX を SVG に変換するツールは色々あります。しかし，HUGO から外部コマンドは実行できないので，簡単ではなさそうです。
+LaTeX を SVG に変換するツールは色々あります。しかし，Hugo から外部コマンドは実行できないので，簡単ではなさそうです。
 
-HUGO は `getJSON` でインターネット上の JSON を取得することができます。LaTeX を SVG の情報を含む JSON を返す API を探したところ，[tex2svg](http://tex2svg.herokuapp.com/) と [CODECOGS](https://codecogs.com/) が見つかりました。
+Hugo は `getJSON` でインターネット上の JSON を取得することができます。LaTeX を SVG の情報を含む JSON を返す API を探したところ，[tex2svg](http://tex2svg.herokuapp.com/) と [CODECOGS](https://codecogs.com/) が見つかりました。
 
 - [tex2svg](http://tex2svg.herokuapp.com/)：MathJax によって数式を生成します。Heroku で API が公開されていてのレスポンスは少し遅いです。
 - [CODECOGS](https://codecogs.com/)：昔からある有名な奴です。SVG 以外に PNG や GMP とかも生成できます。ベースラインが無く，インラインで表示すると微妙になる。
@@ -191,7 +191,7 @@ replace .Inner "\\bm" "\\boldsymbol"
 
 ## tex2svg
 
-MathJax にはパッケージを追加したり，フォントを変更する機能があります。tex2svg ではデフォルト状態になっています。MathJax の設定をやりたい場合は自分で API を用意してください。ソースコードは [tex2svg (GitHub)](https://github.com/atishay/tex2svg/) を参考にすれば良いと思います。ローカルで HUGO を使う場合は `localhost:3000` に API をたてたとしたら，`https://tex2svg.herokuapp.com/` を `http://localhost:3030/` に置きかえらば良いです。僕は GitHub Actions で HUGO しているので，tex2svg を直接利用しています[^myapi]。
+MathJax にはパッケージを追加したり，フォントを変更する機能があります。tex2svg ではデフォルト状態になっています。MathJax の設定をやりたい場合は自分で API を用意してください。ソースコードは [tex2svg (GitHub)](https://github.com/atishay/tex2svg/) を参考にすれば良いと思います。ローカルで Hugo を使う場合は `localhost:3000` に API をたてたとしたら，`https://tex2svg.herokuapp.com/` を `http://localhost:3030/` に置きかえらば良いです。僕は GitHub Actions で Hugo しているので，tex2svg を直接利用しています[^myapi]。
 
 [^myapi]: まあ，自分で Heroku とか Repl.it とかで API を公開すればいいんだけどね...
 
