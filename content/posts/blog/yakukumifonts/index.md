@@ -23,7 +23,7 @@ Web ページを作るとき，下の表みたいに，括弧や句読点など�
 |Yaku Kumi Sans, Noto Sans JP|{{< YakuKumi   Sans 400>}}約物がすごい（とてもすごい）。{{< /YakuKumi >}}  |
 |                            |{{< YakuKumi   Sans 400>}}約物（が）・「連続している。」（（超）すごい）。{{< /YakuKumi >}}  |
 
-このようなフォントは [FONTPLUS](https://fontplus.jp/) にもありますが，有料なのでブログなどで手軽に使うのは難しいです。[約味フォント](https://tama-san.com/yakuadj-font/)は無料で公開されていますが，オリジナルグリフであるため，Noto Snas JP との相性がいまいちです[^:ore1]。
+このようなフォントは [FONTPLUS](https://fontplus.jp/) にもありますが，有料なのでブログなどで手軽に使うのは難しいです。[約味フォント](https://tama-san.com/yakuadj-font/)は無料で公開されていますが，オリジナルグリフであるため，Noto Sans JP との相性がいまいちです[^:ore1]。
 
 [^:ore1]: 特に僕はカンマ `，` が好みでは無かったです。
 
