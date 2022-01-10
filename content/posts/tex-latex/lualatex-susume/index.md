@@ -1,7 +1,7 @@
 ---
 title: "LuaLaTeX のすゝめ"
 date: 2021-02-07
-categories: [TeX-LaTeX]
+categories: [TeX LaTeX]
 tags: [まとめ,LuaLaTeX]
 ---
 

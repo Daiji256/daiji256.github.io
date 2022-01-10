@@ -1,7 +1,7 @@
 ---
 title: "LaTeX のすゝめ"
 date: 2021-02-14
-categories: [TeX-LaTeX]
+categories: [TeX LaTeX]
 tags: [まとめ,upLaTeX]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。"
 date: 2021-02-28
-categories: [TeX-LaTeX]
+categories: [TeX LaTeX]
 tags: [ネタ,TikZ]
 strlen: 25
 ---

@@ -1,7 +1,7 @@
 ---
 title: "LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）"
 date: 2021-02-02
-categories: [TeX-LaTeX]
+categories: [TeX LaTeX]
 tags: [Font,LuaLaTeX]
 strlen: 26
 ---
