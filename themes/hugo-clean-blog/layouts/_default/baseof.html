@@ -85,6 +85,10 @@
         ))
       }}
     {{ end }}
+    {{ $title = .Title }}
+    {{ if (eq $title "Posts") }}{{ $title = "すべての投稿" }}{{ end }}
+    {{ if (eq $title "Tags") }}{{ $title = "タグ" }}{{ end }}
+    {{ if (eq $title "Categories") }}{{ $title = "カテゴリ" }}{{ end }}
     <title>{{ $title }} - {{ .Site.Title }}</title>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Daiji256" />
