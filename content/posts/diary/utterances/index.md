@@ -1,7 +1,7 @@
 ---
 title: "ブログのコメント欄を Disqus から Utterances に変更した"
 date: 2021-08-25
-categories: [日記 備忘録,ブログ-Hugo]
+categories: [日記 備忘録,Hugo]
 tags: [コメント欄]
 strlen: 31
 ---

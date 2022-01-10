@@ -1,7 +1,7 @@
 ---
 title: "約組フォント / Yaku Kumi Fonts - 約物専用 Web フォント"
 date: 2021-11-20
-categories: [ブログ-Hugo]
+categories: [CDN]
 tags: [Font]
 allfonts: true
 strlen: 35
