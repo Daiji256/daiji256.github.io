@@ -3,6 +3,7 @@ title: "[翻訳] Depth Prediction Without the Sensors: Leveraging Structure for 
 date: 2021-11-09
 categories: [論文]
 tags: [Deep learning,struct2depth,翻訳,まとめ]
+strlen: 43
 ---
 
 "[Depth Prediction Without the Sensors: Leveraging Structure for Unsupervised Learning from Monocular Videos](https://arxiv.org/abs/1811.06152)" の翻訳 / 解説を行います。まだ訳しきれてないですけど，もう書くのめんどくさいので公開します。

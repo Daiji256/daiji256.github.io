@@ -3,6 +3,7 @@ title: "CuPy を使った画像の幾何学変換 with OpenCV"
 date: 2021-12-03
 categories: [画像処理, Python]
 tags: [CuPy, OpenCV]
+strlen: 29
 ---
 
 # はじめに
