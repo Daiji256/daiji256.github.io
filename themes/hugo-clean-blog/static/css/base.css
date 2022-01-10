@@ -724,6 +724,9 @@ hr {
 .center {
   text-align: center;
 }
+.frame img {
+  border: 1px solid #333;
+}
 .katex {
   font-size: 1.1em !important;
 }
