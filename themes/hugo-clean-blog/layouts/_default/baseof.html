@@ -65,14 +65,10 @@
       }}
     {{ else }}
       {{ $img = resources.Get "images/ogp/ogp.png" }}
-      {{ $strlen := 10 }}
       {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
       {{ if (eq $title "Posts") }}{{ $title = "すべての投稿" }}{{ end }}
       {{ if (eq $title "Tags") }}{{ $title = "タグ" }}{{ end }}
       {{ if (eq $title "Categories") }}{{ $title = "カテゴリ" }}{{ end }}
-      {{ if gt (strings.RuneCount $title) (add $strlen 1) }}
-        {{ $title = printf "%s…" (substr $title 0 $strlen) }}
-      {{ end }}
       {{ $img = $img | images.Filter
         (images.Text .Site.Title (dict
           "color" "#333"
