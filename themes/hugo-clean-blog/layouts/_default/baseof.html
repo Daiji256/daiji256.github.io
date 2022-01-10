@@ -12,17 +12,93 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }} - {{ .Site.Title }}</title>
-    <meta name="twitter:card" content="summary" />
+    {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
+    {{ $img := resources.GetRemote "https://daiji256.github.io/images/ogp-post.png" }}
+    {{ $text := .Title }}
+    {{ if or .Params.tags .Params.categories }}
+      {{ $strlen := 22 }}
+        {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
+      {{ if gt (strings.RuneCount $text) (add $strlen 1) }}
+        {{ $text = printf "%s…" (substr $text 0 $strlen) }}
+      {{ end }}
+      {{ $date := .Date.Format "2006 年 1 月 2 日" }}
+      {{ $tags := "" }}
+      {{ $categories := "" }}
+      {{ range .Params.tags }}{{ $tags = printf "%s, %s" $tags . }}{{ end }}
+      {{ range .Params.categories }}{{ $categories = printf "%s, %s" $categories . }}{{ end }}
+      {{ $tags = substr $tags 2 }}
+      {{ $categories = substr $categories 2 }}
+      {{ $img = $img | images.Filter
+        (images.Text .Site.Title (dict
+          "color" "#333"
+          "size" 32
+          "x" 90 "y" 19
+          "font" $font
+        ))
+        (images.Text $text (dict
+          "color" "#333"
+          "size" 32
+          "lineSpacing" 8
+          "x" 25 "y" 135
+          "font" $font
+        ))
+        (images.Text $date (dict
+          "color" "#666"
+          "size" 24
+          "lineSpacing" 8
+          "x" 80 "y" 230
+          "font" $font
+        ))
+        (images.Text $categories (dict
+          "color" "#666"
+          "size" 24
+          "lineSpacing" 8
+          "x" 80 "y" 280
+          "font" $font
+        ))
+        (images.Text $tags (dict
+          "color" "#666"
+          "size" 24
+          "lineSpacing" 8
+          "x" 80 "y" 330
+          "font" $font
+        ))
+      }}
+    {{ else }}
+      {{ $strlen := 10 }}
+      {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
+      {{ $img = resources.GetRemote "https://daiji256.github.io/images/ogp.png" }}
+      {{ if (eq $text "Tags") }}{{ $text = "タグ" }}{{ end }}
+      {{ if (eq $text "Categories") }}{{ $text = "カテゴリ" }}{{ end }}
+      {{ if gt (strings.RuneCount $text) (add $strlen 1) }}
+        {{ $text = printf "%s…" (substr $text 0 $strlen) }}
+      {{ end }}
+      {{ $img = $img | images.Filter
+        (images.Text .Site.Title (dict
+          "color" "#333"
+          "size" 32
+          "x" 90 "y" 19
+          "font" $font
+        ))
+        (images.Text $text (dict
+          "color" "#333"
+          "size" 64
+          "lineSpacing" 8
+          "x" 50 "y" 200
+          "font" $font
+        ))
+      }}
+    {{ end }}
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Daiji256" />
     <meta name="twitter:title" content="{{ .Title }}" />
-    <meta name="twitter:description" content="{{ .Summary }}" />
-    <meta name="twitter:image" content="{{ $.Site.BaseURL | absURL }}images/apple-touch-icon.png" />
+    <meta name="twitter:image" content="{{ $img.RelPermalink | absURL }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ .Title }}" />
     <meta property="og:description" content="{{ .Summary }}" />
     <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:image" content="{{ $.Site.BaseURL | absURL }}images/apple-touch-icon.png" />
+    <meta property="og:image" content="{{ $img.RelPermalink | absURL }}" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
     <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

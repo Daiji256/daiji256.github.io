@@ -12,15 +12,36 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Site.Title }}</title>
-    <meta name="twitter:card" content="summary" />
+    {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
+    {{ $img := resources.GetRemote "https://daiji256.github.io/images/ogp.png" }}
+    {{ $text := .Title }}
+    {{ if gt (strings.RuneCount $text) 23 }}
+      {{ $text = printf "%s…" (substr $text 0 22) }}
+    {{ end }}
+    {{ $img = $img | images.Filter
+      (images.Text .Site.Title (dict
+        "color" "#333"
+        "size" 32
+        "x" 90 "y" 19
+        "font" $font
+      ))
+      (images.Text $text (dict
+        "color" "#333"
+        "size" 64
+        "lineSpacing" 8
+        "x" 50 "y" 200
+        "font" $font
+      ))
+    }}
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Daiji256" />
     <meta name="twitter:title" content="{{ .Site.Title }}" />
-    <meta name="twitter:image" content="{{ $.Site.BaseURL | absURL }}images/apple-touch-icon.png" />
+    <meta name="twitter:image" content="{{ $img.RelPermalink | absURL }}" />
     <meta property="og:url" content="{{ $.Site.BaseURL | absURL }}" />
     <meta property="og:type" content="blog" />
     <meta property="og:title" content="{{ .Site.Title }}" />
     <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:image" content="{{ $.Site.BaseURL | absURL }}images/apple-touch-icon.png" />
+    <meta property="og:image" content="{{ $img.RelPermalink | absURL }}" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
     <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
