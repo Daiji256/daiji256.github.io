@@ -1,7 +1,7 @@
 ---
 title: "就職活動体験記"
 date: 2021-05-15
-categories: [日記-備忘録]
+categories: [日記 備忘録]
 tags: [就職活動]
 ---
 

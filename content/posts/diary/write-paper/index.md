@@ -1,7 +1,7 @@
 ---
 title: "論文の書き方"
 date: 2021-08-08
-categories: [日記-備忘録]
+categories: [日記 備忘録]
 tags: [まとめ]
 ---
 
