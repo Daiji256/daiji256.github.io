@@ -68,6 +68,7 @@
       {{ $img = resources.Get "images/ogp/ogp.png" }}
       {{ $strlen := 10 }}
       {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
+      {{ if (eq $text "Posts") }}{{ $text = "すべての投稿" }}{{ end }}
       {{ if (eq $text "Tags") }}{{ $text = "タグ" }}{{ end }}
       {{ if (eq $text "Categories") }}{{ $text = "カテゴリ" }}{{ end }}
       {{ if gt (strings.RuneCount $text) (add $strlen 1) }}
