@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }} - {{ .Site.Title }}</title>
     {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
-    {{ $img := resources.GetRemote "https://daiji256.github.io/images/ogp-post.png" }}
+    {{ $img := resources.GetRemote "https://github.com/Daiji256/daiji256.github.io/raw/main/static/images/ogp-post.png" }}
     {{ $text := .Title }}
     {{ if or .Params.tags .Params.categories }}
       {{ $strlen := 22 }}
@@ -67,7 +67,7 @@
     {{ else }}
       {{ $strlen := 10 }}
       {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
-      {{ $img = resources.GetRemote "https://daiji256.github.io/images/ogp.png" }}
+      {{ $img = resources.GetRemote "https://github.com/Daiji256/daiji256.github.io/raw/main/static/images/ogp.png" }}
       {{ if (eq $text "Tags") }}{{ $text = "タグ" }}{{ end }}
       {{ if (eq $text "Categories") }}{{ $text = "カテゴリ" }}{{ end }}
       {{ if gt (strings.RuneCount $text) (add $strlen 1) }}
