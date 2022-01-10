@@ -99,7 +99,7 @@ upLaTeX を呼び出し，DVI（device independent file format）ファイル[^d
 
 [^dvi]: レイアウト情報を埋め込んだファイルのことです。
 
-```
+```sh {linenos=false}
 uplatex sample
 ```
 
@@ -117,7 +117,7 @@ DVI ファイルを PDF の文書ファイルに変換するには次のコマ�
 
 [^dvipdfm]: 古い `dvipdfm` という DVI ウェアもあるが今は使えません。
 
-```
+```sh {linenos=false}
 dvipdfmx sample
 ```
 
