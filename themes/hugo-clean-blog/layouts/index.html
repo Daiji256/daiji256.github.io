@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Site.Title }}</title>
     {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
-    {{ $img := resources.GetRemote "https://daiji256.github.io/images/ogp.png" }}
+    {{ $img := resources.Get "images/ogp.png" }}
     {{ $text := .Title }}
     {{ if gt (strings.RuneCount $text) 23 }}
       {{ $text = printf "%s…" (substr $text 0 22) }}
