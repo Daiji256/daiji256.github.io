@@ -11,15 +11,14 @@
       gtag('config', 'UA-204370875-1');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
     {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
     {{ $img := resources.Get "images/ogp/ogp-post.png" }}
-    {{ $text := .Title }}
+    {{ $title := .Title }}
     {{ if or .Params.tags .Params.categories }}
       {{ $strlen := 22 }}
         {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
-      {{ if gt (strings.RuneCount $text) (add $strlen 1) }}
-        {{ $text = printf "%s…" (substr $text 0 $strlen) }}
+      {{ if gt (strings.RuneCount $title) (add $strlen 1) }}
+        {{ $title = printf "%s…" (substr $title 0 $strlen) }}
       {{ end }}
       {{ $date := .Date.Format "2006 年 1 月 2 日" }}
       {{ $tags := "" }}
@@ -35,7 +34,7 @@
           "x" 90 "y" 19
           "font" $font
         ))
-        (images.Text $text (dict
+        (images.Text $title (dict
           "color" "#333"
           "size" 32
           "lineSpacing" 8
@@ -68,11 +67,11 @@
       {{ $img = resources.Get "images/ogp/ogp.png" }}
       {{ $strlen := 10 }}
       {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
-      {{ if (eq $text "Posts") }}{{ $text = "すべての投稿" }}{{ end }}
-      {{ if (eq $text "Tags") }}{{ $text = "タグ" }}{{ end }}
-      {{ if (eq $text "Categories") }}{{ $text = "カテゴリ" }}{{ end }}
-      {{ if gt (strings.RuneCount $text) (add $strlen 1) }}
-        {{ $text = printf "%s…" (substr $text 0 $strlen) }}
+      {{ if (eq $title "Posts") }}{{ $title = "すべての投稿" }}{{ end }}
+      {{ if (eq $title "Tags") }}{{ $title = "タグ" }}{{ end }}
+      {{ if (eq $title "Categories") }}{{ $title = "カテゴリ" }}{{ end }}
+      {{ if gt (strings.RuneCount $title) (add $strlen 1) }}
+        {{ $title = printf "%s…" (substr $title 0 $strlen) }}
       {{ end }}
       {{ $img = $img | images.Filter
         (images.Text .Site.Title (dict
@@ -81,7 +80,7 @@
           "x" 90 "y" 19
           "font" $font
         ))
-        (images.Text $text (dict
+        (images.Text $title (dict
           "color" "#333"
           "size" 64
           "lineSpacing" 8
@@ -90,13 +89,14 @@
         ))
       }}
     {{ end }}
+    <title>{{ $title }} - {{ .Site.Title }}</title>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Daiji256" />
-    <meta name="twitter:title" content="{{ .Title }}" />
+    <meta name="twitter:title" content="{{ $title }} - {{ .Site.Title }}" />
     <meta name="twitter:image" content="{{ $img.RelPermalink | absURL }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:title" content="{{ $title }} - {{ .Site.Title }}" />
     <meta property="og:description" content="{{ .Summary }}" />
     <meta property="og:site_name" content="{{ .Site.Title }}" />
     <meta property="og:image" content="{{ $img.RelPermalink | absURL }}" />
