@@ -39,12 +39,12 @@
       <div class="cards-line">
         <div class="card">
           <div class="main">
-            {{ if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.svg" (lower .Title) )) (fileExists (printf "/static/images/taxonomies/%s.svg" (lower .Title) )) -}}
-              <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ lower .Title }}.svg" width="80" height="80" class="icon" />
-            {{- else if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.png" (lower .Title) )) (fileExists (printf "/static/images/taxonomies/%s.png" (lower .Title) )) -}}
-              <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ lower .Title }}.png" width="80" height="80" class="icon" />
-            {{- else if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.jpg" (lower .Title) )) (fileExists (printf "/static/images/taxonomies/%s.jpg" (lower .Title) )) -}}
-              <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ lower .Title }}.jpg" width="80" height="80" class="icon" />
+            {{ if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.svg" (urlize .Title) )) (fileExists (printf "/static/images/taxonomies/%s.svg" (urlize .Title) )) -}}
+              <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ urlize .Title }}.svg" width="80" height="80" class="icon" />
+            {{- else if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.png" (urlize .Title) )) (fileExists (printf "/static/images/taxonomies/%s.png" (urlize .Title) )) -}}
+              <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ urlize .Title }}.png" width="80" height="80" class="icon" />
+            {{- else if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.jpg" (urlize .Title) )) (fileExists (printf "/static/images/taxonomies/%s.jpg" (urlize .Title) )) -}}
+              <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ urlize .Title }}.jpg" width="80" height="80" class="icon" />
             {{- else -}}
               <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/none.svg" width="80" height="80" class="icon" />
             {{- end }}
