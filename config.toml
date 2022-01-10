@@ -25,3 +25,5 @@ tag = "tags"
 startLevel = 1
 endLevel = 5
 ordered = false
+[markup.highlight]
+linenos=true
