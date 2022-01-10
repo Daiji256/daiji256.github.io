@@ -11,7 +11,6 @@
       gtag('config', 'UA-204370875-1');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Site.Title }}</title>
     {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
     {{ $img := resources.Get "images/ogp/ogp.png" }}
     {{ $text := .Title }}
@@ -33,6 +32,7 @@
         "font" $font
       ))
     }}
+    <title>{{ .Site.Title }}</title>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Daiji256" />
     <meta name="twitter:title" content="{{ .Site.Title }}" />
