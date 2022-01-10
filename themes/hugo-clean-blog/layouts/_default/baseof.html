@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }} - {{ .Site.Title }}</title>
     {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
-    {{ $img := resources.Get "images/ogp-post.png" }}
+    {{ $img := resources.Get "images/ogp/ogp-post.png" }}
     {{ $text := .Title }}
     {{ if or .Params.tags .Params.categories }}
       {{ $strlen := 22 }}
@@ -65,7 +65,7 @@
         ))
       }}
     {{ else }}
-      {{ $img = resources.Get "images/ogp.png" }}
+      {{ $img = resources.Get "images/ogp/ogp.png" }}
       {{ $strlen := 10 }}
       {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
       {{ if (eq $text "Tags") }}{{ $text = "タグ" }}{{ end }}
