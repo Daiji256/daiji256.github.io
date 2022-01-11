@@ -5,17 +5,17 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204370875-1"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-204370875-1')</script>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>ヒードランは，十字のツメを食いこませて TeX や… - Daiji Blog</title>
+<title>ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。 - Daiji Blog</title>
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@Daiji256">
-<meta name=twitter:title content="ヒードランは，十字のツメを食いこませて TeX や… - Daiji Blog">
-<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_12927830353958328318.png">
+<meta name=twitter:title content="ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。 - Daiji Blog">
+<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_16257763231645564940.png">
 <meta property="og:url" content="https://daiji256.github.io/posts/tex-latex/tex-tikz-heatran/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ヒードランは，十字のツメを食いこませて TeX や… - Daiji Blog">
+<meta property="og:title" content="ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。 - Daiji Blog">
 <meta property="og:description" content="※この記事は Qiita に投稿していた内容です。 はじめに 先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15">
 <meta property="og:site_name" content="Daiji Blog">
-<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_12927830353958328318.png">
+<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_16257763231645564940.png">
 <link rel="shortcut icon" type=image/x-icon href=https://daiji256.github.io/images/favicon.ico>
 <link rel=apple-touch-icon type=image/png href=https://daiji256.github.io/images/apple-touch-icon.png>
 <link rel=preconnect href=https://fonts.googleapis.com>
@@ -107,16 +107,49 @@
 </ul>
 <h1 id=tex-を這い回る>TeX を這い回る</h1>
 <p>まずは TeX を這い回ってもらいます。ただヒードランの画像を <code>\includegraphics</code> によって貼り付けるだけです<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\includegraphics</span><span class=na>[scale=4]</span><span class=nb>{</span>Heatran.png<span class=nb>}</span>
-</code></pre></div><figure class=center><img src=./images/fig1.svg width=320 height=453>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\includegraphics</span><span class=na>[scale=4]</span><span class=nb>{</span>Heatran.png<span class=nb>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure class=center><img src=./images/fig1.svg width=320 height=453>
 </figure>
 <h1 id=tikz-を這い回る>TikZ を這い回る</h1>
 <p>TeX を這い回るだけでは面白くありません。なので TikZ でドット絵を描いて這い回ってもらいます。ドット絵は大量の四角で描きます。枠無しで色を塗ると環境によっては隙間が見えてしまいます。なので，太さ <code>thin</code> の枠を設定しています。<span class=inline><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="1.773ex" height="2.009ex" style="vertical-align:-.171ex" viewBox="0 -791.3 763.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">Y</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMATHI-59" d="M66 637q-12 0-17 0t-10 1-7 3-2 6 3 17 9 18q2 1 14 1 48-3 109-3 123 0 141 3h10q6-6 6-9t-2-18q-4-13-10-19H298q-56 0-56-13 0-5 50-147t51-144l3 3q4 4 12 13t21 24 32 37 43 51q92 107 107 126t16 31q0 16-32 19-17 0-17 10 0 2 2 14 3 15 5 18t14 4q2 0 29-1t79-2q27 0 56 1t33 1q17 0 17-9 0-4-3-16t-5-14q-2-6-21-6-72-5-117-50-9-9-140-163L348 273 322 169Q295 62 295 57q0-11 68-11 16 0 21-1t6-10q0-2-2-12-4-17-6-19T366 1q-5 0-42 0T232 2q-62 0-94 0T102 1Q84 1 84 9q0 5 3 15 1 3 2 6t1 5 1 4 2 3 3 2 5 1 6 0 9 1 13 0q39 1 51 4t18 13q3 5 29 108l25 103L129 623q-1 1-2 2t-2 2-3 2-4 2-5 2-8 1-9 1-13 1-17 1z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMATHI-59" x="0" y="0"/></g><text x="0" y="0" class="eq-text">Y</text></svg></span> 軸は下が正になっているので，マイナスにしています。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\begin</span><span class=nb>{</span>tikzpicture<span class=nb>}</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\begin</span><span class=nb>{</span>tikzpicture<span class=nb>}</span>
 	<span class=k>\draw</span> [thin,fill,color=<span class=nb>{</span>rgb,255:red,R;green,G;blue,B<span class=nb>}</span>] (X,-Y) rectangle (X+1,-Y-1);
 <span class=k>\end</span><span class=nb>{</span>tikzpicture<span class=nb>}</span>
-</code></pre></div><p>手作業で全ドットを描いたら大変なので，Python+OpenCV にやってもらいましょう。背景のドットは無視します。後は全画素に応じてカラーコードの設定と座標の設定をしています。当たり前ですけど，見た目は変わりません。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=n>img</span> <span class=o>=</span> <span class=n>cv2</span><span class=o>.</span><span class=n>imread</span><span class=p>(</span><span class=n>sys</span><span class=o>.</span><span class=n>argv</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=n>cv2</span><span class=o>.</span><span class=n>IMREAD_UNCHANGED</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>手作業で全ドットを描いたら大変なので，Python+OpenCV にやってもらいましょう。背景のドットは無視します。後は全画素に応じてカラーコードの設定と座標の設定をしています。当たり前ですけど，見た目は変わりません。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=n>img</span> <span class=o>=</span> <span class=n>cv2</span><span class=o>.</span><span class=n>imread</span><span class=p>(</span><span class=n>sys</span><span class=o>.</span><span class=n>argv</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=n>cv2</span><span class=o>.</span><span class=n>IMREAD_UNCHANGED</span><span class=p>)</span>
 
 <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\\</span><span class=s2>begin</span><span class=si>{tikzpicture}</span><span class=s2>&#34;</span><span class=p>)</span>
 <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>img</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>1</span><span class=p>]):</span>
@@ -129,7 +162,9 @@
             <span class=p>)</span>
         <span class=p>)</span>
 <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\\</span><span class=s2>end</span><span class=si>{tikzpicture}</span><span class=s2>&#34;</span><span class=p>)</span>
-</code></pre></div><figure class=center><img src=./images/fig2.svg width=320 height=453>
+</code></pre></td></tr></table>
+</div>
+</div><figure class=center><img src=./images/fig2.svg width=320 height=453>
 </figure>
 <h1 id=まとめ>まとめ</h1>
 <p>ヒードランが壁と天井以外を這い回りました。リメイク作品でもゴキゴキしてるか楽しみです。</p>

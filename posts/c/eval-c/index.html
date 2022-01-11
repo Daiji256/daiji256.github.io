@@ -9,13 +9,13 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@Daiji256">
 <meta name=twitter:title content="C 言語で eval 風関数 - Daiji Blog">
-<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_16308102405575407713.png">
+<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_8776457779613865036.png">
 <meta property="og:url" content="https://daiji256.github.io/posts/c/eval-c/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C 言語で eval 風関数 - Daiji Blog">
 <meta property="og:description" content="はじめに eval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般的です。ここでは C 言語のための文">
 <meta property="og:site_name" content="Daiji Blog">
-<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_16308102405575407713.png">
+<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_8776457779613865036.png">
 <link rel="shortcut icon" type=image/x-icon href=https://daiji256.github.io/images/favicon.ico>
 <link rel=apple-touch-icon type=image/png href=https://daiji256.github.io/images/apple-touch-icon.png>
 <link rel=preconnect href=https://fonts.googleapis.com>
@@ -106,7 +106,42 @@
 <li>加法，減法：<code>+</code>，<code>-</code></li>
 </ol>
 <p>関数の計算を行う <code>calcfunc</code> ，四則演算を行う <code>calc</code> を作成します。括弧の処理には <code>eval</code> を使用します。プログラムの疑似コード（？）と共に説明します。実際のソースコードは長いので <a href=https://github.com/Daiji256/eval>GitHub</a> を参照してください。実装は基本的に単純で，上記の箇条書きの順番通りに計算するだけです。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kt>double</span> <span class=nf>eval</span><span class=o>(</span><span class=kt>char</span> <span class=o>*</span><span class=n>str</span><span class=o>)</span> <span class=o>{</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kt>double</span> <span class=nf>eval</span><span class=o>(</span><span class=kt>char</span> <span class=o>*</span><span class=n>str</span><span class=o>)</span> <span class=o>{</span>
 	<span class=k>for</span> <span class=o>(</span> <span class=n>文字列先頭からループ</span> <span class=o>)</span> <span class=o>{</span>
 		<span class=k>if</span> <span class=o>(</span> <span class=n>関数があった時</span> <span class=o>)</span> <span class=o>{</span>
 			<span class=n>str2</span> <span class=o>=</span> <span class=n>関数とその引数</span><span class=o>;</span>
@@ -137,7 +172,9 @@
 	<span class=o>}</span>
 	<span class=k>return</span> <span class=n>atof</span><span class=o>(</span><span class=n>str</span><span class=o>);</span>
 <span class=o>}</span>
-</code></pre></div><h1 id=処理の流れの例>処理の流れの例</h1>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id=処理の流れの例>処理の流れの例</h1>
 <p>引数に <code>3*sqrt(4)+(5-2)</code> とした時を例にして説明します。まず都合が良くするために全体に <code>(</code>，<code>)</code> を付けます。</p>
 <figure class=center><img src=./images/fig1.svg width=320 height=114>
 </figure>

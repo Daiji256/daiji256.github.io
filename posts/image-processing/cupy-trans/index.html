@@ -9,13 +9,13 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@Daiji256">
 <meta name=twitter:title content="CuPy を使った画像の幾何学変換 with OpenCV - Daiji Blog">
-<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_12993568994172649778.png">
+<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_2171754211220140751.png">
 <meta property="og:url" content="https://daiji256.github.io/posts/image-processing/cupy-trans/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CuPy を使った画像の幾何学変換 with OpenCV - Daiji Blog">
 <meta property="og:description" content="はじめに 魚眼カメラで撮影した等距離射影方式の画像を，普通のカメラの中心射影方式のへの変換をするなどの，画像を幾何学的変換することがあります。僕は研究で，中央付近を大きく，外側を小さくする変換を">
 <meta property="og:site_name" content="Daiji Blog">
-<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_12993568994172649778.png">
+<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_2171754211220140751.png">
 <link rel="shortcut icon" type=image/x-icon href=https://daiji256.github.io/images/favicon.ico>
 <link rel=apple-touch-icon type=image/png href=https://daiji256.github.io/images/apple-touch-icon.png>
 <link rel=preconnect href=https://fonts.googleapis.com>
@@ -104,14 +104,42 @@
 <p>作成したコード等は <a href=https://github.com/Daiji256/geometric-transformation/>ここ</a> にあります。</p>
 <h2 id=import><code>import</code></h2>
 <p>今回は画像を扱うライブラリに OpenCV を使います。<code>import</code> するのはこの 2 つだけです。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=kn>import</span> <span class=nn>cv2</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=kn>import</span> <span class=nn>cv2</span>
 <span class=kn>import</span> <span class=nn>cupy</span> <span class=k>as</span> <span class=nn>cp</span>
-</code></pre></div><h2 id=elementwisekernel>ElementwiseKernel</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=elementwisekernel>ElementwiseKernel</h2>
 <p>CuPy で並列化を行うには ElementwiseKernel で簡単に実装できます。詳しくは <a href=https://qiita.com/bow-of-man/items/e4d8b3a2ca14c54511f1/>CuPyのElementwiseKernelで楽にGPUの恩恵を受ける</a> で詳しく説明されています。</p>
 <p>入力を変換前の画像 <code>img1</code> とそのサイズ <code>size1</code> と変換後のサイズ <code>size2</code>，出力を変換後の画像 <code>img2</code> としています。ここでは簡単にするため入出力する画像は正方形を前提にします。</p>
 <p>5 ～ 10 行目では，変換前後の画素の関係を計算しています。計算式については説明を省きます。</p>
 <p>11 ～ 13 行目で変換後の画像に画素情報を格納しています。入力画像は RGB の 3 色あるのでこうなっています。変換後の <code>i</code><sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> には，変換前の <code>i2, j2</code> にある画素を格納することになります。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=n>trans_kernel</span> <span class=o>=</span> <span class=n>cp</span><span class=o>.</span><span class=n>ElementwiseKernel</span><span class=p>(</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=n>trans_kernel</span> <span class=o>=</span> <span class=n>cp</span><span class=o>.</span><span class=n>ElementwiseKernel</span><span class=p>(</span>
     <span class=n>in_params</span><span class=o>=</span><span class=s1>&#39;raw uint8 img1, int16 size1, int16 size2&#39;</span><span class=p>,</span>
     <span class=n>out_params</span><span class=o>=</span><span class=s1>&#39;raw uint8 img2&#39;</span><span class=p>,</span>
     <span class=n>operation</span><span class=o>=</span><span class=s1>&#39;&#39;&#39;
@@ -127,11 +155,25 @@
 </span><span class=s1>    &#39;&#39;&#39;</span><span class=p>,</span>
     <span class=n>name</span><span class=o>=</span><span class=s1>&#39;trans_kernel&#39;</span>
 <span class=p>)</span>
-</code></pre></div><h2 id=入出力>入出力</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=入出力>入出力</h2>
 <p>1，2 行目では <code>imread</code> で読み込んだ画像 <code>img1</code> を CuPy の配列に変換しています。3 行目では変換後の画像を格納するための空の画像 <code>img2_cp</code> を生成しています。</p>
 <p>5 行目では，<code>trans_kernel</code> を呼び出し，GPU を使って並列処理をして変換します。</p>
 <p>7，8 行目で <code>img2_cp</code> を OpenCV で扱える NumPy 形式に変換し，出力します。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=n>img1</span> <span class=o>=</span> <span class=n>cv2</span><span class=o>.</span><span class=n>imread</span><span class=p>(</span><span class=s1>&#39;img1.png&#39;</span><span class=p>)</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=n>img1</span> <span class=o>=</span> <span class=n>cv2</span><span class=o>.</span><span class=n>imread</span><span class=p>(</span><span class=s1>&#39;img1.png&#39;</span><span class=p>)</span>
 <span class=n>img1_cp</span> <span class=o>=</span> <span class=n>cp</span><span class=o>.</span><span class=n>asarray</span><span class=p>(</span><span class=n>img1</span><span class=p>)</span><span class=o>.</span><span class=n>astype</span><span class=p>(</span><span class=n>cp</span><span class=o>.</span><span class=n>uint8</span><span class=p>)</span>
 <span class=n>img2_cp</span> <span class=o>=</span> <span class=n>cp</span><span class=o>.</span><span class=n>zeros</span><span class=p>((</span><span class=mi>1920</span><span class=p>,</span> <span class=mi>1920</span><span class=p>,</span> <span class=mi>3</span><span class=p>))</span><span class=o>.</span><span class=n>astype</span><span class=p>(</span><span class=n>cp</span><span class=o>.</span><span class=n>uint8</span><span class=p>)</span>
 
@@ -139,7 +181,9 @@
 
 <span class=n>img2</span> <span class=o>=</span> <span class=n>cp</span><span class=o>.</span><span class=n>asnumpy</span><span class=p>(</span><span class=n>img2_cp</span><span class=p>)</span>
 <span class=n>cv2</span><span class=o>.</span><span class=n>imwrite</span><span class=p>(</span><span class=s1>&#39;img2.png&#39;</span><span class=p>,</span> <span class=n>img2</span><span class=p>)</span>
-</code></pre></div><h2 id=結果>結果</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=結果>結果</h2>
 <p>結果は次のようになりました。</p>
 <table>
 <thead>

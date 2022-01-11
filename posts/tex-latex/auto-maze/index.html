@@ -9,13 +9,13 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@Daiji256">
 <meta name=twitter:title content="TeX で迷路を自動生成（expl3） - Daiji Blog">
-<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_2611016814301313437.png">
+<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_2872337967869379901.png">
 <meta property="og:url" content="https://daiji256.github.io/posts/tex-latex/auto-maze/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TeX で迷路を自動生成（expl3） - Daiji Blog">
 <meta property="og:description" content="この記事は，TeX & LaTeX Advent Calendar 2021 の 14 日目の記事です。13 日目は h-kitagawa さん でした。15 日目は mod_poppo さん です。 はじめに そろそろクリスマスです。つまりクリスマスプレゼントの準備が必要になります。というわけで本記">
 <meta property="og:site_name" content="Daiji Blog">
-<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_2611016814301313437.png">
+<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hu7fb3bd8ab24a616899bc20226c4e44d8_10788_filter_2872337967869379901.png">
 <link rel="shortcut icon" type=image/x-icon href=https://daiji256.github.io/images/favicon.ico>
 <link rel=apple-touch-icon type=image/png href=https://daiji256.github.io/images/apple-touch-icon.png>
 <link rel=preconnect href=https://fonts.googleapis.com>
@@ -106,7 +106,19 @@
 </a></p>
 <h1 id=実装>実装</h1>
 <p>このような構成でスタイルファイルを作ります。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\RequirePackage</span><span class=nb>{</span>expl3, xparse, tikz<span class=nb>}</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\RequirePackage</span><span class=nb>{</span>expl3, xparse, tikz<span class=nb>}</span>
 <span class=k>\ProvidesExplPackage</span> <span class=nb>{</span>auto-maze<span class=nb>}</span> <span class=nb>{</span>...<span class=nb>}</span> <span class=nb>{</span>...<span class=nb>}</span> <span class=nb>{</span>...<span class=nb>}</span>
 <span class=c>% 変数宣言
 </span><span class=c></span><span class=k>\NewDocumentCommand</span> <span class=k>\maze</span> <span class=nb>{</span> o m m <span class=nb>}</span>
@@ -114,13 +126,37 @@
     <span class=c>% 迷路データの生成
 </span><span class=c></span>    <span class=c>% 迷路の出力
 </span><span class=c></span>  <span class=nb>}</span>
-</code></pre></div><h2 id=定数--変数宣言>定数 / 変数宣言</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=定数--変数宣言>定数 / 変数宣言</h2>
 <p>迷路データの生成に使う定数と変数について簡単に説明します。</p>
 <p>迷路の壁（<code>\c__atmz_wall_int</code>）と道（<code>\c__atmz_road_int</code>）をそれぞれ定数で宣言します。</p>
 <p><code>\l__atmz_arg_width_int</code> と <code>\l__atmz_arg_height_int</code> はマクロの引数（<code>#2</code>，<code>#3</code>）に対応するもので，迷路の壁の厚さを 0，道の幅を 1 とした迷路のサイズの値です。</p>
 <p><code>\l__atmz_maze_prop</code> に迷路の情報を格納します。<code>key</code> には迷路のセル番号とし値を <code>\c__atmz_wall_int</code> か <code>\c__atmz_road_int</code> とします。セル番号とは，左から <code>x</code> 列目，迷路の上から <code>y</code> 行目のセルの場合に <code>y * \l__atmz_maze_width_int + x</code> となる値のことです。<code>\l__atmz_maze_width_int</code> は <code>\l__atmz_arg_width_int * 2 + 1 + 2</code>（<code>height</code> も同様）となる値です。<a href=#%E8%BF%B7%E8%B7%AF%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%94%9F%E6%88%90>迷路データの生成</a> の画像を見るとわかりやすいです。</p>
 <p>他の変数については後で説明します。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>const:Nn <span class=k>\c</span><span class=nb>__</span>atmz<span class=nb>_</span>wall<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\c</span><span class=nb>_</span>one<span class=nb>_</span>int <span class=nb>}</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>const:Nn <span class=k>\c</span><span class=nb>__</span>atmz<span class=nb>_</span>wall<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\c</span><span class=nb>_</span>one<span class=nb>_</span>int <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>const:Nn <span class=k>\c</span><span class=nb>__</span>atmz<span class=nb>_</span>road<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\c</span><span class=nb>_</span>zero<span class=nb>_</span>int <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>new:N  <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>width<span class=nb>_</span>int
 <span class=k>\int</span><span class=nb>_</span>new:N  <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>height<span class=nb>_</span>int
@@ -138,16 +174,59 @@
 <span class=k>\bool</span><span class=nb>_</span>new:N <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>i<span class=nb>_</span>bool
 <span class=k>\int</span><span class=nb>_</span>new:N  <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>now<span class=nb>_</span>int
 <span class=k>\int</span><span class=nb>_</span>new:N  <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>count<span class=nb>_</span>tblr<span class=nb>_</span>int
-</code></pre></div><h2 id=seed-値の指定>Seed 値の指定</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=seed-値の指定>Seed 値の指定</h2>
 <p>オプションで Seed 値が指定されたら <code>\sys_gset_rand_seed:n</code> で Seed 値を設定します。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\IfNoValueF</span> <span class=nb>{</span> #1 <span class=nb>}</span> <span class=nb>{</span> <span class=k>\sys</span><span class=nb>_</span>gset<span class=nb>_</span>rand<span class=nb>_</span>seed:n <span class=nb>{</span> #1 <span class=nb>}</span> <span class=nb>}</span>
-</code></pre></div><h2 id=迷路データの生成>迷路データの生成</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\IfNoValueF</span> <span class=nb>{</span> #1 <span class=nb>}</span> <span class=nb>{</span> <span class=k>\sys</span><span class=nb>_</span>gset<span class=nb>_</span>rand<span class=nb>_</span>seed:n <span class=nb>{</span> #1 <span class=nb>}</span> <span class=nb>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=迷路データの生成>迷路データの生成</h2>
 <p>ここでは <code>\l__atmz_maze_prop</code> を下の画像のようにすることを目的とします。穴掘り法による迷路生成がわかっていることを前提に簡単に説明します。</p>
 <figure class=center><img src=./images/maze-4-3.svg width=440 height=360>
 </figure>
 <h3 id=初期化>初期化</h3>
 <p>まずは外周を道，その内部を壁とします。最初のループでは全てを壁にしています。次のループでは左側と右側を，最後のループでは上側と下側を道にしています。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>i<span class=nb>_</span>int <span class=nb>{</span> 1 <span class=nb>}</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>i<span class=nb>_</span>int <span class=nb>{</span> 1 <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>do<span class=nb>_</span>while:nn <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>i<span class=nb>_</span>int &lt; <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>height<span class=nb>_</span>int - 1 <span class=nb>}</span>
   <span class=nb>{</span>
     <span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>j<span class=nb>_</span>int <span class=nb>{</span> 1 <span class=nb>}</span>
@@ -177,30 +256,85 @@
     <span class=k>\prop</span><span class=nb>_</span>put:NVV <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>prop <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>key<span class=nb>_</span>int <span class=k>\c</span><span class=nb>__</span>atmz<span class=nb>_</span>road<span class=nb>_</span>int
     <span class=k>\int</span><span class=nb>_</span>incr:N <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>j<span class=nb>_</span>int
   <span class=nb>}</span>
-</code></pre></div><h3 id=穴掘り地点を決める>穴掘り地点を決める</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=穴掘り地点を決める>穴掘り地点を決める</h3>
 <p><code>\l__atmz_now_int</code> が現在の穴掘り地点です。この値は下の画像のような値です。<code>\l__atmz_maze_prop</code> とは違う管理方法になっています。<code>\fp_eval:n { randint(...) }</code> で乱数で <code>\l__atmz_now_int</code> を決めます。そして <code>\l__atmz_key_int</code> を求め，<code>\l__atmz_maze_prop</code> の <code>\l__atmz_key_int</code> を道（<code>\c__atmz_road_int</code>）とします。</p>
 <figure class=center><img src=./images/arg-4-3.svg width=328 height=248>
 </figure>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>now<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\fp</span><span class=nb>_</span>eval:n <span class=nb>{</span> randint( 0, <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>width<span class=nb>_</span>int * <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>height<span class=nb>_</span>int - 1 ) <span class=nb>}</span> <span class=nb>}</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>now<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\fp</span><span class=nb>_</span>eval:n <span class=nb>{</span> randint( 0, <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>width<span class=nb>_</span>int * <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>height<span class=nb>_</span>int - 1 ) <span class=nb>}</span> <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>x<span class=nb>_</span>int <span class=nb>{</span> ( <span class=k>\int</span><span class=nb>_</span>mod:nn <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>now<span class=nb>_</span>int <span class=nb>}</span> <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>width<span class=nb>_</span>int <span class=nb>}</span> ) * 2 + 2 <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>y<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\fp</span><span class=nb>_</span>eval:n <span class=nb>{</span> floor( <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>now<span class=nb>_</span>int / <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>width<span class=nb>_</span>int ) <span class=nb>}</span> * 2 + 2 <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>key<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>y<span class=nb>_</span>int * <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>width<span class=nb>_</span>int + <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>x<span class=nb>_</span>int <span class=nb>}</span>
 <span class=k>\prop</span><span class=nb>_</span>put:NVV <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>prop <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>key<span class=nb>_</span>int <span class=k>\c</span><span class=nb>__</span>atmz<span class=nb>_</span>road<span class=nb>_</span>int
-</code></pre></div><h3 id=掘り進める>掘り進める</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=掘り進める>掘り進める</h3>
 <p><a href=#%E7%A9%B4%E6%8E%98%E3%82%8A%E5%9C%B0%E7%82%B9%E3%82%92%E6%B1%BA%E3%82%81%E3%82%8B>穴掘り地点を決める</a> で決めた <code>\l__atmz_now_int</code> から穴を掘り進めます。もし掘り進めることができない場合は，新たな地点に飛びそこから掘り進めます。迷路が完成したら <code>\l__atmz_loop_i_bool</code> を <code>false</code> にしてループを終了します。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\bool</span><span class=nb>_</span>set<span class=nb>_</span>true:N <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>i<span class=nb>_</span>bool
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\bool</span><span class=nb>_</span>set<span class=nb>_</span>true:N <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>i<span class=nb>_</span>bool
 <span class=k>\bool</span><span class=nb>_</span>do<span class=nb>_</span>while:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>i<span class=nb>_</span>bool
   <span class=nb>{</span>
     <span class=c>% 2 つのセルを掘る
 </span><span class=c></span>    <span class=c>% 掘り進めることができない場合，新しい地点を決める
 </span><span class=c></span>  <span class=nb>}</span>
-</code></pre></div><h4 id=2-つのセルを掘る>2 つのセルを掘る</h4>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=2-つのセルを掘る>2 つのセルを掘る</h4>
 <p>まず <code>\l__atmz_now_int</code> から <code>\l__atmz_key_int</code> を求めます。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>x<span class=nb>_</span>int <span class=nb>{</span> ( <span class=k>\int</span><span class=nb>_</span>mod:nn <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>now<span class=nb>_</span>int <span class=nb>}</span> <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>width<span class=nb>_</span>int <span class=nb>}</span> ) * 2 + 2 <span class=nb>}</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>x<span class=nb>_</span>int <span class=nb>{</span> ( <span class=k>\int</span><span class=nb>_</span>mod:nn <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>now<span class=nb>_</span>int <span class=nb>}</span> <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>width<span class=nb>_</span>int <span class=nb>}</span> ) * 2 + 2 <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>y<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\fp</span><span class=nb>_</span>eval:n <span class=nb>{</span> floor( <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>now<span class=nb>_</span>int / <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>arg<span class=nb>_</span>width<span class=nb>_</span>int ) <span class=nb>}</span> * 2 + 2 <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>key<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>y<span class=nb>_</span>int * <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>width<span class=nb>_</span>int + <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>x<span class=nb>_</span>int <span class=nb>}</span>
-</code></pre></div><p>現在のセルから移動できる方向の数を数えます。2 マス先が壁である場合掘れるので，4 方向で掘れる場合は <code>\l__atmz_count_tblr_int</code> をインクリメントしてます。綺麗なコードではないですが，単純ですね。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>count<span class=nb>_</span>tblr<span class=nb>_</span>int <span class=nb>{</span> 0 <span class=nb>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>現在のセルから移動できる方向の数を数えます。2 マス先が壁である場合掘れるので，4 方向で掘れる場合は <code>\l__atmz_count_tblr_int</code> をインクリメントしてます。綺麗なコードではないですが，単純ですね。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>count<span class=nb>_</span>tblr<span class=nb>_</span>int <span class=nb>{</span> 0 <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>tmp<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>key<span class=nb>_</span>int - <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>width<span class=nb>_</span>int * 2 <span class=nb>}</span>
 <span class=k>\prop</span><span class=nb>_</span>get:NVN <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>prop <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>tmp<span class=nb>_</span>int <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>value<span class=nb>_</span>tl
 <span class=k>\int</span><span class=nb>_</span>compare:nNnT <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>value<span class=nb>_</span>tl <span class=nb>}</span> = <span class=nb>{</span> <span class=k>\c</span><span class=nb>__</span>atmz<span class=nb>_</span>wall<span class=nb>_</span>int <span class=nb>}</span>
@@ -217,10 +351,48 @@
 <span class=k>\prop</span><span class=nb>_</span>get:NVN <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>prop <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>tmp<span class=nb>_</span>int <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>value<span class=nb>_</span>tl
 <span class=k>\int</span><span class=nb>_</span>compare:nNnT <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>value<span class=nb>_</span>tl <span class=nb>}</span> = <span class=nb>{</span> <span class=k>\c</span><span class=nb>__</span>atmz<span class=nb>_</span>wall<span class=nb>_</span>int <span class=nb>}</span>
   <span class=nb>{</span> <span class=k>\int</span><span class=nb>_</span>incr:N <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>count<span class=nb>_</span>tblr<span class=nb>_</span>int <span class=nb>}</span>
-</code></pre></div><p><code>\l__atmz_count_tblr_int</code> が 0 の場合には掘り進めることができません。<code>\l__atmz_count_tblr_int</code> が 0 でない場合を考えます。1 ～ <code>\l__atmz_count_tblr_int</code> の乱数（<code>\l__atmz_rand_int</code>）を取得し，それに対応した方向に掘り進めればいいです。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>\l__atmz_count_tblr_int</code> が 0 の場合には掘り進めることができません。<code>\l__atmz_count_tblr_int</code> が 0 でない場合を考えます。1 ～ <code>\l__atmz_count_tblr_int</code> の乱数（<code>\l__atmz_rand_int</code>）を取得し，それに対応した方向に掘り進めればいいです。</p>
 <p><code>\l__atmz_rand_int</code> に対応した向きの 2 マス先の状態を取得し，壁でないなら（道ならば）<code>\l__atmz_rand_int</code> をインクリメントします。この処理にすることで，<code>\l__atmz_rand_int</code> が移動できない場合は次の向きに任せることができるからです。また，<code>\l__atmz_rand_int</code> の最大値は <code>\l__atmz_count_tblr_int</code> となっているため，4 までにからなず掘り進めることができます。</p>
 <p>掘り進めることができる場合には，1 マス先と 2 マス先のセルを道にします。そして <code>\l__atmz_now_int</code> を更新します。また，<code>\l__atmz_rand_box_seq</code> に <code>\fp_eval:n { randint( 0, 262143 ) } * 4096 + \l__atmz_now_int</code> となる値を追加します。これは掘り進めることができなくなった場合のためのメモになります。具体的には <a href=#%E6%96%B0%E3%81%97%E3%81%84%E5%9C%B0%E7%82%B9%E3%82%92%E6%B1%BA%E3%82%81%E3%82%8B>新しい地点を決める</a> で説明します。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>compare:nNnF <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>count<span class=nb>_</span>tblr<span class=nb>_</span>int <span class=nb>}</span> = <span class=nb>{</span> 0 <span class=nb>}</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>compare:nNnF <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>count<span class=nb>_</span>tblr<span class=nb>_</span>int <span class=nb>}</span> = <span class=nb>{</span> 0 <span class=nb>}</span>
   <span class=nb>{</span>
     <span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>rand<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\fp</span><span class=nb>_</span>eval:n <span class=nb>{</span> randint( 1, <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>count<span class=nb>_</span>tblr<span class=nb>_</span>int ) <span class=nb>}</span> <span class=nb>}</span>
     <span class=k>\int</span><span class=nb>_</span>compare:nNnT <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>rand<span class=nb>_</span>int <span class=nb>}</span> = <span class=nb>{</span> 1 <span class=nb>}</span>
@@ -252,10 +424,33 @@
         <span class=c>% ...
 </span><span class=c></span>      <span class=nb>}</span>
   <span class=nb>}</span>
-</code></pre></div><h4 id=新しい地点を決める>新しい地点を決める</h4>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=新しい地点を決める>新しい地点を決める</h4>
 <p>掘り進めることができない（<code>\l__atmz_count_tblr_int</code> が 0 の）場合に新しく掘り進める地点を決めます。新しい地点の条件は，これまで掘り進めた道上であることです。これまで作成した道を <code>\l__atmz_rand_box_seq</code> でメモしているため，これを使います。</p>
 <p><code>\l__atmz_rand_box_seq</code> が空の場合掘り進めることができないので，ループを終了します。<code>\l__atmz_rand_box_seq</code> が空で無い場合を考えます。<code>\l__atmz_rand_box_seq</code> の値は <code>乱数 * 4096 + 地点</code> となっています。この <code>乱数 * 4096</code> は新しい地点の優先順位を表しています。<code>seq</code> をソートする <code>\seq_sort:Nn</code> が l3sort によって提供されているので，ソートして先頭から pop します。pop した値の 4096 で割ったあまりが新しい地点なので，<code>\l__atmz_now_int</code> を更新します。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>compare:nNnT <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>count<span class=nb>_</span>tblr<span class=nb>_</span>int <span class=nb>}</span> = <span class=nb>{</span> 0 <span class=nb>}</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\int</span><span class=nb>_</span>compare:nNnT <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>count<span class=nb>_</span>tblr<span class=nb>_</span>int <span class=nb>}</span> = <span class=nb>{</span> 0 <span class=nb>}</span>
   <span class=nb>{</span>
     <span class=k>\seq</span><span class=nb>_</span>if<span class=nb>_</span>empty:NTF <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>rand<span class=nb>_</span>box<span class=nb>_</span>seq
       <span class=nb>{</span>
@@ -272,11 +467,72 @@
         <span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>now<span class=nb>_</span>int <span class=nb>{</span> <span class=k>\int</span><span class=nb>_</span>mod:nn <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>rand<span class=nb>_</span>box<span class=nb>_</span>left<span class=nb>_</span>tl <span class=nb>}</span> <span class=nb>{</span> 4096 <span class=nb>}</span> <span class=nb>}</span>
       <span class=nb>}</span>
   <span class=nb>}</span>
-</code></pre></div><h2 id=出力>出力</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=出力>出力</h2>
 <p>冒頭でも説明したとおり迷路は TikZ で描きます。<code>\begin{tikzpicture}...\end{tikzpicture}</code> のようなトークンを出力するようにします。</p>
 <p><code>\l__atmz_maze_tl</code> にトークンを加えていき，最後に <code>\tl_use:N \l__atmz_maze_tl</code> します。</p>
 <p>まずループでは，迷路の内側を描きます。偶数行目と奇数行目で縦線か横線かを描くかが異なるので，分岐して処理してます。最後に，外枠にスタートとゴールが 1 マス開くように線を引きます。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\tl</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>tl <span class=nb>{</span> <span class=nb>}</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\tl</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>tl <span class=nb>{</span> <span class=nb>}</span>
 <span class=k>\tl</span><span class=nb>_</span>put<span class=nb>_</span>right:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>tl <span class=nb>{</span> <span class=k>\begin</span><span class=nb>{</span>tikzpicture<span class=nb>}</span>[x=8pt, y=8pt, line~width=1pt, line~cap=round] <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>set:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>i<span class=nb>_</span>int <span class=nb>{</span> 2 <span class=nb>}</span>
 <span class=k>\int</span><span class=nb>_</span>do<span class=nb>_</span>while:nn <span class=nb>{</span> <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>loop<span class=nb>_</span>i<span class=nb>_</span>int &lt; <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>height<span class=nb>_</span>int - 2 <span class=nb>}</span>
@@ -331,9 +587,18 @@
   <span class=nb>}</span>
 <span class=k>\tl</span><span class=nb>_</span>put<span class=nb>_</span>right:Nn <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>tl <span class=nb>{</span> <span class=k>\end</span><span class=nb>{</span>tikzpicture<span class=nb>}</span> <span class=nb>}</span>
 <span class=k>\tl</span><span class=nb>_</span>use:N <span class=k>\l</span><span class=nb>__</span>atmz<span class=nb>_</span>maze<span class=nb>_</span>tl
-</code></pre></div><p>次のように実行すると，下の迷路が生成されます。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\maze</span><span class=na>[0]</span><span class=nb>{</span>4<span class=nb>}{</span>3<span class=nb>}</span>
-</code></pre></div><p><a href=https://github.com/Daiji256/auto-maze/blob/main/auto-maze-sample-4-3.pdf><figure class=center><img src=./images/auto-maze-sample-4-3.svg width=328 height=260>
+</code></pre></td></tr></table>
+</div>
+</div><p>次のように実行すると，下の迷路が生成されます。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\maze</span><span class=na>[0]</span><span class=nb>{</span>4<span class=nb>}{</span>3<span class=nb>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href=https://github.com/Daiji256/auto-maze/blob/main/auto-maze-sample-4-3.pdf><figure class=center><img src=./images/auto-maze-sample-4-3.svg width=328 height=260>
 </figure>
 </a></p>
 <h1 id=さいごに>さいごに</h1>
