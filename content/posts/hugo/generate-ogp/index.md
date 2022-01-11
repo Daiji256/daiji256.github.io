@@ -151,6 +151,12 @@ strlen: 34
 {{ end }}
 ```
 
+# 追記
+
+こんな風にちゃんとできてました！
+
+{{< tweet 1480843232045334533 >}}
+
 # 文献
 
 1. [Hugo releases/v0.90.0 (GitHub)](https://github.com/gohugoio/hugo/releases/tag/v0.90.0/)
