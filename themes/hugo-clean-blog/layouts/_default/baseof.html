@@ -16,7 +16,7 @@
     {{ $title := .Title }}
     {{ if or .Params.tags .Params.categories }}
       {{ $strlen := 22 }}
-        {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
+      {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
       {{ if gt (strings.RuneCount $title) (add $strlen 1) }}
         {{ $title = printf "%s…" (substr $title 0 $strlen) }}
       {{ end }}
