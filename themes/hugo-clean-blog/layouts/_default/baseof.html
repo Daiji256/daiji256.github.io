@@ -21,12 +21,12 @@
         {{ $title = printf "%s…" (substr $title 0 $strlen) }}
       {{ end }}
       {{ $date := .Date.Format "2006 年 1 月 2 日" }}
-      {{ $tags := "" }}
       {{ $categories := "" }}
-      {{ range .Params.tags }}{{ $tags = printf "%s, %s" $tags . }}{{ end }}
       {{ range .Params.categories }}{{ $categories = printf "%s, %s" $categories . }}{{ end }}
-      {{ $tags = substr $tags 2 }}
       {{ $categories = substr $categories 2 }}
+      {{ $tags := "" }}
+      {{ range .Params.tags }}{{ $tags = printf "%s, %s" $tags . }}{{ end }}
+      {{ $tags = substr $tags 2 }}
       {{ $img = $img | images.Filter
         (images.Text .Site.Title (dict
           "color" "#333"
@@ -37,28 +37,24 @@
         (images.Text $title (dict
           "color" "#333"
           "size" 32
-          "lineSpacing" 8
           "x" 25 "y" 135
           "font" $font
         ))
         (images.Text $date (dict
           "color" "#666"
           "size" 24
-          "lineSpacing" 8
           "x" 80 "y" 230
           "font" $font
         ))
         (images.Text $categories (dict
           "color" "#666"
           "size" 24
-          "lineSpacing" 8
           "x" 80 "y" 280
           "font" $font
         ))
         (images.Text $tags (dict
           "color" "#666"
           "size" 24
-          "lineSpacing" 8
           "x" 80 "y" 330
           "font" $font
         ))
