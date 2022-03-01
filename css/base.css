@@ -326,7 +326,6 @@ footer > .container a {
 }
 .pagination li a {
   display: block;
-  margin: 1px;
   color: #333;
   text-decoration: none;
   background-color: #fff;
