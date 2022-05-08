@@ -1,127 +1,143 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: http://ogp.me/ns#">
-  <head>
-    <meta charset="utf-8" />
-    {{ if eq $.Site.IsServer false }}
-      <meta name="google-site-verification" content="DvAmtcJ-4mAzUR3EOVgXJIuW56ccEiKjtuw3JVBdw84" />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204370875-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-204370875-1');
-      </script>
-    {{ end }}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
-    {{ $img := resources.Get "images/ogp/ogp-post.png" }}
-    {{ $title := .Title }}
-    {{ if or .Params.tags .Params.categories }}
-      {{ $strlen := 22 }}
-      {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
-      {{ if gt (strings.RuneCount $title) (add $strlen 1) }}
-        {{ $title = printf "%s…" (substr $title 0 $strlen) }}
-      {{ end }}
-      {{ $date := .Date.Format "2006 年 1 月 2 日" }}
-      {{ $categories := "" }}
-      {{ range .Params.categories }}{{ $categories = printf "%s, %s" $categories . }}{{ end }}
-      {{ $categories = substr $categories 2 }}
-      {{ $tags := "" }}
-      {{ range .Params.tags }}{{ $tags = printf "%s, %s" $tags . }}{{ end }}
-      {{ $tags = substr $tags 2 }}
-      {{ $img = $img | images.Filter
-        (images.Text .Site.Title (dict
-          "color" "#333"
-          "size" 32
-          "x" 90 "y" 19
-          "font" $font
-        ))
-        (images.Text $title (dict
-          "color" "#333"
-          "size" 32
-          "x" 25 "y" 135
-          "font" $font
-        ))
-        (images.Text $date (dict
-          "color" "#666"
-          "size" 24
-          "x" 80 "y" 230
-          "font" $font
-        ))
-        (images.Text $categories (dict
-          "color" "#666"
-          "size" 24
-          "x" 80 "y" 280
-          "font" $font
-        ))
-        (images.Text $tags (dict
-          "color" "#666"
-          "size" 24
-          "x" 80 "y" 330
-          "font" $font
-        ))
-      }}
-    {{ else }}
-      {{ $img = resources.Get "images/ogp/ogp.png" }}
-      {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
-      {{ if (eq $title "Posts") }}{{ $title = "すべての投稿" }}{{ end }}
-      {{ if (eq $title "Tags") }}{{ $title = "タグ" }}{{ end }}
-      {{ if (eq $title "Categories") }}{{ $title = "カテゴリ" }}{{ end }}
-      {{ $img = $img | images.Filter
-        (images.Text .Site.Title (dict
-          "color" "#333"
-          "size" 32
-          "x" 90 "y" 19
-          "font" $font
-        ))
-        (images.Text $title (dict
-          "color" "#333"
-          "size" 64
-          "lineSpacing" 8
-          "x" 50 "y" 200
-          "font" $font
-        ))
-      }}
-    {{ end }}
-    {{ $title = .Title }}
-    {{ if (eq $title "Posts") }}{{ $title = "すべての投稿" }}{{ end }}
-    {{ if (eq $title "Tags") }}{{ $title = "タグ" }}{{ end }}
-    {{ if (eq $title "Categories") }}{{ $title = "カテゴリ" }}{{ end }}
-    <title>{{ $title }} - {{ .Site.Title }}</title>
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Daiji256" />
-    <meta name="twitter:title" content="{{ $title }} - {{ .Site.Title }}" />
-    <meta name="twitter:image" content="{{ $img.RelPermalink | absURL }}" />
-    <meta property="og:url" content="{{ .Permalink }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ $title }} - {{ .Site.Title }}" />
-    <meta property="og:description" content="{{ .Summary }}" />
-    <meta property="og:site_name" content="{{ .Site.Title }}" />
-    <meta property="og:image" content="{{ $img.RelPermalink | absURL }}" />
-    <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
-    <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" as="style" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media="print" onload="this.media='all'" />
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css" as="style" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css" media="print" onload="this.media='all'" />
-    {{- if eq .Params.allfonts true }}
-      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" as="style" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap" media="print" onload="this.media='all'" />
-      <link rel="preload" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi.min.css" as="style" />
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi.min.css" media="print" onload="this.media='all'" />
-    {{ end -}}
-    <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.min.css" />
-    <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/one-dark.min.css" />
-    <script src="{{ $.Site.BaseURL | relURL }}js/menu.min.js"></script>
-    {{ partial "posts/math.html" . }}
-  </head>
-  <body>
-    <div class="all-wrapper">
-      {{ partial "header.html" . }}
-      {{- block "content" . -}}{{- end -}}
-      {{ partial "footer.html" . }}
-    </div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  {{ if eq $.Site.IsServer false }}
+  <meta name="google-site-verification" content="DvAmtcJ-4mAzUR3EOVgXJIuW56ccEiKjtuw3JVBdw84" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204370875-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-204370875-1');
+  </script>
+  {{ end }}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {{ $font := resources.GetRemote
+  "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
+  {{ $img := resources.Get "images/ogp/ogp-post.png" }}
+  {{ $title := .Title }}
+  {{ if or .Params.tags .Params.categories }}
+  {{ $strlen := 22 }}
+  {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
+  {{ if gt (strings.RuneCount $title) (add $strlen 1) }}
+  {{ $title = printf "%s…" (substr $title 0 $strlen) }}
+  {{ end }}
+  {{ $date := .Date.Format "2006 年 1 月 2 日" }}
+  {{ $categories := "" }}
+  {{ range .Params.categories }}{{ $categories = printf "%s, %s" $categories . }}{{ end }}
+  {{ $categories = substr $categories 2 }}
+  {{ $tags := "" }}
+  {{ range .Params.tags }}{{ $tags = printf "%s, %s" $tags . }}{{ end }}
+  {{ $tags = substr $tags 2 }}
+  {{ $img = $img | images.Filter
+  (images.Text .Site.Title (dict
+  "color" "#333"
+  "size" 32
+  "x" 90 "y" 19
+  "font" $font
+  ))
+  (images.Text $title (dict
+  "color" "#333"
+  "size" 32
+  "x" 25 "y" 135
+  "font" $font
+  ))
+  (images.Text $date (dict
+  "color" "#666"
+  "size" 24
+  "x" 80 "y" 230
+  "font" $font
+  ))
+  (images.Text $categories (dict
+  "color" "#666"
+  "size" 24
+  "x" 80 "y" 280
+  "font" $font
+  ))
+  (images.Text $tags (dict
+  "color" "#666"
+  "size" 24
+  "x" 80 "y" 330
+  "font" $font
+  ))
+  }}
+  {{ else }}
+  {{ $img = resources.Get "images/ogp/ogp.png" }}
+  {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
+  {{ if (eq $title "Posts") }}{{ $title = "すべての投稿" }}{{ end }}
+  {{ if (eq $title "Tags") }}{{ $title = "タグ" }}{{ end }}
+  {{ if (eq $title "Categories") }}{{ $title = "カテゴリ" }}{{ end }}
+  {{ $img = $img | images.Filter
+  (images.Text .Site.Title (dict
+  "color" "#333"
+  "size" 32
+  "x" 90 "y" 19
+  "font" $font
+  ))
+  (images.Text $title (dict
+  "color" "#333"
+  "size" 64
+  "lineSpacing" 8
+  "x" 50 "y" 200
+  "font" $font
+  ))
+  }}
+  {{ end }}
+  {{ $title = .Title }}
+  {{ if (eq $title "Posts") }}{{ $title = "すべての投稿" }}{{ end }}
+  {{ if (eq $title "Tags") }}{{ $title = "タグ" }}{{ end }}
+  {{ if (eq $title "Categories") }}{{ $title = "カテゴリ" }}{{ end }}
+  <title>{{ $title }} - {{ .Site.Title }}</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Daiji256" />
+  <meta name="twitter:title" content="{{ $title }} - {{ .Site.Title }}" />
+  <meta name="twitter:image" content="{{ $img.RelPermalink | absURL }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{ $title }} - {{ .Site.Title }}" />
+  <meta property="og:description" content="{{ .Summary }}" />
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="og:image" content="{{ $img.RelPermalink | absURL }}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+    as="style" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+    media="print" onload="this.media='all'" />
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css"
+    as="style" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css"
+    media="print" onload="this.media='all'" />
+  {{- if eq .Params.allfonts true }}
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap"
+    as="style" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap"
+    media="print" onload="this.media='all'" />
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi.min.css"
+    as="style" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi.min.css"
+    media="print" onload="this.media='all'" />
+  {{ end -}}
+  <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.min.css" />
+  <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/one-dark.min.css" />
+  <script src="{{ $.Site.BaseURL | relURL }}js/menu.min.js"></script>
+  {{ partial "posts/math.html" . }}
+</head>
+
+<body>
+  <div class="all-wrapper">
+    {{ partial "header.html" . }}
+    {{- block "content" . -}}{{- end -}}
+    {{ partial "footer.html" . }}
+  </div>
+</body>
+
 </html>
