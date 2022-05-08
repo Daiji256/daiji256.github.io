@@ -37,6 +37,7 @@ body {
   font-size: 1.6rem;
   color: #333;
   -webkit-text-size-adjust: 100%;
+  line-break: strict;
 }
 
 *,
