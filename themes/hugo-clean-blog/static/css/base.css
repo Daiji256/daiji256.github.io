@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  font-family: "Yaku Kumi Sans", "Noto Sans JP", "Noto Sans CJK JP",
+  font-family: "Noto Sans JP", "Noto Sans CJK JP",
     "Source Han Sans JP", sans-serif;
   font-feature-settings: "chws"1;
   font-size: 1.6rem;
