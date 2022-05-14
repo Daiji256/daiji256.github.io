@@ -795,18 +795,34 @@ hr {
 }
 
 .inline:before {
+  font-family: "Inconsolata", "Noto Sans JP", "Noto Sans CJK JP",
+    "Source Han Sans JP", monospace;
+  line-height: 0.1;
+  font-size: 50%;
   content: " ";
 }
 
 .inline:after {
+  font-family: "Inconsolata", "Noto Sans JP", "Noto Sans CJK JP",
+    "Source Han Sans JP", monospace;
+  line-height: 0.1;
+  font-size: 50%;
   content: " ";
 }
 
 .inline-r:before {
+  font-family: "Inconsolata", "Noto Sans JP", "Noto Sans CJK JP",
+    "Source Han Sans JP", monospace;
+  line-height: 0.1;
+  font-size: 50%;
   content: " ";
 }
 
 .inline-l:after {
+  font-family: "Inconsolata", "Noto Sans JP", "Noto Sans CJK JP",
+    "Source Han Sans JP", monospace;
+  line-height: 0.1;
+  font-size: 50%;
   content: " ";
 }
 
