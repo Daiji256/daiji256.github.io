@@ -31,6 +31,9 @@
 {{ range findRE `h([1-6]) id="(.*?)"` $content }}
 {{ $content = replace $content . (replaceRE `<span class='aki.*?'></span>` "" .) }}
 {{ end }}
+{{ range findRE `a href="#(.*?)"` $content }}
+{{ $content = replace $content . (replaceRE `<span class='aki.*?'></span>` "" .) }}
+{{ end }}
 
 <!-- アキを無くす処理 -->
 {{ $content = replaceRE `<span class='aki aki-[1-4]'></span><span class='aki-0'></span>` "" $content }}
