@@ -24,4 +24,9 @@
 {{ $content := (replaceRE `([、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙〝〟])`
 `<span class="yakumono">$1</span>` $content) }}
 
+<!-- アキを無くす処理 -->
+{{ $content := replaceRE `<span class=\"aki aki-[1-4]\"></span><span class=\"aki-0\"></span>` "" $content }}
+{{ $content := replaceRE `<span class=\"aki-0\"></span><span class=\"aki aki-[1-4]\"></span>` "" $content }}
+{{ $content := replaceRE `<span class=\"aki-0\"></span>` "" $content }}
+
 {{ $content | safeHTML }}
