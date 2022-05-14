@@ -1,0 +1,27 @@
+{{ $content := . }}
+
+<!-- 英字-和字，和字-英字 -->
+{{ $content := (replaceRE `([0-9A-Za-zÀ-žͰ-ϿЀ-ӿ)\]}.,:;])([ぁ-んァ-ヶ一-龠ー])`
+`$1<span class="aki aki-4"></span>$2` $content) }}
+{{ $content := (replaceRE `([ぁ-んァ-ヶ一-龠ー])([0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ(\[{])`
+`$1<span class="aki aki-4"></span>$2` $content) }}
+
+<!-- 括弧類 -->
+{{ $content := (replaceRE `([）〕］｝〉》」』】｠〙〗〟。．、，])([^）〕］｝〉》」』】｠〙〗〟。．、，・：；])`
+`$1<span class="aki aki-2"></span>$2` $content) }}
+{{ $content := (replaceRE `([^（〔［｛〈《「『【｟〘〖〝・：；])([（〔［｛〈《「『【｟〘〖〝])`
+`$1<span class="aki aki-2"></span>$2` $content) }}
+
+<!-- 中点類 -->
+{{ $content := (replaceRE `([・：；])`
+`<span class="aki aki-4"></span>$1<span class="aki aki-4"></span>` $content) }}
+
+<!-- 区切り約物 -->
+{{ $content := (replaceRE `([！？‼⁇⁈⁉]+)`
+`$1<span class="aki aki-1"></span>` $content) }}
+
+<!-- 約物を詰める -->
+{{ $content := (replaceRE `([、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙〝〟])`
+`<span class="yakumono">$1</span>` $content) }}
+
+{{ $content | safeHTML }}
