@@ -1,5 +1,9 @@
 {{ $content := . }}
 
+<!-- AKI_N -->
+{{ $content := replaceRE `AKI_0` `<span class="aki-0"></span>` $content }}
+{{ $content := replaceRE `AKI_([1-4])` `<span class="aki aki-$1"></span>` $content }}
+
 <!-- 英字-和字，和字-英字 -->
 {{ $content := (replaceRE `([0-9A-Za-zÀ-žͰ-ϿЀ-ӿ)\]}.,:;])([ぁ-んァ-ヶ一-龠ー])`
 `$1<span class="aki aki-4"></span>$2` $content) }}
