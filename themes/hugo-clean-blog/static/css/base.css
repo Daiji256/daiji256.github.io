@@ -920,3 +920,37 @@ nav.menu.js-active .menu-back {
 nav.menu a {
   color: #333;
 }
+
+.yakumono {
+  font-feature-settings: "palt"1;
+}
+
+code .yakumono {
+  font-feature-settings: "palt"0;
+}
+
+.aki {
+  font-family: "Inconsolata", "Noto Sans JP", "Noto Sans CJK JP",
+    "Source Han Sans JP", monospace;
+  line-height: 0.1;
+}
+
+.aki::after {
+  content: " ";
+}
+
+code .aki::after {
+  content: "";
+}
+
+.aki-1 {
+  font-size: 200%;
+}
+
+.aki-2 {
+  font-size: 100%;
+}
+
+.aki-4 {
+  font-size: 50%;
+}
