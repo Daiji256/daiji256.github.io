@@ -2,7 +2,7 @@
   <div class="container">
     <ul>
       <li>
-        {{ .Site.Copyright }}
+        {{ partial "aki-kumi.html" .Site.Copyright }}
       </li>
       <li>
         <a href="{{ $.Site.BaseURL | relURL }}privacy/" class="item">
@@ -10,7 +10,8 @@
         </a>
       </li>
       <li>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTIbjKvr5QbhmYB2Se21tqQ_GvqH0qNzV19ysjZnokPx5Jeg/viewform?usp=sf_link" target="_blank" rel="noopener" class="item">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTIbjKvr5QbhmYB2Se21tqQ_GvqH0qNzV19ysjZnokPx5Jeg/viewform?usp=sf_link"
+          target="_blank" rel="noopener" class="item">
           お問い合わせ
         </a>
       </li>

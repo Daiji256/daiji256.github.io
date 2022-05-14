@@ -53,10 +53,6 @@
     as="style" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
     media="print" onload="this.media='all'" />
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css"
-    as="style" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css"
-    media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.min.css" />
   <script src="{{ $.Site.BaseURL | relURL }}js/menu.min.js"></script>
 </head>
@@ -69,7 +65,7 @@
         <div class="card">
           <div class="main">
             <img src="{{ $.Site.BaseURL | relURL }}images/icon.svg" width="80" height="80" class="icon" />
-            <div class="name">{{ .Site.Title }}</div>
+            <div class="name">{{ partial "aki-kumi.html" .Site.Title }}</div>
             <div class="brands">
               <a href="https://github.com/Daiji256/" title='GitHub' target="_blank" rel="noopener" class="link">
                 <svg>
@@ -106,7 +102,7 @@
             {{ range .Site.Taxonomies.categories.ByCount -}}
             <span class="no-wrap">
               <a href="{{ $.Site.BaseURL | relURL }}categories/{{ .Name | urlize }}" class="taxonomies-item">
-                {{ .Page.Title }}
+                {{ partial "aki-kumi.html" .Page.Title }}
               </a>
             </span>
             {{ end -}}
@@ -123,7 +119,7 @@
             {{ range .Site.Taxonomies.tags.ByCount -}}
             <span class="no-wrap">
               <a href="{{ $.Site.BaseURL | relURL }}tags/{{ .Name | urlize }}" class="taxonomies-item">
-                {{ .Page.Title }}
+                {{ partial "aki-kumi.html" .Page.Title }}
               </a>
             </span>
             {{ end -}}
@@ -138,21 +134,21 @@
         {{ range (.Paginate $pages).Pages -}}
         <div class="post-card">
           <div class="title">
-            <a href="{{ .RelPermalink }}" class="link">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}" class="link">{{ partial "aki-kumi.html" .Title }}</a>
           </div>
           <div class="summary">
-            {{ .Summary }}...
+            {{ partial "aki-kumi.html" .Summary }}&mldr;
           </div>
           <div class="post-info">
             <svg>
               <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/date.svg#symbol" />
             </svg>
-            <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
+            <div class="text">{{ partial "aki-kumi.html" (.Date.Format "2006年1月2日") }}</div>
             {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
             <svg>
               <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/lastmod.svg#symbol" />
             </svg>
-            <div class="text">{{ .Lastmod.Format "2006 年 1 月 2 日" }}</div>
+            <div class="text">{{ partial "aki-kumi.html" (.Lastmod.Format "2006年1月2日") }}</div>
             {{- end }}
           </div>
           {{ with .Params.categories -}}
@@ -162,7 +158,9 @@
               <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/categories.svg#symbol" />
             </svg>
             {{ range . -}}
-            <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">{{ . }}</a>
+            <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">
+              {{ partial "aki-kumi.html" . }}
+            </a>
             {{- end }}
           </div>
           {{- end }}
@@ -174,7 +172,9 @@
               <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/tags.svg#symbol" />
             </svg>
             {{ range . -}}
-            <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">{{ . }}</a>
+            <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">
+              {{ partial "aki-kumi.html" . }}
+            </a>
             {{- end }}
           </div>
           {{- end }}
