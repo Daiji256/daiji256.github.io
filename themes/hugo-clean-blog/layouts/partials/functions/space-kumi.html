@@ -15,4 +15,8 @@
 {{ $content = replaceRE `AKI_0 ` "AKI_0" $content }}
 {{ $content = replaceRE `AKI_0` "" $content }}
 
+<!-- 残ったゴミの処理 -->
+{{ $content = replaceRE `AKI_([0-4])` "" $content }}
+{{ $content = replaceRE `aki_([0-4])` "" $content }}
+
 {{ return $content }}
