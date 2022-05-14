@@ -1,7 +1,6 @@
 {{ $content := . }}
 
 <!-- AKI_N -->
-{{ $content = replaceRE `AKI_0` `<span class='aki-0'></span>` $content }}
 {{ $content = replaceRE `AKI_([1-4])` `<span class='aki aki-$1'></span>` $content }}
 
 <!-- 英字-和字，和字-英字 -->
@@ -36,8 +35,8 @@
 {{ end }}
 
 <!-- アキを無くす処理 -->
-{{ $content = replaceRE `<span class='aki aki-[1-4]'></span><span class='aki-0'></span>` "" $content }}
-{{ $content = replaceRE `<span class='aki-0'></span><span class='aki aki-[1-4]'></span>` "" $content }}
-{{ $content = replaceRE `<span class='aki-0'></span>` "" $content }}
+{{ $content = replaceRE `<span class='aki aki-[1-4]'></span>AKI_0` "AKI_0" $content }}
+{{ $content = replaceRE `AKI_0<span class='aki aki-[1-4]'></span>` "AKI_0" $content }}
+{{ $content = replaceRE `AKI_0` "" $content }}
 
 {{ $content | safeHTML }}
