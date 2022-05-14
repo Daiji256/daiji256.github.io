@@ -946,13 +946,13 @@ code .yakumono {
 }
 
 .aki {
-  font-family: "Inconsolata", "Noto Sans JP", "Noto Sans CJK JP",
-    "Source Han Sans JP", monospace;
+  font-family: "Noto Sans JP", "Noto Sans CJK JP",
+    "Source Han Sans JP", sans-serif;
   line-height: 0.1;
 }
 
 .aki::after {
-  content: " ";
+  content: "　";
 }
 
 code .aki::after {
@@ -960,13 +960,13 @@ code .aki::after {
 }
 
 .aki-1 {
-  font-size: 200%;
-}
-
-.aki-2 {
   font-size: 100%;
 }
 
-.aki-4 {
+.aki-2 {
   font-size: 50%;
+}
+
+.aki-4 {
+  font-size: 25%;
 }
