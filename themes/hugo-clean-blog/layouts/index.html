@@ -17,8 +17,8 @@
   {{ $font := resources.GetRemote
   "https://github.com/Daiji256/daiji256.github.io/raw/main/themes/hugo-clean-blog/static/fonts/NotoSansJP-Bold.otf" }}
   {{ $img := resources.Get "images/ogp/ogp.png" }}
-  {{ $title := partial "space-kumi.html" .Title }}
-  {{ $siteTitle := partial "space-kumi.html" .Site.Title }}
+  {{ $title := partial "functions/space-kumi.html" .Title }}
+  {{ $siteTitle := partial "functions/space-kumi.html" .Site.Title }}
   {{ if gt (strings.RuneCount $title) 23 }}
   {{ $title = printf "%s…" (substr $title 0 22) }}
   {{ end }}
@@ -66,7 +66,7 @@
         <div class="card">
           <div class="main">
             <img src="{{ $.Site.BaseURL | relURL }}images/icon.svg" width="80" height="80" class="icon" />
-            <div class="name">{{ partial "aki-kumi.html" .Site.Title }}</div>
+            <div class="name">{{ partial "functions/aki-kumi.html" .Site.Title }}</div>
             <div class="brands">
               <a href="https://github.com/Daiji256/" title='GitHub' target="_blank" rel="noopener" class="link">
                 <svg>
@@ -103,7 +103,7 @@
             {{ range .Site.Taxonomies.categories.ByCount -}}
             <span class="no-wrap">
               <a href="{{ $.Site.BaseURL | relURL }}categories/{{ .Name | urlize }}" class="taxonomies-item">
-                {{ partial "aki-kumi.html" .Page.Title }}
+                {{ partial "functions/aki-kumi.html" .Page.Title }}
               </a>
             </span>
             {{ end -}}
@@ -120,7 +120,7 @@
             {{ range .Site.Taxonomies.tags.ByCount -}}
             <span class="no-wrap">
               <a href="{{ $.Site.BaseURL | relURL }}tags/{{ .Name | urlize }}" class="taxonomies-item">
-                {{ partial "aki-kumi.html" .Page.Title }}
+                {{ partial "functions/aki-kumi.html" .Page.Title }}
               </a>
             </span>
             {{ end -}}
@@ -135,21 +135,21 @@
         {{ range (.Paginate $pages).Pages -}}
         <div class="post-card">
           <div class="title">
-            <a href="{{ .RelPermalink }}" class="link">{{ partial "aki-kumi.html" .Title }}</a>
+            <a href="{{ .RelPermalink }}" class="link">{{ partial "functions/aki-kumi.html" .Title }}</a>
           </div>
           <div class="summary">
-            {{ partial "aki-kumi.html" .Summary }}&mldr;
+            {{ partial "functions/aki-kumi.html" .Summary }}&mldr;
           </div>
           <div class="post-info">
             <svg>
               <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/date.svg#symbol" />
             </svg>
-            <div class="text">{{ partial "aki-kumi.html" (.Date.Format "2006年1月2日") }}</div>
+            <div class="text">{{ partial "functions/aki-kumi.html" (.Date.Format "2006年1月2日") }}</div>
             {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
             <svg>
               <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/lastmod.svg#symbol" />
             </svg>
-            <div class="text">{{ partial "aki-kumi.html" (.Lastmod.Format "2006年1月2日") }}</div>
+            <div class="text">{{ partial "functions/aki-kumi.html" (.Lastmod.Format "2006年1月2日") }}</div>
             {{- end }}
           </div>
           {{ with .Params.categories -}}
@@ -160,7 +160,7 @@
             </svg>
             {{ range . -}}
             <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">
-              {{ partial "aki-kumi.html" . }}
+              {{ partial "functions/aki-kumi.html" . }}
             </a>
             {{- end }}
           </div>
@@ -174,7 +174,7 @@
             </svg>
             {{ range . -}}
             <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">
-              {{ partial "aki-kumi.html" . }}
+              {{ partial "functions/aki-kumi.html" . }}
             </a>
             {{- end }}
           </div>

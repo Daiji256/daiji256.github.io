@@ -17,7 +17,7 @@
         {{ range .Site.Taxonomies.categories.ByCount -}}
         <span class="no-wrap">
           <a href="{{ $.Site.BaseURL | relURL }}categories/{{ .Name | urlize }}" class="taxonomies-item">
-            {{ partial "aki-kumi.html" .Page.Title }} | {{ .Count }}
+            {{ partial "functions/aki-kumi.html" .Page.Title }} | {{ .Count }}
           </a>
         </span>
         {{ end -}}
@@ -25,7 +25,7 @@
         {{ range .Site.Taxonomies.tags.ByCount -}}
         <span class="no-wrap">
           <a href="{{ $.Site.BaseURL | relURL }}tags/{{ .Name | urlize }}" class="taxonomies-item">
-            {{ partial "aki-kumi.html" .Page.Title }} | {{ .Count }}
+            {{ partial "functions/aki-kumi.html" .Page.Title }} | {{ .Count }}
           </a>
         </span>
         {{ end -}}
@@ -59,7 +59,7 @@
           {{ if eq .Title "Posts" -}}
           すべての投稿
           {{- else -}}
-          {{ partial "aki-kumi.html" .Title }}
+          {{ partial "functions/aki-kumi.html" .Title }}
           {{- end }}
         </div>
       </div>
@@ -73,21 +73,21 @@
     {{ range (.Paginate $pages).Pages -}}
     <div class="post-card">
       <div class="title">
-        <a href="{{ .RelPermalink }}" class="link">{{ partial "aki-kumi.html" .Title }}</a>
+        <a href="{{ .RelPermalink }}" class="link">{{ partial "functions/aki-kumi.html" .Title }}</a>
       </div>
       <div class="summary">
-        {{ partial "aki-kumi.html" .Summary }}&mldr;
+        {{ partial "functions/aki-kumi.html" .Summary }}&mldr;
       </div>
       <div class="post-info">
         <svg>
           <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/date.svg#symbol" />
         </svg>
-        <div class="text">{{ partial "aki-kumi.html" (.Date.Format "2006年1月2日") }}</div>
+        <div class="text">{{ partial "functions/aki-kumi.html" (.Date.Format "2006年1月2日") }}</div>
         {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
         <svg>
           <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/lastmod.svg#symbol" />
         </svg>
-        <div class="text">{{ partial "aki-kumi.html" (.Lastmod.Format "2006年1月2日") }}</div>
+        <div class="text">{{ partial "functions/aki-kumi.html" (.Lastmod.Format "2006年1月2日") }}</div>
         {{- end }}
       </div>
       {{ with .Params.categories -}}
@@ -98,7 +98,7 @@
         </svg>
         {{ range . -}}
         <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}" class="text">
-          {{ partial "aki-kumi.html" . }}
+          {{ partial "functions/aki-kumi.html" . }}
         </a>
         {{- end }}
       </div>
@@ -112,7 +112,7 @@
         </svg>
         {{ range . -}}
         <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}" class="text">
-          {{ partial "aki-kumi.html" . }}
+          {{ partial "functions/aki-kumi.html" . }}
         </a>
         {{- end }}
       </div>

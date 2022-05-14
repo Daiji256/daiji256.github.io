@@ -4,19 +4,19 @@
     <div class="post">
       <div class="info">
         <div class="title">
-          {{ partial "aki-kumi.html" .Title }}
+          {{ partial "functions/aki-kumi.html" .Title }}
         </div>
         {{ if not (eq (.Date.Format "2006/01/02") "0001/01/01") -}}
         <div class="post-info">
           <svg>
             <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/date.svg#symbol" />
           </svg>
-          <div class="text">{{ partial "aki-kumi.html" (.Date.Format "2006年1月2日") }}</div>
+          <div class="text">{{ partial "functions/aki-kumi.html" (.Date.Format "2006年1月2日") }}</div>
           {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
           <svg>
             <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/lastmod.svg#symbol" />
           </svg>
-          <div class="text">{{ partial "aki-kumi.html" (.Lastmod.Format "2006年1月2日") }}</div>
+          <div class="text">{{ partial "functions/aki-kumi.html" (.Lastmod.Format "2006年1月2日") }}</div>
           {{- end }}
         </div>
         {{- end }}
@@ -28,7 +28,7 @@
           </svg>
           {{ range . -}}
           <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">
-            {{ partial "aki-kumi.html" . }}
+            {{ partial "functions/aki-kumi.html" . }}
           </a>
           {{- end }}
         </div>
@@ -42,7 +42,7 @@
           </svg>
           {{ range . -}}
           <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">
-            {{ partial "aki-kumi.html" . }}
+            {{ partial "functions/aki-kumi.html" . }}
           </a>
           {{- end }}
         </div>
@@ -51,7 +51,7 @@
       </div>
       <section class="sec-content">
         <div class="content">
-          {{ partial "aki-kumi.html" .Content }}
+          {{ partial "functions/aki-kumi.html" .Content }}
         </div>
       </section>
     </div>
@@ -64,7 +64,7 @@
   </div>
   <div class="toc">
     <aside>
-      {{ partial "aki-kumi.html" .TableOfContents }}
+      {{ partial "functions/aki-kumi.html" .TableOfContents }}
     </aside>
   </div>
 </div>

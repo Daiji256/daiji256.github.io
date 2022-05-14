@@ -17,20 +17,21 @@
   {{ $font := resources.GetRemote
   "https://github.com/Daiji256/daiji256.github.io/raw/main/themes/hugo-clean-blog/static/fonts/NotoSansJP-Bold.otf" }}
   {{ $img := resources.Get "images/ogp/ogp-post.png" }}
-  {{ $title := partial "space-kumi.html" .Title }}
-  {{ $siteTitle := partial "space-kumi.html" .Site.Title }}
+  {{ $title := partial "functions/space-kumi.html" .Title }}
+  {{ $siteTitle := partial "functions/space-kumi.html" .Site.Title }}
   {{ if or .Params.tags .Params.categories }}
   {{ $strlen := 22 }}
   {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
   {{ if gt (strings.RuneCount $title) (add $strlen 1) }}
   {{ $title = printf "%s…" (substr $title 0 $strlen) }}
   {{ end }}
-  {{ $date := .Date.Format (partial "space-kumi.html" "2006 年 1 月 2 日") }}
+  {{ $date := .Date.Format (partial "functions/space-kumi.html" "2006 年 1 月 2 日") }}
   {{ $categories := "" }}
-  {{ range .Params.categories }}{{ $categories = printf "%s, %s" $categories (partial "space-kumi.html" .) }}{{ end }}
+  {{ range .Params.categories }}{{ $categories = printf "%s, %s" $categories (partial "functions/space-kumi.html" .)
+  }}{{ end }}
   {{ $categories = substr $categories 2 }}
   {{ $tags := "" }}
-  {{ range .Params.tags }}{{ $tags = printf "%s, %s" $tags (partial "space-kumi.html" .) }}{{ end }}
+  {{ range .Params.tags }}{{ $tags = printf "%s, %s" $tags (partial "functions/space-kumi.html" .) }}{{ end }}
   {{ $tags = substr $tags 2 }}
   {{ $img = $img | images.Filter
   (images.Text $siteTitle (dict
@@ -86,12 +87,12 @@
   ))
   }}
   {{ end }}
-  {{ $title = partial "space-kumi.html" .Title }}
-  {{ $siteTitle = partial "space-kumi.html" .Site.Title }}
+  {{ $title = partial "functions/space-kumi.html" .Title }}
+  {{ $siteTitle = partial "functions/space-kumi.html" .Site.Title }}
   {{ if (eq $title "Posts") }}{{ $title = "すべての投稿" }}{{ end }}
   {{ if (eq $title "Tags") }}{{ $title = "タグ" }}{{ end }}
   {{ if (eq $title "Categories") }}{{ $title = "カテゴリ" }}{{ end }}
-  {{ $summary := (partial "space-kumi.html" .Summary) | safeHTML }}
+  {{ $summary := (partial "functions/space-kumi.html" .Summary) | safeHTML }}
   <title>{{ $title }} - {{ $siteTitle }}</title>
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Daiji256" />
