@@ -1,5 +1,5 @@
 ---
-title: "LuaLaTeXでフォント細かく変更する方法（MS Wordは使いたくない！AKI_0）"
+title: "LuaLaTeXでフォント細かく変更する方法（MS Wordは使いたくない！）"
 date: 2021-02-02
 categories: [TeX LaTeX]
 tags: [Font,LuaLaTeX]
@@ -86,4 +86,4 @@ LuaLaTeXでの細かいフォント設定についてまとめました。曖昧
 2. [LuaTeX-jaパッケージ(CTAN)](http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
 3. [unicode-math (CTAN)](https://ctan.org/pkg/unicode-math)
 4. [Point typography (Wiki)](https://en.wikipedia.org/wiki/Point_(typography))
-5. [LuaLaTeXでフォント細かく変更する方法（MS Wordは使いたくない！AKI_0）(Qiita)](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)
+5. [LuaLaTeXでフォント細かく変更する方法（MS Wordは使いたくない！）(Qiita)](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)
