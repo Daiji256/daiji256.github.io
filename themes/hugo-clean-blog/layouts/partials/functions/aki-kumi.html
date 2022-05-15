@@ -20,7 +20,8 @@
 `<span class='aki aki-4'></span>$1<span class='aki aki-4'></span>` $content }}
 
 <!-- 区切り約物 -->
-{{ $content = replaceRE `([！？‼⁇⁈⁉]+)` `$1<span class='aki aki-1'></span>` $content }}
+{{ $content = replaceRE `([！？‼⁇⁈⁉]+)([^）〕］｝〉》」』】｠〙〗〟。．、，・：；])`
+`$1<span class='aki aki-1'></span>$2` $content }}
 
 <!-- 約物を詰める -->
 {{ $content = replaceRE `([、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙〝〟])`
