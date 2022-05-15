@@ -1,5 +1,5 @@
 ---
-title: "LuaLaTeX のすゝめ"
+title: "LuaLaTeXのすゝめ"
 date: 2021-02-07
 categories: [TeX LaTeX]
 tags: [まとめ,LuaLaTeX]
@@ -7,19 +7,19 @@ tags: [まとめ,LuaLaTeX]
 
 # はじめに
 
-この記事では**高機能でイケイケ**な LuaLaTeX を紹介します。
+この記事では**高機能でイケイケ**なLuaLaTeXを紹介します。
 
-現在日本で一般的に使用されている LaTeX は upLaTeX だと思います。upLaTeX は Unicode 対応の日本語 LaTeX エンジンが収録されている，pLaTeX の進化系みたいなものです。upLaTeX は pLaTeX からの移行が容易で，環境依存文字や JIS 第 1・第 2 水準の漢字を意識せずに使用できる点が初心者に好まれている理由の 1 つだと思います。
+現在日本で一般的に使用されているLaTeXはupLaTeXだと思います。upLaTeXはUnicode対応の日本語LaTeXエンジンが収録されている，pLaTeXの進化系みたいなものです。upLaTeXはpLaTeXからの移行が容易で，環境依存文字やJIS第1・第2水準の漢字を意識せずに使用できる点が初心者に好まれている理由の1つだと思います。
 
-LaTeX は下の図の様に TeX ファイルの執筆から PDF の出力まで行います。レガシー LaTeX（(u)pLaTeX など）は DVI ファイルを経由して PDF 作成します。それに対しモダン LaTeX（LuaLaTeX など）は**直接PDFを作成**します。LuaLaTeX は海外でメジャーである pdfLaTeX に軽量スクリプト言語である Lua を組み込んだものです。pdfLaTeX の後継として期待されていて，LuaTeX-ja プロジェクトにより (u)pLaTeX 以上の自由度で和文組版が可能となっています。LuaLaTeX は Unicode に対応しています。さらに**フォントの設定が簡単**で，**OpenType や TrueType フォントを直接扱う**ことができます。
+LaTeXは下の図の様にTeXファイルの執筆からPDFの出力まで行います。レガシーLaTeX（(u)pLaTeXなど）はDVIファイルを経由してPDF作成します。それに対しモダンLaTeX（LuaLaTeXなど）は**直接PDFを作成**します。LuaLaTeXは海外でメジャーであるpdfLaTeXに軽量スクリプト言語であるLuaを組み込んだものです。pdfLaTeXの後継として期待されていて，LuaTeX-jaプロジェクトにより(u)pLaTeX以上の自由度で和文組版が可能となっています。LuaLaTeXはUnicodeに対応しています。さらに**フォントの設定が簡単**で，**OpenTypeやTrueTypeフォントを直接扱う**ことができます。
 
 {{< figure src="./images/fig1.svg" class="center" width="480" height="283" >}}
 
 # フォント
 
-LuaLaTeX の最大の強みと言えるのがフォントについてです。昔ながらの LaTeX ではフォントの設定が非常に難しいのに対して，LuaLaTeX では**ソースファイル内で簡単に設定することができます**。`fontspec` を和文フォントに対応するように拡張した `luatexja-fontspec` を用いてフォントの設定を行います。細かな設定方法については，[LuaLaTeX でフォント細かく変更する方法](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)を参照してください。
+LuaLaTeXの最大の強みと言えるのがフォントについてです。昔ながらのLaTeXではフォントの設定が非常に難しいのに対して，LuaLaTeXでは**ソースファイル内で簡単に設定することができます**。`fontspec`AKI_4を和文フォントに対応するように拡張したAKI_4`luatexja-fontspec`AKI_4を用いてフォントの設定を行います。細かな設定方法については，[LuaLaTeXでフォント細かく変更する方法](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)AKI_4を参照してください。
 
-`luatexja-fontspec` を使用することで下に示すコードにより，OS にインストールされているフォントを PDF に埋め込むことができます。また，`ttf` ファイルなどを直接参照することもできます。
+`luatexja-fontspec`AKI_4を使用することで下に示すコードにより，OSにインストールされているフォントをPDFに埋め込むことができます。また，`ttf`AKI_4ファイルなどを直接参照することもできます。
 
 ```TeX
 \usepackage{luatexja-fontspec}
@@ -27,15 +27,15 @@ LuaLaTeX の最大の強みと言えるのがフォントについてです。�
 \setmainjfont[BoldFont=MS Gothic]{MS Mincho}
 ```
 
-あらかじめ用意された和文フォントから選択することができる `luatexja-preset` というパッケージがあります。例えば IPA 明朝と IPA ゴシックを使う設定する場合次のように書けばよいです。他のフォントについては [LaTeX-ja の使い方](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)を参照してください。
+あらかじめ用意された和文フォントから選択することができるAKI_4`luatexja-preset`AKI_4というパッケージがあります。例えばIPA明朝とIPAゴシックを使う設定する場合次のように書けばよいです。他のフォントについてはAKI_4[LaTeX-jaの使い方](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)AKI_4を参照してください。
 
 ```TeX
 \usepackage[ipa]{luatexja-preset}
 ```
 
-# Lua を書く
+# Luaを書く
 
-[はじめに](#はじめに)でも書きましたが LuaTeX から Lua を利用できます。LuaLaTeX のソース中で Lua を書く場合には `\directlua` を使用します。Lua から TeX に出力するには `tex.print` を使用します。実際に Lua を利用して {{<eq>}}\sqrt{2}{{</eq>}} を表示してみます。以下に示すコードにより {{<eq>}}\sqrt{2}{{</eq>}} が計算（？）できています。もっと詳しいことは[徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)でわかりやすく説明されています。
+[はじめに](#はじめに)AKI_4でも書きましたがLuaTeXからLuaを利用できます。LuaLaTeXのソース中でLuaを書く場合にはAKI_4`\directlua`AKI_4を使用します。LuaからTeXに出力するにはAKI_4`tex.print`AKI_4を使用します。実際にLuaを利用して{{<eq>}}\sqrt{2}{{</eq>}}を表示してみます。以下に示すコードにより{{<eq>}}\sqrt{2}{{</eq>}}が計算（？）できています。もっと詳しいことはAKI_4[徹底攻略！LuaLaTeXでLuaコードを「書く」ためのコツ](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)AKI_4でわかりやすく説明されています。
 
 ```TeX
 \directlua{tex.print(math.sqrt(2))}
@@ -46,34 +46,34 @@ LuaLaTeX の最大の強みと言えるのがフォントについてです。�
 
 # ドキュメントクラス
 
-LuaLaTeX の `jsclasses` 互換クラス次の通りです。現在は (u)pLaTeX と LuaLaTeX の両方で使える，日本語組版処理の要件に準拠した `jlreq` が人気です。詳しくは今度，別の記事で解説したいと思っています。
+LuaLaTeXのAKI_4`jsclasses`AKI_4互換クラス次の通りです。現在は(u)pLaTeXとLuaLaTeXの両方で使える，日本語組版処理の要件に準拠したAKI_4`jlreq`AKI_4が人気です。詳しくは今度，別の記事で解説したいと思っています。
 
-|種類   |ドキュメントクラス|内容            |
-|-------|------------------|----------------|
-|article|`ltjsarticle`     |論文・レポート用|
-|book   |`ltjsbook`        |書籍用          |
-|report |`ltjsreport`      |レポート用      |
-|jspf   |`ltjspf`          |某学会誌用      |
-|kiyou  |`ltjskiyou`       |某紀要用        |
+| 種類    | ドキュメントクラス | 内容             |
+| ------- | ------------------ | ---------------- |
+| article | `ltjsarticle`      | 論文・レポート用 |
+| book    | `ltjsbook`         | 書籍用           |
+| report  | `ltjsreport`       | レポート用       |
+| jspf    | `ltjspf`           | 某学会誌用       |
+| kiyou   | `ltjskiyou`        | 某紀要用         |
 
 # おまけ
 
-(u)pLaTeX では全角文字の幅と高さを `zw` と `zh` という単位で表していたが，LuaLaTeX では `\zw` と `\zh` となりました。
+(u)pLaTeXでは全角文字の幅と高さをAKI_4`zw`AKI_4とAKI_4`zh`AKI_4という単位で表していたが，LuaLaTeXではAKI_4`\zw`AKI_4とAKI_4`\zh`AKI_4となりました。
 
-実際に確かめたわけでは無いが，Windows 用の LuaLaTeX ではファイル名を日本語にしてもいいらしいです。~~どうせ日本語のファイル名にしないけどな～~~
+実際に確かめたわけでは無いが，Windows用のLuaLaTeXではファイル名を日本語にしてもいいらしいです。~~どうせ日本語のファイル名にしないけどな～~~
 
 # おわりに
 
-「はじめに」が大きくて頭でっかちな記事になってしまいました。まだ説明できていない内容があります。今後暇を見付けて記事のアップデートしていきたいと思います。楽しい LuaLaTeX ライフを願っています。
+「はじめに」が大きくて頭でっかちな記事になってしまいました。まだ説明できていない内容があります。今後暇を見付けて記事のアップデートしていきたいと思います。楽しいLuaLaTeXライフを願っています。
 
 # 文献
 
-1. [改定第8版 LaTeX2e 美文書作成入門](https://www.amazon.co.jp/dp/B08MZ98Z1Q/)
-2. [LaTeX 入門/発展変 (TeX Wiki)](https://texwiki.texjp.org/LaTeX%E5%85%A5%E9%96%80%2F%E7%99%BA%E5%B1%95%E7%B7%A8)
+1. [改定第8版LaTeX2e美文書作成入門](https://www.amazon.co.jp/dp/B08MZ98Z1Q/)
+2. [LaTeX入門AKI_4/AKI_4発展変(TeX Wiki)](https://texwiki.texjp.org/LaTeX%E5%85%A5%E9%96%80%2F%E7%99%BA%E5%B1%95%E7%B7%A8)
 3. [LuaTeX (TeX Wiki)](https://texwiki.texjp.org/LuaTeX)
-4. [LuaTeX-ja パッケージ (CTAN)](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
-5. [LuaLaTeX-ja 用 jsclasses 互換クラス (CTAN)](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/ltjsclasses.pdf)
-6. [LaTeX-ja の使い方 (公式 Wiki)](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)
-7. [LuaLaTeX でフォント細かく変更する方法 (Qiita)](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)
-8. [徹底攻略！ LuaLaTeX で Lua コードを「書く」ためのコツ (Qiita)](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)
-9. [LuaLaTeX のすゝめ (Qiita)](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995/)
+4. [LuaTeX-jaパッケージ(CTAN)](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
+5. [LuaLaTeX-ja用jsclasses互換クラス(CTAN)](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/ltjsclasses.pdf)
+6. [LaTeX-jaの使い方(公式Wiki)](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)
+7. [LuaLaTeXでフォント細かく変更する方法(Qiita)](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)
+8. [徹底攻略！LuaLaTeXでLuaコードを「書く」ためのコツ(Qiita)](https://qiita.com/zr_tex8r/items/af2905bc93ac2c936a67)
+9. [LuaLaTeXのすゝめ(Qiita)](https://qiita.com/Daiji256/items/9afbfa9f822629d3b995/)
