@@ -9,6 +9,9 @@
 {{ $content = replaceRE `([ぁ-んァ-ヶ一-龠ー])([0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ(\[{])`
 `$1<span class='aki aki-4'></span>$2` $content }}
 
+<!-- 特殊文字の処理 -->
+{{ $content = replaceRE `&(.{1,8});` `&$1;AKI_0` $content }}
+
 <!-- 括弧類 -->
 {{ $content = replaceRE `([）〕］｝〉》」』】｠〙〗〟。．、，])([^）〕］｝〉》」』】｠〙〗〟。．、，・：；])`
 `$1<span class='aki aki-2'></span>$2` $content }}
