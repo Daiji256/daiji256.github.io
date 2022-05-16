@@ -1,3 +1,4 @@
-<div style="font-family: 'Yaku Kumi {{ .Get 0 }}', 'Noto {{ .Get 0 }} JP'{{- if eq (.Get 0) "Sans" -}}, sans-serif{{- else -}}, serif{{- end -}}; font-weight: {{ .Get 1 }};">
+<div class="yaku-kumi" style="font-family: 'Yaku Kumi {{ .Get 0 }}', 'Noto {{ .Get 0 }} JP'{{- if eq (.Get 0) " Sans"
+  -}}, sans-serif{{- else -}}, serif{{- end -}}; font-weight: {{ .Get 1 }};">
   {{ .Inner }}
 </div>

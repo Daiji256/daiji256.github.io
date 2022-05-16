@@ -970,3 +970,11 @@ code .aki::after {
 .aki-4 {
   font-size: 50%;
 }
+
+.yaku-kumi .yakumono {
+  font-feature-settings: "palt"0;
+}
+
+.yaku-kumi .aki::after {
+  content: "";
+}
