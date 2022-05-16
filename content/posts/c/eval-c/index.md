@@ -5,7 +5,7 @@ categories: [C]
 tags: [eval,自作関数]
 ---
 
-# はじめに（あ）
+# はじめに
 
 `eval`AKI_4関数とは文字列を式として評価する関数です。`eval`AKI_4はC言語などのコンパイラ言語にはほとんどないですが，JavaScriptなどのインタプリタ言語で一般的です。ここではC言語のための文字列を数式として処理するAKI_4`eval`AKI_4風関数を作成します。ソースコードはAKI_4[GitHub](https://github.com/Daiji256/eval)AKI_4にあげてあります。
 
