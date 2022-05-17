@@ -1,0 +1,22 @@
+{{ $content := . }}
+
+<!-- AKI_N -->
+{{ $content = replaceRE `AKI_([1-4])` ` ` $content }}
+
+<!-- 英字-和字，和字-英字 -->
+{{ $content = replaceRE `([0-9A-Za-zÀ-žͰ-ϿЀ-ӿ)\]}.,:;])([ぁ-んァ-ヶ一-龠ー])` `$1 $2` $content }}
+{{ $content = replaceRE `([ぁ-んァ-ヶ一-龠ー])([0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ(\[{])` `$1 $2` $content }}
+
+<!-- 区切り約物 -->
+{{ $content = replaceRE `([！？‼⁇⁈⁉]+)([^）〕］｝〉》」』】｠〙〗〟。．、，・：；])` `$1 $2` $content }}
+
+<!-- アキを無くす処理 -->
+{{ $content = replaceRE ` AKI_0` "AKI_0" $content }}
+{{ $content = replaceRE `AKI_0 ` "AKI_0" $content }}
+{{ $content = replaceRE `AKI_0` "" $content }}
+
+<!-- 残ったゴミの処理 -->
+{{ $content = replaceRE `AKI_([0-4])` "" $content }}
+{{ $content = replaceRE `aki_([0-4])` "" $content }}
+
+{{ return $content }}

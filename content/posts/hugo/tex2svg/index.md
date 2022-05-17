@@ -1,5 +1,5 @@
 ---
-title: "超高速な数式表示（KaTeX より高速！）"
+title: "超高速な数式表示（KaTeXより高速！）"
 date: 2021-11-12
 categories: [Hugo]
 tags: [MathJax,KaTeX,tex2svg]
@@ -9,23 +9,23 @@ tags: [MathJax,KaTeX,tex2svg]
 
 # はじめに
 
-このブログは静的サイトジェネレータの Hugo で作成しています。ここでは Hugo 用の説明をしますが，他の静的サイトジェネレータ（Hexo，Jekyll など）でも使える内容だと思います。
+このブログは静的サイトジェネレータのHugoで作成しています。ここではHugo用の説明をしますが，他の静的サイトジェネレータ（Hexo，Jekyllなど）でも使える内容だと思います。
 
-静的サイトジェネレータはその名の通り，静的なサイトを生成します。WordPress のようにユーザがサイトにアクセスするたびに，ページを作成する動的なものと比べ，読み込み速度などのパフォーマンスが高いメリットがあります。
+静的サイトジェネレータはその名の通り，静的なサイトを生成します。WordPressのようにユーザがサイトにアクセスするたびに，ページを作成する動的なものと比べ，読み込み速度などのパフォーマンスが高いメリットがあります。
 
-科学技術に関する内容の記事を書く場合，サイト上に数式を表示したくなります。数式表示には MathJax や KaTeX がよく利用されています[^katex]。これらはユーザがサイトにアクセスすると，LaTeX 記述の数式を JavaScript を用いてブラウザ上で表示させます。この処理のせいで，サイトにアクセスした直後少しの間，数式がちゃんと表示されません。
+科学技術に関する内容の記事を書く場合，サイト上に数式を表示したくなります。数式表示にはMathJaxやKaTeXがよく利用されています[^katex]。これらはユーザがサイトにアクセスすると，LaTeX記述の数式をJavaScriptを用いてブラウザ上で表示させます。この処理のせいで，サイトにアクセスした直後少しの間，数式がちゃんと表示されません。
 
-[^katex]: KaTeX は MathJax より早いです。このブログでは KaTeX を利用していました。
+[^katex]: KaTeXはMathJaxより早いです。このブログではKaTeXを利用していました。
 
-当たり前ですが，数式の見た目は何度読み込んでも同じです。せっかく Hugo を使っているのに，これでは何となく嫌な感じです。最初から Hugo で HTML を生成するときに数式を埋め込んでしまえば，ユーザがアクセスするたびに，MathJax や KaTeX の処理をしなくていいです。
+当たり前ですが，数式の見た目は何度読み込んでも同じです。せっかくHugoを使っているのに，これでは何となく嫌な感じです。最初からHugoでHTMLを生成するときに数式を埋め込んでしまえば，ユーザがアクセスするたびに，MathJaxやKaTeXの処理をしなくていいです。
 
-**こんなこといいな できたらいいな...**
+**こんなこといいな，できたらいいな...**
 
 できます！
 
 # 目標
 
-このコードのように LaTeX 数式コードを SVG へ変換し挿入する Shortcode を作成することを目標にします。作り方なんて興味ないから使い方教えろって人は[使い方](#使い方)を見てください。
+このコードのようにLaTeX数式コードをSVGへ変換し挿入するShortcodeを作成することを目標にします。作り方なんて興味ないから使い方教えろって人は[使い方](#使い方)を見てください。
 
 ```md
 {{< hgblock >}}< tex2svg >{{< /hgblock >}}E=mc^2{{< hgblock >}}< /tex2svg >{{< /hgblock >}}
@@ -36,22 +36,22 @@ tags: [MathJax,KaTeX,tex2svg]
 
 # いざ作成
 
-アイデアは文献 4 の [tex2svg (GitHub)](https://github.com/atishay/tex2svg/) と同じです。**個人的に**使いやすくするようにカスタマイズします。
+アイデアは文献4のAKI_4[tex2svg (GitHub)](https://github.com/atishay/tex2svg/)AKI_4と同じです。**個人的に**使いやすくするようにカスタマイズします。
 
-## LaTeX から SVG に変換
+## LaTeXからSVGに変換
 
-LaTeX を SVG に変換するツールは色々あります。しかし，Hugo から外部コマンドは実行できないので，簡単ではなさそうです。
+LaTeXをSVGに変換するツールは色々あります。しかし，Hugoから外部コマンドは実行できないので，簡単ではなさそうです。
 
-Hugo は `getJSON` でインターネット上の JSON を取得することができます。LaTeX を SVG の情報を含む JSON を返す API を探したところ，[tex2svg](http://tex2svg.herokuapp.com/) と [CODECOGS](https://codecogs.com/) が見つかりました。
+HugoはAKI_4`getJSON`AKI_4でインターネット上のJSONを取得することができます。LaTeXをSVGの情報を含むJSONを返すAPIを探したところ，[tex2svg](http://tex2svg.herokuapp.com/)AKI_4とAKI_4[CODECOGS](https://codecogs.com/)AKI_4が見つかりました。
 
-- [tex2svg](http://tex2svg.herokuapp.com/)：MathJax によって数式を生成します。Heroku で API が公開されていてのレスポンスは少し遅いです。
-- [CODECOGS](https://codecogs.com/)：昔からある有名な奴です。SVG 以外に PNG や GMP とかも生成できます。ベースラインが無く，インラインで表示すると微妙になる。
+- [tex2svg](http://tex2svg.herokuapp.com/)：MathJaxによって数式を生成します。HerokuでAPIが公開されていてのレスポンスは少し遅いです。
+- [CODECOGS](https://codecogs.com/)：昔からある有名な奴です。SVG以外にPNGやGMPとかも生成できます。ベースラインが無く，インラインで表示すると微妙になる。
 
-インライン表示が綺麗に見えないと嫌なので，tex2svg を利用します。
+インライン表示が綺麗に見えないと嫌なので，tex2svgを利用します。
 
-tex2svg は [`https://tex2svg.herokuapp.com/?`+`q=E=m^2`+`&inline=true`](https://tex2svg.herokuapp.com/?&q=E=m^2&inline=true) のように叩きます。`q=` に表示したい数式の LaTeX コードを書きます。`&inline=true` を書くとインライン表示になります。また，ディスプレイ表示のとき `class=tex`，インライン表示のとき `class=i-tex` にしてくれます。
+tex2svgはAKI_4[`https://tex2svg.herokuapp.com/?`+`q=E=m^2`+`&inline=true`](https://tex2svg.herokuapp.com/?&q=E=m^2&inline=true)AKI_4のように叩きます。`q=`AKI_4に表示したい数式のLaTeXコードを書きます。`&inline=true`AKI_4を書くとインライン表示になります。また，ディスプレイ表示のときAKI_4`class=tex`，インライン表示のときAKI_4`class=i-tex`AKI_4にしてくれます。
 
-API は次のような JSON を返します。`svg` に `vertical-align` などのパラメータもすでに含まれているので，`svg` だけを利用します。
+APIは次のようなJSONを返します。`svg`AKI_4にAKI_4`vertical-align`AKI_4などのパラメータもすでに含まれているので，`svg`AKI_4だけを利用します。
 
 ```json
 {
@@ -65,22 +65,22 @@ API は次のような JSON を返します。`svg` に `vertical-align` など�
 
 ## Shortcodes
 
-`getJSON` は URLが `str1str2str3` のとき `"str1" "str2" "str3"` のように分割して指定できます。`(querify "q" .Inner)` は `{{< hgblock >}}< tex2svg >{{< /hgblock >}}` と `{{< hgblock >}}< /tex2svg >{{< /hgblock >}}` の間のテキストを `q=%5Cfrac%7B1%7D%7Bx%7D` みたいにします。インライン表示するときは `&inline=true` を加えます。`svg` には `\n` などのコードを含むので，それを `safeHTML` でいい感じにして表示させます。
+`getJSON`AKI_4はURLがAKI_4`str1str2str3`AKI_4のときAKI_4`"str1" "str2" "str3"`AKI_4のように分割して指定できます。`(querify "q" .Inner)`AKI_4はAKI_4`{{< hgblock >}}< tex2svg >{{< /hgblock >}}`AKI_4とAKI_4`{{< hgblock >}}< /tex2svg >{{< /hgblock >}}`AKI_4の間のテキストをAKI_4`q=%5Cfrac%7B1%7D%7Bx%7D`AKI_4みたいにします。インライン表示するときはAKI_4`&inline=true`AKI_4を加えます。`svg`AKI_4にはAKI_4`\n`AKI_4などのコードを含むので，それをAKI_4`safeHTML`AKI_4でいい感じにして表示させます。
 
 ```html
 {{- $json := getJSON "https://tex2svg.herokuapp.com/" "?" (querify "q" .Inner) "&inline=true" -}}
 {{- $json.svg | safeHTML -}}
 ```
 
-Shortcode の引数を指定して表示方法の選択ができたほうが便利です。`{{- if eq (.Get 0) "display" -}}` で引数に `display` の有無に応じて，`<span>` と `<div>` を分岐し，`&inline=true` を適宜付けます。具体例は次節の[使い方](#使い方)で紹介します。
+Shortcodeの引数を指定して表示方法の選択ができたほうが便利です。`{{- if eq (.Get 0) "display" -}}`AKI_4で引数にAKI_4`display`AKI_4の有無に応じて，`<span>`AKI_4とAKI_4`<div>`AKI_4を分岐し，`&inline=true`AKI_4を適宜付けます。具体例は次節のAKI_4[使い方](#使い方)AKI_4で紹介します。
 
 # 使い方
 
 この節では使い方だけを説明します。コピペで簡単に利用できるので，「中身とか知らねーけど使わせろ」って人はここだけ見てください。
 
-`shortcodes` に次のコードを `tex2svg.html`[^tex2svg.html] として保存してください。
+`shortcodes`AKI_4に次のコードをAKI_4`tex2svg.html`[^tex2svg.html]AKI_4として保存してください。
 
-[^tex2svg.html]: 好きな名前で構いません。僕は短いほうが楽なので `eq.html` にしています。
+[^tex2svg.html]: 好きな名前で構いません。僕は短いほうが楽なのでAKI_4`eq.html`AKI_4にしています。
 
 ```html
 {{- if eq (.Get 0) "display" -}}
@@ -96,7 +96,7 @@ Shortcode の引数を指定して表示方法の選択ができたほうが便�
 {{- end -}}
 ```
 
-次のように Markdown で記事を書いて見てください。
+次のようにMarkdownで記事を書いて見てください。
 
 ```md
 ディスプレイ表示の数式は
@@ -130,7 +130,7 @@ Shortcode の引数を指定して表示方法の選択ができたほうが便�
 
 ---
 
-もちろん `align` 環境も使えます。
+もちろんAKI_4`align`AKI_4環境も使えます。
 
 {{<eq d>}}
 \begin{align}
@@ -140,7 +140,7 @@ Shortcode の引数を指定して表示方法の選択ができたほうが便�
 \end{align}
 {{</eq>}}
 
-インライン表示のときは `<span class="inline"> ... </span>` で囲み，ディスプレイ表示のときは `<div class="display"> ... </div>` で囲みます。CSS で設定することで，表示方法を簡単に設定できます。
+インライン表示のときはAKI_4`<span class="inline"> ... </span>`AKI_4で囲み，ディスプレイ表示のときはAKI_4`<div class="display"> ... </div>`AKI_4で囲みます。CSSで設定することで，表示方法を簡単に設定できます。
 
 # おまけ
 
@@ -148,7 +148,7 @@ Shortcode の引数を指定して表示方法の選択ができたほうが便�
 
 ### ディスプレイ表示を中央へ
 
-ディスプレイ表示の時は TeX みたいに中央に置きたい場合は CSS で左右にマージンを与えます。
+ディスプレイ表示の時はTeXみたいに中央に置きたい場合はCSSで左右にマージンを与えます。
 
 ```css
 .tex {
@@ -160,16 +160,16 @@ Shortcode の引数を指定して表示方法の選択ができたほうが便�
 
 ### フォントサイズを変更したい
 
-ちょっと本文より大きくて嫌だな～と思ったので，フォントサイズを {{<eq>}}0.9{{</eq>}} 倍させました。
+ちょっと本文より大きくて嫌だな～と思ったので，フォントサイズを{{<eq>}}0.9{{</eq>}}倍させました。
 
 ```css
 .tex {font-size: 0.9em;}
 .i-tex {font-size: 0.9em;}
 ```
 
-### `\bm` を使いたい
+### `\bm`AKI_4を使いたい
 
-MathJax はデフォルトでは `\bm` を使えないので，代わりに `\boldsymbol` で太字にします。`\bm` を `\boldsymbol` に置換すればもっと便利です。
+MathJaxはデフォルトではAKI_4`\bm`AKI_4を使えないので，代わりにAKI_4`\boldsymbol`AKI_4で太字にします。`\bm`AKI_4をAKI_4`\boldsymbol`AKI_4に置換すればもっと便利です。
 
 ```html
 replace .Inner "\\bm" "\\boldsymbol"
@@ -177,7 +177,7 @@ replace .Inner "\\bm" "\\boldsymbol"
 
 ### テキスト選択したい
 
-単なる画像としての SVG なので，数式をコピペできません。SVG 内に見えないテキストを用意してコピペできるようにしたいと思います。`replace` を使って `</svg>` を `<text> ... </text></svg>` に置換して，無理やりテキスト情報を入れます。CSS テキストのスタイルを指定します。色を無色 `rgba(0,0,0,0)` にします。SVG 内のフォントサイズがはちょっと**アレ**ですごく小さいみたいなので，適当に超大きくなるように設定します。
+単なる画像としてのSVGなので，数式をコピペできません。SVG内に見えないテキストを用意してコピペできるようにしたいと思います。`replace`AKI_4を使ってAKI_4`</svg>`AKI_4をAKI_4`<text> ... </text></svg>`AKI_4に置換して，無理やりテキスト情報を入れます。CSSテキストのスタイルを指定します。色を無色AKI_4`rgba(0,0,0,0)`AKI_4にします。SVG内のフォントサイズがはちょっと**アレ**ですごく小さいみたいなので，適当に超大きくなるように設定します。
 
 ```html
 {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML -}}
@@ -191,9 +191,9 @@ replace .Inner "\\bm" "\\boldsymbol"
 
 ## tex2svg
 
-MathJax にはパッケージを追加したり，フォントを変更する機能があります。tex2svg ではデフォルト状態になっています。MathJax の設定をやりたい場合は自分で API を用意してください。ソースコードは [tex2svg (GitHub)](https://github.com/atishay/tex2svg/) を参考にすれば良いと思います。ローカルで Hugo を使う場合は `localhost:3000` に API をたてたとしたら，`https://tex2svg.herokuapp.com/` を `http://localhost:3030/` に置きかえらば良いです。僕は GitHub Actions で Hugo しているので，tex2svg を直接利用しています[^myapi]。
+MathJaxにはパッケージを追加したり，フォントを変更する機能があります。tex2svgではデフォルト状態になっています。MathJaxの設定をやりたい場合は自分でAPIを用意してください。ソースコードはAKI_4[tex2svg (GitHub)](https://github.com/atishay/tex2svg/)AKI_4を参考にすれば良いと思います。ローカルでHugoを使う場合はAKI_4`localhost:3000`AKI_4にAPIをたてたとしたら，`https://tex2svg.herokuapp.com/`AKI_4をAKI_4`http://localhost:3030/`AKI_4に置きかえらば良いです。僕はGitHub ActionsでHugoしているので，tex2svgを直接利用しています[^myapi]。
 
-[^myapi]: まあ，自分で Heroku とか Repl.it とかで API を公開すればいいんだけどね...
+[^myapi]: まあ，自分でHerokuとかRepl.itとかでAPIを公開すればいいんだけどね...
 
 # 文献
 
@@ -202,4 +202,4 @@ MathJax にはパッケージを追加したり，フォントを変更する機
 3. [tex2svg (API)](http://tex2svg.herokuapp.com/)
 4. [tex2svg (GitHub)](https://github.com/atishay/tex2svg/)
 5. [CODECOGS](https://codecogs.com/)
-6. [超高速な数式表示（KaTeX より高速！）(Qiita)](https://qiita.com/Daiji256/items/47808405713dc2b33ab1)
+6. [超高速な数式表示（KaTeXより高速！）(Qiita)](https://qiita.com/Daiji256/items/47808405713dc2b33ab1)

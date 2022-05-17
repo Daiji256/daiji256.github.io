@@ -1,18 +1,18 @@
 ---
-title: "ヒードランは，十字のツメを食いこませて TeX や TikZ を這い回る。"
+title: "ヒードランは，十字のツメを食いこませてTeXやTikZを這い回る。"
 date: 2021-02-28
 categories: [TeX LaTeX]
 tags: [ネタ,TikZ]
 strlen: 25
 ---
 
-※この記事は Qiita に投稿**していた**内容です。
+※この記事はQiitaに投稿**していた**内容です。
 
 # はじめに
 
-先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15 年間もヒードランは壁や天井を這い回っていました。たまには他の場所も這い回りたいことでしょう。ここではヒードランに TeX と TikZ[^tikz] を這い回ってもらいます。
+先日（2021-02-27）にポケットモンスターダイヤモンド・パールのリメイクのブリリアントダイヤモンド・シャイニングパールが発表されました。15年間もヒードランは壁や天井を這い回っていました。たまには他の場所も這い回りたいことでしょう。ここではヒードランにTeXとTikZ[^tikz]AKI_4を這い回ってもらいます。
 
-[^tikz]: Ti*k*Z と表示すべきだけど，タイトルと統一するためにローマン体にしています。
+[^tikz]: Ti*k*Zと表示すべきだけど，タイトルと統一するためにローマン体にしています。
 
 # 基礎知識
 
@@ -20,13 +20,13 @@ strlen: 25
 
 - [TeX (TeX Wiki)](https://texwiki.texjp.org/TeX)
 - [TikZ/PGF (TeX Wiki)](https://texwiki.texjp.org/TikZ)
-- [ヒードラン (ピクシブ)](https://dic.pixiv.net/a/%E3%83%92%E3%83%BC%E3%83%89%E3%83%A9%E3%83%B3)
+- [ヒードラン(ピクシブ)](https://dic.pixiv.net/a/%E3%83%92%E3%83%BC%E3%83%89%E3%83%A9%E3%83%B3)
 
-# TeX を這い回る
+# TeXを這い回る
 
-まずは TeX を這い回ってもらいます。ただヒードランの画像を `\includegraphics` によって貼り付けるだけです[^svg-err]。
+まずはTeXを這い回ってもらいます。ただヒードランの画像をAKI_4`\includegraphics`AKI_4によって貼り付けるだけです[^svg-err]。
 
-[^svg-err]: SVG の表示がうまくいっていないかもしれません。
+[^svg-err]: SVGの表示がうまくいっていないかもしれません。
 
 ```TeX
 \includegraphics[scale=4]{Heatran.png}
@@ -34,9 +34,9 @@ strlen: 25
 
 {{< figure src="./images/fig1.svg" class="center" width="320" height="453" >}}
 
-# TikZ を這い回る
+# TikZを這い回る
 
-TeX を這い回るだけでは面白くありません。なので TikZ でドット絵を描いて這い回ってもらいます。ドット絵は大量の四角で描きます。枠無しで色を塗ると環境によっては隙間が見えてしまいます。なので，太さ `thin` の枠を設定しています。{{<eq>}}Y{{</eq>}} 軸は下が正になっているので，マイナスにしています。
+TeXを這い回るだけでは面白くありません。なのでTikZでドット絵を描いて這い回ってもらいます。ドット絵は大量の四角で描きます。枠無しで色を塗ると環境によっては隙間が見えてしまいます。なので，太さAKI_4`thin`AKI_4の枠を設定しています。{{<eq>}}Y{{</eq>}}軸は下が正になっているので，マイナスにしています。
 
 ```TeX
 \begin{tikzpicture}
@@ -44,7 +44,7 @@ TeX を這い回るだけでは面白くありません。なので TikZ でド�
 \end{tikzpicture}
 ```
 
-手作業で全ドットを描いたら大変なので，Python+OpenCV にやってもらいましょう。背景のドットは無視します。後は全画素に応じてカラーコードの設定と座標の設定をしています。当たり前ですけど，見た目は変わりません。
+手作業で全ドットを描いたら大変なので，Python+OpenCVにやってもらいましょう。背景のドットは無視します。後は全画素に応じてカラーコードの設定と座標の設定をしています。当たり前ですけど，見た目は変わりません。
 
 ```Python
 img = cv2.imread(sys.argv[1], cv2.IMREAD_UNCHANGED)
@@ -70,7 +70,7 @@ print("\\end{tikzpicture}")
 
 # 文献
 
-1. [ソースコード (GitHub)](https://github.com/Daiji256/TeX-TikZ-Heatran)
+1. [ソースコード(GitHub)](https://github.com/Daiji256/TeX-TikZ-Heatran)
 2. [TeX (TeX Wiki)](https://texwiki.texjp.org/TeX)
 3. [TikZ/PGF (TeX Wiki)](https://texwiki.texjp.org/TikZ)
-4. [ヒードラン (ピクシブ)](https://dic.pixiv.net/a/%E3%83%92%E3%83%BC%E3%83%89%E3%83%A9%E3%83%B3)
+4. [ヒードラン(ピクシブ)](https://dic.pixiv.net/a/%E3%83%92%E3%83%BC%E3%83%89%E3%83%A9%E3%83%B3)

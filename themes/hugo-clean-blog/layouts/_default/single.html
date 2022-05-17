@@ -3,18 +3,20 @@
   <div class="main-line">
     <div class="post">
       <div class="info">
-        <div class="title">{{ .Title }}</div>
+        <div class="title">
+          {{ partial "functions/aki-kumi.html" .Title }}
+        </div>
         {{ if not (eq (.Date.Format "2006/01/02") "0001/01/01") -}}
         <div class="post-info">
           <svg>
             <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/date.svg#symbol" />
           </svg>
-          <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
+          <div class="text">{{ partial "functions/aki-kumi.html" (.Date.Format "2006年1月2日") }}</div>
           {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
           <svg>
             <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/lastmod.svg#symbol" />
           </svg>
-          <div class="text">{{ .Lastmod.Format "2006 年 1 月 2 日" }}</div>
+          <div class="text">{{ partial "functions/aki-kumi.html" (.Lastmod.Format "2006年1月2日") }}</div>
           {{- end }}
         </div>
         {{- end }}
@@ -25,7 +27,9 @@
             <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/categories.svg#symbol" />
           </svg>
           {{ range . -}}
-          <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">{{ . }}</a>
+          <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">
+            {{ partial "functions/aki-kumi.html" . }}
+          </a>
           {{- end }}
         </div>
         {{- end }}
@@ -37,7 +41,9 @@
             <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/tags.svg#symbol" />
           </svg>
           {{ range . -}}
-          <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">{{ . }}</a>
+          <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">
+            {{ partial "functions/aki-kumi.html" . }}
+          </a>
           {{- end }}
         </div>
         {{- end }}
@@ -45,26 +51,20 @@
       </div>
       <section class="sec-content">
         <div class="content">
-          {{ .Content }}
+          {{ partial "functions/aki-kumi.html" .Content }}
         </div>
       </section>
     </div>
     {{- if ne .Params.comment false }}
     <div class="comment-back">
-      <script
-        src="https://utteranc.es/client.js"
-        repo="Daiji256/daiji256.github.io"
-        issue-term="url"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-      </script>
+      <script src="https://utteranc.es/client.js" repo="Daiji256/daiji256.github.io" issue-term="url"
+        theme="github-light" crossorigin="anonymous" async></script>
     </div>
     {{- end }}
   </div>
   <div class="toc">
     <aside>
-      {{ .TableOfContents }}
+      {{ partial "functions/aki-kumi.html" .TableOfContents }}
     </aside>
   </div>
 </div>

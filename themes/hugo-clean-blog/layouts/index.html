@@ -17,33 +17,34 @@
   {{ $font := resources.GetRemote
   "https://github.com/Daiji256/daiji256.github.io/raw/main/themes/hugo-clean-blog/static/fonts/NotoSansJP-Bold.otf" }}
   {{ $img := resources.Get "images/ogp/ogp.png" }}
-  {{ $text := .Title }}
-  {{ if gt (strings.RuneCount $text) 23 }}
-  {{ $text = printf "%s…" (substr $text 0 22) }}
+  {{ $title := partial "functions/space-kumi.html" .Title }}
+  {{ $siteTitle := partial "functions/space-kumi.html" .Site.Title }}
+  {{ if gt (strings.RuneCount $title) 23 }}
+  {{ $title = printf "%s…" (substr $title 0 22) }}
   {{ end }}
   {{ $img = $img | images.Filter
-  (images.Text .Site.Title (dict
+  (images.Text $siteTitle (dict
   "color" "#333"
   "size" 32
   "x" 90 "y" 19
   "font" $font
   ))
-  (images.Text $text (dict
+  (images.Text $title (dict
   "color" "#333"
   "size" 64
   "x" 50 "y" 200
   "font" $font
   ))
   }}
-  <title>{{ .Site.Title }}</title>
+  <title>{{ $siteTitle }}</title>
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Daiji256" />
-  <meta name="twitter:title" content="{{ .Site.Title }}" />
+  <meta name="twitter:title" content="{{ $siteTitle }}" />
   <meta name="twitter:image" content="{{ $img.RelPermalink | absURL }}" />
   <meta property="og:url" content="{{ $.Site.BaseURL | absURL }}" />
   <meta property="og:type" content="blog" />
-  <meta property="og:title" content="{{ .Site.Title }}" />
-  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="og:title" content="{{ $siteTitle }}" />
+  <meta property="og:site_name" content="{{ $siteTitle }}" />
   <meta property="og:image" content="{{ $img.RelPermalink | absURL }}" />
   <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
   <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
@@ -52,10 +53,6 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
     as="style" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
-    media="print" onload="this.media='all'" />
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css"
-    as="style" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css"
     media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}css/base.min.css" />
   <script src="{{ $.Site.BaseURL | relURL }}js/menu.min.js"></script>
@@ -69,7 +66,7 @@
         <div class="card">
           <div class="main">
             <img src="{{ $.Site.BaseURL | relURL }}images/icon.svg" width="80" height="80" class="icon" />
-            <div class="name">{{ .Site.Title }}</div>
+            <div class="name">{{ partial "functions/aki-kumi.html" .Site.Title }}</div>
             <div class="brands">
               <a href="https://github.com/Daiji256/" title='GitHub' target="_blank" rel="noopener" class="link">
                 <svg>
@@ -106,7 +103,7 @@
             {{ range .Site.Taxonomies.categories.ByCount -}}
             <span class="no-wrap">
               <a href="{{ $.Site.BaseURL | relURL }}categories/{{ .Name | urlize }}" class="taxonomies-item">
-                {{ .Page.Title }}
+                {{ partial "functions/aki-kumi.html" .Page.Title }}
               </a>
             </span>
             {{ end -}}
@@ -123,7 +120,7 @@
             {{ range .Site.Taxonomies.tags.ByCount -}}
             <span class="no-wrap">
               <a href="{{ $.Site.BaseURL | relURL }}tags/{{ .Name | urlize }}" class="taxonomies-item">
-                {{ .Page.Title }}
+                {{ partial "functions/aki-kumi.html" .Page.Title }}
               </a>
             </span>
             {{ end -}}
@@ -138,21 +135,21 @@
         {{ range (.Paginate $pages).Pages -}}
         <div class="post-card">
           <div class="title">
-            <a href="{{ .RelPermalink }}" class="link">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}" class="link">{{ partial "functions/aki-kumi.html" .Title }}</a>
           </div>
           <div class="summary">
-            {{ .Summary }}...
+            {{ partial "functions/aki-kumi.html" .Summary }}&mldr;
           </div>
           <div class="post-info">
             <svg>
               <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/date.svg#symbol" />
             </svg>
-            <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
+            <div class="text">{{ partial "functions/aki-kumi.html" (.Date.Format "2006年1月2日") }}</div>
             {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
             <svg>
               <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/lastmod.svg#symbol" />
             </svg>
-            <div class="text">{{ .Lastmod.Format "2006 年 1 月 2 日" }}</div>
+            <div class="text">{{ partial "functions/aki-kumi.html" (.Lastmod.Format "2006年1月2日") }}</div>
             {{- end }}
           </div>
           {{ with .Params.categories -}}
@@ -162,7 +159,9 @@
               <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/categories.svg#symbol" />
             </svg>
             {{ range . -}}
-            <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">{{ . }}</a>
+            <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}/" class="text">
+              {{ partial "functions/aki-kumi.html" . }}
+            </a>
             {{- end }}
           </div>
           {{- end }}
@@ -174,7 +173,9 @@
               <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/tags.svg#symbol" />
             </svg>
             {{ range . -}}
-            <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">{{ . }}</a>
+            <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}/" class="text">
+              {{ partial "functions/aki-kumi.html" . }}
+            </a>
             {{- end }}
           </div>
           {{- end }}

@@ -17,22 +17,24 @@
   {{ $font := resources.GetRemote
   "https://github.com/Daiji256/daiji256.github.io/raw/main/themes/hugo-clean-blog/static/fonts/NotoSansJP-Bold.otf" }}
   {{ $img := resources.Get "images/ogp/ogp-post.png" }}
-  {{ $title := .Title }}
+  {{ $title := partial "functions/space-kumi.html" .Title }}
+  {{ $siteTitle := partial "functions/space-kumi.html" .Site.Title }}
   {{ if or .Params.tags .Params.categories }}
   {{ $strlen := 22 }}
   {{ if .Params.strlen }}{{ $strlen = .Params.strlen }}{{ end }}
   {{ if gt (strings.RuneCount $title) (add $strlen 1) }}
   {{ $title = printf "%s…" (substr $title 0 $strlen) }}
   {{ end }}
-  {{ $date := .Date.Format "2006 年 1 月 2 日" }}
+  {{ $date := .Date.Format (partial "functions/space-kumi.html" "2006年1月2日") }}
   {{ $categories := "" }}
-  {{ range .Params.categories }}{{ $categories = printf "%s, %s" $categories . }}{{ end }}
+  {{ range .Params.categories }}{{ $categories = printf "%s, %s" $categories (partial "functions/space-kumi.html" .)
+  }}{{ end }}
   {{ $categories = substr $categories 2 }}
   {{ $tags := "" }}
-  {{ range .Params.tags }}{{ $tags = printf "%s, %s" $tags . }}{{ end }}
+  {{ range .Params.tags }}{{ $tags = printf "%s, %s" $tags (partial "functions/space-kumi.html" .) }}{{ end }}
   {{ $tags = substr $tags 2 }}
   {{ $img = $img | images.Filter
-  (images.Text .Site.Title (dict
+  (images.Text $siteTitle (dict
   "color" "#333"
   "size" 32
   "x" 90 "y" 19
@@ -70,7 +72,7 @@
   {{ if (eq $title "Tags") }}{{ $title = "タグ" }}{{ end }}
   {{ if (eq $title "Categories") }}{{ $title = "カテゴリ" }}{{ end }}
   {{ $img = $img | images.Filter
-  (images.Text .Site.Title (dict
+  (images.Text $siteTitle (dict
   "color" "#333"
   "size" 32
   "x" 90 "y" 19
@@ -85,20 +87,22 @@
   ))
   }}
   {{ end }}
-  {{ $title = .Title }}
+  {{ $title = partial "functions/space-kumi.html" .Title }}
+  {{ $siteTitle = partial "functions/space-kumi.html" .Site.Title }}
   {{ if (eq $title "Posts") }}{{ $title = "すべての投稿" }}{{ end }}
   {{ if (eq $title "Tags") }}{{ $title = "タグ" }}{{ end }}
   {{ if (eq $title "Categories") }}{{ $title = "カテゴリ" }}{{ end }}
-  <title>{{ $title }} - {{ .Site.Title }}</title>
+  {{ $summary := (partial "functions/space-kumi.html" .Summary) | safeHTML }}
+  <title>{{ $title }} - {{ $siteTitle }}</title>
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Daiji256" />
-  <meta name="twitter:title" content="{{ $title }} - {{ .Site.Title }}" />
+  <meta name="twitter:title" content="{{ $title }} - {{ $siteTitle }}" />
   <meta name="twitter:image" content="{{ $img.RelPermalink | absURL }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="{{ $title }} - {{ .Site.Title }}" />
-  <meta property="og:description" content="{{ .Summary }}" />
-  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="og:title" content="{{ $title }} - {{ $siteTitle }}" />
+  <meta property="og:description" content="{{ $summary }}" />
+  <meta property="og:site_name" content="{{ $siteTitle }}" />
   <meta property="og:image" content="{{ $img.RelPermalink | absURL }}" />
   <link rel="shortcut icon" type="image/x-icon" href="{{ $.Site.BaseURL | relURL }}images/favicon.ico" />
   <link rel="apple-touch-icon" type="image/png" href="{{ $.Site.BaseURL | relURL }}images/apple-touch-icon.png" />
@@ -109,10 +113,6 @@
     as="style" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap"
-    media="print" onload="this.media='all'" />
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css"
-    as="style" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css"
     media="print" onload="this.media='all'" />
   {{- if eq .Params.allfonts true }}
   <link rel="preload"

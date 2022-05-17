@@ -1,117 +1,127 @@
 {{ define "content" -}}
-  {{- if or (eq .Title "Tags") (eq .Title "Categories") }}
-    <div class="full-block">
-      <div class="post">
-        <div class="info">
-          <div class="title">
-            {{ if eq .Title "Categories" -}}
-              カテゴリ
-            {{- else -}}
-              タグ
-            {{- end }}
-          </div>
-        </div>
-        <section class="taxonomies-list">
-          <div class="content">
-            {{ if eq .Title "Categories" -}}
-              {{ range .Site.Taxonomies.categories.ByCount -}}
-                <span class="no-wrap">
-                  <a href="{{ $.Site.BaseURL | relURL }}categories/{{ .Name | urlize }}" class="taxonomies-item">
-                    {{ .Page.Title }} | {{ .Count }}
-                  </a>
-                </span>
-              {{ end -}}
-            {{- else -}}
-              {{ range .Site.Taxonomies.tags.ByCount -}}
-                <span class="no-wrap">
-                  <a href="{{ $.Site.BaseURL | relURL }}tags/{{ .Name | urlize }}" class="taxonomies-item">
-                    {{ .Page.Title }} | {{ .Count }}
-                  </a>
-                </span>
-              {{ end -}}
-            {{- end -}}
-          </div>
-        </section>
-      </div>
-    </div>
-  {{- else -}}
-    <div class="main-wrapper">
-      <div class="cards-line">
-        <div class="card">
-          <div class="main">
-            {{ $title := replace (lower .Title) " " "-" }}
-            {{ if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.svg" $title )) (fileExists (printf "/static/images/taxonomies/%s.svg" $title)) -}}
-              <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ $title }}.svg" width="80" height="80" class="icon" />
-            {{- else if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.png" $title )) (fileExists (printf "/static/images/taxonomies/%s.png" $title)) -}}
-              <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ $title }}.png" width="80" height="80" class="icon" />
-            {{- else if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.jpg" $title )) (fileExists (printf "/static/images/taxonomies/%s.jpg" $title)) -}}
-              <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ $title }}.jpg" width="80" height="80" class="icon" />
-            {{- else -}}
-              <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/none.svg" width="80" height="80" class="icon" />
-            {{- end }}
-            <div class="name">
-              {{ if eq .Title "Posts" -}}
-                すべての投稿
-              {{- else -}}
-                {{ .Title }}
-              {{- end }}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="posts-line">
-        {{- $pages := .Pages }}
-        {{- if .IsHome }}
-          {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- if or (eq .Title "Tags") (eq .Title "Categories") }}
+<div class="full-block">
+  <div class="post">
+    <div class="info">
+      <div class="title">
+        {{ if eq .Title "Categories" -}}
+        カテゴリ
+        {{- else -}}
+        タグ
         {{- end }}
-        {{ range (.Paginate $pages).Pages -}}
-          <div class="post-card">
-            <div class="title">
-              <a href="{{ .RelPermalink }}" class="link">{{ .Title }}</a>
-            </div>
-            <div class="summary">
-              {{ .Summary }}...
-            </div>
-            <div class="post-info">
-              <svg>
-                <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/date.svg#symbol" />
-              </svg>
-              <div class="text">{{ .Date.Format "2006 年 1 月 2 日" }}</div>
-              {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
-                <svg>
-                  <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/lastmod.svg#symbol" />
-                </svg>
-                <div class="text">{{ .Lastmod.Format "2006 年 1 月 2 日" }}</div>
-              {{- end }}
-            </div>
-            {{ with .Params.categories -}}
-              {{ if . -}}
-                <div class="post-info">
-                  <svg>
-                    <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/categories.svg#symbol" />
-                  </svg>
-                  {{ range . -}}
-                  <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}" class="text">{{ . }}</a>
-                  {{- end }}
-                </div>
-              {{- end }}
-            {{- end }}
-            {{ with .Params.tags -}}
-              {{ if . -}}
-                <div class="post-info">
-                  <svg>
-                    <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/tags.svg#symbol" />
-                  </svg>
-                  {{ range . -}}
-                  <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}" class="text">{{ . }}</a>
-                  {{- end }}
-                </div>
-              {{- end }}
-            {{- end }}
-          </div>
-        {{ end -}}
-        {{- partial "pagination.html" . }}
       </div>
     </div>
-  {{- end -}}
+    <section class="taxonomies-list">
+      <div class="content">
+        {{ if eq .Title "Categories" -}}
+        {{ range .Site.Taxonomies.categories.ByCount -}}
+        <span class="no-wrap">
+          <a href="{{ $.Site.BaseURL | relURL }}categories/{{ .Name | urlize }}" class="taxonomies-item">
+            {{ partial "functions/aki-kumi.html" .Page.Title }} | {{ .Count }}
+          </a>
+        </span>
+        {{ end -}}
+        {{- else -}}
+        {{ range .Site.Taxonomies.tags.ByCount -}}
+        <span class="no-wrap">
+          <a href="{{ $.Site.BaseURL | relURL }}tags/{{ .Name | urlize }}" class="taxonomies-item">
+            {{ partial "functions/aki-kumi.html" .Page.Title }} | {{ .Count }}
+          </a>
+        </span>
+        {{ end -}}
+        {{- end -}}
+      </div>
+    </section>
+  </div>
+</div>
+{{- else -}}
+<div class="main-wrapper">
+  <div class="cards-line">
+    <div class="card">
+      <div class="main">
+        {{ $title := replace (lower .Title) " " "-" }}
+        {{ if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.svg" $title ))
+        (fileExists (printf "/static/images/taxonomies/%s.svg" $title)) -}}
+        <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ $title }}.svg" width="80" height="80"
+          class="icon" />
+        {{- else if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.png" $title ))
+        (fileExists (printf "/static/images/taxonomies/%s.png" $title)) -}}
+        <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ $title }}.png" width="80" height="80"
+          class="icon" />
+        {{- else if or (fileExists (printf "/themes/hugo-clean-blog/static/images/taxonomies/%s.jpg" $title ))
+        (fileExists (printf "/static/images/taxonomies/%s.jpg" $title)) -}}
+        <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/{{ $title }}.jpg" width="80" height="80"
+          class="icon" />
+        {{- else -}}
+        <img src="{{ $.Site.BaseURL | relURL }}images/taxonomies/none.svg" width="80" height="80" class="icon" />
+        {{- end }}
+        <div class="name">
+          {{ if eq .Title "Posts" -}}
+          すべての投稿
+          {{- else -}}
+          {{ partial "functions/aki-kumi.html" .Title }}
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="posts-line">
+    {{- $pages := .Pages }}
+    {{- if .IsHome }}
+    {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{- end }}
+    {{ range (.Paginate $pages).Pages -}}
+    <div class="post-card">
+      <div class="title">
+        <a href="{{ .RelPermalink }}" class="link">{{ partial "functions/aki-kumi.html" .Title }}</a>
+      </div>
+      <div class="summary">
+        {{ partial "functions/aki-kumi.html" .Summary }}&mldr;
+      </div>
+      <div class="post-info">
+        <svg>
+          <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/date.svg#symbol" />
+        </svg>
+        <div class="text">{{ partial "functions/aki-kumi.html" (.Date.Format "2006年1月2日") }}</div>
+        {{ if not (eq (.Date.Format "2006/01/02") (.Lastmod.Format "2006/01/02")) -}}
+        <svg>
+          <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/lastmod.svg#symbol" />
+        </svg>
+        <div class="text">{{ partial "functions/aki-kumi.html" (.Lastmod.Format "2006年1月2日") }}</div>
+        {{- end }}
+      </div>
+      {{ with .Params.categories -}}
+      {{ if . -}}
+      <div class="post-info">
+        <svg>
+          <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/categories.svg#symbol" />
+        </svg>
+        {{ range . -}}
+        <a href="{{ $.Site.BaseURL | relURL }}categories/{{ . | urlize }}" class="text">
+          {{ partial "functions/aki-kumi.html" . }}
+        </a>
+        {{- end }}
+      </div>
+      {{- end }}
+      {{- end }}
+      {{ with .Params.tags -}}
+      {{ if . -}}
+      <div class="post-info">
+        <svg>
+          <use xlink:href="{{ $.Site.BaseURL | relURL }}images/icons/tags.svg#symbol" />
+        </svg>
+        {{ range . -}}
+        <a href="{{ $.Site.BaseURL | relURL }}tags/{{ . | urlize }}" class="text">
+          {{ partial "functions/aki-kumi.html" . }}
+        </a>
+        {{- end }}
+      </div>
+      {{- end }}
+      {{- end }}
+    </div>
+    {{ end -}}
+    {{- partial "pagination.html" . }}
+  </div>
+</div>
+{{- end -}}
 {{ end }}
