@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://daiji256.github.io/posts/tex-latex/latex-susume/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTeX のすゝめ - Daiji Blog">
-<meta property="og:description" content="はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。 TeX / LaTeX とは TeX（テック / テフ）1は，スタン">
+<meta property="og:description" content="はじめに 本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。 TeX / ">
 <meta property="og:site_name" content="Daiji Blog">
 <meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hucd71ba4db3bf1a0d0407d6f63e309a1c_11019_filter_839996463337553772.png">
 <link rel="shortcut icon" type=image/x-icon href=https://daiji256.github.io/images/favicon.ico>
@@ -21,9 +21,7 @@
 <link rel=preconnect href=https://fonts.googleapis.com>
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" as=style>
-<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'">
-<link rel=preload href=https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css as=style>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
 <link rel=stylesheet href=https://daiji256.github.io/css/one-dark.min.css>
 <script src=https://daiji256.github.io/js/menu.min.js></script>
 </head>
@@ -35,7 +33,8 @@
 <li>
 <a href=https://daiji256.github.io/ class=item>
 <img src=https://daiji256.github.io/images/icon.svg width=28 height=28 title=ホーム class=user-icon>
-<div class=site-title>Daiji Blog</div>
+<div class=site-title>
+Daiji Blog</div>
 </a>
 </li>
 <li>
@@ -76,67 +75,76 @@
 <li><a href=https://daiji256.github.io/about/>プロフィール</a></li>
 </ul>
 <div class=menu-back></div>
-</nav>
-<div class=post-wrapper>
+</nav><div class=post-wrapper>
 <div class=main-line>
 <div class=post>
 <div class=info>
-<div class=title>LaTeX のすゝめ</div>
+<div class=title>
+LaTeX<span class="aki aki-4"></span>のすゝめ
+</div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/date.svg#symbol"/></svg>
-<div class=text>2021 年 2 月 14 日</div><svg><use xlink:href="https://daiji256.github.io/images/icons/lastmod.svg#symbol"/></svg>
-<div class=text>2022 年 1 月 10 日</div>
+<div class=text>
+2021<span class="aki aki-4"></span>年<span class="aki aki-4"></span>2<span class="aki aki-4"></span>月<span class="aki aki-4"></span>14<span class="aki aki-4"></span>日</div><svg><use xlink:href="https://daiji256.github.io/images/icons/lastmod.svg#symbol"/></svg>
+<div class=text>
+2022<span class="aki aki-4"></span>年<span class="aki aki-4"></span>5<span class="aki aki-4"></span>月<span class="aki aki-4"></span>16<span class="aki aki-4"></span>日</div>
 </div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/categories.svg#symbol"/></svg>
-<a href=https://daiji256.github.io/categories/tex-latex/ class=text>TeX LaTeX</a>
+<a href=https://daiji256.github.io/categories/tex-latex/ class=text>
+TeX LaTeX
+</a>
 </div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/tags.svg#symbol"/></svg>
-<a href=https://daiji256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/ class=text>まとめ</a><a href=https://daiji256.github.io/tags/uplatex/ class=text>upLaTeX</a>
+<a href=https://daiji256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/ class=text>
+まとめ
+</a><a href=https://daiji256.github.io/tags/uplatex/ class=text>
+upLaTeX
+</a>
 </div>
 </div>
 <section class=sec-content>
 <div class=content>
 <h1 id=はじめに>はじめに</h1>
-<p>本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや<strong>初心者を対象</strong>としています。中級者や上級者には物足りないと思います。</p>
-<h1 id=tex--latex-とは>TeX / LaTeX とは</h1>
-<p>TeX（テック / テフ）<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>は，スタンフォード大学の計算機科学と数学の教授である Donald E. Knuth が自ら開発した<strong>フリーの組版システム</strong>です。TeX は MS Word などの見たままを出力する WYSIWYG ソフトウェアと異なり，執筆・組版・出力の各段階を分けて処理を行います。<strong>執筆に集中でき</strong>，様々なプラットフォーム上で<strong>高品質なの文書を出力する</strong>ことができます。</p>
-<p>LaTeX（ラテック / ラテフ）<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>はコンピューター科学者の Leslie Lamport によって開発された，TeX に機能を追加し手軽に組版が行えるようになったシステムです。現在では LaTeX を使うことが一般的なので，「TeX」で LaTeX を指すことが多いです。</p>
-<p>TeX，LaTeX の特徴は次のようなことがあげられます。</p>
+<p>本記事はレポート<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>論文等の執筆に役立つツールの<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>を紹介します<span class=yakumono>。</span><span class="aki aki-2"></span>非<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>ユーザや<strong>初心者を対象</strong>としています<span class=yakumono>。</span><span class="aki aki-2"></span>中級者や上級者には物足りないと思います<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<h1 id=texlatexとは>TeX<span class="aki aki-4"></span>/<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>とは</h1>
+<p>TeX<span class="aki aki-2"></span><span class=yakumono>（</span>テック<span class="aki aki-4"></span>/<span class="aki aki-4"></span>テフ<span class=yakumono>）</span><sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>は<span class=yakumono>，</span><span class="aki aki-2"></span>スタンフォード大学の計算機科学と数学の教授である<span class="aki aki-4"></span>Donald E. Knuth<span class="aki aki-4"></span>が自ら開発した<strong>フリーの組版システム</strong>です<span class=yakumono>。</span><span class="aki aki-2"></span>TeX<span class="aki aki-4"></span>は<span class="aki aki-4"></span>MS Word<span class="aki aki-4"></span>などの見たままを出力する<span class="aki aki-4"></span>WYSIWYG<span class="aki aki-4"></span>ソフトウェアと異なり<span class=yakumono>，</span><span class="aki aki-2"></span>執筆<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>組版<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>出力の各段階を分けて処理を行います<span class=yakumono>。</span><span class="aki aki-2"></span><strong>執筆に集中でき</strong><span class=yakumono>，</span><span class="aki aki-2"></span>様々なプラットフォーム上で<strong>高品質なの文書を出力する</strong>ことができます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>LaTeX<span class="aki aki-2"></span><span class=yakumono>（</span>ラテック<span class="aki aki-4"></span>/<span class="aki aki-4"></span>ラテフ<span class=yakumono>）</span><sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>はコンピューター科学者の<span class="aki aki-4"></span>Leslie Lamport<span class="aki aki-4"></span>によって開発された<span class=yakumono>，</span><span class="aki aki-2"></span>TeX<span class="aki aki-4"></span>に機能を追加し手軽に組版が行えるようになったシステムです<span class=yakumono>。</span><span class="aki aki-2"></span>現在では<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>を使うことが一般的なので<span class=yakumono>，</span><span class="aki aki-2"></span><span class="aki aki-2"></span><span class=yakumono>「</span>TeX<span class=yakumono>」</span><span class="aki aki-2"></span>で<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>を指すことが多いです<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>TeX<span class=yakumono>，</span><span class="aki aki-2"></span>LaTeX<span class="aki aki-4"></span>の特徴は次のようなことがあげられます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <ul>
-<li>Windows，macOS，Linux などの多くのプラットフォームで動作する。</li>
-<li><strong>テキストファイル</strong>で文書を管理できる。</li>
-<li><strong>綺麗な数式を簡単に書ける</strong><sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>。</li>
-<li>図や表を挿入した文書を作成できる。</li>
-<li>章・節，式，図表の番号，頁番号管理などを<strong>自動</strong>的に行い，参照できる。</li>
+<li>Windows<span class=yakumono>，</span><span class="aki aki-2"></span>macOS<span class=yakumono>，</span><span class="aki aki-2"></span>Linux<span class="aki aki-4"></span>などの多くのプラットフォームで動作する<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li><strong>テキストファイル</strong>で文書を管理できる<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li><strong>綺麗な数式を簡単に書ける</strong><sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>図や表を挿入した文書を作成できる<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>章<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>節<span class=yakumono>，</span><span class="aki aki-2"></span>式<span class=yakumono>，</span><span class="aki aki-2"></span>図表の番号<span class=yakumono>，</span><span class="aki aki-2"></span>頁番号管理などを<strong>自動</strong>的に行い<span class=yakumono>，</span><span class="aki aki-2"></span>参照できる<span class=yakumono>。</span><span class="aki aki-2"></span></li>
 </ul>
-<h1 id=日本語-tex-について>日本語 TeX について</h1>
-<p>現在，日本語対応している主な TeX エンジンは 3 つあります。</p>
+<h1 id=日本語texについて>日本語<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>について</h1>
+<p>現在<span class=yakumono>，</span><span class="aki aki-2"></span>日本語対応している主な<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>エンジンは<span class="aki aki-4"></span>3<span class="aki aki-4"></span>つあります<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <ul>
-<li>pTeX：昔々にアスキーが開発した日本語対応のエンジンです。</li>
-<li>upTeX：Unicode 対応で pTeX の進化系のようなエンジンです。</li>
-<li>LuaTeX：Lua が使え，PDF を直接出力する最新のエンジンです。</li>
+<li>pTeX<span class="aki aki-4"></span><span class=yakumono>：</span><span class="aki aki-4"></span>昔々にアスキーが開発した日本語対応のエンジンです<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>upTeX<span class="aki aki-4"></span><span class=yakumono>：</span><span class="aki aki-4"></span>Unicode<span class="aki aki-4"></span>対応で<span class="aki aki-4"></span>pTeX<span class="aki aki-4"></span>の進化系のようなエンジンです<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>LuaTeX<span class="aki aki-4"></span><span class=yakumono>：</span><span class="aki aki-4"></span>Lua<span class="aki aki-4"></span>が使え<span class=yakumono>，</span><span class="aki aki-2"></span>PDF<span class="aki aki-4"></span>を直接出力する最新のエンジンです<span class=yakumono>。</span><span class="aki aki-2"></span></li>
 </ul>
-<p>昔からの名残で学会のフォーマットに pLaTeX を採用していることがあります。ほぼ上位互換の upLaTeX が現在の主流であることから upLaTeX を中心に解説します。最新（未来の標準）の LuaLaTeX については，<a href=https://qiita.com/Daiji256/items/9afbfa9f822629d3b995>LuaLaTeX のすゝめ</a>で解説しています。</p>
+<p>昔からの名残で学会のフォーマットに<span class="aki aki-4"></span>pLaTeX<span class="aki aki-4"></span>を採用していることがあります<span class=yakumono>。</span><span class="aki aki-2"></span>ほぼ上位互換の<span class="aki aki-4"></span>upLaTeX<span class="aki aki-4"></span>が現在の主流であることから<span class="aki aki-4"></span>upLaTeX<span class="aki aki-4"></span>を中心に解説します<span class=yakumono>。</span><span class="aki aki-2"></span>最新<span class="aki aki-2"></span><span class=yakumono>（</span>未来の標準<span class=yakumono>）</span><span class="aki aki-2"></span>の<span class="aki aki-4"></span>LuaLaTeX<span class="aki aki-4"></span>については<span class=yakumono>，</span><span class="aki aki-2"></span><a href=https://qiita.com/Daiji256/items/9afbfa9f822629d3b995>LuaLaTeX<span class="aki aki-4"></span>のすゝめ</a><span class="aki aki-4"></span>で解説しています<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h2 id=uplatex-について>upLaTeX について</h2>
-<p>田中 琢爾さんが内部コードを Unicode 化した pLaTeX の拡張版です。これにより次のような pLaTeX の問題が解決されました。</p>
+<p>田中琢爾さんが内部コードを<span class="aki aki-4"></span>Unicode<span class="aki aki-4"></span>化した<span class="aki aki-4"></span>pLaTeX<span class="aki aki-4"></span>の拡張版です<span class=yakumono>。</span><span class="aki aki-2"></span>これにより次のような<span class="aki aki-4"></span>pLaTeX<span class="aki aki-4"></span>の問題が解決されました<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <ul>
-<li>JIS 第 1, 2 水準の範囲内の文字しか使えないこと。</li>
-<li>8bit の非英語欧文の扱いが難しいこと。</li>
-<li>日本語に限られた利用しか出来なく，中国語や韓国語を扱えないこと。</li>
+<li>JIS<span class="aki aki-4"></span>第<span class="aki aki-4"></span>1, 2<span class="aki aki-4"></span>水準の範囲内の文字しか使えないこと<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>8bit<span class="aki aki-4"></span>の非英語欧文の扱いが難しいこと<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>日本語に限られた利用しか出来なく<span class=yakumono>，</span><span class="aki aki-2"></span>中国語や韓国語を扱えないこと<span class=yakumono>。</span><span class="aki aki-2"></span></li>
 </ul>
-<p>簡単な話，いわゆる<strong>環境依存文字に優しくなった</strong> pLaTeX です。pLaTeX を使う理由は皆無と言ってもいいでしょう。（pLaTeX のフォーマットしか用意されていない学会とかがあるなら別ですが&mldr;）</p>
-<h1 id=latex-開発環境>LaTeX 開発環境</h1>
-<p>文書作成には自分の PC 等に LaTeX をインストールが必要です。TeX Live という TeX のディストリビューションがおすすめです。インストール方法は OS ごとに異なるため，<a href=https://texwiki.texjp.org/TeX%20Live>TeX Live (TeX Wiki)</a> を参考にしてください。</p>
-<p>自分の PC に環境を構築したくない場合は Web 上のサービスをおすすめします。日本では <a href=https://ja.overleaf.com/>Overleaf</a> と <a href=https://cloudlatex.io/ja>Cloud LaTeX</a> がメジャーだと思います。どちらも無料でブラウザ上から LaTeX を使用できます。</p>
+<p>簡単な話<span class=yakumono>，</span><span class="aki aki-2"></span>いわゆる<strong>環境依存文字に優しくなった</strong><span class="aki aki-4"></span>pLaTeX<span class="aki aki-4"></span>です<span class=yakumono>。</span><span class="aki aki-2"></span>pLaTeX<span class="aki aki-4"></span>を使う理由は皆無と言ってもいいでしょう<span class=yakumono>。</span><span class="aki aki-2"></span><span class="aki aki-2"></span><span class=yakumono>（</span>pLaTeX<span class="aki aki-4"></span>のフォーマットしか用意されていない学会とかがあるなら別ですが&mldr;<span class=yakumono>）</span><span class="aki aki-2"></span></p>
+<h1 id=latex開発環境>LaTeX<span class="aki aki-4"></span>開発環境</h1>
+<p>文書作成には自分の<span class="aki aki-4"></span>PC<span class="aki aki-4"></span>等に<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>をインストールが必要です<span class=yakumono>。</span><span class="aki aki-2"></span>TeX Live<span class="aki aki-4"></span>という<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>のディストリビューションがおすすめです<span class=yakumono>。</span><span class="aki aki-2"></span>インストール方法は<span class="aki aki-4"></span>OS<span class="aki aki-4"></span>ごとに異なるため<span class=yakumono>，</span><span class="aki aki-2"></span><a href=https://texwiki.texjp.org/TeX%20Live>TeX Live (TeX Wiki)</a><span class="aki aki-4"></span>を参考にしてください<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>自分の<span class="aki aki-4"></span>PC<span class="aki aki-4"></span>に環境を構築したくない場合は<span class="aki aki-4"></span>Web<span class="aki aki-4"></span>上のサービスをおすすめします<span class=yakumono>。</span><span class="aki aki-2"></span>日本では<span class="aki aki-4"></span><a href=https://ja.overleaf.com/>Overleaf</a><span class="aki aki-4"></span>と<span class="aki aki-4"></span><a href=https://cloudlatex.io/ja>Cloud LaTeX</a><span class="aki aki-4"></span>がメジャーだと思います<span class=yakumono>。</span><span class="aki aki-2"></span>どちらも無料でブラウザ上から<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>を使用できます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h1 id=文書作成の基本手順>文書作成の基本手順</h1>
-<p>upLaTeX による文書作成は執筆・組版・出力の 3 つのステップで行います<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>。</p>
+<p>upLaTeX<span class="aki aki-4"></span>による文書作成は執筆<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>組版<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>出力の<span class="aki aki-4"></span>3<span class="aki aki-4"></span>つのステップで行います<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <ol>
-<li>原稿執筆にはテキストエディタを用いて TeX ファイルを作成する。</li>
-<li>コマンド（<code>uplatex</code>）を用いて TeX ファイルから DVI ファイルを作成する。</li>
-<li>コマンド（<code>dvipdfmx</code>）を用いて DVI ファイルから PDF ファイルを作成する<sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup>。</li>
+<li>原稿執筆にはテキストエディタを用いて<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>ファイルを作成する<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>コマンド<span class="aki aki-2"></span><span class=yakumono>（</span><code>uplatex</code><span class=yakumono>）</span><span class="aki aki-2"></span>を用いて<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>ファイルから<span class="aki aki-4"></span>DVI<span class="aki aki-4"></span>ファイルを作成する<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>コマンド<span class="aki aki-2"></span><span class=yakumono>（</span><code>dvipdfmx</code><span class=yakumono>）</span><span class="aki aki-2"></span>を用いて<span class="aki aki-4"></span>DVI<span class="aki aki-4"></span>ファイルから<span class="aki aki-4"></span>PDF<span class="aki aki-4"></span>ファイルを作成する<sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span></li>
 </ol>
-<p>この手順により執筆した TeX ソースファイルから PDF の文書ファイルを出力することができます。次に作成手順について例を用いて紹介します。</p>
-<h2 id=原稿ファイルの執筆tex-ファイルの作成>原稿ファイルの執筆（TeX ファイルの作成）</h2>
-<p>テキストエディタを用いて下に示すソースファイル（<code>sample.tex</code>）を作成します。ソースコードの具体的な説明は <a href=#tex-%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC%E6%A7%8B%E6%88%90>TeX ソースの基本構成</a>を参照してください。</p>
+<p>この手順により執筆した<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>ソースファイルから<span class="aki aki-4"></span>PDF<span class="aki aki-4"></span>の文書ファイルを出力することができます<span class=yakumono>。</span><span class="aki aki-2"></span>次に作成手順について例を用いて紹介します<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<h2 id=原稿ファイルの執筆texファイルの作成>原稿ファイルの執筆<span class="aki aki-2"></span><span class=yakumono>（</span>TeX<span class="aki aki-4"></span>ファイルの作成<span class=yakumono>）</span><span class="aki aki-2"></span></h2>
+<p>テキストエディタを用いて下に示すソースファイル<span class="aki aki-2"></span><span class=yakumono>（</span><code>sample.tex</code><span class=yakumono>）</span><span class="aki aki-2"></span>を作成します<span class=yakumono>。</span><span class="aki aki-2"></span>ソースコードの具体的な説明は<span class="aki aki-4"></span><a href=#tex-%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC%E6%A7%8B%E6%88%90>TeX<span class="aki aki-4"></span>ソースの基本構成</a><span class="aki aki-4"></span>を参照してください<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -170,19 +178,19 @@
 
 <span class=k>\section</span><span class=nb>{</span>はじめに<span class=nb>}</span>
 
-<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>は組版システムです。
-<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>を使いやすくするために，<span class=nb>{</span><span class=k>\LaTeX</span><span class=nb>}</span>が開発されました。
+<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>は組版システムです<span class=yakumono>。</span><span class="aki aki-2"></span>
+<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>を使いやすくするために<span class=yakumono>，</span><span class="aki aki-2"></span><span class=nb>{</span><span class=k>\LaTeX</span><span class=nb>}</span>が開発されました<span class=yakumono>。</span><span class="aki aki-2"></span>
 
-p<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>は日本語対応の<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>です。
-up<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>はUnicode対応のp<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>です。
+p<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>は日本語対応の<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>です<span class=yakumono>。</span><span class="aki aki-2"></span>
+up<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>は<span class="aki aki-4"></span>Unicode<span class="aki aki-4"></span>対応の<span class="aki aki-4"></span>p<span class=nb>{</span><span class=k>\TeX</span><span class=nb>}</span>です<span class=yakumono>。</span><span class="aki aki-2"></span>
 
 <span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id=組版コンパイル>組版（コンパイル）</h2>
-<p>upLaTeX を呼び出し，DVI（device independent file format）ファイル<sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>を生成します。<code>sample.tex</code> をコンパイルする場合は，次のコマンドになります。</p>
+</div><h2 id=組版コンパイル>組版<span class="aki aki-2"></span><span class=yakumono>（</span>コンパイル<span class=yakumono>）</span><span class="aki aki-2"></span></h2>
+<p>upLaTeX<span class="aki aki-4"></span>を呼び出し<span class=yakumono>，</span><span class="aki aki-2"></span>DVI<span class="aki aki-2"></span><span class=yakumono>（</span>device independent file format<span class=yakumono>）</span><span class="aki aki-2"></span>ファイル<sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup>を生成します<span class=yakumono>。</span><span class="aki aki-2"></span><code>sample.tex</code><span class="aki aki-4"></span>をコンパイルする場合は<span class=yakumono>，</span><span class="aki aki-2"></span>次のコマンドになります<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>uplatex sample
-</code></pre></div><p>次のようなメッセージが表示されたなら，コンパイルは成功し，<code>sample.aux</code>，<code>sample.log</code>，<code>sample.dvi</code> が生成されているはずです。</p>
+</code></pre></div><p>次のようなメッセージが表示されたなら<span class=yakumono>，</span><span class="aki aki-2"></span>コンパイルは成功し<span class=yakumono>，</span><span class="aki aki-2"></span><code>sample.aux</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>sample.log</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>sample.dvi</code><span class="aki aki-4"></span>が生成されているはずです<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -195,11 +203,11 @@ Output written on sample.dvi (1 page, 1076 bytes).
 Transcript written on sample.log.
 </code></pre></td></tr></table>
 </div>
-</div><h2 id=pdf-に変換>PDF に変換</h2>
-<p>DVI ファイルを PDF の文書ファイルに変換するには次のコマンドで行えます<sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup>。<code>sample.pdf</code> が生成されると思います。</p>
+</div><h2 id=pdfに変換>PDF<span class="aki aki-4"></span>に変換</h2>
+<p>DVI<span class="aki aki-4"></span>ファイルを<span class="aki aki-4"></span>PDF<span class="aki aki-4"></span>の文書ファイルに変換するには次のコマンドで行えます<sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span><code>sample.pdf</code><span class="aki aki-4"></span>が生成されると思います<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>dvipdfmx sample
-</code></pre></div><h1 id=tex-ソースの基本構成>TeX ソースの基本構成</h1>
-<p>upLaTeX のソースファイルは次の基本構成となります。</p>
+</code></pre></div><h1 id=texソースの基本構成>TeX<span class="aki aki-4"></span>ソースの基本構成</h1>
+<p>upLaTeX<span class="aki aki-4"></span>のソースファイルは次の基本構成となります<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -218,23 +226,23 @@ Transcript written on sample.log.
 </span><span class=c></span><span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>1 行目は (u)pLaTeX と LaTeX の非互換を<strong>いい感じにしてくれるヤツ</strong>です。(u)pLaTeX を使用する場合は何も考えずに書いてください。2 行目は文書の種類（document class）を指定する部分です（<a href=#%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%82%AF%E3%83%A9%E3%82%B9>参照</a>）<sup id=fnref:8><a href=#fn:8 class=footnote-ref role=doc-noteref>8</a></sup>。プリアンブルでは文書の体裁に関する宣言やコマンド等の定義を行います。本文が実際に出力される文書となります。なお，記号 <code>%</code> はコメントの開始を意味します（<a href=#%E6%9C%AC%E6%96%87%E3%81%AE%E5%9F%B7%E7%AD%86%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%83%AB%E3%83%BC%E3%83%AB>参照</a>）。</p>
+</div><p>1<span class="aki aki-4"></span>行目は<span class="aki aki-4"></span>(u)pLaTeX<span class="aki aki-4"></span>と<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>の非互換を<strong>いい感じにしてくれるヤツ</strong>です<span class=yakumono>。</span><span class="aki aki-2"></span>(u)pLaTeX<span class="aki aki-4"></span>を使用する場合は何も考えずに書いてください<span class=yakumono>。</span><span class="aki aki-2"></span>2<span class="aki aki-4"></span>行目は文書の種類<span class="aki aki-2"></span><span class=yakumono>（</span>document class<span class=yakumono>）</span><span class="aki aki-2"></span>を指定する部分です<span class="aki aki-2"></span><span class=yakumono>（</span><a href=#%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%82%AF%E3%83%A9%E3%82%B9>参照</a><span class=yakumono>）</span><sup id=fnref:8><a href=#fn:8 class=footnote-ref role=doc-noteref>8</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span>プリアンブルでは文書の体裁に関する宣言やコマンド等の定義を行います<span class=yakumono>。</span><span class="aki aki-2"></span>本文が実際に出力される文書となります<span class=yakumono>。</span><span class="aki aki-2"></span>なお<span class=yakumono>，</span><span class="aki aki-2"></span>記号<span class="aki aki-4"></span><code>%</code><span class="aki aki-4"></span>はコメントの開始を意味します<span class="aki aki-2"></span><span class=yakumono>（</span><a href=#%E6%9C%AC%E6%96%87%E3%81%AE%E5%9F%B7%E7%AD%86%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%83%AB%E3%83%BC%E3%83%AB>参照</a><span class=yakumono>）</span><span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h1 id=本文の執筆の基本ルール>本文の執筆の基本ルール</h1>
 <ul>
-<li>英文は単語の区切りで，和文は任意の場所で改行されます。</li>
-<li>段落を区切るには，空行を入れる。</li>
-<li>2 文字以上の半角空白文字，タブ文字は 1 文字の半角文字とみなされる。</li>
-<li>段落のはじめのインデントは TeX が自動的に入ります。全角スペースによるインデントは推奨されません。</li>
-<li>次の記号は，TeX のキーワード扱いになるので，そのままでは出力できません（<a href=#%E8%A8%98%E5%8F%B7>参照</a>）。<br>
-<code>#</code>，<code>$</code>，<code>%</code>，<code>&</code>，<code>_</code>，<code>{</code>，<code>}</code>，<code>&lt;</code>，<code>></code>，<code>\</code>，<code>^</code>，<code>|</code>，<code>~</code></li>
-<li>記号 <code>%</code> 以降，行末まではコメントになります。</li>
-<li>記号 <code>\</code> ではじまる文字列はコマンドまたは環境です。環境とは <code>\begin{環境名}</code> と <code>\end{環境名}</code> のような対になっている命令で，それ以外のものがコマンドです。</li>
-<li><code>\\</code> により強制改行ができます。安易な使用はお勧めしません。</li>
+<li>英文は単語の区切りで<span class=yakumono>，</span><span class="aki aki-2"></span>和文は任意の場所で改行されます<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>段落を区切るには<span class=yakumono>，</span><span class="aki aki-2"></span>空行を入れる<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>2<span class="aki aki-4"></span>文字以上の半角空白文字<span class=yakumono>，</span><span class="aki aki-2"></span>タブ文字は<span class="aki aki-4"></span>1<span class="aki aki-4"></span>文字の半角文字とみなされる<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>段落のはじめのインデントは<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>が自動的に入ります<span class=yakumono>。</span><span class="aki aki-2"></span>全角スペースによるインデントは推奨されません<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>次の記号は<span class=yakumono>，</span><span class="aki aki-2"></span>TeX<span class="aki aki-4"></span>のキーワード扱いになるので<span class=yakumono>，</span><span class="aki aki-2"></span>そのままでは出力できません<span class="aki aki-2"></span><span class=yakumono>（</span><a href=#%E8%A8%98%E5%8F%B7>参照</a><span class=yakumono>）</span><span class=yakumono>。</span><span class="aki aki-2"></span><br>
+<code>#</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>$</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>%</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>&</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>_</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>{</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>}</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>&lt;</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>></code><span class=yakumono>，</span><span class="aki aki-2"></span><code>\</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>^</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>|</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>~</code></li>
+<li>記号<span class="aki aki-4"></span><code>%</code><span class="aki aki-4"></span>以降<span class=yakumono>，</span><span class="aki aki-2"></span>行末まではコメントになります<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li>記号<span class="aki aki-4"></span><code>\</code><span class="aki aki-4"></span>ではじまる文字列はコマンドまたは環境です<span class=yakumono>。</span><span class="aki aki-2"></span>環境とは<span class="aki aki-4"></span><code>\begin{環境名}</code><span class="aki aki-4"></span>と<span class="aki aki-4"></span><code>\end{環境名}</code><span class="aki aki-4"></span>のような対になっている命令で<span class=yakumono>，</span><span class="aki aki-2"></span>それ以外のものがコマンドです<span class=yakumono>。</span><span class="aki aki-2"></span></li>
+<li><code>\\</code><span class="aki aki-4"></span>により強制改行ができます<span class=yakumono>。</span><span class="aki aki-2"></span>安易な使用はお勧めしません<span class=yakumono>。</span><span class="aki aki-2"></span></li>
 </ul>
 <h1 id=コマンド>コマンド</h1>
-<p>ここでは主要な一部のコマンド等の紹介を行います。</p>
+<p>ここでは主要な一部のコマンド等の紹介を行います<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h2 id=タイトル>タイトル</h2>
-<p>文章のタイトルは次のように指定します。</p>
+<p>文章のタイトルは次のように指定します<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -270,9 +278,9 @@ Transcript written on sample.log.
 <span class=k>\subparagraph</span><span class=nb>{</span>小段落<span class=nb>}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><code>\section*{節}</code> のように，<code>*</code> をつけることで，番号をつけないようにできます。</p>
+</div><p><code>\section*{節}</code><span class="aki aki-4"></span>のように<span class=yakumono>，</span><span class="aki aki-2"></span><code>*</code><span class="aki aki-4"></span>をつけることで<span class=yakumono>，</span><span class="aki aki-2"></span>番号をつけないようにできます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h2 id=文字サイズ変更>文字サイズ変更</h2>
-<p>文字サイズを変更するには次のコマンドが利用できます。サイズはデフォルトの値になっています。コマンド以降のフォントが全て変更されます。<code>{\Large 文章}</code> のようにすることで一部が変更できます<sup id=fnref:9><a href=#fn:9 class=footnote-ref role=doc-noteref>9</a></sup>。</p>
+<p>文字サイズを変更するには次のコマンドが利用できます<span class=yakumono>。</span><span class="aki aki-2"></span>サイズはデフォルトの値になっています<span class=yakumono>。</span><span class="aki aki-2"></span>コマンド以降のフォントが全て変更されます<span class=yakumono>。</span><span class="aki aki-2"></span><code>{\Large 文章}</code><span class="aki aki-4"></span>のようにすることで一部が変更できます<sup id=fnref:9><a href=#fn:9 class=footnote-ref role=doc-noteref>9</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -323,7 +331,7 @@ Transcript written on sample.log.
 </tr>
 </tbody>
 </table>
-<p>これら以外の文字サイズに変更したい場合には <code>\fontsize</code> コマンドを使用します。文字サイズと行送りを指定して使用します。</p>
+<p>これら以外の文字サイズに変更したい場合には<span class="aki aki-4"></span><code>\fontsize</code><span class="aki aki-4"></span>コマンドを使用します<span class=yakumono>。</span><span class="aki aki-2"></span>文字サイズと行送りを指定して使用します<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -333,7 +341,7 @@ Transcript written on sample.log.
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=フォントスタイル変更>フォントスタイル変更</h2>
-<p>フォントスタイルを変更するには次のコマンドが利用できます<sup id=fnref:10><a href=#fn:10 class=footnote-ref role=doc-noteref>10</a></sup> <sup id=fnref:11><a href=#fn:11 class=footnote-ref role=doc-noteref>11</a></sup>。日本語用の明朝体やゴシック体にするコマンド <code>\textmc</code>，<code>\textgt</code> も存在します。</p>
+<p>フォントスタイルを変更するには次のコマンドが利用できます<sup id=fnref:10><a href=#fn:10 class=footnote-ref role=doc-noteref>10</a></sup><span class="aki aki-4"></span><sup id=fnref:11><a href=#fn:11 class=footnote-ref role=doc-noteref>11</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span>日本語用の明朝体やゴシック体にするコマンド<span class="aki aki-4"></span><code>\textmc</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>\textgt</code><span class="aki aki-4"></span>も存在します<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -373,7 +381,7 @@ Transcript written on sample.log.
 </tbody>
 </table>
 <h2 id=記号>記号</h2>
-<p>キーワード扱いの文字や一部の特殊文字を出力するためには次のコマンドなどが利用できます<sup id=fnref:12><a href=#fn:12 class=footnote-ref role=doc-noteref>12</a></sup>。</p>
+<p>キーワード扱いの文字や一部の特殊文字を出力するためには次のコマンドなどが利用できます<sup id=fnref:12><a href=#fn:12 class=footnote-ref role=doc-noteref>12</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -412,36 +420,36 @@ Transcript written on sample.log.
 </tr>
 <tr>
 <td><code>-</code></td>
-<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width=".775ex" height="1.009ex" style="vertical-align:.413ex;margin-bottom:-.585ex" viewBox="0 -360.8 333.5 434.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\text{-}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-2D" d="M11 179v73H277V179H11z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-2D" x="0" y="0"/></g><text x="0" y="0" class="eq-text">\text{-}</text></svg></span>（ハイフン）</td>
+<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width=".775ex" height="1.009ex" style="vertical-align:.413ex;margin-bottom:-.585ex" viewBox="0 -360.8 333.5 434.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\text{-}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-2D" d="M11 179v73H277V179H11z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-2D" x="0" y="0"/></g><text x="0" y="0" class="eq-text">\text{-}</text></svg></span><span class="aki aki-2"></span><span class=yakumono>（</span>ハイフン<span class=yakumono>）</span><span class="aki aki-2"></span></td>
 </tr>
 <tr>
 <td><code>--</code></td>
-<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="1.009ex" style="vertical-align:.574ex;margin-bottom:-.745ex" viewBox="0 -360.8 500.5 434.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\text{–}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-2013" d="M0 248v37H499V248H0z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-2013" x="0" y="0"/></g><text x="0" y="0" class="eq-text">\text{–}</text></svg></span>（エヌダッシュ）</td>
+<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="1.009ex" style="vertical-align:.574ex;margin-bottom:-.745ex" viewBox="0 -360.8 500.5 434.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\text{–}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-2013" d="M0 248v37H499V248H0z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-2013" x="0" y="0"/></g><text x="0" y="0" class="eq-text">\text{–}</text></svg></span><span class="aki aki-2"></span><span class=yakumono>（</span>エヌダッシュ<span class=yakumono>）</span><span class="aki aki-2"></span></td>
 </tr>
 <tr>
 <td><code>---</code></td>
-<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="2.324ex" height="1.009ex" style="vertical-align:.574ex;margin-bottom:-.745ex" viewBox="0 -360.8 1000.5 434.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\text{—}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-2014" d="M0 248v37H999V248H0z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-2014" x="0" y="0"/></g><text x="0" y="0" class="eq-text">\text{—}</text></svg></span>（エムダッシュ）</td>
+<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="2.324ex" height="1.009ex" style="vertical-align:.574ex;margin-bottom:-.745ex" viewBox="0 -360.8 1000.5 434.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\text{—}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-2014" d="M0 248v37H999V248H0z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-2014" x="0" y="0"/></g><text x="0" y="0" class="eq-text">\text{—}</text></svg></span><span class="aki aki-2"></span><span class=yakumono>（</span>エムダッシュ<span class=yakumono>）</span><span class="aki aki-2"></span></td>
 </tr>
 <tr>
 <td><code>$-$</code></td>
-<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="1.808ex" height="2.176ex" style="vertical-align:-.505ex" viewBox="0 -719.6 778.5 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">-</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-2212" d="M84 237t0 13 14 20H679q15-8 15-20t-15-20H98q-14 7-14 20z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-2212" x="0" y="0"/></g><text x="0" y="0" class="eq-text">-</text></svg></span>（マイナス）</td>
+<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="1.808ex" height="2.176ex" style="vertical-align:-.505ex" viewBox="0 -719.6 778.5 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">-</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-2212" d="M84 237t0 13 14 20H679q15-8 15-20t-15-20H98q-14 7-14 20z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-2212" x="0" y="0"/></g><text x="0" y="0" class="eq-text">-</text></svg></span><span class="aki aki-2"></span><span class=yakumono>（</span>マイナス<span class=yakumono>）</span><span class="aki aki-2"></span></td>
 </tr>
 <tr>
 <td><code>``</code></td>
-<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="2.009ex" style="vertical-align:.878ex;margin-bottom:-1.049ex" viewBox="0 -791.3 500.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\text{“}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-201C" d="M128 494q0 34 9 66t21 56 27 42 24 27 14 9 13-9 9-15q-1-2-14-16t-27-32-26-51-14-70q0-12 1-12t5 2 13 6 18 3q25 0 43-17t18-43-17-43-43-18q-29 0-51 26t-23 89zm204 0q0 34 9 66t21 56 27 42 24 27 14 9 12-9 10-13q0-3-12-16t-26-31-28-52-15-72q0-12 1-12t5 2 13 6 18 3q25 0 43-17t18-43-17-43-43-18q-29 0-51 26t-23 89z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-201C" x="0" y="0"/></g><text x="0" y="0" class="eq-text">\text{“}</text></svg></span>（開きダブルクォーテーション）</td>
+<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="2.009ex" style="vertical-align:.878ex;margin-bottom:-1.049ex" viewBox="0 -791.3 500.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\text{“}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-201C" d="M128 494q0 34 9 66t21 56 27 42 24 27 14 9 13-9 9-15q-1-2-14-16t-27-32-26-51-14-70q0-12 1-12t5 2 13 6 18 3q25 0 43-17t18-43-17-43-43-18q-29 0-51 26t-23 89zm204 0q0 34 9 66t21 56 27 42 24 27 14 9 12-9 10-13q0-3-12-16t-26-31-28-52-15-72q0-12 1-12t5 2 13 6 18 3q25 0 43-17t18-43-17-43-43-18q-29 0-51 26t-23 89z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-201C" x="0" y="0"/></g><text x="0" y="0" class="eq-text">\text{“}</text></svg></span><span class="aki aki-2"></span><span class=yakumono>（</span>開きダブルクォーテーション<span class=yakumono>）</span><span class="aki aki-2"></span></td>
 </tr>
 <tr>
 <td><code>''</code></td>
-<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="2.009ex" style="vertical-align:.878ex;margin-bottom:-1.049ex" viewBox="0 -791.3 500.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\text{"}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-22" d="M34 634q0 25 16 42t43 18q28 0 51-26t24-89q0-54-22-103t-45-73-28-24q-4 0-13 9T50 401q0 3 12 16t26 31 28 52 15 72q0 12-1 12t-5-3-13-5-18-3q-25 0-42 17T34 634zm204 0q0 25 16 42t43 18q28 0 51-26t24-89q0-54-22-103t-45-73-28-24q-4 0-13 9t-10 13q0 3 12 16t26 31 28 52 15 72q0 12-1 12t-5-3-13-5-18-3q-25 0-42 17t-18 44z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-22" x="0" y="0"/></g><text x="0" y="0" class="eq-text">\text{"}</text></svg></span>（閉じダブルクォーテーション）<sup id=fnref:13><a href=#fn:13 class=footnote-ref role=doc-noteref>13</a></sup></td>
+<td><span class=inline-lr><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="2.009ex" style="vertical-align:.878ex;margin-bottom:-1.049ex" viewBox="0 -791.3 500.5 865.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\text{"}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMAIN-22" d="M34 634q0 25 16 42t43 18q28 0 51-26t24-89q0-54-22-103t-45-73-28-24q-4 0-13 9T50 401q0 3 12 16t26 31 28 52 15 72q0 12-1 12t-5-3-13-5-18-3q-25 0-42 17T34 634zm204 0q0 25 16 42t43 18q28 0 51-26t24-89q0-54-22-103t-45-73-28-24q-4 0-13 9t-10 13q0 3 12 16t26 31 28 52 15 72q0 12-1 12t-5-3-13-5-18-3q-25 0-42 17t-18 44z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMAIN-22" x="0" y="0"/></g><text x="0" y="0" class="eq-text">\text{"}</text></svg></span><span class="aki aki-2"></span><span class=yakumono>（</span>閉じダブルクォーテーション<span class=yakumono>）</span><span class="aki aki-2"></span><sup id=fnref:13><a href=#fn:13 class=footnote-ref role=doc-noteref>13</a></sup></td>
 </tr>
 </tbody>
 </table>
 <h2 id=改ページ>改ページ</h2>
-<p>改ページを行なうコマンドには，<code>\pagebreak</code>，<code>\newpage</code>，<code>\clearpage</code> などがあります。コマンドごとに細かな使用が異なりますが基本的に改ページに用いられます。</p>
+<p>改ページを行なうコマンドには<span class=yakumono>，</span><span class="aki aki-2"></span><code>\pagebreak</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>\newpage</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>\clearpage</code><span class="aki aki-4"></span>などがあります<span class=yakumono>。</span><span class="aki aki-2"></span>コマンドごとに細かな使用が異なりますが基本的に改ページに用いられます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h1 id=環境>環境</h1>
-<p>ここでは主要な一部の環境の紹介を行います。</p>
+<p>ここでは主要な一部の環境の紹介を行います<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h2 id=箇条書き>箇条書き</h2>
-<p>箇条書きのための環境として，番号なし箇条書き（<code>itemize</code>），番号付き箇条書き（<code>enumerate</code>），見出し付き箇条書き（<code>description</code>）が用意されています。次のように使用してください。</p>
+<p>箇条書きのための環境として<span class=yakumono>，</span><span class="aki aki-2"></span>番号なし箇条書き<span class="aki aki-2"></span><span class=yakumono>（</span><code>itemize</code><span class=yakumono>）</span><span class=yakumono>，</span><span class="aki aki-2"></span>番号付き箇条書き<span class="aki aki-2"></span><span class=yakumono>（</span><code>enumerate</code><span class=yakumono>）</span><span class=yakumono>，</span><span class="aki aki-2"></span>見出し付き箇条書き<span class="aki aki-2"></span><span class=yakumono>（</span><code>description</code><span class=yakumono>）</span><span class="aki aki-2"></span>が用意されています<span class=yakumono>。</span><span class="aki aki-2"></span>次のように使用してください<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -451,13 +459,13 @@ Transcript written on sample.log.
 </span></code></pre></td>
 <td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\begin</span><span class=nb>{</span>itemize<span class=nb>}</span>
-	<span class=k>\item</span> 項目1
-	<span class=k>\item</span> 項目2
+	<span class=k>\item</span> 項目<span class="aki aki-4"></span>1
+	<span class=k>\item</span> 項目<span class="aki aki-4"></span>2
 <span class=k>\end</span><span class=nb>{</span>itemize<span class=nb>}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=揃え>揃え</h2>
-<p>文字揃えは左揃え（<code>flushleft</code>），中央揃え（<code>center</code>），右揃え（<code>flushright</code>）が指定できます。次のように使用してください。</p>
+<p>文字揃えは左揃え<span class="aki aki-2"></span><span class=yakumono>（</span><code>flushleft</code><span class=yakumono>）</span><span class=yakumono>，</span><span class="aki aki-2"></span>中央揃え<span class="aki aki-2"></span><span class=yakumono>（</span><code>center</code><span class=yakumono>）</span><span class=yakumono>，</span><span class="aki aki-2"></span>右揃え<span class="aki aki-2"></span><span class=yakumono>（</span><code>flushright</code><span class=yakumono>）</span><span class="aki aki-2"></span>が指定できます<span class=yakumono>。</span><span class="aki aki-2"></span>次のように使用してください<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -467,13 +475,13 @@ Transcript written on sample.log.
 </span></code></pre></td>
 <td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\begin</span><span class=nb>{</span>flushleft<span class=nb>}</span>
-	文字列1<span class=k>\\</span>
-	文字列2
+	文字列<span class="aki aki-4"></span>1<span class=k>\\</span>
+	文字列<span class="aki aki-4"></span>2
 <span class=k>\end</span><span class=nb>{</span>flushleft<span class=nb>}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h1 id=ドキュメントクラス>ドキュメントクラス</h1>
-<p>1 行目のドキュメントクラス指定は次のように記述します。</p>
+<p>1<span class="aki aki-4"></span>行目のドキュメントクラス指定は次のように記述します<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -482,7 +490,7 @@ Transcript written on sample.log.
 <pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX><span class=k>\documentclass</span><span class=na>[オプション]</span><span class=nb>{</span>ドキュメントクラス<span class=nb>}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><code>jsclasses</code> 互換クラス次の通りです。<code>jarticle</code> 等は JIS 組版規則に合わないのでお勧めできません。現在は日本語組版処理の要件に準拠した <code>jlreq</code> が注目を浴びています。詳しくは <a href=https://github.com/abenori/jlreq/blob/master/README-ja.md>jlreq (GitHub)</a> で説明されています。</p>
+</div><p><code>jsclasses</code><span class="aki aki-4"></span>互換クラス次の通りです<span class=yakumono>。</span><span class="aki aki-2"></span><code>jarticle</code><span class="aki aki-4"></span>等は<span class="aki aki-4"></span>JIS<span class="aki aki-4"></span>組版規則に合わないのでお勧めできません<span class=yakumono>。</span><span class="aki aki-2"></span>現在は日本語組版処理の要件に準拠した<span class="aki aki-4"></span><code>jlreq</code><span class="aki aki-4"></span>が注目を浴びています<span class=yakumono>。</span><span class="aki aki-2"></span>詳しくは<span class="aki aki-4"></span><a href=https://github.com/abenori/jlreq/blob/master/README-ja.md>jlreq (GitHub)</a><span class="aki aki-4"></span>で説明されています<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -495,7 +503,7 @@ Transcript written on sample.log.
 <tr>
 <td>article</td>
 <td><code>jsarticle</code></td>
-<td>論文・レポート用</td>
+<td>論文<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>レポート用</td>
 </tr>
 <tr>
 <td>book</td>
@@ -504,7 +512,7 @@ Transcript written on sample.log.
 </tr>
 </tbody>
 </table>
-<p>一部のオプションは次の通りです。</p>
+<p>一部のオプションは次の通りです<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -515,7 +523,7 @@ Transcript written on sample.log.
 <tbody>
 <tr>
 <td>11pt, 12pt</td>
-<td>本文の文字サイズ（11pt，12pt）</td>
+<td>本文の文字サイズ<span class="aki aki-2"></span><span class=yakumono>（</span>11pt<span class=yakumono>，</span><span class="aki aki-2"></span>12pt<span class=yakumono>）</span><span class="aki aki-2"></span></td>
 </tr>
 <tr>
 <td>landscape</td>
@@ -523,7 +531,7 @@ Transcript written on sample.log.
 </tr>
 <tr>
 <td>twocolumn</td>
-<td>2 段組</td>
+<td>2<span class="aki aki-4"></span>段組</td>
 </tr>
 <tr>
 <td>fleqn</td>
@@ -535,20 +543,20 @@ Transcript written on sample.log.
 </tr>
 <tr>
 <td>a4paper</td>
-<td>用紙サイズを A4 に指定</td>
+<td>用紙サイズを<span class="aki aki-4"></span>A4<span class="aki aki-4"></span>に指定</td>
 </tr>
 <tr>
 <td>b5paper</td>
-<td>用紙サイズを B5 に指定</td>
+<td>用紙サイズを<span class="aki aki-4"></span>B5<span class="aki aki-4"></span>に指定</td>
 </tr>
 </tbody>
 </table>
-<h1 id=目次--相互参照>目次 / 相互参照</h1>
-<p>LaTeX には自動で節やキャプションの参照が行えます。文書の一部を書き直すときも自動で変更してくれるのでとても便利です。</p>
+<h1 id=目次相互参照>目次<span class="aki aki-4"></span>/<span class="aki aki-4"></span>相互参照</h1>
+<p>LaTeX<span class="aki aki-4"></span>には自動で節やキャプションの参照が行えます<span class=yakumono>。</span><span class="aki aki-2"></span>文書の一部を書き直すときも自動で変更してくれるのでとても便利です<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h2 id=目次>目次</h2>
-<p>目次を出力するには，挿入したい場所に <code>\tableofcontents</code> と書き，TeX ファイルを 3 回コンパイルしてください。同様に図や表の目次を出力したい場所には <code>\listoffigures</code>，<code>\listoftables</code> と書いてください。</p>
+<p>目次を出力するには<span class=yakumono>，</span><span class="aki aki-2"></span>挿入したい場所に<span class="aki aki-4"></span><code>\tableofcontents</code><span class="aki aki-4"></span>と書き<span class=yakumono>，</span><span class="aki aki-2"></span>TeX ファイルを<span class="aki aki-4"></span>3<span class="aki aki-4"></span>回コンパイルしてください<span class=yakumono>。</span><span class="aki aki-2"></span>同様に図や表の目次を出力したい場所には<span class="aki aki-4"></span><code>\listoffigures</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>\listoftables</code><span class="aki aki-4"></span>と書いてください<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h2 id=相互参照>相互参照</h2>
-<p>節や図表の表題，式の後に <code>\label{ラベル}</code> を書くことで，その番号を参照したいところで <code>\ref{ラベル}</code> とすれば，対応する番号を参照できます。また，<code>\pageref{ラベル}</code> とすればページ番号が参照できます。相互参照を使う場合には，TeX ファイルを 2 回コンパイルする必要があります。</p>
+<p>節や図表の表題<span class=yakumono>，</span><span class="aki aki-2"></span>式の後に<span class="aki aki-4"></span><code>\label{ラベル}</code><span class="aki aki-4"></span>を書くことで<span class=yakumono>，</span><span class="aki aki-2"></span>その番号を参照したいところで<span class="aki aki-4"></span><code>\ref{ラベル}</code><span class="aki aki-4"></span>とすれば<span class=yakumono>，</span><span class="aki aki-2"></span>対応する番号を参照できます<span class=yakumono>。</span><span class="aki aki-2"></span>また<span class=yakumono>，</span><span class="aki aki-2"></span><code>\pageref{ラベル}</code><span class="aki aki-4"></span>とすればページ番号が参照できます<span class=yakumono>。</span><span class="aki aki-2"></span>相互参照を使う場合には<span class=yakumono>，</span><span class="aki aki-2"></span>TeX<span class="aki aki-4"></span>ファイルを<span class="aki aki-4"></span>2<span class="aki aki-4"></span>回コンパイルする必要があります<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -559,7 +567,7 @@ Transcript written on sample.log.
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX>本研究で用いた試験材料の外観を図<span class=k>\ref</span><span class=nb>{</span>fig:test<span class=nb>}</span>に示す。
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX>本研究で用いた試験材料の外観を図<span class=k>\ref</span><span class=nb>{</span>fig:test<span class=nb>}</span>に示す<span class=yakumono>。</span><span class="aki aki-2"></span>
 <span class=k>\begin</span><span class=nb>{</span>figure<span class=nb>}</span>
 	....
 	<span class=k>\caption</span><span class=nb>{</span>実験装置の外観<span class=nb>}</span>
@@ -575,7 +583,7 @@ Transcript written on sample.log.
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX>温度特性は，式(<span class=k>\ref</span><span class=nb>{</span>eq:test<span class=nb>}</span>)で近似できる。
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX>温度特性は<span class=yakumono>，</span><span class="aki aki-2"></span>式<span class="aki aki-4"></span>(<span class=k>\ref</span><span class=nb>{</span>eq:test<span class=nb>}</span>)<span class="aki aki-4"></span>で近似できる<span class=yakumono>。</span><span class="aki aki-2"></span>
 <span class=k>\begin</span><span class=nb>{</span>align<span class=nb>}</span>
 	y = <span class=k>\exp</span>(x) + c. <span class=k>\label</span><span class=nb>{</span>eq:test<span class=nb>}</span>
 <span class=k>\end</span><span class=nb>{</span>align<span class=nb>}</span>
@@ -583,25 +591,25 @@ Transcript written on sample.log.
 </div>
 </div><h1 id=数式>数式</h1>
 <h2 id=本文中の数式>本文中の数式</h2>
-<p>本文中に <span class=inline><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="13.913ex" height="2.843ex" style="vertical-align:-.838ex" viewBox="0 -863.1 5990.5 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">f(x) = ax + b</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMATHI-66" d="M118-162q2 0 6-2t11-3 12-1q13 0 24 13t16 29q10 27 34 153t46 240 22 115v3H242q-47 0-50 2-4 3-4 10l7 28q2 5 8 5t47 1q48 0 48 1 0 2 9 50t12 58q37 165 146 165 37-2 61-22t24-53q0-36-21-52t-42-17q-44 0-44 42 0 19 11 33t24 21l9 5q-16 6-30 6-12 0-23-10t-15-28q-7-29-16-78t-16-83-7-36 55-2q45 0 52-1t11-6q1-4-2-17t-5-16q-2-5-9-5t-54-1H372L349 263Q301 15 282-47q-27-85-70-126-37-32-73-32-32 0-58 19T55-132q0 37 21 54t42 17q44 0 44-42 0-19-11-33t-24-21l-9-5z"/><path stroke-width="1" id="E1-MJMAIN-28" d="M94 250q0 69 10 131t23 107 37 88 38 67 42 52 33 34 25 21h13 4q14 0 14-9 0-3-17-21t-41-53-49-86-42-138-17-193T184 58 225-81t49-86 42-53 17-21q0-9-15-9h-3-13l-28 24Q180-141 137-14T94 250z"/><path stroke-width="1" id="E1-MJMATHI-78" d="M52 289q7 42 54 97t116 56q35 0 64-18t43-45q42 63 101 63 37 0 64-22t28-59q0-29-14-47t-27-22-23-4q-19 0-31 11t-12 29q0 46 50 63-11 13-40 13-13 0-19-2-38-16-56-66-60-221-60-258 0-28 16-40t35-12q37 0 73 33t49 81q3 10 6 11t16 2h4q15 0 15-8 0-1-2-11-16-57-62-101T333-11q-70 0-106 63-41-62-94-62h-6Q78-10 57 16T35 71q0 32 19 52t45 20q43 0 43-42 0-20-12-35T107 46 94 41l-3-1q0-1 6-4t16-7 19-3q36 0 62 45 9 16 23 68t28 108 16 66q5 27 5 39 0 28-15 40t-34 12q-40 0-75-32T93 290q-2-9-5-10t-16-2H58q-6 6-6 11z"/><path stroke-width="1" id="E1-MJMAIN-29" d="M60 749l4 1q5 0 10 0H86l28-24q94-85 137-212t43-264q0-68-10-131T261 12 224-76t-38-67-41-51-32-33-23-19q-3-3-4-4H74q-8 0-11 0t-5 3-3 9q1 1 11 13Q221-64 221 250T66 725q-10 12-11 13 0 8 5 11z"/><path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347q0 13 14 20H707q15-8 15-20 0-11-14-19l-318-1H72q-16 5-16 20zm0-194q0 15 16 20H708q14-10 14-20 0-13-15-20H70q-14 7-14 20z"/><path stroke-width="1" id="E1-MJMATHI-61" d="M33 157q0 101 76 192t171 92q51 0 90-49 16 30 46 30 13 0 23-8t10-20q0-13-37-160T374 68q0-25 7-33t21-9q9 1 20 9 21 20 41 96 6 20 10 21 2 1 10 1h4q19 0 19-9 0-6-5-27T481 63 449 13Q436 0 417-8q-8-2-24-2-34 0-57 15T306 36l-6 15q-1 1-4-1-2-2-4-4-59-56-120-56-55 0-97 40T33 157zM351 328q0 6-5 22t-23 35-46 20q-35 0-67-31t-50-81q-29-79-41-164 0-3 0-11t-1-12q0-45 18-62t43-18q38 0 75 33t44 51q2 4 27 107t26 111z"/><path stroke-width="1" id="E1-MJMAIN-2B" d="M56 237t0 13 14 20H369V420l1 150q10 13 19 13 13 0 20-15V270H707q15-8 15-20t-15-20H409V-68q-8-14-18-14h-2-2q-12 0-18 14V230H70q-14 7-14 20z"/><path stroke-width="1" id="E1-MJMATHI-62" d="M73 647q0 10 4 23t12 13q1 0 72 5t73 6q12 0 12-9T212 542q-8-34-17-70t-15-54l-4-19q0-3 6 3 49 40 101 40 62 0 1e2-46t39-116q0-111-79-201T173-11q-50 0-91 38T40 150v9q0 21 8 58T97 414q50 197 50 209t-38 14q-5 0-8 0H96q-10 0-13 0t-7 3-3 7zM336 325v6q0 74-61 74-17 0-35-8t-33-21-26-24-18-22l-6-8-21-86q-22-86-22-122 0-48 24-72 16-16 40-16 33 0 67 32 25 23 40 56t33 105 18 106z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMATHI-66" x="0" y="0"/><use xlink:href="#E1-MJMAIN-28" x="550" y="0"/><use xlink:href="#E1-MJMATHI-78" x="940" y="0"/><use xlink:href="#E1-MJMAIN-29" x="1512" y="0"/><use xlink:href="#E1-MJMAIN-3D" x="2179" y="0"/><use xlink:href="#E1-MJMATHI-61" x="3236" y="0"/><use xlink:href="#E1-MJMATHI-78" x="3765" y="0"/><use xlink:href="#E1-MJMAIN-2B" x="4560" y="0"/><use xlink:href="#E1-MJMATHI-62" x="5561" y="0"/></g><text x="0" y="0" class="eq-text">f(x) = ax + b</text></svg></span> のように数式を書くには次のように <code>$</code> で挟むことでできます。</p>
+<p>本文中に<span class=inline><svg class="i-tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="13.913ex" height="2.843ex" style="vertical-align:-.838ex" viewBox="0 -863.1 5990.5 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">f(x) = ax + b</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMATHI-66" d="M118-162q2 0 6-2t11-3 12-1q13 0 24 13t16 29q10 27 34 153t46 240 22 115v3H242q-47 0-50 2-4 3-4 10l7 28q2 5 8 5t47 1q48 0 48 1 0 2 9 50t12 58q37 165 146 165 37-2 61-22t24-53q0-36-21-52t-42-17q-44 0-44 42 0 19 11 33t24 21l9 5q-16 6-30 6-12 0-23-10t-15-28q-7-29-16-78t-16-83-7-36 55-2q45 0 52-1t11-6q1-4-2-17t-5-16q-2-5-9-5t-54-1H372L349 263Q301 15 282-47q-27-85-70-126-37-32-73-32-32 0-58 19T55-132q0 37 21 54t42 17q44 0 44-42 0-19-11-33t-24-21l-9-5z"/><path stroke-width="1" id="E1-MJMAIN-28" d="M94 250q0 69 10 131t23 107 37 88 38 67 42 52 33 34 25 21h13 4q14 0 14-9 0-3-17-21t-41-53-49-86-42-138-17-193T184 58 225-81t49-86 42-53 17-21q0-9-15-9h-3-13l-28 24Q180-141 137-14T94 250z"/><path stroke-width="1" id="E1-MJMATHI-78" d="M52 289q7 42 54 97t116 56q35 0 64-18t43-45q42 63 101 63 37 0 64-22t28-59q0-29-14-47t-27-22-23-4q-19 0-31 11t-12 29q0 46 50 63-11 13-40 13-13 0-19-2-38-16-56-66-60-221-60-258 0-28 16-40t35-12q37 0 73 33t49 81q3 10 6 11t16 2h4q15 0 15-8 0-1-2-11-16-57-62-101T333-11q-70 0-106 63-41-62-94-62h-6Q78-10 57 16T35 71q0 32 19 52t45 20q43 0 43-42 0-20-12-35T107 46 94 41l-3-1q0-1 6-4t16-7 19-3q36 0 62 45 9 16 23 68t28 108 16 66q5 27 5 39 0 28-15 40t-34 12q-40 0-75-32T93 290q-2-9-5-10t-16-2H58q-6 6-6 11z"/><path stroke-width="1" id="E1-MJMAIN-29" d="M60 749l4 1q5 0 10 0H86l28-24q94-85 137-212t43-264q0-68-10-131T261 12 224-76t-38-67-41-51-32-33-23-19q-3-3-4-4H74q-8 0-11 0t-5 3-3 9q1 1 11 13Q221-64 221 250T66 725q-10 12-11 13 0 8 5 11z"/><path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347q0 13 14 20H707q15-8 15-20 0-11-14-19l-318-1H72q-16 5-16 20zm0-194q0 15 16 20H708q14-10 14-20 0-13-15-20H70q-14 7-14 20z"/><path stroke-width="1" id="E1-MJMATHI-61" d="M33 157q0 101 76 192t171 92q51 0 90-49 16 30 46 30 13 0 23-8t10-20q0-13-37-160T374 68q0-25 7-33t21-9q9 1 20 9 21 20 41 96 6 20 10 21 2 1 10 1h4q19 0 19-9 0-6-5-27T481 63 449 13Q436 0 417-8q-8-2-24-2-34 0-57 15T306 36l-6 15q-1 1-4-1-2-2-4-4-59-56-120-56-55 0-97 40T33 157zM351 328q0 6-5 22t-23 35-46 20q-35 0-67-31t-50-81q-29-79-41-164 0-3 0-11t-1-12q0-45 18-62t43-18q38 0 75 33t44 51q2 4 27 107t26 111z"/><path stroke-width="1" id="E1-MJMAIN-2B" d="M56 237t0 13 14 20H369V420l1 150q10 13 19 13 13 0 20-15V270H707q15-8 15-20t-15-20H409V-68q-8-14-18-14h-2-2q-12 0-18 14V230H70q-14 7-14 20z"/><path stroke-width="1" id="E1-MJMATHI-62" d="M73 647q0 10 4 23t12 13q1 0 72 5t73 6q12 0 12-9T212 542q-8-34-17-70t-15-54l-4-19q0-3 6 3 49 40 101 40 62 0 1e2-46t39-116q0-111-79-201T173-11q-50 0-91 38T40 150v9q0 21 8 58T97 414q50 197 50 209t-38 14q-5 0-8 0H96q-10 0-13 0t-7 3-3 7zM336 325v6q0 74-61 74-17 0-35-8t-33-21-26-24-18-22l-6-8-21-86q-22-86-22-122 0-48 24-72 16-16 40-16 33 0 67 32 25 23 40 56t33 105 18 106z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><use xlink:href="#E1-MJMATHI-66" x="0" y="0"/><use xlink:href="#E1-MJMAIN-28" x="550" y="0"/><use xlink:href="#E1-MJMATHI-78" x="940" y="0"/><use xlink:href="#E1-MJMAIN-29" x="1512" y="0"/><use xlink:href="#E1-MJMAIN-3D" x="2179" y="0"/><use xlink:href="#E1-MJMATHI-61" x="3236" y="0"/><use xlink:href="#E1-MJMATHI-78" x="3765" y="0"/><use xlink:href="#E1-MJMAIN-2B" x="4560" y="0"/><use xlink:href="#E1-MJMATHI-62" x="5561" y="0"/></g><text x="0" y="0" class="eq-text">f(x) = ax + b</text></svg></span>のように数式を書くには次のように<span class="aki aki-4"></span><code>$</code><span class="aki aki-4"></span>で挟むことでできます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX>本文中に<span class=s>$</span><span class=nb>f</span><span class=o>(</span><span class=nb>x</span><span class=o>)</span><span class=nb> </span><span class=o>=</span><span class=nb> ax </span><span class=o>+</span><span class=nb> b</span><span class=s>$</span>のように数式を書くには次のように<span class=k>\texttt</span><span class=nb>{</span><span class=k>\$</span><span class=nb>}</span>で挟むことでできます。
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX>本文中に<span class=s>$</span><span class=nb>f</span><span class=o>(</span><span class=nb>x</span><span class=o>)</span><span class=nb> </span><span class=o>=</span><span class=nb> ax </span><span class=o>+</span><span class=nb> b</span><span class=s>$</span>のように数式を書くには次のように<span class=k>\texttt</span><span class=nb>{</span><span class=k>\$</span><span class=nb>}</span>で挟むことでできます<span class=yakumono>。</span><span class="aki aki-2"></span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=別行立て数式>別行立て数式</h2>
-<p>別行立て数式は，
+<p>別行立て数式は<span class=yakumono>，</span><span class="aki aki-2"></span><br>
 <div class=displaystyle><svg class="tex" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.968ex" height="6.176ex" style="vertical-align:-2.505ex" viewBox="0 -1580.7 9027.9 2659.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title"><title id="MathJax-SVG-1-Title">\begin{align}
 f(x) &amp;= ax + b\\
 g(x) &amp;= cx^{2} + dx + e
 \end{align}</title><defs aria-hidden="true"><path stroke-width="1" id="E1-MJMATHI-66" d="M118-162q2 0 6-2t11-3 12-1q13 0 24 13t16 29q10 27 34 153t46 240 22 115v3H242q-47 0-50 2-4 3-4 10l7 28q2 5 8 5t47 1q48 0 48 1 0 2 9 50t12 58q37 165 146 165 37-2 61-22t24-53q0-36-21-52t-42-17q-44 0-44 42 0 19 11 33t24 21l9 5q-16 6-30 6-12 0-23-10t-15-28q-7-29-16-78t-16-83-7-36 55-2q45 0 52-1t11-6q1-4-2-17t-5-16q-2-5-9-5t-54-1H372L349 263Q301 15 282-47q-27-85-70-126-37-32-73-32-32 0-58 19T55-132q0 37 21 54t42 17q44 0 44-42 0-19-11-33t-24-21l-9-5z"/><path stroke-width="1" id="E1-MJMAIN-28" d="M94 250q0 69 10 131t23 107 37 88 38 67 42 52 33 34 25 21h13 4q14 0 14-9 0-3-17-21t-41-53-49-86-42-138-17-193T184 58 225-81t49-86 42-53 17-21q0-9-15-9h-3-13l-28 24Q180-141 137-14T94 250z"/><path stroke-width="1" id="E1-MJMATHI-78" d="M52 289q7 42 54 97t116 56q35 0 64-18t43-45q42 63 101 63 37 0 64-22t28-59q0-29-14-47t-27-22-23-4q-19 0-31 11t-12 29q0 46 50 63-11 13-40 13-13 0-19-2-38-16-56-66-60-221-60-258 0-28 16-40t35-12q37 0 73 33t49 81q3 10 6 11t16 2h4q15 0 15-8 0-1-2-11-16-57-62-101T333-11q-70 0-106 63-41-62-94-62h-6Q78-10 57 16T35 71q0 32 19 52t45 20q43 0 43-42 0-20-12-35T107 46 94 41l-3-1q0-1 6-4t16-7 19-3q36 0 62 45 9 16 23 68t28 108 16 66q5 27 5 39 0 28-15 40t-34 12q-40 0-75-32T93 290q-2-9-5-10t-16-2H58q-6 6-6 11z"/><path stroke-width="1" id="E1-MJMAIN-29" d="M60 749l4 1q5 0 10 0H86l28-24q94-85 137-212t43-264q0-68-10-131T261 12 224-76t-38-67-41-51-32-33-23-19q-3-3-4-4H74q-8 0-11 0t-5 3-3 9q1 1 11 13Q221-64 221 250T66 725q-10 12-11 13 0 8 5 11z"/><path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347q0 13 14 20H707q15-8 15-20 0-11-14-19l-318-1H72q-16 5-16 20zm0-194q0 15 16 20H708q14-10 14-20 0-13-15-20H70q-14 7-14 20z"/><path stroke-width="1" id="E1-MJMATHI-61" d="M33 157q0 101 76 192t171 92q51 0 90-49 16 30 46 30 13 0 23-8t10-20q0-13-37-160T374 68q0-25 7-33t21-9q9 1 20 9 21 20 41 96 6 20 10 21 2 1 10 1h4q19 0 19-9 0-6-5-27T481 63 449 13Q436 0 417-8q-8-2-24-2-34 0-57 15T306 36l-6 15q-1 1-4-1-2-2-4-4-59-56-120-56-55 0-97 40T33 157zM351 328q0 6-5 22t-23 35-46 20q-35 0-67-31t-50-81q-29-79-41-164 0-3 0-11t-1-12q0-45 18-62t43-18q38 0 75 33t44 51q2 4 27 107t26 111z"/><path stroke-width="1" id="E1-MJMAIN-2B" d="M56 237t0 13 14 20H369V420l1 150q10 13 19 13 13 0 20-15V270H707q15-8 15-20t-15-20H409V-68q-8-14-18-14h-2-2q-12 0-18 14V230H70q-14 7-14 20z"/><path stroke-width="1" id="E1-MJMATHI-62" d="M73 647q0 10 4 23t12 13q1 0 72 5t73 6q12 0 12-9T212 542q-8-34-17-70t-15-54l-4-19q0-3 6 3 49 40 101 40 62 0 1e2-46t39-116q0-111-79-201T173-11q-50 0-91 38T40 150v9q0 21 8 58T97 414q50 197 50 209t-38 14q-5 0-8 0H96q-10 0-13 0t-7 3-3 7zM336 325v6q0 74-61 74-17 0-35-8t-33-21-26-24-18-22l-6-8-21-86q-22-86-22-122 0-48 24-72 16-16 40-16 33 0 67 32 25 23 40 56t33 105 18 106z"/><path stroke-width="1" id="E1-MJMATHI-67" d="M311 43q-15-13-44-28T206 0Q143 0 105 45T66 160q0 105 77 193t171 89q47 0 87-48l3 4q2 3 5 6t9 8 13 7 16 3q14 0 23-9t10-19q0-15-57-242T363-80q-18-54-77-89T151-205Q10-205 10-137q0 26 18 46T74-71q15 0 28-9t14-31q0-10-2-19t-7-14-8-10-7-8l-2-2h1q10-3 60-3 38 0 60 12 23 11 43 33t28 47q6 19 16 62 13 48 13 56zm73 285-4 11q-3 11-5 15t-6 14-10 14-13 11-18 9-22 3q-44 0-85-53-30-39-50-119T151 117q0-79 62-79 56 0 110 70l8 10 53 210z"/><path stroke-width="1" id="E1-MJMATHI-63" d="M34 159q0 109 86 196t186 87q56 0 88-24t33-63q0-29-19-49t-48-21q-19 0-30 10t-11 30 11 34 22 21 14 6h1q0 2-6 6t-21 8-34 4q-30 0-57-14-21-9-43-31-44-44-64-124T121 119q0-46 26-69 22-24 58-24h4q112 0 185 85 9 10 12 10 4 0 13-9t10-14-9-15-29-28-45-30T282 0 202-11Q127-11 81 37T34 159z"/><path stroke-width="1" id="E1-MJMAIN-32" d="M109 429q-27 0-43 18T50 491q0 71 53 123t132 52q91 0 152-56t62-145q0-43-20-82t-48-68-80-74q-36-31-1e2-92L142 93l76-1q157 0 167 5 7 2 24 89v3h40v-3q-1-3-13-91T421 3V0H50V19 31q0 7 6 15T86 81q29 32 50 56 9 10 34 37t34 37 29 33 28 34 23 30 21 32 15 29 13 32 7 30 3 33q0 63-34 109t-97 46q-33 0-58-17t-35-33-10-19q0-1 5-1 18 0 37-14t19-46q0-25-16-42t-45-18z"/><path stroke-width="1" id="E1-MJMATHI-64" d="M366 683q1 0 72 5t73 6q12 0 12-8 0-7-73-302T375 83t-1-15q0-42 28-42 9 1 20 9 21 20 41 96 6 20 10 21 2 1 10 1h4 4q15 0 15-8 0-5-3-16-13-50-30-81T445 8 417-8q-8-2-24-2-34 0-57 15T306 36l-6 15q-1 1-4-1-2-2-4-4-59-56-120-56-55 0-97 40T33 157q0 48 20 98t48 86q47 57 94 79t85 22q56 0 84-42 5-6 5-4 1 4 27 109t28 111q0 13-7 16t-39 5H357q-6 6-6 8t2 19q5 19 13 19zM352 326q-23 79-75 79-35 0-67-31t-50-81q-29-79-41-164 0-3 0-11t-1-12q0-45 18-62t43-18q54 0 111 72l8 11 54 217z"/><path stroke-width="1" id="E1-MJMATHI-65" d="M39 168q0 57 19 104t49 78 67 52 70 31 63 9h3q45 0 78-22t33-65q0-90-111-118-49-13-134-14-37 0-38-2 0-2-6-35t-7-58q0-47 21-74t63-28 93 19 92 66q9 10 12 10 4 0 13-9t10-14-9-16-30-27-46-31T281-1 205-11Q126-11 83 42T39 168zM373 353q-6 52-68 52-33 0-61-14t-45-34-29-41-16-36-5-19q0-1 20-1 113 0 158 24t46 69z"/></defs><g stroke="currentcolor" fill="currentcolor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true"><g transform="translate(167,0)"><g transform="translate(-11,0)"><g transform="translate(0,693)"><use xlink:href="#E1-MJMATHI-66" x="0" y="0"/><use xlink:href="#E1-MJMAIN-28" x="550" y="0"/><use xlink:href="#E1-MJMATHI-78" x="940" y="0"/><use xlink:href="#E1-MJMAIN-29" x="1512" y="0"/></g><g transform="translate(70,-743)"><use xlink:href="#E1-MJMATHI-67" x="0" y="0"/><use xlink:href="#E1-MJMAIN-28" x="480" y="0"/><use xlink:href="#E1-MJMATHI-78" x="870" y="0"/><use xlink:href="#E1-MJMAIN-29" x="1442" y="0"/></g></g><g transform="translate(1891,0)"><g transform="translate(0,693)"><use xlink:href="#E1-MJMAIN-3D" x="277" y="0"/><use xlink:href="#E1-MJMATHI-61" x="1334" y="0"/><use xlink:href="#E1-MJMATHI-78" x="1863" y="0"/><use xlink:href="#E1-MJMAIN-2B" x="2658" y="0"/><use xlink:href="#E1-MJMATHI-62" x="3659" y="0"/></g><g transform="translate(0,-743)"><use xlink:href="#E1-MJMAIN-3D" x="277" y="0"/><use xlink:href="#E1-MJMATHI-63" x="1334" y="0"/><g transform="translate(1767,0)"><use xlink:href="#E1-MJMATHI-78" x="0" y="0"/><use transform="scale(0.707)" xlink:href="#E1-MJMAIN-32" x="809" y="583"/></g><use xlink:href="#E1-MJMAIN-2B" x="3016" y="0"/><use xlink:href="#E1-MJMATHI-64" x="4016" y="0"/><use xlink:href="#E1-MJMATHI-78" x="4540" y="0"/><use xlink:href="#E1-MJMAIN-2B" x="5335" y="0"/><use xlink:href="#E1-MJMATHI-65" x="6335" y="0"/></g></g></g></g><text x="0" y="0" class="eq-text">\begin{align}
 f(x) &= ax + b\\
 	g(x) &= cx^{2} + dx + e
-\end{align}</text></svg></div>
-のように環境 <code>align</code> により書くことができます<sup id=fnref:14><a href=#fn:14 class=footnote-ref role=doc-noteref>14</a></sup>。他の数式環境の <code>eqnarray</code> も有名だが <code>amsmath.sty</code> ではサポートしていないので推奨できません。</p>
+\end{align}</text></svg></div><br>
+のように環境<span class="aki aki-4"></span><code>align</code><span class="aki aki-4"></span>により書くことができます<sup id=fnref:14><a href=#fn:14 class=footnote-ref role=doc-noteref>14</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span>他の数式環境の<span class="aki aki-4"></span><code>eqnarray</code><span class="aki aki-4"></span>も有名だが<span class="aki aki-4"></span><code>amsmath.sty</code><span class="aki aki-4"></span>ではサポートしていないので推奨できません<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -612,76 +620,76 @@ f(x) &= ax + b\\
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX>別行立て数式は，
+<pre tabindex=0 class=chroma><code class=language-TeX data-lang=TeX>別行立て数式は<span class=yakumono>，</span><span class="aki aki-2"></span>
 <span class=k>\begin</span><span class=nb>{</span>align<span class=nb>}</span>
 	f(x) <span class=nb>&amp;</span>= ax + b<span class=k>\\</span>
 	g(x) <span class=nb>&amp;</span>= cx<span class=nb>^{</span>2<span class=nb>}</span> + dx + e
 <span class=k>\end</span><span class=nb>{</span>align<span class=nb>}</span>
-のように環境により書くことができます。
+のように環境により書くことができます<span class=yakumono>。</span><span class="aki aki-2"></span>
 </code></pre></td></tr></table>
 </div>
 </div><h1 id=おわりに>おわりに</h1>
-<p>今回は，(u)pLaTeX を中心に LaTeX の<strong>ごく一部</strong>を紹介をしました。本記事では以下に示すような紹介できてないです。</p>
+<p>今回は<span class=yakumono>，</span><span class="aki aki-2"></span>(u)pLaTeX<span class="aki aki-4"></span>を中心に<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>の<strong>ごく一部</strong>を紹介をしました<span class=yakumono>。</span><span class="aki aki-2"></span>本記事では以下に示すような紹介できてないです<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <ul>
 <li>数式モード中でのコマンドなど</li>
 <li>表</li>
-<li>図（特に EPS とか PDF の話）</li>
+<li>図<span class="aki aki-2"></span><span class=yakumono>（</span>特に<span class="aki aki-4"></span>EPS<span class="aki aki-4"></span>とか<span class="aki aki-4"></span>PDF<span class="aki aki-4"></span>の話<span class=yakumono>）</span><span class="aki aki-2"></span></li>
 </ul>
-<p>今後暇を見付けて記事のアップデートしていきたいと思います。楽しい LaTeX ライフを願っています。</p>
+<p>今後暇を見付けて記事のアップデートしていきたいと思います<span class=yakumono>。</span><span class="aki aki-2"></span>楽しい<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>ライフを願っています<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h1 id=文献>文献</h1>
 <ol>
-<li><a href=https://www.amazon.co.jp/dp/B08MZ98Z1Q/>改訂第8版 LaTeX2e 美文書作成入門</a></li>
+<li><a href=https://www.amazon.co.jp/dp/B08MZ98Z1Q/>改訂第<span class="aki aki-4"></span>8<span class="aki aki-4"></span>版<span class="aki aki-4"></span>LaTeX2e<span class="aki aki-4"></span>美文書作成入門</a></li>
 <li><a href=https://texwiki.texjp.org/>TeX Wiki</a></li>
 <li><a href=https://ja.overleaf.com/>Overleaf</a></li>
 <li><a href=https://cloudlatex.io/ja>Cloud LaTeX</a></li>
-<li><a href=https://daiji256.github.io/posts/tex-latex/lualatex-susume/>LuaLaTeX のすゝめ</a></li>
+<li><a href=https://daiji256.github.io/posts/tex-latex/lualatex-susume/>LuaLaTeX<span class="aki aki-4"></span>のすゝめ</a></li>
 <li><a href=https://github.com/abenori/jlreq/blob/master/README-ja.md>jlreq (GitHub)</a></li>
-<li><a href=https://qiita.com/Daiji256/items/9774df0899728feb3ab0>LaTeX のすゝめ (Qiita)</a></li>
+<li><a href=https://qiita.com/Daiji256/items/9774df0899728feb3ab0>LaTeX<span class="aki aki-4"></span>のすゝめ<span class="aki aki-4"></span>(Qiita)</a></li>
 </ol>
 <section class=footnotes role=doc-endnotes>
 <hr>
 <ol>
 <li id=fn:1 role=doc-endnote>
-<p>T<span class=e>e</span>X のように書くことが望ましいです。難しい場合は TeX にしましょう。この記事では統一のために TeX にしています。&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>T<span class=e>e</span>X<span class="aki aki-4"></span>のように書くことが望ましいです<span class=yakumono>。</span><span class="aki aki-2"></span>難しい場合は<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>にしましょう<span class=yakumono>。</span><span class="aki aki-2"></span>この記事では統一のために<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>にしています<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:2 role=doc-endnote>
-<p>L<span class=a>a</span>T<span class=e>e</span>X のように書くことが望ましいです。難しい場合は LaTeX にしましょう。&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>L<span class=a>a</span>T<span class=e>e</span>X<span class="aki aki-4"></span>のように書くことが望ましいです<span class=yakumono>。</span><span class="aki aki-2"></span>難しい場合は<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>にしましょう<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:3 role=doc-endnote>
-<p>TeX の数式記法は現在一般的に使用されています。&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>TeX<span class="aki aki-4"></span>の数式記法は現在一般的に使用されています<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:4 role=doc-endnote>
-<p>(u)pLaTeX のようなレガシー LaTeX は DVI を経由して PDF を作成します。pdfLaTeX，LuaLaTeX などのモダン LaTeX は直接 PDF を出力するので 2 つのステップ（執筆と出力）になります。&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>(u)pLaTeX<span class="aki aki-4"></span>のようなレガシー<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>は<span class="aki aki-4"></span>DVI<span class="aki aki-4"></span>を経由して<span class="aki aki-4"></span>PDF<span class="aki aki-4"></span>を作成します<span class=yakumono>。</span><span class="aki aki-2"></span>pdfLaTeX<span class=yakumono>，</span><span class="aki aki-2"></span>LuaLaTeX<span class="aki aki-4"></span>などのモダン<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>は直接<span class="aki aki-4"></span>PDF<span class="aki aki-4"></span>を出力するので<span class="aki aki-4"></span>2<span class="aki aki-4"></span>つのステップ<span class="aki aki-2"></span><span class=yakumono>（</span>執筆と出力<span class=yakumono>）</span><span class="aki aki-2"></span>になります<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:5 role=doc-endnote>
-<p>他のソフト（コマンド）により PDF ファイル以外の PS ファイルを出力する場合などもあります。&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>他のソフト<span class="aki aki-2"></span><span class=yakumono>（</span>コマンド<span class=yakumono>）</span><span class="aki aki-2"></span>により<span class="aki aki-4"></span>PDF<span class="aki aki-4"></span>ファイル以外の<span class="aki aki-4"></span>PS<span class="aki aki-4"></span>ファイルを出力する場合などもあります<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:6 role=doc-endnote>
-<p>レイアウト情報を埋め込んだファイルのことです。&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>レイアウト情報を埋め込んだファイルのことです<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:7 role=doc-endnote>
-<p>古い <code>dvipdfm</code> という DVI ウェアもあるが今は使えません。&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>古い<span class="aki aki-4"></span><code>dvipdfm</code><span class="aki aki-4"></span>という<span class="aki aki-4"></span>DVI<span class="aki aki-4"></span>ウェアもあるが今は使えません<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:8 role=doc-endnote>
-<p><code>uplatex</code> はこのソースファイルが upLaTeX 用であることを明示するためにあります。また，<code>dvipdfmx</code> は <code>graphicx</code> や <code>color</code> パッケージのドライバ指定用です。グローバルオプションとして全てのパッケージに適用されます。&#160;<a href=#fnref:8 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p><code>uplatex</code><span class="aki aki-4"></span>はこのソースファイルが<span class="aki aki-4"></span>upLaTeX<span class="aki aki-4"></span>用であることを明示するためにあります<span class=yakumono>。</span><span class="aki aki-2"></span>また<span class=yakumono>，</span><span class="aki aki-2"></span><code>dvipdfmx</code><span class="aki aki-4"></span>は<span class="aki aki-4"></span><code>graphicx</code><span class="aki aki-4"></span>や<span class="aki aki-4"></span><code>color</code><span class="aki aki-4"></span>パッケージのドライバ指定用です<span class=yakumono>。</span><span class="aki aki-2"></span>グローバルオプションとして全てのパッケージに適用されます<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:8 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:9 role=doc-endnote>
-<p>MathJax では <code>\footnotesize</code> が使えないので，HTML の <code>font-size: 80%</code> で代用しています。&#160;<a href=#fnref:9 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>MathJax<span class="aki aki-4"></span>では<span class="aki aki-4"></span><code>\footnotesize</code><span class="aki aki-4"></span>が使えないので<span class=yakumono>，</span><span class="aki aki-2"></span>HTML<span class="aki aki-4"></span>の<span class="aki aki-4"></span><code>font-size: 80%</code><span class="aki aki-4"></span>で代用しています<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:9 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:10 role=doc-endnote>
-<p><code>\bf</code> や <code>\it</code> のようなフォントスタイルを変更するコマンドは古く使ってはいけません。現在は <code>\bfseries</code> 等の使用が推奨されます。&#160;<a href=#fnref:10 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p><code>\bf</code><span class="aki aki-4"></span>や<span class="aki aki-4"></span><code>\it</code><span class="aki aki-4"></span>のようなフォントスタイルを変更するコマンドは古く使ってはいけません<span class=yakumono>。</span><span class="aki aki-2"></span>現在は<span class="aki aki-4"></span><code>\bfseries</code><span class="aki aki-4"></span>等の使用が推奨されます<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:10 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:11 role=doc-endnote>
-<p>MathJax では <code>sl</code>，<code>sc</code> が使えないため，HTML の <code>skewX(-10deg)</code> と <code>\scriptsize</code> で代用しています。&#160;<a href=#fnref:11 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>MathJax<span class="aki aki-4"></span>では<span class="aki aki-4"></span><code>sl</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>sc</code><span class="aki aki-4"></span>が使えないため<span class=yakumono>，</span><span class="aki aki-2"></span>HTML<span class="aki aki-4"></span>の<span class="aki aki-4"></span><code>skewX(-10deg)</code><span class="aki aki-4"></span>と<span class="aki aki-4"></span><code>\scriptsize</code><span class="aki aki-4"></span>で代用しています<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:11 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:12 role=doc-endnote>
-<p>MathJax では一部うまく出力できないので，他の方法で妥協してあります。&#160;<a href=#fnref:12 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>MathJax<span class="aki aki-4"></span>では一部うまく出力できないので<span class=yakumono>，</span><span class="aki aki-2"></span>他の方法で妥協してあります<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:12 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:13 role=doc-endnote>
-<p>TeX では 1 キーで入力するダブルクォーテーション「"」の使用は推奨されません。&#160;<a href=#fnref:13 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>TeX<span class="aki aki-4"></span>では<span class="aki aki-4"></span>1<span class="aki aki-4"></span>キーで入力するダブルクォーテーション<span class="aki aki-2"></span><span class=yakumono>「</span>"<span class=yakumono>」</span><span class="aki aki-2"></span>の使用は推奨されません<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:13 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 <li id=fn:14 role=doc-endnote>
-<p>このブログ では式番号が表示されないが，実際の TeX では表示されます。また，TeX で式番号を表示しない場合は環境を <code>align*</code> とします。&#160;<a href=#fnref:14 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>このブログでは式番号が表示されないが<span class=yakumono>，</span><span class="aki aki-2"></span>実際の<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>では表示されます<span class=yakumono>。</span><span class="aki aki-2"></span>また<span class=yakumono>，</span><span class="aki aki-2"></span>TeX<span class="aki aki-4"></span>で式番号を表示しない場合は環境を<span class="aki aki-4"></span><code>align*</code><span class="aki aki-4"></span>とします<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:14 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -697,21 +705,21 @@ f(x) &= ax + b\\
 <nav id=TableOfContents>
 <ul>
 <li><a href=#はじめに>はじめに</a></li>
-<li><a href=#tex--latex-とは>TeX / LaTeX とは</a></li>
-<li><a href=#日本語-tex-について>日本語 TeX について</a>
+<li><a href=#texlatexとは>TeX<span class="aki aki-4"></span>/<span class="aki aki-4"></span>LaTeX<span class="aki aki-4"></span>とは</a></li>
+<li><a href=#日本語texについて>日本語<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>について</a>
 <ul>
 <li><a href=#uplatex-について>upLaTeX について</a></li>
 </ul>
 </li>
-<li><a href=#latex-開発環境>LaTeX 開発環境</a></li>
+<li><a href=#latex開発環境>LaTeX<span class="aki aki-4"></span>開発環境</a></li>
 <li><a href=#文書作成の基本手順>文書作成の基本手順</a>
 <ul>
-<li><a href=#原稿ファイルの執筆tex-ファイルの作成>原稿ファイルの執筆（TeX ファイルの作成）</a></li>
-<li><a href=#組版コンパイル>組版（コンパイル）</a></li>
-<li><a href=#pdf-に変換>PDF に変換</a></li>
+<li><a href=#原稿ファイルの執筆texファイルの作成>原稿ファイルの執筆<span class="aki aki-2"></span><span class=yakumono>（</span>TeX<span class="aki aki-4"></span>ファイルの作成<span class=yakumono>）</span><span class="aki aki-2"></span></a></li>
+<li><a href=#組版コンパイル>組版<span class="aki aki-2"></span><span class=yakumono>（</span>コンパイル<span class=yakumono>）</span><span class="aki aki-2"></span></a></li>
+<li><a href=#pdfに変換>PDF<span class="aki aki-4"></span>に変換</a></li>
 </ul>
 </li>
-<li><a href=#tex-ソースの基本構成>TeX ソースの基本構成</a></li>
+<li><a href=#texソースの基本構成>TeX<span class="aki aki-4"></span>ソースの基本構成</a></li>
 <li><a href=#本文の執筆の基本ルール>本文の執筆の基本ルール</a></li>
 <li><a href=#コマンド>コマンド</a>
 <ul>
@@ -730,7 +738,7 @@ f(x) &= ax + b\\
 </ul>
 </li>
 <li><a href=#ドキュメントクラス>ドキュメントクラス</a></li>
-<li><a href=#目次--相互参照>目次 / 相互参照</a>
+<li><a href=#目次相互参照>目次<span class="aki aki-4"></span>/<span class="aki aki-4"></span>相互参照</a>
 <ul>
 <li><a href=#目次>目次</a></li>
 <li><a href=#相互参照>相互参照</a></li>

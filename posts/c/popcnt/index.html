@@ -5,25 +5,23 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-204370875-1"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-204370875-1')</script>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>bit を高速に数える 手法の比較 - Daiji Blog</title>
+<title>bit を高速に数える（手法の比較） - Daiji Blog</title>
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="@Daiji256">
-<meta name=twitter:title content="bit を高速に数える 手法の比較 - Daiji Blog">
-<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hucd71ba4db3bf1a0d0407d6f63e309a1c_11019_filter_5355435428799896103.png">
+<meta name=twitter:title content="bit を高速に数える（手法の比較） - Daiji Blog">
+<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hucd71ba4db3bf1a0d0407d6f63e309a1c_11019_filter_9208293164621587320.png">
 <meta property="og:url" content="https://daiji256.github.io/posts/c/popcnt/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bit を高速に数える 手法の比較 - Daiji Blog">
-<meta property="og:description" content="はじめに 本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います。アルゴリズムの詳しい内容は下の参考文献に飛んで">
+<meta property="og:title" content="bit を高速に数える（手法の比較） - Daiji Blog">
+<meta property="og:description" content="はじめに 本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います。アルゴリズムの詳しい内容は下の参考文献に飛">
 <meta property="og:site_name" content="Daiji Blog">
-<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hucd71ba4db3bf1a0d0407d6f63e309a1c_11019_filter_5355435428799896103.png">
+<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hucd71ba4db3bf1a0d0407d6f63e309a1c_11019_filter_9208293164621587320.png">
 <link rel="shortcut icon" type=image/x-icon href=https://daiji256.github.io/images/favicon.ico>
 <link rel=apple-touch-icon type=image/png href=https://daiji256.github.io/images/apple-touch-icon.png>
 <link rel=preconnect href=https://fonts.googleapis.com>
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" as=style>
-<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'">
-<link rel=preload href=https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css as=style>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
 <link rel=stylesheet href=https://daiji256.github.io/css/one-dark.min.css>
 <script src=https://daiji256.github.io/js/menu.min.js></script>
 </head>
@@ -35,7 +33,8 @@
 <li>
 <a href=https://daiji256.github.io/ class=item>
 <img src=https://daiji256.github.io/images/icon.svg width=28 height=28 title=ホーム class=user-icon>
-<div class=site-title>Daiji Blog</div>
+<div class=site-title>
+Daiji Blog</div>
 </a>
 </li>
 <li>
@@ -76,36 +75,43 @@
 <li><a href=https://daiji256.github.io/about/>プロフィール</a></li>
 </ul>
 <div class=menu-back></div>
-</nav>
-<div class=post-wrapper>
+</nav><div class=post-wrapper>
 <div class=main-line>
 <div class=post>
 <div class=info>
-<div class=title>bit を高速に数える 手法の比較</div>
+<div class=title>
+bit<span class="aki aki-4"></span>を高速に数える<span class="aki aki-2"></span><span class=yakumono>（</span>手法の比較<span class=yakumono>）</span>
+</div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/date.svg#symbol"/></svg>
-<div class=text>2020 年 12 月 31 日</div><svg><use xlink:href="https://daiji256.github.io/images/icons/lastmod.svg#symbol"/></svg>
-<div class=text>2021 年 12 月 12 日</div>
+<div class=text>
+2020<span class="aki aki-4"></span>年<span class="aki aki-4"></span>12<span class="aki aki-4"></span>月<span class="aki aki-4"></span>31<span class="aki aki-4"></span>日</div><svg><use xlink:href="https://daiji256.github.io/images/icons/lastmod.svg#symbol"/></svg>
+<div class=text>
+2022<span class="aki aki-4"></span>年<span class="aki aki-4"></span>5<span class="aki aki-4"></span>月<span class="aki aki-4"></span>15<span class="aki aki-4"></span>日</div>
 </div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/categories.svg#symbol"/></svg>
-<a href=https://daiji256.github.io/categories/c/ class=text>C</a>
+<a href=https://daiji256.github.io/categories/c/ class=text>
+C
+</a>
 </div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/tags.svg#symbol"/></svg>
-<a href=https://daiji256.github.io/tags/bit/ class=text>bit</a>
+<a href=https://daiji256.github.io/tags/bit/ class=text>
+bit
+</a>
 </div>
 </div>
 <section class=sec-content>
 <div class=content>
 <h1 id=はじめに>はじめに</h1>
-<p>本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います。アルゴリズムの詳しい内容は下の参考文献に飛んでください。</p>
+<p>本記事では<span class="aki aki-4"></span>bit<span class="aki aki-4"></span>の<span class="aki aki-4"></span>1<span class="aki aki-4"></span>の数を数える手法<span class="aki aki-2"></span><span class=yakumono>（</span>アルゴリズム<span class=yakumono>）</span><span class="aki aki-2"></span>の比較を行います<span class=yakumono>。</span><span class="aki aki-2"></span>アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行います<span class=yakumono>。</span><span class="aki aki-2"></span>アルゴリズムの詳しい内容は下の参考文献に飛んでください<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h1 id=アルゴリズム>アルゴリズム</h1>
-<p><a href=https://en.wikipedia.org/wiki/Hamming_weight>Hamming weight</a> で紹介されている 5 つの手法の演算回数について簡単にまとめます。A は有名なアルゴリズムをそのまま実装した状態です。Bと C は A の高速化である派生です。D は bit が立っている（1 になっている）数に比例して演算量が増えます。E は力技で，16bit すべての数に対して立ってる bit の数をメモしておき，64bit を 4 分割してその合計として求めています。メモリを多く使用し，64bit のように bit 数が多い場合はあまり高速ではありません。</p>
+<p><a href=https://en.wikipedia.org/wiki/Hamming_weight>Hamming weight</a><span class="aki aki-4"></span>で紹介されている<span class="aki aki-4"></span>5<span class="aki aki-4"></span>つの手法の演算回数について簡単にまとめます<span class=yakumono>。</span><span class="aki aki-2"></span>A<span class="aki aki-4"></span>は有名なアルゴリズムをそのまま実装した状態です<span class=yakumono>。</span><span class="aki aki-2"></span>B<span class="aki aki-4"></span>と<span class="aki aki-4"></span>C<span class="aki aki-4"></span>は<span class="aki aki-4"></span>A<span class="aki aki-4"></span>の高速化である派生です<span class=yakumono>。</span><span class="aki aki-2"></span>D<span class="aki aki-4"></span>は<span class="aki aki-4"></span>bit<span class="aki aki-4"></span>が立っている<span class="aki aki-2"></span><span class=yakumono>（</span>1<span class="aki aki-4"></span>になっている<span class=yakumono>）</span><span class="aki aki-2"></span>数に比例して演算量が増えます<span class=yakumono>。</span><span class="aki aki-2"></span>E<span class="aki aki-4"></span>は力技で<span class=yakumono>，</span><span class="aki aki-2"></span>16bit<span class="aki aki-4"></span>すべての数に対して立ってる<span class="aki aki-4"></span>bit<span class="aki aki-4"></span>の数をメモしておき<span class=yakumono>，</span><span class="aki aki-2"></span>64bit<span class="aki aki-4"></span>を<span class="aki aki-4"></span>4<span class="aki aki-4"></span>分割してその合計として求めています<span class=yakumono>。</span><span class="aki aki-2"></span>メモリを多く使用し<span class=yakumono>，</span><span class="aki aki-2"></span>64bit<span class="aki aki-4"></span>のように<span class="aki aki-4"></span>bit<span class="aki aki-4"></span>数が多い場合はあまり高速ではありません<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
 <th style=text-align:center>手法</th>
 <th style=text-align:right>算術</th>
 <th style=text-align:right>乗算</th>
-<th style=text-align:right>比較 / 分岐</th>
+<th style=text-align:right>比較<span class="aki aki-4"></span>/<span class="aki aki-4"></span>分岐</th>
 <th style=text-align:right>メモリ読み込み</th>
 <th style=text-align:left>特徴</th>
 </tr>
@@ -141,7 +147,7 @@
 <td style=text-align:right>0</td>
 <td style=text-align:right>1n</td>
 <td style=text-align:right>0</td>
-<td style=text-align:left>n は 1 になっている数</td>
+<td style=text-align:left>n<span class="aki aki-4"></span>は<span class="aki aki-4"></span>1<span class="aki aki-4"></span>になっている数</td>
 </tr>
 <tr>
 <td style=text-align:center>E</td>
@@ -149,21 +155,21 @@
 <td style=text-align:right>0</td>
 <td style=text-align:right>0</td>
 <td style=text-align:right>4</td>
-<td style=text-align:left>16bit ごとにメモリから読み取る</td>
+<td style=text-align:left>16bit<span class="aki aki-4"></span>ごとに読み取る</td>
 </tr>
 </tbody>
 </table>
 <h1 id=実験>実験</h1>
-<h2 id=実験環境ソースコード>実験環境・ソースコード</h2>
-<p>実験で使用したソースコードは <a href=https://github.com/Daiji256/Hamming-weight>GitHub</a> にあげておきます。実験環境は下のとおりです。最適化については GitHub にあげている Makefile を見てください。</p>
+<h2 id=実験環境ソースコード>実験環境<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>ソースコード</h2>
+<p>実験で使用したソースコードは<span class="aki aki-4"></span><a href=https://github.com/Daiji256/Hamming-weight>GitHub</a><span class="aki aki-4"></span>にあげておきます<span class=yakumono>。</span><span class="aki aki-2"></span>実験環境は下のとおりです<span class=yakumono>。</span><span class="aki aki-2"></span>最適化については<span class="aki aki-4"></span>GitHub<span class="aki aki-4"></span>にあげている<span class="aki aki-4"></span>Makefile<span class="aki aki-4"></span>を見てください<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <ul>
 <li>OS: Ubuntu 20.04.1</li>
 <li>Kernel: 5.4.0-58-generic</li>
 <li>CPU: Intel i5-3360M (4) @ 3.5 GHz</li>
 <li>gcc: version 9.3.0 (C11)</li>
 </ul>
-<h2 id=実験-1-単純な比較>実験 1 単純な比較</h2>
-<p>まずは全 bit に対して処理を行う安直な手法 N と 5 つの手法 A–E を C 言語に実装してタイムを計測します。1 億個の乱数に対してビットカウントを行いその処理時間を計測します。計測結果を表にまとめます。このときの立っている bit の平均は 32 です。（64bit の乱数でやりました。）この環境では C が B よりも高速でした。D はこの中では最も遅いですがそれでも N に比べて十分高速です。E も C と同等の速度ですが，メモリのことを踏まえると微妙に感じます。</p>
+<h2 id=実験1単純な比較>実験<span class="aki aki-4"></span>1<span class="aki aki-4"></span>単純な比較</h2>
+<p>まずは全<span class="aki aki-4"></span>bit<span class="aki aki-4"></span>に対して処理を行う安直な手法<span class="aki aki-4"></span>N<span class="aki aki-4"></span>と<span class="aki aki-4"></span>5<span class="aki aki-4"></span>つの手法<span class="aki aki-4"></span>A&ndash;E<span class="aki aki-4"></span>を<span class="aki aki-4"></span>C<span class="aki aki-4"></span>言語に実装してタイムを計測します<span class=yakumono>。</span><span class="aki aki-2"></span>1<span class="aki aki-4"></span>億個の乱数に対してビットカウントを行いその処理時間を計測します<span class=yakumono>。</span><span class="aki aki-2"></span>計測結果を表にまとめます<span class=yakumono>。</span><span class="aki aki-2"></span>このときの立っている<span class="aki aki-4"></span>bit<span class="aki aki-4"></span>の平均は<span class="aki aki-4"></span>32<span class="aki aki-4"></span>です<span class=yakumono>。</span><span class="aki aki-2"></span><span class="aki aki-2"></span><span class=yakumono>（</span>64bit<span class="aki aki-4"></span>の乱数でやりました<span class=yakumono>。</span><span class=yakumono>）</span><span class="aki aki-2"></span>この環境では<span class="aki aki-4"></span>C<span class="aki aki-4"></span>が<span class="aki aki-4"></span>B<span class="aki aki-4"></span>よりも高速でした<span class=yakumono>。</span><span class="aki aki-2"></span>D<span class="aki aki-4"></span>はこの中では最も遅いですがそれでも<span class="aki aki-4"></span>N<span class="aki aki-4"></span>に比べて十分高速です<span class=yakumono>。</span><span class="aki aki-2"></span>E<span class="aki aki-4"></span>も<span class="aki aki-4"></span>C<span class="aki aki-4"></span>と同等の速度ですが<span class=yakumono>，</span><span class="aki aki-2"></span>メモリのことを踏まえると微妙に感じます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -198,8 +204,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id=実験-2-特殊環境下での比較>実験 2 特殊環境下での比較</h2>
-<p>次に立っている bit の数が平均 0.5 の場合で測定します。D は 4 倍程度高速になったがもっと高速化されてもいいのかなと思いました。しかし，C などと比較しまだ遅いことからこの環境下では使用する必要性はないと思います。また，N は下位 bit から参照し 0 になったとき終了するようにしているため，高速化されたがそもそも N は使わない。</p>
+<h2 id=実験2特殊環境下での比較>実験<span class="aki aki-4"></span>2<span class="aki aki-4"></span>特殊環境下での比較</h2>
+<p>次に立っている<span class="aki aki-4"></span>bit<span class="aki aki-4"></span>の数が平均<span class="aki aki-4"></span>0.5<span class="aki aki-4"></span>の場合で測定します<span class=yakumono>。</span><span class="aki aki-2"></span>D<span class="aki aki-4"></span>は<span class="aki aki-4"></span>4<span class="aki aki-4"></span>倍程度高速になったがもっと高速化されてもいいのかなと思いました<span class=yakumono>。</span><span class="aki aki-2"></span>しかし<span class=yakumono>，</span><span class="aki aki-2"></span>C<span class="aki aki-4"></span>などと比較しまだ遅いことからこの環境下では使用する必要性はないと思います<span class=yakumono>。</span><span class="aki aki-2"></span>また<span class=yakumono>，</span><span class="aki aki-2"></span>N<span class="aki aki-4"></span>は下位<span class="aki aki-4"></span>bit<span class="aki aki-4"></span>から参照し<span class="aki aki-4"></span>0<span class="aki aki-4"></span>になったとき終了するようにしているため<span class=yakumono>，</span><span class="aki aki-2"></span>高速化されたがそもそも<span class="aki aki-4"></span>N<span class="aki aki-4"></span>は使わない<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -234,8 +240,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id=実験-3--marchnative-による最適化>実験 3 <code>-march=native</code> による最適化</h2>
-<p><code>-march=native</code> は特定の CPU を指定して高速化を行います。コンパイル後のバイナリデータを他の人と共有する場合は不適切ですが，自分の環境だけでの使用の場合はおすすめします。実験結果を示します。D 以外は少し高速化されました。注目できるのは D で，30 倍程度高速化されこの中で最速となっています。</p>
+<h2 id=実験3--marchnativeによる最適化>実験<span class="aki aki-4"></span>3 <code>-march=native</code><span class="aki aki-4"></span>による最適化</h2>
+<p><code>-march=native</code><span class="aki aki-4"></span>は特定の<span class="aki aki-4"></span>CPU<span class="aki aki-4"></span>を指定して高速化を行います<span class=yakumono>。</span><span class="aki aki-2"></span>コンパイル後のバイナリデータを他の人と共有する場合は不適切ですが<span class=yakumono>，</span><span class="aki aki-2"></span>自分の環境だけでの使用の場合はおすすめします<span class=yakumono>。</span><span class="aki aki-2"></span>実験結果を示します<span class=yakumono>。</span><span class="aki aki-2"></span>D<span class="aki aki-4"></span>以外は少し高速化されました<span class=yakumono>。</span><span class="aki aki-2"></span>注目できるのは<span class="aki aki-4"></span>D<span class="aki aki-4"></span>で<span class=yakumono>，</span><span class="aki aki-2"></span>30<span class="aki aki-4"></span>倍程度高速化されこの中で最速となっています<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -270,14 +276,14 @@
 </tr>
 </tbody>
 </table>
-<h2 id=実験-4-_popcnt64と__asm__>実験 4 <code>_popcnt64</code>と<code>__asm__</code></h2>
-<p>最後に <code>_popcnt64</code> と <code>__asm__</code> を利用して計測する。<code>-march=native</code> 無しの結果を N，有りの結果を Y に示しています。結果はどの自作関数より高速になりました。これらが使える環境では使用したほうが良いと思います。</p>
+<h2 id=実験4-_popcnt64と__asm__>実験<span class="aki aki-4"></span>4 <code>_popcnt64</code><span class="aki aki-4"></span>と<span class="aki aki-4"></span><code>__asm__</code></h2>
+<p>最後に<span class="aki aki-4"></span><code>_popcnt64</code><span class="aki aki-4"></span>と<span class="aki aki-4"></span><code>__asm__</code><span class="aki aki-4"></span>を利用して計測する<span class=yakumono>。</span><span class="aki aki-2"></span><code>-march=native</code><span class="aki aki-4"></span>無しの結果を<span class="aki aki-4"></span>N<span class=yakumono>，</span><span class="aki aki-2"></span>有りの結果を<span class="aki aki-4"></span>Y<span class="aki aki-4"></span>に示しています<span class=yakumono>。</span><span class="aki aki-2"></span>結果はどの自作関数より高速になりました<span class=yakumono>。</span><span class="aki aki-2"></span>これらが使える環境では使用したほうが良いと思います<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
 <th style=text-align:center>手法</th>
-<th style=text-align:center>時間 (N)</th>
-<th style=text-align:center>時間 (Y)</th>
+<th style=text-align:center>時間<span class="aki aki-4"></span>(N)</th>
+<th style=text-align:center>時間<span class="aki aki-4"></span>(Y)</th>
 </tr>
 </thead>
 <tbody>
@@ -287,21 +293,21 @@
 <td style=text-align:center>0.071 s</td>
 </tr>
 <tr>
-<td style=text-align:center><code>__asm__ </code></td>
+<td style=text-align:center><code>__asm__</code></td>
 <td style=text-align:center>0.234 s</td>
 <td style=text-align:center>0.071 s</td>
 </tr>
 </tbody>
 </table>
 <h1 id=まとめ>まとめ</h1>
-<p>bit を高速に数える手法の比較を行いました。安直に数える場合に比べて 10 倍程度高速に数えるアルゴリズムであると確認できました。<code>_popcnt64</code> と <code>__asm__</code> はこれらに比べてより高速であることも確認できました。</p>
+<p>bit<span class="aki aki-4"></span>を高速に数える手法の比較を行いました<span class=yakumono>。</span><span class="aki aki-2"></span>安直に数える場合に比べて<span class="aki aki-4"></span>10<span class="aki aki-4"></span>倍程度高速に数えるアルゴリズムであると確認できました<span class=yakumono>。</span><span class="aki aki-2"></span><code>_popcnt64</code><span class="aki aki-4"></span>と<span class="aki aki-4"></span><code>__asm__</code><span class="aki aki-4"></span>はこれらに比べてより高速であることも確認できました<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h1 id=文献>文献</h1>
 <ol>
-<li><a href=https://github.com/Daiji256/Hamming-weight>ソースコード (GitHub)</a></li>
+<li><a href=https://github.com/Daiji256/Hamming-weight>ソースコード<span class="aki aki-4"></span>(GitHub)</a></li>
 <li><a href=https://en.wikipedia.org/wiki/Hamming_weight>Hamming weight (Wiki)</a></li>
-<li><a href=https://qiita.com/ocxtal/items/01c46b15cb1f2e656887>x86_64 で popcnt / tzcnt / lzcntする【ビット演算テクニック Advent Calendar 2016 5日目】 (Qiita)</a></li>
+<li><a href=https://qiita.com/ocxtal/items/01c46b15cb1f2e656887>x86_64<span class="aki aki-4"></span>で<span class="aki aki-4"></span>popcnt<span class="aki aki-4"></span>/<span class="aki aki-4"></span>tzcnt<span class="aki aki-4"></span>/<span class="aki aki-4"></span>lzcnt<span class="aki aki-4"></span>する<span class="aki aki-2"></span><span class=yakumono>【</span>ビット演算テクニック<span class="aki aki-4"></span>Advent Calendar 2016 5<span class="aki aki-4"></span>日目<span class=yakumono>】</span><span class="aki aki-2"></span> (Qiita)</a></li>
 <li><a href=https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html>GCC (GNU)</a></li>
-<li><a href=https://qiita.com/Daiji256/items/c4f83c4f3a73a3fb7e0c>bit を高速に数える 手法の比較 (Qiita)</a></li>
+<li><a href=https://qiita.com/Daiji256/items/c4f83c4f3a73a3fb7e0c>bit<span class="aki aki-4"></span>を高速に数える 手法の比較<span class="aki aki-4"></span>(Qiita)</a></li>
 </ol>
 </div>
 </section>
@@ -318,11 +324,11 @@
 <li><a href=#アルゴリズム>アルゴリズム</a></li>
 <li><a href=#実験>実験</a>
 <ul>
-<li><a href=#実験環境ソースコード>実験環境・ソースコード</a></li>
-<li><a href=#実験-1-単純な比較>実験 1 単純な比較</a></li>
-<li><a href=#実験-2-特殊環境下での比較>実験 2 特殊環境下での比較</a></li>
-<li><a href=#実験-3--marchnative-による最適化>実験 3 <code>-march=native</code> による最適化</a></li>
-<li><a href=#実験-4-_popcnt64と__asm__>実験 4 <code>_popcnt64</code>と<code>__asm__</code></a></li>
+<li><a href=#実験環境ソースコード>実験環境<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>ソースコード</a></li>
+<li><a href=#実験1単純な比較>実験<span class="aki aki-4"></span>1<span class="aki aki-4"></span>単純な比較</a></li>
+<li><a href=#実験2特殊環境下での比較>実験<span class="aki aki-4"></span>2<span class="aki aki-4"></span>特殊環境下での比較</a></li>
+<li><a href=#実験3--marchnativeによる最適化>実験<span class="aki aki-4"></span>3 <code>-march=native</code><span class="aki aki-4"></span>による最適化</a></li>
+<li><a href=#実験4-_popcnt64と__asm__>実験<span class="aki aki-4"></span>4 <code>_popcnt64</code><span class="aki aki-4"></span>と<span class="aki aki-4"></span><code>__asm__</code></a></li>
 </ul>
 </li>
 <li><a href=#まとめ>まとめ</a></li>

@@ -21,9 +21,7 @@
 <link rel=preconnect href=https://fonts.googleapis.com>
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" as=style>
-<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'">
-<link rel=preload href=https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css as=style>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
 <link rel=stylesheet href=https://daiji256.github.io/css/one-dark.min.css>
 <script src=https://daiji256.github.io/js/menu.min.js></script>
 </head>
@@ -35,7 +33,8 @@
 <li>
 <a href=https://daiji256.github.io/ class=item>
 <img src=https://daiji256.github.io/images/icon.svg width=28 height=28 title=ホーム class=user-icon>
-<div class=site-title>Daiji Blog</div>
+<div class=site-title>
+Daiji Blog</div>
 </a>
 </li>
 <li>
@@ -76,34 +75,45 @@
 <li><a href=https://daiji256.github.io/about/>プロフィール</a></li>
 </ul>
 <div class=menu-back></div>
-</nav>
-<div class=post-wrapper>
+</nav><div class=post-wrapper>
 <div class=main-line>
 <div class=post>
 <div class=info>
-<div class=title>CuPy を使った画像の幾何学変換 with OpenCV</div>
+<div class=title>
+CuPy<span class="aki aki-4"></span>を使った画像の幾何学変換<span class="aki aki-4"></span>with OpenCV
+</div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/date.svg#symbol"/></svg>
-<div class=text>2021 年 12 月 3 日</div><svg><use xlink:href="https://daiji256.github.io/images/icons/lastmod.svg#symbol"/></svg>
-<div class=text>2022 年 1 月 10 日</div>
+<div class=text>
+2021<span class="aki aki-4"></span>年<span class="aki aki-4"></span>12<span class="aki aki-4"></span>月<span class="aki aki-4"></span>3<span class="aki aki-4"></span>日</div><svg><use xlink:href="https://daiji256.github.io/images/icons/lastmod.svg#symbol"/></svg>
+<div class=text>
+2022<span class="aki aki-4"></span>年<span class="aki aki-4"></span>5<span class="aki aki-4"></span>月<span class="aki aki-4"></span>16<span class="aki aki-4"></span>日</div>
 </div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/categories.svg#symbol"/></svg>
-<a href=https://daiji256.github.io/categories/%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86/ class=text>画像処理</a><a href=https://daiji256.github.io/categories/python/ class=text>Python</a>
+<a href=https://daiji256.github.io/categories/%E7%94%BB%E5%83%8F%E5%87%A6%E7%90%86/ class=text>
+画像処理
+</a><a href=https://daiji256.github.io/categories/python/ class=text>
+Python
+</a>
 </div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/tags.svg#symbol"/></svg>
-<a href=https://daiji256.github.io/tags/cupy/ class=text>CuPy</a><a href=https://daiji256.github.io/tags/opencv/ class=text>OpenCV</a>
+<a href=https://daiji256.github.io/tags/cupy/ class=text>
+CuPy
+</a><a href=https://daiji256.github.io/tags/opencv/ class=text>
+OpenCV
+</a>
 </div>
 </div>
 <section class=sec-content>
 <div class=content>
 <h1 id=はじめに>はじめに</h1>
-<p>魚眼カメラで撮影した等距離射影方式の画像を，普通のカメラの中心射影方式のへの変換をするなどの，画像を幾何学的変換することがあります。僕は研究で，中央付近を大きく，外側を小さくする変換をするために使いました。</p>
-<p>ここでは，等距離射影方式の画像を中心射影方式の画像に変換する場合を取り上げ，紹介していきます。</p>
-<h1 id=なぜ-cupy-を使うのか>なぜ CuPy を使うのか</h1>
-<p>CuPy は NumPy と互換性を持つ NVIDIA の GPU で動作することのできるライブラリです。幾何学変換は大量の画素を移動させるので，安直なループで実装すると処理時間が長いです。なので，GPU を使って並列化しようということです。</p>
+<p>魚眼カメラで撮影した等距離射影方式の画像を<span class=yakumono>，</span><span class="aki aki-2"></span>普通のカメラの中心射影方式のへの変換をするなどの<span class=yakumono>，</span><span class="aki aki-2"></span>画像を幾何学的変換することがあります<span class=yakumono>。</span><span class="aki aki-2"></span>僕は研究で<span class=yakumono>，</span><span class="aki aki-2"></span>中央付近を大きく<span class=yakumono>，</span><span class="aki aki-2"></span>外側を小さくする変換をするために使いました<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>ここでは<span class=yakumono>，</span><span class="aki aki-2"></span>等距離射影方式の画像を中心射影方式の画像に変換する場合を取り上げ<span class=yakumono>，</span><span class="aki aki-2"></span>紹介していきます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<h1 id=なぜcupyを使うのか>なぜ<span class="aki aki-4"></span>CuPy<span class="aki aki-4"></span>を使うのか</h1>
+<p>CuPy<span class="aki aki-4"></span>は<span class="aki aki-4"></span>NumPy<span class="aki aki-4"></span>と互換性を持つ<span class="aki aki-4"></span>NVIDIA<span class="aki aki-4"></span>の<span class="aki aki-4"></span>GPU<span class="aki aki-4"></span>で動作することのできるライブラリです<span class=yakumono>。</span><span class="aki aki-2"></span>幾何学変換は大量の画素を移動させるので<span class=yakumono>，</span><span class="aki aki-2"></span>安直なループで実装すると処理時間が長いです<span class=yakumono>。</span><span class="aki aki-2"></span>なので<span class=yakumono>，</span><span class="aki aki-2"></span>GPU<span class="aki aki-4"></span>を使って並列化しようということです<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h1 id=実装>実装</h1>
-<p>作成したコード等は <a href=https://github.com/Daiji256/geometric-transformation/>ここ</a> にあります。</p>
+<p>作成したコード等は<span class="aki aki-4"></span><a href=https://github.com/Daiji256/geometric-transformation/>ここ</a><span class="aki aki-4"></span>にあります<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h2 id=import><code>import</code></h2>
-<p>今回は画像を扱うライブラリに OpenCV を使います。<code>import</code> するのはこの 2 つだけです。</p>
+<p>今回は画像を扱うライブラリに<span class="aki aki-4"></span>OpenCV<span class="aki aki-4"></span>を使います<span class=yakumono>。</span><span class="aki aki-2"></span><code>import</code><span class="aki aki-4"></span>するのはこの<span class="aki aki-4"></span>2<span class="aki aki-4"></span>つだけです<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -115,10 +125,10 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=elementwisekernel>ElementwiseKernel</h2>
-<p>CuPy で並列化を行うには ElementwiseKernel で簡単に実装できます。詳しくは <a href=https://qiita.com/bow-of-man/items/e4d8b3a2ca14c54511f1/>CuPyのElementwiseKernelで楽にGPUの恩恵を受ける</a> で詳しく説明されています。</p>
-<p>入力を変換前の画像 <code>img1</code> とそのサイズ <code>size1</code> と変換後のサイズ <code>size2</code>，出力を変換後の画像 <code>img2</code> としています。ここでは簡単にするため入出力する画像は正方形を前提にします。</p>
-<p>5 ～ 10 行目では，変換前後の画素の関係を計算しています。計算式については説明を省きます。</p>
-<p>11 ～ 13 行目で変換後の画像に画素情報を格納しています。入力画像は RGB の 3 色あるのでこうなっています。変換後の <code>i</code><sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> には，変換前の <code>i2, j2</code> にある画素を格納することになります。</p>
+<p>CuPy<span class="aki aki-4"></span>で並列化を行うには<span class="aki aki-4"></span>ElementwiseKernel<span class="aki aki-4"></span>で簡単に実装できます<span class=yakumono>。</span><span class="aki aki-2"></span>詳しくは<span class="aki aki-4"></span><a href=https://qiita.com/bow-of-man/items/e4d8b3a2ca14c54511f1/>CuPy<span class="aki aki-4"></span>の<span class="aki aki-4"></span>ElementwiseKernel<span class="aki aki-4"></span>で楽に<span class="aki aki-4"></span>GPU<span class="aki aki-4"></span>の恩恵を受ける</a><span class="aki aki-4"></span>で詳しく説明されています<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>入力を変換前の画像<span class="aki aki-4"></span><code>img1</code><span class="aki aki-4"></span>とそのサイズ<span class="aki aki-4"></span><code>size1</code><span class="aki aki-4"></span>と変換後のサイズ<span class="aki aki-4"></span><code>size2</code><span class=yakumono>，</span><span class="aki aki-2"></span>出力を変換後の画像<span class="aki aki-4"></span><code>img2</code><span class="aki aki-4"></span>としています<span class=yakumono>。</span><span class="aki aki-2"></span>ここでは簡単にするため入出力する画像は正方形を前提にします<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>5&ndash;10<span class="aki aki-4"></span>行目では<span class=yakumono>，</span><span class="aki aki-2"></span>変換前後の画素の関係を計算しています<span class=yakumono>。</span><span class="aki aki-2"></span>計算式については説明を省きます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>11&ndash;13<span class="aki aki-4"></span>行目で変換後の画像に画素情報を格納しています<span class=yakumono>。</span><span class="aki aki-2"></span>入力画像は<span class="aki aki-4"></span>RGB<span class="aki aki-4"></span>の<span class="aki aki-4"></span>3<span class="aki aki-4"></span>色あるのでこうなっています<span class=yakumono>。</span><span class="aki aki-2"></span>変換後の<span class="aki aki-4"></span><code>i</code><sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup><span class="aki aki-4"></span>には<span class=yakumono>，</span><span class="aki aki-2"></span>変換前の<span class="aki aki-4"></span><code>i2, j2</code><span class="aki aki-4"></span>にある画素を格納することになります<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -158,9 +168,9 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=入出力>入出力</h2>
-<p>1，2 行目では <code>imread</code> で読み込んだ画像 <code>img1</code> を CuPy の配列に変換しています。3 行目では変換後の画像を格納するための空の画像 <code>img2_cp</code> を生成しています。</p>
-<p>5 行目では，<code>trans_kernel</code> を呼び出し，GPU を使って並列処理をして変換します。</p>
-<p>7，8 行目で <code>img2_cp</code> を OpenCV で扱える NumPy 形式に変換し，出力します。</p>
+<p>1<span class=yakumono>，</span><span class="aki aki-2"></span>2<span class="aki aki-4"></span>行目では<span class="aki aki-4"></span><code>imread</code><span class="aki aki-4"></span>で読み込んだ画像<span class="aki aki-4"></span><code>img1</code><span class="aki aki-4"></span>を<span class="aki aki-4"></span>CuPy<span class="aki aki-4"></span>の配列に変換しています<span class=yakumono>。</span><span class="aki aki-2"></span>3<span class="aki aki-4"></span>行目では変換後の画像を格納するための空の画像<span class="aki aki-4"></span><code>img2_cp</code><span class="aki aki-4"></span>を生成しています<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>5<span class="aki aki-4"></span>行目では<span class=yakumono>，</span><span class="aki aki-2"></span><code>trans_kernel</code><span class="aki aki-4"></span>を呼び出し<span class=yakumono>，</span><span class="aki aki-2"></span>GPU<span class="aki aki-4"></span>を使って並列処理をして変換します<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>7<span class=yakumono>，</span><span class="aki aki-2"></span>8<span class="aki aki-4"></span>行目で<span class="aki aki-4"></span><code>img2_cp</code><span class="aki aki-4"></span>を<span class="aki aki-4"></span>OpenCV<span class="aki aki-4"></span>で扱える<span class="aki aki-4"></span>NumPy<span class="aki aki-4"></span>形式に変換し<span class=yakumono>，</span><span class="aki aki-2"></span>出力します<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -184,7 +194,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=結果>結果</h2>
-<p>結果は次のようになりました。</p>
+<p>結果は次のようになりました<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -204,18 +214,18 @@
 </tbody>
 </table>
 <h1 id=ひとこと>ひとこと</h1>
-<p>この記事は僕が研究で使った内容の一部でもありますが，どちらかと言ったら後輩のために書いたメモです。Qiita に投稿したら僕の中で一番 LGTM が多くなったんですよね。やっぱり変人が好む物を書くより，一般的でメジャーな物の方がいいんですね。</p>
+<p>この記事は僕が研究で使った内容の一部でもありますが<span class=yakumono>，</span><span class="aki aki-2"></span>どちらかと言ったら後輩のために書いたメモです<span class=yakumono>。</span><span class="aki aki-2"></span>Qiita<span class="aki aki-4"></span>に投稿したら僕の中で一番<span class="aki aki-4"></span>LGTM<span class="aki aki-4"></span>が多くなったんですよね<span class=yakumono>。</span><span class="aki aki-2"></span>やっぱり変人が好む物を書くより<span class=yakumono>，</span><span class="aki aki-2"></span>一般的でメジャーな物の方がいいんですね<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h1 id=文献>文献</h1>
 <ol>
 <li><a href=https://github.com/Daiji256/geometric-transformation/>geometric-transformation (GitHub)</a></li>
-<li><a href=https://qiita.com/bow-of-man/items/e4d8b3a2ca14c54511f1/>CuPyのElementwiseKernelで楽にGPUの恩恵を受ける (Qiita)</a></li>
-<li><a href=https://qiita.com/Daiji256/items/7fc08524533dc564e844/>CuPy を使った画像の幾何学変換 with OpenCV (Qiita)</a></li>
+<li><a href=https://qiita.com/bow-of-man/items/e4d8b3a2ca14c54511f1/>CuPy<span class="aki aki-4"></span>の<span class="aki aki-4"></span>ElementwiseKernel<span class="aki aki-4"></span>で楽に<span class="aki aki-4"></span>GPU<span class="aki aki-4"></span>の恩恵を受ける<span class="aki aki-4"></span>(Qiita)</a></li>
+<li><a href=https://qiita.com/Daiji256/items/7fc08524533dc564e844/>CuPy<span class="aki aki-4"></span>を使った画像の幾何学変換<span class="aki aki-4"></span>with OpenCV (Qiita)</a></li>
 </ol>
 <section class=footnotes role=doc-endnotes>
 <hr>
 <ol>
 <li id=fn:1 role=doc-endnote>
-<p><code>i</code> は 2 次元を 1 次元に変えた状態の座標なので，2 次元で表すと <code>i/size2, i%size2</code> となります。&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p><code>i</code><span class="aki aki-4"></span>は<span class="aki aki-4"></span>2<span class="aki aki-4"></span>次元を<span class="aki aki-4"></span>1<span class="aki aki-4"></span>次元に変えた状態の座標なので<span class=yakumono>，</span><span class="aki aki-2"></span>2<span class="aki aki-4"></span>次元で表すと<span class="aki aki-4"></span><code>i/size2, i%size2</code><span class="aki aki-4"></span>となります<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -231,7 +241,7 @@
 <nav id=TableOfContents>
 <ul>
 <li><a href=#はじめに>はじめに</a></li>
-<li><a href=#なぜ-cupy-を使うのか>なぜ CuPy を使うのか</a></li>
+<li><a href=#なぜcupyを使うのか>なぜ<span class="aki aki-4"></span>CuPy<span class="aki aki-4"></span>を使うのか</a></li>
 <li><a href=#実装>実装</a>
 <ul>
 <li><a href=#import><code>import</code></a></li>

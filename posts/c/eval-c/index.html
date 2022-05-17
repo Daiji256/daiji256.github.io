@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://daiji256.github.io/posts/c/eval-c/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C 言語で eval 風関数 - Daiji Blog">
-<meta property="og:description" content="はじめに eval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般的です。ここでは C 言語のための文">
+<meta property="og:description" content="はじめに eval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般的です">
 <meta property="og:site_name" content="Daiji Blog">
 <meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hucd71ba4db3bf1a0d0407d6f63e309a1c_11019_filter_4095407276377833072.png">
 <link rel="shortcut icon" type=image/x-icon href=https://daiji256.github.io/images/favicon.ico>
@@ -21,9 +21,7 @@
 <link rel=preconnect href=https://fonts.googleapis.com>
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" as=style>
-<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'">
-<link rel=preload href=https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css as=style>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
 <link rel=stylesheet href=https://daiji256.github.io/css/one-dark.min.css>
 <script src=https://daiji256.github.io/js/menu.min.js></script>
 </head>
@@ -35,7 +33,8 @@
 <li>
 <a href=https://daiji256.github.io/ class=item>
 <img src=https://daiji256.github.io/images/icon.svg width=28 height=28 title=ホーム class=user-icon>
-<div class=site-title>Daiji Blog</div>
+<div class=site-title>
+Daiji Blog</div>
 </a>
 </li>
 <li>
@@ -76,36 +75,45 @@
 <li><a href=https://daiji256.github.io/about/>プロフィール</a></li>
 </ul>
 <div class=menu-back></div>
-</nav>
-<div class=post-wrapper>
+</nav><div class=post-wrapper>
 <div class=main-line>
 <div class=post>
 <div class=info>
-<div class=title>C 言語で eval 風関数</div>
+<div class=title>
+C<span class="aki aki-4"></span>言語で<span class="aki aki-4"></span>eval<span class="aki aki-4"></span>風関数
+</div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/date.svg#symbol"/></svg>
-<div class=text>2021 年 2 月 3 日</div><svg><use xlink:href="https://daiji256.github.io/images/icons/lastmod.svg#symbol"/></svg>
-<div class=text>2021 年 12 月 12 日</div>
+<div class=text>
+2021<span class="aki aki-4"></span>年<span class="aki aki-4"></span>2<span class="aki aki-4"></span>月<span class="aki aki-4"></span>3<span class="aki aki-4"></span>日</div><svg><use xlink:href="https://daiji256.github.io/images/icons/lastmod.svg#symbol"/></svg>
+<div class=text>
+2022<span class="aki aki-4"></span>年<span class="aki aki-4"></span>5<span class="aki aki-4"></span>月<span class="aki aki-4"></span>16<span class="aki aki-4"></span>日</div>
 </div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/categories.svg#symbol"/></svg>
-<a href=https://daiji256.github.io/categories/c/ class=text>C</a>
+<a href=https://daiji256.github.io/categories/c/ class=text>
+C
+</a>
 </div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/tags.svg#symbol"/></svg>
-<a href=https://daiji256.github.io/tags/eval/ class=text>eval</a><a href=https://daiji256.github.io/tags/%E8%87%AA%E4%BD%9C%E9%96%A2%E6%95%B0/ class=text>自作関数</a>
+<a href=https://daiji256.github.io/tags/eval/ class=text>
+eval
+</a><a href=https://daiji256.github.io/tags/%E8%87%AA%E4%BD%9C%E9%96%A2%E6%95%B0/ class=text>
+自作関数
+</a>
 </div>
 </div>
 <section class=sec-content>
 <div class=content>
 <h1 id=はじめに>はじめに</h1>
-<p><code>eval</code> 関数とは文字列を式として評価する関数です。<code>eval</code> は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般的です。ここでは C 言語のための文字列を数式として処理する <code>eval</code> 風関数を作成します。ソースコードは <a href=https://github.com/Daiji256/eval>GitHub</a> にあげてあります。</p>
+<p><code>eval</code><span class="aki aki-4"></span>関数とは文字列を式として評価する関数です<span class=yakumono>。</span><span class="aki aki-2"></span><code>eval</code><span class="aki aki-4"></span>は<span class="aki aki-4"></span>C<span class="aki aki-4"></span>言語などのコンパイラ言語にはほとんどないですが<span class=yakumono>，</span><span class="aki aki-2"></span>JavaScript<span class="aki aki-4"></span>などのインタプリタ言語で一般的です<span class=yakumono>。</span><span class="aki aki-2"></span>ここでは<span class="aki aki-4"></span>C<span class="aki aki-4"></span>言語のための文字列を数式として処理する<span class="aki aki-4"></span><code>eval</code><span class="aki aki-4"></span>風関数を作成します<span class=yakumono>。</span><span class="aki aki-2"></span>ソースコードは<span class="aki aki-4"></span><a href=https://github.com/Daiji256/eval>GitHub</a><span class="aki aki-4"></span>にあげてあります<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h1 id=主な仕様>主な仕様</h1>
-<p><code>eval</code> は引数の数式を計算し，その結果を戻り値とする関数にします。<code>eval</code> では <code>sin</code>，<code>exp</code>，<code>sqrt</code> などの <code>math.h</code> にある関数が使えるようにします。関数を含めた数式の計算順は次のようになります。計算過程は全て文字列として処理を行います。</p>
+<p><code>eval</code><span class="aki aki-4"></span>は引数の数式を計算し<span class=yakumono>，</span><span class="aki aki-2"></span>その結果を戻り値とする関数にします<span class=yakumono>。</span><span class="aki aki-2"></span><code>eval</code><span class="aki aki-4"></span>では<span class="aki aki-4"></span><code>sin</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>exp</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>sqrt</code><span class="aki aki-4"></span>などの<span class="aki aki-4"></span><code>math.h</code><span class="aki aki-4"></span>にある関数が使えるようにします<span class=yakumono>。</span><span class="aki aki-2"></span>関数を含めた数式の計算順は次のようになります<span class=yakumono>。</span><span class="aki aki-2"></span>計算過程は全て文字列として処理を行います<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <ol>
-<li>関数：<code>sin</code>，<code>exp</code>，<code>sqrt</code> など</li>
-<li>括弧：<code>(</code>，<code>)</code></li>
-<li>乗法，除法：<code>*</code>，<code>\</code></li>
-<li>加法，減法：<code>+</code>，<code>-</code></li>
+<li>関数<span class="aki aki-4"></span><span class=yakumono>：</span><span class="aki aki-4"></span><code>sin</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>exp</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>sqrt</code><span class="aki aki-4"></span>など</li>
+<li>括弧<span class="aki aki-4"></span><span class=yakumono>：</span><span class="aki aki-4"></span><code>(</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>)</code></li>
+<li>乗法<span class=yakumono>，</span><span class="aki aki-2"></span>除法<span class="aki aki-4"></span><span class=yakumono>：</span><span class="aki aki-4"></span><code>*</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>\</code></li>
+<li>加法<span class=yakumono>，</span><span class="aki aki-2"></span>減法<span class="aki aki-4"></span><span class=yakumono>：</span><span class="aki aki-4"></span><code>+</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>-</code></li>
 </ol>
-<p>関数の計算を行う <code>calcfunc</code> ，四則演算を行う <code>calc</code> を作成します。括弧の処理には <code>eval</code> を使用します。プログラムの疑似コード（？）と共に説明します。実際のソースコードは長いので <a href=https://github.com/Daiji256/eval>GitHub</a> を参照してください。実装は基本的に単純で，上記の箇条書きの順番通りに計算するだけです。</p>
+<p>関数の計算を行う<span class="aki aki-4"></span><code>calcfunc</code><span class=yakumono>，</span><span class="aki aki-2"></span>四則演算を行う<span class="aki aki-4"></span><code>calc</code><span class="aki aki-4"></span>を作成します<span class=yakumono>。</span><span class="aki aki-2"></span>括弧の処理には<span class="aki aki-4"></span><code>eval</code><span class="aki aki-4"></span>を使用します<span class=yakumono>。</span><span class="aki aki-2"></span>プログラムの疑似コード<span class="aki aki-2"></span><span class=yakumono>（</span>？<span class=yakumono>）</span><span class="aki aki-2"></span>と共に説明します<span class=yakumono>。</span><span class="aki aki-2"></span>実際のソースコードは長いので<span class="aki aki-4"></span><a href=https://github.com/Daiji256/eval>GitHub</a><span class="aki aki-4"></span>を参照してください<span class=yakumono>。</span><span class="aki aki-2"></span>実装は基本的に単純で<span class=yakumono>，</span><span class="aki aki-2"></span>上記の箇条書きの順番通りに計算するだけです<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -142,29 +150,29 @@
 </span></code></pre></td>
 <td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kt>double</span> <span class=nf>eval</span><span class=o>(</span><span class=kt>char</span> <span class=o>*</span><span class=n>str</span><span class=o>)</span> <span class=o>{</span>
-	<span class=k>for</span> <span class=o>(</span> <span class=n>文字列先頭からループ</span> <span class=o>)</span> <span class=o>{</span>
-		<span class=k>if</span> <span class=o>(</span> <span class=n>関数があった時</span> <span class=o>)</span> <span class=o>{</span>
+	<span class=k>for</span> <span class=o>(</span><span class=n>文字列先頭からループ</span><span class=o>)</span> <span class=o>{</span>
+		<span class=k>if</span> <span class=o>(</span><span class=n>関数があった時</span><span class=o>)</span> <span class=o>{</span>
 			<span class=n>str2</span> <span class=o>=</span> <span class=n>関数とその引数</span><span class=o>;</span>
 			<span class=n>str3</span> <span class=o>=</span> <span class=n>num2str</span><span class=o>(</span><span class=n>calcfunc</span><span class=o>(</span><span class=n>str2</span><span class=o>));</span>
 			<span class=n>str</span> <span class=o>=</span> <span class=n>str2</span> <span class=n>を</span> <span class=n>str3</span> <span class=n>に置換</span><span class=o>;</span>
 		<span class=o>}</span>
 	<span class=o>}</span>
-	<span class=k>for</span> <span class=o>(</span> <span class=n>文字列先頭からループ</span> <span class=o>)</span> <span class=o>{</span>
-		<span class=k>if</span> <span class=o>(</span> <span class=n>括弧があった時</span> <span class=o>)</span> <span class=o>{</span>
+	<span class=k>for</span> <span class=o>(</span><span class=n>文字列先頭からループ</span><span class=o>)</span> <span class=o>{</span>
+		<span class=k>if</span> <span class=o>(</span><span class=n>括弧があった時</span><span class=o>)</span> <span class=o>{</span>
 			<span class=n>str2</span> <span class=o>=</span> <span class=n>括弧内の文字列</span><span class=o>;</span>
 			<span class=n>str3</span> <span class=o>=</span> <span class=n>num2str</span><span class=o>(</span><span class=n>eval</span><span class=o>(</span><span class=n>str2</span><span class=o>));</span>
 			<span class=n>str</span> <span class=o>=</span> <span class=o>(</span><span class=n>str2</span><span class=o>)</span> <span class=n>を</span> <span class=n>str3</span> <span class=n>に置換</span><span class=o>;</span>
 		<span class=o>}</span>
 	<span class=o>}</span>
-	<span class=k>for</span> <span class=o>(</span> <span class=n>文字列先頭からループ</span> <span class=o>)</span> <span class=o>{</span>
-		<span class=k>if</span> <span class=o>(</span> <span class=o>*,</span> <span class=o>/</span> <span class=n>があった時</span> <span class=o>)</span> <span class=o>{</span>
+	<span class=k>for</span> <span class=o>(</span><span class=n>文字列先頭からループ</span><span class=o>)</span> <span class=o>{</span>
+		<span class=k>if</span> <span class=o>(*,</span> <span class=o>/</span> <span class=n>があった時</span><span class=o>)</span> <span class=o>{</span>
 			<span class=n>str2</span> <span class=o>=</span> <span class=n>計算範囲</span><span class=o>;</span>
 			<span class=n>str3</span> <span class=o>=</span> <span class=n>num2str</span><span class=o>(</span><span class=n>calc</span><span class=o>(</span><span class=n>str2</span><span class=o>));</span>
 			<span class=n>str</span> <span class=o>=</span> <span class=n>str2</span> <span class=n>を</span> <span class=n>str3</span> <span class=n>に置換</span><span class=o>;</span>
 		<span class=o>}</span>
 	<span class=o>}</span>
-	<span class=k>for</span> <span class=o>(</span> <span class=n>文字列先頭からループ</span> <span class=o>)</span> <span class=o>{</span>
-		<span class=k>if</span> <span class=o>(</span> <span class=o>+,</span> <span class=o>-</span> <span class=n>があった時</span> <span class=o>)</span> <span class=o>{</span>
+	<span class=k>for</span> <span class=o>(</span><span class=n>文字列先頭からループ</span><span class=o>)</span> <span class=o>{</span>
+		<span class=k>if</span> <span class=o>(+,</span> <span class=o>-</span> <span class=n>があった時</span><span class=o>)</span> <span class=o>{</span>
 			<span class=n>str2</span> <span class=o>=</span> <span class=n>計算範囲</span><span class=o>;</span>
 			<span class=n>str3</span> <span class=o>=</span> <span class=n>num2str</span><span class=o>(</span><span class=n>calc</span><span class=o>(</span><span class=n>str2</span><span class=o>));</span>
 			<span class=n>str</span> <span class=o>=</span> <span class=n>str2</span> <span class=n>を</span> <span class=n>str3</span> <span class=n>に置換</span><span class=o>;</span>
@@ -175,19 +183,19 @@
 </code></pre></td></tr></table>
 </div>
 </div><h1 id=処理の流れの例>処理の流れの例</h1>
-<p>引数に <code>3*sqrt(4)+(5-2)</code> とした時を例にして説明します。まず都合が良くするために全体に <code>(</code>，<code>)</code> を付けます。</p>
+<p>引数に<span class="aki aki-4"></span><code>3*sqrt(4)+(5-2)</code><span class="aki aki-4"></span>とした時を例にして説明します<span class=yakumono>。</span><span class="aki aki-2"></span>まず都合が良くするために全体に<span class="aki aki-4"></span><code>(</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>)</code><span class="aki aki-4"></span>を付けます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <figure class=center><img src=./images/fig1.svg width=320 height=114>
 </figure>
-<p>次に計算の順番通りに関数を呼び出し計算します。</p>
+<p>次に計算の順番通りに関数を呼び出し計算します<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <figure class=center><img src=./images/fig2.svg width=320 height=343>
 </figure>
-<p>次に <code>*</code>，<code>\</code> による計算を <code>calc</code> を用いて行います。最後に <code>+</code>，<code>-</code> による計算を行います。最終的に残った値を実数値として <code>return</code> します。</p>
-<h1 id=まとめ今後>まとめ・今後</h1>
-<p>C 言語用の <code>eval</code> 風関数を作成しました。<code>calc</code> 等の関数について触れませんでしたが，説明を付け加えるかもしれません。ぜひ構文解析等の勉強に役立てばと思います。今後の課題としてメモリを多用する，処理速度が遅いなどが挙げられるので改善したいです。また，バグがあるかもしません。</p>
+<p>次に<span class="aki aki-4"></span><code>*</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>\</code><span class="aki aki-4"></span>による計算を<span class="aki aki-4"></span><code>calc</code><span class="aki aki-4"></span>を用いて行います<span class=yakumono>。</span><span class="aki aki-2"></span>最後に<span class="aki aki-4"></span><code>+</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>-</code><span class="aki aki-4"></span>による計算を行います<span class=yakumono>。</span><span class="aki aki-2"></span>最終的に残った値を実数値として<span class="aki aki-4"></span><code>return</code><span class="aki aki-4"></span>します<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<h1 id=まとめ今後>まとめ<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>今後</h1>
+<p>C<span class="aki aki-4"></span>言語用の<span class="aki aki-4"></span><code>eval</code><span class="aki aki-4"></span>風関数を作成しました<span class=yakumono>。</span><span class="aki aki-2"></span><code>calc</code><span class="aki aki-4"></span>等の関数について触れませんでしたが<span class=yakumono>，</span><span class="aki aki-2"></span>説明を付け加えるかもしれません<span class=yakumono>。</span><span class="aki aki-2"></span>ぜひ構文解析等の勉強に役立てばと思います<span class=yakumono>。</span><span class="aki aki-2"></span>今後の課題としてメモリを多用する<span class=yakumono>，</span><span class="aki aki-2"></span>処理速度が遅いなどが挙げられるので改善したいです<span class=yakumono>。</span><span class="aki aki-2"></span>また<span class=yakumono>，</span><span class="aki aki-2"></span>バグがあるかもしません<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <h1 id=文献>文献</h1>
 <ol>
-<li><a href=https://github.com/Daiji256/eval>ソースコード (GitHub)</a></li>
-<li><a href=https://qiita.com/Daiji256/items/09fa042e94907a232c57>C 言語で eval 風関数 (Qiita)</a></li>
+<li><a href=https://github.com/Daiji256/eval>ソースコード<span class="aki aki-4"></span>(GitHub)</a></li>
+<li><a href=https://qiita.com/Daiji256/items/09fa042e94907a232c57>C<span class="aki aki-4"></span>言語で<span class="aki aki-4"></span>eval<span class="aki aki-4"></span>風関数<span class="aki aki-4"></span>(Qiita)</a></li>
 </ol>
 </div>
 </section>
@@ -203,7 +211,7 @@
 <li><a href=#はじめに>はじめに</a></li>
 <li><a href=#主な仕様>主な仕様</a></li>
 <li><a href=#処理の流れの例>処理の流れの例</a></li>
-<li><a href=#まとめ今後>まとめ・今後</a></li>
+<li><a href=#まとめ今後>まとめ<span class="aki aki-4"></span><span class=yakumono>・</span><span class="aki aki-4"></span>今後</a></li>
 <li><a href=#文献>文献</a></li>
 </ul>
 </nav>

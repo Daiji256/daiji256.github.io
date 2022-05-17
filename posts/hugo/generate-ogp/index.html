@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://daiji256.github.io/posts/hugo/generate-ogp/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hugo で OGP / Twitter Card を自動生成したい - Daiji Blog">
-<meta property="og:description" content="はじめに Hugo v0.90.0 から，images.Text により画像に文字を合成した画像を生成できるようになりました。これにより，Qiita とかみたいに画像中にタイトルとかを記述した OGP / Twitter Card を自動生成できるよう">
+<meta property="og:description" content="はじめに Hugo v0.90.0 から，images.Text により画像に文字を合成した画像を生成できるようになりました。これにより，Qiita とかみたいに画像中にタイトルとかを記述">
 <meta property="og:site_name" content="Daiji Blog">
 <meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hucd71ba4db3bf1a0d0407d6f63e309a1c_11019_filter_4350326104143885784.png">
 <link rel="shortcut icon" type=image/x-icon href=https://daiji256.github.io/images/favicon.ico>
@@ -21,9 +21,7 @@
 <link rel=preconnect href=https://fonts.googleapis.com>
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" as=style>
-<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'">
-<link rel=preload href=https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css as=style>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.2/css/yakukumi-sans-rb.min.css media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
 <link rel=stylesheet href=https://daiji256.github.io/css/one-dark.min.css>
 <script src=https://daiji256.github.io/js/menu.min.js></script>
 </head>
@@ -35,7 +33,8 @@
 <li>
 <a href=https://daiji256.github.io/ class=item>
 <img src=https://daiji256.github.io/images/icon.svg width=28 height=28 title=ホーム class=user-icon>
-<div class=site-title>Daiji Blog</div>
+<div class=site-title>
+Daiji Blog</div>
 </a>
 </li>
 <li>
@@ -76,39 +75,48 @@
 <li><a href=https://daiji256.github.io/about/>プロフィール</a></li>
 </ul>
 <div class=menu-back></div>
-</nav>
-<div class=post-wrapper>
+</nav><div class=post-wrapper>
 <div class=main-line>
 <div class=post>
 <div class=info>
-<div class=title>Hugo で OGP / Twitter Card を自動生成したい</div>
+<div class=title>
+Hugo<span class="aki aki-4"></span>で<span class="aki aki-4"></span>OGP<span class="aki aki-4"></span>/<span class="aki aki-4"></span>Twitter Card<span class="aki aki-4"></span>を自動生成したい
+</div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/date.svg#symbol"/></svg>
-<div class=text>2022 年 1 月 11 日</div><svg><use xlink:href="https://daiji256.github.io/images/icons/lastmod.svg#symbol"/></svg>
-<div class=text>2022 年 4 月 9 日</div>
+<div class=text>
+2022<span class="aki aki-4"></span>年<span class="aki aki-4"></span>1<span class="aki aki-4"></span>月<span class="aki aki-4"></span>11<span class="aki aki-4"></span>日</div><svg><use xlink:href="https://daiji256.github.io/images/icons/lastmod.svg#symbol"/></svg>
+<div class=text>
+2022<span class="aki aki-4"></span>年<span class="aki aki-4"></span>5<span class="aki aki-4"></span>月<span class="aki aki-4"></span>17<span class="aki aki-4"></span>日</div>
 </div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/categories.svg#symbol"/></svg>
-<a href=https://daiji256.github.io/categories/hugo/ class=text>Hugo</a>
+<a href=https://daiji256.github.io/categories/hugo/ class=text>
+Hugo
+</a>
 </div>
 <div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/tags.svg#symbol"/></svg>
-<a href=https://daiji256.github.io/tags/ogp/ class=text>OGP</a><a href=https://daiji256.github.io/tags/twitter-card/ class=text>Twitter Card</a>
+<a href=https://daiji256.github.io/tags/ogp/ class=text>
+OGP
+</a><a href=https://daiji256.github.io/tags/twitter-card/ class=text>
+Twitter Card
+</a>
 </div>
 </div>
 <section class=sec-content>
 <div class=content>
 <h1 id=はじめに>はじめに</h1>
-<p><a href=https://github.com/gohugoio/hugo/releases/tag/v0.90.0/>Hugo v0.90.0</a> から，<code>images.Text</code> により画像に文字を合成した画像を生成できるようになりました。これにより，Qiita とかみたいに画像中にタイトルとかを記述した OGP / Twitter Card を自動生成できるようになりました。</p>
+<p><a href=https://github.com/gohugoio/hugo/releases/tag/v0.90.0/>Hugo v0.90.0</a><span class="aki aki-4"></span>から<span class=yakumono>，</span><span class="aki aki-2"></span><code>images.Text</code><span class="aki aki-4"></span>により画像に文字を合成した画像を生成できるようになりました<span class=yakumono>。</span><span class="aki aki-2"></span>これにより<span class=yakumono>，</span><span class="aki aki-2"></span>Qiita<span class="aki aki-4"></span>とかみたいに画像中にタイトルとかを記述した<span class="aki aki-4"></span>OGP<span class="aki aki-4"></span>/<span class="aki aki-4"></span>Twitter Card<span class="aki aki-4"></span>を自動生成できるようになりました<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <figure class="center frame"><img src=./images/qiita.png width=400 height=210>
 </figure>
-<p>この記事では最終的に次のような画像が生成されるようにします。</p>
+<p>この記事では最終的に次のような画像が生成されるようにします<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <figure class="center frame"><img src=./images/daiji-blog-post.png width=400 height=209>
 </figure>
 <h1 id=準備>準備</h1>
-<p>まず Hugo を <code>0.90.0</code> 以上にアップデートしてください。文字を合成する前の元画像を用意します。Twitter Card の Large Summary Image の推奨サイズが 800 x 418 px らしいのでそのサイズで用意しました<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>。</p>
+<p>まず<span class="aki aki-4"></span>Hugo<span class="aki aki-4"></span>を<span class="aki aki-4"></span><code>0.90.0</code><span class="aki aki-4"></span>以上にアップデートしてください<span class=yakumono>。</span><span class="aki aki-2"></span>文字を合成する前の元画像を用意します<span class=yakumono>。</span><span class="aki aki-2"></span>Twitter Card<span class="aki aki-4"></span>の<span class="aki aki-4"></span>Large Summary Image<span class="aki aki-4"></span>の推奨サイズが<span class="aki aki-4"></span>800 x 418 px<span class="aki aki-4"></span>らしいのでそのサイズで用意しました<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <figure class="center frame"><img src=./images/ogp-post.png width=400 height=209>
 </figure>
 <h1 id=画像生成>画像生成</h1>
-<p><code>テキスト</code> と書いた画像を生成する場合次のようにしたら良いです。この例では Google Fonts の GitHub から <code>resources.GetRemote</code> を使って <code>NotoSansJP-Bold.otf</code> を読み取りフォントを NotoSansJP Bold にしています。OGP の元画像として，<code>static/images/ogp/ogp.png</code> にある画像を読み込んでいます。<code>static/</code> にあるファイルにアクセスするために <code>config.toml</code> で <code>assetDir = "static"</code> と設定してます。<code>(images.Text ... (dict ...))</code> は見ての通りテキストの位置や大きさなどを設定しています。最後に <code>$img.RelPermalink</code> で画像のリンクを取得します。</p>
-<p><code>static/images/ogp/...</code> にある画像を参照することで，<code>hugo</code> を実行した時に生成される画像は <code>images/ogp/...</code> になるので都合がいいので僕はこうしてます。</p>
+<p><code>テキスト</code><span class="aki aki-4"></span>と書いた画像を生成する場合次のようにしたら良いです<span class=yakumono>。</span><span class="aki aki-2"></span>この例では<span class="aki aki-4"></span>Google Fonts<span class="aki aki-4"></span>の<span class="aki aki-4"></span>GitHub<span class="aki aki-4"></span>から<span class="aki aki-4"></span><code>resources.GetRemote</code><span class="aki aki-4"></span>を使って<span class="aki aki-4"></span><code>NotoSansJP-Bold.otf</code><span class="aki aki-4"></span>を読み取りフォントを<span class="aki aki-4"></span>NotoSansJP Bold<span class="aki aki-4"></span>にしています<span class=yakumono>。</span><span class="aki aki-2"></span>OGP<span class="aki aki-4"></span>の元画像として<span class=yakumono>，</span><span class="aki aki-2"></span><code>static/images/ogp/ogp.png</code><span class="aki aki-4"></span>にある画像を読み込んでいます<span class=yakumono>。</span><span class="aki aki-2"></span><code>static/</code><span class="aki aki-4"></span>にあるファイルにアクセスするために<span class="aki aki-4"></span><code>config.toml</code><span class="aki aki-4"></span>で<span class="aki aki-4"></span><code>assetDir = "static"</code><span class="aki aki-4"></span>と設定してます<span class=yakumono>。</span><span class="aki aki-2"></span><code>(images.Text ... (dict ...))</code><span class="aki aki-4"></span>は見ての通りテキストの位置や大きさなどを設定しています<span class=yakumono>。</span><span class="aki aki-2"></span>最後に<span class="aki aki-4"></span><code>$img.RelPermalink</code><span class="aki aki-4"></span>で画像のリンクを取得します<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p><code>static/images/ogp/...</code><span class="aki aki-4"></span>にある画像を参照することで<span class=yakumono>，</span><span class="aki aki-2"></span><code>hugo</code><span class="aki aki-4"></span>を実行した時に生成される画像は<span class="aki aki-4"></span><code>images/ogp/...</code><span class="aki aki-4"></span>になるので都合がいいので僕はこうしてます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -137,7 +145,7 @@
 <span class=p>&lt;</span><span class=nt>img</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;{{ $img.RelPermalink }}&#34;</span> <span class=p>/&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>英文のようにスペースが入る文章なら，改行処理を行ってくれますが，和文のようにスペースが入らない文章では最初に改行が入ってそのままはみ出してしまいます。</p>
+</div><p>英文のようにスペースが入る文章なら<span class=yakumono>，</span><span class="aki aki-2"></span>改行処理を行ってくれますが<span class=yakumono>，</span><span class="aki aki-2"></span>和文のようにスペースが入らない文章では最初に改行が入ってそのままはみ出してしまいます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -156,13 +164,13 @@
 </tr>
 </tbody>
 </table>
-<p>そこで，長いタイトルの場合はみ出す分を切り取りこのようにします。</p>
+<p>そこで<span class=yakumono>，</span><span class="aki aki-2"></span>長いタイトルの場合はみ出す分を切り取りこのようにします<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <figure class="center frame"><img src=./images/sample-ja-22.png width=300 height=156.75>
 </figure>
-<p>実際のソースコードを使って説明します。記事のタイトル以外に，ブログ名やカテゴリについても書きます。</p>
-<p>4 ～ 8 行目ではタイトルが長い場合に切り取っています。標準のタイトル文字数を 22 として，タイトルに英字を入れたことを考慮して手動で文字数を設定できるようにしています（5 行目）。</p>
-<p><code>date</code> は <code>.Date.Format</code> で形式を指定します。<code>categories</code> と <code>tags</code> はループでカンマ区切りの 1 つの String にまとめます。</p>
-<p><code>$title</code>，<code>$categories</code> とかを複数の <code>(images.Text ...)</code> 使って，同時に書きます。</p>
+<p>実際のソースコードを使って説明します<span class=yakumono>。</span><span class="aki aki-2"></span>記事のタイトル以外に<span class=yakumono>，</span><span class="aki aki-2"></span>ブログ名やカテゴリについても書きます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>4&ndash;8<span class="aki aki-4"></span>行目ではタイトルが長い場合に切り取っています<span class=yakumono>。</span><span class="aki aki-2"></span>標準のタイトル文字数を<span class="aki aki-4"></span>22<span class="aki aki-4"></span>として<span class=yakumono>，</span><span class="aki aki-2"></span>タイトルに英字を入れたことを考慮して手動で文字数を設定できるようにしています<span class="aki aki-2"></span><span class=yakumono>（</span>5<span class="aki aki-4"></span>行目<span class=yakumono>）</span><span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p><code>date</code><span class="aki aki-4"></span>は<span class="aki aki-4"></span><code>.Date.Format</code><span class="aki aki-4"></span>で形式を指定します<span class=yakumono>。</span><span class="aki aki-2"></span><code>categories</code><span class="aki aki-4"></span>と<span class="aki aki-4"></span><code>tags</code><span class="aki aki-4"></span>はループでカンマ区切りの<span class="aki aki-4"></span>1<span class="aki aki-4"></span>つの<span class="aki aki-4"></span>String<span class="aki aki-4"></span>にまとめます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p><code>$title</code><span class=yakumono>，</span><span class="aki aki-2"></span><code>$categories</code><span class="aki aki-4"></span>とかを複数の<span class="aki aki-4"></span><code>(images.Text ...)</code><span class="aki aki-4"></span>使って<span class=yakumono>，</span><span class="aki aki-2"></span>同時に書きます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -263,11 +271,11 @@
 }}
 </code></pre></td></tr></table>
 </div>
-</div><p>このように画像が出力されます。タイトルに英数字が入っているため，文字数の割に幅が狭いので，<code>strlen: 34</code> と設定しています。</p>
+</div><p>このように画像が出力されます<span class=yakumono>。</span><span class="aki aki-2"></span>タイトルに英数字が入っているため<span class=yakumono>，</span><span class="aki aki-2"></span>文字数の割に幅が狭いので<span class=yakumono>，</span><span class="aki aki-2"></span><code>strlen: 34</code><span class="aki aki-4"></span>と設定しています<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <figure class="center frame"><img src=./images/daiji-blog-post.png width=400 height=209>
 </figure>
-<h1 id=ogp--twitter-card-の設定>OGP / Twitter Card の設定</h1>
-<p>このブログではこんな感じで OGP / Twitter Card を設定しています。</p>
+<h1 id=ogptwitter-cardの設定>OGP<span class="aki aki-4"></span>/<span class="aki aki-4"></span>Twitter Card<span class="aki aki-4"></span>の設定</h1>
+<p>このブログではこんな感じで<span class="aki aki-4"></span>OGP<span class="aki aki-4"></span>/<span class="aki aki-4"></span>Twitter Card<span class="aki aki-4"></span>を設定しています<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -295,7 +303,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h1 id=おまけ>おまけ</h1>
-<p><a href=https://daiji256.github.io/>ホーム</a> や <a href=https://daiji256.github.io/categories/tex-latex/>カテゴリ / タグのページ</a> のような投稿日やカテゴリとかと無縁なページでは以下のように画像を生成するようにしました。</p>
+<p><a href=https://daiji256.github.io/>ホーム</a><span class="aki aki-4"></span>や<span class="aki aki-4"></span><a href=https://daiji256.github.io/categories/tex-latex/>カテゴリ<span class="aki aki-4"></span>/<span class="aki aki-4"></span>タグのページ</a><span class="aki aki-4"></span>のような投稿日やカテゴリとかと無縁なページでは以下のように画像を生成するようにしました<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <table>
 <thead>
 <tr>
@@ -314,7 +322,7 @@
 </tr>
 </tbody>
 </table>
-<p>このようにホーム等のページでは <code>.Params.tags</code> が設定されないので，それを判定して 2 種類の画像生成を分岐するようにしました。</p>
+<p>このようにホーム等のページでは<span class="aki aki-4"></span><code>.Params.tags</code><span class="aki aki-4"></span>が設定されないので<span class=yakumono>，</span><span class="aki aki-2"></span>それを判定して<span class="aki aki-4"></span>2<span class="aki aki-4"></span>種類の画像生成を分岐するようにしました<span class=yakumono>。</span><span class="aki aki-2"></span></p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -325,15 +333,15 @@
 </span></code></pre></td>
 <td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-html data-lang=html>{{ if or .Params.tags .Params.categories }}
-  <span class=c>&lt;!-- カテゴリ，タグがある場合 --&gt;</span>
+  <span class=c>&lt;!-- カテゴリ<span class=yakumono>，</span><span class="aki aki-2"></span>タグがある場合 --&gt;</span>
 {{ else }}
-  <span class=c>&lt;!-- カテゴリ，タグがない場合 --&gt;</span>
+  <span class=c>&lt;!-- カテゴリ<span class=yakumono>，</span><span class="aki aki-2"></span>タグがない場合 --&gt;</span>
 {{ end }}
 </code></pre></td></tr></table>
 </div>
 </div><h1 id=追記>追記</h1>
-<p>こんな風にちゃんとできてました！</p>
-<blockquote class=twitter-tweet><p lang=ja dir=ltr>ちょっと遅くなったけど，Hugo 0.90.0 からテキストを入れた画像を生成できるようになったから OGP を自動で生成してみた<br><br>Hugo で OGP / Twitter Card を自動生成したい - Daiji Blog<a href=https://t.co/ncuYMKfYoM>https://t.co/ncuYMKfYoM</a></p>&mdash; Daiji (@Daiji256) <a href="https://twitter.com/Daiji256/status/1480843232045334533?ref_src=twsrc%5Etfw">January 11, 2022</a></blockquote>
+<p>こんな風にちゃんとできてました！<span class="aki aki-1"></span></p>
+<blockquote class=twitter-tweet><p lang=ja dir=ltr>ちょっと遅くなったけど<span class=yakumono>，</span><span class="aki aki-2"></span>Hugo 0.90.0 からテキストを入れた画像を生成できるようになったから OGP を自動で生成してみた<br><br>Hugo で OGP / Twitter Card を自動生成したい - Daiji Blog<a href=https://t.co/ncuYMKfYoM>https://t.co/ncuYMKfYoM</a></p>&mdash; Daiji (@Daiji256) <a href="https://twitter.com/Daiji256/status/1480843232045334533?ref_src=twsrc%5Etfw">January 11, 2022</a></blockquote>
 <script async src=https://platform.twitter.com/widgets.js></script>
 <h1 id=文献>文献</h1>
 <ol>
@@ -343,7 +351,7 @@
 <hr>
 <ol>
 <li id=fn:1 role=doc-endnote>
-<p>OGP の推奨サイズは 1200 x 630 px らしいです。&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+<p>OGP<span class="aki aki-4"></span>の推奨サイズは<span class="aki aki-4"></span>1200 x 630 px<span class="aki aki-4"></span>らしいです<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -361,7 +369,7 @@
 <li><a href=#はじめに>はじめに</a></li>
 <li><a href=#準備>準備</a></li>
 <li><a href=#画像生成>画像生成</a></li>
-<li><a href=#ogp--twitter-card-の設定>OGP / Twitter Card の設定</a></li>
+<li><a href=#ogptwitter-cardの設定>OGP<span class="aki aki-4"></span>/<span class="aki aki-4"></span>Twitter Card<span class="aki aki-4"></span>の設定</a></li>
 <li><a href=#おまけ>おまけ</a></li>
 <li><a href=#追記>追記</a></li>
 <li><a href=#文献>文献</a></li>
