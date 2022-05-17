@@ -1,5 +1,5 @@
 ---
-title: "Hugo で OGP / Twitter Card を自動生成したい"
+title: "HugoでOGPAKI_4/AKI_4Twitter Cardを自動生成したい"
 date: 2022-01-11
 categories: [Hugo]
 tags: [OGP,Twitter Card]
@@ -8,7 +8,7 @@ strlen: 34
 
 # はじめに
 
-[Hugo v0.90.0](https://github.com/gohugoio/hugo/releases/tag/v0.90.0/) から，`images.Text` により画像に文字を合成した画像を生成できるようになりました。これにより，Qiita とかみたいに画像中にタイトルとかを記述した OGP / Twitter Card を自動生成できるようになりました。
+[Hugo v0.90.0](https://github.com/gohugoio/hugo/releases/tag/v0.90.0/)AKI_4から，`images.Text`AKI_4により画像に文字を合成した画像を生成できるようになりました。これにより，Qiitaとかみたいに画像中にタイトルとかを記述したOGPAKI_4/AKI_4Twitter Cardを自動生成できるようになりました。
 
 {{< figure src="./images/qiita.png" class="center frame" width="400" height="210" >}}
 
@@ -18,17 +18,17 @@ strlen: 34
 
 # 準備
 
-まず Hugo を `0.90.0` 以上にアップデートしてください。文字を合成する前の元画像を用意します。Twitter Card の Large Summary Image の推奨サイズが 800 x 418 px らしいのでそのサイズで用意しました[^ogp-size]。
+まずHugoをAKI_4`0.90.0`AKI_4以上にアップデートしてください。文字を合成する前の元画像を用意します。Twitter CardのLarge Summary Imageの推奨サイズが800 x 418 pxらしいのでそのサイズで用意しました[^ogp-size]。
 
-[^ogp-size]: OGP の推奨サイズは 1200 x 630 px らしいです。
+[^ogp-size]: OGPの推奨サイズは1200 x 630 pxらしいです。
 
 {{< figure src="./images/ogp-post.png" class="center frame" width="400" height="209" >}}
 
 # 画像生成
 
-`テキスト` と書いた画像を生成する場合次のようにしたら良いです。この例では Google Fonts の GitHub から `resources.GetRemote` を使って `NotoSansJP-Bold.otf` を読み取りフォントを NotoSansJP Bold にしています。OGP の元画像として，`static/images/ogp/ogp.png` にある画像を読み込んでいます。`static/` にあるファイルにアクセスするために `config.toml` で `assetDir = "static"` と設定してます。`(images.Text ... (dict ...))` は見ての通りテキストの位置や大きさなどを設定しています。最後に `$img.RelPermalink` で画像のリンクを取得します。
+`テキスト`AKI_4と書いた画像を生成する場合次のようにしたら良いです。この例ではGoogle FontsのGitHubからAKI_4`resources.GetRemote`AKI_4を使ってAKI_4`NotoSansJP-Bold.otf`AKI_4を読み取りフォントをNotoSansJP Boldにしています。OGPの元画像として，`static/images/ogp/ogp.png`AKI_4にある画像を読み込んでいます。`static/`AKI_4にあるファイルにアクセスするためにAKI_4`config.toml`AKI_4でAKI_4`assetDir = "static"`AKI_4と設定してます。`(images.Text ... (dict ...))`AKI_4は見ての通りテキストの位置や大きさなどを設定しています。最後にAKI_4`$img.RelPermalink`AKI_4で画像のリンクを取得します。
 
-`static/images/ogp/...` にある画像を参照することで，`hugo` を実行した時に生成される画像は `images/ogp/...` になるので都合がいいので僕はこうしてます。
+`static/images/ogp/...`AKI_4にある画像を参照することで，`hugo`AKI_4を実行した時に生成される画像はAKI_4`images/ogp/...`AKI_4になるので都合がいいので僕はこうしてます。
 
 ```html
 {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
@@ -46,9 +46,9 @@ strlen: 34
 
 英文のようにスペースが入る文章なら，改行処理を行ってくれますが，和文のようにスペースが入らない文章では最初に改行が入ってそのままはみ出してしまいます。
 
-|英文の場合|和文の場合|
-|-|-|
-|{{< figure src="./images/sample-eng.png" class="center frame" width="300" height="156.75" >}}|{{< figure src="./images/sample-ja.png" class="center frame" width="300" height="156.75" >}}|
+| 英文の場合                                                                                    | 和文の場合                                                                                   |
+| --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| {{< figure src="./images/sample-eng.png" class="center frame" width="300" height="156.75" >}} | {{< figure src="./images/sample-ja.png" class="center frame" width="300" height="156.75" >}} |
 
 そこで，長いタイトルの場合はみ出す分を切り取りこのようにします。
 
@@ -56,11 +56,11 @@ strlen: 34
 
 実際のソースコードを使って説明します。記事のタイトル以外に，ブログ名やカテゴリについても書きます。
 
-4 ～ 8 行目ではタイトルが長い場合に切り取っています。標準のタイトル文字数を 22 として，タイトルに英字を入れたことを考慮して手動で文字数を設定できるようにしています（5 行目）。
+4--8行目ではタイトルが長い場合に切り取っています。標準のタイトル文字数を22として，タイトルに英字を入れたことを考慮して手動で文字数を設定できるようにしています（5行目）。
 
-`date` は `.Date.Format` で形式を指定します。`categories` と `tags` はループでカンマ区切りの 1 つの String にまとめます。
+`date`AKI_4はAKI_4`.Date.Format`AKI_4で形式を指定します。`categories`AKI_4とAKI_4`tags`AKI_4はループでカンマ区切りの1つのStringにまとめます。
 
-`$title`，`$categories` とかを複数の `(images.Text ...)` 使って，同時に書きます。
+`$title`，`$categories`AKI_4とかを複数のAKI_4`(images.Text ...)`AKI_4使って，同時に書きます。
 
 ```html
 {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
@@ -112,13 +112,13 @@ strlen: 34
 }}
 ```
 
-このように画像が出力されます。タイトルに英数字が入っているため，文字数の割に幅が狭いので，`strlen: 34` と設定しています。
+このように画像が出力されます。タイトルに英数字が入っているため，文字数の割に幅が狭いので，`strlen: 34`AKI_4と設定しています。
 
 {{< figure src="./images/daiji-blog-post.png" class="center frame" width="400" height="209" >}}
 
-# OGP / Twitter Card の設定
+# OGPAKI_4/AKI_4Twitter Cardの設定
 
-このブログではこんな感じで OGP / Twitter Card を設定しています。
+このブログではこんな感じでOGPAKI_4/AKI_4Twitter Cardを設定しています。
 
 ```html
 <meta name="twitter:card" content="summary_large_image" />
@@ -135,13 +135,13 @@ strlen: 34
 
 # おまけ
 
-[ホーム](https://daiji256.github.io/) や [カテゴリ / タグのページ](https://daiji256.github.io/categories/tex-latex/) のような投稿日やカテゴリとかと無縁なページでは以下のように画像を生成するようにしました。
+[ホーム](https://daiji256.github.io/)AKI_4やAKI_4[カテゴリAKI_4/AKI_4タグのページ](https://daiji256.github.io/categories/tex-latex/)AKI_4のような投稿日やカテゴリとかと無縁なページでは以下のように画像を生成するようにしました。
 
-|元の画像|出力画像|
-|-|-|
-|{{< figure src="./images/ogp.png" class="center frame" width="300" height="156.75" >}}|{{< figure src="./images/daiji-blog.png" class="center frame" width="300" height="156.75" >}}|
+| 元の画像                                                                               | 出力画像                                                                                      |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| {{< figure src="./images/ogp.png" class="center frame" width="300" height="156.75" >}} | {{< figure src="./images/daiji-blog.png" class="center frame" width="300" height="156.75" >}} |
 
-このようにホーム等のページでは `.Params.tags` が設定されないので，それを判定して 2 種類の画像生成を分岐するようにしました。
+このようにホーム等のページではAKI_4`.Params.tags`AKI_4が設定されないので，それを判定して2種類の画像生成を分岐するようにしました。
 
 ```html
 {{ if or .Params.tags .Params.categories }}
