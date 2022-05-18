@@ -33,7 +33,6 @@ html {
 body {
   font-family: "Noto Sans JP", "Noto Sans CJK JP",
     "Source Han Sans JP", sans-serif;
-  font-feature-settings: "chws"1;
   font-size: 1.6rem;
   color: #333;
   -webkit-text-size-adjust: 100%;
@@ -972,7 +971,7 @@ code .aki::after {
 }
 
 .yaku-kumi .yakumono {
-  font-feature-settings: "palt"0;
+  font-feature-settings: "chws"1;
 }
 
 .yaku-kumi .aki::after {
