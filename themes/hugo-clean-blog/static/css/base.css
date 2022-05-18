@@ -970,8 +970,12 @@ code .aki::after {
   font-size: 50%;
 }
 
-.yaku-kumi .yakumono {
+.yaku-kumi {
   font-feature-settings: "chws"1;
+}
+
+.yaku-kumi .yakumono {
+  font-feature-settings: "palt"0;
 }
 
 .yaku-kumi .aki::after {
