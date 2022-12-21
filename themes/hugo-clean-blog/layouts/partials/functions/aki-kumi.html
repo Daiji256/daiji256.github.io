@@ -43,6 +43,19 @@
 {{ $content = replaceRE `AKI_0<span class='aki aki-[1-4]'></span>` "AKI_0" $content }}
 {{ $content = replaceRE `AKI_0` "" $content }}
 
+<!-- Yaku-Kumi フォント適応箇所を戻す -->
+{{ range findRE `NOKUMI_S(.*?)NOKUMI_E` $content }}
+{{ $content = replace $content . (replaceRE `<span class='aki aki-[1-4]'></span>` "" .) }}
+{{ end }}
+{{ range findRE `NOKUMI_S(.*?)NOKUMI_E` $content }}
+{{ $content = replace $content . (replaceRE `<span class="yakumono">` "" .) }}
+  {{ end }}
+  {{ range findRE `NOKUMI_S(.*?)NOKUMI_E` $content }}
+  {{ $content = replace $content . (replaceRE `</span>` "" .) }}
+{{ end }}
+{{ $content = replaceRE `NOKUMI_S` "" $content }}
+{{ $content = replaceRE `NOKUMI_E` "" $content }}
+
 <!-- 残ったゴミの処理 -->
 {{ $content = replaceRE `AKI_([0-4])` "" $content }}
 {{ $content = replaceRE `aki_([0-4])` "" $content }}
