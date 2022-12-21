@@ -1,0 +1,192 @@
+<!doctype html><html lang=ja prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset=utf-8>
+<meta name=google-site-verification content="DvAmtcJ-4mAzUR3EOVgXJIuW56ccEiKjtuw3JVBdw84">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-204370875-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-204370875-1')</script>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>onClick VS onClicked - Daiji Blog</title>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="@Daiji256">
+<meta name=twitter:title content="onClick VS onClicked - Daiji Blog">
+<meta name=twitter:image content="https://daiji256.github.io/images/ogp/ogp-post_hucd71ba4db3bf1a0d0407d6f63e309a1c_11019_filter_5667856617300485207.png">
+<meta property="og:url" content="https://daiji256.github.io/posts/diary/onclick-onclicked/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="onClick VS onClicked - Daiji Blog">
+<meta property="og:description" content="この記事は，フラー株式会社 Advent Calendar 2022 の 22 日目の記事です。21 日目は @comi19 さんの スライスのゼロ値を Print すると [] が出力される理由を探って">
+<meta property="og:site_name" content="Daiji Blog">
+<meta property="og:image" content="https://daiji256.github.io/images/ogp/ogp-post_hucd71ba4db3bf1a0d0407d6f63e309a1c_11019_filter_5667856617300485207.png">
+<link rel="shortcut icon" type=image/x-icon href=https://daiji256.github.io/images/favicon.ico>
+<link rel=apple-touch-icon type=image/png href=https://daiji256.github.io/images/apple-touch-icon.png>
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=preload href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" as=style>
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap" media=print onload="this.media='all'"><link rel=stylesheet href=https://daiji256.github.io/css/base.min.css>
+<link rel=stylesheet href=https://daiji256.github.io/css/one-dark.min.css>
+<script src=https://daiji256.github.io/js/menu.min.js></script>
+</head>
+<body>
+<div class=all-wrapper>
+<header>
+<div class=container>
+<ul>
+<li>
+<a href=https://daiji256.github.io/ class=item>
+<img src=https://daiji256.github.io/images/icon.svg width=28 height=28 title=ホーム class=user-icon>
+<div class=site-title>
+Daiji Blog</div>
+</a>
+</li>
+<li>
+<a href=https://daiji256.github.io/ class=item>
+<div class=text>ホーム</div>
+</a>
+</li>
+<li>
+<a href=https://daiji256.github.io/categories/ class=item>
+<div class=text>カテゴリ</div>
+</a>
+</li>
+<li>
+<a href=https://daiji256.github.io/tags/ class=item>
+<div class=text>タグ</div>
+</a>
+</li>
+<li>
+<a href=https://daiji256.github.io/about/ class=item>
+<div class=text>プロフィール</div>
+</a>
+</li>
+<li class=menu-button id=menu_button>
+<div class=menu-button-bars id=menu_button_bars>
+<div class=bar></div>
+<div class=bar></div>
+<div class=bar></div>
+</div>
+</li>
+</ul>
+</div>
+</header>
+<nav class=menu id=header_menu>
+<ul class=menu-ul>
+<li><a href=https://daiji256.github.io/>ホーム</a></li>
+<li><a href=https://daiji256.github.io/categories/>カテゴリ</a></li>
+<li><a href=https://daiji256.github.io/tags/>タグ</a></li>
+<li><a href=https://daiji256.github.io/about/>プロフィール</a></li>
+</ul>
+<div class=menu-back></div>
+</nav><div class=post-wrapper>
+<div class=main-line>
+<div class=post>
+<div class=info>
+<div class=title>
+onClick VS onClicked
+</div>
+<div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/date.svg#symbol"/></svg>
+<div class=text>
+2022<span class="aki aki-4"></span>年<span class="aki aki-4"></span>12<span class="aki aki-4"></span>月<span class="aki aki-4"></span>22<span class="aki aki-4"></span>日</div>
+</div>
+<div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/categories.svg#symbol"/></svg>
+<a href=https://daiji256.github.io/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/ class=text>
+プログラミング
+</a>
+</div>
+<div class=post-info><svg><use xlink:href="https://daiji256.github.io/images/icons/tags.svg#symbol"/></svg>
+<a href=https://daiji256.github.io/tags/%E3%81%BE%E3%81%A8%E3%82%81/ class=text>
+まとめ
+</a>
+</div>
+</div>
+<section class=sec-content>
+<div class=content>
+<p>この記事は<span class=yakumono>，</span><span class="aki aki-2"></span><a href=https://qiita.com/advent-calendar/2022/fuller-inc>フラー株式会社 Advent Calendar 2022</a><span class="aki aki-4"></span>の<span class="aki aki-4"></span>22<span class="aki aki-4"></span>日目の記事です<span class=yakumono>。</span><span class="aki aki-2"></span>21<span class="aki aki-4"></span>日目は<span class="aki aki-4"></span><a href=https://qiita.com/comi19>@comi19</a><span class="aki aki-4"></span>さんの<span class="aki aki-4"></span><a href=https://qiita.com/comi19/items/92b31aadf15d77e77f92>スライスのゼロ値を<span class="aki aki-4"></span>Print<span class="aki aki-4"></span>すると<span class="aki aki-4"></span>[]<span class="aki aki-4"></span>が出力される理由を探ってみた</a><span class="aki aki-4"></span>でした<span class=yakumono>。</span><span class="aki aki-2"></span>23<span class="aki aki-4"></span>日目は<span class="aki aki-4"></span><a href=https://okuzawats.com/>okuzawats</a><span class="aki aki-4"></span>さんです<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>半年以上ブログを書いていませんでした<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span>久しぶりの投稿です<span class=yakumono>。</span><span class="aki aki-2"></span>昔は<span class="aki aki-4"></span>TeX<span class="aki aki-4"></span>芸人だった気がするのですが<span class=yakumono>，</span><span class="aki aki-2"></span>今は<span class="aki aki-4"></span>Android<span class="aki aki-4"></span>アプリを作っています<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<h1 id=はじめに>はじめに</h1>
+<p>この記事では<span class=yakumono>，</span><span class="aki aki-2"></span><code>onClick</code><span class="aki aki-4"></span>と<span class="aki aki-4"></span><code>onClicked</code><span class="aki aki-4"></span>を比較します<span class=yakumono>。</span><span class="aki aki-2"></span>はっきり言ってどうでもいいので温かい目で見てください<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>これは<span class=yakumono>，</span><span class="aki aki-2"></span>個人の感想であり<span class="aki aki-2"></span><span class=yakumono>「</span>これが絶対に正しい！<span class=yakumono>」</span><span class="aki aki-2"></span>とかでは無いです<span class=yakumono>。</span><span class="aki aki-2"></span>あくまでも<span class=yakumono>，</span><span class="aki aki-2"></span>参考程度にしてください<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<h1 id=比較>比較</h1>
+<p>いろんな方法で比較していきます<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<h2 id=意味>意味</h2>
+<p>僕は英語力が皆無なのでよくわかりません<span class=yakumono>。</span><span class="aki aki-2"></span><code>onClick</code><span class="aki aki-4"></span>は<span class="aki aki-2"></span><span class=yakumono>「</span>クリックで<span class=yakumono>」</span><span class="aki aki-2"></span><code>onClicked</code><span class="aki aki-4"></span>は<span class="aki aki-2"></span><span class=yakumono>「</span>クリックされたら<span class=yakumono>」</span><span class="aki aki-2"></span>みたいな意味合いに近いと思います<span class=yakumono>。</span><span class="aki aki-2"></span>どこで呼ばれるメソッドなのか<span class=yakumono>，</span><span class="aki aki-2"></span>誰目線なのかで変わってくるかもしれません<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<h2 id=google先生に聞いてみた>Google<span class="aki aki-4"></span>先生に聞いてみた</h2>
+<p>Google<span class="aki aki-4"></span>でのヒット数は正義<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>なので<span class=yakumono>，</span><span class="aki aki-2"></span>Google<span class="aki aki-4"></span>で検索したときの件数の比較を行います<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>結果は<span class="aki aki-4"></span><code>onClick</code><span class="aki aki-4"></span>は<span class="aki aki-4"></span>23,600,000<span class="aki aki-4"></span>件<span class=yakumono>，</span><span class="aki aki-2"></span><code>onClicked</code><span class="aki aki-4"></span>は<span class="aki aki-4"></span>66,500<span class="aki aki-4"></span>件でした<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup><span class=yakumono>。</span><span class="aki aki-2"></span><code>onClick</code><span class="aki aki-4"></span>が<span class="aki aki-4"></span>300<span class="aki aki-4"></span>倍以上でした<span class=yakumono>。</span><span class="aki aki-2"></span>圧倒的に<span class="aki aki-4"></span><code>onClick</code><span class="aki aki-4"></span>が人気なのがわかります<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>ちなみにスネークケース<span class=yakumono>，</span><span class="aki aki-2"></span>ケバブケースでも同様に<span class=yakumono>，</span><span class="aki aki-2"></span><code>on_click</code>, <code>on-click</code><span class="aki aki-4"></span>が多かったです<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p><figure class="center frame"><img src=./images/onclick.png width=725 height=175>
+</figure>
+<br>
+<figure class="center frame"><img src=./images/onclicked.png width=725 height=175>
+</figure>
+</p>
+<h2 id=androidのjetpack-compose>Android<span class="aki aki-4"></span>の<span class="aki aki-4"></span>Jetpack Compose</h2>
+<p>僕は業務で<span class="aki aki-4"></span>Android<span class="aki aki-4"></span>の<span class="aki aki-4"></span>Jetpack Compose<span class="aki aki-4"></span>を使用しています<span class=yakumono>。</span><span class="aki aki-2"></span>Compose<span class="aki aki-4"></span>で標準で用意されている<span class="aki aki-4"></span><code>Button()</code><span class="aki aki-4"></span>等の関数は<span class="aki aki-4"></span><code>onClick</code><span class="aki aki-4"></span>を引数にとります<span class=yakumono>。</span><span class="aki aki-2"></span>わざわざ標準に背いてまで<span class="aki aki-4"></span><code>onClicked</code><span class="aki aki-4"></span>にしなくて良いと感じています<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<h1 id=結論>結論</h1>
+<p><code>onClick</code><span class="aki aki-4"></span>が妥当と言えると思います<span class=yakumono>。</span><span class="aki aki-2"></span>もちろん<span class=yakumono>，</span><span class="aki aki-2"></span>使っている言語やライブラリ<span class=yakumono>，</span><span class="aki aki-2"></span>開発チームのルールに従うべきですが<span class=yakumono>，</span><span class="aki aki-2"></span>どちらでも良い場合なら<span class="aki aki-4"></span><code>onClick</code><span class="aki aki-4"></span>が良いでしょう<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<h1 id=おまけ>おまけ</h1>
+<p>ついでに<span class="aki aki-4"></span><code>onButtonClick</code> VS <code>onClickButton</code><span class="aki aki-4"></span>も軽く調べました<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<p>結果は<span class="aki aki-4"></span><code>onButtonClick</code><span class="aki aki-4"></span>の方が多くヒットしました<span class=yakumono>。</span><span class="aki aki-2"></span>この<span class="aki aki-4"></span>2<span class="aki aki-4"></span>つを比較する場合<span class=yakumono>，</span><span class="aki aki-2"></span><code>Click</code><span class="aki aki-4"></span>と<span class="aki aki-4"></span><code>Button</code><span class="aki aki-4"></span>どちらを前にもってきたいかによって変わる気がします<span class=yakumono>。</span><span class="aki aki-2"></span>どちらでも良いなら<span class="aki aki-4"></span><code>onButtonClick</code><span class="aki aki-4"></span>を使っていこうと思います<span class=yakumono>。</span><span class="aki aki-2"></span></p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>正確には<span class=yakumono>，</span><span class="aki aki-2"></span>他のところで他のことを書いてました<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2 role=doc-endnote>
+<p>別に正義ではないと思う<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3 role=doc-endnote>
+<p>検索は日本から行いました<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4 role=doc-endnote>
+<p>この検索方法が正しいかは自信ないです<span class=yakumono>。</span><span class="aki aki-2"></span>&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+</section>
+</div>
+<div class=comment-back>
+<script src=https://utteranc.es/client.js repo=Daiji256/daiji256.github.io issue-term=url theme=github-light crossorigin=anonymous async></script>
+</div>
+</div>
+<div class=toc>
+<aside>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#はじめに>はじめに</a></li>
+<li><a href=#比較>比較</a>
+<ul>
+<li><a href=#意味>意味</a></li>
+<li><a href=#google先生に聞いてみた>Google<span class="aki aki-4"></span>先生に聞いてみた</a></li>
+<li><a href=#androidのjetpack-compose>Android<span class="aki aki-4"></span>の<span class="aki aki-4"></span>Jetpack Compose</a></li>
+</ul>
+</li>
+<li><a href=#結論>結論</a></li>
+<li><a href=#おまけ>おまけ</a></li>
+</ul>
+</nav>
+</aside>
+</div>
+</div>
+<footer>
+<div class=container>
+<ul>
+<li>
+© 2020–2022 Daiji Blog
+</li>
+<li>
+<a href=https://daiji256.github.io/privacy/ class=item>
+プライバシー
+</a>
+</li>
+<li>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfTIbjKvr5QbhmYB2Se21tqQ_GvqH0qNzV19ysjZnokPx5Jeg/viewform?usp=sf_link" target=_blank rel=noopener class=item>
+お問い合わせ
+</a>
+</li>
+</ul>
+</div>
+</footer>
+</div>
+</body>
+</html>
