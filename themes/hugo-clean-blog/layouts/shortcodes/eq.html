@@ -1,26 +1,35 @@
 {{- if or (eq (.Get 0) "display") (eq (.Get 0) "d") -}}
 <div class="displaystyle">
-  {{- $json := getJSON "https://tex2svg.herokuapp.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol")) -}}
-  {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML -}}
+  {{- $json := getJSON "https://tex2svg.onrender.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol")) -}}
+  {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML
+  -}}
 </div>
 {{- else if or (eq (.Get 0) "lr") (eq (.Get 0) "rl") -}}
 <span class="inline-lr">
-  {{- $json := getJSON "https://tex2svg.herokuapp.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol")) "&inline=true" -}}
-  {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML -}}
+  {{- $json := getJSON "https://tex2svg.onrender.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol"))
+  "&inline=true" -}}
+  {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML
+  -}}
 </span>
 {{- else if eq (.Get 0) "l" -}}
 <span class="inline-l">
-  {{- $json := getJSON "https://tex2svg.herokuapp.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol")) "&inline=true" -}}
-  {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML -}}
+  {{- $json := getJSON "https://tex2svg.onrender.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol"))
+  "&inline=true" -}}
+  {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML
+  -}}
 </span>
 {{- else if eq (.Get 0) "r" -}}
 <span class="inline-r">
-  {{- $json := getJSON "https://tex2svg.herokuapp.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol")) "&inline=true" -}}
-  {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML -}}
+  {{- $json := getJSON "https://tex2svg.onrender.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol"))
+  "&inline=true" -}}
+  {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML
+  -}}
 </span>
 {{- else -}}
 <span class="inline">
-  {{- $json := getJSON "https://tex2svg.herokuapp.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol")) "&inline=true" -}}
-  {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML -}}
+  {{- $json := getJSON "https://tex2svg.onrender.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol"))
+  "&inline=true" -}}
+  {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML
+  -}}
 </span>
 {{- end -}}
