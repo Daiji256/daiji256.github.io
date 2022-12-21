@@ -5,7 +5,7 @@ categories: [プログラミング]
 tags: [まとめ]
 ---
 
-この記事は，[フラー株式会社 Advent Calendar 2022](https://qiita.com/advent-calendar/2022/fuller-inc)AKI_4の22日目の記事です。21日目はAKI_4[@comi19](https://qiita.com/comi19)AKI_4さんでした。23日目はAKI_4[okuzawats](https://okuzawats.com/)AKI_4さんです。
+この記事は，[フラー株式会社 Advent Calendar 2022](https://qiita.com/advent-calendar/2022/fuller-inc)AKI_4の22日目の記事です。21日目はAKI_4[@comi19](https://qiita.com/comi19)AKI_4さんのAKI_4[スライスのゼロ値をPrintすると[]が出力される理由を探ってみた](https://qiita.com/comi19/items/92b31aadf15d77e77f92)AKI_4でした。23日目はAKI_4[okuzawats](https://okuzawats.com/)AKI_4さんです。
 
 半年以上ブログを書いていませんでした[^damolog]。久しぶりの投稿です。昔はTeX芸人だった気がするのですが，今はAndroidアプリを作っています。
 
