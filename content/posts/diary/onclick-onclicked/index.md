@@ -1,6 +1,6 @@
 ---
 title: "onClick VS onClicked"
-date: 2022-12-22
+date: 2022-12-22T00:00:00+09:00
 categories: [プログラミング]
 tags: [まとめ]
 ---
