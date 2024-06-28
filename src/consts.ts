@@ -17,7 +17,7 @@ export const UPDATED_DATE_LABEL = "更新: ";
 export const FOOTNOTE_LABEL = "脚注";
 export const PAGE_SIZE = 10;
 export const PICKUP_TITLE = "ピックアップ";
-export const PICKUP_POSTS = ["markdown-style-guide", "markdown-style-guide"];
+export const PICKUP_POSTS = ["latex-susume", "lualatex-susume"];
 export const HTTP_404_NOT_FOUND_TITLE = "404 Not Found";
 export const HTTP_404_NOT_FOUND_TO_TOP = "トップページへ";
 
