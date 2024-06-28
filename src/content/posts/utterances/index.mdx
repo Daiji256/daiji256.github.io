@@ -1,0 +1,35 @@
+---
+title: "ブログのコメント欄をDisqusからUtterancesに変更した"
+description: "ブログのコメント欄をDisqusからUtterancesに変更しました。なぜUtterancesを採用したのか、Utterancesの特徴を備忘録として残します。"
+publishedDate: 2021-08-25
+updatedDate: 2024-06-29
+tags: [
+  {id: "memorandum", name: "備忘録"},
+  {id: "hugo", name: "Hugo"},
+  {id: "comments-section", name: "コメント欄"},
+]
+---
+import JwAki from "../../../components/JwAki.astro";
+
+現在はコメント欄は設けてないです。
+
+## はじめに
+
+静的サイトジェネレータのHugoでブログを書いているので、外部のサービスを利用しないとコメント欄を付けることができません。これまでDisqusを利用していました。まあ、このブログに1度もコメントが付いたことないけど… Disqusの無料のプランは広告を付けてくるらしいので、有料プランに変更するか、他のコメントサービスに変更した方がいいかなと思いました。お金はかけたくないので、静的サイトジェネレータで使える他のコメントサービスを探してみました。
+
+## コメントサービス
+
+- Utterances：**これを選んだ**。GitHubのIssueを使い、無料で広告無しで利用できる。デザインがシンプルで良い感じだなと思います。GitHubアカウントがないとコメント付けられない問題はありますが、このブログにコメント書く人はGitHubアカウントくらいあるので問題ないでしょう。そもそもコメント書く人はいませんが...
+- metype：Disqusと似ている。無料だが1つだけ広告が付く。迷ったけどこのブログにはUtterancesで良いと思ったので見送った。普通のブログならこっちの方がいいと思う。
+- Isso：自分でサーバーを用意しなければならない。Disqusの代用として有名らしいけどサーバーの準備が嫌なので諦めた。
+
+上記の理由からUtterancesを選びました。
+
+Utterancesを利用する方法とかをそのうちまとめていきたいです。
+
+## 文献
+
+1. [Disqus](https://blog.disqus.com/)
+2. [Utterances](https://utteranc.es/)
+3. [metype](https://www.metype.com/)
+4. [Isso](https://github.com/posativ/isso/)
