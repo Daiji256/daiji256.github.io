@@ -1,0 +1,102 @@
+---
+title: "約物専用Webフォント（約組フォント）"
+description: "約物間のアキを調整する機能を持たせた、約組フォントを公開しました。フォントの特徴、使用方法を紹介します。"
+publishedDate: 2021-11-20
+updatedDate: 2024-06-29
+tags: [
+  {id: "cdn", name: "CDN"},
+  {id: "font", name: "Font"},
+  {id: "aki", name: "アキ"},
+]
+---
+import JwAki from "../../../components/JwAki.astro";
+import { Image } from "astro:assets";
+import image1 from "./images/image1.webp";
+import image2 from "./images/image2.webp";
+
+## 概要
+
+約物専用のWebフォントの[約組フォント/Yaku Kumi Fonts](https://github.com/Daiji256/Yaku-Kumi-Fonts)を公開しました。全角の約物（句読点や括弧のこと。）が連続したときのアキを調整するWebフォントです。AndroidのNoto CJK Fontsをサブセットすることで作成されているので、シェア率が非常に高い[Noto Sans JP](https://fonts.google.com/noto/specimen/Noto+Sans+JP)との組み合わせが良いです。
+
+CDNで公開しているので[利用方法](#利用方法)を参考にして、自分のブログで使ってみてください。ちなみに、このブログでも**使っていました**。今は、[Catalpa](https://catalpa.oss.onl)でも使われてる方法で、無理やりアキを調整しています。
+
+## はじめに
+
+Webページを作るとき、下の表みたいに、括弧や句読点などの約物が連続したときのアキ（空白）が気になりませんか？　Yaku Kumi Fontsを使えばこの問題が解決できます。
+
+| Family                       |                                                                                                           |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Noto Sans JP                 | <Image src={image1} alt="約物間のアキが調整できていない" width={image1.width / 2} densities={[1.5, 2]} /> |
+| Yaku Kumi Sans, Noto Sans JP | <Image src={image2} alt="約物間のアキを調整できている" width={image2.width / 2} densities={[1.5, 2]} />   |
+
+このようなフォントは[FONTPLUS](https://fontplus.jp)にもありますが、有料なのでブログなどで手軽に使うのは難しいです。[約味フォント](https://tama-san.com/yakuadj-font)は無料で公開されていますが、オリジナルグリフであるため、Noto Sans JPとの相性がいまいちです[^:ore1]。
+
+[^:ore1]: とくに僕はカンマが好みでは無かったです。
+
+Yaku Kumi Fontsはもちろん無料で使えて、見ての通りNoto CJK Fontsと同じグリフになっています。Noto Sans JPを利用している人にはすごくオススメできます。
+
+Noto CJK Fontsと同じグリフで、約物のアキを詰める[Yaku Han JP](https://yakuhanjp.qranoko.jp)はすべてのアキが無くなるので、組版要件を考えるといまいちです。それに約物を半角にするだけなら
+
+```css
+font-feature-settings: "halt" 1;
+```
+
+すればいいです。
+
+ということで、Yaku Kumi Fontsを使いましょう！
+
+## 対応文字
+
+Yaku Kumi FontsはSansとSerifがあります。また、Google FontsのNoto Sans/Serif Japaneseと同じWeightがあります。収録フォントは以下の通りです。
+
+```
+、，。．・：；（）｟｠「」『』［］〚〛｛｝【】〖〗〈〉《》〔〕〘〙
+```
+
+## 利用方法
+
+下の表の7つのCSSを用意しました。このブログでは基本的にSansのNormal/Regular–400とBold–700しか使わないので、`yakukumi-sans-rb.min.css`を読み込んでいます。
+
+| Family      | Weight   | CSS                          |
+| ----------- | -------- | ---------------------------- |
+| Sans, Serif | すべて   | `yakukumi.min.css`           |
+| Sans        | すべて   | `yakukumi-sans-all.min.css`  |
+|             | 400, 700 | `yakukumi-sans-rb.min.css`   |
+|             | 400      | `yakukumi-sans-r.min.css`    |
+| Serif       | すべて   | `yakukumi-serif-all.min.css` |
+|             | 400, 700 | `yakukumi-serif-rb.min.css`  |
+|             | 400      | `yakukumi-serif-r.min.css`   |
+
+CDNを使う場合は、次のようにCSSを読み込んでください。利用したいCSSに合わせて`yakukumi-sans-rb.min.css`を編集してください。
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi-sans-rb.min.css">
+```
+
+CSSは`font-family`を設定し、`chws`をオンにしてください。フォント名はSansを使うなら<JwAki />`"Yaku Kumi Sans"`、Serifを使うなら<JwAki />`"Yaku Kumi Serif"`<JwAki />とします。
+
+```css
+font-family: "Yaku Kumi Sans", "Noto Sans JP", sans-serif;
+font-feature-settings: "chws" 1;
+```
+
+## ライセンス
+
+Yaku Kumi FontsはNoto CJK Fontsを元に作成されているので、ライセンスはSIL OFL 1.1です。CSSなどはMITライセンスです。
+
+## バージョン履歴
+
+- v1.0: 初公開（ウェイトが足りていないため現在非公開）
+- v1.1: ウェイトの修正
+- v1.2: 収録フォントを追加
+
+## 文献
+
+1. [約組フォント/Yaku Kumi Fonts](https://github.com/Daiji256/Yaku-Kumi-Fonts)
+2. [Noto Sans JP](https://fonts.google.com/noto/specimen/Noto+Sans+JP)
+3. [Noto CJK full weight patch for Android devices](https://github.com/simonsmh/notocjk)
+4. [FONTPLUS](https://fontplus.jp)
+5. [約物Webフォント「約味」（YakuAdj）](https://tama-san.com/yakuadj-font)
+6. [Yaku Han JP](https://yakuhanjp.qranoko.jp)
+7. [Catalpa](https://catalpa.oss.onl)
+8. [約組フォント/Yaku Kumi Fonts-約物専用Webフォント](https://qiita.com/Daiji256/items/a0a30725355a9f7d6d22)
