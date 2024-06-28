@@ -1,0 +1,202 @@
+<svg version="1.2" width="328" height="248" viewBox="1900 13900 8201 6201" preserveAspectRatio="xMidYMid"
+    fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <g class="Page">
+        <g class="com.sun.star.drawing.OpenBezierShape">
+            <path class="BoundingBox" fill="none" d="M9964 17964h73v2073h-73z" />
+            <path fill="none" stroke="gray" stroke-width="71" stroke-linecap="round" d="M10000 18000v2000" />
+        </g>
+        <g class="com.sun.star.drawing.OpenBezierShape">
+            <path class="BoundingBox" fill="none" d="M1964 13964h73v2073h-73z" />
+            <path fill="none" stroke="gray" stroke-width="71" stroke-linecap="round" d="M2000 14000v2000" />
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M2182 14182h1637v1637H2182z" />
+                <path fill="#FFF" d="M2200 15800v-1600h1600v1600H2200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M2200 15800v-1600h1600v1600H2200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M2801 14688h397v631h-397z" />
+                <path fill="#333"
+                    d="M3120 14894l-217 277c27 56 61 84 101 84 32 0 62-20 89-60 26-40 40-99 40-177 0-45-5-86-13-124zm-23-66c-26-53-59-80-98-80-33 0-64 23-92 67-27 44-41 103-41 177 0 43 5 82 14 117l217-281zm-97-140c52 0 97 29 137 87 40 57 60 136 60 235 0 98-20 174-61 227-40 54-85 81-135 81-52 0-99-29-139-86s-60-133-60-228c0-93 20-169 60-228s86-88 138-88z" />
+            </g>
+        </g>
+        <g class="com.sun.star.drawing.OpenBezierShape">
+            <path class="BoundingBox" fill="none" d="M1964 13964h8073v73H1964z" />
+            <path fill="none" stroke="#333" stroke-width="71" stroke-linecap="round" d="M2000 14000h8000" />
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M4182 14182h1637v1637H4182z" />
+                <path fill="#FFF" d="M4200 15800v-1600h1600v1600H4200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M4200 15800v-1600h1600v1600H4200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M4839 14691h210v618h-210z" />
+                <path fill="#333"
+                    d="M5048 14691v617h-68v-531c-42 12-83 24-125 36-5-12-10-25-16-38 54-28 108-56 161-84h48z" />
+            </g>
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M6182 14182h1637v1637H6182z" />
+                <path fill="#FFF" d="M6200 15800v-1600h1600v1600H6200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M6200 15800v-1600h1600v1600H6200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M6824 14688h363v620h-363z" />
+                <path fill="#333"
+                    d="M6829 14788c19-31 43-55 74-73s63-27 98-27c50 0 93 17 127 50 35 34 52 75 52 123 0 28-7 55-20 81-13 27-26 48-39 62s-29 31-50 50c-2 2-7 8-17 17-10 8-16 15-20 18-4 4-11 11-21 20-10 10-18 18-23 24-6 6-13 14-22 24s-16 19-23 28c-6 8-13 18-20 29-8 11-15 22-20 33h257c4 0 8-2 11-4 5-5 9-6 13-5v69h-361v-43c23-48 49-90 78-125 28-35 61-70 100-104 40-37 67-65 80-84 19-29 29-57 29-85 0-33-12-61-35-84-23-22-51-34-84-34-23 0-45 6-63 18-19 11-33 24-42 39-2 2-3 6-4 11s-2 9-4 11l-51-39z" />
+            </g>
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M8182 14182h1637v1637H8182z" />
+                <path fill="#FFF" d="M8200 15800v-1600h1600v1600H8200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M8200 15800v-1600h1600v1600H8200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M8820 14690h353v629h-353z" />
+                <path fill="#333"
+                    d="M9158 14846c0 30-8 57-25 81-17 25-39 42-67 52 33 12 58 33 77 62 19 28 29 61 29 97 0 50-17 93-52 128-35 34-81 52-138 52-65 0-119-23-161-70l52-62c3 3 6 7 7 13s3 11 6 14c2 4 7 9 13 14s17 11 33 18c16 6 32 10 49 10 36 0 66-13 89-37 24-25 36-54 36-89s-14-63-41-85c-27-21-62-31-104-31-7 0-18 1-31 2v-55c42 0 74-6 97-16 20-9 36-23 48-41 11-17 17-36 17-56 0-27-10-50-30-68s-46-28-77-28c-40 0-76 16-105 48l-39-43c40-44 89-66 147-66 48 0 89 15 121 46 33 31 49 67 49 110z" />
+            </g>
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M2182 16182h1637v1637H2182z" />
+                <path fill="#FFF" d="M2200 17800v-1600h1600v1600H2200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M2200 17800v-1600h1600v1600H2200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M2799 16691h401v617h-401z" />
+                <path fill="#333"
+                    d="M3049 16801c-61 91-121 183-181 275h181v-275zm12-110h59v385h79v61h-79v170h-72v-171h-248v-50c87-132 174-263 261-395z" />
+            </g>
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M4182 16182h1637v1637H4182z" />
+                <path fill="#FFF" d="M4200 17800v-1600h1600v1600H4200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M4200 17800v-1600h1600v1600H4200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M4815 16692h378v627h-378z" />
+                <path fill="#333"
+                    d="M4857 16692h312v62h-254l-10 177c32-16 66-24 101-24 53 0 98 19 133 55 35 37 53 87 53 151s-19 114-55 151c-37 36-83 54-139 54-37 0-71-9-103-25-33-17-59-40-79-70l61-45c3 2 5 5 5 11 1 6 1 9 2 11 1 4 6 10 15 19 9 8 23 16 41 25s38 14 57 14c35 0 65-13 89-39s36-62 36-107c0-47-13-83-37-109-25-26-55-38-90-38-46 0-84 19-115 58l-44-18 21-313z" />
+            </g>
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M6182 16182h1637v1637H6182z" />
+                <path fill="#FFF" d="M6200 17800v-1600h1600v1600H6200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M6200 17800v-1600h1600v1600H6200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M6818 16685h369v633h-369z" />
+                <path fill="#333"
+                    d="M7011 16970c-23 0-45 8-67 23s-39 35-53 60c-4 57 6 105 30 144s55 59 92 59c28 0 53-13 74-37 21-25 32-60 32-104 0-49-11-85-33-109s-47-36-75-36zm25-285c51 0 96 19 135 56l-48 53c-4-3-7-7-9-12-3-5-5-9-6-10-17-17-41-26-71-26-11 0-22 2-33 5s-24 9-38 19-27 23-38 40c-11 16-21 39-28 69-8 30-13 65-13 105 14-23 32-41 55-54s48-20 75-20c46 0 86 18 119 55s50 85 50 147c0 61-17 110-52 148-34 38-75 57-124 57-61 0-109-27-145-81-31-46-46-116-46-209 0-76 9-139 26-189 18-50 44-89 79-114 35-26 72-39 112-39z" />
+            </g>
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M8182 16182h1637v1637H8182z" />
+                <path fill="#FFF" d="M8200 17800v-1600h1600v1600H8200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M8200 17800v-1600h1600v1600H8200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M8830 16692h350v616h-350z" />
+                <path fill="#333"
+                    d="M8830 16692h349v39c-45 102-84 198-118 288-34 92-66 188-97 288h-78c30-91 69-201 118-329 30-78 60-152 89-221h-263v-65z" />
+            </g>
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M2182 18182h1637v1637H2182z" />
+                <path fill="#FFF" d="M2200 19800v-1600h1600v1600H2200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M2200 19800v-1600h1600v1600H2200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M2811 18684h378v634h-378z" />
+                <path fill="#333"
+                    d="M3002 18742c-26 0-48 9-67 26-18 17-28 38-28 62s10 46 28 67 36 35 54 44l27 13c25-14 45-31 61-53 15-21 23-44 23-67 0-25-9-47-28-65s-42-27-70-27zm-16 266c-30 12-55 31-74 56-20 24-29 51-29 79 0 31 11 57 34 79s52 33 85 33 61-11 83-32 33-46 33-76-12-58-36-83-56-44-96-56zm21-324c45 0 83 14 114 43 31 28 46 62 46 103 0 30-9 58-27 85-17 26-41 48-71 63 35 16 64 39 86 70s33 65 33 100c0 47-18 87-55 120-36 33-80 49-134 49-52 0-97-16-133-48s-54-71-54-117c0-35 11-68 34-99 22-31 52-55 89-73-28-14-51-34-68-60s-26-54-26-84c0-42 16-78 48-107 32-30 71-45 118-45z" />
+            </g>
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M4182 18182h1637v1637H4182z" />
+                <path fill="#FFF" d="M4200 19800v-1600h1600v1600H4200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M4200 19800v-1600h1600v1600H4200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M4819 18686h366v632h-366z" />
+                <path fill="#333"
+                    d="M4995 19024c22 0 43-7 64-20 22-14 39-32 53-55 5-60-4-109-27-146-24-37-54-56-91-56-29 0-55 13-76 38s-31 59-31 102 10 77 32 101c21 24 47 36 76 36zm-28 293c-52 0-98-19-137-56l49-53c4 3 7 7 9 13 3 5 5 9 7 11 19 15 44 23 74 23 24 0 47-7 69-21s40-35 52-64c15-34 24-85 26-152-15 20-33 36-56 48s-47 18-72 18c-46 0-86-18-119-54-33-37-49-83-49-140 0-59 17-108 51-146 35-39 77-58 125-58 35 0 68 11 98 34 31 22 54 55 69 99 14 40 21 97 21 172 0 76-9 137-26 183-18 46-44 82-79 106-35 25-72 37-112 37z" />
+            </g>
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M6182 18182h1637v1637H6182z" />
+                <path fill="#FFF" d="M6200 19800v-1600h1600v1600H6200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M6200 19800v-1600h1600v1600H6200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M6591 18691h210v618h-210z" />
+                <path fill="#333"
+                    d="M6800 18691v617h-68v-531c-42 12-83 24-125 37-5-13-10-26-16-39 54-28 108-56 161-84h48z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M7048 18688h397v631h-397z" />
+                <path fill="#333"
+                    d="M7367 18894l-217 277c27 56 61 84 101 84 32 0 62-20 89-60 26-40 40-99 40-177 0-45-5-86-13-124zm-23-66c-26-53-59-80-98-80-33 0-64 23-92 67-27 44-41 103-41 177 0 43 5 82 14 117l217-281zm-97-140c52 0 97 29 137 87 40 57 60 136 60 235 0 98-20 174-61 227-40 54-85 81-135 81-52 0-99-29-139-86s-60-133-60-228c0-93 20-169 60-228s86-88 138-88z" />
+            </g>
+        </g>
+        <g class="Group">
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M8182 18182h1637v1637H8182z" />
+                <path fill="#FFF" d="M8200 19800v-1600h1600v1600H8200z" />
+                <path fill="none" stroke="#999" stroke-width="35" d="M8200 19800v-1600h1600v1600H8200z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M8591 18691h210v618h-210z" />
+                <path fill="#333"
+                    d="M8800 18691v617h-68v-531c-42 12-83 24-125 37-5-13-10-26-16-39 54-28 108-56 161-84h48z" />
+            </g>
+            <g class="com.sun.star.drawing.ClosedBezierShape">
+                <path class="BoundingBox" fill="none" d="M9086 18691h210v618h-210z" />
+                <path fill="#333"
+                    d="M9295 18691v617h-68v-531c-42 12-83 24-125 37-5-13-10-26-16-39 54-28 108-56 161-84h48z" />
+            </g>
+        </g>
+        <g class="com.sun.star.drawing.OpenBezierShape">
+            <path class="BoundingBox" fill="none" d="M9964 13964h73v4073h-73z" />
+            <path fill="none" stroke="#333" stroke-width="71" stroke-linecap="round" d="M10000 14000v4000" />
+        </g>
+        <g class="com.sun.star.drawing.OpenBezierShape">
+            <path class="BoundingBox" fill="none" d="M1964 15964h73v4073h-73z" />
+            <path fill="none" stroke="#333" stroke-width="71" stroke-linecap="round" d="M2000 16000v4000" />
+        </g>
+        <g class="com.sun.star.drawing.OpenBezierShape">
+            <path class="BoundingBox" fill="none" d="M3964 13964h73v2073h-73z" />
+            <path fill="none" stroke="#333" stroke-width="71" stroke-linecap="round" d="M4000 14000v2000" />
+        </g>
+        <g class="com.sun.star.drawing.OpenBezierShape">
+            <path class="BoundingBox" fill="none" d="M7964 15964h73v4073h-73z" />
+            <path fill="none" stroke="#333" stroke-width="71" stroke-linecap="round" d="M8000 16000v4000" />
+        </g>
+        <g class="com.sun.star.drawing.OpenBezierShape">
+            <path class="BoundingBox" fill="none" d="M3964 17964h2073v73H3964z" />
+            <path fill="none" stroke="#333" stroke-width="71" stroke-linecap="round" d="M4000 18000h2000" />
+        </g>
+        <g class="com.sun.star.drawing.OpenBezierShape">
+            <path class="BoundingBox" fill="none" d="M5964 15964h73v4073h-73z" />
+            <path fill="none" stroke="#333" stroke-width="71" stroke-linecap="round" d="M6000 16000v4000" />
+        </g>
+        <g class="com.sun.star.drawing.OpenBezierShape">
+            <path class="BoundingBox" fill="none" d="M1964 19964h8073v73H1964z" />
+            <path fill="none" stroke="#333" stroke-width="71" stroke-linecap="round" d="M2000 20000h8000" />
+        </g>
+        <g class="com.sun.star.drawing.ClosedBezierShape">
+            <path class="BoundingBox" fill="none" d="M1900 13900h8201v6201H1900z" />
+        </g>
+    </g>
+</svg>
