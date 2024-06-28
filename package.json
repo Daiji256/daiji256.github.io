@@ -1,7 +1,6 @@
 {
-  "name": "harmony-blog-astro",
+  "name": "daiji256-blog",
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
