@@ -21,4 +21,4 @@ export const PICKUP_POSTS = ["markdown-style-guide", "markdown-style-guide"];
 export const HTTP_404_NOT_FOUND_TITLE = "404 Not Found";
 export const HTTP_404_NOT_FOUND_TO_TOP = "トップページへ";
 
-export const CONTACT_URL = "https://example.com"
+export const CONTACT_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfTIbjKvr5QbhmYB2Se21tqQ_GvqH0qNzV19ysjZnokPx5Jeg/viewform?usp=sf_link"
