@@ -1,5 +1,5 @@
 export const SITE_TITLE = "Daiji Blog";
-export const SITE_DESCRIPTION = "説明文";
+export const SITE_DESCRIPTION = "2022からAndroidアプリエンジニアをしています。少しずつAndroidの投稿を増やしていければなと思ってます。";
 export const TITLE_SEPARATOR = " | ";
 export const BREADCRUMBS_ARIA_LABEL = "パンくずリスト";
 export const GO_BACK = "戻る";
