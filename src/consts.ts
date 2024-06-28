@@ -1,5 +1,5 @@
-export const SITE_TITLE = "Harmony Blog";
-export const SITE_DESCRIPTION = "Harmony Blogは、最小限の機能で、高速でSEOに優しいAstroのテーマです。本文を含む全てのテキストに対して、「アキ」の調整が行われます。";
+export const SITE_TITLE = "Daiji Blog";
+export const SITE_DESCRIPTION = "説明文";
 export const TITLE_SEPARATOR = " | ";
 export const BREADCRUMBS_ARIA_LABEL = "パンくずリスト";
 export const GO_BACK = "戻る";
