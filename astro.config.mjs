@@ -10,7 +10,7 @@ import { FOOTNOTE_LABEL } from "./src/consts";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-	site: "https://example.com",
+	site: "https://daiji256.github.io",
 	integrations: [mdx(), sitemap()],
 	markdown: {
 		syntaxHighlight: "shiki",
