@@ -1,0 +1,47 @@
+---
+type Props = {
+	href: string | undefined;
+	ariaLabel?: string;
+};
+
+const { href, ariaLabel } = Astro.props;
+---
+
+<>
+	{
+		href ? (
+			<a href={href} aria-label={ariaLabel}>
+				<slot />
+			</a>
+		) : (
+			<span />
+		)
+	}
+</>
+
+<style lang="scss">
+	a {
+		color: inherit;
+		text-decoration: none;
+		display: inline-block;
+		justify-content: center;
+		align-items: center;
+		width: 32px;
+		height: 32px;
+
+		@media (hover: hover) {
+			&:hover {
+				color: $color-primary;
+			}
+		}
+
+		&:active {
+			color: $color-primary;
+		}
+	}
+
+	span {
+		display: inline-flex;
+		width: 32px;
+	}
+</style>

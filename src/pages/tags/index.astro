@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AdjustText from "../../components/AdjustText.astro";
+import { TAGS_TITLE } from "../../consts";
+
+const posts = await getCollection("posts");
+const tags = (() => {
+	const tagsCount: Map<string, { name: string; count: number }> = new Map();
+	posts.forEach((post) => {
+		post.data.tags?.forEach((tag) => {
+			const value = tagsCount.get(tag.id);
+			tagsCount.set(tag.id, {
+				name: value?.name ?? tag.name,
+				count: (value?.count ?? 0) + 1,
+			});
+		});
+	});
+	const tags: { id: string; name: string; count: number }[] = [];
+	tagsCount.forEach((value, id) => {
+		tags.push({ id: id, name: value.name, count: value.count });
+	});
+	return tags.sort((a, b) => b.count - a.count);
+})();
+---
+
+<>
+	<BaseLayout title={TAGS_TITLE}>
+		<h1 class="title">
+			<AdjustText text={TAGS_TITLE} />
+		</h1>
+		<ul class="tags">
+			{
+				tags.map((tag) => (
+					<li>
+						<a href={`/tags/${tag.id}`} class="tag">
+							<AdjustText text={`${tag.name} (${tag.count})`} />
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</BaseLayout>
+</>
+
+<style lang="scss">
+	.title {
+		font: $font-headline-large;
+		margin-top: 24px;
+	}
+
+	.tags {
+		margin: 0 -24px 0 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+
+		.tag {
+			font: $font-body-medium;
+			line-height: 2.5;
+			margin-right: 24px;
+		}
+	}
+</style>

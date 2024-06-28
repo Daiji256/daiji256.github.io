@@ -1,0 +1,70 @@
+---
+import AdjustText from "./AdjustText.astro";
+import {
+	COPYRIGHT,
+	PRIVACY_POLICY_TITLE,
+	CONTACT_TITLE,
+	CONTACT_URL,
+} from "../consts";
+---
+
+<>
+	<footer>
+		<hr />
+		<div class="footer-content">
+			<div class="copyright">
+				<AdjustText text={COPYRIGHT} />
+			</div>
+			<ul class="nav">
+				<li>
+					<a href="/privacy-policy">
+						<AdjustText text={PRIVACY_POLICY_TITLE} />
+					</a>
+				</li>
+				<li>
+					<a
+						class="external-link"
+						target="_blank"
+						rel="noopener"
+						href={CONTACT_URL}
+					>
+						<AdjustText text={CONTACT_TITLE} />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+</>
+
+<style lang="scss">
+	footer {
+		position: sticky;
+		top: 100dvh;
+		margin-top: 64px;
+
+		.footer-content {
+			display: flex;
+			margin: 0 auto;
+			padding: 8px 0 24px 0;
+			width: calc(min(100%, $screen-wrapper-max) - 32px);
+
+			.copyright {
+				font: $font-label-medium;
+				margin-right: 12px;
+			}
+
+			.nav {
+				font: $font-label-medium;
+				margin-left: auto;
+
+				li:not(:first-child) {
+					margin-top: 8px;
+				}
+
+				.external-link::after {
+					height: 14px;
+				}
+			}
+		}
+	}
+</style>

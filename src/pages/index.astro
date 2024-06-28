@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AdjustText from "../components/AdjustText.astro";
+import Post from "../components/Post.astro";
+import {
+	SITE_TITLE,
+	SITE_DESCRIPTION,
+	PICKUP_TITLE,
+	PICKUP_POSTS,
+} from "../consts";
+---
+
+<>
+	<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+		<h1 class="title">
+			<AdjustText text={SITE_TITLE} />
+		</h1>
+		<p><AdjustText text={SITE_DESCRIPTION} /></p>
+		<h2><AdjustText text={PICKUP_TITLE} /></h2>
+		<div>
+			{
+				PICKUP_POSTS.map((post) => (
+					<div class="post">
+						<Post post={post} />
+					</div>
+				))
+			}
+		</div>
+	</BaseLayout>
+</>
+
+<style lang="scss">
+	.title {
+		font: $font-headline-large;
+		margin-top: 24px;
+	}
+
+	.post:not(:first-child) {
+		margin-top: 24px;
+	}
+</style>

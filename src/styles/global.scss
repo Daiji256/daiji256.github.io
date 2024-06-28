@@ -1,0 +1,195 @@
+@import "fonts", "adjust-aki";
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: $font-family-sans;
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;
+	line-break: strict;
+	color: $color-on-background;
+	background-color: $color-background;
+	min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+li,
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+hr {
+	width: calc(min(100%, $screen-wrapper-max) - 32px);
+	margin: 0 auto;
+	border: none;
+	border-bottom: 1px solid $color-outline;
+}
+
+a {
+	color: $color-primary;
+	text-decoration: none;
+
+	@media (hover: hover) {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&:active {
+		text-decoration: underline;
+	}
+}
+
+.external-link::after {
+	content: "";
+	display: inline-block;
+	margin: 0 1px;
+	width: 8px;
+	height: 16px;
+	background-color: $color-primary;
+	mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M3 1H1v6h6V5M7 4V1H4M7 1 3.5 4.5'/></svg>") no-repeat;
+}
+
+main {
+	font: $font-body-medium;
+	margin: 0 auto;
+	width: calc(min(100%, $screen-wrapper-max) - 32px);
+
+	h1 {
+		font: $font-headline-large;
+	}
+
+	h2 {
+		font: $font-headline-medium;
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		font: $font-headline-small;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		&:not(:first-child) {
+			margin-top: 24px;
+		}
+	}
+
+	p {
+		text-align: justify;
+	}
+
+	ol,
+	ul {
+		padding-left: 24px;
+	}
+
+	ol {
+		list-style: decimal;
+	}
+
+	ul {
+		list-style: disc;
+	}
+
+	strong {
+		font-weight: 500;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	ul,
+	ol,
+	img,
+	pre {
+		margin-bottom: 16px;
+	}
+
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	table {
+		border-collapse: collapse;
+		margin: 16px auto;
+
+		td,
+		th {
+			border: 0;
+			padding: 2px 8px;
+		}
+
+		tr:first-child th {
+			border-top: 2px solid $color-outline;
+			border-bottom: 1px solid $color-outline;
+		}
+
+		tr:last-child td {
+			border-bottom: 2px solid $color-outline;
+		}
+	}
+
+	hr {
+		width: 100%;
+	}
+
+	blockquote {
+		margin: 0;
+		padding: 0 0 0 12px;
+		border-left: 2px solid $color-outline;
+	}
+
+	code {
+		font-family: $font-family-mono;
+	}
+
+	pre {
+		outline: 1px solid $color-outline;
+		border-radius: 2px;
+
+		code {
+			display: block;
+			width: fit-content;
+			padding: 12px;
+		}
+	}
+
+	mark {
+		background-color: $color-primary-container;
+		color: $color-on-primary-container;
+	}
+
+	math {
+		font-family: $font-family-math;
+	}
+}

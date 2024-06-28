@@ -1,0 +1,89 @@
+---
+import AdjustText from "./AdjustText.astro";
+import FormattedDate from "./FormattedDate.astro";
+import { type PostSummary } from "../models/postSummary";
+
+type Props = {
+	post: PostSummary | string;
+};
+
+const slugToPost: (slug: string) => Promise<PostSummary> = async (
+	slug: string,
+) => {
+	// Using glob to reference files in mdx
+	const posts = await Astro.glob("../content/posts/**/*.md*");
+	const frontmatter = posts.find((p) => {
+		return (
+			p.file.includes(`/posts/${slug}.md`) ||
+			p.file.includes(`/posts/${slug}/index.md`)
+		);
+	})!!.frontmatter;
+	return {
+		slug: slug,
+		title: frontmatter.title,
+		description: frontmatter.description,
+		publishedDate: new Date(frontmatter.publishedDate),
+		tags: frontmatter.tags,
+	};
+};
+
+const { post: _post } = Astro.props;
+let post = typeof _post === "string" ? await slugToPost(_post) : _post;
+---
+
+<>
+	<div class="title">
+		<a href={`/posts/${post.slug}`}>
+			<AdjustText text={post.title} />
+		</a>
+	</div>
+	<div class="description">
+		<AdjustText text={post.description} />
+	</div>
+	<div class="supplement">
+		<div class="date">
+			<FormattedDate date={post.publishedDate} />
+		</div>
+		{
+			post.tags !== undefined && post.tags.length > 0 && (
+				<div class="tags">
+					{post.tags.map((tag) => (
+						<a class="tag" href={`/tags/${tag.id}`}>
+							<AdjustText text={tag.name} />
+						</a>
+					))}
+				</div>
+			)
+		}
+	</div>
+</>
+
+<style lang="scss">
+	.title {
+		font: $font-title-large;
+	}
+
+	.description {
+		font: $font-body-small;
+		color: $color-on-background-variant;
+		margin-top: 8px;
+	}
+
+	.supplement {
+		display: flex;
+		margin-top: 4px;
+
+		.date {
+			font: $font-label-medium;
+			margin-right: 12px;
+		}
+
+		.tags {
+			font: $font-label-medium;
+
+			.tag {
+				margin-right: 8px;
+			}
+		}
+	}
+</style>

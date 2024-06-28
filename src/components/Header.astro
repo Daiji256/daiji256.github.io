@@ -1,0 +1,98 @@
+---
+import AdjustText from "./AdjustText.astro";
+import { SITE_TITLE, POSTS_TITLE, TAGS_TITLE } from "../consts";
+---
+
+<>
+	<header>
+		<div class="header-content">
+			<a class="title" href="/">
+				<AdjustText text={SITE_TITLE} />
+			</a>
+			<nav>
+				<ul>
+					<li>
+						<a class="nav-item" href="/posts">
+							<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+								<path
+									stroke="currentColor"
+									fill="none"
+									stroke-linejoin="round"
+									stroke-width="1.5"
+									d="M7 13H1V1h12v12H7ZM3.5 4h7M3.5 7h7M3.5 10h5"></path>
+							</svg>
+							<AdjustText text={POSTS_TITLE} />
+						</a>
+					</li>
+					<li>
+						<a class="nav-item" href="/tags">
+							<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+								<path
+									stroke="currentColor"
+									fill="none"
+									stroke-width="1.5"
+									d="M1.5 5h12M.5 9h12M6 1.5l-2.5 11M10.5 1.5 8 12.5"></path>
+							</svg>
+							<AdjustText text={TAGS_TITLE} />
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<hr />
+	</header>
+</>
+
+<style lang="scss">
+	header {
+		.header-content {
+			display: flex;
+			align-items: baseline;
+			margin: 0 auto;
+			padding: 24px 0 18px 0;
+			width: calc(min(100%, $screen-wrapper-max) - 32px);
+
+			a {
+				color: inherit;
+				text-decoration: none;
+
+				@media (hover: hover) {
+					&:hover {
+						color: $color-primary;
+					}
+				}
+
+				&:active {
+					color: $color-primary;
+				}
+			}
+
+			.title {
+				font: $font-title-medium;
+				margin-bottom: 6px;
+			}
+
+			nav {
+				font: $font-label-medium;
+				margin-left: auto;
+
+				ul {
+					display: flex;
+
+					li:not(:first-child) {
+						margin-left: 12px;
+					}
+
+					.nav-item {
+						display: inline;
+
+						svg {
+							margin-right: 4px;
+							vertical-align: -7.5%;
+						}
+					}
+				}
+			}
+		}
+	}
+</style>

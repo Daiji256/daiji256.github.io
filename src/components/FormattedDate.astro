@@ -1,0 +1,22 @@
+---
+import AdjustText from "./AdjustText.astro";
+
+type Props = {
+	date: Date;
+};
+
+const { date } = Astro.props;
+---
+
+<>
+	<time datetime={date.toISOString()}>
+		<AdjustText
+			text={date.toLocaleDateString("ja-JP", {
+				year: "numeric",
+				month: "numeric",
+				day: "numeric",
+				timeZone: "Asia/Tokyo",
+			})}
+		/>
+	</time>
+</>

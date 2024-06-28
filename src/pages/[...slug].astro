@@ -1,0 +1,61 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import AdjustText from "../components/AdjustText.astro";
+import { PUBLISHED_DATE_LABEL, UPDATED_DATE_LABEL } from "../consts";
+
+type Props = CollectionEntry<"pages">;
+
+export async function getStaticPaths() {
+	const pages = await getCollection("pages");
+	return pages.map((page) => ({
+		params: { slug: page.slug },
+		props: page,
+	}));
+}
+
+const page = Astro.props;
+const { Content } = await page.render();
+---
+
+<>
+	<BaseLayout title={page.data.title}>
+		<article>
+			<h1 class="title"><AdjustText text={page.data.title} /></h1>
+			<div class="date">
+				<div>
+					<AdjustText text={PUBLISHED_DATE_LABEL} />
+					<FormattedDate date={page.data.publishedDate} />
+				</div>
+				{
+					page.data.updatedDate && (
+						<div class="updated">
+							<AdjustText text={UPDATED_DATE_LABEL} />
+							<FormattedDate date={page.data.updatedDate} />
+						</div>
+					)
+				}
+			</div>
+			<Content />
+		</article>
+	</BaseLayout>
+</>
+
+<style lang="scss">
+	.title {
+		font: $font-headline-large;
+		margin-top: 24px;
+	}
+
+	.date {
+		font: $font-label-medium;
+		color: $color-on-background-variant;
+		display: flex;
+		margin-top: 4px;
+
+		.updated {
+			margin-left: 8px;
+		}
+	}
+</style>

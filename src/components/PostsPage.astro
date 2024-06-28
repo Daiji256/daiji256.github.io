@@ -1,0 +1,28 @@
+---
+import AdjustText from "./AdjustText.astro";
+import Posts from "./Posts.astro";
+import Pagination from "./Pagination.astro";
+import { type PostSummary } from "../models/postSummary";
+
+type Props = {
+	title: string;
+	posts: PostSummary[];
+	page: number;
+	pageLength: number;
+};
+
+const { title, posts, page, pageLength } = Astro.props;
+---
+
+<>
+	<h1 class="title"><AdjustText text={title} /></h1>
+	<Posts posts={posts} />
+	<Pagination current={page} pageLength={pageLength} baseUrl="/posts" />
+</>
+
+<style lang="scss">
+	.title {
+		font: $font-headline-large;
+		margin-top: 24px;
+	}
+</style>

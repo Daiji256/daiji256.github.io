@@ -1,0 +1,70 @@
+---
+import PaginationLink from "./PaginationLink.astro";
+import {
+	PAGINATION_PAGE_SEPARATOR,
+	PAGINATION_PREV_ARIA_LABEL,
+	PAGINATION_NEXT_ARIA_LABEL,
+} from "../consts";
+
+type Props = {
+	current: number;
+	pageLength: number;
+	baseUrl: string;
+};
+
+const { current, pageLength, baseUrl } = Astro.props;
+const prevUrl =
+	current > 1 ? `${baseUrl}${current > 2 ? `/${current - 1}` : ""}` : undefined;
+const nextUrl = current < pageLength ? `${baseUrl}/${current + 1}` : undefined;
+---
+
+<>
+	{
+		pageLength > 1 && (
+			<nav class="pagination" aria-label="Pagination">
+				<PaginationLink href={prevUrl} ariaLabel={PAGINATION_PREV_ARIA_LABEL}>
+					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+						<path
+							stroke="currentColor"
+							fill="none"
+							stroke-width="1.5"
+							stroke-linejoin="round"
+							d="m9.5 2.5-4.5 4.5 4.5 4.5"
+						/>
+					</svg>
+				</PaginationLink>
+				<span class="number">{current}</span>
+				{PAGINATION_PAGE_SEPARATOR}
+				<span class="number">{pageLength}</span>
+				<PaginationLink href={nextUrl} ariaLabel={PAGINATION_NEXT_ARIA_LABEL}>
+					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+						<path
+							stroke="currentColor"
+							fill="none"
+							stroke-width="1.5"
+							stroke-linejoin="round"
+							d="m4.5 2.5 4.5 4.5-4.5 4.5"
+						/>
+					</svg>
+				</PaginationLink>
+			</nav>
+		)
+	}
+</>
+
+<style lang="scss">
+	.pagination {
+		margin-top: 24px;
+		text-align: center;
+
+		.number {
+			display: inline-block;
+			min-width: 24px;
+			margin: 0 4px;
+		}
+
+		svg {
+			vertical-align: -7.5%;
+		}
+	}
+</style>

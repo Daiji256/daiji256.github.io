@@ -1,0 +1,33 @@
+@font-face {
+	font-family: "f-sans";
+	src: url(/fonts/f-sans/f-sans-r.woff2) format('woff2'),
+		url(/fonts/f-sans/f-sans-r.woff) format('woff'),
+		url(/fonts/f-sans/f-sans-r.otf) format('opentype');
+	font-weight: 400;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "f-sans";
+	src: url(/fonts/f-sans/f-sans-m.woff2) format('woff2'),
+		url(/fonts/f-sans/f-sans-m.woff) format('woff'),
+		url(/fonts/f-sans/f-sans-m.otf) format('opentype');
+	font-weight: 500;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "f-mono";
+	src: url(/fonts/f-mono/f-mono-r.woff2) format('woff2'),
+		url(/fonts/f-mono/f-mono-r.woff) format('woff'),
+		url(/fonts/f-mono/f-mono-r.ttf) format('truetype');
+	font-weight: 400;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "Fira Math";
+	src: url(/fonts/FiraMath/FiraMath-Regular.otf) format('opentype');
+	font-weight: 400;
+	font-display: fallback;
+}
