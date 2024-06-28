@@ -1,0 +1,97 @@
+---
+title: "LuaLaTeXでフォント細かく変更する方法（MS Wordは使いたくない！）"
+description: "LuaLaTeXはフォントを扱うことが用意という強みを持っています。この強みを活かして、実質的にMS Wordでの作成を要求された場合においても、LaTeXを使用できます。LuaLaTeXでフォントを変更する方法を紹介します。"
+publishedDate: 2021-02-02
+updatedDate: 2024-06-29
+tags: [
+  {id: "tex", name: "TeX"},
+  {id: "latex", name: "LaTeX"},
+  {id: "lualatex", name: "LuaLaTeX"},
+  {id: "font", name: "Font"},
+]
+---
+import JwAki from "../../../components/JwAki.astro";
+import image1 from "./images/image1.svg";
+import image2 from "./images/image2.svg";
+
+## はじめに
+
+課題や予稿、論文等ではフォント等のフォーマット指定がよくあります。MS Wordのテンプレートしか無かったり、MS Minchoなどの古いフォントを指定されるとイライラします。そこでLaTeXで書きたいと思います。ここではエンジンにLuaLaTeXを使用します。LuaLaTeXはPDFを直接出力することからフォントの埋め込みが容易で新しいイケイケなLaTeXだからです。
+
+## ドキュメントクラス
+
+ドキュメントクラスには`jlreq`を利用します。`jlreq`は日本語組版処理の要件に準拠した新しいドキュメントクラスで、日本に浸透しつつあります。オプションの`fontsize=10.5bp`はデフォルトのフォントサイズを$\mathrm{10.5\,bp}$とすることを示しています。`jlreq`では英・和のフォント比がデフォルトで$1$なので、両方のフォントサイズが$\mathrm{10.5\,bp}$になります。MS Wordでは$1\,\mathrm{pt}=1/72\,\mathrm{inch}$ですが、TeXでは$1\,\mathrm{pt}=1/72.27\,\mathrm{inch}$と定義されています。TeXには$1\,\mathrm{bp}=1/72\,\mathrm{inch}$となる単位が存在します。このことから$\mathrm{pt}$の代わりに$\mathrm{bp}$を使用しています。
+
+```latex
+\documentclass[fontsize=10.5bp]{jlreq}
+```
+
+## フォントの変更
+
+Times New RomanやMS Minchoなどを指定されたことを想定して説明します。`luatexja-fontspec`を使えば簡単に設定できます。問題は太字や斜体の設定です。Times New Romanのようにはじめから太字や斜体が用意されているフォントがほとんどですが、MS Minchoなどは用意されていません。MS WordなどではMS Minchoを太字にするとき疑似的に太字にしています。LuaLaTeXでもオプションにより疑似太字、疑似斜体を実現できます。`FakeBold=2`、`FakeSlant=0.33`に設定したときMS Wordと同様の結果になりました。
+
+![テキストスタイルの適応結果](./images/image1.svg)
+
+```latex
+\usepackage{luatexja-fontspec}
+\setmainfont[Ligatures={Rare,TeX}]{Times-New-Roman}
+\setsansfont{Arial}
+\setmainjfont[
+  YokoFeatures       = {JFM=jlreq},
+  TateFeatures       = {JFM=jlreqv},
+  BoldFont           = MS-Gothic,
+  BoldFeatures       = {FakeBold=2},
+  ItalicFont         = MS-Mincho,
+  ItalicFeatures     = {FakeSlant=0.33},
+  BoldItalicFont     = MS-Gothic,
+  BoldItalicFeatures = {FakeBold=2, FakeSlant=0.33}
+]{MS-Mincho}
+\setsansjfont[
+  YokoFeatures       = {JFM=jlreq},
+  TateFeatures       = {JFM=jlreqv},
+  BoldFont           = MS-Gothic,
+  BoldFeatures       = {FakeBold=2},
+  ItalicFont         = MS-Gothic,
+  ItalicFeatures     = {FakeSlant=0.33},
+  BoldItalicFont     = MS-Gothic,
+  BoldItalicFeatures = {FakeBold=2, FakeSlant=0.33}
+]{MS-Gothic}
+```
+
+次に数式フォントについてです。現在MS Wordでは数式フォントにCambriaを使用しています。`unicode-math`を使用すれば簡単に設定できます。
+
+![Cambriaによる数式](./images/image2.svg)
+
+```latex
+\usepackage{unicode-math}
+\setmathfont{Cambria-Math}
+```
+
+## フォントサイズの変更
+
+`\Large`等をあらかじめ設定しておくことで、要求された体裁を容易に守ることができます。変更例はこのようになります。また、`vpt`や`xpt`を変更することでデフォルトフォントサイズを変更することもできます。ここでは割愛させてもらいます。
+
+```latex
+\renewcommand\tiny{\@setfontsize\tiny{5bp}{6bp}}
+\renewcommand\scriptsize{\@setfontsize\scriptsize{7bp}{8bp}}
+\renewcommand\footnotesize{\@setfontsize\footnotesize{8bp}{10bp}}
+\renewcommand\small{\@setfontsize\small{9bp}{12bp}}
+\renewcommand\normalsize{\@setfontsize\normalsize{10bp}{15bp}}
+\renewcommand\large{\@setfontsize\large{12bp}{15bp}}
+\renewcommand\Large{\@setfontsize\Large{14.4bp}{16bp}}
+\renewcommand\LARGE{\@setfontsize\LARGE{17.28bp}{18bp}}
+\renewcommand\huge{\@setfontsize\huge{20.74bp}{30bp}}
+\renewcommand\Huge{\@setfontsize\Huge{24.88bp}{36bp}}
+```
+
+## まとめ
+
+LuaLaTeXでの細かいフォント設定についてまとめました。曖昧なところや間違ってるところがあると思うのでその時は指摘してください。ソースコードは下の文献から見に行けます。
+
+## 文献
+
+1. [ソースコード](https://github.com/Daiji256/TeX-TikZ-Heatran/)
+2. [LuaTeX-jaパッケージ](http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
+3. [unicode-math](https://ctan.org/pkg/unicode-math)
+4. [Point typography](https://en.wikipedia.org/wiki/Point_(typography))
+5. [LuaLaTeXでフォント細かく変更する方法（MS Wordは使いたくない！）](https://qiita.com/Daiji256/items/29adc574b15345d8afa2)
