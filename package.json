@@ -23,5 +23,10 @@
     "remark-math": "^6.0.0",
     "sass": "^1.77.6",
     "unified": "^11.0.5"
+  },
+  "overrides": {
+    "vite": {
+      "rollup": "npm:@rollup/wasm-node"
+    }
   }
 }
