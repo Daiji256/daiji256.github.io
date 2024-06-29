@@ -13,7 +13,6 @@
     "@astrojs/mdx": "^3.1.2",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
-    "@rollup/wasm-node": "^4.18.0",
     "astro": "^4.11.3",
     "rehype-adjust-aki": "file:modules/rehype-adjust-aki",
     "rehype-external-links": "^3.0.0",
@@ -24,10 +23,5 @@
     "remark-math": "^6.0.0",
     "sass": "^1.77.6",
     "unified": "^11.0.5"
-  },
-  "overrides": {
-    "vite": {
-      "rollup": "npm:@rollup/wasm-node"
-    }
   }
 }
