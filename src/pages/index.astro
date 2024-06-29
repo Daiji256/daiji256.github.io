@@ -7,6 +7,8 @@ import {
 	SITE_DESCRIPTION,
 	PICKUP_TITLE,
 	PICKUP_POSTS,
+	LINKS_TITLE,
+	LINKS,
 } from "../consts";
 ---
 
@@ -26,6 +28,23 @@ import {
 				))
 			}
 		</div>
+		<h2><AdjustText text={LINKS_TITLE} /></h2>
+		<ul class="links">
+			{
+				LINKS.map((link) => (
+					<li>
+						<a
+							class="link external-link"
+							target="_blank"
+							rel="noopener"
+							href={link.url}
+						>
+							<AdjustText text={link.name} />
+						</a>
+					</li>
+				))
+			}
+		</ul>
 	</BaseLayout>
 </>
 
@@ -37,5 +56,17 @@ import {
 
 	.post:not(:first-child) {
 		margin-top: 24px;
+	}
+
+	.links {
+		margin: 0 -12px 0 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+
+		.link {
+			margin-right: 12px;
+		}
 	}
 </style>
