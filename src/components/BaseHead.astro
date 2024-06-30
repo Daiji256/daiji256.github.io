@@ -25,8 +25,17 @@ const { title, description } = Astro.props;
 			name="google-site-verification"
 			content="EAcA3M8_3NOgHSSJ0JpIuz4fM8rxuReksj6YWIvMXdo"
 		/>
-		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-M6M115YLYV"></script>
-		<script is:inline>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-M6M115YLYV');</script>
+		<script
+			type="text/partytown"
+			src="https://www.googletagmanager.com/gtag/js?id=G-M6M115YLYV"></script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "G-M6M115YLYV");
+		</script>
 	)
 }
 

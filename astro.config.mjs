@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import partytown from "@astrojs/partytown";
 import mdx from "@astrojs/mdx";
 import remarkMath from "remark-math";
 import rehypeMathML from "rehype-mathml";
@@ -11,7 +12,15 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
 	site: "https://daiji256.github.io",
-	integrations: [mdx(), sitemap()],
+	integrations: [
+		mdx(),
+		sitemap(),
+		partytown({
+			config: {
+				forward: ["dataLayer.push"],
+			},
+		}),
+	],
 	markdown: {
 		syntaxHighlight: "shiki",
 		shikiConfig: { theme: "github-light" },
