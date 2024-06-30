@@ -1,33 +1,42 @@
 @font-face {
-	font-family: "f-sans";
-	src: url(/fonts/f-sans/f-sans-r.woff2) format('woff2'),
-		url(/fonts/f-sans/f-sans-r.woff) format('woff'),
-		url(/fonts/f-sans/f-sans-r.otf) format('opentype');
+	font-family: "n-sans";
+	src: url(/fonts/n-sans/n-sans-regular.woff2) format("woff2"),
+		url(/fonts/n-sans/n-sans-regular.woff) format("woff"),
+		url(/fonts/n-sans/n-sans-regular.otf) format("opentype");
 	font-weight: 400;
 	font-display: fallback;
 }
 
 @font-face {
-	font-family: "f-sans";
-	src: url(/fonts/f-sans/f-sans-m.woff2) format('woff2'),
-		url(/fonts/f-sans/f-sans-m.woff) format('woff'),
-		url(/fonts/f-sans/f-sans-m.otf) format('opentype');
+	font-family: "n-sans";
+	src: url(/fonts/n-sans/n-sans-medium.woff2) format("woff2"),
+		url(/fonts/n-sans/n-sans-medium.woff) format("woff"),
+		url(/fonts/n-sans/n-sans-medium.otf) format("opentype");
 	font-weight: 500;
 	font-display: fallback;
 }
 
 @font-face {
-	font-family: "f-mono";
-	src: url(/fonts/f-mono/f-mono-r.woff2) format('woff2'),
-		url(/fonts/f-mono/f-mono-r.woff) format('woff'),
-		url(/fonts/f-mono/f-mono-r.ttf) format('truetype');
+	font-family: "n-sans";
+	src: url(/fonts/n-sans/n-sans-bold.woff2) format("woff2"),
+		url(/fonts/n-sans/n-sans-bold.woff) format("woff"),
+		url(/fonts/n-sans/n-sans-bold.otf) format("opentype");
+	font-weight: 700;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "n-mono";
+	src: url(/fonts/n-mono/n-mono-regular.woff2) format("woff2"),
+		url(/fonts/n-mono/n-mono-regular.woff) format("woff"),
+		url(/fonts/n-mono/n-mono-regular.ttf) format("opentype");
 	font-weight: 400;
 	font-display: fallback;
 }
 
 @font-face {
-	font-family: "Fira Math";
-	src: url(/fonts/FiraMath/FiraMath-Regular.otf) format('opentype');
+	font-family: "Noto Sans Math";
+	src: url(/fonts/noto-sans-math/noto-sans-math-regular.otf) format("opentype");
 	font-weight: 400;
 	font-display: fallback;
 }
