@@ -6,12 +6,12 @@ import rehypeMathML from "rehype-mathml";
 import rehypeQuotes from "rehype-quotes";
 import rehypeAdjustAki from "rehype-adjust-aki";
 import rehypeExternalLinks from "rehype-external-links";
-import { FOOTNOTE_LABEL } from "./src/consts";
+import { FOOTNOTE_LABEL, SITE_URL } from "./src/consts";
 
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-	site: "https://daiji256.github.io",
+	site: SITE_URL,
 	integrations: [
 		mdx(),
 		sitemap(),
