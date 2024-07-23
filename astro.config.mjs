@@ -7,6 +7,7 @@ import rehypeQuotes from "rehype-quotes";
 import rehypeAdjustAki from "rehype-adjust-aki";
 import rehypeExternalLinks from "rehype-external-links";
 import { FOOTNOTE_LABEL, SITE_URL } from "./src/consts";
+import { redirects } from "./src/redirects";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -16,25 +17,8 @@ export default defineConfig({
 		mdx(),
 		sitemap({
 			filter: (page) =>
-				[
-					"categories/",
-					"tags/まとめ/",
-					"tags/就職活動/",
-					"tags/アルバイト/",
-					"tags/コメント欄/",
-					"tags/ネタ/",
-					"tags/翻訳/",
-					"tags/高専/",
-					"posts/tex-latex/",
-					"posts/c/",
-					"posts/diary/",
-					"posts/paper/",
-					"posts/blog/",
-					"posts/hugo/",
-					"posts/cdn/",
-					"posts/image-processing/",
-				].every((path) =>
-					!page.includes(encodeURI(`https://daiji256.github.io/${path}`))
+				redirects.every((r) =>
+					!page.includes(encodeURI(`https://daiji256.github.io/${r.from}`))
 				)
 		}),
 		partytown({
