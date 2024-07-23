@@ -4,7 +4,7 @@ import { redirects } from "../../src/redirects";
 
 const robots = `
 User-agent: *
-${redirects.map((r) => `Disallow: /${encodeURI(r.from)}/`).join('\n')}
+${redirects.map((r) => `Disallow: /${encodeURI(r.from)}/`).join("\n")}
 Sitemap: ${new URL("sitemap-index.xml", SITE_URL).href}
 `.trim();
 
