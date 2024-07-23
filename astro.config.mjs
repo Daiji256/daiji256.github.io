@@ -14,7 +14,29 @@ export default defineConfig({
 	site: SITE_URL,
 	integrations: [
 		mdx(),
-		sitemap(),
+		sitemap({
+			filter: (page) =>
+				[
+					"categories/",
+					"tags/まとめ/",
+					"tags/就職活動/",
+					"tags/アルバイト/",
+					"tags/コメント欄/",
+					"tags/ネタ/",
+					"tags/翻訳/",
+					"tags/高専/",
+					"posts/tex-latex/",
+					"posts/c/",
+					"posts/diary/",
+					"posts/paper/",
+					"posts/blog/",
+					"posts/hugo/",
+					"posts/cdn/",
+					"posts/image-processing/",
+				].every((path) =>
+					!page.includes(encodeURI(`https://daiji256.github.io/${path}`))
+				)
+		}),
 		partytown({
 			config: {
 				forward: ["dataLayer.push"],
