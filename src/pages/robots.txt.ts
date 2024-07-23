@@ -1,9 +1,10 @@
 import type { APIRoute } from "astro";
 import { SITE_URL } from "../../src/consts";
+import { redirects } from "../../src/redirects";
 
 const robots = `
 User-agent: *
-Allow: /
+${redirects.map((r) => `Disallow: /${encodeURI(r.from)}/`).join('\n')}
 Sitemap: ${new URL("sitemap-index.xml", SITE_URL).href}
 `.trim();
 
