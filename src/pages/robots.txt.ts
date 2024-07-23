@@ -5,7 +5,7 @@ import { redirects } from "../../src/redirects";
 const robots = `
 User-agent: *
 ${redirects.map((r) => `Disallow: /${encodeURI(r.from)}/`).join("\n")}
-Sitemap: ${new URL("sitemap-0.xml", SITE_URL).href}
+Sitemap: ${new URL("sitemap-index.xml", SITE_URL).href}
 `.trim();
 
 export const GET: APIRoute = () =>
