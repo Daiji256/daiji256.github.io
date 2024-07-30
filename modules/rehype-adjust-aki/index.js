@@ -186,7 +186,20 @@ export default function rehypeAdjustAki() {
   const expandAttributes = (node) => {
     if (!node.children) return [node];
 
-    const ignoreTags = ["sup", "sub"];
+    const ignoreTags = [
+      "p",
+      "sup",
+      "sub",
+      "ul",
+      "ol",
+      "li",
+      "table",
+      "thead",
+      "tbody",
+      "tr",
+      "th",
+      "td",
+    ];
     if (ignoreTags.includes(node.tagName)) {
       node.children = node.children.flatMap((child) => {
         return expandAttributes(child);
