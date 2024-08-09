@@ -3,6 +3,7 @@ export const SITE_DESCRIPTION = "2022からAndroidアプリエンジニアをし
 export const TITLE_SEPARATOR = " | ";
 export const BREADCRUMBS_ARIA_LABEL = "パンくずリスト";
 export const GO_BACK = "戻る";
+export const TAG_PREFIX = "#";
 export const HOME_TITLE = "ホーム";
 export const POSTS_TITLE = "投稿";
 export const TAGS_TITLE = "タグ";

@@ -3,7 +3,11 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import AdjustText from "../../components/AdjustText.astro";
-import { PUBLISHED_DATE_LABEL, UPDATED_DATE_LABEL } from "../../consts";
+import {
+	TAG_PREFIX,
+	PUBLISHED_DATE_LABEL,
+	UPDATED_DATE_LABEL,
+} from "../../consts";
 
 type Props = CollectionEntry<"posts">;
 
@@ -44,7 +48,7 @@ const { Content } = await post.render();
 					post.data.tags &&
 						post.data.tags.map((tag) => (
 							<a class="tag" href={`/tags/${tag.id}`}>
-								<AdjustText text={tag.name} />
+								<AdjustText text={`${TAG_PREFIX}${tag.name}`} />
 							</a>
 						))
 				}
@@ -78,7 +82,23 @@ const { Content } = await post.render();
 		.tag {
 			display: inline-block;
 			margin-right: 8px;
-			color: $color-primary;
+			color: $color-on-background-variant;
+
+			@media (hover: hover) {
+				&:hover {
+					color: $color-link-hover;
+					text-decoration: none;
+					outline: 1px dashed $color-link-hover;
+					border-radius: 2px;
+				}
+			}
+
+			&:active {
+				color: $color-link-active;
+				text-decoration: none;
+				outline: 1px solid $color-link-active;
+				border-radius: 2px;
+			}
 		}
 	}
 </style>
