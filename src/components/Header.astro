@@ -58,12 +58,16 @@ import { SITE_TITLE, POSTS_TITLE, TAGS_TITLE } from "../consts";
 
 				@media (hover: hover) {
 					&:hover {
-						color: $color-primary;
+						color: $color-link-hover;
+						outline: 1px dashed $color-link-hover;
+						border-radius: 2px;
 					}
 				}
 
 				&:active {
-					color: $color-primary;
+					color: $color-link-active;
+					outline: 1px solid $color-link-active;
+					border-radius: 2px;
 				}
 			}
 
