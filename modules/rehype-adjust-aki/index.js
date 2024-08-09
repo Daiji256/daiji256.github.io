@@ -187,7 +187,6 @@ export default function rehypeAdjustAki() {
     if (!node.children) return [node];
 
     const ignoreTags = [
-      "p",
       "sup",
       "sub",
       "ul",
