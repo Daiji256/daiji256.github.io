@@ -42,28 +42,56 @@ hr {
 }
 
 a {
-	color: $color-primary;
+	color: $color-link-rest;
 	text-decoration: none;
+
+	&:visited {
+		color: $color-link-visited;
+	}
 
 	@media (hover: hover) {
 		&:hover {
+			color: $color-link-hover;
 			text-decoration: underline;
 		}
 	}
 
 	&:active {
+		color: $color-link-active;
 		text-decoration: underline;
 	}
 }
 
-.external-link::after {
-	content: "";
-	display: inline-block;
-	margin: 0 1px;
-	width: 8px;
-	height: 16px;
-	background-color: $color-primary;
-	mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M3 1H1v6h6V5M7 4V1H4M7 1 3.5 4.5'/></svg>") no-repeat;
+.external-link {
+	&::after {
+		content: "";
+		display: inline-block;
+		margin: 0 1px;
+		width: 8px;
+		height: 16px;
+		background-color: $color-link-rest;
+		mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M3 1H1v6h6V5M7 4V1H4M7 1 3.5 4.5'/></svg>") no-repeat;
+	}
+
+	&:visited {
+		&::after {
+			background-color: $color-link-visited;
+		}
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			&::after {
+				background-color: $color-link-hover;
+			}
+		}
+	}
+
+	&:active {
+		&::after {
+			background-color: $color-link-active;
+		}
+	}
 }
 
 main {
@@ -116,6 +144,24 @@ main {
 
 	strong {
 		font-weight: 700;
+	}
+
+	sup {
+		a {
+			@media (hover: hover) {
+				&:hover {
+					text-decoration: none;
+					outline: 1px dashed $color-link-hover;
+					border-radius: 2px;
+				}
+			}
+
+			&:active {
+				text-decoration: none;
+				outline: 1px solid $color-link-active;
+				border-radius: 2px;
+			}
+		}
 	}
 
 	h1,
@@ -191,5 +237,21 @@ main {
 
 	math {
 		font-family: $font-family-math;
+	}
+
+	.data-footnote-backref {
+		@media (hover: hover) {
+			&:hover {
+				text-decoration: none;
+				outline: 1px dashed $color-link-hover;
+				border-radius: 2px;
+			}
+		}
+
+		&:active {
+			text-decoration: none;
+			outline: 1px solid $color-link-active;
+			border-radius: 2px;
+		}
 	}
 }
