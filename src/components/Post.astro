@@ -87,20 +87,22 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 			margin-right: 8px;
 			color: $color-on-background-variant;
 
-			@media (hover: hover) {
-				&:hover {
-					color: $color-link-hover;
+			a {
+				@media (hover: hover) {
+					&:hover {
+						color: $color-link-hover;
+						text-decoration: none;
+						outline: 1px dashed $color-link-hover;
+						border-radius: 2px;
+					}
+				}
+
+				&:active {
+					color: $color-link-active;
 					text-decoration: none;
-					outline: 1px dashed $color-link-hover;
+					outline: 1px solid $color-link-active;
 					border-radius: 2px;
 				}
-			}
-
-			&:active {
-				color: $color-link-active;
-				text-decoration: none;
-				outline: 1px solid $color-link-active;
-				border-radius: 2px;
 			}
 		}
 	}
