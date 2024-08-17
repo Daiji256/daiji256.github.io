@@ -41,22 +41,21 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 	<div class="description">
 		<AdjustText text={post.description} />
 	</div>
-	<div class="supplement">
-		<div class="date">
+	<ul class="supplement">
+		<li class="date">
 			<FormattedDate date={post.publishedDate} />
-		</div>
+		</li>
 		{
-			post.tags !== undefined && post.tags.length > 0 && (
-				<div class="tags">
-					{post.tags.map((tag) => (
-						<a class="tag" href={`/tags/${tag.id}`}>
+			post.tags &&
+				post.tags.map((tag) => (
+					<li class="tag">
+						<a href={`/tags/${tag.id}`}>
 							<AdjustText text={`${TAG_PREFIX}${tag.name}`} />
 						</a>
-					))}
-				</div>
-			)
+					</li>
+				))
 		}
-	</div>
+	</ul>
 </>
 
 <style lang="scss">
@@ -71,7 +70,11 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 	}
 
 	.supplement {
+		margin: 0 -8px 0 0;
+		padding: 0;
+		list-style: none;
 		display: flex;
+		flex-wrap: wrap;
 
 		.date {
 			font: $font-label-medium;
@@ -79,28 +82,25 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 			color: $color-on-background-variant;
 		}
 
-		.tags {
+		.tag {
 			font: $font-label-medium;
+			margin-right: 8px;
+			color: $color-on-background-variant;
 
-			.tag {
-				margin-right: 8px;
-				color: $color-on-background-variant;
-
-				@media (hover: hover) {
-					&:hover {
-						color: $color-link-hover;
-						text-decoration: none;
-						outline: 1px dashed $color-link-hover;
-						border-radius: 2px;
-					}
-				}
-
-				&:active {
-					color: $color-link-active;
+			@media (hover: hover) {
+				&:hover {
+					color: $color-link-hover;
 					text-decoration: none;
-					outline: 1px solid $color-link-active;
+					outline: 1px dashed $color-link-hover;
 					border-radius: 2px;
 				}
+			}
+
+			&:active {
+				color: $color-link-active;
+				text-decoration: none;
+				outline: 1px solid $color-link-active;
+				border-radius: 2px;
 			}
 		}
 	}
