@@ -1,0 +1,157 @@
+---
+title: "デザインシステムにおけるカラーコンポーネントの比較"
+description: "デザインシステムにおけるカラーコンポーネントについて説明します。Material Design、Carbon Design System、Acornなど、異なるデザインシステムの色の使い方や参照方法を比較します。"
+publishedDate: 2024-08-30
+tags: [
+  {id: "design-system", name: "デザインシステム"},
+  {id: "color-component", name: "カラーコンポーネント"},
+  {id: "color", name: "色"},
+]
+---
+import JwAki from "../../../components/JwAki.astro";
+import Color from "../../../components/Color.astro";
+import { Image } from "astro:assets";
+import colorReferencePatterns from "./images/color-reference-patterns.webp";
+
+## はじめに
+
+デザインシステム[^design-system]における色について説明します。色はデザインシステムのほんの1要素にすぎませんが、コンポーネントやガイドラインなど広範囲に影響を与える重要な要素です。ここでは、いくつかのデザインシステムを紹介した後、色の定義・参照方法を比較しまとめます。
+
+本記事では、色の定義・参照方法に焦点を当て、デザインシステム全体や色彩学、ブランディングなどの詳細には触れません。また、比較を容易にするためにデザインシステムの詳細については省略します。
+
+[^design-system]: デザインシステムとは、デザイン作業の効率化と一貫性を確保するために、コンポーネント、パターン、スタイル、ガイドラインなどで構成される体系的なツールです。これにより、デザインの統一性が保たれ、再利用性が向上します。
+
+## デザインシステムの紹介
+
+### [Material Design](https://m3.material.io/)
+
+Material DesignはGoogleが開発したデザインシステムで、汎用的でアクセシビリティに配慮した特徴があります。Googleが開発することもあり、とくにAndroidでよく採用されています。
+
+Material Designではキーとなる色からカラーパレットを作成し、Surface、On Surface、Primaryなどのロールを定義します。これらのロールはUIのどのマテリアル・オブジェクトで利用するかを意識して定義されています。
+
+| ロール     | パレット   | 値                        |
+| ---------- | ---------- | ------------------------- |
+| primary    | primary40  | <Color value="#6750A4" /> |
+| on-primary | primary100 | <Color value="#FFFFFF" /> |
+| surface    | neutral98  | <Color value="#FEF7FF" /> |
+| on-surface | neutral10  | <Color value="#1D1B20" /> |
+
+### [Carbon Design System](https://carbondesignsystem.com/)
+
+Carbon Design SystemはIBM Design Languageを実装したシステムです。Web向けのライブラリの提供が豊富です。
+
+Carbon Design Systemではカラーパレットを作成し、ui-background、active-primary、text-01のようなロールを定義します。これらのロールは、どのUIコンポーネントに利用するかを意識して定義されています。
+
+| ロール         | パレット      | 値                        |
+| -------------- | ------------- | ------------------------- |
+| ui-background  | White         | <Color value="#FFFFFF" /> |
+| active-primary | Blue 80       | <Color value="#002D9C" /> |
+| hover-primary  | Blue 60 hover | <Color value="#0353E9" /> |
+| text-01        | Gray 100      | <Color value="#161616" /> |
+
+### [Acorn](https://acorn.firefox.com/)
+
+AcornはFirefoxというブラウザで利用されるデザインシステムです。
+
+Acornでは "コンポーネントトークン → … → カラートークン → 値" といったコンポーネントトークンがコンポーネントトークンを参照する構造で定義されています。これにより、少ない労力でコンポーネントトークンを増やすことが可能です。
+
+- background-color-box → color-white → <Color value="#FFFFFF" />
+- button-background-color-primary → color-accent-primary → color-blue-50 → <Color value="#0060DF" />
+- button-background-color-primary-hover → color-accent-primary-hover → color-blue-60 → <Color value="#0250BB" />
+- button-text-color → color-gray-100 → <Color value="#15141A" />
+- button-text-color-hover → button-text-color → color-gray-100 → <Color value="#15141A" />
+
+### [デジタル庁デザインシステムβ版](https://design.digital.go.jp/)
+
+デジタル庁デザインシステムは、デジタル庁をはじめとした官公庁や地方自治体などの行政機関での利用を想定した構築されたデザインシステムです。サービスの使い勝手や情報の探しやすさ、アクセシビリティ等の向上に力を入れています。
+
+パレットを定義し、UIコンポーネントからパレットを参照します。ごく一部だけ、Success-1のようなセマンティックを定義し、それをUIコンポーネントから参照します。
+
+| セマンティック | パレット  | 値                        |
+| -------------- | --------- | ------------------------- |
+|                | White     | <Color value="#FFFFFF" /> |
+|                | Blue-600  | <Color value="#3460FB" /> |
+| Success-1      | Green-600 | <Color value="#259D63" /> |
+| Error-1        | Red-800   | <Color value="#EC0000" /> |
+
+### [SmartHR Design System](https://smarthr.design/)
+
+SmartHR Design SystemはSmartHRという労務ソフトで利用されるデザインシステムです。
+
+頻繁に利用する色についてはセマンティックトークンが定義され、それ以外の場合はプリミティブトークンを参照します。
+
+| セマンティックトークン | プリミティブトークン | 値                        |
+| ---------------------- | -------------------- | ------------------------- |
+| MAIN                   | BLUE_100             | <Color value="#0077C7" /> |
+| DANGER                 | RED_100              | <Color value="#E01E5A" /> |
+| TEXT_BLACK             | GREY_100             | <Color value="#23221E" /> |
+|                        | GREY_5               | <Color value="#F8F7F6" /> |
+|                        | GREY_6               | <Color value="#F5F4F3" /> |
+
+### [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+
+Human Interface GuidelinesはAppleが定めたデザインガイドラインです。iOSなどのApple製品で利用されるため、GoogleのMaterial Designと比較されることが多いです。
+
+アプリ内でシステムカラー値をハードコーディングすることは避け、動的システムカラーを意図通りに使用することが推奨しています。これにより、プラットフォームの外観が変わった際にも一貫した体験を提供します。
+
+### [Spindle](https://spindle.ameba.design/)
+
+SpindleはAmebaのためのデザインシステムで、Ameba関連のサービスで末永く効率よく運用されることを目指しています。
+
+Surface Primary -- On Surface Accent Primaryのようにコントラスト比を意識した色の組み合わせや、Cautionなどの部分的に利用する色を定義しています。
+
+| UIカラー                  | プリミティブカラー | 値                        |
+| ------------------------- | ------------------ | ------------------------- |
+| Surface Primary           | White 100          | <Color value="#FFFFFF" /> |
+| On Surface High Emphasis  | Gray 100           | <Color value="#08121A" /> |
+| On Surface Accent Primary | Primary Green 80   | <Color value="#237B31" /> |
+| Caution                   | Caution Red 100    | <Color value="#D91C0B" /> |
+
+## 定義方法の比較・まとめ
+
+デザインシステムはUIのあるアプリケーションと共に発展してきました。そのため、20年程度の歴史しかなく、日々開拓されています。紹介したデザインシステムからも察せられるように、多種多様な概念があり、色の定義方法も異なります。何か1つがベストというわけではなく、デザインの対象や思想などにより最終的な形が異なるのです。
+
+紹介したデザインシステムは共通して、UIコンポーネントが直接色を指定・参照するわけではなく、色を参照するための何かを参照しています。これは、サービス全体で色を統一するためにはカラーコンポーネントが必要だからです。
+
+デジタル庁デザインシステムのようにパレット（プリミティブ）を参照するタイプと、Material Designのようにロール（セマンティック、UIカラー）を参照するタイプがありました。ロールは、Carbon Design SystemのようにどのUIコンポーネントに使うかを定義するタイプと、Material DesignのようにUIのどのマテリアル・オブジェクトに使うかを定義するタイプがありました。
+
+### タイプの分類
+
+便宜上、以下のように分類します。
+
+- パレットタイプ：  
+  UIからBlue 10のようなパレットを参照する  
+  デジタル庁デザインシステムβ版、SmartHR Design Systemなど
+- 弱いロールタイプ：  
+  UIからPrimary Containerのようなロールを参照する  
+  Material Design、Spindleなど
+- 強いロールタイプ：  
+  UIからButton Backgroundのようなロールを参照する  
+  Carbon Design System、Acornなど
+
+<Image src={colorReferencePatterns} alt="TODO" width={colorReferencePatterns.width / 4} densities={[2, 3, 4]} />
+
+### 各タイプの特徴
+
+- パレットタイプ:  
+  UIコンポーネントの追加・変更時にカラーコンポーネントを変更する必要がないため、UIコンポーネントが自由に色を選択できます。しかし、コントラスト比の担保やUIコンポーネントの色の変更が困難です。
+- 弱いロールタイプ:  
+  コントラスト比の担保や役割を明確に分けることができ、カラーコンポーネントの追加が少ないです。しかし、UIコンポーネントが利用できる色の自由度が少なく、ロールの定義を慎重に行う必要があります。
+- 強いロールタイプ:  
+  UIコンポーネントが何を参照すればよいか明確です。しかし、UIコンポーネントを追加・変更するたびにカラーコンポーネントに変更を加える可能性が高く、項目数が増えてしまいます。
+
+## 感想
+
+多様なデザインシステムを調査した結果、弱いロール > パレット > 強いロールの順で多い印象を受けました。カラーコンポーネントにある程度の役割を持たせつつ、メンテナンスコストを考慮すると、この順が妥当と感じました。
+
+色とは何か、印刷などディスプレイ以外の対応、色空間、ブランディングなど、色には考えるべきことが無数にあります。色の管理・参照方法だけでこれだけ奥が深いことを実感しました。
+
+## 文献
+
+1. [Material Design](https://m3.material.io/)
+2. [Carbon Design System](https://carbondesignsystem.com/)
+3. [Acorn](https://acorn.firefox.com/)
+4. [デジタル庁デザインシステムβ版](https://design.digital.go.jp/)
+5. [SmartHR Design System](https://smarthr.design/)
+6. [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
+7. [Spindle](https://spindle.ameba.design/)
