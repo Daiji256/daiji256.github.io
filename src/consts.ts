@@ -15,7 +15,7 @@ export const UPDATED_DATE_LABEL = "更新: ";
 export const FOOTNOTE_LABEL = "脚注";
 export const PAGE_SIZE = 10;
 export const PICKUP_TITLE = "ピックアップ";
-export const PICKUP_POSTS = ["latex-susume", "lualatex-susume"];
+export const PICKUP_POSTS = ["latex-susume", "lualatex-susume", "design-system-colors"];
 export const LINKS_TITLE = "リンク";
 export const LINKS = [
   { name: "GitHub", url: "https://github.com/Daiji256" },
