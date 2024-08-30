@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, SITE_URL } from "../consts";
 import "../styles/global.scss";
 
 interface Props {
@@ -51,8 +51,8 @@ const { title, description } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content="/images/og-image.png" />
+<meta property="og:image" content={`${SITE_URL}images/og-image.png`} />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@Daiji256" />
-<meta name="twitter:image" content="/images/twitter-image.png" />
+<meta name="twitter:image" content={`${SITE_URL}images/twitter-image.png`} />
