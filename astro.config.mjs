@@ -52,7 +52,8 @@ export default defineConfig({
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: '@use "src/styles/colors.scss"; @use "src/styles/typography.scss"; @use "src/styles/dimensions.scss";',
+					api: "modern-compiler",
+					additionalData: '@use "/src/styles/colors.scss"; @use "/src/styles/typography.scss"; @use "/src/styles/dimensions.scss";',
 				},
 			},
 		},
