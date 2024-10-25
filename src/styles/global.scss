@@ -5,7 +5,7 @@ html {
 }
 
 body {
-	font-family: $font-family-sans;
+	font-family: typography.$font-family-sans;
 	margin: 0;
 	padding: 0;
 	-webkit-text-size-adjust: 100%;
@@ -95,23 +95,23 @@ a {
 }
 
 main {
-	font: $font-body-medium;
+	font: typography.$font-body-medium;
 	margin: 0 auto;
 	width: calc(min(100%, $screen-wrapper-max) - 32px);
 
 	h1 {
-		font: $font-headline-large;
+		font: typography.$font-headline-large;
 	}
 
 	h2 {
-		font: $font-headline-medium;
+		font: typography.$font-headline-medium;
 	}
 
 	h3,
 	h4,
 	h5,
 	h6 {
-		font: $font-headline-small;
+		font: typography.$font-headline-small;
 	}
 
 	h1,
@@ -216,7 +216,7 @@ main {
 	}
 
 	code {
-		font-family: $font-family-mono;
+		font-family: typography.$font-family-mono;
 	}
 
 	pre {
@@ -236,7 +236,7 @@ main {
 	}
 
 	math {
-		font-family: $font-family-math;
+		font-family: typography.$font-family-math;
 	}
 
 	.data-footnote-backref {

@@ -60,11 +60,11 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 
 <style lang="scss">
 	.title {
-		font: $font-title-large;
+		font: typography.$font-title-large;
 	}
 
 	.description {
-		font: $font-body-small;
+		font: typography.$font-body-small;
 		color: colors.$color-on-background-variant;
 		margin-top: 4px;
 	}
@@ -77,13 +77,13 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 		flex-wrap: wrap;
 
 		.date {
-			font: $font-label-medium;
+			font: typography.$font-label-medium;
 			margin-right: 12px;
 			color: colors.$color-on-background-variant;
 		}
 
 		.tag {
-			font: $font-label-medium;
+			font: typography.$font-label-medium;
 			margin-right: 8px;
 			color: colors.$color-on-background-variant;
 
