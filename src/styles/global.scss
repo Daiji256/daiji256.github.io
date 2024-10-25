@@ -10,8 +10,8 @@ body {
 	padding: 0;
 	-webkit-text-size-adjust: 100%;
 	line-break: strict;
-	color: $color-on-background;
-	background-color: $color-background;
+	color: colors.$color-on-background;
+	background-color: colors.$color-background;
 	min-height: 100dvh;
 }
 
@@ -38,26 +38,26 @@ hr {
 	width: calc(min(100%, $screen-wrapper-max) - 32px);
 	margin: 0 auto;
 	border: none;
-	border-bottom: 1px solid $color-outline;
+	border-bottom: 1px solid colors.$color-outline;
 }
 
 a {
-	color: $color-link-rest;
+	color: colors.$color-link-rest;
 	text-decoration: none;
 
 	&:visited {
-		color: $color-link-visited;
+		color: colors.$color-link-visited;
 	}
 
 	@media (hover: hover) {
 		&:hover {
-			color: $color-link-hover;
+			color: colors.$color-link-hover;
 			text-decoration: underline;
 		}
 	}
 
 	&:active {
-		color: $color-link-active;
+		color: colors.$color-link-active;
 		text-decoration: underline;
 	}
 }
@@ -69,27 +69,27 @@ a {
 		margin: 0 1px;
 		width: 8px;
 		height: 16px;
-		background-color: $color-link-rest;
+		background-color: colors.$color-link-rest;
 		mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M3 1H1v6h6V5M7 4V1H4M7 1 3.5 4.5'/></svg>") no-repeat;
 	}
 
 	&:visited {
 		&::after {
-			background-color: $color-link-visited;
+			background-color: colors.$color-link-visited;
 		}
 	}
 
 	@media (hover: hover) {
 		&:hover {
 			&::after {
-				background-color: $color-link-hover;
+				background-color: colors.$color-link-hover;
 			}
 		}
 	}
 
 	&:active {
 		&::after {
-			background-color: $color-link-active;
+			background-color: colors.$color-link-active;
 		}
 	}
 }
@@ -151,14 +151,14 @@ main {
 			@media (hover: hover) {
 				&:hover {
 					text-decoration: none;
-					outline: 1px dashed $color-link-hover;
+					outline: 1px dashed colors.$color-link-hover;
 					border-radius: 2px;
 				}
 			}
 
 			&:active {
 				text-decoration: none;
-				outline: 1px solid $color-link-active;
+				outline: 1px solid colors.$color-link-active;
 				border-radius: 2px;
 			}
 		}
@@ -196,12 +196,12 @@ main {
 		}
 
 		tr:first-child th {
-			border-top: 2px solid $color-outline;
-			border-bottom: 1px solid $color-outline;
+			border-top: 2px solid colors.$color-outline;
+			border-bottom: 1px solid colors.$color-outline;
 		}
 
 		tr:last-child td {
-			border-bottom: 2px solid $color-outline;
+			border-bottom: 2px solid colors.$color-outline;
 		}
 	}
 
@@ -212,7 +212,7 @@ main {
 	blockquote {
 		margin: 0;
 		padding: 0 0 0 12px;
-		border-left: 2px solid $color-outline;
+		border-left: 2px solid colors.$color-outline;
 	}
 
 	code {
@@ -220,7 +220,7 @@ main {
 	}
 
 	pre {
-		outline: 1px solid $color-outline;
+		outline: 1px solid colors.$color-outline;
 		border-radius: 2px;
 
 		code {
@@ -231,8 +231,8 @@ main {
 	}
 
 	mark {
-		background-color: $color-primary-container;
-		color: $color-on-primary-container;
+		background-color: colors.$color-primary-container;
+		color: colors.$color-on-primary-container;
 	}
 
 	math {
@@ -243,14 +243,14 @@ main {
 		@media (hover: hover) {
 			&:hover {
 				text-decoration: none;
-				outline: 1px dashed $color-link-hover;
+				outline: 1px dashed colors.$color-link-hover;
 				border-radius: 2px;
 			}
 		}
 
 		&:active {
 			text-decoration: none;
-			outline: 1px solid $color-link-active;
+			outline: 1px solid colors.$color-link-active;
 			border-radius: 2px;
 		}
 	}

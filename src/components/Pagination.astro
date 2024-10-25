@@ -42,24 +42,24 @@ const { current, pageLength, baseUrl } = Astro.props;
 		}
 
 		.selected {
-			color: $color-on-background-variant;
+			color: colors.$color-on-background-variant;
 			text-decoration: underline;
 		}
 
 		.unselected {
-			color: $color-link-rest;
+			color: colors.$color-link-rest;
 
 			@media (hover: hover) {
 				&:hover {
 					text-decoration: none;
-					outline: 1px dashed $color-link-hover;
+					outline: 1px dashed colors.$color-link-hover;
 					border-radius: 2px;
 				}
 			}
 
 			&:active {
 				text-decoration: none;
-				outline: 1px solid $color-link-active;
+				outline: 1px solid colors.$color-link-active;
 				border-radius: 2px;
 			}
 		}

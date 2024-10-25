@@ -65,7 +65,7 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 
 	.description {
 		font: $font-body-small;
-		color: $color-on-background-variant;
+		color: colors.$color-on-background-variant;
 		margin-top: 4px;
 	}
 
@@ -79,28 +79,28 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 		.date {
 			font: $font-label-medium;
 			margin-right: 12px;
-			color: $color-on-background-variant;
+			color: colors.$color-on-background-variant;
 		}
 
 		.tag {
 			font: $font-label-medium;
 			margin-right: 8px;
-			color: $color-on-background-variant;
+			color: colors.$color-on-background-variant;
 
 			a {
 				@media (hover: hover) {
 					&:hover {
-						color: $color-link-hover;
+						color: colors.$color-link-hover;
 						text-decoration: none;
-						outline: 1px dashed $color-link-hover;
+						outline: 1px dashed colors.$color-link-hover;
 						border-radius: 2px;
 					}
 				}
 
 				&:active {
-					color: $color-link-active;
+					color: colors.$color-link-active;
 					text-decoration: none;
-					outline: 1px solid $color-link-active;
+					outline: 1px solid colors.$color-link-active;
 					border-radius: 2px;
 				}
 			}

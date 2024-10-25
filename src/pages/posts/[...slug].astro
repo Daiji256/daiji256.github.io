@@ -66,7 +66,7 @@ const { Content } = await post.render();
 
 	.date {
 		font: $font-label-medium;
-		color: $color-on-background-variant;
+		color: colors.$color-on-background-variant;
 		display: flex;
 		margin-top: 4px;
 
@@ -82,21 +82,21 @@ const { Content } = await post.render();
 		.tag {
 			display: inline-block;
 			margin-right: 8px;
-			color: $color-on-background-variant;
+			color: colors.$color-on-background-variant;
 
 			@media (hover: hover) {
 				&:hover {
-					color: $color-link-hover;
+					color: colors.$color-link-hover;
 					text-decoration: none;
-					outline: 1px dashed $color-link-hover;
+					outline: 1px dashed colors.$color-link-hover;
 					border-radius: 2px;
 				}
 			}
 
 			&:active {
-				color: $color-link-active;
+				color: colors.$color-link-active;
 				text-decoration: none;
-				outline: 1px solid $color-link-active;
+				outline: 1px solid colors.$color-link-active;
 				border-radius: 2px;
 			}
 		}
