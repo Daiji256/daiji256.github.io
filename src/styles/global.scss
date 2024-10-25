@@ -35,7 +35,7 @@ ul {
 }
 
 hr {
-	width: calc(min(100%, $screen-wrapper-max) - 32px);
+	width: calc(min(100%, dimensions.$screen-wrapper-max) - 32px);
 	margin: 0 auto;
 	border: none;
 	border-bottom: 1px solid colors.$color-outline;
@@ -97,7 +97,7 @@ a {
 main {
 	font: typography.$font-body-medium;
 	margin: 0 auto;
-	width: calc(min(100%, $screen-wrapper-max) - 32px);
+	width: calc(min(100%, dimensions.$screen-wrapper-max) - 32px);
 
 	h1 {
 		font: typography.$font-headline-large;
