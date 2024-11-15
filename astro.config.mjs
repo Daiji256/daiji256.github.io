@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import partytown from "@astrojs/partytown";
 import mdx from "@astrojs/mdx";
 import remarkMath from "remark-math";
-import rehypeMathML from "rehype-mathml";
+import rehypeMathML from "@daiji256/rehype-mathml";
 import rehypeQuotes from "rehype-quotes";
 import rehypeAdjustAki from "rehype-adjust-aki";
 import rehypeExternalLinks from "rehype-external-links";
