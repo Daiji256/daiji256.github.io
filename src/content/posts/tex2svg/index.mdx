@@ -2,12 +2,12 @@
 title: "超高速な数式表示（KaTeXより高速！）"
 description: "Webサイトで数式を表示したいというニーズはたくさんあります。数式表示のために、通信量が増えたり、表示が遅くなったりするのはストレスです。そのストレスをできるだけ軽減するために、数式をインラインSVGで簡単に表示する方法を紹介します。"
 publishedDate: 2021-11-12
-updatedDate: 2024-06-29
+updatedDate: 2024-11-15
 tags: [
   {id: "hugo", name: "Hugo"},
   {id: "mathjax", name: "MathJax"},
   {id: "katex", name: "KaTeX"},
-  {id: "tex2svg", name: "tex2svg"},
+  {id: "tex2svg", name: "`tex2svg`"},
 ]
 ---
 import JwAki from "../../../components/JwAki.astro";
@@ -43,20 +43,20 @@ import JwAki from "../../../components/JwAki.astro";
 
 ## いざ作成
 
-アイデアは[tex2svg](https://github.com/atishay/tex2svg/)と同じです。**個人的に**使いやすくするようにカスタマイズします。
+アイデアは[`tex2svg`](https://github.com/atishay/tex2svg/)と同じです。**個人的に**使いやすくするようにカスタマイズします。
 
 ### LaTeXからSVGに変換
 
 LaTeXをSVGに変換するツールは色々あります。しかし、Hugoから外部コマンドは実行できないので、簡単ではなさそうです。
 
-Hugoは`getJSON`でインターネット上のJSONを取得できます。LaTeXをSVGの情報を含むJSONを返すAPIを探したところ、[tex2svg](http://tex2svg.herokuapp.com/)と[CODECOGS](https://codecogs.com/)が見つかりました。
+Hugoは`getJSON`でインターネット上のJSONを取得できます。LaTeXをSVGの情報を含むJSONを返すAPIを探したところ、[`tex2svg`](http://tex2svg.herokuapp.com/)と[CODECOGS](https://codecogs.com/)が見つかりました。
 
-- [tex2svg](http://tex2svg.herokuapp.com/)：MathJaxによって数式を生成します。HerokuでAPIが公開されていてのレスポンスは少し遅いです。
+- [`tex2svg`](http://tex2svg.herokuapp.com/)：MathJaxによって数式を生成します。HerokuでAPIが公開されていてのレスポンスは少し遅いです。
 - [CODECOGS](https://codecogs.com/)：昔からある有名な奴です。SVG以外にPNGやGMPとかも生成できます。ベースラインが無く、インラインで表示すると微妙になる。
 
-インライン表示が綺麗に見えないと嫌なので、tex2svgを利用します。
+インライン表示が綺麗に見えないと嫌なので、`tex2svg`を利用します。
 
-tex2svgは[`https://tex2svg.herokuapp.com/?`+`q=E=m^2`+`&inline=true`](https://tex2svg.herokuapp.com/?&q=E=m^2&inline=true)のように叩きます。`q=`<JwAki />に表示したい数式のLaTeXコードを書きます。`&inline=true`を書くとインライン表示になります。また、ディスプレイ表示のとき`class=tex`、インライン表示のとき`class=i-tex`にしてくれます。
+`tex2svg`は[`https://tex2svg.herokuapp.com/?`+`q=E=m^2`+`&inline=true`](https://tex2svg.herokuapp.com/?&q=E=m^2&inline=true)のように叩きます。`q=`<JwAki />に表示したい数式のLaTeXコードを書きます。`&inline=true`を書くとインライン表示になります。また、ディスプレイ表示のとき`class=tex`、インライン表示のとき`class=i-tex`にしてくれます。
 
 APIは次のようなJSONを返します。`svg`に`vertical-align`などのパラメータもすでに含まれているので、`svg`だけを利用します。
 
@@ -196,9 +196,9 @@ replace .Inner "\\bm" "\\boldsymbol"
 }
 ```
 
-### tex2svg
+### `tex2svg`
 
-MathJaxにはパッケージを追加したり、フォントを変更する機能があります。tex2svgではデフォルト状態になっています。MathJaxの設定をやりたい場合は自分でAPIを用意してください。ソースコードは[tex2svg](https://github.com/atishay/tex2svg/)を参考にすれば良いと思います。ローカルでHugoを使う場合は`localhost:3000`にAPIをたてたとしたら、`https://tex2svg.herokuapp.com/`<JwAki />を`http://localhost:3030/`<JwAki />に置きかえらば良いです。僕はGitHub Actionsで`hugo`しているので、tex2svgを直接利用しています[^myapi]。
+MathJaxにはパッケージを追加したり、フォントを変更する機能があります。`tex2svg`ではデフォルト状態になっています。MathJaxの設定をやりたい場合は自分でAPIを用意してください。ソースコードは[`tex2svg`](https://github.com/atishay/tex2svg/)を参考にすれば良いと思います。ローカルでHugoを使う場合は`localhost:3000`にAPIをたてたとしたら、`https://tex2svg.herokuapp.com/`<JwAki />を`http://localhost:3030/`<JwAki />に置きかえらば良いです。僕はGitHub Actionsで`hugo`しているので、`tex2svg`を直接利用しています[^myapi]。
 
 [^myapi]: まあ、自分でHerokuとかRepl.itとかでAPIを公開すればいいんだけどね…
 
@@ -206,6 +206,6 @@ MathJaxにはパッケージを追加したり、フォントを変更する機�
 
 1. [MathJax](https://www.mathjax.org/)
 2. [KaTeX](https://katex.org/)
-3. [tex2svg](https://github.com/atishay/tex2svg/)
+3. [`tex2svg`](https://github.com/atishay/tex2svg/)
 4. [CODECOGS](https://codecogs.com/)
 5. [超高速な数式表示（KaTeXより高速！）](https://qiita.com/Daiji256/items/47808405713dc2b33ab1)
