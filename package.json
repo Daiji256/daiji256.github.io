@@ -14,7 +14,7 @@
     "@astrojs/partytown": "^2.1.2",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
-    "@daiji256/rehype-mathml": "^1.1.0",
+    "@daiji256/rehype-mathml": "^1.1.1",
     "@rollup/wasm-node": "^4.27.2",
     "astro": "^4.16.13",
     "rehype-adjust-aki": "file:modules/rehype-adjust-aki",
