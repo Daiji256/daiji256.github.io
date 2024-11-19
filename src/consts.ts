@@ -1,5 +1,5 @@
 export const SITE_TITLE = "Daiji Blog";
-export const SITE_DESCRIPTION = "2022からAndroidアプリエンジニアをしています。少しずつAndroidの投稿を増やしていければなと思ってます。";
+export const SITE_DESCRIPTION = "高専卒のAndroidアプリエンジニアの気まぐれブログ";
 export const TITLE_SEPARATOR = " | ";
 export const BREADCRUMBS_ARIA_LABEL = "パンくずリスト";
 export const GO_BACK = "戻る";
@@ -19,6 +19,7 @@ export const PICKUP_POSTS = ["latex-susume", "lualatex-susume", "design-system-c
 export const LINKS_TITLE = "リンク";
 export const LINKS = [
   { name: "GitHub", url: "https://github.com/Daiji256" },
+  { name: "Bluesky", url: "https://bsky.app/profile/daiji256.bsky.social" },
   { name: "X (Twitter)", url: "https://x.com/Daiji256" },
   { name: "Qiita", url: "https://qiita.com/Daiji256" },
 ];
