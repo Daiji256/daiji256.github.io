@@ -12,7 +12,9 @@ const slugToPost: (slug: string) => Promise<PostSummary> = async (
 	slug: string,
 ) => {
 	// Using glob to reference files in mdx
-	const posts = await Astro.glob("../content/posts/**/*.md*");
+	const posts: Record<string, any>[] = Object.values(
+		import.meta.glob("../content/posts/**/*.md*", { eager: true }),
+	);
 	const frontmatter = posts.find((p) => {
 		return (
 			p.file.includes(`/posts/${slug}.md`) ||
