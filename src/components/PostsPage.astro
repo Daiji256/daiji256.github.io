@@ -9,15 +9,16 @@ type Props = {
 	posts: PostSummary[];
 	page: number;
 	pageLength: number;
+	baseUrl: string;
 };
 
-const { title, posts, page, pageLength } = Astro.props;
+const { title, posts, page, pageLength, baseUrl } = Astro.props;
 ---
 
 <>
 	<h1 class="title"><AdjustText text={title} /></h1>
 	<Posts posts={posts} />
-	<Pagination current={page} pageLength={pageLength} baseUrl="/posts" />
+	<Pagination current={page} pageLength={pageLength} baseUrl={baseUrl} />
 </>
 
 <style lang="scss">

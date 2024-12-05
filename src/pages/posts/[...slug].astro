@@ -47,7 +47,7 @@ const { Content } = await post.render();
 				{
 					post.data.tags &&
 						post.data.tags.map((tag) => (
-							<a class="tag" href={`/tags/${tag.id}`}>
+							<a class="tag" href={`/tags/${tag.id}/`}>
 								<AdjustText text={`${TAG_PREFIX}${tag.name}`} />
 							</a>
 						))

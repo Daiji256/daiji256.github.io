@@ -18,7 +18,7 @@ const { current, pageLength, baseUrl } = Astro.props;
 					) : (
 						<a
 							class="number unselected"
-							href={`${baseUrl}${i > 0 ? `/${i + 1}` : ""}`}
+							href={`${baseUrl}${i > 0 ? `${i + 1}/` : ""}`}
 						>
 							{i + 1}
 						</a>

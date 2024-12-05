@@ -36,7 +36,7 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 
 <>
 	<div class="title">
-		<a href={`/posts/${post.slug}`}>
+		<a href={`/posts/${post.slug}/`}>
 			<AdjustText text={post.title} />
 		</a>
 	</div>
@@ -51,7 +51,7 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 			post.tags &&
 				post.tags.map((tag) => (
 					<li class="tag">
-						<a href={`/tags/${tag.id}`}>
+						<a href={`/tags/${tag.id}/`}>
 							<AdjustText text={`${TAG_PREFIX}${tag.name}`} />
 						</a>
 					</li>

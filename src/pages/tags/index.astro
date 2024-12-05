@@ -33,7 +33,7 @@ const tags = (() => {
 			{
 				tags.map((tag) => (
 					<li>
-						<a href={`/tags/${tag.id}`} class="tag">
+						<a href={`/tags/${tag.id}/`} class="tag">
 							<AdjustText text={`${TAG_PREFIX}${tag.name} (${tag.count})`} />
 						</a>
 					</li>
