@@ -280,6 +280,54 @@ main {
 		font-family: typography.$font-family-math;
 	}
 
+	details {
+		summary {
+			cursor: pointer;
+			list-style: none;
+			width: fit-content;
+
+			&::before {
+				content: "";
+				display: inline-block;
+				margin-right: 4px;
+				width: 14px;
+				height: 14px;
+				background-color: colors.$color-on-background;
+				mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path stroke='black' stroke-width='1.5' d='M1.5 7h11M7 1.5v11'/></svg>") no-repeat;
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					color: colors.$color-link-hover;
+					text-decoration: none;
+					outline: 1px dashed colors.$color-link-hover;
+					border-radius: 2px;
+
+					&::before {
+						background-color: colors.$color-link-hover;
+					}
+				}
+			}
+
+			&:active {
+				color: colors.$color-link-active;
+				text-decoration: none;
+				outline: 1px solid colors.$color-link-active;
+				border-radius: 2px;
+
+				&::before {
+					background-color: colors.$color-link-active;
+				}
+			}
+		}
+
+		&[open] {
+			summary::before {
+				mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path stroke='black' stroke-width='1.5' d='M1.5 7h11'/></svg>") no-repeat;
+			}
+		}
+	}
+
 	.data-footnote-backref {
 		@media (hover: hover) {
 			&:hover {
