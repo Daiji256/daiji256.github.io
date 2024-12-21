@@ -19,6 +19,7 @@ export const PICKUP_POSTS = ["latex-susume", "lualatex-susume", "design-system-c
 export const LINKS_TITLE = "リンク";
 export const LINKS = [
   { name: "GitHub", url: "https://github.com/Daiji256" },
+  { name: "mixi2", url: "https://mixi.social/@daiji256" },
   { name: "Bluesky", url: "https://bsky.app/profile/daiji256.bsky.social" },
   { name: "X (Twitter)", url: "https://x.com/Daiji256" },
   { name: "Qiita", url: "https://qiita.com/Daiji256" },
