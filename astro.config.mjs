@@ -7,7 +7,6 @@ import rehypeQuotes from "rehype-quotes";
 import rehypeAdjustAki from "rehype-adjust-aki";
 import rehypeExternalLinks from "rehype-external-links";
 import { FOOTNOTE_LABEL, SITE_URL } from "./src/consts";
-import { redirects } from "./src/redirects";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -15,12 +14,7 @@ export default defineConfig({
 	site: SITE_URL,
 	integrations: [
 		mdx(),
-		sitemap({
-			filter: (page) =>
-				redirects.every((r) =>
-					!page.includes(encodeURI(`https://daiji256.github.io/${r.from}`))
-				)
-		}),
+		sitemap(),
 		partytown({
 			config: {
 				forward: ["dataLayer.push"],
