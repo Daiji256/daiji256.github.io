@@ -1,6 +1,6 @@
 /* Font Family */
 $font-family-sans: "n-sans", -apple-system, sans-serif;
-$font-family-mono: "n-mono", monospace;
+$font-family-mono: "n-mono", "n-sans", monospace;
 $font-family-math: "Noto Sans Math", $font-family-sans;
 
 /* Font */

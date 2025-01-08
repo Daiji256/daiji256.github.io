@@ -29,8 +29,26 @@
 	font-family: "n-mono";
 	src: url(/fonts/n-mono/n-mono-regular.woff2) format("woff2"),
 		url(/fonts/n-mono/n-mono-regular.woff) format("woff"),
-		url(/fonts/n-mono/n-mono-regular.otf) format("opentype");
+		url(/fonts/n-mono/n-mono-regular.otf) format("truetype");
 	font-weight: 400;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "n-mono";
+	src: url(/fonts/n-mono/n-mono-medium.woff2) format("woff2"),
+		url(/fonts/n-mono/n-mono-medium.woff) format("woff"),
+		url(/fonts/n-mono/n-mono-medium.otf) format("truetype");
+	font-weight: 500;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "n-mono";
+	src: url(/fonts/n-mono/n-mono-bold.woff2) format("woff2"),
+		url(/fonts/n-mono/n-mono-bold.woff) format("woff"),
+		url(/fonts/n-mono/n-mono-bold.otf) format("truetype");
+	font-weight: 600;
 	font-display: fallback;
 }
 
