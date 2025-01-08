@@ -32,12 +32,14 @@ const { Content } = await post.render();
 			<div class="date">
 				<div>
 					<AdjustText text={PUBLISHED_DATE_LABEL} />
+					<span class="space"></span>
 					<FormattedDate date={post.data.publishedDate} />
 				</div>
 				{
 					post.data.updatedDate && (
 						<div class="updated">
 							<AdjustText text={UPDATED_DATE_LABEL} />
+							<span class="space" />
 							<FormattedDate date={post.data.updatedDate} />
 						</div>
 					)
@@ -71,7 +73,11 @@ const { Content } = await post.render();
 		margin-top: 4px;
 
 		.updated {
-			margin-left: 8px;
+			margin-left: 12px;
+		}
+
+		.space {
+			margin-left: 4px;
 		}
 	}
 
