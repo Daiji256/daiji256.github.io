@@ -300,6 +300,14 @@ main {
 			border-radius: 2px;
 		}
 	}
+
+	.footnote {
+		overflow: hidden;
+		width: calc(min(100%, dimensions.$screen-wrapper-max) - 32px);
+		height: 0px;
+		border: none;
+		border-bottom: 1px solid colors.$color-outline;
+	}
 }
 
 .aa--l-pm {

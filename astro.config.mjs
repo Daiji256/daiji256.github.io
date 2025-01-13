@@ -6,7 +6,7 @@ import rehypeMathML from "@daiji256/rehype-mathml";
 import rehypeQuotes from "rehype-quotes";
 import rehypeAdjustAki from "rehype-adjust-aki";
 import rehypeExternalLinks from "rehype-external-links";
-import { FOOTNOTE_LABEL, SITE_URL } from "./src/consts";
+import { FOOTNOTE_LABEL, FOOTNOTE_BACK_LABEL, SITE_URL } from "./src/consts";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -39,7 +39,15 @@ export default defineConfig({
 			]
 		],
 		remarkRehype: {
+			footnoteLabelProperties: { className: ["footnote"] },
 			footnoteLabel: FOOTNOTE_LABEL,
+			footnoteBackLabel(referenceIndex, rereferenceIndex) {
+				return (
+					(referenceIndex + 1) +
+					(rereferenceIndex > 1 ? "-" + rereferenceIndex : "") +
+					FOOTNOTE_BACK_LABEL
+				)
+			},
 		},
 	},
 	vite: {
