@@ -303,7 +303,7 @@ main {
 
 	.footnote {
 		overflow: hidden;
-		width: calc(min(100%, dimensions.$screen-wrapper-max) - 32px);
+		width: 100%;
 		height: 0px;
 		border: none;
 		border-bottom: 1px solid colors.$color-outline;
