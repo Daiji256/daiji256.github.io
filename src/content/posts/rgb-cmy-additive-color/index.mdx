@@ -12,8 +12,6 @@ import { Image } from "astro:assets";
 import tweet from "./images/tweet.png";
 import grok from "./images/grok.png";
 import cone_fundamentals from "./images/cone-fundamentals.png";
-import rgb from "./images/rgb.png";
-import cmy from "./images/cmy.png";
 import rgb_camera from "./images/rgb-camera.jpg";
 import cmy_camera from "./images/cmy-camera.jpg";
 
@@ -61,7 +59,7 @@ import cmy_camera from "./images/cmy-camera.jpg";
 
 赤（<Color value="#FF0000" />）、緑（<Color value="#00FF00" />）、青（<Color value="#0000FF" />）を交互に配置した画像を作成しました。
 
-<Image src={rgb} alt="#FF0000、#00FF00、#0000FFが交互に配置された画像" width={rgb.width} densities={[1]} format="png" quality={100} />
+<img src="/rgb-cmy/rgb.png" alt="#FF0000、#00FF00、#0000FFが交互に配置された画像" width="256" />
 
 これを暗い部屋で確認したところ、白色に見えました。一般的なRGBカメラで撮影した[^pixel-9-pro]場合でも白色になりました。加法混色により白色になることを実感できました。
 
@@ -71,7 +69,7 @@ import cmy_camera from "./images/cmy-camera.jpg";
 
 同様に、シアン（<Color value="#00FFFF" />）、マゼンタ（<Color value="#FF00FF" />）、イエロー（<Color value="#FFFF00" />）を交互に配置した画像を作成しました。
 
-<Image src={cmy} alt="#00FFFF、#FF00FF、#FFFF00が交互に配置された画像" width={cmy.width} densities={[1]} format="png" quality={100} />
+<img src="/rgb-cmy/cmy.png" alt="#00FFFF、#FF00FF、#FFFF00が交互に配置された画像" width="256" />
 
 これを暗い部屋で確認したところ、RGBに比べ2倍程度の明るさの白色に見えました。これは[奥村先生の解説](https://okumuralab.org/~okumura/cs/color_mixture.html)の通りです。赤・緑・青の時に比べてちょうど2倍光っているので、当たり前です。やっぱり色々な光源を持っておきたかったなと思います。
 
