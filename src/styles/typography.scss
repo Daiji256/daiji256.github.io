@@ -1,7 +1,7 @@
 /* Font Family */
-$font-family-sans: "n-sans", -apple-system, sans-serif;
-$font-family-mono: "n-mono", "n-sans", monospace;
-$font-family-math: "Noto Sans Math", $font-family-sans;
+$font-family-sans: "f-sans", -apple-system, sans-serif;
+$font-family-mono: "f-mono", "f-sans", monospace;
+$font-family-math: "Fira Math", $font-family-sans;
 
 /* Font */
 $font-body-medium: 400 1.6rem/3.2rem $font-family-sans;
