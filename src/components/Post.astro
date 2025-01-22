@@ -87,9 +87,10 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 		.tag {
 			font: typography.$font-body-small;
 			margin-right: 8px;
-			color: colors.$color-on-background-variant;
 
 			a {
+				color: colors.$color-on-background-variant;
+
 				@media (hover: hover) {
 					&:hover {
 						color: colors.$color-link-hover;
