@@ -23,7 +23,7 @@ export default defineConfig({
 	],
 	markdown: {
 		syntaxHighlight: "shiki",
-		shikiConfig: { theme: "github-light" },
+		shikiConfig: { theme: "github-light-high-contrast" },
 		remarkPlugins: [remarkMath],
 		rehypePlugins: [
 			rehypeMathML,
