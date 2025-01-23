@@ -63,6 +63,20 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 <style lang="scss">
 	.title {
 		font: typography.$font-title-large;
+
+		a {
+			text-decoration: none;
+
+			@media (hover: hover) {
+				&:hover {
+					text-decoration: underline 8%;
+				}
+			}
+
+			&:active {
+				text-decoration: underline 8%;
+			}
+		}
 	}
 
 	.description {
@@ -90,21 +104,19 @@ let post = typeof _post === "string" ? await slugToPost(_post) : _post;
 
 			a {
 				color: colors.$color-on-background-variant;
+				text-decoration: none;
+				border-radius: 2px;
 
 				@media (hover: hover) {
 					&:hover {
-						color: colors.$color-link-hover;
-						text-decoration: none;
-						outline: 1px dashed colors.$color-link-hover;
-						border-radius: 2px;
+						color: colors.$color-link;
+						outline: 1px dashed;
 					}
 				}
 
 				&:active {
-					color: colors.$color-link-active;
-					text-decoration: none;
-					outline: 1px solid colors.$color-link-active;
-					border-radius: 2px;
+					color: colors.$color-link;
+					outline: 1px solid;
 				}
 			}
 		}

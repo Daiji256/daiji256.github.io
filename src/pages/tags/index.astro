@@ -61,21 +61,19 @@ const tags = (() => {
 			line-height: 2.5;
 			margin-left: 24px;
 			color: inherit;
+			text-decoration: none;
+			border-radius: 2px;
 
 			@media (hover: hover) {
 				&:hover {
-					color: colors.$color-link-hover;
-					text-decoration: none;
-					outline: 1px dashed colors.$color-link-hover;
-					border-radius: 2px;
+					color: colors.$color-link;
+					outline: 1px dashed;
 				}
 			}
 
 			&:active {
-				color: colors.$color-link-active;
-				text-decoration: none;
-				outline: 1px solid colors.$color-link-active;
-				border-radius: 2px;
+				color: colors.$color-link;
+				outline: 1px solid;
 			}
 		}
 	}

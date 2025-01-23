@@ -40,8 +40,8 @@ hr {
 }
 
 a {
-	color: colors.$color-link-rest;
-	text-decoration: none;
+	color: colors.$color-link;
+	text-decoration: underline 4%;
 
 	&:visited {
 		color: colors.$color-link-visited;
@@ -49,14 +49,12 @@ a {
 
 	@media (hover: hover) {
 		&:hover {
-			color: colors.$color-link-hover;
-			text-decoration: underline;
+			text-decoration: underline 8%;
 		}
 	}
 
 	&:active {
-		color: colors.$color-link-active;
-		text-decoration: underline;
+		text-decoration: underline 8%;
 	}
 }
 
@@ -67,27 +65,13 @@ a {
 		margin: 0 1px;
 		width: 8px;
 		height: 16px;
-		background-color: colors.$color-link-rest;
+		background-color: colors.$color-link;
 		mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M3 1H1v6h6V5M7 4V1H4M7 1 3.5 4.5'/></svg>") no-repeat;
 	}
 
 	&:visited {
 		&::after {
 			background-color: colors.$color-link-visited;
-		}
-	}
-
-	@media (hover: hover) {
-		&:hover {
-			&::after {
-				background-color: colors.$color-link-hover;
-			}
-		}
-	}
-
-	&:active {
-		&::after {
-			background-color: colors.$color-link-active;
 		}
 	}
 }
@@ -142,24 +126,6 @@ main {
 
 	strong {
 		font-weight: 700;
-	}
-
-	sup {
-		a {
-			@media (hover: hover) {
-				&:hover {
-					text-decoration: none;
-					outline: 1px dashed colors.$color-link-hover;
-					border-radius: 2px;
-				}
-			}
-
-			&:active {
-				text-decoration: none;
-				outline: 1px solid colors.$color-link-active;
-				border-radius: 2px;
-			}
-		}
 	}
 
 	h1,
@@ -242,6 +208,7 @@ main {
 			cursor: pointer;
 			list-style: none;
 			width: fit-content;
+			border-radius: 2px;
 
 			&::before {
 				content: "";
@@ -255,25 +222,22 @@ main {
 
 			@media (hover: hover) {
 				&:hover {
-					color: colors.$color-link-hover;
-					text-decoration: none;
-					outline: 1px dashed colors.$color-link-hover;
-					border-radius: 2px;
+					color: colors.$color-link;
+					outline: 1px dashed;
 
 					&::before {
-						background-color: colors.$color-link-hover;
+						background-color: colors.$color-link;
 					}
 				}
 			}
 
 			&:active {
-				color: colors.$color-link-active;
+				color: colors.$color-link;
 				text-decoration: none;
-				outline: 1px solid colors.$color-link-active;
-				border-radius: 2px;
+				outline: 1px solid;
 
 				&::before {
-					background-color: colors.$color-link-active;
+					background-color: colors.$color-link;
 				}
 			}
 		}
@@ -285,28 +249,56 @@ main {
 		}
 	}
 
-	.data-footnote-backref {
-		@media (hover: hover) {
-			&:hover {
-				text-decoration: none;
-				outline: 1px dashed colors.$color-link-hover;
-				border-radius: 2px;
-			}
-		}
-
-		&:active {
-			text-decoration: none;
-			outline: 1px solid colors.$color-link-active;
-			border-radius: 2px;
-		}
-	}
-
 	.footnote {
 		overflow: hidden;
 		width: 100%;
 		height: 0px;
 		border: none;
 		border-bottom: 1px solid colors.$color-outline;
+	}
+
+	sup {
+		a {
+			font-weight: 700;
+			text-decoration: none;
+			border-radius: 2px;
+
+			&:visited {
+				color: colors.$color-link;
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					text-decoration: none;
+					outline: 1px dashed;
+				}
+			}
+
+			&:active {
+				text-decoration: none;
+				outline: 1px solid;
+			}
+		}
+	}
+
+	.data-footnote-backref {
+		font-weight: 700;
+		text-decoration: none;
+		border-radius: 2px;
+
+		&:visited {
+			color: colors.$color-link;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				outline: 1px dashed;
+			}
+		}
+
+		&:active {
+			outline: 1px solid;
+		}
 	}
 }
 

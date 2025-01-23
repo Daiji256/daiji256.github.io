@@ -64,6 +64,20 @@ import {
 				.external-link::after {
 					height: 14px;
 				}
+
+				a {
+					text-decoration: none;
+
+					@media (hover: hover) {
+						&:hover {
+							text-decoration: underline 8%;
+						}
+					}
+
+					&:active {
+						text-decoration: underline 8%;
+					}
+				}
 			}
 		}
 	}
