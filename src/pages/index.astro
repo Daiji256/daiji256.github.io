@@ -1,7 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AdjustText from "../components/AdjustText.astro";
 import Post from "../components/Post.astro";
+import { type PostSummary } from "../models/postSummary";
 import {
 	SITE_TITLE,
 	SITE_DESCRIPTION,
@@ -10,6 +12,22 @@ import {
 	LINKS_TITLE,
 	LINKS,
 } from "../consts";
+
+const posts = await getCollection("posts");
+const pickupPosts: PostSummary[] = PICKUP_POSTS.flatMap((slug) => {
+	const post = posts.find((p) => p.slug === slug);
+	return post
+		? [
+				{
+					slug: post.slug,
+					title: post.data.title,
+					description: post.data.description,
+					publishedDate: post.data.publishedDate,
+					tags: post.data.tags,
+				},
+			]
+		: [];
+});
 ---
 
 <>
@@ -21,7 +39,7 @@ import {
 		<h2><AdjustText text={PICKUP_TITLE} /></h2>
 		<div>
 			{
-				PICKUP_POSTS.map((post) => (
+				pickupPosts.map((post) => (
 					<div class="post">
 						<Post post={post} />
 					</div>

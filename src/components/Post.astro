@@ -5,33 +5,10 @@ import { type PostSummary } from "../models/postSummary";
 import { TAG_PREFIX } from "../consts";
 
 type Props = {
-	post: PostSummary | string;
+	post: PostSummary;
 };
 
-const slugToPost: (slug: string) => Promise<PostSummary> = async (
-	slug: string,
-) => {
-	// Using glob to reference files in mdx
-	const posts: Record<string, any>[] = Object.values(
-		import.meta.glob("../content/posts/**/*.md*", { eager: true }),
-	);
-	const frontmatter = posts.find((p) => {
-		return (
-			p.file.includes(`/posts/${slug}.md`) ||
-			p.file.includes(`/posts/${slug}/index.md`)
-		);
-	})!!.frontmatter;
-	return {
-		slug: slug,
-		title: frontmatter.title,
-		description: frontmatter.description,
-		publishedDate: new Date(frontmatter.publishedDate),
-		tags: frontmatter.tags,
-	};
-};
-
-const { post: _post } = Astro.props;
-let post = typeof _post === "string" ? await slugToPost(_post) : _post;
+const { post } = Astro.props;
 ---
 
 <>
