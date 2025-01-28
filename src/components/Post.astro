@@ -1,101 +1,101 @@
 ---
-import AdjustText from "./AdjustText.astro";
-import FormattedDate from "./FormattedDate.astro";
-import { type PostSummary } from "../models/postSummary";
-import { TAG_PREFIX } from "../consts";
+import AdjustText from './AdjustText.astro';
+import FormattedDate from './FormattedDate.astro';
+import { type PostSummary } from '../models/postSummary';
+import { TAG_PREFIX } from '../consts';
 
 type Props = {
-	post: PostSummary;
+  post: PostSummary;
 };
 
 const { post } = Astro.props;
 ---
 
 <>
-	<div class="title">
-		<a href={`/posts/${post.slug}/`}>
-			<AdjustText text={post.title} />
-		</a>
-	</div>
-	<div class="description">
-		<AdjustText text={post.description} />
-	</div>
-	<ul class="supplement">
-		<li class="date">
-			<FormattedDate date={post.publishedDate} />
-		</li>
-		{
-			post.tags &&
-				post.tags.map((tag) => (
-					<li class="tag">
-						<a href={`/tags/${tag.id}/`}>
-							<AdjustText text={`${TAG_PREFIX}${tag.name}`} />
-						</a>
-					</li>
-				))
-		}
-	</ul>
+  <div class="title">
+    <a href={`/posts/${post.slug}/`}>
+      <AdjustText text={post.title} />
+    </a>
+  </div>
+  <div class="description">
+    <AdjustText text={post.description} />
+  </div>
+  <ul class="supplement">
+    <li class="date">
+      <FormattedDate date={post.publishedDate} />
+    </li>
+    {
+      post.tags &&
+        post.tags.map((tag) => (
+          <li class="tag">
+            <a href={`/tags/${tag.id}/`}>
+              <AdjustText text={`${TAG_PREFIX}${tag.name}`} />
+            </a>
+          </li>
+        ))
+    }
+  </ul>
 </>
 
 <style lang="scss">
-	.title {
-		font: typography.$font-title-large;
+  .title {
+    font: typography.$font-title-large;
 
-		a {
-			text-decoration: none;
+    a {
+      text-decoration: none;
 
-			@media (hover: hover) {
-				&:hover {
-					text-decoration: underline 8%;
-				}
-			}
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline 8%;
+        }
+      }
 
-			&:active {
-				text-decoration: underline 8%;
-			}
-		}
-	}
+      &:active {
+        text-decoration: underline 8%;
+      }
+    }
+  }
 
-	.description {
-		font: typography.$font-body-small;
-		color: colors.$color-on-background-variant;
-		margin-top: 4px;
-	}
+  .description {
+    font: typography.$font-body-small;
+    color: colors.$color-on-background-variant;
+    margin-top: 4px;
+  }
 
-	.supplement {
-		margin: 0 -8px 0 0;
-		padding: 0;
-		list-style: none;
-		display: flex;
-		flex-wrap: wrap;
+  .supplement {
+    margin: 0 -8px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
 
-		.date {
-			font: typography.$font-body-small;
-			margin-right: 12px;
-			color: colors.$color-on-background-variant;
-		}
+    .date {
+      font: typography.$font-body-small;
+      margin-right: 12px;
+      color: colors.$color-on-background-variant;
+    }
 
-		.tag {
-			font: typography.$font-body-small;
-			margin-right: 8px;
+    .tag {
+      font: typography.$font-body-small;
+      margin-right: 8px;
 
-			a {
-				color: colors.$color-on-background-variant;
-				text-decoration: none;
-				border-radius: 2px;
+      a {
+        color: colors.$color-on-background-variant;
+        text-decoration: none;
+        border-radius: 2px;
 
-				@media (hover: hover) {
-					&:hover {
-						color: colors.$color-link;
-						outline: 1px dashed;
-					}
-				}
+        @media (hover: hover) {
+          &:hover {
+            color: colors.$color-link;
+            outline: 1px dashed;
+          }
+        }
 
-				&:active {
-					color: colors.$color-link;
-					outline: 1px solid;
-				}
-			}
-		}
-	}
+        &:active {
+          color: colors.$color-link;
+          outline: 1px solid;
+        }
+      }
+    }
+  }
 </style>

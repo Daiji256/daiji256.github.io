@@ -1,60 +1,60 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import PostsPage from "../../../components/PostsPage.astro";
-import { type PostSummary } from "../../../models/postSummary";
-import { type Tag } from "../../../models/tag";
-import { PAGE_SIZE } from "../../../consts";
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostsPage from '../../../components/PostsPage.astro';
+import { type PostSummary } from '../../../models/postSummary';
+import { type Tag } from '../../../models/tag';
+import { PAGE_SIZE } from '../../../consts';
 
 type Props = {
-	tag: Tag;
-	pageLength: number;
-	posts: PostSummary[];
+  tag: Tag;
+  pageLength: number;
+  posts: PostSummary[];
 };
 
 export async function getStaticPaths() {
-	const posts = (await getCollection("posts"))
-		.sort((a, b) => (a.data.publishedDate > b.data.publishedDate ? -1 : 1))
-		.map((post) => {
-			return {
-				slug: post.slug,
-				title: post.data.title,
-				description: post.data.description,
-				publishedDate: post.data.publishedDate,
-				tags: post.data.tags,
-			};
-		});
-	const tags = (() => {
-		const tags: Set<Tag> = new Set();
-		posts.forEach((post) => {
-			post.tags?.forEach((tag) => tags.add(tag));
-		});
-		return Array.from(tags.values());
-	})();
-	const ret: {
-		params: { tagId: string; page: string | undefined };
-		props: Props;
-	}[] = [];
-	tags.forEach((tag) => {
-		const filteredPosts = posts.filter((post) =>
-			post.tags?.map((tag) => tag.id)?.includes(tag.id),
-		);
-		const pageLength = Math.ceil(filteredPosts.length / PAGE_SIZE);
-		for (let i = 0; i < pageLength; i++) {
-			ret.push({
-				params: {
-					tagId: tag.id,
-					page: i === 0 ? undefined : String(i + 1),
-				},
-				props: {
-					tag: tag,
-					pageLength: pageLength,
-					posts: filteredPosts.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE),
-				},
-			});
-		}
-	});
-	return ret;
+  const posts = (await getCollection('posts'))
+    .sort((a, b) => (a.data.publishedDate > b.data.publishedDate ? -1 : 1))
+    .map((post) => {
+      return {
+        slug: post.slug,
+        title: post.data.title,
+        description: post.data.description,
+        publishedDate: post.data.publishedDate,
+        tags: post.data.tags,
+      };
+    });
+  const tags = (() => {
+    const tags: Set<Tag> = new Set();
+    posts.forEach((post) => {
+      post.tags?.forEach((tag) => tags.add(tag));
+    });
+    return Array.from(tags.values());
+  })();
+  const ret: {
+    params: { tagId: string; page: string | undefined };
+    props: Props;
+  }[] = [];
+  tags.forEach((tag) => {
+    const filteredPosts = posts.filter((post) =>
+      post.tags?.map((tag) => tag.id)?.includes(tag.id),
+    );
+    const pageLength = Math.ceil(filteredPosts.length / PAGE_SIZE);
+    for (let i = 0; i < pageLength; i++) {
+      ret.push({
+        params: {
+          tagId: tag.id,
+          page: i === 0 ? undefined : String(i + 1),
+        },
+        props: {
+          tag: tag,
+          pageLength: pageLength,
+          posts: filteredPosts.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE),
+        },
+      });
+    }
+  });
+  return ret;
 }
 
 const { page: _page } = Astro.params;
@@ -63,13 +63,13 @@ const page = _page ? Number(_page) : 1;
 ---
 
 <>
-	<BaseLayout title={tag.name}>
-		<PostsPage
-			title={tag.name}
-			posts={posts}
-			page={page}
-			pageLength={pageLength}
-			baseUrl=`/tags/${tag.id}/`
-		/>
-	</BaseLayout>
+  <BaseLayout title={tag.name}>
+    <PostsPage
+      title={tag.name}
+      posts={posts}
+      page={page}
+      pageLength={pageLength}
+      baseUrl=`/tags/${tag.id}/`
+    />
+  </BaseLayout>
 </>

@@ -1,29 +1,29 @@
 ---
 interface Props {
-	value: string;
+  value: string;
 }
 
 const { value } = Astro.props;
 ---
 
 <>
-	<span class="color">
-		<code>{value}</code>
-		<span class="color-box" style=`background-color: ${value};`></span>
-	</span>
+  <span class="color">
+    <code>{value}</code>
+    <span class="color-box" style=`background-color: ${value};`></span>
+  </span>
 </>
 
 <style lang="scss">
-	.color {
-		white-space: nowrap;
-		display: inline-block;
-	}
+  .color {
+    white-space: nowrap;
+    display: inline-block;
+  }
 
-	.color-box {
-		display: inline-block;
-		outline: 1px solid colors.$color-on-background-variant;
-		width: 0.75em;
-		height: 0.75em;
-		margin: 0 0.2em;
-	}
+  .color-box {
+    display: inline-block;
+    outline: 1px solid colors.$color-on-background-variant;
+    width: 0.75em;
+    height: 0.75em;
+    margin: 0 0.2em;
+  }
 </style>

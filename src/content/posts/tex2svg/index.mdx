@@ -1,16 +1,18 @@
 ---
-title: "超高速な数式表示（KaTeXより高速！）"
-description: "Webサイトで数式を表示したいというニーズはたくさんあります。数式表示のために、通信量が増えたり、表示が遅くなったりするのはストレスです。そのストレスをできるだけ軽減するために、数式をインラインSVGで簡単に表示する方法を紹介します。"
+title: '超高速な数式表示（KaTeXより高速！）'
+description: 'Webサイトで数式を表示したいというニーズはたくさんあります。数式表示のために、通信量が増えたり、表示が遅くなったりするのはストレスです。そのストレスをできるだけ軽減するために、数式をインラインSVGで簡単に表示する方法を紹介します。'
 publishedDate: 2021-11-12
-updatedDate: 2024-11-15
-tags: [
-  {id: "hugo", name: "Hugo"},
-  {id: "mathjax", name: "MathJax"},
-  {id: "katex", name: "KaTeX"},
-  {id: "tex2svg", name: "`tex2svg`"},
-]
+updatedDate: 2025-01-28
+tags:
+  [
+    { id: 'hugo', name: 'Hugo' },
+    { id: 'mathjax', name: 'MathJax' },
+    { id: 'katex', name: 'KaTeX' },
+    { id: 'tex2svg', name: '`tex2svg`' },
+  ]
 ---
-import JwAki from "../../../components/JwAki.astro";
+
+import JwAki from '../../../components/JwAki.astro';
 
 現在はHugoで作成しておらず、ここで説明される数式表示方法にはしていません。そのため、紹介方法の結果を表示することができません。
 
@@ -37,6 +39,7 @@ import JwAki from "../../../components/JwAki.astro";
 ```md
 {{< tex2svg >}}E=mc^2{{< /tex2svg >}}
 ```
+
 ```xml
 <svg> ... </svg>
 ```
@@ -64,8 +67,8 @@ APIは次のようなJSONを返します。`svg`に`vertical-align`などのパ�
 {
   "speakText": "equation",
   "svg": "<svg ...",
-  "width":"...ex",
-  "height":"....ex",
+  "width": "...ex",
+  "height": "....ex",
   "style": "vertical-align: ...ex;"
 }
 ```
@@ -74,7 +77,7 @@ APIは次のようなJSONを返します。`svg`に`vertical-align`などのパ�
 
 `getJSON`はURLが`str1str2str3`のとき<JwAki />`"str1" "str2" "str3"`<JwAki />のように分割して指定できます。`(querify "q" .Inner)`<JwAki />は<JwAki />`{{< tex2svg >}}`<JwAki />と<JwAki />`{{< /tex2svg >}}`<JwAki />の間のテキストを`q=%5Cfrac%7B1%7D%7Bx%7D`みたいにします。インライン表示するときは<JwAki />`&inline=true`を加えます。`svg`には<JwAki />`\n`などのコードを含むので、それを`safeHTML`でいい感じにして表示させます。
 
-```html
+```
 {{- $json := getJSON "https://tex2svg.herokuapp.com/" "?" (querify "q" .Inner) "&inline=true" -}}
 {{- $json.svg | safeHTML -}}
 ```
@@ -89,7 +92,7 @@ Shortcodeの引数を指定して表示方法の選択ができたほうが便�
 
 [^tex2svg.html]: 好きな名前で構いません。僕は短いほうが楽なので`eq.html`にしています。
 
-```html
+```
 {{- if eq (.Get 0) "display" -}}
 <div class="displaystyle">
   {{- $json := getJSON "https://tex2svg.herokuapp.com/" "?" (querify "q" (replace .Inner "\\bm" "\\boldsymbol")) -}}
@@ -105,7 +108,7 @@ Shortcodeの引数を指定して表示方法の選択ができたほうが便�
 
 次のようにMarkdownで記事を書いて見てください。
 
-```md
+```
 ディスプレイ表示の数式は
 {{< tex2svg display >}}
   (f \ast g)(t)=\int_{-\infty}^{\infty} f(\tau) g(t - \tau) \, \mathrm{d}\tau
@@ -124,15 +127,19 @@ Shortcodeの引数を指定して表示方法の選択ができたほうが便�
 ---
 
 ディスプレイ表示の数式は
+
 $$
 (f \ast g)(t)=\int_{-\infty}^{\infty} f(\tau) g(t - \tau) \, \mathrm{d}\tau
 $$
+
 となる。
 
 インライン表示の数式は
+
 $$
 \textstyle(f \ast g)(t)=\int_{-\infty}^{\infty} f(\tau) g(t - \tau) \, \mathrm{d}\tau
 $$
+
 となる。
 
 ---
@@ -170,8 +177,12 @@ $$
 ちょっと本文より大きくて嫌だな～と思ったので、フォントサイズを$0.9$倍させました。
 
 ```css
-.tex {font-size: 0.9em;}
-.i-tex {font-size: 0.9em;}
+.tex {
+  font-size: 0.9em;
+}
+.i-tex {
+  font-size: 0.9em;
+}
 ```
 
 #### `\bm`を使いたい
@@ -189,6 +200,7 @@ replace .Inner "\\bm" "\\boldsymbol"
 ```html
 {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML -}}
 ```
+
 ```css
 .eq-text {
   fill: rgba(0, 0, 0, 0);

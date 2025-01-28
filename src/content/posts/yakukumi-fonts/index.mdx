@@ -1,18 +1,20 @@
 ---
-title: "約物専用Webフォント（約組フォント）"
-description: "約物間のアキを調整する機能を持たせた、約組フォントを公開しました。フォントの特徴、使用方法を紹介します。"
+title: '約物専用Webフォント（約組フォント）'
+description: '約物間のアキを調整する機能を持たせた、約組フォントを公開しました。フォントの特徴、使用方法を紹介します。'
 publishedDate: 2021-11-20
-updatedDate: 2024-06-29
-tags: [
-  {id: "cdn", name: "CDN"},
-  {id: "font", name: "Font"},
-  {id: "aki", name: "アキ"},
-]
+updatedDate: 2025-01-28
+tags:
+  [
+    { id: 'cdn', name: 'CDN' },
+    { id: 'font', name: 'Font' },
+    { id: 'aki', name: 'アキ' },
+  ]
 ---
-import JwAki from "../../../components/JwAki.astro";
-import { Image } from "astro:assets";
-import image1 from "./images/image1.webp";
-import image2 from "./images/image2.webp";
+
+import JwAki from '../../../components/JwAki.astro';
+import { Image } from 'astro:assets';
+import image1 from './images/image1.webp';
+import image2 from './images/image2.webp';
 
 ## 概要
 
@@ -38,7 +40,7 @@ Yaku Kumi Fontsはもちろん無料で使えて、見ての通りNoto CJK Fonts
 Noto CJK Fontsと同じグリフで、約物のアキを詰める[Yaku Han JP](https://yakuhanjp.qranoko.jp)はすべてのアキが無くなるので、組版要件を考えるといまいちです。それに約物を半角にするだけなら
 
 ```css
-font-feature-settings: "halt" 1;
+font-feature-settings: 'halt' 1;
 ```
 
 すればいいです。
@@ -70,14 +72,17 @@ Yaku Kumi FontsはSansとSerifがあります。また、Google FontsのNoto San
 CDNを使う場合は、次のようにCSSを読み込んでください。利用したいCSSに合わせて`yakukumi-sans-rb.min.css`を編集してください。
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi-sans-rb.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/daiji256/yaku-kumi-fonts@v1.1/css/yakukumi-sans-rb.min.css"
+/>
 ```
 
 CSSは`font-family`を設定し、`chws`をオンにしてください。フォント名はSansを使うなら<JwAki />`"Yaku Kumi Sans"`、Serifを使うなら<JwAki />`"Yaku Kumi Serif"`<JwAki />とします。
 
 ```css
-font-family: "Yaku Kumi Sans", "Noto Sans JP", sans-serif;
-font-feature-settings: "chws" 1;
+font-family: 'Yaku Kumi Sans', 'Noto Sans JP', sans-serif;
+font-feature-settings: 'chws' 1;
 ```
 
 ## ライセンス

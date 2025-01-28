@@ -1,17 +1,19 @@
 ---
-title: "onClick VS onClicked"
-description: "プログラムでは変数や関数に適切な命名をする必要があります。その一環としてonClickをonClickedを比較します。"
+title: 'onClick VS onClicked'
+description: 'プログラムでは変数や関数に適切な命名をする必要があります。その一環としてonClickをonClickedを比較します。'
 publishedDate: 2022-12-22T00:00:00+09:00
 updatedDate: 2024-06-29
-tags: [
-  {id: "programming", name: "プログラミング"},
-  {id: "memorandum", name: "備忘録"},
-]
+tags:
+  [
+    { id: 'programming', name: 'プログラミング' },
+    { id: 'memorandum', name: '備忘録' },
+  ]
 ---
-import JwAki from "../../../components/JwAki.astro";
-import { Image } from "astro:assets";
-import onclick from "./images/onclick.png";
-import onclicked from "./images/onclicked.png";
+
+import JwAki from '../../../components/JwAki.astro';
+import { Image } from 'astro:assets';
+import onclick from './images/onclick.png';
+import onclicked from './images/onclicked.png';
 
 この記事は、[フラー株式会社 Advent Calendar 2022](https://qiita.com/advent-calendar/2022/fuller-inc)の22日目の記事です。21日目は<JwAki />[@comi19](https://qiita.com/comi19)さんの[スライスのゼロ値をPrintすると<JwAki />[]<JwAki />が出力される理由を探ってみた](https://qiita.com/comi19/items/92b31aadf15d77e77f92)でした。23日目は[okuzawats](https://okuzawats.com/)さんです。
 
@@ -38,14 +40,25 @@ import onclicked from "./images/onclicked.png";
 Googleでのヒット数は正義[^justice]なので、Googleで検索したときの件数の比較を行います[^japan]。
 
 [^justice]: 別に正義ではないと思う。
+
 [^japan]: 検索は日本から行いました。
 
 結果は`onClick`は23,600,000件、`onClicked`は66,500件でした[^search-method]。`onClick`が300倍以上でした。圧倒的に`onClick`が人気なのがわかります。
 
 ちなみにスネークケース、ケバブケースでも同様に、`on_click`, `on-click`が多かったです。
 
-<Image src={onclick} alt="onclickで検索にヒットした数、23,600,000件" width="725" densities={[1.5, 2]} />
-<Image src={onclicked} alt="onclickedで検索にヒットした数、66,500件" width="725" densities={[1.5, 2]} />
+<Image
+  src={onclick}
+  alt="onclickで検索にヒットした数、23,600,000件"
+  width="725"
+  densities={[1.5, 2]}
+/>
+<Image
+  src={onclicked}
+  alt="onclickedで検索にヒットした数、66,500件"
+  width="725"
+  densities={[1.5, 2]}
+/>
 
 [^search-method]: この検索方法が正しいかは自信ないです。
 

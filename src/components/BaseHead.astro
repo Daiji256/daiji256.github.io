@@ -1,10 +1,11 @@
 ---
-import { SITE_TITLE, SITE_URL } from "../consts";
-import "../styles/global.scss";
+import GoogleAnalytics from './GoogleAnalytics.astro';
+import { SITE_TITLE, SITE_URL } from '../consts';
+import '../styles/global.scss';
 
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -19,32 +20,23 @@ const { title, description } = Astro.props;
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <meta name="generator" content={Astro.generator} />
 
-{
-	isProd && (
-		<meta
-			name="google-site-verification"
-			content="EAcA3M8_3NOgHSSJ0JpIuz4fM8rxuReksj6YWIvMXdo"
-		/>
-		<script
-			is:inline
-			type="text/partytown"
-			src="https://www.googletagmanager.com/gtag/js?id=G-M6M115YLYV"></script>
-		<script is:inline type="text/partytown">
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
-			gtag("config", "G-M6M115YLYV");
-		</script>
-	)
-}
+{isProd && <GoogleAnalytics />}
 
 <link rel="canonical" href={canonicalURL} />
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-<link rel="preload" as="style" fetchpriority="high" href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@v0.3/css/f.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@v0.3/css/f.min.css" media="print" onload="this.media='all'" />
+<link
+  rel="preload"
+  as="style"
+  fetchpriority="high"
+  href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@v0.3/css/f.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@v0.3/css/f.min.css"
+  media="print"
+  onload="this.media='all'"
+/>
 
 <title>{title}</title>
 <meta name="title" content={title} />

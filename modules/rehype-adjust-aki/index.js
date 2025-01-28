@@ -1,30 +1,29 @@
 export default function rehypeAdjustAki() {
-  const jpn = "ぁ-んァ-ヶ一-龠ー";
-  const wrn = "0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ";
-  const lPm = "（｟「『［〚｛【〖〈《〔〘〝";
-  const rPm = "）｠」』］〛｝】〗〉》〕〙〟。．、，";
-  const mPm = "・：；";
-  const dPm = "！？‼⁇⁈⁉";
-  const emSp = "　";
-  const jwAkiSC = "aa--jw-aki";
-  const lrPmAkiSC = "aa--lr-pm-aki";
-  const mPmAkiSC = "aa--m-pm-aki";
-  const dPmAkiSC = "aa--d-pm-aki";
-  const lPmSC = "aa--l-pm";
-  const rPmSC = "aa--r-pm";
-  const mPmSC = "aa--m-pm";
-  const atrType = "attribute-type";
-  const atrLrLeft = "attribute-lr-left";
-  const atrLrRight = "attribute-lr-right";
-  const atrJpn = "attribute-jpn";
-  const atrWrn = "attribute-wrn";
-  const atrLPm = "attribute-lpm";
-  const atrRPm = "attribute-rpm";
-  const atrMPm = "attribute-mpm";
-  const atrOth = "attribute-oth";
+  const jpn = 'ぁ-んァ-ヶ一-龠ー';
+  const wrn = '0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ';
+  const lPm = '（｟「『［〚｛【〖〈《〔〘〝';
+  const rPm = '）｠」』］〛｝】〗〉》〕〙〟。．、，';
+  const mPm = '・：；';
+  const dPm = '！？‼⁇⁈⁉';
+  const emSp = '　';
+  const jwAkiSC = 'aa--jw-aki';
+  const lrPmAkiSC = 'aa--lr-pm-aki';
+  const mPmAkiSC = 'aa--m-pm-aki';
+  const dPmAkiSC = 'aa--d-pm-aki';
+  const lPmSC = 'aa--l-pm';
+  const rPmSC = 'aa--r-pm';
+  const mPmSC = 'aa--m-pm';
+  const atrType = 'attribute-type';
+  const atrLrLeft = 'attribute-lr-left';
+  const atrLrRight = 'attribute-lr-right';
+  const atrJpn = 'attribute-jpn';
+  const atrWrn = 'attribute-wrn';
+  const atrLPm = 'attribute-lpm';
+  const atrRPm = 'attribute-rpm';
+  const atrMPm = 'attribute-mpm';
+  const atrOth = 'attribute-oth';
 
   const adjustAki = (tree) => {
-
     markFirstLastCharAttributes(tree);
     // TODO:
     // The current implementation requires multiple calls to move to the top,
@@ -37,9 +36,21 @@ export default function rehypeAdjustAki() {
     consumeAttributes(tree);
     deleteAttributes(tree);
 
-    insertAkiBetween(tree, new RegExp(`[${jpn}][${wrn}]|[${wrn}][${jpn}]`), jwAkiSC);
-    insertAkiBetween(tree, new RegExp(`[^${lPm}${mPm}][${lPm}]|[${rPm}][^${rPm}${mPm}]`), lrPmAkiSC);
-    insertAkiBetween(tree, new RegExp(`[^${mPm}][${mPm}]|[${mPm}][^${mPm}]`), mPmAkiSC);
+    insertAkiBetween(
+      tree,
+      new RegExp(`[${jpn}][${wrn}]|[${wrn}][${jpn}]`),
+      jwAkiSC,
+    );
+    insertAkiBetween(
+      tree,
+      new RegExp(`[^${lPm}${mPm}][${lPm}]|[${rPm}][^${rPm}${mPm}]`),
+      lrPmAkiSC,
+    );
+    insertAkiBetween(
+      tree,
+      new RegExp(`[^${mPm}][${mPm}]|[${mPm}][^${mPm}]`),
+      mPmAkiSC,
+    );
 
     replaceDpAki(tree, new RegExp(`[${dPm}]${emSp}`), dPmAkiSC);
 
@@ -103,7 +114,7 @@ export default function rehypeAdjustAki() {
   };
 
   const makeTextNode = (value) => {
-    return { type: "text", value: value };
+    return { type: 'text', value: value };
   };
 
   const makeSpanNode = (className, value) => {
@@ -112,21 +123,21 @@ export default function rehypeAdjustAki() {
       children.push(makeTextNode(value));
     }
     return {
-      type: "element",
-      tagName: "span",
+      type: 'element',
+      tagName: 'span',
       properties: { className: [className] },
       children: children,
     };
   };
 
   const flatMapText = (tree, block) => {
-    const ignoreTags = ["code", "code-inline", "pre"];
+    const ignoreTags = ['code', 'code-inline', 'pre'];
     const _flatMapText = (node) => {
       if (ignoreTags.includes(node.tagName)) return [node];
       if (node.children) {
         node.children = node.children.flatMap((child) => _flatMapText(child));
       }
-      if (node.type !== "text") return [node];
+      if (node.type !== 'text') return [node];
       return block(node);
     };
 
@@ -144,22 +155,22 @@ export default function rehypeAdjustAki() {
   const getFirstCharAttribute = (text) => {
     if (text.length === 0) return undefined;
     const char = text.slice(0, 1);
-    if ((new RegExp(`^[${jpn}]$`)).test(char)) return atrJpn;
-    if ((new RegExp(`^[${wrn}]$`)).test(char)) return atrWrn;
-    if ((new RegExp(`^[${lPm}]$`)).test(char)) return atrLPm;
-    if ((new RegExp(`^[${rPm}]$`)).test(char)) return atrRPm;
-    if ((new RegExp(`^[${mPm}]$`)).test(char)) return atrMPm;
+    if (new RegExp(`^[${jpn}]$`).test(char)) return atrJpn;
+    if (new RegExp(`^[${wrn}]$`).test(char)) return atrWrn;
+    if (new RegExp(`^[${lPm}]$`).test(char)) return atrLPm;
+    if (new RegExp(`^[${rPm}]$`).test(char)) return atrRPm;
+    if (new RegExp(`^[${mPm}]$`).test(char)) return atrMPm;
     return atrOth;
   };
 
   const getLastCharAttribute = (text) => {
     if (text.length === 0) return undefined;
     const char = text.slice(-1);
-    if ((new RegExp(`^[${jpn}]$`)).test(char)) return atrJpn;
-    if ((new RegExp(`^[${wrn}]$`)).test(char)) return atrWrn;
-    if ((new RegExp(`^[${lPm}]$`)).test(char)) return atrLPm;
-    if ((new RegExp(`^[${rPm}]$`)).test(char)) return atrRPm;
-    if ((new RegExp(`^[${mPm}]$`)).test(char)) return atrMPm;
+    if (new RegExp(`^[${jpn}]$`).test(char)) return atrJpn;
+    if (new RegExp(`^[${wrn}]$`).test(char)) return atrWrn;
+    if (new RegExp(`^[${lPm}]$`).test(char)) return atrLPm;
+    if (new RegExp(`^[${rPm}]$`).test(char)) return atrRPm;
+    if (new RegExp(`^[${mPm}]$`).test(char)) return atrMPm;
     return atrOth;
   };
 
@@ -169,7 +180,7 @@ export default function rehypeAdjustAki() {
         return markFirstLastCharAttributes(child);
       });
     }
-    if (node.type !== "text") return [node];
+    if (node.type !== 'text') return [node];
     const ret = [];
     const firstCharAttribute = getFirstCharAttribute(node.value);
     if (firstCharAttribute !== undefined) {
@@ -188,18 +199,18 @@ export default function rehypeAdjustAki() {
 
     node.children = node.children.flatMap((child) => {
       const ignoreTags = [
-        "p",
-        "sup",
-        "sub",
-        "ul",
-        "ol",
-        "li",
-        "table",
-        "thead",
-        "tbody",
-        "tr",
-        "th",
-        "td",
+        'p',
+        'sup',
+        'sub',
+        'ul',
+        'ol',
+        'li',
+        'table',
+        'thead',
+        'tbody',
+        'tr',
+        'th',
+        'td',
       ];
       if (
         ignoreTags.includes(child.tagName) ||
@@ -232,8 +243,12 @@ export default function rehypeAdjustAki() {
       const a = node.children[i];
       const b = node.children[i + 1];
       if (
-        a === undefined || a.type !== atrType || a.lr !== atrLrRight ||
-        b === undefined || b.type !== atrType || b.lr !== atrLrLeft
+        a === undefined ||
+        a.type !== atrType ||
+        a.lr !== atrLrRight ||
+        b === undefined ||
+        b.type !== atrType ||
+        b.lr !== atrLrLeft
       ) {
         newChildren.push(a);
       } else if (
@@ -243,16 +258,8 @@ export default function rehypeAdjustAki() {
         newChildren.push(makeSpanNode(jwAkiSC));
         i++;
       } else if (
-        (
-          a.t !== atrLPm &&
-          a.t !== atrMPm &&
-          b.t === atrLPm
-        ) ||
-        (
-          a.t === atrRPm &&
-          b.t !== atrRPm &&
-          b.t !== atrMPm
-        )
+        (a.t !== atrLPm && a.t !== atrMPm && b.t === atrLPm) ||
+        (a.t === atrRPm && b.t !== atrRPm && b.t !== atrMPm)
       ) {
         newChildren.push(makeSpanNode(lrPmAkiSC));
         i++;

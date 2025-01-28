@@ -1,80 +1,80 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import AdjustText from "../../components/AdjustText.astro";
-import { TAG_PREFIX, TAGS_TITLE } from "../../consts";
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdjustText from '../../components/AdjustText.astro';
+import { TAG_PREFIX, TAGS_TITLE } from '../../consts';
 
-const posts = await getCollection("posts");
+const posts = await getCollection('posts');
 const tags = (() => {
-	const tagsCount: Map<string, { name: string; count: number }> = new Map();
-	posts.forEach((post) => {
-		post.data.tags?.forEach((tag) => {
-			const value = tagsCount.get(tag.id);
-			tagsCount.set(tag.id, {
-				name: value?.name ?? tag.name,
-				count: (value?.count ?? 0) + 1,
-			});
-		});
-	});
-	const tags: { id: string; name: string; count: number }[] = [];
-	tagsCount.forEach((value, id) => {
-		tags.push({ id: id, name: value.name, count: value.count });
-	});
-	return tags.sort((a, b) => b.count - a.count);
+  const tagsCount: Map<string, { name: string; count: number }> = new Map();
+  posts.forEach((post) => {
+    post.data.tags?.forEach((tag) => {
+      const value = tagsCount.get(tag.id);
+      tagsCount.set(tag.id, {
+        name: value?.name ?? tag.name,
+        count: (value?.count ?? 0) + 1,
+      });
+    });
+  });
+  const tags: { id: string; name: string; count: number }[] = [];
+  tagsCount.forEach((value, id) => {
+    tags.push({ id: id, name: value.name, count: value.count });
+  });
+  return tags.sort((a, b) => b.count - a.count);
 })();
 ---
 
 <>
-	<BaseLayout title={TAGS_TITLE}>
-		<h1 class="title">
-			<AdjustText text={TAGS_TITLE} />
-		</h1>
-		<ul class="tags">
-			{
-				tags.map((tag) => (
-					<li>
-						<a href={`/tags/${tag.id}/`} class="tag">
-							<AdjustText text={`${TAG_PREFIX}${tag.name} (${tag.count})`} />
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</BaseLayout>
+  <BaseLayout title={TAGS_TITLE}>
+    <h1 class="title">
+      <AdjustText text={TAGS_TITLE} />
+    </h1>
+    <ul class="tags">
+      {
+        tags.map((tag) => (
+          <li>
+            <a href={`/tags/${tag.id}/`} class="tag">
+              <AdjustText text={`${TAG_PREFIX}${tag.name} (${tag.count})`} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </BaseLayout>
 </>
 
 <style lang="scss">
-	.title {
-		font: typography.$font-headline-large;
-		margin-top: 24px;
-	}
+  .title {
+    font: typography.$font-headline-large;
+    margin-top: 24px;
+  }
 
-	.tags {
-		margin: 0 0 0 -24px;
-		padding: 0;
-		list-style: none;
-		display: flex;
-		flex-wrap: wrap;
+  .tags {
+    margin: 0 0 0 -24px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
 
-		.tag {
-			font: typography.$font-body-medium;
-			line-height: 2.5;
-			margin-left: 24px;
-			color: inherit;
-			text-decoration: none;
-			border-radius: 2px;
+    .tag {
+      font: typography.$font-body-medium;
+      line-height: 2.5;
+      margin-left: 24px;
+      color: inherit;
+      text-decoration: none;
+      border-radius: 2px;
 
-			@media (hover: hover) {
-				&:hover {
-					color: colors.$color-link;
-					outline: 1px dashed;
-				}
-			}
+      @media (hover: hover) {
+        &:hover {
+          color: colors.$color-link;
+          outline: 1px dashed;
+        }
+      }
 
-			&:active {
-				color: colors.$color-link;
-				outline: 1px solid;
-			}
-		}
-	}
+      &:active {
+        color: colors.$color-link;
+        outline: 1px solid;
+      }
+    }
+  }
 </style>

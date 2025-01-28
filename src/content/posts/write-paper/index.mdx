@@ -1,13 +1,12 @@
 ---
-title: "論文の書き方"
-description: "所属する研究室のために作成した「卒業論文の書き方」の一部を抜粋し、紹介します。"
+title: '論文の書き方'
+description: '所属する研究室のために作成した「卒業論文の書き方」の一部を抜粋し、紹介します。'
 publishedDate: 2021-08-08
 updatedDate: 2024-06-29
-tags: [
-  {id: "memorandum", name: "備忘録"},
-]
+tags: [{ id: 'memorandum', name: '備忘録' }]
 ---
-import JwAki from "../../../components/JwAki.astro";
+
+import JwAki from '../../../components/JwAki.astro';
 
 ## はじめに
 
@@ -56,15 +55,16 @@ import JwAki from "../../../components/JwAki.astro";
 - 丸括弧は統一する。半角括弧<JwAki />`()`<JwAki />はgやpなどのために少し下に長いです。全角括弧<JwAki />`（）`<JwAki />は括弧の高さが和文字と合います。このブログでも、僕が執筆する論文等でも全角括弧で統一しています。数式では半角括弧を使用すべきです。
 - 句読点（カンマやピリオドなど）は統一します。句読点の組み合わせを紹介します[^,.]。
   - 半角カンマ<JwAki />`,`<JwAki />と半角ピリオド<JwAki />`.`：  
-  句読点の後には必ず半角スペースを入れます. 句読点の前にスペースは入れません. 英文や数式とフォーマットを統一できます.
+    句読点の後には必ず半角スペースを入れます. 句読点の前にスペースは入れません. 英文や数式とフォーマットを統一できます.
   - 全角カンマ<JwAki />`，`<JwAki />と全角ピリオド<JwAki />`．`：  
-  句読点の前後にスペースは入れません．技術文書ではこの組み合わせが多いです．僕が執筆する論文等でも，この組み合わせを採用しています．
+    句読点の前後にスペースは入れません．技術文書ではこの組み合わせが多いです．僕が執筆する論文等でも，この組み合わせを採用しています．
   - 全角カンマ<JwAki />`，`と丸<JwAki />`。`：  
-  句読点の前後にスペースは入れません。[公用文改善の趣旨徹底について](https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/sanko/koyobun/pdf/yoryo_ver02.pdf)に定められていた組み合わせです。2022年1月11日に[公用文作成の考え方](https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/93651301_01.pdf)で見直しされました。
+    句読点の前後にスペースは入れません。[公用文改善の趣旨徹底について](https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/sanko/koyobun/pdf/yoryo_ver02.pdf)に定められていた組み合わせです。2022年1月11日に[公用文作成の考え方](https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/93651301_01.pdf)で見直しされました。
   - 点<JwAki />`、`<JwAki />と丸<JwAki />`。`：  
-  句読点の前後にスペースは入れません。和文の縦書きで採用される組み合わせと同じです。[公用文作成の考え方](https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/93651301_01.pdf)に定められています。
+    句読点の前後にスペースは入れません。和文の縦書きで採用される組み合わせと同じです。[公用文作成の考え方](https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/93651301_01.pdf)に定められています。
 
 [^indent]: LaTeXやMS Wordの機能でインデントを設定すべきです。
+
 [^,.]: 紹介中は句読点をその組み合わせにしています。
 
 ### 数式
@@ -82,7 +82,9 @@ import JwAki from "../../../components/JwAki.astro";
 - 単位はローマン体にします。また、単位の前には空白を入れます。$\%$<JwAki />や<JwAki />$^{\circ}$<JwAki />の前には空白を入れません（良：$50\,\mathrm{m}$, $20\%$、悪：$50\,m$, $50\mathrm{m}$, $20\,\%$）。
 
 [^eq-mode]: LaTeXは<JwAki />`$ $`<JwAki />で、MS WordはInsert、Equationでモードを切り替える。
+
 [^eq-,.]: 英文では数式が文の一部で、句読点を付けます。文の終わりが数式の場合は句点<JwAki />`.`<JwAki />にします。
+
 [^eq-text]: LaTeXなら<JwAki />`\text{}`<JwAki />の利用を強くオススメします。
 
 ### 表
@@ -116,7 +118,7 @@ import JwAki from "../../../components/JwAki.astro";
 
 研究で受けた援助等がある場合に謝辞を書きます。たとえば、指導教員や研究室の他の学生に対する謝辞は次のようになります。
 
->本研究におきまして，〇〇研究室の〇〇教授から多大なるご指導，ご助力を賜りましたことを深く感謝するとともに，心からお礼申し上げます．また，ご協力いただいた同研究室の各氏にも感謝します．
+> 本研究におきまして，〇〇研究室の〇〇教授から多大なるご指導，ご助力を賜りましたことを深く感謝するとともに，心からお礼申し上げます．また，ご協力いただいた同研究室の各氏にも感謝します．
 
 ### 参考文献
 

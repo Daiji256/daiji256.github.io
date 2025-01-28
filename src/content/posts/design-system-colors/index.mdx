@@ -1,18 +1,20 @@
 ---
-title: "デザインシステムにおけるカラーコンポーネントの比較"
-description: "デザインシステムにおけるカラーコンポーネントについて説明します。Material Design、Carbon Design System、Acornなど、異なるデザインシステムの色の使い方や参照方法を比較します。"
+title: 'デザインシステムにおけるカラーコンポーネントの比較'
+description: 'デザインシステムにおけるカラーコンポーネントについて説明します。Material Design、Carbon Design System、Acornなど、異なるデザインシステムの色の使い方や参照方法を比較します。'
 publishedDate: 2024-08-30
-tags: [
-  {id: "design", name: "デザイン"},
-  {id: "design-system", name: "デザインシステム"},
-  {id: "color-component", name: "カラーコンポーネント"},
-  {id: "color", name: "色"},
-]
+tags:
+  [
+    { id: 'design', name: 'デザイン' },
+    { id: 'design-system', name: 'デザインシステム' },
+    { id: 'color-component', name: 'カラーコンポーネント' },
+    { id: 'color', name: '色' },
+  ]
 ---
-import JwAki from "../../../components/JwAki.astro";
-import Color from "../../../components/Color.astro";
-import { Image } from "astro:assets";
-import colorReferencePatterns from "./images/color-reference-patterns.webp";
+
+import JwAki from '../../../components/JwAki.astro';
+import Color from '../../../components/Color.astro';
+import { Image } from 'astro:assets';
+import colorReferencePatterns from './images/color-reference-patterns.webp';
 
 ## はじめに
 
@@ -130,7 +132,12 @@ Surface Primary -- On Surface Accent Primaryのようにコントラスト比を
   UIからButton Backgroundのようなロールを参照する  
   Carbon Design System、Acornなど
 
-<Image src={colorReferencePatterns} alt="タイプの分類と関係性" width={colorReferencePatterns.width / 4} densities={[2, 3, 4]} />
+<Image
+  src={colorReferencePatterns}
+  alt="タイプの分類と関係性"
+  width={colorReferencePatterns.width / 4}
+  densities={[2, 3, 4]}
+/>
 
 ### 各タイプの特徴
 

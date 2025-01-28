@@ -1,26 +1,26 @@
 ---
-import Post from "./Post.astro";
-import { type PostSummary } from "../models/postSummary";
+import Post from './Post.astro';
+import { type PostSummary } from '../models/postSummary';
 
 type Props = {
-	posts: PostSummary[];
+  posts: PostSummary[];
 };
 
 const { posts } = Astro.props;
 ---
 
 <>
-	{
-		posts.map((post) => (
-			<div class="post">
-				<Post post={post} />
-			</div>
-		))
-	}
+  {
+    posts.map((post) => (
+      <div class="post">
+        <Post post={post} />
+      </div>
+    ))
+  }
 </>
 
 <style lang="scss">
-	.post:not(:first-child) {
-		margin-top: 24px;
-	}
+  .post:not(:first-child) {
+    margin-top: 24px;
+  }
 </style>

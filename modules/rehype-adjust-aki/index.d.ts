@@ -3,5 +3,5 @@
  */
 export default function rehypeAdjustAki():
   | void
-  | import('unified').Transformer<import('hast').Root, import('hast').Root>
-export type Root = import('hast').Root
+  | import('unified').Transformer<import('hast').Root, import('hast').Root>;
+export type Root = import('hast').Root;

@@ -1,22 +1,20 @@
 ---
-title: "赤・緑・青やシアン・マゼンタ・イエローの加法色"
-description: "赤・緑・青やシアン・マゼンタ・イエローの加法色が白色だと知覚する理由を簡単に解説します。その後簡単な実験を行い、体験します。"
+title: '赤・緑・青やシアン・マゼンタ・イエローの加法色'
+description: '赤・緑・青やシアン・マゼンタ・イエローの加法色が白色だと知覚する理由を簡単に解説します。その後簡単な実験を行い、体験します。'
 publishedDate: 2025-01-15
-tags: [
-  {id: "color", name: "色"},
-  {id: "color-science", name: "色彩工学"},
-]
+tags: [{ id: 'color', name: '色' }, { id: 'color-science', name: '色彩工学' }]
 ---
-import JwAki from "../../../components/JwAki.astro";
-import Color from "../../../components/Color.astro";
-import { Image } from "astro:assets";
-import tweet from "./images/tweet.png";
-import grok from "./images/grok.png";
-import cone_fundamentals from "./images/cone-fundamentals.png";
-import rgb from "./images/rgb.png";
-import cmy from "./images/cmy.png";
-import rgb_camera from "./images/rgb-camera.jpg";
-import cmy_camera from "./images/cmy-camera.jpg";
+
+import JwAki from '../../../components/JwAki.astro';
+import Color from '../../../components/Color.astro';
+import { Image } from 'astro:assets';
+import tweet from './images/tweet.png';
+import grok from './images/grok.png';
+import cone_fundamentals from './images/cone-fundamentals.png';
+import rgb from './images/rgb.png';
+import cmy from './images/cmy.png';
+import rgb_camera from './images/rgb-camera.jpg';
+import cmy_camera from './images/cmy-camera.jpg';
 
 僕は色について素人です。間違っていたらすみません。
 
@@ -26,11 +24,21 @@ import cmy_camera from "./images/cmy-camera.jpg";
 
 白が正答なのですが、黒の票が$61.9\%$<JwAki />と最も多く期待通りの結果だったのではと思います。「CMYと聞いたら減法混色で黒になる！」と反射的に答える人が多いことが良く分かります。
 
-<Image src={tweet} alt="問：R（赤）・G（緑）・B（青）を混ぜると、（ほぼ）白になります。では、同じ条件で、C（シアン）・M（マゼンタ）・Y（黄）を混ぜると、どんな色になるでしょうか？　Haruhiko Okumura" width={tweet.width / 2} densities={[1.5, 2]} />
+<Image
+  src={tweet}
+  alt="問：R（赤）・G（緑）・B（青）を混ぜると、（ほぼ）白になります。では、同じ条件で、C（シアン）・M（マゼンタ）・Y（黄）を混ぜると、どんな色になるでしょうか？　Haruhiko Okumura"
+  width={tweet.width / 2}
+  densities={[1.5, 2]}
+/>
 
 [Grok2の解説](https://x.com/i/grok/share/Vo02o7EylDOm6zjqG2KMzrHtC)も期待通りの誤解をしていて嬉しいです。
 
-<Image src={grok} alt="Cyan, magenta, and yellow are subtractive primary colors used in printing, where mixing them ideally results in black due to the subtractive color mixing process, not white as with additive colors like RGB. The poll in the post reflects a common misunderstanding or curiosity about color mixing models, where many might expect a similar result to RGB, but in CMY mixing, the combination of all primary colors leads to a darker result, closer to black. In Japanese culture, manga often uses black and white for practical reasons like production speed and cost, which might influence how color theory is perceived by the audience of the post, given the cultural context of the poster. Grok2" width={grok.width / 2} densities={[1.5, 2]} />
+<Image
+  src={grok}
+  alt="Cyan, magenta, and yellow are subtractive primary colors used in printing, where mixing them ideally results in black due to the subtractive color mixing process, not white as with additive colors like RGB. The poll in the post reflects a common misunderstanding or curiosity about color mixing models, where many might expect a similar result to RGB, but in CMY mixing, the combination of all primary colors leads to a darker result, closer to black. In Japanese culture, manga often uses black and white for practical reasons like production speed and cost, which might influence how color theory is perceived by the audience of the post, given the cultural context of the poster. Grok2"
+  width={grok.width / 2}
+  densities={[1.5, 2]}
+/>
 
 ## 解説
 
@@ -40,7 +48,12 @@ import cmy_camera from "./images/cmy-camera.jpg";
 
 人には3種類の錐体細胞（L錐体、M錐体、S錐体）があり、それぞれ別の特性を持っています。錐体の反応が神経系で処理され色を知覚します。多彩な波長を持つ複色光では3種類の錐体が反応し、白色と知覚されます。赤・緑・青の加法色も同様の理由で白色として知覚されます。シアン・マゼンタ・イエローの加法色も白色と知覚されます。もし、シアンなどが複色光だとしても、最終的に各錐体がいい感じに反応していれば白色として知覚されます。
 
-<Image src={cone_fundamentals} alt="錐体細胞の波長特性" width={cone_fundamentals.width / 1.5} densities={[1.5]} />
+<Image
+  src={cone_fundamentals}
+  alt="錐体細胞の波長特性"
+  width={cone_fundamentals.width / 1.5}
+  densities={[1.5]}
+/>
 
 赤・緑・青の単色光の波長を$625\,\mathrm{nm}$・$535\,\mathrm{nm}$・$465\,\mathrm{nm}$[^display-rgb]として錐体の反応は次の表の通りになります[^significant-digits]。赤・緑・青を中間混色[^intermediate-colors]することで錐体の反応が平均的になったとします[^not-simple]。各錐体が反応していることから白色（明るい灰色）と知覚されることが想像できます。
 
@@ -52,8 +65,11 @@ import cmy_camera from "./images/cmy-camera.jpg";
 | 赤緑青の中間色           | $0.4621$ | $0.3997$ | $0.2488$ |
 
 [^display-rgb]: RGBディスプレイに近くなるように波長を適当に決めました。
+
 [^significant-digits]: 有効数字は気にしていないです。温かい目で見てください、すみません。
+
 [^intermediate-colors]: 各色を高速に切り替えるなどして視覚的に混ぜるなどの中間混色は、広い意味で加法混色の1つです。
+
 [^not-simple]: 実際には単純な平均値にはなりません。
 
 ## 実験
@@ -64,21 +80,43 @@ import cmy_camera from "./images/cmy-camera.jpg";
 
 赤（<Color value="#FF0000" />）、緑（<Color value="#00FF00" />）、青（<Color value="#0000FF" />）を交互に配置した画像を作成しました。
 
-<Image src={rgb} alt="#FF0000、#00FF00、#0000FFが交互に配置された画像" width={rgb.width} densities={[1]} format="png" quality={100} />
+<Image
+  src={rgb}
+  alt="#FF0000、#00FF00、#0000FFが交互に配置された画像"
+  width={rgb.width}
+  densities={[1]}
+  format="png"
+  quality={100}
+/>
 
 これを暗い部屋で確認したところ、白色に見えました。一般的なRGBカメラで撮影した[^pixel-9-pro]場合でも白色になりました。加法混色（中間混色）により白色（グレー）になることを実感できました。
 
 [^pixel-9-pro]: Pixel 9 Proの広角で、標準アプリで撮影しました。
 
-<Image src={rgb_camera} alt="#FF0000、#00FF00、#0000FFが交互に配置された画像をディスプレイに表示し撮影した写真" width={rgb_camera.width} />
+<Image
+  src={rgb_camera}
+  alt="#FF0000、#00FF00、#0000FFが交互に配置された画像をディスプレイに表示し撮影した写真"
+  width={rgb_camera.width}
+/>
 
 同様に、シアン（<Color value="#00FFFF" />）、マゼンタ（<Color value="#FF00FF" />）、イエロー（<Color value="#FFFF00" />）を交互に配置した画像を作成しました。
 
-<Image src={cmy} alt="#00FFFF、#FF00FF、#FFFF00が交互に配置された画像" width={cmy.width} densities={[1]} format="png" quality={100} />
+<Image
+  src={cmy}
+  alt="#00FFFF、#FF00FF、#FFFF00が交互に配置された画像"
+  width={cmy.width}
+  densities={[1]}
+  format="png"
+  quality={100}
+/>
 
 これを暗い部屋で確認したところ、RGBに比べ2倍程度の明るさの白色に見えました。これは[奥村先生の解説](https://okumuralab.org/~okumura/cs/color_mixture.html)の通りです。赤・緑・青の時に比べてちょうど2倍光っているので、当たり前です。やっぱり色々な光源を持っておきたかったなと思います。
 
-<Image src={cmy_camera} alt="#00FFFF、#FF00FF、#FFFF00が交互に配置された画像をディスプレイに表示し撮影した写真" width={cmy_camera.width} />
+<Image
+  src={cmy_camera}
+  alt="#00FFFF、#FF00FF、#FFFF00が交互に配置された画像をディスプレイに表示し撮影した写真"
+  width={cmy_camera.width}
+/>
 
 ## 最後に
 

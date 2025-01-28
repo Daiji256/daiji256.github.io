@@ -1,24 +1,26 @@
 ---
-title: "HugoでOGP/Twitter Cardを自動生成したい"
-description: "Hugoでブログの投稿のOGP/Twitter Cardを生成します。Hugo v0.90.0から使えるようになった`images.Text`により画像を生成します。"
+title: 'HugoでOGP/Twitter Cardを自動生成したい'
+description: 'Hugoでブログの投稿のOGP/Twitter Cardを生成します。Hugo v0.90.0から使えるようになった`images.Text`により画像を生成します。'
 publishedDate: 2022-01-11
-updatedDate: 2024-12-05
-tags: [
-  {id: "hugo", name: "Hugo"},
-  {id: "ogp", name: "OGP"},
-  {id: "twitter-card", name: "Twitter Card"},
-]
+updatedDate: 2025-01-28
+tags:
+  [
+    { id: 'hugo', name: 'Hugo' },
+    { id: 'ogp', name: 'OGP' },
+    { id: 'twitter-card', name: 'Twitter Card' },
+  ]
 ---
-import JwAki from "../../../components/JwAki.astro";
-import { Image } from "astro:assets";
-import qiita from "./images/qiita.png";
-import daiji_blog_post from "./images/daiji-blog-post.png";
-import ogp_post from "./images/ogp-post.png";
-import sample_eng from "./images/sample-eng.png";
-import sample_ja from "./images/sample-ja.png";
-import sample_ja_22 from "./images/sample-ja-22.png";
-import daiji_blog from "./images/daiji-blog.png";
-import ogp from "./images/ogp.png";
+
+import JwAki from '../../../components/JwAki.astro';
+import { Image } from 'astro:assets';
+import qiita from './images/qiita.png';
+import daiji_blog_post from './images/daiji-blog-post.png';
+import ogp_post from './images/ogp-post.png';
+import sample_eng from './images/sample-eng.png';
+import sample_ja from './images/sample-ja.png';
+import sample_ja_22 from './images/sample-ja-22.png';
+import daiji_blog from './images/daiji-blog.png';
+import ogp from './images/ogp.png';
 
 ## はじめに
 
@@ -28,7 +30,12 @@ import ogp from "./images/ogp.png";
 
 この記事では最終的に次のような画像が生成されるようにします。
 
-<Image src={daiji_blog_post} alt="この記事の方法で生成されるOGP" width="400" densities={[1.5, 2]} />
+<Image
+  src={daiji_blog_post}
+  alt="この記事の方法で生成されるOGP"
+  width="400"
+  densities={[1.5, 2]}
+/>
 
 ## 準備
 
@@ -44,7 +51,7 @@ import ogp from "./images/ogp.png";
 
 `static/images/ogp/...`<JwAki />にある画像を参照することで、`hugo`を実行した時に生成される画像は`images/ogp/...`<JwAki />になるので都合がいいので僕はこうしてます。
 
-```html
+```
 {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
 {{ $img := resources.Get "images/ogp/ogp.png" }}
 {{ $img = $img | images.Filter
@@ -66,7 +73,12 @@ import ogp from "./images/ogp.png";
 
 そこで、長いタイトルの場合はみ出す分を切り取りこのようにします。
 
-<Image src={sample_ja_22} alt="和文のはみ出した部分を切り取り表示したOGP" width="300" densities={[1.5, 2]} />
+<Image
+  src={sample_ja_22}
+  alt="和文のはみ出した部分を切り取り表示したOGP"
+  width="300"
+  densities={[1.5, 2]}
+/>
 
 実際のソースコードを使って説明します。記事のタイトル以外に、ブログ名やカテゴリについても書きます。
 
@@ -76,7 +88,7 @@ import ogp from "./images/ogp.png";
 
 `$title`、`$categories`とかを複数の<JwAki />`(images.Text ...)`<JwAki />使って、同時に書きます。
 
-```html
+```
 {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
 {{ $img := resources.Get "images/ogp/ogp-post.png" }}
 {{ $title := .Title }}
@@ -128,7 +140,12 @@ import ogp from "./images/ogp.png";
 
 このように画像が出力されます。タイトルに英数字が入っているため、文字数の割に幅が狭いので、`strlen: 34`と設定しています。
 
-<Image src={daiji_blog_post} alt="表示する文字数を調整したOGP" width="400" densities={[1.5, 2]} />
+<Image
+  src={daiji_blog_post}
+  alt="表示する文字数を調整したOGP"
+  width="400"
+  densities={[1.5, 2]}
+/>
 
 ## OGP/Twitter Cardの設定
 
@@ -157,7 +174,7 @@ import ogp from "./images/ogp.png";
 
 このようにホーム等のページでは<JwAki />`.Params.tags`が設定されないので、それを判定して2種類の画像生成を分岐するようにしました。
 
-```html
+```
 {{ if or .Params.tags .Params.categories }}
   <!-- カテゴリ、タグがある場合 -->
 {{ else }}

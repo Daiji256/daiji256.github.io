@@ -1,19 +1,21 @@
 ---
-title: "[翻訳] Depth Prediction Without the Sensors: Leveraging Structure for Unsupervised Learning from Monocular Videos"
-description: "深度推定を行うstruct2depthの論文を翻訳します。"
+title: '[翻訳] Depth Prediction Without the Sensors: Leveraging Structure for Unsupervised Learning from Monocular Videos'
+description: '深度推定を行うstruct2depthの論文を翻訳します。'
 publishedDate: 2021-11-09
 updatedDate: 2024-06-29
-tags: [
-  {id: "paper", name: "論文"},
-  {id: "deep-learning", name: "Deep learning"},
-  {id: "struct2depth", name: "struct2depth"},
-  {id: "translation", name: "翻訳"},
-  {id: "memorandum", name: "備忘録"},
-]
+tags:
+  [
+    { id: 'paper', name: '論文' },
+    { id: 'deep-learning', name: 'Deep learning' },
+    { id: 'struct2depth', name: 'struct2depth' },
+    { id: 'translation', name: '翻訳' },
+    { id: 'memorandum', name: '備忘録' },
+  ]
 ---
-import JwAki from "../../../components/JwAki.astro";
-import { Image } from "astro:assets";
-import image1 from "./images/image1.jpg";
+
+import JwAki from '../../../components/JwAki.astro';
+import { Image } from 'astro:assets';
+import image1 from './images/image1.jpg';
 
 "[Depth Prediction Without the Sensors: Leveraging Structure for Unsupervised Learning from Monocular Videos](https://arxiv.org/abs/1811.06152)" の翻訳/解説を行います。まだ訳しきれてないですけど，もう書くのめんどくさいので公開します。
 
@@ -27,6 +29,7 @@ import image1 from "./images/image1.jpg";
 - ステレオカメラや独立したオプティカルフロー推定により，精度向上が行われた。
 
 [^egomotion]: カメラ（視点）の移動量のこと。
+
 [^supervised]: Eigen, Puhrsch, and Fergus 2014; Laina et al. 2016; Wang, Fouhey, and Gupta 2015; Li, Klein, and Yao 2017
 
 ### 提案手法
@@ -60,38 +63,56 @@ import image1 from "./images/image1.jpg";
 ### アルゴリズムのベースライン
 
 最近の研究[^recent-work]により，アルゴリズムの強力なベースラインを確立する。再構築損失は，前後のフレームのいずれかから中央のフレームへのワープの最小再構築損失として計算される。提案[^Godard]された
+
 $$
 L_{\text{rec}} = \min(\|\hat{I}_{1 \to 2} - I_2\|, \|\hat{I}_{3 \to 2} - I_2\|),
 $$
+
 により重大なオクルージョン/ディスオクルージョン効果によるペナルティを回避できる。再構築損失に加えて，ベースラインはSSIM損失[^Wang]，深度平滑損失を使用し，学習中に深さの正規化を適用する。これは，先行研究[^Zhou]での成功を示している。全体の損失は4つのスケールで適用される
+
 $$
 L = \alpha_{1}\sum_{i=0}^{3}L_{\text{rec}}^{(i)}+\alpha_{2}L_{\text{ssim}}^{(i)}+\alpha_{3}\frac{1}{2^i}L_{\text{sm}}^{(i)}.
 $$
+
 ここで$\alpha_j$はハイパーパラメータである。
 
 [^recent-work]: Zhou et al. 2017; Godard, Aodha, and Brostow 2018
+
 [^Godard]: Godard, Aodha, and Brostow 2018
+
 [^Wang]: Wang et al. 2004
+
 [^Zhou]: Zhou et al. 2017; Godard, Aodha, and Brostow 2017; Wang et al. 2018
 
 ### モーションモデル
 
 個々の3Dオブジェクトのモーションの予測に特化したオブジェクトモーションモデル$\psi_{M}$を紹介する（図[^fig2]）。事前に求めたセグメンテーションマスクによって画像を補完する。$\psi_{M}$は3D空間内のオブジェクトごとの変換ベクトルを予測することを学習するようにタスクが設定される。ワープされた画像の計算は，以前の研究[^Zhou]のようにエゴモーションに基づく単一の投影だけでなく，適切に組み合わされる一連の投影でもある。静的背景は$\psi_{E}$に基づく単一のワープによって生成されるが，セグメント化されたすべてのオブジェクトは，最初に$\psi_{E}$次に$\psi_{M}$にしたがってワープされた外観によって追加される。このアプローチは，オブジェクトの動きが3Dで学習され，推論で利用できるという点で，2D画像空間の動きにオプティカルフロー[^Yin]または3Dオプティカルフロー[^Yang]を使用した先行研究と異なる。このアプローチは，オブジェクトを3Dでモデル化するだけでなく，その場でオブジェクトの動きを学習する。これは，シーンおよび個々のオブジェクトごとに独立して深度をモデル化する原理的な方法である。
 
-<Image src={image1} alt="個々の3Dオブジェクトのモーションの予測に特化したオブジェクトモーションモデル" width={image1.width / 2} densities={[1.5, 2]} />
+<Image
+  src={image1}
+  alt="個々の3Dオブジェクトのモーションの予測に特化したオブジェクトモーションモデル"
+  width={image1.width / 2}
+  densities={[1.5, 2]}
+/>
 
 [^fig2]: 図は論文から引用。
+
 [^Yin]: Yin. 2018
+
 [^Yang]: Yang et al. 2018a
 
 インスタンス整列セグメンテーションマスクを，シーケンス（$I_1$, $I_2$, $I_3$）内の各潜在的なオブジェクト$i$ごとに<JwAki />$(S_{i,1}, S_{i,2}, S_{i,3}) \in \mathbb{N}^{H \times W}$として定義する。静的シーン$O_{0}(S)=1-\cup_{i}S_{i}$のマスクを定義し，移動する可能性のあるオブジェクトに対応するすべての画像コンテンツを削除する。一方，$j>0$での$O_{j}(S)=S_{j}$は，オブジェクトのマスクのみを返す。静的シーンのマスクは，シーケンスをエゴモーションモデル関数にフィードする前に，アダマール積（要素ごとの乗算$\odot$）によってシーケンス内のすべての画像に適用される。オブジェクトの動きをモデル化するには，最初にエゴモーションの推定を適用して，ワープされたシーケンス（$\hat{I}_{1 \to 2}$, $I_2$, $\hat{I}_{3 \to 2}$）と（$\hat{S}_{1 \to 2}$, $S_2$, $\hat{S}_{3 \to 2}$）を取得する。深度とエゴモーションの推定値が正しいと仮定すると，画像シーケンス内の不整合は，移動するオブジェクトによってのみ発生する。移動する可能性のあるオブジェクトの概要は，既成のアルゴリズム[^He]によって提供される（対象のデータセットのいずれでもトレーニングされていないオプティカルフロー[^Yang]を使用する以前の作業と同様）。画像内のすべてのオブジェクトインスタンスについて$i$番目のオブジェクトのオブジェクトモーション推定値$M^{(i)}$は次のように計算される。
+
 $$
 M_{1 \to 2}^{(i)}, M_{2 \to 3}^{(i)}=\psi_M(\hat{I}_{1 \to 2} \odot O_i(\hat{S}_{1 \to 2}), I_2 \odot O_i(S_2), \hat{I}_{3 \to 2} \odot O_i(\hat{S}_{3 \to 2})).
 $$
+
 実際の3D動きベクトルは，それぞれの領域でのオブジェクトの動きの変換の前後の動きを追跡することによって取得される。これらの動きの推定値に対応して，予測された動きにしたがってオブジェクトを移動する逆ワーピング操作が実行される。最終的なワープ結果は，移動するオブジェクト$\hat{I}^{(i)}$<JwAki />からの個々のワープとエゴモーション$\hat{I}$<JwAki />の組み合わせとなる。すべてのワーピング$\hat{I}_{1 \to 2}^{(F)}$<JwAki />は，
+
 $$
 \hat{I}_{1 \to 2}^{(F)}=\underbrace{\hat{I}_{1 \to 2} \odot V}_{\text{Gradient w.r.t.}\psi_E, \phi} + \sum_{i=1}^{N}\underbrace{\hat{I}_{1 \to 2}^{(i)} \odot O_i(S_2)}_{\text{Gradient w.r.t.}\psi_M, \phi},
 $$
+
 となり，$\hat{I}_{3 \to 2}^{(F)}$<JwAki />に相当する。満たされていない領域が存在する可能性があるが，これらは最小損失計算によって暗黙的に処理される。このアルゴリズムは，推論で使用できるオブジェクトごとに個々の3Dモーションを自動的に学習する。
 
 [^He]: He et al. 017
@@ -99,9 +120,11 @@ $$
 ### オブジェクトサイズの制約
 
 先行研究[^Godard] [^Yang]では，ほぼ同じ速度で前方を移動する車が，無限の深さに投影されることが多いことであると指摘された。これは，オブジェクトが動かず，ネットワークがそれを無限に遠くにあると推定した場合，再投影損失がほぼゼロになるからである。先行研究では，この重大な制限[^Godard] [^Wang] [^Yang]が指摘しているが，ステレオ画像でデータセットを拡張する以外に解決策はないと考えられていた。ただし，ステレオは単眼に比べ一般的ではなく，適用性が制限される。この問題に対処する別の方法を提案する。オブジェクトを非常に近くに配置し，小さいと仮定して，オブジェクトの動きを説明する。このアイデアは，モデルにオブジェクトのスケールを学習させ，3Dでオブジェクトをモデル化できるようにすることである。車の場合，$D_{\text{approx}}(p; h) \approx f_y\frac{p}{h}$（$fy \in \mathbb{R}$<JwAki />は焦点距離，$p \in \mathbb{R}$<JwAki />は実次元での事前の高さ，$h \in \mathbb{N}$<JwAki />はピクセル単位のセグメンテーションの高さ）を使用して，セグメンテーションマスクとカメラの固有値が与えられた場合に，おおよその深度推定を取得できる。実際には，そのような制約を手作業で推定しないために，追加の入力を必要とせずに，ネットワークにすべての制約を同時に学習させる。各オブジェクト$i \in \mathbb{N}^+$<JwAki />のスケールで損失項を定義する。$t(i): \mathbb{N} \to \mathbb{N}$<JwAki />が任意のオブジェクト$i$のカテゴリIDを定義し，$p_j$が各カテゴリID$j$の前の学習可能な高さであるとする。$D$を深度マップ推定，$S$を対応するオブジェクトアウトラインマスクとする。次に，損失
+
 $$
 L_{sc}=\sum_{i=1}^{N} \left\|\frac{D \odot O_i(S)}{\overline{D}}-\frac{D_{\text{approx}}(p_{t(i)}; h(O_{i}(S))) \odot O_i(S)}{\overline{D}}\right\|,
 $$
+
 は，セグメント化されたすべてのオブジェクトが無限の深さに縮退することを防ぎ，ネットワークに妥当な深さだけでなく，一致するオブジェクトの動きの推定値も生成される。中間フレームの平均推定深度である$\overline{D}$でスケーリングして，事前確率と深度予測範囲を共同で縮小することにより，些細な損失削減の潜在的な問題を軽減する。これは3Dの完全な単眼トレーニングセットアップで一般的な変性症例に対処する方法である。この制約はモデリング定式化の不可欠な部分であるため，モーションモデルは最初から$L_{sc}$でトレーニングされる。ただし，この追加の損失は，すでにトレーニングされたモデルに適用するときに誤った深度推定値を正常に修正できることを確認した。移動するオブジェクトの深度を修正することで機能する。
 
 ### テスト時間の絞り込みモデル

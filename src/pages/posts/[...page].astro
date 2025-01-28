@@ -1,42 +1,42 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import PostsPage from "../../components/PostsPage.astro";
-import { type PostSummary } from "../../models/postSummary";
-import { POSTS_TITLE, PAGE_SIZE } from "../../consts";
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostsPage from '../../components/PostsPage.astro';
+import { type PostSummary } from '../../models/postSummary';
+import { POSTS_TITLE, PAGE_SIZE } from '../../consts';
 
 type Props = {
-	pageLength: number;
-	posts: PostSummary[];
+  pageLength: number;
+  posts: PostSummary[];
 };
 
 export async function getStaticPaths() {
-	const posts = (await getCollection("posts"))
-		.sort((a, b) => (a.data.publishedDate > b.data.publishedDate ? -1 : 1))
-		.map((post) => {
-			return {
-				slug: post.slug,
-				title: post.data.title,
-				description: post.data.description,
-				publishedDate: post.data.publishedDate,
-				tags: post.data.tags,
-			};
-		});
-	const pageLength = Math.ceil(posts.length / PAGE_SIZE);
-	const ret: {
-		params: { page: string | undefined };
-		props: Props;
-	}[] = [];
-	for (let i = 0; i < pageLength; i++) {
-		ret.push({
-			params: { page: i === 0 ? undefined : String(i + 1) },
-			props: {
-				pageLength: pageLength,
-				posts: posts.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE),
-			},
-		});
-	}
-	return ret;
+  const posts = (await getCollection('posts'))
+    .sort((a, b) => (a.data.publishedDate > b.data.publishedDate ? -1 : 1))
+    .map((post) => {
+      return {
+        slug: post.slug,
+        title: post.data.title,
+        description: post.data.description,
+        publishedDate: post.data.publishedDate,
+        tags: post.data.tags,
+      };
+    });
+  const pageLength = Math.ceil(posts.length / PAGE_SIZE);
+  const ret: {
+    params: { page: string | undefined };
+    props: Props;
+  }[] = [];
+  for (let i = 0; i < pageLength; i++) {
+    ret.push({
+      params: { page: i === 0 ? undefined : String(i + 1) },
+      props: {
+        pageLength: pageLength,
+        posts: posts.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE),
+      },
+    });
+  }
+  return ret;
 }
 
 const { page: _page } = Astro.params;
@@ -45,13 +45,13 @@ const page = _page ? Number(_page) : 1;
 ---
 
 <>
-	<BaseLayout title={POSTS_TITLE}>
-		<PostsPage
-			title={POSTS_TITLE}
-			posts={posts}
-			page={page}
-			pageLength={pageLength}
-			baseUrl="/posts/"
-		/>
-	</BaseLayout>
+  <BaseLayout title={POSTS_TITLE}>
+    <PostsPage
+      title={POSTS_TITLE}
+      posts={posts}
+      page={page}
+      pageLength={pageLength}
+      baseUrl="/posts/"
+    />
+  </BaseLayout>
 </>

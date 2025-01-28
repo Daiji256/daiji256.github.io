@@ -1,21 +1,23 @@
 ---
-title: "LaTeXのすゝめ"
-description: "レポートや論文等の執筆に役立つLaTeXというツールを紹介します。LaTeXを知らない人や初心者を対象として、LaTeXでできることや使い方を紹介します。"
+title: 'LaTeXのすゝめ'
+description: 'レポートや論文等の執筆に役立つLaTeXというツールを紹介します。LaTeXを知らない人や初心者を対象として、LaTeXでできることや使い方を紹介します。'
 publishedDate: 2021-02-07
-updatedDate: 2024-12-05
-tags: [
-  {id: "tex", name: "TeX"},
-  {id: "latex", name: "LaTeX"},
-  {id: "uplatex", name: "upLaTeX"},
-  {id: "memorandum", name: "備忘録"},
-]
+updatedDate: 2025-01-28
+tags:
+  [
+    { id: 'tex', name: 'TeX' },
+    { id: 'latex', name: 'LaTeX' },
+    { id: 'uplatex', name: 'upLaTeX' },
+    { id: 'memorandum', name: '備忘録' },
+  ]
 ---
-import JwAki from "../../../components/JwAki.astro";
-import TeX from "../../../components/tex/TeX.astro";
-import LaTeX from "../../../components/tex/LaTeX.astro";
-import Footnotesize from "../../../components/tex/Footnotesize.astro";
-import Sl from "../../../components/tex/Sl.astro";
-import Sc from "../../../components/tex/Sc.astro";
+
+import JwAki from '../../../components/JwAki.astro';
+import TeX from '../../../components/tex/TeX.astro';
+import LaTeX from '../../../components/tex/LaTeX.astro';
+import Footnotesize from '../../../components/tex/Footnotesize.astro';
+import Sl from '../../../components/tex/Sl.astro';
+import Sc from '../../../components/tex/Sc.astro';
 
 ## はじめに
 
@@ -23,13 +25,9 @@ import Sc from "../../../components/tex/Sc.astro";
 
 ## TeX/LaTeXとは
 
-TeX（テック/テフ）[^tex]は、スタンフォード大学のDonald E. Knuth教授が自ら開発した**フリーの組版システム**です。TeXはMS Wordなどの見たままを出力するWYSIWYGソフトウェアと異なり、執筆・組版・出力の各段階を分けて処理を行います。**執筆に集中でき**、さまざまなプラットフォーム上で**高品質なの文書を出力する**ことができます。
+TeX（<TeX />/テック/テフ）は、スタンフォード大学のDonald E. Knuth教授が自ら開発した**フリーの組版システム**です。TeXはMS Wordなどの見たままを出力するWYSIWYGソフトウェアと異なり、執筆・組版・出力の各段階を分けて処理を行います。**執筆に集中でき**、さまざまなプラットフォーム上で**高品質なの文書を出力する**ことができます。
 
-[^tex]: <TeX /><JwAki />のように書くことが望ましいです。難しい場合はTeXにしましょう。この記事では統一のためにTeXにしています。
-
-LaTeX（ラテック/ラテフ）[^latex]はLeslie Lamport博士によって開発された、TeXに機能を追加し手軽に組版が行えるようになったシステムです。現在ではLaTeXを使うことが一般的なので、「TeX」でLaTeXを指すことが多いです。
-
-[^latex]: <LaTeX /><JwAki />のように書くことが望ましいです。難しい場合はLaTeXにしましょう。
+LaTeX（<LaTeX />/ラテック/ラテフ）はLeslie Lamport博士によって開発された、TeXに機能を追加し手軽に組版が行えるようになったシステムです。現在ではLaTeXを使うことが一般的なので、「TeX」でLaTeXを指すことが多いです。
 
 TeX、LaTeXの特徴は次のようなことがあげられます。
 
@@ -78,6 +76,7 @@ upLaTeXによる文書作成は執筆・組版・出力の3つのステップで
 この手順により執筆したTeXソースファイルからPDFの文書ファイルを出力できます。次に作成手順について例を用いて紹介します。
 
 [^legacy-modern]: (u)pLaTeXのようなレガシーLaTeXはDVIを経由してPDFを作成します。pdfLaTeX、LuaLaTeXなどのモダンLaTeXは直接PDFを出力するので2つのステップ（執筆と出力）になります。
+
 [^not-pdf]: 他のソフト（コマンド）によりPDFファイル以外のPSファイルを出力する場合などもあります。
 
 ### 原稿ファイルの執筆（TeXファイルの作成）
@@ -157,10 +156,11 @@ upLaTeXのソースファイルは次の基本構成となります。
 - 2文字以上の半角空白文字、タブ文字は1文字の半角文字とみなされる。
 - 段落のはじめのインデントはTeXが自動的に入ります。全角スペースによるインデントは推奨されません。
 - 次の記号は、TeXのキーワード扱いになるので、そのままでは出力できません（[参照](#記号)）。
-`#`、`$`、`%`、`&`、`_`、`{`、`}`、`<`、`>`、`\`、`^`、`|`、`~`
+  `#`、`$`、`%`、`&`、`_`、`{`、`}`、`<`、`>`、`\`、`^`、`|`、`~`
 - 記号<JwAki />`%`<JwAki />以降、行末まではコメントになります。
 - 記号<JwAki />`\`<JwAki />ではじまる文字列はコマンドまたは環境です。環境とは<JwAki />`\begin{環境名}`<JwAki />と<JwAki />`\end{環境名}`<JwAki />のような対になっている命令で、それ以外のものがコマンドです。
 - `\\`<JwAki />により強制改行ができます。安易な使用はオススメしません。
+
 ## コマンド
 
 ここでは主要な一部のコマンド等の紹介を行います。
@@ -220,6 +220,7 @@ upLaTeXのソースファイルは次の基本構成となります。
 フォントスタイルを変更するには次のコマンドが利用できます[^bf...] [^sl,sc]。日本語用の明朝体やゴシック体にするコマンド<JwAki />`\textmc`、`\textgt`も存在します。
 
 [^bf...]: `\bf`や<JwAki />`\it`のようなフォントスタイルを変更するコマンドは古く使ってはいけません。現在は<JwAki />`\bfseries`等の使用が推奨されます。
+
 [^sl,sc]: 本ブログでは`sl`、`sc`が使えないため、別の方法で再現しています。
 
 | 入力                  | 出力                          |
@@ -236,21 +237,21 @@ upLaTeXのソースファイルは次の基本構成となります。
 
 キーワード扱いの文字や一部の特殊文字を出力するためには次のコマンドなどが利用できます。
 
-| 入力       | 出力                                          |
-| ---------- | --------------------------------------------- |
-| `\#`       | $\#$                                          |
-| `\$`       | $$\$ $$                                       |
-| `\%`       | $\%$                                          |
-| `\&`       | $\&$                                          |
-| `\_`       | $\_$                                          |
-| `\{`       | $\{$                                          |
-| `\}`       | $\}$                                          |
-| `-`        | $\text{-}$（ハイフン）                        |
-| `--`       | $\text{–}$（エヌダッシュ）                    |
-| `---`      | $\text{—}$（エムダッシュ）                    |
-| `$-$`      | $-$（マイナス）                               |
-| ``` `` ``` | $\text{``}$（開きダブルクォーテーション）     |
-| `''`       | $\text{''}$（閉じダブルクォーテーション）[^"] |
+| 入力   | 出力                                          |
+| ------ | --------------------------------------------- |
+| `\#`   | $\#$                                          |
+| `\$`   | $$\$ $$                                       |
+| `\%`   | $\%$                                          |
+| `\&`   | $\&$                                          |
+| `\_`   | $\_$                                          |
+| `\{`   | $\{$                                          |
+| `\}`   | $\}$                                          |
+| `-`    | $\text{-}$（ハイフン）                        |
+| `--`   | $\text{–}$（エヌダッシュ）                    |
+| `---`  | $\text{—}$（エムダッシュ）                    |
+| `$-$`  | $-$（マイナス）                               |
+| ` `` ` | $\text{``}$（開きダブルクォーテーション）     |
+| `''`   | $\text{''}$（閉じダブルクォーテーション）[^"] |
 
 [^"]: TeXでは1キーで入力するダブルクォーテーション<JwAki />`"`<JwAki />の使用は推奨されません。
 
@@ -331,6 +332,7 @@ LaTeXには自動で節やキャプションの参照が行えます。文書の
   \label{fig:test}
 \end{figure}
 ```
+
 ```latex
 温度特性は、式(\ref{eq:test})で近似できる。
 \begin{align}
@@ -351,12 +353,14 @@ LaTeXには自動で節やキャプションの参照が行えます。文書の
 ### 別行立て数式
 
 別行立て数式は、
+
 $$
 \begin{align}
   f(x) &= ax + b\\
   g(x) &= cx^{2} + dx + e
 \end{align}
 $$
+
 のように環境`align`により書くことができます[^align]。他の数式環境の`eqnarray`も有名だが`amsmath.sty`ではサポートしていないので推奨できません。
 
 [^align]: このブログでは式番号が表示されないが、実際のTeXでは表示されます。また、TeXで式番号を表示しない場合は環境を`align*`<JwAki />とします。

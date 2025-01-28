@@ -1,66 +1,66 @@
 ---
 type Props = {
-	current: number;
-	pageLength: number;
-	baseUrl: string;
+  current: number;
+  pageLength: number;
+  baseUrl: string;
 };
 
 const { current, pageLength, baseUrl } = Astro.props;
 ---
 
 <>
-	{
-		pageLength > 1 && (
-			<nav class="pagination" aria-label="Pagination">
-				{Array.from({ length: pageLength }, (_, i) =>
-					current === i + 1 ? (
-						<span class="number selected">{i + 1}</span>
-					) : (
-						<a
-							class="number unselected"
-							href={`${baseUrl}${i > 0 ? `${i + 1}/` : ""}`}
-						>
-							{i + 1}
-						</a>
-					),
-				)}
-			</nav>
-		)
-	}
+  {
+    pageLength > 1 && (
+      <nav class="pagination" aria-label="Pagination">
+        {Array.from({ length: pageLength }, (_, i) =>
+          current === i + 1 ? (
+            <span class="number selected">{i + 1}</span>
+          ) : (
+            <a
+              class="number unselected"
+              href={`${baseUrl}${i > 0 ? `${i + 1}/` : ''}`}
+            >
+              {i + 1}
+            </a>
+          ),
+        )}
+      </nav>
+    )
+  }
 </>
 
 <style lang="scss">
-	.pagination {
-		margin-top: 24px;
-		text-align: center;
+  .pagination {
+    margin-top: 24px;
+    text-align: center;
 
-		.number {
-			font: typography.$font-label-large;
-			display: inline-block;
-			min-width: 24px;
-			margin: 0 4px;
-		}
+    .number {
+      font: typography.$font-label-large;
+      display: inline-block;
+      min-width: 24px;
+      margin: 0 4px;
+    }
 
-		.selected {
-			color: colors.$color-on-background-variant;
-			border-radius: 2px;
-			outline: 1px solid colors.$color-on-background-variant;
-		}
+    .selected {
+      color: colors.$color-on-background-variant;
+      border-radius: 2px;
+      outline: 1px solid colors.$color-on-background-variant;
+    }
 
-		.unselected {
-			color: colors.$color-link;
-			text-decoration: none;
-			border-radius: 2px;
+    .unselected {
+      color: colors.$color-link;
+      text-decoration: none;
+      border-radius: 2px;
 
-			@media (hover: hover) {
-				&:hover {
-					outline: 1px dashed;
-				}
-			}
+      @media (hover: hover) {
+        &:hover {
+          outline: 1px dashed;
+        }
+      }
 
-			&:active {
-				outline: 1px solid;
-			}
-		}
-	}
+      &:active {
+        outline: 1px solid;
+      }
+    }
+  }
 </style>

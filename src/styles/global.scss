@@ -1,16 +1,16 @@
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-	font-family: typography.$font-family-sans;
-	margin: 0;
-	padding: 0;
-	-webkit-text-size-adjust: 100%;
-	line-break: strict;
-	color: colors.$color-on-background;
-	background-color: colors.$color-background;
-	min-height: 100lvh;
+  font-family: typography.$font-family-sans;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  line-break: strict;
+  color: colors.$color-on-background;
+  background-color: colors.$color-background;
+  min-height: 100lvh;
 }
 
 h1,
@@ -23,312 +23,315 @@ ol,
 ul,
 li,
 figure {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 hr {
-	width: calc(min(100%, dimensions.$screen-wrapper-max) - 32px);
-	margin: 0 auto;
-	border: none;
-	border-bottom: 1px solid colors.$color-outline;
+  width: calc(min(100%, dimensions.$screen-wrapper-max) - 32px);
+  margin: 0 auto;
+  border: none;
+  border-bottom: 1px solid colors.$color-outline;
 }
 
 a {
-	color: colors.$color-link;
-	text-decoration: underline 4%;
+  color: colors.$color-link;
+  text-decoration: underline 4%;
 
-	&:visited {
-		color: colors.$color-link-visited;
-	}
+  &:visited {
+    color: colors.$color-link-visited;
+  }
 
-	@media (hover: hover) {
-		&:hover {
-			text-decoration: underline 8%;
-		}
-	}
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline 8%;
+    }
+  }
 
-	&:active {
-		text-decoration: underline 8%;
-	}
+  &:active {
+    text-decoration: underline 8%;
+  }
 }
 
 .external-link {
-	&::after {
-		content: "";
-		display: inline-block;
-		margin: 0 1px;
-		width: 8px;
-		height: 16px;
-		background-color: colors.$color-link;
-		mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M3 1H1v6h6V5M7 4V1H4M7 1 3.5 4.5'/></svg>") no-repeat;
-	}
+  &::after {
+    content: '';
+    display: inline-block;
+    margin: 0 1px;
+    width: 8px;
+    height: 16px;
+    background-color: colors.$color-link;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M3 1H1v6h6V5M7 4V1H4M7 1 3.5 4.5'/></svg>")
+      no-repeat;
+  }
 
-	&:visited {
-		&::after {
-			background-color: colors.$color-link-visited;
-		}
-	}
+  &:visited {
+    &::after {
+      background-color: colors.$color-link-visited;
+    }
+  }
 }
 
 main {
-	font: typography.$font-body-medium;
-	margin: 0 auto;
-	width: calc(min(100%, dimensions.$screen-wrapper-max) - 32px);
+  font: typography.$font-body-medium;
+  margin: 0 auto;
+  width: calc(min(100%, dimensions.$screen-wrapper-max) - 32px);
 
-	h1 {
-		font: typography.$font-headline-large;
-	}
+  h1 {
+    font: typography.$font-headline-large;
+  }
 
-	h2 {
-		font: typography.$font-headline-medium;
-	}
+  h2 {
+    font: typography.$font-headline-medium;
+  }
 
-	h3,
-	h4,
-	h5,
-	h6 {
-		font: typography.$font-headline-small;
-	}
+  h3,
+  h4,
+  h5,
+  h6 {
+    font: typography.$font-headline-small;
+  }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		&:not(:first-child) {
-			margin-top: 24px;
-		}
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+  }
 
-	p {
-		text-align: justify;
-	}
+  p {
+    text-align: justify;
+  }
 
-	ol,
-	ul {
-		padding-left: 24px;
-	}
+  ol,
+  ul {
+    padding-left: 24px;
+  }
 
-	ol {
-		list-style: decimal;
-	}
+  ol {
+    list-style: decimal;
+  }
 
-	ul {
-		list-style: disc;
-	}
+  ul {
+    list-style: disc;
+  }
 
-	strong {
-		font-weight: 700;
-	}
+  strong {
+    font-weight: 700;
+  }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	ul,
-	ol,
-	img,
-	pre {
-		margin-bottom: 16px;
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  img,
+  pre {
+    margin-bottom: 16px;
+  }
 
-	img {
-		display: block;
-		max-width: 100%;
-		height: auto;
-		margin: 0 auto;
-	}
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
 
-	table {
-		border-collapse: collapse;
-		margin: 16px auto;
+  table {
+    border-collapse: collapse;
+    margin: 16px auto;
 
-		td,
-		th {
-			border: 0;
-			padding: 2px 8px;
-		}
+    td,
+    th {
+      border: 0;
+      padding: 2px 8px;
+    }
 
-		tr:first-child th {
-			border-top: 2px solid colors.$color-outline;
-			border-bottom: 1px solid colors.$color-outline;
-		}
+    tr:first-child th {
+      border-top: 2px solid colors.$color-outline;
+      border-bottom: 1px solid colors.$color-outline;
+    }
 
-		tr:last-child td {
-			border-bottom: 2px solid colors.$color-outline;
-		}
-	}
+    tr:last-child td {
+      border-bottom: 2px solid colors.$color-outline;
+    }
+  }
 
-	hr {
-		width: 100%;
-	}
+  hr {
+    width: 100%;
+  }
 
-	blockquote {
-		margin: 0;
-		padding: 0 0 0 12px;
-		border-left: 2px solid colors.$color-outline;
-	}
+  blockquote {
+    margin: 0;
+    padding: 0 0 0 12px;
+    border-left: 2px solid colors.$color-outline;
+  }
 
-	code {
-		font-family: typography.$font-family-mono;
-	}
+  code {
+    font-family: typography.$font-family-mono;
+  }
 
-	pre {
-		outline: 1px solid colors.$color-outline;
-		border-radius: 2px;
+  pre {
+    outline: 1px solid colors.$color-outline;
+    border-radius: 2px;
 
-		code {
-			display: block;
-			width: fit-content;
-			padding: 12px;
-		}
-	}
+    code {
+      display: block;
+      width: fit-content;
+      padding: 12px;
+    }
+  }
 
-	math {
-		font-family: typography.$font-family-math;
-	}
+  math {
+    font-family: typography.$font-family-math;
+  }
 
-	details {
-		summary {
-			cursor: pointer;
-			list-style: none;
-			width: fit-content;
-			border-radius: 2px;
+  details {
+    summary {
+      cursor: pointer;
+      list-style: none;
+      width: fit-content;
+      border-radius: 2px;
 
-			&::before {
-				content: "";
-				display: inline-block;
-				margin-right: 4px;
-				width: 14px;
-				height: 14px;
-				background-color: colors.$color-on-background;
-				mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path stroke='black' stroke-width='1.5' d='M1.5 7h11M7 1.5v11'/></svg>") no-repeat;
-			}
+      &::before {
+        content: '';
+        display: inline-block;
+        margin-right: 4px;
+        width: 14px;
+        height: 14px;
+        background-color: colors.$color-on-background;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path stroke='black' stroke-width='1.5' d='M1.5 7h11M7 1.5v11'/></svg>")
+          no-repeat;
+      }
 
-			@media (hover: hover) {
-				&:hover {
-					color: colors.$color-link;
-					outline: 1px dashed;
+      @media (hover: hover) {
+        &:hover {
+          color: colors.$color-link;
+          outline: 1px dashed;
 
-					&::before {
-						background-color: colors.$color-link;
-					}
-				}
-			}
+          &::before {
+            background-color: colors.$color-link;
+          }
+        }
+      }
 
-			&:active {
-				color: colors.$color-link;
-				text-decoration: none;
-				outline: 1px solid;
+      &:active {
+        color: colors.$color-link;
+        text-decoration: none;
+        outline: 1px solid;
 
-				&::before {
-					background-color: colors.$color-link;
-				}
-			}
-		}
+        &::before {
+          background-color: colors.$color-link;
+        }
+      }
+    }
 
-		&[open] {
-			summary::before {
-				mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path stroke='black' stroke-width='1.5' d='M1.5 7h11'/></svg>") no-repeat;
-			}
-		}
-	}
+    &[open] {
+      summary::before {
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path stroke='black' stroke-width='1.5' d='M1.5 7h11'/></svg>")
+          no-repeat;
+      }
+    }
+  }
 
-	.footnote {
-		overflow: hidden;
-		width: 100%;
-		height: 0px;
-		border: none;
-		border-bottom: 1px solid colors.$color-outline;
-	}
+  .footnote {
+    overflow: hidden;
+    width: 100%;
+    height: 0px;
+    border: none;
+    border-bottom: 1px solid colors.$color-outline;
+  }
 
-	sup {
-		a {
-			font-weight: 700;
-			text-decoration: none;
-			border-radius: 2px;
+  sup {
+    a {
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 2px;
 
-			&:visited {
-				color: colors.$color-link;
-			}
+      &:visited {
+        color: colors.$color-link;
+      }
 
-			@media (hover: hover) {
-				&:hover {
-					text-decoration: none;
-					outline: 1px dashed;
-				}
-			}
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: none;
+          outline: 1px dashed;
+        }
+      }
 
-			&:active {
-				text-decoration: none;
-				outline: 1px solid;
-			}
-		}
-	}
+      &:active {
+        text-decoration: none;
+        outline: 1px solid;
+      }
+    }
+  }
 
-	.data-footnote-backref {
-		font-weight: 700;
-		text-decoration: none;
-		border-radius: 2px;
+  .data-footnote-backref {
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 2px;
 
-		&:visited {
-			color: colors.$color-link;
-		}
+    &:visited {
+      color: colors.$color-link;
+    }
 
-		@media (hover: hover) {
-			&:hover {
-				outline: 1px dashed;
-			}
-		}
+    @media (hover: hover) {
+      &:hover {
+        outline: 1px dashed;
+      }
+    }
 
-		&:active {
-			outline: 1px solid;
-		}
-	}
+    &:active {
+      outline: 1px solid;
+    }
+  }
 }
 
 .aa--l-pm {
-	margin-left: -0.5em;
+  margin-left: -0.5em;
 }
 
 .aa--r-pm {
-	margin-right: -0.5em;
+  margin-right: -0.5em;
 }
 
 .aa--m-pm {
-	margin: 0 -0.25em;
+  margin: 0 -0.25em;
 }
 
 .aa--jw-aki::after {
-	font-size: calc(16.7% / 0.29);
-	vertical-align: top;
-	content: " ";
+  font-size: calc(16.7% / 0.29);
+  vertical-align: top;
+  content: ' ';
 }
 
 .aa--lr-pm-aki::after {
-	font-size: calc(50% / 0.29);
-	vertical-align: top;
-	content: " ";
+  font-size: calc(50% / 0.29);
+  vertical-align: top;
+  content: ' ';
 }
 
 .aa--m-pm-aki::after {
-	font-size: calc(25% / 0.29);
-	vertical-align: top;
-	content: " ";
+  font-size: calc(25% / 0.29);
+  vertical-align: top;
+  content: ' ';
 }
 
 .aa--d-pm-aki::after {
-	font-size: calc(100% / 0.29);
-	vertical-align: top;
-	content: " ";
+  font-size: calc(100% / 0.29);
+  vertical-align: top;
+  content: ' ';
 }
