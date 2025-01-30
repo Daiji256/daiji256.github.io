@@ -26,9 +26,7 @@ const tags = (() => {
 
 <>
   <BaseLayout title={TAGS_TITLE}>
-    <h1 class="title">
-      <AdjustText text={TAGS_TITLE} />
-    </h1>
+    <h1><AdjustText text={TAGS_TITLE} /></h1>
     <ul class="tags">
       {
         tags.map((tag) => (
@@ -44,11 +42,6 @@ const tags = (() => {
 </>
 
 <style lang="scss">
-  .title {
-    font: typography.$font-headline-large;
-    margin-top: 24px;
-  }
-
   .tags {
     margin: 0 0 0 -24px;
     padding: 0;

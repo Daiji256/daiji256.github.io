@@ -26,9 +26,7 @@ const { Content } = await post.render();
 <>
   <BaseLayout title={post.data.title} description={post.data.description}>
     <article>
-      <h1 class="title">
-        <AdjustText text={post.data.title} />
-      </h1>
+      <h1><AdjustText text={post.data.title} /></h1>
       <div class="date">
         <div>
           <AdjustText text={PUBLISHED_DATE_LABEL} />
@@ -61,11 +59,6 @@ const { Content } = await post.render();
 </>
 
 <style lang="scss">
-  .title {
-    font: typography.$font-headline-large;
-    margin-top: 24px;
-  }
-
   .date {
     font: typography.$font-body-small;
     color: colors.$color-on-background-variant;

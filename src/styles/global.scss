@@ -80,21 +80,31 @@ a {
 main {
   font: typography.$font-body-medium;
   margin: 0 auto;
+  padding: 24px 0 64px 0;
   width: calc(min(100%, dimensions.$screen-wrapper-max) - 32px);
 
   h1 {
-    font: typography.$font-headline-large;
+    font: typography.$font-headline-h1;
   }
 
   h2 {
-    font: typography.$font-headline-medium;
+    font: typography.$font-headline-h2;
   }
 
-  h3,
-  h4,
-  h5,
+  h3 {
+    font: typography.$font-headline-h3;
+  }
+
+  h4 {
+    font: typography.$font-headline-h4;
+  }
+
+  h5 {
+    font: typography.$font-headline-h5;
+  }
+
   h6 {
-    font: typography.$font-headline-small;
+    font: typography.$font-headline-h6;
   }
 
   h1,

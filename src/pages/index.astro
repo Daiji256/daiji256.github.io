@@ -32,9 +32,7 @@ const pickupPosts: PostSummary[] = PICKUP_POSTS.flatMap((slug) => {
 
 <>
   <BaseLayout description={SITE_DESCRIPTION}>
-    <h1 class="title">
-      <AdjustText text={SITE_TITLE} />
-    </h1>
+    <h1><AdjustText text={SITE_TITLE} /></h1>
     <p><AdjustText text={SITE_DESCRIPTION} /></p>
     <h2><AdjustText text={PICKUP_TITLE} /></h2>
     <div>
@@ -67,11 +65,6 @@ const pickupPosts: PostSummary[] = PICKUP_POSTS.flatMap((slug) => {
 </>
 
 <style lang="scss">
-  .title {
-    font: typography.$font-headline-large;
-    margin-top: 24px;
-  }
-
   .post:not(:first-child) {
     margin-top: 24px;
   }
