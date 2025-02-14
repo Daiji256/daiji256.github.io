@@ -1,6 +1,6 @@
 ---
 import GoogleSearchConsole from './GoogleSearchConsole.astro';
-import GoogleAnalytics from './GoogleAnalytics.astro';
+import Umami from './Umami.astro';
 import { SITE_TITLE, SITE_URL } from '../consts';
 import '../styles/global.scss';
 
@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 {isProd && <GoogleSearchConsole />}
-{isProd && <GoogleAnalytics />}
+{isProd && <Umami />}
 
 <link rel="canonical" href={canonicalURL} />
 <link rel="sitemap" href="/sitemap-index.xml" />
