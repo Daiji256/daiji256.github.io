@@ -9,8 +9,9 @@
     src="https://www.googletagmanager.com/gtag/js?id=G-M6M115YLYV"></script>
   <script is:inline type="text/partytown">
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args) {
-      window.dataLayer.push(args);
+    function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      dataLayer.push(arguments);
     }
     gtag('js', new Date());
     gtag('config', 'G-M6M115YLYV');
