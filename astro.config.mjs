@@ -69,7 +69,7 @@ export default defineConfig({
     '/about': '/',
     '/privacy': '/privacy-policy/',
     '/categories': '/tags/',
-    '/categories/tex-latex': '//tags/tex/',
+    '/categories/tex-latex': '/tags/tex/',
     '/categories/日記-備忘録': '/tags/diary/',
     '/categories/hugo': '/tags/hugo/',
     '/categories/c': '/tags/c/',
