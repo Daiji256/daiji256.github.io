@@ -1,4 +1,4 @@
-export const SITE_TITLE = 'Daiji Blog';
+export const SITE_TITLE = 'Daiji256';
 export const SITE_DESCRIPTION = '高専卒エンジニアの気まぐれブログ';
 export const TITLE_SEPARATOR = ' | ';
 export const BREADCRUMBS_ARIA_LABEL = 'パンくずリスト';
@@ -9,7 +9,7 @@ export const POSTS_TITLE = '投稿';
 export const TAGS_TITLE = 'タグ';
 export const PRIVACY_POLICY_TITLE = 'プライバシーポリシー';
 export const CONTACT_TITLE = 'お問い合わせ';
-export const COPYRIGHT = 'Copyright 2020 Daiji';
+export const COPYRIGHT = 'Copyright 2020 Daiji Suzuki';
 export const PUBLISHED_DATE_LABEL = '公開';
 export const UPDATED_DATE_LABEL = '更新';
 export const FOOTNOTE_LABEL = '脚注';
