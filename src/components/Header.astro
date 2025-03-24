@@ -12,27 +12,12 @@ import { SITE_TITLE, POSTS_TITLE, TAGS_TITLE } from '../consts';
       <nav>
         <ul>
           <li>
-            <a class="nav-item" href="/posts/">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
-                <path
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M7 13H1V1h12v12H7ZM3.5 4h7M3.5 7h7M3.5 10h5"></path>
-              </svg>
+            <a class="nav-item posts" href="/posts/">
               <AdjustText text={POSTS_TITLE} />
             </a>
           </li>
           <li>
-            <a class="nav-item" href="/tags/">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
-                <path
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-width="1.5"
-                  d="M1.5 5h12M.5 9h12M6 1.5l-2.5 11M10.5 1.5 8 12.5"></path>
-              </svg>
+            <a class="nav-item tags" href="/tags/">
               <AdjustText text={TAGS_TITLE} />
             </a>
           </li>
@@ -89,9 +74,41 @@ import { SITE_TITLE, POSTS_TITLE, TAGS_TITLE } from '../consts';
           .nav-item {
             display: inline;
 
-            svg {
-              margin-right: 4px;
-              vertical-align: -7.5%;
+            @media (hover: hover) {
+              &:hover {
+                color: colors.$color-link;
+                outline: 1px dashed;
+
+                &::before {
+                  background-color: colors.$color-link;
+                }
+              }
+            }
+          }
+
+          .posts {
+            &::before {
+              content: '';
+              display: inline-block;
+              margin-right: 0.25em;
+              width: 0.875em;
+              height: 0.875em;
+              background-color: colors.$color-on-background;
+              mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M7 13H1V1h12v12H7ZM3.5 4h7M3.5 7h7M3.5 10h5'/></svg>")
+                top/contain no-repeat;
+            }
+          }
+
+          .tags {
+            &::before {
+              content: '';
+              display: inline-block;
+              margin-right: 0.25em;
+              width: 0.875em;
+              height: 0.875em;
+              background-color: colors.$color-on-background;
+              mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M1.5 5h12M.5 9h12M6 1.5l-2.5 11M10.5 1.5 8 12.5'/></svg>")
+                top/contain no-repeat;
             }
           }
         }
