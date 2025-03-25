@@ -17,9 +17,9 @@ export const FOOTNOTE_BACK_LABEL = 'に戻る';
 export const PAGE_SIZE = 10;
 export const PICKUP_TITLE = 'ピックアップ';
 export const PICKUP_POSTS = [
-  'latex-susume',
   'lualatex-susume',
   'design-system-colors',
+  'rehype-mathml',
 ];
 export const LINKS_TITLE = 'リンク';
 export const LINKS = [
