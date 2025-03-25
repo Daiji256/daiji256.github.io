@@ -84,6 +84,15 @@ import { SITE_TITLE, POSTS_TITLE, TAGS_TITLE } from '../consts';
                 }
               }
             }
+
+            &:active {
+              color: colors.$color-link;
+              outline: 1px solid;
+
+              &::before {
+                background-color: colors.$color-link;
+              }
+            }
           }
 
           .posts {
