@@ -3,26 +3,39 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostsPage from '../../components/PostsPage.astro';
 import { type PostSummary } from '../../models/postSummary';
+import { type ExternalPostSummary } from '../../models/externalPostSummary';
 import { POSTS_TITLE, PAGE_SIZE } from '../../consts';
+import { EXTERNAL_POSTS } from '../../externalPosts';
 
 type Props = {
   pageLength: number;
-  posts: PostSummary[];
+  posts: (PostSummary | ExternalPostSummary)[];
 };
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('posts'))
-    .sort((a, b) => (a.data.publishedDate > b.data.publishedDate ? -1 : 1))
-    .map((post) => {
-      return {
-        slug: post.slug,
-        title: post.data.title,
-        description: post.data.description,
-        publishedDate: post.data.publishedDate,
-        tags: post.data.tags,
-      };
-    });
-  const pageLength = Math.ceil(posts.length / PAGE_SIZE);
+  const posts: PostSummary[] = (await getCollection('posts')).map((post) => {
+    return {
+      slug: post.slug,
+      title: post.data.title,
+      description: post.data.description,
+      publishedDate: post.data.publishedDate,
+      tags: post.data.tags,
+    };
+  });
+  const externalPosts: ExternalPostSummary[] = EXTERNAL_POSTS.map((post) => {
+    return {
+      platform: post.platform,
+      title: post.title,
+      description: post.description,
+      publishedDate: new Date(post.publishedDate),
+      tags: post.tags,
+      url: post.url,
+    };
+  });
+  const allPosts = [...posts, ...externalPosts].sort((a, b) =>
+    a.publishedDate > b.publishedDate ? -1 : 1,
+  );
+  const pageLength = Math.ceil(allPosts.length / PAGE_SIZE);
   const ret: {
     params: { page: string | undefined };
     props: Props;
@@ -32,7 +45,7 @@ export async function getStaticPaths() {
       params: { page: i === 0 ? undefined : String(i + 1) },
       props: {
         pageLength: pageLength,
-        posts: posts.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE),
+        posts: allPosts.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE),
       },
     });
   }

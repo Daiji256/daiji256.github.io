@@ -3,30 +3,43 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PostsPage from '../../../components/PostsPage.astro';
 import { type PostSummary } from '../../../models/postSummary';
+import { type ExternalPostSummary } from '../../../models/externalPostSummary';
 import { type Tag } from '../../../models/tag';
 import { PAGE_SIZE } from '../../../consts';
+import { EXTERNAL_POSTS } from '../../../externalPosts';
 
 type Props = {
   tag: Tag;
   pageLength: number;
-  posts: PostSummary[];
+  posts: (PostSummary | ExternalPostSummary)[];
 };
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('posts'))
-    .sort((a, b) => (a.data.publishedDate > b.data.publishedDate ? -1 : 1))
-    .map((post) => {
-      return {
-        slug: post.slug,
-        title: post.data.title,
-        description: post.data.description,
-        publishedDate: post.data.publishedDate,
-        tags: post.data.tags,
-      };
-    });
+  const posts: PostSummary[] = (await getCollection('posts')).map((post) => {
+    return {
+      slug: post.slug,
+      title: post.data.title,
+      description: post.data.description,
+      publishedDate: post.data.publishedDate,
+      tags: post.data.tags,
+    };
+  });
+  const externalPosts: ExternalPostSummary[] = EXTERNAL_POSTS.map((post) => {
+    return {
+      platform: post.platform,
+      title: post.title,
+      description: post.description,
+      publishedDate: new Date(post.publishedDate),
+      tags: post.tags,
+      url: post.url,
+    };
+  });
+  const allPosts = [...posts, ...externalPosts].sort((a, b) =>
+    a.publishedDate > b.publishedDate ? -1 : 1,
+  );
   const tags = (() => {
     const tags: Set<Tag> = new Set();
-    posts.forEach((post) => {
+    allPosts.forEach((post) => {
       post.tags?.forEach((tag) => tags.add(tag));
     });
     return Array.from(tags.values());
@@ -36,7 +49,7 @@ export async function getStaticPaths() {
     props: Props;
   }[] = [];
   tags.forEach((tag) => {
-    const filteredPosts = posts.filter((post) =>
+    const filteredPosts = allPosts.filter((post) =>
       post.tags?.map((tag) => tag.id)?.includes(tag.id),
     );
     const pageLength = Math.ceil(filteredPosts.length / PAGE_SIZE);

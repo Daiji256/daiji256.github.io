@@ -1,9 +1,10 @@
 ---
 import Post from './Post.astro';
 import { type PostSummary } from '../models/postSummary';
+import { type ExternalPostSummary } from '../models/externalPostSummary';
 
 type Props = {
-  posts: PostSummary[];
+  posts: (PostSummary | ExternalPostSummary)[];
 };
 
 const { posts } = Astro.props;

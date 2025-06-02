@@ -3,10 +3,11 @@ import AdjustText from './AdjustText.astro';
 import Posts from './Posts.astro';
 import Pagination from './Pagination.astro';
 import { type PostSummary } from '../models/postSummary';
+import { type QiitaPostSummary } from '../models/qiitaPostSummary';
 
 type Props = {
   title: string;
-  posts: PostSummary[];
+  posts: (PostSummary | QiitaPostSummary)[];
   page: number;
   pageLength: number;
   baseUrl: string;

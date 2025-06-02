@@ -2,10 +2,11 @@
 import AdjustText from './AdjustText.astro';
 import FormattedDate from './FormattedDate.astro';
 import { type PostSummary } from '../models/postSummary';
-import { TAG_PREFIX } from '../consts';
+import { type ExternalPostSummary } from '../models/externalPostSummary';
+import { TAG_PREFIX, PLATFORM_PREFIX } from '../consts';
 
 type Props = {
-  post: PostSummary;
+  post: PostSummary | ExternalPostSummary;
 };
 
 const { post } = Astro.props;
@@ -13,9 +14,22 @@ const { post } = Astro.props;
 
 <>
   <div class="title">
-    <a href={`/posts/${post.slug}/`}>
-      <AdjustText text={post.title} />
-    </a>
+    {
+      'slug' in post ? (
+        <a href={`/posts/${post.slug}/`}>
+          <AdjustText text={post.title} />
+        </a>
+      ) : (
+        <a
+          class="external-link"
+          target="_blank"
+          rel="noopener"
+          href={`${post.url}/`}
+        >
+          <AdjustText text={post.title} />
+        </a>
+      )
+    }
   </div>
   <div class="description">
     <AdjustText text={post.description} />
@@ -24,6 +38,13 @@ const { post } = Astro.props;
     <li class="date">
       <FormattedDate date={post.publishedDate} />
     </li>
+    {
+      'platform' in post && (
+        <li class="platform">
+          <AdjustText text={`${PLATFORM_PREFIX}${post.platform}`} />
+        </li>
+      )
+    }
     {
       post.tags &&
         post.tags.map((tag) => (
@@ -70,6 +91,12 @@ const { post } = Astro.props;
     flex-wrap: wrap;
 
     .date {
+      font: typography.$font-body-small;
+      margin-right: 12px;
+      color: colors.$color-on-background-variant;
+    }
+
+    .platform {
       font: typography.$font-body-small;
       margin-right: 12px;
       color: colors.$color-on-background-variant;
