@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import partytown from '@astrojs/partytown';
-import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
+import sitemap from './integrations/sitemap';
 import remarkMath from 'remark-math';
 import rehypeMathML from '@daiji256/rehype-mathml';
 import rehypeQuotes from 'rehype-quotes';
