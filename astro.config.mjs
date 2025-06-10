@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import partytown from '@astrojs/partytown';
+import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import remarkMath from 'remark-math';
 import rehypeMathML from '@daiji256/rehype-mathml';
@@ -7,8 +8,6 @@ import rehypeQuotes from 'rehype-quotes';
 import rehypeAdjustAki from 'rehype-adjust-aki';
 import rehypeExternalLinks from 'rehype-external-links';
 import { FOOTNOTE_LABEL, FOOTNOTE_BACK_LABEL, SITE_URL } from './src/consts';
-
-import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: SITE_URL,
