@@ -2,6 +2,7 @@
 title: 'スキルのかけ算'
 description: '「スキルのかけ算」という比喩に正直に向き合い、整合性を持たせるべく定義してみた。スキルセットをベクトルとみなし、「たし算」や「かけ算」といった操作を通じて、問題解決やその価値との関係を丁寧に考察する。'
 publishedDate: 2025-06-07
+updatedDate: 2025-06-11
 tags: [{ id: 'memorandum', name: '備忘録' }]
 ---
 
@@ -35,7 +36,7 @@ $$
 
 $$
 \begin{align}
-  \bm{s}_{\text{A}} + \bm{s}_{\text{B}} = \left(e_{\text{A},1} + e_{\text{B},1}, e_{\text{A},2} + e_{\text{B},2}, e_{\text{A},3} + e_{\text{B},3}, \dots, e_{\text{A},n} + e_{\text{B},n}\right)
+  \bm{s}_{\text{A}} + \bm{s}_{\text{B}} = \left(e_{\text{A},1} + e_{\text{B},1}, e_{\text{A},2} + e_{\text{B},2}, \dots, e_{\text{A},n} + e_{\text{B},n}\right)
 \end{align}
 $$
 
@@ -49,7 +50,7 @@ $$
 
 $$
 \begin{align}
-  \mathrm{product}(\bm{s}) = \prod_{k=1}^{n} e_{k} = e_{1} \times e_{2} \times e_{3} \times \dots \times e_{n}
+  \mathrm{product}(\bm{s}) = \prod_{k=1}^{n} e_{k} = e_{1} \times e_{2} \times \dots \times e_{n}
 \end{align}
 $$
 
@@ -63,19 +64,19 @@ $\mathrm{product}(\bm{s})$<JwAki />は、そのスキルセットを持つ個人
 
 ## スキルの最大値
 
-スキルのたし算が現実的にあまり意味を持たない一方で、複数のスキルセットを統合的に捉える上で有効な考え方がある。それが、スキルセットの最大値である。複数のスキルセット<JwAki />$\bm{s}_{\text{A}}, \bm{s}_{\text{B}}, \dots$<JwAki />の最大値<JwAki />$\mathrm{max}\left(\bm{s}_{\text{A}}, \bm{s}_{\text{B}}, \dots\right)$<JwAki />を次のように定義する[^max-2] [^max-n]：
+スキルのたし算が現実的にあまり意味を持たない一方で、複数のスキルセットを統合的に捉える上で有効な考え方がある。それが、スキルセットの最大値である。複数のスキルセット<JwAki />$\bm{s}_{\text{A}}, \bm{s}_{\text{B}}$<JwAki />の最大値<JwAki />$\mathrm{max}\left(\bm{s}_{\text{A}}, \bm{s}_{\text{B}}\right)$<JwAki />を次のように定義する[^max-2] [^max-n]：
 
 $$
 \begin{align}
-  \mathrm{max}\left(\bm{s}_{\text{A}}, \bm{s}_{\text{B}}, \dots\right) = \left(\mathrm{max}\left(e_{\text{A},1}, e_{\text{B},1}, \dots\right), \mathrm{max}\left(e_{\text{A},2}, e_{\text{B},2}, \dots\right), \dots, \mathrm{max}\left(e_{\text{A},n}, e_{\text{B},n}, \dots\right)\right)
+  \mathrm{max}\left(\bm{s}_{\text{A}}, \bm{s}_{\text{B}}\right) = \left(\mathrm{max}\left(e_{\text{A},1}, e_{\text{B},1}\right), \dots, \mathrm{max}\left(e_{\text{A},n}, e_{\text{B},n}\right)\right)
 \end{align}
 $$
 
 [^max-2]: $\mathrm{max}(a, b)$<JwAki />はスカラー値$a$と$b$のうち大きい方の値として定義される：<JwAki />$\mathrm{max}(a, b) = \begin{cases} a & \text{if } a \geq b \\ b & \text{if } a < b \end{cases}$
 
-[^max-n]: $\mathrm{max}(a, b, c, \dots)$<JwAki />は再帰的に計算できる：<JwAki />$\mathrm{max}(a, b, c, \dots) = \mathrm{max}(a, \mathrm{max}(b, c, \dots))$
+[^max-n]: $\mathrm{max}(\bm{a}, \bm{b}, \bm{c}, \dots)$<JwAki />は再帰的に計算できる：<JwAki />$\mathrm{max}(\bm{a}, \bm{b}, \bm{c}, \dots) = \mathrm{max}(\bm{a}, \mathrm{max}(\bm{b}, \bm{c}, \dots))$
 
-あるチームにおいて、各個人がスキルセット<JwAki />$\bm{s}_{\text{A}}, \bm{s}_{\text{B}}, \dots$<JwAki />を持つとする。このとき、チーム全体として解決できる問題は<JwAki />$\mathrm{max}$によって導かれるスキルセットで解決可能な問題と一致する。互いのスキルを補完し合うことで、より広範な問題に対応できるという解釈ができる。
+あるチームにおいて、各個人がスキルセット<JwAki />$\bm{s}_{\text{A}}, \bm{s}_{\text{B}}$<JwAki />を持つとする。このとき、チーム全体として解決できる問題は<JwAki />$\mathrm{max}$によって導かれるスキルセットで解決可能な問題と一致する。互いのスキルを補完し合うことで、より広範な問題に対応できるという解釈ができる。
 
 ## 問題解決とスキルの充足条件
 
