@@ -165,4 +165,20 @@ export const EXTERNAL_POSTS = [
     ],
     url: 'https://qiita.com/Daiji256/items/c39f565eade4563ffa43',
   },
+  {
+    platform: 'Qiita',
+    title:
+      'Navigation Compose における ViewModel での引数の受け取り方 4 選と比較',
+    description:
+      'はじめに Navigation Compose 2.8.0 以降では、シリアル化可能なクラスを用いて、型安全に画面間でデータを渡せるようになりました。 本記事では、「画面遷移時の引数を ViewModel でどの受け取るか」に焦点を当て、4 つの方法を紹介し比較します。す...',
+    publishedDate: '2025-06-14',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'di', name: 'DI' },
+      { id: 'jetpack', name: 'Jetpack' },
+      { id: 'hilt', name: 'Hilt' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/a5bbb5408fc1ffa69694',
+  },
 ];
