@@ -176,8 +176,22 @@ export const EXTERNAL_POSTS = [
       { id: 'android', name: 'Android' },
       { id: 'kotlin', name: 'Kotlin' },
       { id: 'di', name: 'DI' },
-      { id: 'jetpack', name: 'Jetpack' },
+      { id: 'compose', name: 'Compose' },
       { id: 'hilt', name: 'Hilt' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/a5bbb5408fc1ffa69694',
+  },
+  {
+    platform: 'Qiita',
+    title: '簡単で安全な UriHandler の実装例と利用方法',
+    description:
+      'UriHandler とは UriHandler は androidx.compose.ui.platform が提供する、URI（Web ページ、ファイル、外部アプリなど）を開くためのインターフェースです。Composable 関数からは、以下のようにシンプルに呼び出せ...',
+    publishedDate: '2025-06-15T08:49:21+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'intent', name: 'Intent' },
+      { id: 'compose', name: 'Compose' },
     ],
     url: 'https://qiita.com/Daiji256/items/a5bbb5408fc1ffa69694',
   },
