@@ -195,4 +195,20 @@ export const EXTERNAL_POSTS = [
     ],
     url: 'https://qiita.com/Daiji256/items/a5bbb5408fc1ffa69694',
   },
+  {
+    platform: 'Qiita',
+    title:
+      'LocalSnackbarHostState: CompositionLocal による SnackbarHostState の管理方法',
+    description:
+      'モバイルアプリにおいてユーザーへの情報伝達は非常に重要です。その中でも、短時間でユーザーにフィードバックを伝える際に便利な UI 要素として Snackbar があります。 この記事では、Compose における Snackbar の基本から、画面などのスコープを意識した ...',
+    publishedDate: '2025-06-28T13:03:28+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'snackbar', name: 'Snackbar' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'composition-locale', name: '`CompositionLocal`' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/59e2c676ce92b1f97058',
+  },
 ];
