@@ -211,4 +211,19 @@ export const EXTERNAL_POSTS = [
     ],
     url: 'https://qiita.com/Daiji256/items/59e2c676ce92b1f97058',
   },
+  {
+    platform: 'Qiita',
+    title: 'mapState / combineState: StateFlow を同期処理で変換・合成する',
+    description:
+      'Android アプリ開発において、StateFlow は UI 状態管理に不可欠です。しかし、実際の開発では以下の課題に直面することがあります： StateFlow から別の StateFlow への変換 複数の StateFlow を組み合わせた StateFlow...',
+    publishedDate: '2025-06-28T20:09:03+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'flow', name: '`Flow`' },
+      { id: 'stateflow', name: '`StateFlow`' },
+      { id: 'coroutines', name: 'Coroutines' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/eb1a32c4dcaa087769f3',
+  },
 ];
