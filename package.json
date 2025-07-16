@@ -13,7 +13,6 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "^4.3.0",
-    "@astrojs/partytown": "^2.1.4",
     "@astrojs/rss": "^4.0.12",
     "@daiji256/rehype-mathml": "^1.2.1",
     "@eslint/js": "^9.30.0",

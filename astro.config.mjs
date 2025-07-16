@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import partytown from '@astrojs/partytown';
 import mdx from '@astrojs/mdx';
 import sitemap from './integrations/sitemap';
 import remarkMath from 'remark-math';
@@ -11,15 +10,7 @@ import { FOOTNOTE_LABEL, FOOTNOTE_BACK_LABEL, SITE_URL } from './src/consts';
 
 export default defineConfig({
   site: SITE_URL,
-  integrations: [
-    mdx(),
-    sitemap(),
-    partytown({
-      config: {
-        forward: ['dataLayer.push'],
-      },
-    }),
-  ],
+  integrations: [mdx(), sitemap()],
   markdown: {
     syntaxHighlight: 'shiki',
     shikiConfig: { theme: 'github-light-high-contrast' },
