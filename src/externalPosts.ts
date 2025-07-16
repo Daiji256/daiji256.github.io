@@ -226,4 +226,20 @@ export const EXTERNAL_POSTS = [
     ],
     url: 'https://qiita.com/Daiji256/items/eb1a32c4dcaa087769f3',
   },
+  {
+    platform: 'Qiita',
+    title:
+      'EntryPoint を使った Composable 関数への依存性注入 with Hilt & Compose',
+    description:
+      'Composable 関数内で、Hilt によって @Provides や @Binds で提供されたオブジェクトを直接的に扱いたい場面があります。 通常、Hilt を用いた依存性注入は ViewModel を経由して行います。たとえば @HiltViewModel に依存...',
+    publishedDate: '2025-07-12T10:39:24+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'di', name: 'DI' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'hilt', name: 'Hilt' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/2a9b4690f209db1fe878',
+  },
 ];
