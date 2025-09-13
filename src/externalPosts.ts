@@ -242,4 +242,20 @@ export const EXTERNAL_POSTS = [
     ],
     url: 'https://qiita.com/Daiji256/items/2a9b4690f209db1fe878',
   },
+  {
+    platform: 'Qiita',
+    title:
+      'ユーザーの選んだスタイルを尊重する：Android アプリでのシステムスタイル取得',
+    description:
+      'はじめに Android には、ユーザーが自分の好みや特性に合わせて設定できるシステムスタイルがあります。テーマ（ダークモード）、フォントスケール（フォントサイズ）、Material You（システムカラー）、色のコントラストなどが代表例です。これらはユーザーの「見やすさ...',
+    publishedDate: '2025-09-10T16:55:57+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'ux', name: 'UX' },
+      { id: 'ui', name: 'UI' },
+      { id: 'material-design', name: 'Material Design' },
+      { id: 'compose', name: 'Compose' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/52dafa49bec015700f43',
+  },
 ];
