@@ -1,0 +1,88 @@
+---
+title: 'アスキーアートで書くカンタンTeX'
+description: 'TeXの難読化テクニックで、最終出力がそのまま読めるカンタンなTeXのコードを紹介します。'
+publishedDate: 2025-12-02
+tags: [{ id: 'tex', name: 'TeX' }, { id: 'joke', name: 'ネタ' }]
+---
+
+import JwAki from '../../../components/JwAki.astro';
+import { Image } from 'astro:assets';
+import tex_svg from './images/tex-svg.svg';
+import tex_utme from './images/tex-utme.png';
+
+これは[TeX & LaTeX Advent Calendar 2025](https://adventar.org/calendars/12019)の2日目の記事です。1日目は[wtsnjp](https://adventar.org/users/5324)さんの[ラング・ラグー10年目突入！ リニューアル！！](https://blog.wtsnjp.com/2025/12/01/renewal-10th/)でした。
+
+## はじめに
+
+みなさん、TeXは難しいと感じますか？　私は難しいと感じることが多いです。TeXのコードから最終的な出力結果（PDFなど）を頭の中で思い描くのは、なかなか簡単ではありません。
+
+そこでこの記事では、最終的な出力がイメージしやすいとてもカンタンなTeXのコードを紹介します。
+
+## TeXをカンタンにするために
+
+TeXをカンタンにするヒントは、次の素晴らしい記事から得られました。
+
+- [TeX の難読化](https://blog.wtsnjp.com/2016/12/21/obfuscate-tex/)
+- [記号と数字だけでTeX言語する話](https://zrbabbler.hatenablog.com/entry/2023/09/30/210345)
+
+これらの記事は「TeXを難しくするテクニック」を紹介していますが、この記事ではそれをあえて逆に利用して、TeXをカンタンにしてみます。
+
+詳しくは元記事をご覧いただくとして、TeXにはマクロ、カテゴリーコード、TeXエスケープといった仕組みがあります。これらによって、TeXは非常に高い自由度を持ちます。
+
+## 実際にカンタンなTeXのコードを書いてみた
+
+実際にコードを書いてみました。以下のコードは、出力結果をアスキーアートで表現されていて、とても親切です。出力結果は<JwAki />`\TeX\end`と同じものになります[^shikake]。
+
+このコードは[The Unlicense](https://github.com/Daiji256/obfuscate-tex-2025/blob/main/LICENSE)で[公開](https://github.com/Daiji256/obfuscate-tex-2025)しています。みなさんも、ご自由に試してみてください。
+
+[^shikake]: 実は1文字変更すると結果が変わる、ちょっとした仕掛けがあります。
+
+<details>
+<summary>カンタンなTeXのコード</summary>
+
+```
+\^^$^^%f\W{\^^#^^!t^^#od^^%}                   \W`W0\W`M7WW`'0    'W`MM`9WW`"9
+ WW`N9"     WW`)N"     "9NWW                         `H14WWN`        #10"
+ WW`        NN,9N#       "%W                          ,WW`D9N,     ,#MD
+,N#         WdMM%f        WF,                          ,{WdMM%f   ,MM=
+,N)         WFWZN"        "N,                            MM;NMM%,}N#
+            NWFNW&      {WMM5MM0pMM%MM2MM#aMM3MM%          MM7dHMM`
+            WW`(9#          (WW`M0           "#NN)          WW`WW7N,
+            NNMWNN          `J14NN             NHL          ,WW`MMM9,
+            MW`$2#          \W`;9N             ,NN        ,NN" \W`@1Hp
+            NMW`B1          ;HNNN#     ,HM      MW       ,MW^   ,MM`M7W,
+            NNHMMN          `D#WW%     MMN`            .dMY       TMMWWWe
+            MFM%B)          (NMWW%WW.WW$$N"           ,NH#         {MMWMM%,
+            NMFMH{          ;NN$#N     NMH"          #MF             NM:BHM.
+      MWW%ndWW#snWW!mWW%    (WWdNN     'WN      N`BN11MFMK@       McWW3naWW-WW%$
+                            ;M&@MK              #N
+                            (WW74N             ,MZ
+                            #WW8M:           ,$#M%
+                        bWW9#DWW!WW)WW*WW)25WWvM%
+```
+
+</details><p></p>
+
+<Image src={tex_svg} alt="カンタンなTeXのコード" width="640" />
+
+## スウェットを作った
+
+このコードを使って、ユニクロのUTme!<JwAki />というサービスでスウェットを作りました[^utme-2023]。スウェットを作った理由については、[服装を指摘されたので反省しました](/posts/reflect-on-outfit-issue/)をご覧ください。
+
+[^utme-2023]: 2023年にも一度UTme!<JwAki />でTシャツを作っていますが、ヨレヨレになったので新しく作り直しました。寒い時期というのもあり、今回はスウェットです。
+
+<Image src={tex_utme} alt="カンタンなTeXが印刷されたスウェット" width="290" />
+
+## 最後に
+
+この記事は「TeXをもっと難しくする方法」でしたか？　いいえ、TeXをカンタンにする方法でした。
+
+## 参考
+
+1. [TeX & LaTeX Advent Calendar 2025](https://adventar.org/calendars/12019)
+2. [TeX の難読化](https://blog.wtsnjp.com/2016/12/21/obfuscate-tex/)
+3. [記号と数字だけでTeX言語する話](https://zrbabbler.hatenablog.com/entry/2023/09/30/210345)
+4. [ユニクロ UTme!](https://utme.uniqlo.com/)
+5. [Daiji256/obfuscate-tex-2025](https://github.com/Daiji256/obfuscate-tex-2025)
+6. [前回作った時のツイート](https://x.com/Daiji256/status/1710531157169995808)
+7. [今回作った時のツイート](https://x.com/Daiji256/status/1984392790105866295)
