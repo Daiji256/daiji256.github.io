@@ -1,5 +1,5 @@
 export const SITE_TITLE = 'Daiji256';
-export const SITE_DESCRIPTION = '高専卒エンジニアの気まぐれブログ';
+export const SITE_DESCRIPTION = 'エンジニアの気まぐれブログ';
 export const TITLE_SEPARATOR = ' | ';
 export const BREADCRUMBS_ARIA_LABEL = 'パンくずリスト';
 export const GO_BACK = '戻る';
