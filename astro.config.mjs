@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
-import sitemap from './integrations/sitemap';
+import sitemap from '@astrojs/sitemap';
 import remarkMath from 'remark-math';
 import rehypeMathML from '@daiji256/rehype-mathml';
 import rehypeQuotes from 'rehype-quotes';
@@ -10,7 +10,12 @@ import { FOOTNOTE_LABEL, FOOTNOTE_BACK_LABEL, SITE_URL } from './src/consts';
 
 export default defineConfig({
   site: SITE_URL,
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => page !== 'https://daiji256.github.io/privacy-policy/',
+    }),
+  ],
   markdown: {
     syntaxHighlight: 'shiki',
     shikiConfig: { theme: 'github-light-high-contrast' },
