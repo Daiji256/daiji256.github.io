@@ -258,4 +258,35 @@ export const EXTERNAL_POSTS = [
     ],
     url: 'https://qiita.com/Daiji256/items/52dafa49bec015700f43',
   },
+  {
+    platform: 'Qiita',
+    title:
+      'Swift/Objective-C から Kotlin へインスタンスを渡すと deinit が遅れる理由と対策',
+    description:
+      '本記事は、Kotlin Advent Calendar 2025 の 17 日目の記事です。 はじめに Kotlin Multiplatform（KMP）で iOS アプリを開発する際、Swift と Kotlin の相互運用は避けて通れません。KMP は非常に便利ですが...',
+    publishedDate: '2025-12-17T16:11:24+09:00',
+    tags: [
+      { id: 'kotlin-multiplatform', name: 'Kotlin Multiplatform' },
+      { id: 'kotlin-native', name: 'Kotlin/Native' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'swift', name: 'Swift' },
+      { id: 'ios', name: 'iOS' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/f977ab6bdc2f10e36fda',
+  },
+  {
+    platform: 'Qiita',
+    title:
+      'GitHub Actions で orphan ブランチを使ってファイルを保存・取得する方法',
+    description:
+      '本記事は、GitHub Actions Advent Calendar 2025 の 19 日目の記事です。 はじめに GitHub Actions で生成されたファイルを保存する代表的な手段として、GitHub Actions の Artifacts や、S3 などの外...',
+    publishedDate: '2025-12-19T19:04:32+09:00',
+    tags: [
+      { id: 'github-actions', name: 'GitHub Actions' },
+      { id: 'github', name: 'GitHub' },
+      { id: 'git', name: 'Git' },
+      { id: 'ci-cd', name: 'CI/CD' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/8581083547aadfa17cce',
+  },
 ];
