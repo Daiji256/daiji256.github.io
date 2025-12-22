@@ -15,9 +15,9 @@
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
-    "@daiji256/rehype-mathml": "^1.2.1",
+    "@daiji256/rehype-mathml": "^1.2.2",
     "@eslint/js": "^9.39.2",
-    "@rollup/wasm-node": "^4.53.5",
+    "@rollup/wasm-node": "^4.54.0",
     "astro": "^5.16.6",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "^9.39.2",
@@ -30,9 +30,9 @@
     "rehype-quotes": "file:modules/rehype-quotes",
     "rehype-stringify": "^10.0.1",
     "remark-math": "^6.0.0",
-    "sass": "^1.97.0",
+    "sass": "^1.97.1",
     "sharp": "^0.34.5",
-    "typescript-eslint": "^8.50.0",
+    "typescript-eslint": "^8.50.1",
     "unified": "^11.0.5"
   },
   "overrides": {
