@@ -13,20 +13,6 @@ const { post } = Astro.props;
 ---
 
 <>
-  {
-    'platform' in post && (
-      <div class="platform">
-        <a
-          class="external-link"
-          target="_blank"
-          rel="noopener"
-          href={`${post.platform.url}/`}
-        >
-          <AdjustText text={`${PLATFORM_PREFIX}${post.platform.name}`} />
-        </a>
-      </div>
-    )
-  }
   <div class="title">
     {
       'slug' in post ? (
@@ -53,6 +39,15 @@ const { post } = Astro.props;
       <FormattedDate date={post.publishedDate} />
     </li>
     {
+      'platform' in post && (
+        <li class="platform">
+          <a target="_blank" rel="noopener" href={`${post.platform.url}/`}>
+            <AdjustText text={`${PLATFORM_PREFIX}${post.platform.name}`} />
+          </a>
+        </li>
+      )
+    }
+    {
       post.tags &&
         post.tags.map((tag) => (
           <li class="tag">
@@ -66,24 +61,6 @@ const { post } = Astro.props;
 </>
 
 <style lang="scss">
-  .platform {
-    font: typography.$font-body-small;
-
-    a {
-      text-decoration: none;
-
-      @media (hover: hover) {
-        &:hover {
-          text-decoration: underline 8%;
-        }
-      }
-
-      &:active {
-        text-decoration: underline 8%;
-      }
-    }
-  }
-
   .title {
     font: typography.$font-title-large;
 
@@ -119,6 +96,49 @@ const { post } = Astro.props;
       font: typography.$font-body-small;
       margin-right: 12px;
       color: colors.$color-on-background-variant;
+    }
+
+    .platform {
+      font: typography.$font-body-small;
+      margin-right: 12px;
+      color: colors.$color-on-background-variant;
+
+      a {
+        color: colors.$color-on-background-variant;
+        text-decoration: none;
+        border-radius: 2px;
+
+        &::after {
+          content: '';
+          display: inline-block;
+          margin: 0 0.125em;
+          width: 0.5em;
+          height: 1em;
+          background-color: colors.$color-on-background-variant;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M3 1H1v6h6V5M7 4V1H4M7 1 3.5 4.5'/></svg>")
+            top/contain no-repeat;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            color: colors.$color-link;
+            outline: 1px dashed;
+
+            &::after {
+              background-color: colors.$color-link;
+            }
+          }
+        }
+
+        &:active {
+          color: colors.$color-link;
+          outline: 1px solid;
+
+          &::after {
+            background-color: colors.$color-link;
+          }
+        }
+      }
     }
 
     .tag {
