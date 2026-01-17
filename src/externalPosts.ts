@@ -289,4 +289,17 @@ export const EXTERNAL_POSTS = [
     ],
     url: 'https://qiita.com/Daiji256/items/8581083547aadfa17cce',
   },
+  {
+    platform: 'Qiita',
+    title:
+      'Kotlin Contracts の InvocationKind.EXACTLY_ONCE を「1 回呼び出す」と誤解してはいけない',
+    description:
+      'はじめに Kotlin には Contracts という、関数の内部動作に関するヒントをコンパイラに提供する機能があります。これにより、コンパイラはスマートキャストや変数の初期化判定をより賢く行えるようになります。 通常、コンパイラは関数の内部の実装まで深く解析しませんが...',
+    publishedDate: '2026-01-14T21:31:48+09:00',
+    tags: [
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'kotlin-contracts', name: 'Kotlin Contracts' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/e308b9e87fe69490d47d',
+  },
 ];
