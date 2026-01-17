@@ -1,7 +1,8 @@
+import { type ExternalPostPlatform } from './externalPostPlatform';
 import { type Tag } from './tag';
 
 export type ExternalPostSummary = {
-  platform: string;
+  platform: ExternalPostPlatform;
   title: string;
   description: string;
   publishedDate: Date;

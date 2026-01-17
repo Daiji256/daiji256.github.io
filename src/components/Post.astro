@@ -16,7 +16,14 @@ const { post } = Astro.props;
   {
     'platform' in post && (
       <div class="platform">
-        <AdjustText text={`${PLATFORM_PREFIX}${post.platform}`} />
+        <a
+          class="external-link"
+          target="_blank"
+          rel="noopener"
+          href={`${post.platform.url}/`}
+        >
+          <AdjustText text={`${PLATFORM_PREFIX}${post.platform.name}`} />
+        </a>
       </div>
     )
   }
@@ -61,6 +68,20 @@ const { post } = Astro.props;
 <style lang="scss">
   .platform {
     font: typography.$font-body-small;
+
+    a {
+      text-decoration: none;
+
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline 8%;
+        }
+      }
+
+      &:active {
+        text-decoration: underline 8%;
+      }
+    }
   }
 
   .title {

@@ -1,6 +1,6 @@
 export const EXTERNAL_POSTS = [
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'bit を高速に数える 手法の比較',
     description:
       'はじめての投稿なので温かい目で見てください。はじめに本記事では bit の 1 の数を数える手法（アルゴリズム）の比較を行います。アルゴリズムの詳しい内容等は紹介せずあくまで処理速度の比較だけ行…',
@@ -13,7 +13,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/c4f83c4f3a73a3fb7e0c',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'LuaLaTeX でフォント細かく変更する方法（MS Word は使いたくない！）',
     description:
       'はじめに課題や予稿，論文等ではフォント等のフォーマット指定がよくあります。MS Word のテンプレートしか無かったり，MS Mincho などの古いフォントを指定されるとイライラします。そこで …',
@@ -27,7 +27,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/29adc574b15345d8afa2',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'C 言語で eval 風関数',
     description:
       'はじめにeval 関数とは文字列を式として評価する関数です。eval は C 言語などのコンパイラ言語にはほとんどないですが，JavaScript などのインタプリタ言語で一般的です。ここでは C…',
@@ -39,7 +39,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/09fa042e94907a232c57',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'LuaLaTeX のすゝめ',
     description:
       'はじめにこの記事では高機能でイケイケな LuaLaTeX を紹介します。現在日本で一般的に使用されている LaTeX は upLaTeX だと思います。upLaTeX は Unicode 対応の…',
@@ -52,7 +52,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/9afbfa9f822629d3b995',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'LaTeX のすゝめ（2021 年）',
     description:
       'はじめに本記事はレポート・論文等の執筆に役立つツールの LaTeX を紹介します。非 LaTeX ユーザや初心者を対象としています。中級者や上級者には物足りないと思います。TeX / LaTeX…',
@@ -67,7 +67,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/9774df0899728feb3ab0',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: '超高速な数式表示（KaTeX より高速！）',
     description:
       'この記事は静的サイトジェネレータ向けの内容です。もちろん動的なサイトでも使えますが，おすすめしません。はじめに僕のブログは静的サイトジェネレータの HUGO で作成しています。ここでは HUGO…',
@@ -81,7 +81,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/47808405713dc2b33ab1',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: '約組フォント / Yaku Kumi Fonts - 約物専用 Web フォント',
     description:
       '概要約物専用の Web フォント「約組フォント / Yaku Kumi Fonts」を公開しました。全角の約物（句読点や括弧）が連続したときのアキを調整する Web フォントです。Android …',
@@ -96,7 +96,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/a0a30725355a9f7d6d22',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'CuPy を使った画像の幾何学変換 with OpenCV',
     description:
       'はじめに魚眼カメラで撮影した等距離射影方式の画像を，普通のカメラの中心射影方式のへの変換をするなどの，画像を幾何学的変換することがあります。僕は研究で，中央付近を大きく，外側を小さくする変換をする…',
@@ -111,7 +111,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/7fc08524533dc564e844',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'PokéAPI を使ってポケモン図鑑の Android を作ってみた',
     description:
       'この記事は，フラー株式会社 Advent Calendar 2021 の 9 日目の記事です。8 日目の記事は @inoriko711 さんによる きらめく星（の力で憧れの私）描くよ でした。は…',
@@ -125,7 +125,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/45461e08f5924ff36c4f',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'Android で日本語でも色々なウェイトのフォントを使いたい',
     description:
       'この記事は、フラー株式会社のカレンダー | Advent Calendar 2023 - Qiita の 9 日目の記事です^backstory。8 日目は いのりこ (id:inoriko711) さんで…',
@@ -138,7 +138,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/4b807353c1ca55a26a26',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'rehype-mathml: TeX 数式を MathML にする rehype プラグイン',
     description:
       'この記事は、フラー株式会社 Advent Calendar 2024 の 7 日目の記事です。6 日目は su8 のサポート終了間近 しがない 30 代エンジニアの本棚（2024 年版）でした。は…',
@@ -153,7 +153,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/fcd8ee6f286e5db775d5',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'Android アプリにおけるインスタンスの生存期間とスコープ',
     description:
       '本記事では、Android アプリ開発において登場する各種オブジェクト（Application、Android、ViewModel など）のインスタンス生存期間とスコープについて整理する。各オブジェ…',
@@ -166,7 +166,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/c39f565eade4563ffa43',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title:
       'Navigation Compose における ViewModel での引数の受け取り方 4 選と比較',
     description:
@@ -182,7 +182,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/a5bbb5408fc1ffa69694',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: '簡単で安全な UriHandler の実装例と利用方法',
     description:
       'UriHandler とは UriHandler は androidx.compose.ui.platform が提供する、URI（Web ページ、ファイル、外部アプリなど）を開くためのインターフェースです。Composable 関数からは、以下のようにシンプルに呼び出せ...',
@@ -196,7 +196,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/a5bbb5408fc1ffa69694',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title:
       'LocalSnackbarHostState: CompositionLocal による SnackbarHostState の管理方法',
     description:
@@ -212,7 +212,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/59e2c676ce92b1f97058',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'mapState / combineState: StateFlow を同期処理で変換・合成する',
     description:
       'Android アプリ開発において、StateFlow は UI 状態管理に不可欠です。しかし、実際の開発では以下の課題に直面することがあります： StateFlow から別の StateFlow への変換 複数の StateFlow を組み合わせた StateFlow...',
@@ -227,7 +227,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/eb1a32c4dcaa087769f3',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title:
       'EntryPoint を使った Composable 関数への依存性注入 with Hilt & Compose',
     description:
@@ -243,7 +243,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/2a9b4690f209db1fe878',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title:
       'ユーザーの選んだスタイルを尊重する：Android アプリでのシステムスタイル取得',
     description:
@@ -259,7 +259,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/52dafa49bec015700f43',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title:
       'Swift/Objective-C から Kotlin へインスタンスを渡すと deinit が遅れる理由と対策',
     description:
@@ -275,7 +275,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/f977ab6bdc2f10e36fda',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title:
       'GitHub Actions で orphan ブランチを使ってファイルを保存・取得する方法',
     description:
@@ -290,7 +290,7 @@ export const EXTERNAL_POSTS = [
     url: 'https://qiita.com/Daiji256/items/8581083547aadfa17cce',
   },
   {
-    platform: 'Qiita',
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title:
       'Kotlin Contracts の InvocationKind.EXACTLY_ONCE を「1 回呼び出す」と誤解してはいけない',
     description:
