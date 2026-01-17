@@ -13,6 +13,13 @@ const { post } = Astro.props;
 ---
 
 <>
+  {
+    'platform' in post && (
+      <div class="platform">
+        <AdjustText text={`${PLATFORM_PREFIX}${post.platform}`} />
+      </div>
+    )
+  }
   <div class="title">
     {
       'slug' in post ? (
@@ -39,13 +46,6 @@ const { post } = Astro.props;
       <FormattedDate date={post.publishedDate} />
     </li>
     {
-      'platform' in post && (
-        <li class="platform">
-          <AdjustText text={`${PLATFORM_PREFIX}${post.platform}`} />
-        </li>
-      )
-    }
-    {
       post.tags &&
         post.tags.map((tag) => (
           <li class="tag">
@@ -59,6 +59,10 @@ const { post } = Astro.props;
 </>
 
 <style lang="scss">
+  .platform {
+    font: typography.$font-body-small;
+  }
+
   .title {
     font: typography.$font-title-large;
 
@@ -91,12 +95,6 @@ const { post } = Astro.props;
     flex-wrap: wrap;
 
     .date {
-      font: typography.$font-body-small;
-      margin-right: 12px;
-      color: colors.$color-on-background-variant;
-    }
-
-    .platform {
       font: typography.$font-body-small;
       margin-right: 12px;
       color: colors.$color-on-background-variant;
