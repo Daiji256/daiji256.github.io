@@ -1,11 +1,8 @@
 export const SITE_TITLE = 'Daiji256';
 export const SITE_DESCRIPTION = 'エンジニアの気まぐれブログ';
 export const TITLE_SEPARATOR = ' | ';
-export const BREADCRUMBS_ARIA_LABEL = 'パンくずリスト';
-export const GO_BACK = '戻る';
 export const TAG_PREFIX = '#';
 export const PLATFORM_PREFIX = '@';
-export const HOME_TITLE = 'ホーム';
 export const POSTS_TITLE = '投稿';
 export const TAGS_TITLE = 'タグ';
 export const PRIVACY_POLICY_TITLE = 'プライバシーポリシー';
