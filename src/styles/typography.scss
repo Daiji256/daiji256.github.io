@@ -1,7 +1,7 @@
 /* Font Family */
-$font-family-sans: 'f-sans', sans-serif;
-$font-family-mono: 'f-mono', 'f-sans', monospace;
-$font-family-math: 'Fira Math', $font-family-sans;
+$font-family-sans: 't-sans', 'tj-sans', sans-serif;
+$font-family-mono: 't-mono', 't-sans', 'tj-sans', monospace;
+$font-family-math: 't-math', $font-family-sans;
 
 /* Font */
 $font-body-medium: 400 1rem/2.08rem $font-family-sans;
@@ -13,6 +13,6 @@ $font-headline-h4: 400 1.3rem/1.56rem $font-family-sans;
 $font-headline-h5: 400 1.17rem/1.56rem $font-family-sans;
 $font-headline-h6: 400 1rem/1.56rem $font-family-sans;
 $font-title-large: 400 1.3rem/2.08rem $font-family-sans;
-$font-title-medium: 500 1rem/1.56rem $font-family-sans;
-$font-label-large: 500 1rem/1.56rem $font-family-sans;
-$font-label-medium: 500 0.91rem/1.56rem $font-family-sans;
+$font-title-medium: 400 1rem/1.56rem $font-family-sans;
+$font-label-large: 400 1rem/1.56rem $font-family-sans;
+$font-label-medium: 400 0.91rem/1.56rem $font-family-sans;
