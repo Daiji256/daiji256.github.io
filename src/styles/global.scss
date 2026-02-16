@@ -54,25 +54,6 @@ a {
   }
 }
 
-.external-link {
-  &::after {
-    content: '';
-    display: inline-block;
-    margin: 0 0.125em;
-    width: 0.5em;
-    height: 1em;
-    background-color: colors.$color-link;
-    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M3 1H1v6h6V5M7 4V1H4M7 1 3.5 4.5'/></svg>")
-      top/contain no-repeat;
-  }
-
-  &:visited {
-    &::after {
-      background-color: colors.$color-link-visited;
-    }
-  }
-}
-
 main {
   font: typography.$font-body-medium;
   margin: 0 auto;
