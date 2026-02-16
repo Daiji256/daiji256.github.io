@@ -22,10 +22,10 @@ export const PICKUP_POSTS = [
 export const LINKS_TITLE = 'リンク';
 export const LINKS = [
   { name: 'GitHub', url: 'https://github.com/Daiji256' },
-  { name: 'mixi2', url: 'https://mixi.social/@daiji256' },
+  { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
   { name: 'Bluesky', url: 'https://bsky.app/profile/daiji256.bsky.social' },
   { name: 'X (Twitter)', url: 'https://x.com/Daiji256' },
-  { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+  { name: 'mixi2', url: 'https://mixi.social/@daiji256' },
 ];
 export const HTTP_404_NOT_FOUND_TITLE = '404 Not Found';
 export const HTTP_404_NOT_FOUND_TO_TOP = 'トップページへ';
