@@ -12,12 +12,12 @@ import { SITE_TITLE, POSTS_TITLE, TAGS_TITLE } from '../consts';
       <nav>
         <ul>
           <li>
-            <a class="nav-item posts" href="/posts/">
+            <a class="nav-item" href="/posts/">
               <AdjustText text={POSTS_TITLE} />
             </a>
           </li>
           <li>
-            <a class="nav-item tags" href="/tags/">
+            <a class="nav-item" href="/tags/">
               <AdjustText text={TAGS_TITLE} />
             </a>
           </li>
@@ -61,7 +61,7 @@ import { SITE_TITLE, POSTS_TITLE, TAGS_TITLE } from '../consts';
       }
 
       nav {
-        font: typography.$font-label-medium;
+        font: typography.$font-label-large;
         margin-left: auto;
 
         ul {
@@ -92,34 +92,6 @@ import { SITE_TITLE, POSTS_TITLE, TAGS_TITLE } from '../consts';
               &::before {
                 background-color: colors.$color-link;
               }
-            }
-          }
-
-          .posts {
-            &::before {
-              content: '';
-              display: inline-block;
-              margin-right: 0.25em;
-              width: 1em;
-              height: 1em;
-              vertical-align: -7.5%;
-              background-color: colors.$color-on-background;
-              mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M7 13H1V1h12v12H7ZM3.5 4h7M3.5 7h7M3.5 10h5'/></svg>")
-                center/contain no-repeat;
-            }
-          }
-
-          .tags {
-            &::before {
-              content: '';
-              display: inline-block;
-              margin-right: 0.25em;
-              width: 1em;
-              height: 1em;
-              vertical-align: -7.5%;
-              background-color: colors.$color-on-background;
-              mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><path fill='none' stroke='black' stroke-linejoin='round' stroke-width='1.5' d='M1.5 5h12M.5 9h12M6 1.5l-2.5 11M10.5 1.5 8 12.5'/></svg>")
-                center/contain no-repeat;
             }
           }
         }
