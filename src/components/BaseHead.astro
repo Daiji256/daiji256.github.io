@@ -38,7 +38,7 @@ const { title, description } = Astro.props;
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/css/t.min.css"
   media="print"
-  onload="this.media='all'"
+  onload="this.setAttribute('media','all')"
 />
 
 <title>{title}</title>
