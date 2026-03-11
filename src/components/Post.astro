@@ -15,8 +15,8 @@ const { post } = Astro.props;
 <>
   <div class="title">
     {
-      'slug' in post ? (
-        <a href={`/posts/${post.slug}/`}>
+      'id' in post ? (
+        <a href={`/posts/${post.id}/`}>
           <AdjustText text={post.title} />
         </a>
       ) : (

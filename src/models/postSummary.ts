@@ -1,7 +1,7 @@
 import { type Tag } from './tag';
 
 export type PostSummary = {
-  slug: string;
+  id: string;
   title: string;
   description: string;
   publishedDate: Date;

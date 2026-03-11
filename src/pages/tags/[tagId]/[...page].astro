@@ -17,7 +17,7 @@ type Props = {
 export async function getStaticPaths() {
   const posts: PostSummary[] = (await getCollection('posts')).map((post) => {
     return {
-      slug: post.slug,
+      id: post.id,
       title: post.data.title,
       description: post.data.description,
       publishedDate: post.data.publishedDate,

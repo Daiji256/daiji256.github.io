@@ -14,12 +14,12 @@ import {
 } from '../consts';
 
 const posts = await getCollection('posts');
-const pickupPosts: PostSummary[] = PICKUP_POSTS.flatMap((slug) => {
-  const post = posts.find((p) => p.slug === slug);
+const pickupPosts: PostSummary[] = PICKUP_POSTS.flatMap((id) => {
+  const post = posts.find((p) => p.id === id);
   return post
     ? [
         {
-          slug: post.slug,
+          id: post.id,
           title: post.data.title,
           description: post.data.description,
           publishedDate: post.data.publishedDate,
