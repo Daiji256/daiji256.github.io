@@ -302,4 +302,18 @@ export const EXTERNAL_POSTS = [
     ],
     url: 'https://qiita.com/Daiji256/items/e308b9e87fe69490d47d',
   },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'SnapshotStateList の toString / equals / hashCode の罠',
+    description:
+      'はじめに Compose で List を扱うとき、mutableStateListOf で生成される SnapshotStateList を利用することは多いでしょう。 しかし SnapshotStateList の toString / equals / hashCo...',
+    publishedDate: '2026-02-19T00:31:57+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'list', name: 'List' },
+      { id: 'compose', name: 'Compose' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/5f3dd1d31f1d635e78a3',
+  },
 ];
