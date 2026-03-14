@@ -1,56 +1,55 @@
 ---
 import AdjustText from './AdjustText.astro';
 import FormattedDate from './FormattedDate.astro';
-import { type PostSummary } from '../models/postSummary';
-import { type ExternalPostSummary } from '../models/externalPostSummary';
+import { type ContentSummary } from '../models/contentSummary';
 import { TITLE_SEPARATOR, TAG_PREFIX, PLATFORM_PREFIX } from '../consts';
 
 type Props = {
-  post: PostSummary | ExternalPostSummary;
+  content: ContentSummary;
 };
 
-const { post } = Astro.props;
+const { content } = Astro.props;
 ---
 
 <>
   <div class="title">
     {
-      'id' in post ? (
-        <a href={`/posts/${post.id}/`}>
-          <AdjustText text={post.title} />
+      content.platform ? (
+        <a target="_blank" rel="nofollow noopener" href={content.url}>
+          <AdjustText
+            text={`${content.title}${TITLE_SEPARATOR}${content.platform.name}`}
+          />
         </a>
       ) : (
-        <a target="_blank" rel="nofollow noopener" href={`${post.url}/`}>
-          <AdjustText
-            text={`${post.title}${TITLE_SEPARATOR}${post.platform.name}`}
-          />
+        <a href={content.url}>
+          <AdjustText text={content.title} />
         </a>
       )
     }
   </div>
   <div class="description">
-    <AdjustText text={post.description} />
+    <AdjustText text={content.description} />
   </div>
   <ul class="supplement">
     <li class="date">
-      <FormattedDate date={post.publishedDate} />
+      <FormattedDate date={content.publishedDate} />
     </li>
     {
-      'platform' in post && (
+      content.platform && (
         <li class="platform">
           <a
             target="_blank"
             rel="nofollow noopener"
-            href={`${post.platform.url}/`}
+            href={`${content.platform.url}/`}
           >
-            <AdjustText text={`${PLATFORM_PREFIX}${post.platform.name}`} />
+            <AdjustText text={`${PLATFORM_PREFIX}${content.platform.name}`} />
           </a>
         </li>
       )
     }
     {
-      post.tags &&
-        post.tags.map((tag) => (
+      content.tags &&
+        content.tags.map((tag) => (
           <li class="tag">
             <a href={`/tags/${tag.id}/`}>
               <AdjustText text={`${TAG_PREFIX}${tag.name}`} />

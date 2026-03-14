@@ -3,22 +3,18 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdjustText from '../../components/AdjustText.astro';
 import { TAG_PREFIX, TAGS_TITLE } from '../../consts';
-import { EXTERNAL_POSTS } from '../../externalPosts';
+import { ACTIVITIES } from '../../activities';
 
 const posts = (await getCollection('posts')).map((post) => {
-  return {
-    tags: post.data.tags,
-  };
+  return { tags: post.data.tags };
 });
-const externalPosts = EXTERNAL_POSTS.map((post) => {
-  return {
-    tags: post.tags,
-  };
+const activities = ACTIVITIES.map((activity) => {
+  return { tags: activity.tags };
 });
 const tags = (() => {
   const tagsCount: Map<string, { name: string; count: number }> = new Map();
-  [...posts, ...externalPosts].forEach((post) => {
-    post.tags?.forEach((tag) => {
+  [...posts, ...activities].forEach((content) => {
+    content.tags?.forEach((tag) => {
       const value = tagsCount.get(tag.id);
       tagsCount.set(tag.id, {
         name: value?.name ?? tag.name,

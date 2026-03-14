@@ -1,0 +1,26 @@
+---
+import Content from './Content.astro';
+import { type ContentSummary } from '../models/contentSummary';
+
+type Props = {
+  contents: ContentSummary[];
+};
+
+const { contents } = Astro.props;
+---
+
+<>
+  {
+    contents.map((content) => (
+      <div class="content">
+        <Content content={content} />
+      </div>
+    ))
+  }
+</>
+
+<style lang="scss">
+  .content:not(:first-child) {
+    margin-top: 24px;
+  }
+</style>
