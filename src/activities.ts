@@ -115,7 +115,7 @@ export const ACTIVITIES = [
     title: 'PokéAPI を使ってポケモン図鑑の Android を作ってみた',
     description:
       'この記事は，フラー株式会社 Advent Calendar 2021 の 9 日目の記事です。8 日目の記事は @inoriko711 さんによる きらめく星（の力で憧れの私）描くよ でした。は…',
-    publishedDate: '2021-12-08T11:17:16+09:00',
+    publishedDate: '2021-12-09T07:00:00+09:00',
     tags: [
       { id: 'android', name: 'Android' },
       { id: 'kotlin', name: 'Kotlin' },
