@@ -1,6 +1,11 @@
 ---
 import AdjustText from './AdjustText.astro';
-import { SITE_TITLE, POSTS_TITLE, TAGS_TITLE } from '../consts';
+import {
+  SITE_TITLE,
+  POSTS_TITLE,
+  ACTIVITIES_TITLE,
+  TAGS_TITLE,
+} from '../consts';
 ---
 
 <>
@@ -14,6 +19,11 @@ import { SITE_TITLE, POSTS_TITLE, TAGS_TITLE } from '../consts';
           <li>
             <a class="nav-item" href="/posts/">
               <AdjustText text={POSTS_TITLE} />
+            </a>
+          </li>
+          <li>
+            <a class="nav-item" href="/activities/">
+              <AdjustText text={ACTIVITIES_TITLE} />
             </a>
           </li>
           <li>

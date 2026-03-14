@@ -4,6 +4,7 @@ export const TITLE_SEPARATOR = ' | ';
 export const TAG_PREFIX = '#';
 export const PLATFORM_PREFIX = '@';
 export const POSTS_TITLE = '投稿';
+export const ACTIVITIES_TITLE = '活動';
 export const TAGS_TITLE = 'タグ';
 export const PRIVACY_POLICY_TITLE = 'プライバシーポリシー';
 export const CONTACT_TITLE = 'お問い合わせ';
