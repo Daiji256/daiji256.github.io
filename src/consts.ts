@@ -1,5 +1,5 @@
 export const SITE_TITLE = 'Daiji256';
-export const SITE_DESCRIPTION = 'エンジニアの気まぐれブログ';
+export const SITE_DESCRIPTION = 'AndroidとTeXとそれ以外';
 export const TITLE_SEPARATOR = ' | ';
 export const TAG_PREFIX = '#';
 export const PLATFORM_PREFIX = '@';
