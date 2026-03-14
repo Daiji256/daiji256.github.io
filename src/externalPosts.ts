@@ -316,4 +316,18 @@ export const EXTERNAL_POSTS = [
     ],
     url: 'https://qiita.com/Daiji256/items/5f3dd1d31f1d635e78a3',
   },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Nav3 は状態の保持と描画を分けて考えると設計しやすい',
+    description:
+      'はじめに Jetpack Navigation 3（以下 Nav3）は柔軟性が高い一方で、実装方針が 1 つに定まっているわけではありません。そのため、実運用ではアプリの要件に応じて設計する場面が多く、実装が複雑になりやすいです。 本記事では、Nav3 において状態の保持...',
+    publishedDate: '2026-03-14T20:51:40+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'navigation3', name: 'Navigation3' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/c9cb9d8279c9bad687cc',
+  },
 ];
