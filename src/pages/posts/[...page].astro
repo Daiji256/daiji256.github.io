@@ -3,39 +3,27 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContentsPage from '../../components/ContentsPage.astro';
 import { type ContentSummary } from '../../models/contentSummary';
-import { ACTIVITIES } from '../../activities';
 import { POSTS_TITLE, PAGE_SIZE } from '../../consts';
 
 type Props = {
   pageLength: number;
-  contents: ContentSummary[];
+  posts: ContentSummary[];
 };
 
 export async function getStaticPaths() {
-  const posts: ContentSummary[] = (await getCollection('posts')).map((post) => {
-    return {
-      platform: null,
-      title: post.data.title,
-      description: post.data.description,
-      publishedDate: post.data.publishedDate,
-      tags: post.data.tags,
-      url: `/posts/${post.id}/`,
-    };
-  });
-  const activities: ContentSummary[] = ACTIVITIES.map((activity) => {
-    return {
-      platform: activity.platform,
-      title: activity.title,
-      description: activity.description,
-      publishedDate: new Date(activity.publishedDate),
-      tags: activity.tags,
-      url: activity.url,
-    };
-  });
-  const contents = [...posts, ...activities].sort((a, b) =>
-    a.publishedDate > b.publishedDate ? -1 : 1,
-  );
-  const pageLength = Math.ceil(contents.length / PAGE_SIZE);
+  const posts: ContentSummary[] = (await getCollection('posts'))
+    .map((post) => {
+      return {
+        platform: null,
+        title: post.data.title,
+        description: post.data.description,
+        publishedDate: post.data.publishedDate,
+        tags: post.data.tags,
+        url: `/posts/${post.id}/`,
+      };
+    })
+    .sort((a, b) => (a.publishedDate > b.publishedDate ? -1 : 1));
+  const pageLength = Math.ceil(posts.length / PAGE_SIZE);
   const ret: {
     params: { page: string | undefined };
     props: Props;
@@ -45,7 +33,7 @@ export async function getStaticPaths() {
       params: { page: i === 0 ? undefined : String(i + 1) },
       props: {
         pageLength: pageLength,
-        contents: contents.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE),
+        posts: posts.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE),
       },
     });
   }
@@ -53,7 +41,7 @@ export async function getStaticPaths() {
 }
 
 const { page: _page } = Astro.params;
-const { pageLength, contents } = Astro.props;
+const { pageLength, posts } = Astro.props;
 const page = _page ? Number(_page) : 1;
 ---
 
@@ -61,7 +49,7 @@ const page = _page ? Number(_page) : 1;
   <BaseLayout title={POSTS_TITLE}>
     <ContentsPage
       title={POSTS_TITLE}
-      contents={contents}
+      contents={posts}
       page={page}
       pageLength={pageLength}
       baseUrl="/posts/"
