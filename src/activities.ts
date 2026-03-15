@@ -1,5 +1,100 @@
 export const ACTIVITIES = [
   {
+    platform: {
+      name: '長岡高専',
+      url: 'https://www.nagaoka-ct.ac.jp/',
+    },
+    title: '長岡高専・電子制御工学科・最近のできごと2023No.4 | 卒業式&修了式',
+    description:
+      'アオーレ長岡のアリーナを会場として，第56回卒業式・第21回専攻科修了式が挙行されました。電子制御工学科からは29名が卒業となり，代表で明田川さんが卒業証書を校長から受け取りました。また，電子制御工学科出身の専攻科生7名が修了しました。',
+    publishedDate: '2022-03-19T00:00:00+09:00',
+    tags: [
+      { id: 'nagaoka-kosen', name: '長岡高専' },
+      { id: 'kosen', name: '高専' },
+    ],
+    url: 'https://www.nagaoka-ct.ac.jp/ec/2021/news2021_04.shtml#Mar19a_2022',
+  },
+  {
+    platform: {
+      name: '長岡高専',
+      url: 'https://www.nagaoka-ct.ac.jp/',
+    },
+    title: '長岡高専・電子制御工学科・最近のできごと2023No.4 | 卒業生来校',
+    description:
+      '令和元年度に電子制御工学科を卒業し，令和3年度に専攻科電子機械システム工学専攻を修了した鈴木大二さんが，帰省の途中に立ち寄ってくれました。専攻科修了後にフラー株式会社に入社し，現在はAndroidアプリ開発に携わっているそうです。今年2月に沖縄に移住し，テレワーク中心の勤務をしているという日常のようすを聞かせていただきました。',
+    publishedDate: '2023-12-25T00:00:00+09:00',
+    tags: [
+      { id: 'nagaoka-kosen', name: '長岡高専' },
+      { id: 'kosen', name: '高専' },
+    ],
+    url: 'https://www.nagaoka-ct.ac.jp/ec/2023/news2023_04.shtml#Dec25_2023',
+  },
+  {
+    platform: {
+      name: 'NHK',
+      url: 'https://www.web.nhk/',
+    },
+    title:
+      '「AIビジネスで一獲千金! 全国高専ディープラーニングコンテスト」 | サイエンスZERO',
+    description:
+      '【NHK】人工知能・ＡＩを駆使する高専生が挑むビジネスコンテスト「ＤＣＯＮ」に密着！えりすぐりの１１チームが現役ベンチャーキャピタリストたちをうならせるビジネスを次々と生み出し、企業評価額を競い合う。数億円という評価が続出！農業・漁業・観光・福祉など日本の産業を盛り上げようと奮闘する未来の起業家たちの熱い戦いを２週にわたりお伝えする。第１週は８月に行われた大会の様子に密着。栄冠はどのチームに！？',
+    publishedDate: '2020-09-06T23:35:00+09:00',
+    tags: [
+      { id: 'kosen', name: '高専' },
+      { id: 'dcon', name: 'DCON' },
+      { id: 'science-zero', name: 'サイエンスZERO' },
+    ],
+    url: 'https://www.web.nhk/tv/an/zero/pl/series-tep-XK5VKV7V98/ep/KZ32Q2VGJJ',
+  },
+  {
+    platform: {
+      name: 'NHK',
+      url: 'https://www.web.nhk/',
+    },
+    title:
+      '「高専生がAIで起業!ディープラーニングコンテストの舞台裏」 | サイエンスZERO',
+    description:
+      '【NHK】全国の高専生がディープラーニングの技術を駆使した新たなビジネスの形を次々にプレゼンするＤＣＯＮ。そのアイデアと実現させる技術に世界で活躍する投資家も圧倒されっぱなし。ＤＣＯＮの舞台裏と将来への展望をたっぷりご紹介。今、日本の産業界に何が足りないのかをハッキリ言及し若き才能をどう育てていくかを本質的に議論する。去年のＤＣＯＮで優勝し実際に起業した長岡の高専生が今、地域の産業を盛り上げるべく活動中。',
+    publishedDate: '2020-09-13T23:30:00+09:00',
+    tags: [
+      { id: 'kosen', name: '高専' },
+      { id: 'dcon', name: 'DCON' },
+      { id: 'science-zero', name: 'サイエンスZERO' },
+    ],
+    url: 'https://www.web.nhk/tv/an/zero/pl/series-tep-XK5VKV7V98/ep/X7XM3NVMJQ',
+  },
+  {
+    platform: {
+      name: 'Yappli Tech Blog',
+      url: 'https://tech.yappli.io/',
+    },
+    title: 'フラーさんと開発統括本部LT大会でワイワイした話',
+    description:
+      'こんにちは！データサイエンス室の山本（ @\\_\\_Y4M4MOTO\\_\\_ ）です。 開発統括本部では四半期ごとにLT大会を開催しています。今回はなんと、昨年にヤプリと資本業務提供したフラー株式会社（以下、「フラーさん」）のエンジニアの方々をお招きして一緒にワイワイしました！ この記事ではその様子をご紹介します！ どんな会？ LT大会（Lightning Talk大会）は、 一人約5分で自由なテーマに基づいて発表していくイベント です。ヤプリの開発統括本部では、以下のルールで開催しています： 任意参加 📝 ... どの部署からでも自由に参加できます。 発表時間は5分 ⏰ ... コンパクトに話すのがル…',
+    publishedDate: '2025-03-19T15:00:00+09:00',
+    tags: [
+      { id: 'lt', name: 'LT' },
+      { id: 'yappli', name: 'ヤプリ' },
+    ],
+    url: 'https://tech.yappli.io/entry/lightning-talk-14-with-fuller',
+  },
+  {
+    platform: {
+      name: 'フラーのデジタルノート',
+      url: 'https://note.fuller-inc.com/',
+    },
+    title:
+      '22年新卒メンバーへ入社半年後のインタビュー！　フラーへ入ってぶっちゃけどうですか？',
+    description:
+      '事業拡大を続けるフラーでは、新卒採用も本格化！　今年2022年は、新卒の学生から7名を新メンバーに迎えました。 入社から半年近くが経過した9月現在、新卒メンバーたちはどのような環境でどのような仕事を、どのような想いで行っているのでしょうか。 新卒入社メンバーの中からエンジニア、デザイナー職の4名に話を聞いてみました。  ⸺簡単に自己紹介をお願いします。  鈴木（Androidエンジニア、写真右）： Androidエンジニアの鈴木です。高専の専攻科卒なので、年齢的には大卒の人たちと一緒ですね。 近況は……スプラトゥーン3をやってます！　発売日は有給を取りました（笑）  新保（Androi',
+    publishedDate: '2022-10-06T11:39:16+09:00',
+    tags: [
+      { id: 'career', name: 'キャリア' },
+      { id: 'fuller', name: 'フラー' },
+    ],
+    url: 'https://note.fuller-inc.com/n/n5036f7befda5',
+  },
+  {
     platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'bit を高速に数える 手法の比較',
     description:
