@@ -1,7 +1,7 @@
 ---
 title: '「バカ」と共存する方法'
 description: 'マンションの駐車場でカラーコーンを置かれるトラブルに遭遇。俺の愚痴とそれっぽい適当なこと。'
-publishedDate: 2026-01-17
+publishedDate: 2026-01-17T00:00:00+09:00
 tags: [{ id: 'memorandum', name: '備忘録' }]
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: 'つくる覚悟'
 description: '自分の「つくる」という行動について心情を整理しました。覚悟を強く持てるように、これからも楽しみながら続けていけたらと思います。'
-publishedDate: 2025-06-02
-updatedDate: 2025-06-14
+publishedDate: 2025-06-02T00:00:00+09:00
+updatedDate: 2025-06-14T00:00:00+09:00
 tags: [{ id: 'poem', name: 'ポエム' }]
 ---
 

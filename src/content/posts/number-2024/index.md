@@ -1,7 +1,7 @@
 ---
 title: '2024を振り返る'
 description: '2024っていいよね'
-publishedDate: 2024-12-31
+publishedDate: 2024-12-31T00:00:00+09:00
 tags: [{ id: 'joke', name: 'ネタ' }]
 ---
 
