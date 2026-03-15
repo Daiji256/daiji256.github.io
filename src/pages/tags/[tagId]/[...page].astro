@@ -38,9 +38,9 @@ export async function getStaticPaths() {
     a.publishedDate > b.publishedDate ? -1 : 1,
   );
   const tags = (() => {
-    const tags: Set<Tag> = new Set();
+    const tags: Map<string, Tag> = new Map();
     contents.forEach((content) => {
-      content.tags?.forEach((tag) => tags.add(tag));
+      content.tags?.forEach((tag) => tags.set(tag.id, tag));
     });
     return Array.from(tags.values());
   })();
