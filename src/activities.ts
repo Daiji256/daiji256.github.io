@@ -422,4 +422,18 @@ export const ACTIVITIES = [
     ],
     url: 'https://qiita.com/Daiji256/items/c9cb9d8279c9bad687cc',
   },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Nav3による画面遷移の設計をどう考えるか',
+    description:
+      'はじめに Jetpack Navigation 3（以下Nav3）は、Composeによる状態管理を前提に構築された新しい画面遷移ライブラリです。高い柔軟性とカスタマイズ性を備えています。 この記事では、Nav3による画面遷移の設計について、個人的な結論1に至るまでの試行...',
+    publishedDate: '2026-03-23T21:56:24+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'navigation3', name: 'Navigation3' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/abbbb034ff35d854e11a',
+  },
 ];
