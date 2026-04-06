@@ -251,7 +251,7 @@ export const ACTIVITIES = [
     platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
     title: 'Androidアプリにおけるインスタンスの生存期間とスコープ',
     description:
-      '本記事では、Androidアプリ開発において登場する各種オブジェクト（Application、Activity、ViewModel など）のインスタンス生存期間とスコープについて整理する。各オブジェクトがどのタイミング・スコープで生成され、破棄されるのかを理解することで、状態...',
+      '本記事では、Androidアプリ開発において登場する各種オブジェクト（Application、Activity、ViewModel など）のインスタンス生存期間とスコープについて整理する。各オブジェクトがどのタイミング・スコープで生成され、破棄されるのかを理解することで、状...',
     publishedDate: '2025-03-05T16:21:00+09:00',
     tags: [
       { id: 'android', name: 'Android' },
