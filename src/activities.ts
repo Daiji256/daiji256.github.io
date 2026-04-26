@@ -436,4 +436,18 @@ export const ACTIVITIES = [
     ],
     url: 'https://qiita.com/Daiji256/items/abbbb034ff35d854e11a',
   },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Material Youを活かした独自カラースキームの作り方',
+    description:
+      'はじめに Material Youは、Android 12で導入されたパーソナライズ機能であり、壁紙やユーザー設定に基づいてシステム全体のカラースキームを動的に生成します1。 この仕組みにより、アプリはユーザーの好みに合わせた配色を実現しやすくなりました。一方で、標準の ...',
+    publishedDate: '2026-04-11T18:19:50+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'ui', name: 'UI' },
+      { id: 'material-design', name: 'Material Design' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/b2e609a5ff56e80bd96a',
+  },
 ];
