@@ -11,14 +11,14 @@
     "lint": "prettier . --check --plugin=prettier-plugin-astro && eslint ."
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
-    "@astrojs/mdx": "^5.0.6",
+    "@astrojs/check": "^0.9.2",
+    "@astrojs/mdx": "^6.0.1",
     "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@daiji256/rehype-mathml": "^1.2.2",
     "@eslint/js": "^10.0.1",
     "@rollup/wasm-node": "^4.60.4",
-    "astro": "^6.3.7",
+    "astro": "^6.4.2",
     "astro-eslint-parser": "^1.4.0",
     "eslint": "^10.4.0",
     "eslint-plugin-astro": "^1.7.0",
@@ -32,7 +32,7 @@
     "remark-math": "^6.0.0",
     "sass": "^1.100.0",
     "sharp": "^0.34.5",
-    "typescript-eslint": "^8.59.4",
+    "typescript-eslint": "^8.60.0",
     "unified": "^11.0.5"
   },
   "overrides": {
