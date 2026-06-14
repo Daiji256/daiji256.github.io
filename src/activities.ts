@@ -1,6 +1,20 @@
 export const ACTIVITIES = [
   {
     platform: {
+      name: 'Google Play',
+      url: 'https://play.google.com/',
+    },
+    title: 'Flash Shape - Visual Memory',
+    description: 'Memorize shapes and reproduce them from memory.',
+    publishedDate: '2026-06-01T00:00:00+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'android-app', name: 'Androidアプリ' },
+    ],
+    url: 'https://play.google.com/store/apps/details?id=io.github.daiji256.mdgames.flashshape',
+  },
+  {
+    platform: {
       name: '長岡高専',
       url: 'https://www.nagaoka-ct.ac.jp/',
     },
@@ -449,5 +463,20 @@ export const ACTIVITIES = [
       { id: 'material-design', name: 'Material Design' },
     ],
     url: 'https://qiita.com/Daiji256/items/b2e609a5ff56e80bd96a',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Google Play Consoleの「デバッグシンボルがありません」を解決する',
+    description:
+      'はじめに Androidアプリをリリース・アップデートしようとした際、Google Play Console上で以下のワーニングが表示されたことはないでしょうか？ 本記事では、Android App Bundle（.aab ファイル）にデバッグシンボルを含めるように設定し...',
+    publishedDate: '2026-06-13T17:12:36+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'ndk', name: 'NDK' },
+      { id: 'gradle', name: 'Gradle' },
+      { id: 'google-play-console', name: 'Google Play Console' },
+      { id: 'android-app-bundle', name: 'Android App Bundle' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/1ba7d94767bedf4f254f',
   },
 ];
