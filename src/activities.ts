@@ -479,4 +479,95 @@ export const ACTIVITIES = [
     ],
     url: 'https://qiita.com/Daiji256/items/1ba7d94767bedf4f254f',
   },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'chws-toolにより任意のフォントをchws対応にする',
+    description:
+      'Android 12から標準搭載されているNoto Sans/Serif CJKは、chws（Contextual Half-width Spacing）機能に対応しました。これにより、括弧や句読点などの約物のアキが自動で調整されるようになり、より美しい文字組みが実現されて...',
+    publishedDate: '2026-06-18T23:38:20+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'font', name: 'Font' },
+      { id: 'typography', name: 'Typography' },
+      { id: 'punctuation-mark', name: '約物' },
+      { id: 'chws', name: 'chws' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/69cfafbd3b62e7d45319',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Play Consoleでアプリ署名のフィンガープリントを確認する（2026年）',
+    description:
+      '最近のPlay ConsoleのUI変更により、アプリ署名のフィンガープリント（SHA-1 / SHA-256）を確認する場所が変わりました。 2026年6月19日現在は、以下の手順でフィンガープリントを確認できます： サイドメニューから Google Play による保...',
+    publishedDate: '2026-06-19T21:25:36+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'fingerprint', name: 'Fingerprint' },
+      { id: 'keystore', name: 'Keystore' },
+      { id: 'signing', name: '署名' },
+      { id: 'google-play-console', name: 'Google Play Console' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/dfcbc6972c31558657e7',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title:
+      'Jetpack Composeで和欧混植（文字単位のフォントフォールバック）を実現する',
+    description:
+      'はじめに タイポグラフィを考えるとき「アルファベットはフォントAを、日本語はフォントBを表示したい」という和欧混植の要望もあるでしょう。Jetpack Composeで開発しているAndroidアプリでも、この要望に応えたい場面があります。 しかし、FontFamily(...',
+    publishedDate: '2026-06-20T12:41:40+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'font', name: 'Font' },
+      { id: 'jetpack', name: 'Jetpack' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'jetpack-compose', name: 'Jetpack Compose' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/329b4325977089ba7383',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Explicit Backing Fieldsの仕組みと注意点（Kotlin 2.4.0）',
+    description:
+      'はじめに Kotlin 2.4.0からexplicit backing fieldsがstableになりました1。本記事では、これまでの「よくあるコード」がどう変わるのか、その仕組みと注意点について紹介します。 今までの書き方とこれからの書き方 class / obje...',
+    publishedDate: '2026-06-20T23:58:15+09:00',
+    tags: [
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'state-flow', name: '`StateFlow`' },
+      { id: 'explicit-backing-fields', name: 'Explicit Backing Fields' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/4dbf9098eb060ae10d18',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Nav3のResultEventBusの機能と微妙なポイント（alpha版）',
+    description:
+      '本記事の内容はalpha版のソースコードで確認しています。今後のアップデートで大きく変わる場合があります。 はじめに Jetpack Navigation 3（Nav3）の1.2.0-alpha021にて、画面間の結果受け渡しをサポートする新しいAPIとして Re...',
+    publishedDate: '2026-06-22T21:17:32+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'navigation3', name: 'Navigation3' },
+      { id: 'result-event-bus', name: '`ResultEventBus`' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/ad298f5a7384136eb6dd',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title:
+      'androidx.graphics:graphics-shapesのSvgPathParserにおけるベジェ曲線変換バグと回避策',
+    description:
+      'androidx.graphics:graphics-shapes:1.1.0 にて追加された SvgPathParser.parseFeatures() を使用した際、SVGのパスが正しくパースされず、形状が歪むバグに遭遇しました。 本記事では、その原因とコード上で解決す...',
+    publishedDate: '2026-06-25T12:51:44+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'svg', name: 'SVG' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'jetpack', name: 'Jetpack' },
+      { id: 'rounded-polygon', name: '`RoundedPolygon`' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/7d2e4a85f55c84b38c34',
+  },
 ];
