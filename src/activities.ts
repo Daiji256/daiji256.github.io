@@ -469,7 +469,7 @@ export const ACTIVITIES = [
     title: 'Google Play Consoleの「デバッグシンボルがありません」を解決する',
     description:
       'はじめに Androidアプリをリリース・アップデートしようとした際、Google Play Console上で以下のワーニングが表示されたことはないでしょうか？ 本記事では、Android App Bundle（.aab ファイル）にデバッグシンボルを含めるように設定し...',
-    publishedDate: '2026-06-13T17:12:36+09:00',
+    publishedDate: '2026-06-14T02:12:36+09:00',
     tags: [
       { id: 'android', name: 'Android' },
       { id: 'ndk', name: 'NDK' },
@@ -496,7 +496,8 @@ export const ACTIVITIES = [
   },
   {
     platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
-    title: 'Play Consoleでアプリ署名のフィンガープリントを確認する（2026年）',
+    title:
+      'Google Play Consoleでアプリ署名のフィンガープリントを確認する（2026年）',
     description:
       '最近のPlay ConsoleのUI変更により、アプリ署名のフィンガープリント（SHA-1 / SHA-256）を確認する場所が変わりました。 2026年6月19日現在は、以下の手順でフィンガープリントを確認できます： サイドメニューから Google Play による保...',
     publishedDate: '2026-06-19T21:25:36+09:00',
@@ -569,5 +570,192 @@ export const ACTIVITIES = [
       { id: 'rounded-polygon', name: '`RoundedPolygon`' },
     ],
     url: 'https://qiita.com/Daiji256/items/7d2e4a85f55c84b38c34',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'intellij-markdownとComposeでMarkdownを柔軟に描画する',
+    description:
+      'はじめに 本記事では、ComposeでMarkdownを描画する方法について紹介します。既存のMarkdown描画ライブラリを使うのではなく、intellij-markdownによりMarkdownをパースし、Composeで描画するという手順を踏みます。 Markdow...',
+    publishedDate: '2026-07-04T09:22:47+09:00',
+    tags: [
+      { id: 'markdown', name: 'Markdown' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'compose', name: 'Compose' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/1e75a22ee19fc5dc0c04',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'OSSライセンスのためにPOMを参照してJSONを出力する',
+    description:
+      'はじめに ライブラリの依存関係やOSSライセンス情報を抽出する際、既存の多機能なツールでは「ブラックボックスな処理が多い」「不要な処理まで巻き込まれる」といった課題があります。 本記事では、依存関係のPOMを参照しJSONを出力する実装を紹介します。なお、記事中にはソース...',
+    publishedDate: '2026-07-06T03:01:58+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/3ad5ecad11cfcf242ef2',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Nav3におけるretainとViewModelの生存期間の違いと調整方法',
+    description:
+      'はじめに Composeでは、remember、retain、rememberSaveable などの関数を用いて状態を保持できます。これらはそれぞれ生存期間や利用目的が異なりますが、中でも retain は、画面回転などの構成変更によるアクティビティの再作成時にも値が破...',
+    publishedDate: '2026-07-06T09:49:03+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'lifecycle', name: 'Lifecycle' },
+      { id: 'viewmodel', name: 'ViewModel' },
+      { id: 'navigation3', name: 'Navigation3' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/7e4872a9345f5257fef0',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Nav3用の汎用的なpredictivePopTransitionSpecを実装した',
+    description:
+      'はじめに Navigation 3（Nav3）の NavDisplay では、通常の戻るアニメーション（popTransitionSpec）と、予測型「戻る」（Predictive back）アニメーション（predictivePopTransitionSpec）を別々に...',
+    publishedDate: '2026-07-08T12:37:57+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'jetpack-compose', name: 'Jetpack Compose' },
+      { id: 'predictive-back', name: 'Predictive Back' },
+      { id: 'navigation3', name: 'Navigation3' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/ee591d57616dd1504526',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title:
+      '端末の形状を頻繁に参照したくなったので、compositionLocalWithComputedDefaultOfを使って定義した',
+    description:
+      'はじめに スマホは画面の四隅が丸くなっています。一方で、Composable はデフォルトでは四角いです。画面遷移アニメーションを作っている時にその形状の差を埋めたいと考えました。これを実現するには、各画面の Composable も端末に合わせて形状を変更する必要があり...',
+    publishedDate: '2026-07-08T22:37:43+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'jetpack-compose', name: 'Jetpack Compose' },
+      { id: 'composition-locale', name: '`CompositionLocal`' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/35c8d482f7c7250f0985',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Roborazziのスクリーンショットテストにシステムバーを含める方法',
+    description:
+      'はじめに Roborazziを使ってComposeのスクリーンショットテスト（画像回帰テスト）を行う際、デフォルトではシステムバーが含まれません。 この記事では、テスト時に擬似的なシステムバーを描画し、スクリーンショットの対象に含める方法を紹介します。 なぜシステムバー...',
+    publishedDate: '2026-07-09T01:48:35+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'test', name: 'Test' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'roborazzi', name: 'Roborazzi' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/e53d3bf10ab83f376d6e',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Kotlin 2.4.0のSwift ExportでFlowをSwiftUIのStateにバインドする',
+    description:
+      'はじめに Kotlin 2.4.0のSwift Exportにより、Kotlinの Flow がSwift側から扱えるようになりました。Flow.asAsyncSequence() により、Swiftの AsyncSequence として処理できます。 この記事では、Sw...',
+    publishedDate: '2026-07-10T14:45:23+09:00',
+    tags: [
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'kmp', name: 'KMP' },
+      { id: 'swift-export', name: 'Swift Export' },
+      { id: 'swift', name: 'Swift' },
+      { id: 'swift-ui', name: 'SwiftUI' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/44e5acdf20f039393682',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title:
+      'Xcode 27で@Stateがマクロ化されたことで、無駄なインスタンス生成がなくなる',
+    description:
+      'はじめに 最近SwiftUIを学んでいたら、View が再評価されるたびに、状態を保持しているにもかかわらずインスタンスが無駄に生成されるという現象に違和感を覚えました。調べたところ、この問題は他のエンジニアも感じている既知の問題だったようです。 iOS 17で導入された...',
+    publishedDate: '2026-07-10T20:13:49+09:00',
+    tags: [
+      { id: 'xcode', name: 'Xcode' },
+      { id: 'ios', name: 'iOS' },
+      { id: 'swift', name: 'Swift' },
+      { id: 'observable', name: '`Observable`' },
+      { id: 'swift-ui', name: 'SwiftUI' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/4dea2aab1b27379e22fc',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'ComposeとUnitテストでAnimatedVectorDrawableを作る',
+    description:
+      'はじめに Androidアプリを開発していると、ロゴ等のアニメーションを実現する方法の1つに AnimatedVectorDrawable があります。AnimatedVectorDrawable は公式にサポートされたアニメーションで、Android 12以降のスプラッ...',
+    publishedDate: '2026-07-11T22:17:25+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'robolectric', name: 'Robolectric' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'vector-drawable', name: '`VectorDrawable`' },
+      { id: 'animated-vector-drawable', name: '`AnimatedVectorDrawable`' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/1dd5d3f28a834af793fd',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'ComposeとRoborazziでGoogle Playストア用の画像を生成してみた',
+    description:
+      'はじめに 個人でAndroidアプリを開発していたとき、Google Playストア用のアイコンやスクリーンショットなどの画像アセットを用意するのが面倒だと感じました。 アプリのUIやデザインを変更するたびに、Figmaなどの外部ツール側も更新して、画像をエクスポートし...',
+    publishedDate: '2026-07-12T00:09:50+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'robolectric', name: 'Robolectric' },
+      { id: 'compose', name: 'Compose' },
+      { id: 'roborazzi', name: 'Roborazzi' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/bd52be069de7e8a70bed',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'launchとasyncの例外処理のタイミングの違いについて',
+    description:
+      'はじめに Kotlinのcoroutineを使って非同期処理を実装する際、coroutineを起動するために launch や async を使います。 非同期処理を開始するという点では同じです。Job を扱いたい場合は launch、Deferred により結果を受け取...',
+    publishedDate: '2026-07-13T00:05:10+09:00',
+    tags: [
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'asynchronous', name: '非同期処理' },
+      { id: 'exception', name: '例外処理' },
+      { id: 'coroutines', name: 'Coroutines' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/05681b3bc492898a5598',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title: 'Kotlinのcontextによる再利用性を制限するための設計',
+    description:
+      'はじめに ソフトウェア開発において、関数やプロパティの再利用性が重要視されることは多いです。しかし、過度に汎用性が高いコンポーネントは、想定外の文脈で再利用されてしまうという誤用のリスクを伴います。 本記事では、Kotlin 2.4.0で安定化された言語機能であるcont...',
+    publishedDate: '2026-07-13T19:10:11+09:00',
+    tags: [
+      { id: 'kotlin', name: 'Kotlin' },
+      { id: 'software-design', name: 'ソフトウェア設計' },
+      { id: 'context-parameters', name: 'Context Parameters' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/05100eba72fcadf40a51',
+  },
+  {
+    platform: { name: 'Qiita', url: 'https://qiita.com/Daiji256' },
+    title:
+      'onNewIntentでsetIntent(intent)を呼ばないとgetIntent()は更新されない',
+    description:
+      'はじめに launchMode を singleTask や singleTop に設定し、アプリ起動中に通知やディープリンクから Activity を再利用する設計はよく使われます。このとき、新しく届いたパラメータは onNewIntent(intent) の引数から受...',
+    publishedDate: '2026-07-13T20:42:35+09:00',
+    tags: [
+      { id: 'android', name: 'Android' },
+      { id: 'activity', name: 'Activity' },
+      { id: 'intent', name: 'Intent' },
+      { id: 'on-new-intent', name: 'onNewIntent' },
+    ],
+    url: 'https://qiita.com/Daiji256/items/588fb991c56b01b57f22',
   },
 ];
