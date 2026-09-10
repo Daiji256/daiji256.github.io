@@ -8,28 +8,26 @@ import {
 } from '../consts';
 ---
 
-<>
-  <footer>
-    <hr />
-    <div class="footer-content">
-      <div class="copyright">
-        <AdjustText text={COPYRIGHT} />
-      </div>
-      <ul class="nav">
-        <li>
-          <a href="/privacy-policy/">
-            <AdjustText text={PRIVACY_POLICY_TITLE} />
-          </a>
-        </li>
-        <li>
-          <a target="_blank" rel="nofollow noopener" href={CONTACT_URL}>
-            <AdjustText text={CONTACT_TITLE} />
-          </a>
-        </li>
-      </ul>
+<footer>
+  <hr />
+  <div class="footer-content">
+    <div class="copyright">
+      <AdjustText text={COPYRIGHT} />
     </div>
-  </footer>
-</>
+    <ul class="nav">
+      <li>
+        <a href="/privacy-policy/">
+          <AdjustText text={PRIVACY_POLICY_TITLE} />
+        </a>
+      </li>
+      <li>
+        <a target="_blank" rel="nofollow noopener" href={CONTACT_URL}>
+          <AdjustText text={CONTACT_TITLE} />
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
 
 <style lang="scss">
   footer {

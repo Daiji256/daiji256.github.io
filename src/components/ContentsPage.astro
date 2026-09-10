@@ -15,10 +15,8 @@ type Props = {
 const { title, contents, page, pageLength, baseUrl } = Astro.props;
 ---
 
-<>
-  <h1>
-    <AdjustText text={title} />
-  </h1>
-  <Contents contents={contents} />
-  <Pagination current={page} pageLength={pageLength} baseUrl={baseUrl} />
-</>
+<h1>
+  <AdjustText text={title} />
+</h1>
+<Contents contents={contents} />
+<Pagination current={page} pageLength={pageLength} baseUrl={baseUrl} />

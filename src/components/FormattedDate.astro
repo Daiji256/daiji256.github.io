@@ -21,8 +21,6 @@ const day = date.toLocaleString('en-US', {
 const dateStr = `${year}-${month}-${day}`;
 ---
 
-<>
-  <time datetime={date.toISOString()}>
-    <AdjustText text={dateStr} />
-  </time>
-</>
+<time datetime={date.toISOString()}>
+  <AdjustText text={dateStr} />
+</time>

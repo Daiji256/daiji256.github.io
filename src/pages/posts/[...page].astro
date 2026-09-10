@@ -45,14 +45,12 @@ const { pageLength, posts } = Astro.props;
 const page = _page ? Number(_page) : 1;
 ---
 
-<>
-  <BaseLayout title={POSTS_TITLE}>
-    <ContentsPage
-      title={POSTS_TITLE}
-      contents={posts}
-      page={page}
-      pageLength={pageLength}
-      baseUrl="/posts/"
-    />
-  </BaseLayout>
-</>
+<BaseLayout title={POSTS_TITLE}>
+  <ContentsPage
+    title={POSTS_TITLE}
+    contents={posts}
+    page={page}
+    pageLength={pageLength}
+    baseUrl="/posts/"
+  />
+</BaseLayout>

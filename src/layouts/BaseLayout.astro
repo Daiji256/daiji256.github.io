@@ -14,17 +14,15 @@ const title = _title ? `${_title}${TITLE_SEPARATOR}${SITE_TITLE}` : SITE_TITLE;
 const description = _description ?? title;
 ---
 
-<>
-  <html lang="ja">
-    <head>
-      <BaseHead title={title} description={description} />
-    </head>
-    <body>
-      <Header />
-      <main>
-        <slot />
-      </main>
-      <Footer />
-    </body>
-  </html>
-</>
+<html lang="ja">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

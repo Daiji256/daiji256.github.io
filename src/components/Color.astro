@@ -6,12 +6,10 @@ interface Props {
 const { value } = Astro.props;
 ---
 
-<>
-  <span class="color">
-    <code>{value}</code>
-    <span class="color-box" style={`background-color: ${value};`}></span>
-  </span>
-</>
+<span class="color">
+  <code>{value}</code>
+  <span class="color-box" style={`background-color: ${value};`}></span>
+</span>
 
 <style lang="scss">
   .color {

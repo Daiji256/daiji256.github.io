@@ -9,13 +9,11 @@ type Props = {
 const { contents } = Astro.props;
 ---
 
-<>
-  {contents.map((content) => (
-    <div class="content">
-      <Content content={content} />
-    </div>
-  ))}
-</>
+{contents.map((content) => (
+  <div class="content">
+    <Content content={content} />
+  </div>
+))}
 
 <style lang="scss">
   .content:not(:first-child) {
