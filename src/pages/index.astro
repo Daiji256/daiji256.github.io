@@ -33,34 +33,38 @@ const pickupPosts: ContentSummary[] = PICKUP_POSTS.flatMap((id) => {
 
 <>
   <BaseLayout description={SITE_DESCRIPTION}>
-    <h1><AdjustText text={SITE_TITLE} /></h1>
-    <p><AdjustText text={SITE_DESCRIPTION} /></p>
-    <h2><AdjustText text={PICKUP_TITLE} /></h2>
+    <h1>
+      <AdjustText text={SITE_TITLE} />
+    </h1>
+    <p>
+      <AdjustText text={SITE_DESCRIPTION} />
+    </p>
+    <h2>
+      <AdjustText text={PICKUP_TITLE} />
+    </h2>
     <div>
-      {
-        pickupPosts.map((post) => (
-          <div class="post">
-            <Content content={post} />
-          </div>
-        ))
-      }
+      {pickupPosts.map((post) => (
+        <div class="post">
+          <Content content={post} />
+        </div>
+      ))}
     </div>
-    <h2><AdjustText text={LINKS_TITLE} /></h2>
+    <h2>
+      <AdjustText text={LINKS_TITLE} />
+    </h2>
     <ul class="links">
-      {
-        LINKS.map((link) => (
-          <li>
-            <a
-              class="link"
-              target="_blank"
-              rel="nofollow noopener"
-              href={link.url}
-            >
-              <AdjustText text={link.name} />
-            </a>
-          </li>
-        ))
-      }
+      {LINKS.map((link) => (
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            rel="nofollow noopener"
+            href={link.url}
+          >
+            <AdjustText text={link.name} />
+          </a>
+        </li>
+      ))}
     </ul>
   </BaseLayout>
 </>

@@ -22,22 +22,22 @@ const { Content } = await render(page);
 <>
   <BaseLayout title={page.data.title}>
     <article>
-      <h1><AdjustText text={page.data.title} /></h1>
+      <h1>
+        <AdjustText text={page.data.title} />
+      </h1>
       <div class="date">
         <div>
           <AdjustText text={PUBLISHED_DATE_LABEL} />
           <span class="space"></span>
           <FormattedDate date={page.data.publishedDate} />
         </div>
-        {
-          page.data.updatedDate && (
-            <div class="updated">
-              <AdjustText text={UPDATED_DATE_LABEL} />
-              <span class="space" />
-              <FormattedDate date={page.data.updatedDate} />
-            </div>
-          )
-        }
+        {page.data.updatedDate && (
+          <div class="updated">
+            <AdjustText text={UPDATED_DATE_LABEL} />
+            <span class="space" />
+            <FormattedDate date={page.data.updatedDate} />
+          </div>
+        )}
       </div>
       <Content />
     </article>

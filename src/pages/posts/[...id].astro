@@ -26,32 +26,30 @@ const { Content } = await render(post);
 <>
   <BaseLayout title={post.data.title} description={post.data.description}>
     <article>
-      <h1><AdjustText text={post.data.title} /></h1>
+      <h1>
+        <AdjustText text={post.data.title} />
+      </h1>
       <div class="date">
         <div>
           <AdjustText text={PUBLISHED_DATE_LABEL} />
           <span class="space"></span>
           <FormattedDate date={post.data.publishedDate} />
         </div>
-        {
-          post.data.updatedDate && (
-            <div class="updated">
-              <AdjustText text={UPDATED_DATE_LABEL} />
-              <span class="space" />
-              <FormattedDate date={post.data.updatedDate} />
-            </div>
-          )
-        }
+        {post.data.updatedDate && (
+          <div class="updated">
+            <AdjustText text={UPDATED_DATE_LABEL} />
+            <span class="space" />
+            <FormattedDate date={post.data.updatedDate} />
+          </div>
+        )}
       </div>
       <div class="tags">
-        {
-          post.data.tags &&
-            post.data.tags.map((tag) => (
-              <a class="tag" href={`/tags/${tag.id}/`}>
-                <AdjustText text={`${TAG_PREFIX}${tag.name}`} />
-              </a>
-            ))
-        }
+        {post.data.tags &&
+          post.data.tags.map((tag) => (
+            <a class="tag" href={`/tags/${tag.id}/`}>
+              <AdjustText text={`${TAG_PREFIX}${tag.name}`} />
+            </a>
+          ))}
       </div>
       <Content />
     </article>
