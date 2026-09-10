@@ -12,7 +12,9 @@ const { current, pageLength, baseUrl } = Astro.props;
   <nav class="pagination" aria-label="Pagination">
     {Array.from({ length: pageLength }, (_, i) =>
       current === i + 1 ? (
-        <span class="number selected">{i + 1}</span>
+        <span class="number selected" aria-current="page">
+          {i + 1}
+        </span>
       ) : (
         <a
           class="number unselected"

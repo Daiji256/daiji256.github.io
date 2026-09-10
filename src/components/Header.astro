@@ -6,6 +6,11 @@ import {
   ACTIVITIES_TITLE,
   TAGS_TITLE,
 } from '../consts';
+
+const pathname = Astro.url.pathname;
+const isPosts = pathname.startsWith('/posts');
+const isActivities = pathname.startsWith('/activities');
+const isTags = pathname.startsWith('/tags');
 ---
 
 <header>
@@ -16,17 +21,29 @@ import {
     <nav>
       <ul>
         <li>
-          <a class="nav-item" href="/posts/">
+          <a
+            class="nav-item"
+            href="/posts/"
+            aria-current={isPosts ? 'page' : undefined}
+          >
             <AdjustText text={POSTS_TITLE} />
           </a>
         </li>
         <li>
-          <a class="nav-item" href="/activities/">
+          <a
+            class="nav-item"
+            href="/activities/"
+            aria-current={isActivities ? 'page' : undefined}
+          >
             <AdjustText text={ACTIVITIES_TITLE} />
           </a>
         </li>
         <li>
-          <a class="nav-item" href="/tags/">
+          <a
+            class="nav-item"
+            href="/tags/"
+            aria-current={isTags ? 'page' : undefined}
+          >
             <AdjustText text={TAGS_TITLE} />
           </a>
         </li>
