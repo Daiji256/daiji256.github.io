@@ -1,26 +1,16 @@
 ---
-import AdjustText from './AdjustText.astro';
-
 type Props = {
   date: Date;
 };
 
 const { date } = Astro.props;
-const year = date.toLocaleString('en-US', {
+const formatter = new Intl.DateTimeFormat('ja-JP', {
   timeZone: 'Asia/Tokyo',
   year: 'numeric',
-});
-const month = date.toLocaleString('en-US', {
-  timeZone: 'Asia/Tokyo',
   month: '2-digit',
-});
-const day = date.toLocaleString('en-US', {
-  timeZone: 'Asia/Tokyo',
   day: '2-digit',
 });
-const dateStr = `${year}-${month}-${day}`;
+const dateStr = formatter.format(date).replaceAll('/', '-');
 ---
 
-<time datetime={date.toISOString()}>
-  <AdjustText text={dateStr} />
-</time>
+<time datetime={dateStr}>{dateStr}</time>
