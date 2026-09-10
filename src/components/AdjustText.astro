@@ -1,26 +1,12 @@
 ---
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import rehypeQuotes from 'rehype-quotes';
-import rehypeAdjustAki from 'rehype-adjust-aki';
-import rehypeStringify from 'rehype-stringify';
+import { adjustText } from '../utils/adjustText';
 
 interface Props {
   text: string;
 }
 
 const { text } = Astro.props;
-
-const adjustTextHtml = unified()
-  .use(remarkParse)
-  .use(remarkRehype)
-  .use(rehypeQuotes)
-  .use(rehypeAdjustAki)
-  .use(rehypeStringify)
-  .processSync(text)
-  .toString()
-  .replace(/<p>|<\/p>/g, '');
+const adjustTextHtml = adjustText(text);
 ---
 
 <span set:html={adjustTextHtml} />
