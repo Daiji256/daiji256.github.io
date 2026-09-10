@@ -40,6 +40,12 @@ const { title, description } = Astro.props;
   media="print"
   onload="this.setAttribute('media','all')"
 />
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/css/t.min.css"
+  />
+</noscript>
 
 <title>{title}</title>
 <meta name="title" content={title} />
