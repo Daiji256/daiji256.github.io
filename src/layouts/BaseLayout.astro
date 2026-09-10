@@ -7,16 +7,17 @@ import { SITE_TITLE, TITLE_SEPARATOR } from '../consts';
 interface Props {
   title?: string;
   description?: string;
+  ogType?: 'website' | 'article';
 }
 
-const { title: _title, description: _description } = Astro.props;
+const { title: _title, description: _description, ogType } = Astro.props;
 const title = _title ? `${_title}${TITLE_SEPARATOR}${SITE_TITLE}` : SITE_TITLE;
 const description = _description ?? title;
 ---
 
 <html lang="ja">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} ogType={ogType} />
   </head>
   <body>
     <Header />
