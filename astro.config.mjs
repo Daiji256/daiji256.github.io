@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import { unified } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeMathML from '@daiji256/rehype-mathml';
 import rehypeQuotes from 'rehype-quotes';
@@ -19,31 +20,33 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: 'shiki',
     shikiConfig: { theme: 'github-light-high-contrast' },
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [
-      rehypeMathML,
-      rehypeQuotes,
-      rehypeAdjustAki,
-      [
-        rehypeExternalLinks,
-        {
-          target: ['_blank'],
-          rel: ['nofollow', 'noopener'],
-        },
+    processor: unified({
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [
+        rehypeMathML,
+        rehypeQuotes,
+        rehypeAdjustAki,
+        [
+          rehypeExternalLinks,
+          {
+            target: ['_blank'],
+            rel: ['nofollow', 'noopener'],
+          },
+        ],
       ],
-    ],
-    remarkRehype: {
-      footnoteLabelProperties: { className: ['footnote'] },
-      footnoteLabel: FOOTNOTE_LABEL,
-      footnoteBackLabel(referenceIndex, rereferenceIndex) {
-        return (
-          referenceIndex +
-          1 +
-          (rereferenceIndex > 1 ? '-' + rereferenceIndex : '') +
-          FOOTNOTE_BACK_LABEL
-        );
+      remarkRehype: {
+        footnoteLabelProperties: { className: ['footnote'] },
+        footnoteLabel: FOOTNOTE_LABEL,
+        footnoteBackLabel(referenceIndex, rereferenceIndex) {
+          return (
+            referenceIndex +
+            1 +
+            (rereferenceIndex > 1 ? '-' + rereferenceIndex : '') +
+            FOOTNOTE_BACK_LABEL
+          );
+        },
       },
-    },
+    }),
   },
   vite: {
     css: {
