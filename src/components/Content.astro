@@ -33,11 +33,7 @@ const { content } = Astro.props;
   </li>
   {content.platform && (
     <li class="platform">
-      <a
-        target="_blank"
-        rel="nofollow noopener"
-        href={`${content.platform.url}/`}
-      >
+      <a target="_blank" rel="nofollow noopener" href={content.platform.url}>
         <AdjustText text={`${PLATFORM_PREFIX}${content.platform.name}`} />
       </a>
     </li>
