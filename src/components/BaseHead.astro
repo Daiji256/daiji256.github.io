@@ -54,7 +54,7 @@ const { title, description, ogType = 'website' } = Astro.props;
 
 <meta property="og:site_name" content={SITE_TITLE} />
 <meta property="og:type" content={ogType} />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={`${SITE_URL}images/og-image.png`} />
