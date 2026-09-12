@@ -3,7 +3,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContentsPage from '../../components/ContentsPage.astro';
 import { type ContentSummary } from '../../models/contentSummary';
 import { ACTIVITIES } from '../../activities';
-import { ACTIVITIES_TITLE, PAGE_SIZE } from '../../consts';
+import {
+  ACTIVITIES_TITLE,
+  ACTIVITIES_DESCRIPTION,
+  PAGE_SIZE,
+} from '../../consts';
 
 type Props = {
   pageLength: number;
@@ -43,7 +47,7 @@ const { pageLength, activities } = Astro.props;
 const page = _page ? Number(_page) : 1;
 ---
 
-<BaseLayout title={ACTIVITIES_TITLE}>
+<BaseLayout title={ACTIVITIES_TITLE} description={ACTIVITIES_DESCRIPTION}>
   <ContentsPage
     title={ACTIVITIES_TITLE}
     contents={activities}

@@ -5,14 +5,16 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, TITLE_SEPARATOR } from '../consts';
 
 interface Props {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   ogType?: 'website' | 'article';
 }
 
-const { title: _title, description: _description, ogType } = Astro.props;
-const title = _title ? `${_title}${TITLE_SEPARATOR}${SITE_TITLE}` : SITE_TITLE;
-const description = _description ?? title;
+const { title: _title, description, ogType } = Astro.props;
+const title =
+  _title === SITE_TITLE
+    ? SITE_TITLE
+    : `${_title}${TITLE_SEPARATOR}${SITE_TITLE}`;
 ---
 
 <html lang="ja">

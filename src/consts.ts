@@ -4,8 +4,11 @@ export const TITLE_SEPARATOR = ' | ';
 export const TAG_PREFIX = '#';
 export const PLATFORM_PREFIX = '@';
 export const POSTS_TITLE = '投稿';
+export const POSTS_DESCRIPTION = 'Daiji256の投稿一覧';
 export const ACTIVITIES_TITLE = '活動';
+export const ACTIVITIES_DESCRIPTION = 'Daiji256の活動一覧';
 export const TAGS_TITLE = 'タグ';
+export const TAGS_DESCRIPTION = 'Daiji256のタグ一覧';
 export const PRIVACY_POLICY_TITLE = 'プライバシーポリシー';
 export const CONTACT_TITLE = 'お問い合わせ';
 export const COPYRIGHT = 'Copyright 2026 Daiji256';
@@ -29,6 +32,8 @@ export const LINKS = [
   { name: 'mixi2', url: 'https://mixi.social/@daiji256' },
 ];
 export const HTTP_404_NOT_FOUND_TITLE = '404 Not Found';
+export const HTTP_404_NOT_FOUND_DESCRIPTION =
+  'お探しのページは見つかりませんでした';
 export const HTTP_404_NOT_FOUND_TO_TOP = 'トップページへ';
 export const SITE_URL = 'https://daiji256.github.io/';
 export const CONTACT_URL =

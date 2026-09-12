@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdjustText from '../components/AdjustText.astro';
-import { HTTP_404_NOT_FOUND_TITLE, HTTP_404_NOT_FOUND_TO_TOP } from '../consts';
+import {
+  HTTP_404_NOT_FOUND_TITLE,
+  HTTP_404_NOT_FOUND_DESCRIPTION,
+  HTTP_404_NOT_FOUND_TO_TOP,
+} from '../consts';
 ---
 
-<BaseLayout title={HTTP_404_NOT_FOUND_TITLE}>
+<BaseLayout
+  title={HTTP_404_NOT_FOUND_TITLE}
+  description={HTTP_404_NOT_FOUND_DESCRIPTION}
+>
   <h1>
     <AdjustText text={HTTP_404_NOT_FOUND_TITLE} />
   </h1>

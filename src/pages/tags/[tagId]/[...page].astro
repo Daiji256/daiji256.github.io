@@ -75,7 +75,10 @@ const { tag, pageLength, contents } = Astro.props;
 const page = _page ? Number(_page) : 1;
 ---
 
-<BaseLayout title={tag.name}>
+<BaseLayout
+  title={tag.name}
+  description={`タグ「${tag.name}」の投稿・活動一覧`}
+>
   <ContentsPage
     title={tag.name}
     contents={contents}

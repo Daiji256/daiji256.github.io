@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContentsPage from '../../components/ContentsPage.astro';
 import { type ContentSummary } from '../../models/contentSummary';
-import { POSTS_TITLE, PAGE_SIZE } from '../../consts';
+import { POSTS_TITLE, POSTS_DESCRIPTION, PAGE_SIZE } from '../../consts';
 
 type Props = {
   pageLength: number;
@@ -45,7 +45,7 @@ const { pageLength, posts } = Astro.props;
 const page = _page ? Number(_page) : 1;
 ---
 
-<BaseLayout title={POSTS_TITLE}>
+<BaseLayout title={POSTS_TITLE} description={POSTS_DESCRIPTION}>
   <ContentsPage
     title={POSTS_TITLE}
     contents={posts}
