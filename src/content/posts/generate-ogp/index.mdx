@@ -2,7 +2,7 @@
 title: 'HugoでOGP/Twitter Cardを自動生成したい'
 description: 'Hugoでブログの投稿のOGP/Twitter Cardを生成します。Hugo v0.90.0から使えるようになった`images.Text`により画像を生成します。'
 publishedDate: 2022-01-11T00:00:00+09:00
-updatedDate: 2025-01-28T00:00:00+09:00
+updatedDate: 2026-09-13T00:00:00+09:00
 tags:
   [
     { id: 'hugo', name: 'Hugo' },
@@ -86,7 +86,7 @@ import ogp from './images/ogp.png';
 
 `date`は<JwAki />`.Date.Format`で形式を指定します。`categories`と`tags`はループでカンマ区切りの1つのStringにまとめます。
 
-`$title`、`$categories`とかを複数の<JwAki />`(images.Text ...)`<JwAki />使って、同時に書きます。
+`$title`、`$categories`とかを複数の<JwAki />`(images.Text ...)`<JwAki />を使って、同時に書きます。
 
 ```
 {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP-Bold.otf" }}
