@@ -1,10 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ContentsPage from '../../../components/ContentsPage.astro';
 import { type ContentSummary } from '../../../models/contentSummary';
 import { type Tag } from '../../../models/tag';
-import { ACTIVITIES } from '../../../activities';
+import { getAllContents, getAllTags } from '../../../utils/contents';
 import { PAGE_SIZE } from '../../../consts';
 
 type Props = {
@@ -14,36 +13,8 @@ type Props = {
 };
 
 export async function getStaticPaths() {
-  const posts: ContentSummary[] = (await getCollection('posts')).map((post) => {
-    return {
-      platform: null,
-      title: post.data.title,
-      description: post.data.description,
-      publishedDate: post.data.publishedDate,
-      tags: post.data.tags,
-      url: `/posts/${post.id}/`,
-    };
-  });
-  const activities: ContentSummary[] = ACTIVITIES.map((activity) => {
-    return {
-      platform: activity.platform,
-      title: activity.title,
-      description: activity.description,
-      publishedDate: new Date(activity.publishedDate),
-      tags: activity.tags,
-      url: activity.url,
-    };
-  });
-  const contents = [...posts, ...activities].sort((a, b) =>
-    a.publishedDate > b.publishedDate ? -1 : 1,
-  );
-  const tags = (() => {
-    const tags: Map<string, Tag> = new Map();
-    contents.forEach((content) => {
-      content.tags?.forEach((tag) => tags.set(tag.id, tag));
-    });
-    return Array.from(tags.values());
-  })();
+  const contents = await getAllContents();
+  const tags = await getAllTags();
   const ret: {
     params: { tagId: string; page: string | undefined };
     props: Props;

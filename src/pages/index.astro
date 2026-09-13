@@ -1,9 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AdjustText from '../components/AdjustText.astro';
 import Content from '../components/Content.astro';
-import { type ContentSummary } from '../models/contentSummary';
+import { getPosts } from '../utils/contents';
 import {
   SITE_TITLE,
   SITE_DESCRIPTION,
@@ -13,21 +12,10 @@ import {
   LINKS,
 } from '../consts';
 
-const posts = await getCollection('posts');
-const pickupPosts: ContentSummary[] = PICKUP_POSTS.flatMap((id) => {
-  const post = posts.find((p) => p.id === id);
-  return post
-    ? [
-        {
-          platform: null,
-          title: post.data.title,
-          description: post.data.description,
-          publishedDate: post.data.publishedDate,
-          tags: post.data.tags,
-          url: `/posts/${post.id}/`,
-        },
-      ]
-    : [];
+const posts = await getPosts();
+const pickupPosts = PICKUP_POSTS.flatMap((id) => {
+  const post = posts.find((p) => p.url === `/posts/${id}/`);
+  return post ? [post] : [];
 });
 ---
 

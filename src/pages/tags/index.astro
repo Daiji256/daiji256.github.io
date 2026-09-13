@@ -1,33 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdjustText from '../../components/AdjustText.astro';
+import { getAllTagsWithCount } from '../../utils/contents';
 import { TAG_PREFIX, TAGS_TITLE, TAGS_DESCRIPTION } from '../../consts';
-import { ACTIVITIES } from '../../activities';
 
-const posts = (await getCollection('posts')).map((post) => {
-  return { tags: post.data.tags };
-});
-const activities = ACTIVITIES.map((activity) => {
-  return { tags: activity.tags };
-});
-const tags = (() => {
-  const tagsCount: Map<string, { name: string; count: number }> = new Map();
-  [...posts, ...activities].forEach((content) => {
-    content.tags?.forEach((tag) => {
-      const value = tagsCount.get(tag.id);
-      tagsCount.set(tag.id, {
-        name: value?.name ?? tag.name,
-        count: (value?.count ?? 0) + 1,
-      });
-    });
-  });
-  const tags: { id: string; name: string; count: number }[] = [];
-  tagsCount.forEach((value, id) => {
-    tags.push({ id: id, name: value.name, count: value.count });
-  });
-  return tags.sort((a, b) => b.count - a.count);
-})();
+const tags = await getAllTagsWithCount();
 ---
 
 <BaseLayout title={TAGS_TITLE} description={TAGS_DESCRIPTION}>

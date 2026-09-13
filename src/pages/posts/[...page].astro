@@ -1,8 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContentsPage from '../../components/ContentsPage.astro';
 import { type ContentSummary } from '../../models/contentSummary';
+import { getPosts } from '../../utils/contents';
 import { POSTS_TITLE, POSTS_DESCRIPTION, PAGE_SIZE } from '../../consts';
 
 type Props = {
@@ -11,18 +11,7 @@ type Props = {
 };
 
 export async function getStaticPaths() {
-  const posts: ContentSummary[] = (await getCollection('posts'))
-    .map((post) => {
-      return {
-        platform: null,
-        title: post.data.title,
-        description: post.data.description,
-        publishedDate: post.data.publishedDate,
-        tags: post.data.tags,
-        url: `/posts/${post.id}/`,
-      };
-    })
-    .sort((a, b) => (a.publishedDate > b.publishedDate ? -1 : 1));
+  const posts = await getPosts();
   const pageLength = Math.ceil(posts.length / PAGE_SIZE);
   const ret: {
     params: { page: string | undefined };

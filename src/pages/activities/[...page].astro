@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContentsPage from '../../components/ContentsPage.astro';
 import { type ContentSummary } from '../../models/contentSummary';
-import { ACTIVITIES } from '../../activities';
+import { getActivities } from '../../utils/contents';
 import {
   ACTIVITIES_TITLE,
   ACTIVITIES_DESCRIPTION,
@@ -15,16 +15,7 @@ type Props = {
 };
 
 export async function getStaticPaths() {
-  const activities: ContentSummary[] = ACTIVITIES.map((activity) => {
-    return {
-      platform: activity.platform,
-      title: activity.title,
-      description: activity.description,
-      publishedDate: new Date(activity.publishedDate),
-      tags: activity.tags,
-      url: activity.url,
-    };
-  }).sort((a, b) => (a.publishedDate > b.publishedDate ? -1 : 1));
+  const activities = getActivities();
   const pageLength = Math.ceil(activities.length / PAGE_SIZE);
   const ret: {
     params: { page: string | undefined };
