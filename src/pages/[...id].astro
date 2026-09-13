@@ -1,9 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import AdjustText from '../components/AdjustText.astro';
-import { PUBLISHED_DATE_LABEL, UPDATED_DATE_LABEL } from '../consts';
+import ArticleLayout from '../layouts/ArticleLayout.astro';
 
 type Props = CollectionEntry<'pages'>;
 
@@ -19,46 +16,11 @@ const page = Astro.props;
 const { Content } = await render(page);
 ---
 
-<BaseLayout
+<ArticleLayout
   title={page.data.title}
   description={page.data.description}
-  ogType="article"
+  publishedDate={page.data.publishedDate}
+  updatedDate={page.data.updatedDate}
 >
-  <article>
-    <h1>
-      <AdjustText text={page.data.title} />
-    </h1>
-    <div class="date">
-      <div>
-        <AdjustText text={PUBLISHED_DATE_LABEL} />
-        <span class="space"></span>
-        <FormattedDate date={page.data.publishedDate} />
-      </div>
-      {page.data.updatedDate && (
-        <div class="updated">
-          <AdjustText text={UPDATED_DATE_LABEL} />
-          <span class="space" />
-          <FormattedDate date={page.data.updatedDate} />
-        </div>
-      )}
-    </div>
-    <Content />
-  </article>
-</BaseLayout>
-
-<style lang="scss">
-  .date {
-    font: typography.$font-body-small;
-    color: colors.$color-on-background-variant;
-    display: flex;
-    margin-top: 4px;
-
-    .updated {
-      margin-left: 12px;
-    }
-
-    .space {
-      margin-left: 4px;
-    }
-  }
-</style>
+  <Content />
+</ArticleLayout>

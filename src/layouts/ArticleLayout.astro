@@ -1,0 +1,84 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import AdjustText from '../components/AdjustText.astro';
+import { type Tag } from '../models/tag';
+import {
+  TAG_PREFIX,
+  PUBLISHED_DATE_LABEL,
+  UPDATED_DATE_LABEL,
+} from '../consts';
+
+type Props = {
+  title: string;
+  description: string;
+  publishedDate: Date;
+  updatedDate?: Date;
+  tags?: Tag[];
+};
+
+const { title, description, publishedDate, updatedDate, tags } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} ogType="article">
+  <article>
+    <h1>
+      <AdjustText text={title} />
+    </h1>
+    <div class="date">
+      <div>
+        <AdjustText text={PUBLISHED_DATE_LABEL} />
+        <span class="space"></span>
+        <FormattedDate date={publishedDate} />
+      </div>
+      {updatedDate && (
+        <div class="updated">
+          <AdjustText text={UPDATED_DATE_LABEL} />
+          <span class="space" />
+          <FormattedDate date={updatedDate} />
+        </div>
+      )}
+    </div>
+    {tags && tags.length > 0 && (
+      <div class="tags">
+        {tags.map((tag) => (
+          <a class="tag" href={`/tags/${tag.id}/`}>
+            <AdjustText text={`${TAG_PREFIX}${tag.name}`} />
+          </a>
+        ))}
+      </div>
+    )}
+    <slot />
+  </article>
+</BaseLayout>
+
+<style lang="scss">
+  .date {
+    font: typography.$font-body-small;
+    color: colors.$color-on-background-variant;
+    display: flex;
+    margin-top: 4px;
+
+    .updated {
+      margin-left: 12px;
+    }
+
+    .space {
+      margin-left: 4px;
+    }
+  }
+
+  .tags {
+    font: typography.$font-body-small;
+    margin: 2px -8px 32px 0;
+
+    .tag {
+      display: inline-block;
+      margin-right: 8px;
+      color: colors.$color-on-background-variant;
+      text-decoration: none;
+      border-radius: 2px;
+      @include links.interactive-outline;
+    }
+  }
+</style>

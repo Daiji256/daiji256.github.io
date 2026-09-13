@@ -1,13 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import AdjustText from '../../components/AdjustText.astro';
-import {
-  TAG_PREFIX,
-  PUBLISHED_DATE_LABEL,
-  UPDATED_DATE_LABEL,
-} from '../../consts';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
 
 type Props = CollectionEntry<'posts'>;
 
@@ -23,68 +16,12 @@ const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout
+<ArticleLayout
   title={post.data.title}
   description={post.data.description}
-  ogType="article"
+  publishedDate={post.data.publishedDate}
+  updatedDate={post.data.updatedDate}
+  tags={post.data.tags}
 >
-  <article>
-    <h1>
-      <AdjustText text={post.data.title} />
-    </h1>
-    <div class="date">
-      <div>
-        <AdjustText text={PUBLISHED_DATE_LABEL} />
-        <span class="space"></span>
-        <FormattedDate date={post.data.publishedDate} />
-      </div>
-      {post.data.updatedDate && (
-        <div class="updated">
-          <AdjustText text={UPDATED_DATE_LABEL} />
-          <span class="space" />
-          <FormattedDate date={post.data.updatedDate} />
-        </div>
-      )}
-    </div>
-    <div class="tags">
-      {post.data.tags &&
-        post.data.tags.map((tag) => (
-          <a class="tag" href={`/tags/${tag.id}/`}>
-            <AdjustText text={`${TAG_PREFIX}${tag.name}`} />
-          </a>
-        ))}
-    </div>
-    <Content />
-  </article>
-</BaseLayout>
-
-<style lang="scss">
-  .date {
-    font: typography.$font-body-small;
-    color: colors.$color-on-background-variant;
-    display: flex;
-    margin-top: 4px;
-
-    .updated {
-      margin-left: 12px;
-    }
-
-    .space {
-      margin-left: 4px;
-    }
-  }
-
-  .tags {
-    font: typography.$font-body-small;
-    margin: 2px -8px 32px 0;
-
-    .tag {
-      display: inline-block;
-      margin-right: 8px;
-      color: colors.$color-on-background-variant;
-      text-decoration: none;
-      border-radius: 2px;
-      @include links.interactive-outline;
-    }
-  }
-</style>
+  <Content />
+</ArticleLayout>
