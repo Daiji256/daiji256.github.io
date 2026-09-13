@@ -2,7 +2,7 @@
 title: '超高速な数式表示（KaTeXより高速！）'
 description: 'Webサイトで数式を表示したいというニーズはたくさんあります。数式表示のために、通信量が増えたり、表示が遅くなったりするのはストレスです。そのストレスをできるだけ軽減するために、数式をインラインSVGで簡単に表示する方法を紹介します。'
 publishedDate: 2021-11-12T00:00:00+09:00
-updatedDate: 2025-01-28T00:00:00+09:00
+updatedDate: 2026-09-13T00:00:00+09:00
 tags:
   [
     { id: 'hugo', name: 'Hugo' },
@@ -54,7 +54,7 @@ LaTeXをSVGに変換するツールは色々あります。しかし、Hugoか�
 
 Hugoは`getJSON`でインターネット上のJSONを取得できます。LaTeXをSVGの情報を含むJSONを返すAPIを探したところ、[`tex2svg`](http://tex2svg.herokuapp.com/)と[CODECOGS](https://codecogs.com/)が見つかりました。
 
-- [`tex2svg`](http://tex2svg.herokuapp.com/)：MathJaxによって数式を生成します。HerokuでAPIが公開されていてのレスポンスは少し遅いです。
+- [`tex2svg`](http://tex2svg.herokuapp.com/)：MathJaxによって数式を生成します。HerokuでAPIが公開されていて、レスポンスは少し遅いです。
 - [CODECOGS](https://codecogs.com/)：昔からある有名な奴です。SVG以外にPNGやGMPとかも生成できます。ベースラインが無く、インラインで表示すると微妙になる。
 
 インライン表示が綺麗に見えないと嫌なので、`tex2svg`を利用します。
@@ -106,7 +106,7 @@ Shortcodeの引数を指定して表示方法の選択ができたほうが便�
 {{- end -}}
 ```
 
-次のようにMarkdownで記事を書いて見てください。
+次のようにMarkdownで記事を書いてみてください。
 
 ```
 ディスプレイ表示の数式は
@@ -195,7 +195,7 @@ replace .Inner "\\bm" "\\boldsymbol"
 
 #### テキスト選択したい
 
-単なる画像としてのSVGなので、数式をコピペできません。SVG内に見えないテキストを用意してコピペできるようにしたいと思います。`replace`を使って<JwAki />`</svg>`<JwAki />を<JwAki />`<text> ... </text></svg>`<JwAki />に置換して、無理やりテキスト情報を入れます。CSSテキストのスタイルを指定します。色を無色`rgba(0,0,0,0)`<JwAki />にします。SVG内のフォントサイズがはちょっと**アレ**ですごく小さいみたいなので、適当に超大きくなるように設定します。
+単なる画像としてのSVGなので、数式をコピペできません。SVG内に見えないテキストを用意してコピペできるようにしたいと思います。`replace`を使って<JwAki />`</svg>`<JwAki />を<JwAki />`<text> ... </text></svg>`<JwAki />に置換して、無理やりテキスト情報を入れます。CSSテキストのスタイルを指定します。色を無色`rgba(0,0,0,0)`<JwAki />にします。SVG内のフォントサイズはちょっと**アレ**ですごく小さいみたいなので、適当に超大きくなるように設定します。
 
 ```html
 {{- (replace $json.svg "</svg>" (printf "<text x=\"0\" y=\"0\" class=\"eq-text\">%s</text></svg>" $.Inner)) | safeHTML -}}
