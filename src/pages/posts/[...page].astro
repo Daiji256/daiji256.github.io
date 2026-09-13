@@ -3,7 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContentsPage from '../../components/ContentsPage.astro';
 import { type ContentSummary } from '../../models/contentSummary';
 import { getPosts } from '../../utils/contents';
-import { POSTS_TITLE, POSTS_DESCRIPTION, PAGE_SIZE } from '../../consts';
+import { paginate } from '../../utils/pagination';
+import { POSTS_TITLE, POSTS_DESCRIPTION } from '../../consts';
 
 type Props = {
   pageLength: number;
@@ -12,21 +13,13 @@ type Props = {
 
 export async function getStaticPaths() {
   const posts = await getPosts();
-  const pageLength = Math.ceil(posts.length / PAGE_SIZE);
-  const ret: {
-    params: { page: string | undefined };
-    props: Props;
-  }[] = [];
-  for (let i = 0; i < pageLength; i++) {
-    ret.push({
-      params: { page: i === 0 ? undefined : String(i + 1) },
-      props: {
-        pageLength: pageLength,
-        posts: posts.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE),
-      },
-    });
-  }
-  return ret;
+  return paginate(posts).map((page) => ({
+    params: page.params,
+    props: {
+      pageLength: page.pageLength,
+      posts: page.items,
+    },
+  }));
 }
 
 const { page: _page } = Astro.params;
