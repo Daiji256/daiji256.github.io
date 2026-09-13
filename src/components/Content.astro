@@ -54,16 +54,7 @@ const { content } = Astro.props;
 
     a {
       text-decoration: none;
-
-      @media (hover: hover) {
-        &:hover {
-          text-decoration: underline 8%;
-        }
-      }
-
-      &:active {
-        text-decoration: underline 8%;
-      }
+      @include links.interactive-underline;
     }
   }
 
@@ -101,18 +92,7 @@ const { content } = Astro.props;
       color: colors.$color-on-background-variant;
       text-decoration: none;
       border-radius: 2px;
-
-      @media (hover: hover) {
-        &:hover {
-          color: colors.$color-link;
-          outline: 1px dashed;
-        }
-      }
-
-      &:active {
-        color: colors.$color-link;
-        outline: 1px solid;
-      }
+      @include links.interactive-outline;
     }
   }
 </style>

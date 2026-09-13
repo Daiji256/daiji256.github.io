@@ -37,18 +37,7 @@ const tags = await getAllTagsWithCount();
       color: inherit;
       text-decoration: none;
       border-radius: 2px;
-
-      @media (hover: hover) {
-        &:hover {
-          color: colors.$color-link;
-          outline: 1px dashed;
-        }
-      }
-
-      &:active {
-        color: colors.$color-link;
-        outline: 1px solid;
-      }
+      @include links.interactive-outline;
     }
   }
 </style>

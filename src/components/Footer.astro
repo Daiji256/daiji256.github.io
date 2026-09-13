@@ -55,16 +55,7 @@ import {
 
         a {
           text-decoration: none;
-
-          @media (hover: hover) {
-            &:hover {
-              text-decoration: underline 8%;
-            }
-          }
-
-          &:active {
-            text-decoration: underline 8%;
-          }
+          @include links.interactive-underline;
         }
       }
     }

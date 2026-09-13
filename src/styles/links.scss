@@ -1,0 +1,31 @@
+@use 'colors';
+
+@mixin interactive-outline($color: colors.$color-link) {
+  @media (hover: hover) {
+    &:hover {
+      @if $color {
+        color: $color;
+      }
+      outline: 1px dashed;
+    }
+  }
+
+  &:active {
+    @if $color {
+      color: $color;
+    }
+    outline: 1px solid;
+  }
+}
+
+@mixin interactive-underline($thickness: 8%) {
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline $thickness;
+    }
+  }
+
+  &:active {
+    text-decoration: underline $thickness;
+  }
+}

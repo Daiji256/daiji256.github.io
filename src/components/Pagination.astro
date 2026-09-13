@@ -49,16 +49,7 @@ const { current, pageLength, baseUrl } = Astro.props;
       color: colors.$color-link;
       text-decoration: none;
       border-radius: 2px;
-
-      @media (hover: hover) {
-        &:hover {
-          outline: 1px dashed;
-        }
-      }
-
-      &:active {
-        outline: 1px solid;
-      }
+      @include links.interactive-outline($color: null);
     }
   }
 </style>

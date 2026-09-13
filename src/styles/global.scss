@@ -43,15 +43,7 @@ a {
     color: colors.$color-link-visited;
   }
 
-  @media (hover: hover) {
-    &:hover {
-      text-decoration: underline 8%;
-    }
-  }
-
-  &:active {
-    text-decoration: underline 8%;
-  }
+  @include links.interactive-underline;
 }
 
 main {
@@ -253,17 +245,7 @@ main {
         color: colors.$color-link;
       }
 
-      @media (hover: hover) {
-        &:hover {
-          text-decoration: none;
-          outline: 1px dashed;
-        }
-      }
-
-      &:active {
-        text-decoration: none;
-        outline: 1px solid;
-      }
+      @include links.interactive-outline($color: null);
     }
   }
 
@@ -276,15 +258,7 @@ main {
       color: colors.$color-link;
     }
 
-    @media (hover: hover) {
-      &:hover {
-        outline: 1px dashed;
-      }
-    }
-
-    &:active {
-      outline: 1px solid;
-    }
+    @include links.interactive-outline($color: null);
   }
 
   .footnotes {
