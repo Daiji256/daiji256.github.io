@@ -193,11 +193,10 @@ main {
           center/contain no-repeat;
       }
 
+      @include links.interactive-outline;
+
       @media (hover: hover) {
         &:hover {
-          color: colors.$color-link;
-          outline: 1px dashed;
-
           &::before {
             background-color: colors.$color-link;
           }
@@ -205,10 +204,6 @@ main {
       }
 
       &:active {
-        color: colors.$color-link;
-        text-decoration: none;
-        outline: 1px solid;
-
         &::before {
           background-color: colors.$color-link;
         }
