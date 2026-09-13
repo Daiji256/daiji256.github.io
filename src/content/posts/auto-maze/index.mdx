@@ -2,7 +2,7 @@
 title: 'TeXで迷路を自動生成（expl3）'
 description: 'expl3によるプログラミングの練習として、TeXで迷路を自動生成してみます。'
 publishedDate: 2021-12-14T00:00:00+09:00
-updatedDate: 2024-08-09T00:00:00+09:00
+updatedDate: 2026-09-13T00:00:00+09:00
 tags:
   [
     { id: 'tex', name: 'TeX' },
@@ -189,7 +189,7 @@ import JwAki from '../../../components/JwAki.astro';
 
 `\l__atmz_count_tblr_int`が0の場合には掘り進めることができません。`\l__atmz_count_tblr_int`が0でない場合を考えます。1から<JwAki />`\l__atmz_count_tblr_int`の乱数（`\l__atmz_rand_int`）を取得し、それに対応した方向に掘り進めればいいです。
 
-`\l__atmz_rand_int`に対応した向きの2マス先の状態を取得し、壁でないなら（道ならば）`\l__atmz_rand_int`をインクリメントします。この処理にすることで、`\l__atmz_rand_int`が移動できない場合は次の向きに任せることができるからです。また、`\l__atmz_rand_int`の最大値は<JwAki />`\l__atmz_count_tblr_int`となっているため、4までにからなず掘り進めることができます。
+`\l__atmz_rand_int`に対応した向きの2マス先の状態を取得し、壁でないなら（道ならば）`\l__atmz_rand_int`をインクリメントします。この処理にすることで、`\l__atmz_rand_int`が移動できない場合は次の向きに任せることができるからです。また、`\l__atmz_rand_int`の最大値は<JwAki />`\l__atmz_count_tblr_int`となっているため、4までにかならず掘り進めることができます。
 
 掘り進めることができる場合には、1マス先と2マス先のセルを道にします。そして<JwAki />`\l__atmz_now_int`を更新します。また、`\l__atmz_rand_box_seq`に<JwAki />`\fp_eval:n { randint( 0, 262143 ) } * 4096 + \l__atmz_now_int`となる値を追加します。これは掘り進めることができなくなった場合のためのメモになります。具体的には[新しい地点を決める](#新しい地点を決める)で説明します。
 
@@ -336,7 +336,7 @@ import JwAki from '../../../components/JwAki.astro';
 
 ## 謝辞
 
-これを作るにあたって<JwAki />[@zr_tex8rさん](https://twitter.com/zr_tex8r)と<JwAki />[@wtsnjpさん](https://twitter.com/wtsnjp/)からTwitterでたくさんの助言を頂いました。ありがとうございました。
+これを作るにあたって<JwAki />[@zr_tex8rさん](https://twitter.com/zr_tex8r)と<JwAki />[@wtsnjpさん](https://twitter.com/wtsnjp/)からTwitterでたくさんの助言を頂きました。ありがとうございました。
 
 ## 文献
 
