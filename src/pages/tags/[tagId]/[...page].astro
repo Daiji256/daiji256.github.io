@@ -3,7 +3,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ContentsPage from '../../../components/ContentsPage.astro';
 import { type ContentSummary } from '../../../models/contentSummary';
 import { type Tag } from '../../../models/tag';
-import { getAllContents, getAllTags } from '../../../utils/contents';
+import { getAllContents } from '../../../utils/contents';
+import { getAllTags, filterContentsByTag } from '../../../utils/tags';
 import { paginate } from '../../../utils/pagination';
 
 type Props = {
@@ -16,9 +17,7 @@ export async function getStaticPaths() {
   const contents = await getAllContents();
   const tags = await getAllTags();
   return tags.flatMap((tag) => {
-    const filteredContents = contents.filter((content) =>
-      content.tags?.map((t) => t.id)?.includes(tag.id),
-    );
+    const filteredContents = filterContentsByTag(contents, tag.id);
     return paginate(filteredContents).map((page) => ({
       params: {
         tagId: tag.id,

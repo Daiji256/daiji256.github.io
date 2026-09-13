@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdjustText from '../../components/AdjustText.astro';
-import { getAllTagsWithCount } from '../../utils/contents';
+import { getAllTagsWithCount } from '../../utils/tags';
 import { TAG_PREFIX, TAGS_TITLE, TAGS_DESCRIPTION } from '../../consts';
 
 const tags = await getAllTagsWithCount();
