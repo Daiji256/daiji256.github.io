@@ -6,9 +6,11 @@ export type TagWithCount = Tag & {
   count: number;
 };
 
-export async function getAllTagsWithCount(): Promise<TagWithCount[]> {
-  const contents = await getAllContents();
-  return extractTagsWithCount(contents);
+export async function getAllTagsWithCount(
+  contents?: ContentSummary[],
+): Promise<TagWithCount[]> {
+  const allContents = contents ?? (await getAllContents());
+  return extractTagsWithCount(allContents);
 }
 
 export function extractTagsWithCount(
@@ -28,9 +30,13 @@ export function extractTagsWithCount(
   return Array.from(tagsCount.values()).sort((a, b) => b.count - a.count);
 }
 
-export async function getAllTags(): Promise<Tag[]> {
-  const tagsWithCount = await getAllTagsWithCount();
-  return tagsWithCount.map(({ id, name }) => ({ id, name }));
+export function extractTags(contents: ContentSummary[]): Tag[] {
+  return extractTagsWithCount(contents).map(({ id, name }) => ({ id, name }));
+}
+
+export async function getAllTags(contents?: ContentSummary[]): Promise<Tag[]> {
+  const allContents = contents ?? (await getAllContents());
+  return extractTags(allContents);
 }
 
 export function hasTag(content: ContentSummary, tagId: string): boolean {
