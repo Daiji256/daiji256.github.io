@@ -1,8 +1,8 @@
 ---
 title: 'LuaLaTeXのすゝめ'
-description: 'LaTeXの中でも、高機能でイケイケなLuaLaTeXを紹介します。LuaLaTeXの何が良いか、どうやってLuaLaTeXに乗り換えを行なうかを説明します。'
+description: 'LaTeXの中でも、高性能でイケイケなLuaLaTeXを紹介します。LuaLaTeXの何が良いか、どうやってLuaLaTeXに乗り換えを行うかを説明します。'
 publishedDate: 2021-02-07T00:00:00+09:00
-updatedDate: 2024-06-29T00:00:00+09:00
+updatedDate: 2026-09-13T00:00:00+09:00
 tags:
   [
     { id: 'tex', name: 'TeX' },
@@ -17,7 +17,7 @@ import image1 from './images/image1.svg';
 
 ## はじめに
 
-この記事では**高機能でイケイケ**なLuaLaTeXを紹介します。
+この記事では**高性能でイケイケ**なLuaLaTeXを紹介します。
 
 現在日本で一般的に使用されているLaTeXはupLaTeXだと思います。upLaTeXはUnicode対応の日本語LaTeXエンジンが収録されている、pLaTeXの進化系みたいなものです。upLaTeXはpLaTeXからの移行が容易で、環境依存文字やJIS第1・第2水準の漢字を意識せずに使用できる点が初心者に好まれている理由の1つだと思います。
 
@@ -37,7 +37,7 @@ LuaLaTeXの最大の強みと言えるのがフォントについてです。昔
 \setmainjfont[BoldFont=MS Gothic]{MS Mincho}
 ```
 
-あらかじめ用意された和文フォントから選択することができる`luatexja-preset`というパッケージがあります。たとえばIPA明朝とIPAゴシックを使う設定する場合次のように書けばよいです。他のフォントについては[LaTeX-jaの使い方](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)を参照してください。
+あらかじめ用意された和文フォントから選択することができる`luatexja-preset`というパッケージがあります。たとえばIPA明朝とIPAゴシックを使う設定にする場合次のように書けばよいです。他のフォントについては[LaTeX-jaの使い方](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)を参照してください。
 
 ```latex
 \usepackage[ipa]{luatexja-preset}
@@ -79,7 +79,7 @@ upLaTeXでは全角文字の幅と高さを`zw`と`zh`という単位で表し�
 
 ## 文献
 
-1. [改定第8版LaTeX2e美文書作成入門](https://www.amazon.co.jp/dp/B08MZ98Z1Q/)
+1. [改訂第8版LaTeX2e美文書作成入門](https://www.amazon.co.jp/dp/B08MZ98Z1Q/)
 2. [LaTeX入門/発展変](https://texwiki.texjp.org/LaTeX%E5%85%A5%E9%96%80%2F%E7%99%BA%E5%B1%95%E7%B7%A8)
 3. [LuaTeX](https://texwiki.texjp.org/LuaTeX)
 4. [LuaTeX-jaパッケージ](http://ftp.jaist.ac.jp/pub/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
