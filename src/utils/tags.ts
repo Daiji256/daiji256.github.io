@@ -27,7 +27,12 @@ export function extractTagsWithCount(
       });
     });
   });
-  return Array.from(tagsCount.values()).sort((a, b) => b.count - a.count);
+  return Array.from(tagsCount.values()).sort(
+    (a, b) =>
+      b.count - a.count ||
+      a.name.localeCompare(b.name, 'ja') ||
+      a.id.localeCompare(b.id),
+  );
 }
 
 export function extractTags(contents: ContentSummary[]): Tag[] {
