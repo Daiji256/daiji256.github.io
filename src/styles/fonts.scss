@@ -1,0 +1,125 @@
+$font-base-url: 'https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/fonts';
+$font-display: optional;
+
+@font-face {
+  font-family: 't-sans';
+  src:
+    url('#{$font-base-url}/t-sans/t-sans-r.woff2') format('woff2'),
+    url('#{$font-base-url}/t-sans/t-sans-r.woff') format('woff'),
+    url('#{$font-base-url}/t-sans/t-sans-r.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: 't-sans';
+  src:
+    url('#{$font-base-url}/t-sans/t-sans-ri.woff2') format('woff2'),
+    url('#{$font-base-url}/t-sans/t-sans-ri.woff') format('woff'),
+    url('#{$font-base-url}/t-sans/t-sans-ri.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: 't-sans';
+  src:
+    url('#{$font-base-url}/t-sans/t-sans-b.woff2') format('woff2'),
+    url('#{$font-base-url}/t-sans/t-sans-b.woff') format('woff'),
+    url('#{$font-base-url}/t-sans/t-sans-b.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: 't-sans';
+  src:
+    url('#{$font-base-url}/t-sans/t-sans-bi.woff2') format('woff2'),
+    url('#{$font-base-url}/t-sans/t-sans-bi.woff') format('woff'),
+    url('#{$font-base-url}/t-sans/t-sans-bi.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: 't-mono';
+  src:
+    url('#{$font-base-url}/t-mono/t-mono-r.woff2') format('woff2'),
+    url('#{$font-base-url}/t-mono/t-mono-r.woff') format('woff'),
+    url('#{$font-base-url}/t-mono/t-mono-r.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: 't-mono';
+  src:
+    url('#{$font-base-url}/t-mono/t-mono-ri.woff2') format('woff2'),
+    url('#{$font-base-url}/t-mono/t-mono-ri.woff') format('woff'),
+    url('#{$font-base-url}/t-mono/t-mono-ri.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: 't-mono';
+  src:
+    url('#{$font-base-url}/t-mono/t-mono-b.woff2') format('woff2'),
+    url('#{$font-base-url}/t-mono/t-mono-b.woff') format('woff'),
+    url('#{$font-base-url}/t-mono/t-mono-b.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: 't-mono';
+  src:
+    url('#{$font-base-url}/t-mono/t-mono-bi.woff2') format('woff2'),
+    url('#{$font-base-url}/t-mono/t-mono-bi.woff') format('woff'),
+    url('#{$font-base-url}/t-mono/t-mono-bi.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: 't-math';
+  src:
+    url('#{$font-base-url}/t-math/t-math-r.woff2') format('woff2'),
+    url('#{$font-base-url}/t-math/t-math-r.woff') format('woff'),
+    url('#{$font-base-url}/t-math/t-math-r.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: 'tj-sans';
+  src:
+    url('#{$font-base-url}/tj-sans/tj-sans-r.woff2') format('woff2'),
+    url('#{$font-base-url}/tj-sans/tj-sans-r.woff') format('woff'),
+    url('#{$font-base-url}/tj-sans/tj-sans-r.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  size-adjust: 92.5%;
+  font-display: $font-display;
+}
+
+@font-face {
+  font-family: 'tj-sans';
+  src:
+    url('#{$font-base-url}/tj-sans/tj-sans-b.woff2') format('woff2'),
+    url('#{$font-base-url}/tj-sans/tj-sans-b.woff') format('woff'),
+    url('#{$font-base-url}/tj-sans/tj-sans-b.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  size-adjust: 92.5%;
+  font-display: $font-display;
+}

@@ -1,6 +1,7 @@
 ---
 import Umami from './Umami.astro';
 import { SITE_TITLE, SITE_URL } from '../consts';
+import '../styles/fonts.scss';
 import '../styles/global.scss';
 import '../styles/adjust-aki.scss';
 import '../styles/math.scss';
@@ -29,24 +30,35 @@ const { title, description, ogType = 'website' } = Astro.props;
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
 
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link
   rel="preload"
-  as="style"
-  fetchpriority="high"
-  href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/css/t.min.css"
+  as="font"
+  type="font/woff2"
+  crossorigin
+  href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/fonts/t-sans/t-sans-r.woff2"
 />
 <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/css/t.min.css"
-  media="print"
-  onload="this.setAttribute('media','all')"
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  crossorigin
+  href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/fonts/t-sans/t-sans-b.woff2"
 />
-<noscript>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/css/t.min.css"
-  />
-</noscript>
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  crossorigin
+  href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/fonts/tj-sans/tj-sans-r.woff2"
+/>
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  crossorigin
+  href="https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/fonts/tj-sans/tj-sans-b.woff2"
+/>
 
 <title>{title}</title>
 <meta name="title" content={title} />
