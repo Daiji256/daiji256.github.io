@@ -1,5 +1,5 @@
 $font-base-url: 'https://cdn.jsdelivr.net/gh/daiji256/daiji-blog-fonts@8d67baed3ded80750c538d9e1e4b5c814d55299a/fonts';
-$font-display: optional;
+$font-display: fallback;
 
 @font-face {
   font-family: 't-sans';
